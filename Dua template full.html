@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du'ā – Allāhumma Anta Rabbī</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 60px;
+  }
+
+  /* Header */
+  .header {
+    background: #3d2a1a;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 {
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
+  .header p {
+    font-size: 0.72rem;
+    opacity: 0.7;
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Section label */
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 18px 16px 0;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  /* Verse block */
+  .verse-block {
+    background: #fff;
+    margin: 12px 16px 0;
+    border-radius: 10px;
+    padding: 18px 14px 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    border: 1px solid #ede8df;
+  }
+
+  /* Arabic line — direction:rtl so flex lays words right-to-left */
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 10px;
+  }
+
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 42px;
+  }
+
+  .arabic-word {
+    font-family: 'Amiri', serif;
+    font-size: 1.55rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    direction: rtl;
+    text-align: center;
+  }
+
+  .word-meaning {
+    font-size: 0.62rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 70px;
+    direction: ltr;
+  }
+
+  /* Transliteration */
+  .transliteration {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #555;
+    font-style: italic;
+    margin: 8px 0 6px;
+    line-height: 1.6;
+    border-top: 1px dashed #e0d8cc;
+    padding-top: 8px;
+  }
+
+  /* Full translation */
+  .translation {
+    text-align: center;
+    font-size: 0.82rem;
+    color: #3d2a1a;
+    line-height: 1.55;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 22px 30px;
+  }
+
+  /* Info boxes */
+  .info-box {
+    margin: 12px 16px 0;
+    border-radius: 10px;
+    padding: 14px 14px 12px;
+    font-size: 0.78rem;
+    line-height: 1.65;
+  }
+
+  .info-box.context {
+    background: #eef5fb;
+    border-left: 4px solid #4a86b8;
+    color: #1e3a52;
+  }
+
+  .info-box.authenticity {
+    background: #f0faf2;
+    border-left: 4px solid #3a8c52;
+    color: #1a3d26;
+  }
+
+  .info-box .box-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .info-box.context .box-title  { color: #2d6ea8; }
+  .info-box.authenticity .box-title { color: #2a7040; }
+
+  .info-box p { margin-bottom: 7px; }
+  .info-box p:last-child { margin-bottom: 0; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 4px;
+    letter-spacing: 0.04em;
+  }
+  .grade-sahih  { background: #d4edda; color: #155724; }
+  .grade-hasan  { background: #d1ecf1; color: #0c5460; }
+
+  .info-box a {
+    color: #2a7040;
+    text-decoration: underline;
+    font-size: 0.75rem;
+  }
+
+  .hadith-quote {
+    background: rgba(255,255,255,0.6);
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.76rem;
+    line-height: 1.6;
+    color: #2c3e30;
+    border-left: 2px solid #aad4b5;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <h1>Du'ā — Allāhumma Anta Rabbī</h1>
+  <p>Supplication of Protection &amp; Tawakkul</p>
+</div>
+
+<!-- ══ CONTEXT BOX ══ -->
+<div class="section-label">Context &amp; Background</div>
+<div class="info-box context">
+  <div class="box-title">📖 Context &amp; Background</div>
+  <p>
+    This comprehensive supplication combines several of the most powerful themes in Islamic du'ā: <strong>declaration of Lordship (rubūbiyyah)</strong>, <strong>absolute reliance on Allah (tawakkul)</strong>, acknowledgement of His <strong>perfect will (mashī'ah)</strong>, affirmation that all power belongs to Him alone, and finally <strong>seeking refuge</strong> from the evil of one's own soul and all creatures.
+  </p>
+  <p>
+    It draws from multiple prophetic narrations and Qur'ānic phrases woven together into a single supplication — a format common in classical compiled adhkār. The phrase <em>Mā shā'allāhu kāna wa mā lam yasha' lam yakun</em> (What Allah wills comes to pass…) is particularly beloved in the tradition as an affirmation of complete surrender to divine decree.
+  </p>
+  <p>
+    The closing line — <em>inna rabbī 'alā ṣirāṭin mustaqīm</em> — is taken directly from the Qur'ān (Hūd 11:56), the words of the Prophet Hūd (peace be upon him), and serves as a seal of trust: that Allah's path is straight and His governance is just.
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════
+     PART 1 — Lordship & Reliance
+══════════════════════════════════════ -->
+<div class="section-label">Part 1 · Lordship &amp; Reliance</div>
+
+<!-- اللَّهُمَّ أَنْتَ رَبِّي -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَنْتَ</span>
+      <span class="word-meaning">You are</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">رَبِّي</span>
+      <span class="word-meaning">my Lord</span>
+    </div>
+  </div>
+  <div class="transliteration">Allāhumma anta rabbī</div>
+  <div class="translation">O Allah, You are my Lord</div>
+</div>
+
+<!-- لَا إِلَهَ إِلَّا أَنْتَ -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا</span>
+      <span class="word-meaning">there is no</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَهَ</span>
+      <span class="word-meaning">god</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَّا</span>
+      <span class="word-meaning">except</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَنْتَ</span>
+      <span class="word-meaning">You</span>
+    </div>
+  </div>
+  <div class="transliteration">Lā ilāha illā anta</div>
+  <div class="translation">There is no god but You</div>
+</div>
+
+<!-- عَلَيْكَ تَوَكَّلْتُ وَأَنْتَ رَبُّ الْعَرْشِ الْعَظِيمِ -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">عَلَيْكَ</span>
+      <span class="word-meaning">upon You</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">تَوَكَّلْتُ</span>
+      <span class="word-meaning">I rely</span>
+    </div>
+  </div>
+  <div class="transliteration">ʿalayka tawakkaltu</div>
+  <div class="translation">Upon You I rely</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَأَنْتَ</span>
+      <span class="word-meaning">and You are</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">رَبُّ</span>
+      <span class="word-meaning">the Lord</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْعَرْشِ</span>
+      <span class="word-meaning">of the Throne</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْعَظِيمِ</span>
+      <span class="word-meaning">the Mighty</span>
+    </div>
+  </div>
+  <div class="transliteration">wa anta rabbul ʿarshil ʿaẓīm</div>
+  <div class="translation">And You are the Lord of the Mighty Throne</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     PART 2 — Divine Will & Power
+══════════════════════════════════════ -->
+<div class="section-label">Part 2 · Divine Will &amp; Power</div>
+
+<!-- مَا شَاءَ اللَّهُ كَانَ -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مَا</span>
+      <span class="word-meaning">what</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">شَاءَ</span>
+      <span class="word-meaning">wills</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُ</span>
+      <span class="word-meaning">Allah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">كَانَ</span>
+      <span class="word-meaning">comes to pass</span>
+    </div>
+  </div>
+  <div class="transliteration">Mā shā'allāhu kān</div>
+  <div class="translation">What Allah wills comes to pass</div>
+</div>
+
+<!-- وَمَا لَمْ يَشَأْ لَمْ يَكُنْ -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَمَا</span>
+      <span class="word-meaning">and what</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَمْ</span>
+      <span class="word-meaning">does not</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">يَشَأْ</span>
+      <span class="word-meaning">will</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَمْ</span>
+      <span class="word-meaning">does not</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">يَكُنْ</span>
+      <span class="word-meaning">occur</span>
+    </div>
+  </div>
+  <div class="transliteration">wa mā lam yasha' lam yakun</div>
+  <div class="translation">And what He does not will does not occur</div>
+</div>
+
+<!-- وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَلَا</span>
+      <span class="word-meaning">and there is no</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">حَوْلَ</span>
+      <span class="word-meaning">power (to change)</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَلَا</span>
+      <span class="word-meaning">and no</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قُوَّةَ</span>
+      <span class="word-meaning">strength</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَّا</span>
+      <span class="word-meaning">except</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِاللَّهِ</span>
+      <span class="word-meaning">with Allah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْعَلِيِّ</span>
+      <span class="word-meaning">the Most High</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْعَظِيمِ</span>
+      <span class="word-meaning">the Most Great</span>
+    </div>
+  </div>
+  <div class="transliteration">wa lā ḥawla wa lā quwwata illā billāhil ʿaliyyil ʿaẓīm</div>
+  <div class="translation">There is no power and no strength except with Allah, the Most High, the Most Great</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     PART 3 — Knowledge & Omnipotence
+══════════════════════════════════════ -->
+<div class="section-label">Part 3 · Knowledge &amp; Omnipotence</div>
+
+<!-- أَعْلَمُ أَنَّ اللَّهَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَعْلَمُ</span>
+      <span class="word-meaning">I know</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَنَّ</span>
+      <span class="word-meaning">that</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهَ</span>
+      <span class="word-meaning">Allah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَى</span>
+      <span class="word-meaning">over</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">كُلِّ</span>
+      <span class="word-meaning">all / every</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">شَيْءٍ</span>
+      <span class="word-meaning">thing</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَدِيرٌ</span>
+      <span class="word-meaning">Capable</span>
+    </div>
+  </div>
+  <div class="transliteration">aʿlamu annallāha ʿalā kulli shay'in qadīr</div>
+  <div class="translation">I know that Allah has power over all things</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     PART 4 — Seeking Refuge
+══════════════════════════════════════ -->
+<div class="section-label">Part 4 · Seeking Refuge</div>
+
+<!-- اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِنِّي</span>
+      <span class="word-meaning">verily I</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَعُوذُ</span>
+      <span class="word-meaning">seek refuge</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِكَ</span>
+      <span class="word-meaning">with You</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ</span>
+      <span class="word-meaning">from</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">شَرِّ</span>
+      <span class="word-meaning">the evil</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">نَفْسِي</span>
+      <span class="word-meaning">of my own self</span>
+    </div>
+  </div>
+  <div class="transliteration">Allāhumma innī aʿūdhu bika min sharri nafsī</div>
+  <div class="translation">O Allah, I seek refuge with You from the evil of my own self</div>
+</div>
+
+<!-- وَمِنْ شَرِّ كُلِّ دَابَّةٍ أَنْتَ آخِذٌ بِنَاصِيَتِهَا -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَمِنْ</span>
+      <span class="word-meaning">and from</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">شَرِّ</span>
+      <span class="word-meaning">the evil</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">كُلِّ</span>
+      <span class="word-meaning">every</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">دَابَّةٍ</span>
+      <span class="word-meaning">living creature</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَنْتَ</span>
+      <span class="word-meaning">You</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">آخِذٌ</span>
+      <span class="word-meaning">hold</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِنَاصِيَتِهَا</span>
+      <span class="word-meaning">its forelock</span>
+    </div>
+  </div>
+  <div class="transliteration">wa min sharri kulli dābbatin anta ākhidhun bināṣiyatihā</div>
+  <div class="translation">And from the evil of every creature whose forelock You hold</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     PART 5 — The Closing Seal
+══════════════════════════════════════ -->
+<div class="section-label">Part 5 · The Closing Seal</div>
+
+<!-- إِنَّ رَبِّي عَلَى صِرَاطٍ مُسْتَقِيمٍ -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">إِنَّ</span>
+      <span class="word-meaning">verily</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">رَبِّي</span>
+      <span class="word-meaning">my Lord</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَى</span>
+      <span class="word-meaning">is on</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">صِرَاطٍ</span>
+      <span class="word-meaning">a path</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مُسْتَقِيمٍ</span>
+      <span class="word-meaning">straight</span>
+    </div>
+  </div>
+  <div class="transliteration">inna rabbī ʿalā ṣirāṭin mustaqīm</div>
+  <div class="translation">Verily, my Lord is on a Straight Path</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ AUTHENTICITY BOX ══ -->
+<div class="info-box authenticity">
+  <div class="box-title">✅ Source &amp; Authenticity</div>
+
+  <p>This supplication weaves together phrases from multiple authenticated hadith and a direct Qur'ānic verse:</p>
+
+  <p>
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    The phrase <em>Lā ḥawla wa lā quwwata illā billāh</em> is reported in both Bukhārī and Muslim, and the Prophet ﷺ described it as a treasure of Paradise.
+    — <a href="https://sunnah.com/bukhari:7386" target="_blank">Ṣaḥīḥ al-Bukhārī 7386</a>
+  </p>
+
+  <p>
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    The phrase <em>Allāhumma anta rabbī lā ilāha illā anta, ʿalayka tawakkaltu wa anta rabbul ʿarshil ʿaẓīm</em> is reported by Abū Dāwūd among the morning and evening adhkār.
+    — <a href="https://sunnah.com/abudawud:5082" target="_blank">Sunan Abī Dāwūd 5082</a>
+  </p>
+
+  <p>
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    The phrase <em>Allāhumma innī aʿūdhu bika min sharri nafsī wa min sharri kulli dābbatin anta ākhidhun bināṣiyatihā</em> is reported in the collections of Abū Dāwūd and al-Nasā'ī.
+    — <a href="https://sunnah.com/abudawud:5083" target="_blank">Sunan Abī Dāwūd 5083</a>
+  </p>
+
+  <div class="hadith-quote">
+    The closing verse — <strong>"Verily my Lord is on a Straight Path"</strong> — is the direct speech of Prophet Hūd (peace be upon him) in the Qur'ān, expressing complete trust that Allah's decree is just and His governance is perfect.<br>
+    — Qur'ān, Sūrat Hūd (11:56)
+  </div>
+
+  <p style="margin-top:10px; font-size:0.72rem; color:#3a6645;">
+    📚 The full combined supplication is found in classical morning/evening adhkār compilations, including <em>Ḥiṣn al-Muslim</em> (Fortress of the Muslim) by Sa'īd al-Qaḥṭānī, and is widely taught in traditional Islamic circles as a comprehensive daily protection du'ā.
+    — <a href="https://sunnah.com/abudawud:5082" target="_blank">See full chain at Sunan Abī Dāwūd</a>
+  </p>
+</div>
+
+</body>
+</html>

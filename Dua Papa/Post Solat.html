@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wirid & Du’ā Selepas Solat</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lateef&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: #3d2a1a;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.65; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  /* ── Collapsible strips ── */
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+
+  .info-toggle {
+    width: 100%;
+    background: #eef5fb;
+    border: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .info-strip.auth .info-toggle { background: #f0faf2; color: #2a7040; }
+
+  .info-toggle .arrow { font-size: 0.65rem; transition: transform 0.25s ease; color: #888; }
+  .info-toggle.open .arrow { transform: rotate(180deg); }
+
+  .info-body {
+    display: none;
+    padding: 12px 14px 14px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    background: #fff;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body { color: #1a3d26; border-top-color: #b6dfc4; }
+  .info-body.open { display: block; }
+
+  /* ── Section label ── */
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  /* ── Verse block ── */
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 10px;
+  }
+
+  .word-unit { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 42px; }
+  .arabic-word { font-family: 'Amiri', serif; font-size: 1.5rem; line-height: 1.4; color: #1a1a1a; text-align: center; }
+  .word-meaning { font-size: 0.58rem; color: #7a5c3a; text-align: center; font-style: italic; line-height: 1.2; max-width: 80px; direction: ltr; }
+
+  .transliteration { text-align: center; font-size: 0.78rem; color: #666; font-style: italic; margin: 8px 0 6px; line-height: 1.55; border-top: 1px dashed #e0d8cc; padding-top: 8px; }
+  .translation { text-align: center; font-size: 0.81rem; color: #3d2a1a; line-height: 1.55; margin-top: 6px; border-top: 1px solid #ede8df; padding-top: 8px; font-weight: 500; }
+
+  .repetition-tag {
+    display: inline-block;
+    background: #fdf2e9;
+    color: #af601a;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    border: 1px solid #fad7bc;
+  }
+
+  .src-btn { position: absolute; top: 10px; right: 10px; background: none; border: 1px solid #d4c9b8; border-radius: 50%; width: 24px; height: 24px; font-size: 0.7rem; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #9a7d5a; }
+  .src-popup { display: none; margin-top: 10px; background: #f6faf7; border: 1px solid #b6dfc4; border-radius: 8px; padding: 10px 12px; font-size: 0.72rem; line-height: 1.6; color: #1a3d26; }
+  .src-popup.open { display: block; }
+  .divider { height: 1px; background: linear-gradient(to right, transparent, #c9b99a, transparent); margin: 20px 30px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Wirid Selepas Solat</h1>
+  <p>Prophetic Remembrances After Prayer</p>
+</div>
+
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 About This Wirid</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This collection follows the traditional Sunnah sequence of dhikr recited immediately after the formal prayer. It begins with seeking forgiveness, transitions into glorification, and concludes with powerful prayers of protection (Dua Abu Darda and the Healing Bismillah).</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · Seeking Forgiveness</div>
+
+<div class="verse-block">
+  <div class="repetition-tag">Read 3×</div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَسْتَغْفِرُ</span><span class="word-meaning">I seek forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهَ</span><span class="word-meaning">of Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَظِيمَ</span><span class="word-meaning">the Magnificent</span></div>
+  </div>
+  <div class="transliteration">Astaghfirullah hal a'ziim</div>
+  <div class="translation">I seek forgiveness from Allah, the Magnificent.</div>
+</div>
+
+<div class="section-label">Part 2 · Sovereignty & Peace</div>
+
+<div class="verse-block">
+  <div class="repetition-tag">Read 10× (Subuh/Maghrib)</div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">وَحْدَهُ</span><span class="word-meaning">Alone</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">شَرِيكَ</span><span class="word-meaning">partner</span></div>
+    <div class="word-unit"><span class="arabic-word">لَهُ</span><span class="word-meaning">for Him</span></div>
+  </div>
+  <div class="transliteration">Laa ilaaha illallaahu Wahdahu laa syariikalah...</div>
+  <div class="translation">There is no god but Allah, alone, without partner.</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You are</span></div>
+    <div class="word-unit"><span class="arabic-word">السَّلَامُ</span><span class="word-meaning">Peace</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمِنْكَ</span><span class="word-meaning">from You is</span></div>
+    <div class="word-unit"><span class="arabic-word">السَّلَامُ</span><span class="word-meaning">Peace</span></div>
+  </div>
+  <div class="transliteration">Allahummaa Antas Salaam wa minkas Salaam</div>
+  <div class="translation">O Allah, You are Peace and from You comes Peace.</div>
+</div>
+
+<div class="section-label">Part 4 · Sayyid al-Istighfar</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You are</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You</span></div>
+  </div>
+  <div class="transliteration">Allahummaa anta Robbii Laa ilaaha illaa anta</div>
+  <div class="translation">O Allah, You are my Lord, there is no god but You.</div>
+  <div class="src-popup">
+    Known as <strong>Sayyid al-Istighfar</strong> (The Master of Seeking Forgiveness). 
+    Sahih al-Bukhari 6306.
+  </div>
+</div>
+
+<div class="section-label">Part 5 · The Shield (Abu Darda)</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">What</span></div>
+    <div class="word-unit"><span class="arabic-word">شَاءَ</span><span class="word-meaning">willed</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">كَانَ</span><span class="word-meaning">happened</span></div>
+  </div>
+  <div class="transliteration">Masyaa Allaahu kaan</div>
+  <div class="translation">Whatever Allah wills happens.</div>
+</div>
+
+<div class="verse-block">
+  <div class="repetition-tag">Read 3×</div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِسْمِ</span><span class="word-meaning">In name of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهِ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">الشَّافِي</span><span class="word-meaning">The Healer</span></div>
+  </div>
+  <div class="transliteration">Bismillahi Shafii...</div>
+  <div class="translation">In the name of Allah, the Healer, the Sufficient.</div>
+</div>
+
+<script>
+  function toggleInfo(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

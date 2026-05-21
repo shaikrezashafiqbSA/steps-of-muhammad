@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du'ā – Allāhumma Ajirnā min an-Nār</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lateef&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: #3d2a1a;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.65; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  /* ── Collapsible top/bottom info strip ── */
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+
+  .info-toggle {
+    width: 100%;
+    background: #eef5fb;
+    border: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .info-strip.auth .info-toggle {
+    background: #f0faf2;
+    color: #2a7040;
+  }
+
+  .info-toggle .arrow {
+    font-size: 0.65rem;
+    transition: transform 0.25s ease;
+    color: #888;
+  }
+  .info-toggle.open .arrow { transform: rotate(180deg); }
+
+  .info-body {
+    display: none;
+    padding: 12px 14px 14px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    background: #fff;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body {
+    color: #1a3d26;
+    border-top-color: #b6dfc4;
+  }
+  .info-body.open { display: block; }
+
+  .info-body p { margin-bottom: 8px; }
+  .info-body p:last-child { margin-bottom: 0; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih { background: #d4edda; color: #155724; }
+  .grade-hasan { background: #d1ecf1; color: #0c5460; }
+
+  .info-body a { color: #2a7040; text-decoration: underline; font-size: 0.74rem; }
+
+  .hadith-quote {
+    background: #f6faf7;
+    border-left: 2px solid #aad4b5;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.74rem;
+    line-height: 1.6;
+    color: #2c3e30;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  /* ── Verse block ── */
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  /* ── Arabic RTL flex ── */
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 10px;
+  }
+
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 42px;
+  }
+
+  .arabic-word {
+    font-family: 'Amiri', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    direction: rtl;
+    text-align: center;
+  }
+
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 72px;
+    direction: ltr;
+  }
+
+  /* ── Transliteration ── */
+  .transliteration {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #666;
+    font-style: italic;
+    margin: 8px 0 6px;
+    line-height: 1.55;
+    border-top: 1px dashed #e0d8cc;
+    padding-top: 8px;
+  }
+
+  /* ── Full translation ── */
+  .translation {
+    text-align: center;
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.55;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+  }
+
+  /* ── 🔍 inline source icon ── */
+  .src-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 1px solid #d4c9b8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7d5a;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+  .src-btn:hover, .src-btn.active { background: #3d2a1a; color: #f5e6c8; border-color: #3d2a1a; }
+
+  /* ── Inline source popup ── */
+  .src-popup {
+    display: none;
+    margin-top: 10px;
+    background: #f6faf7;
+    border: 1px solid #b6dfc4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #1a3d26;
+  }
+  .src-popup.open { display: block; }
+  .src-popup a { color: #2a7040; text-decoration: underline; }
+  .src-popup .grade-badge { font-size: 0.6rem; }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Du'ā — Allāhumma Ajirnā min an-Nār</h1>
+  <p>Supplication for Protection from the Fire</p>
+</div>
+
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This powerful and concise supplication is traditionally recited <strong>seven times</strong> after the Fajr (morning) and Maghrib (evening) prayers. The Prophet ﷺ taught that if a person recites this and then dies that same day or night, Allah will decree for them protection and safety from the Hellfire.</p>
+  </div>
+</div>
+
+<div class="section-label">Prophetic Supplication</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَجِرْنَا</span>
+      <span class="word-meaning">protect us</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنَ</span>
+      <span class="word-meaning">from</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">النَّارِ</span>
+      <span class="word-meaning">the Fire</span>
+    </div>
+  </div>
+  <div class="transliteration">Allāhumma ajirnā min an-nār</div>
+  <div class="translation">O Allah, protect us from the Fire</div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ḥasan</span>
+    Reported in Sunan Abī Dāwūd. The version for an individual is "ajirnī" (protect me), while "ajirnā" is used for a group.<br>
+    <a href="https://sunnah.com/abudawud:5079" target="_blank">Sunan Abī Dāwūd 5079 ↗</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>✅ Full Source &amp; Authenticity</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This adhkār is found in several collections of Prophetic traditions. While some scholars have discussed the chain of narrators, it is widely accepted and encouraged for daily practice due to its profound meaning and inclusion in major works like <em>Adab al-Mufrad</em> and <em>Sunan Abī Dāwūd</em>.</p>
+
+    <p>
+      <span class="grade-badge grade-hasan">Ḥasan</span>
+      Primary source: <a href="https://sunnah.com/abudawud:5079" target="_blank">Sunan Abī Dāwūd 5079 ↗</a>
+    </p>
+    <div class="hadith-quote">
+      The Prophet ﷺ said: <strong>"When you finish the sunset prayer, say: 'O Allah, protect me from the Fire' seven times. If you say that and then die that night, protection from it will be recorded for you."</strong>
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleInfo(btn) {
+    btn.classList.toggle('open');
+    const body = btn.nextElementSibling;
+    body.classList.toggle('open');
+  }
+
+  function toggleSrc(btn) {
+    btn.classList.toggle('active');
+    const popup = btn.closest('.verse-block').querySelector('.src-popup');
+    popup.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

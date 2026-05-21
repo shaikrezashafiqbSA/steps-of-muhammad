@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du'ā for One Whose Affairs Have Become Difficult</title>
+<link href="[https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;700&display=swap)" rel="stylesheet">
+<style>
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+background: #faf7f2;
+font-family: 'Georgia', serif;
+color: #2c2c2c;
+padding: 0 0 80px;
+max-width: 540px;
+margin: 0 auto;
+}
+.header {
+background: #1a3d26;
+color: #f5e6c8;
+text-align: center;
+padding: 18px 16px 14px;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+.header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+.header p  { font-size: 0.68rem; opacity: 0.85; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+.info-strip {
+margin: 14px 16px 0;
+border-radius: 10px;
+overflow: hidden;
+border: 1px solid #cde0f0;
+background: #fff;
+}
+.info-strip.auth { border-color: #b6dfc4; }
+.info-header {
+background: #eef5fb;
+padding: 8px 14px;
+font-family: 'Georgia', serif;
+font-size: 0.74rem;
+font-weight: 700;
+color: #2d6ea8;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+}
+.info-strip.auth .info-header { background: #f0faf2; color: #2a7040; }
+.info-body {
+padding: 10px 14px 12px;
+font-size: 0.77rem;
+line-height: 1.65;
+color: #1e3a52;
+border-top: 1px solid #cde0f0;
+}
+.info-strip.auth .info-body { color: #1a3d26; border-top-color: #b6dfc4; }
+.section-label {
+text-align: center;
+background: #ede8df;
+color: #7a5c3a;
+font-size: 0.68rem;
+letter-spacing: 0.13em;
+text-transform: uppercase;
+padding: 6px 12px;
+margin: 16px 16px 0;
+border-radius: 4px;
+font-weight: 700;
+}
+.verse-block {
+background: #fff;
+margin: 10px 16px 0;
+border-radius: 10px;
+padding: 16px 12px 12px;
+box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+border: 1px solid #ede8df;
+position: relative;
+}
+.arabic-line {
+direction: rtl;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: flex-end;
+gap: 0px 18px;
+margin-bottom: 14px;
+}
+.word-unit {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 3px;
+min-width: 48px;
+margin-bottom: 8px;
+}
+.arabic-word {
+font-family: 'Scheherazade New', serif;
+font-size: 1.75rem;
+line-height: 1.6;
+color: #1a1a1a;
+direction: rtl;
+}
+.word-meaning {
+font-size: 0.6rem;
+color: #7a5c3a;
+text-align: center;
+font-style: italic;
+line-height: 1.2;
+max-width: 90px;
+direction: ltr;
+}
+.word-translit {
+font-size: 0.52rem;
+color: #a08060;
+text-align: center;
+font-style: italic;
+line-height: 1.2;
+max-width: 90px;
+direction: ltr;
+letter-spacing: 0.01em;
+}
+.translation {
+font-size: 0.81rem;
+color: #3d2a1a;
+line-height: 1.7;
+margin-top: 6px;
+border-top: 1px solid #ede8df;
+padding-top: 8px;
+font-weight: 500;
+text-align: center;
+}
+.translation .chunk { display: block; }
+.grade-badge {
+display: inline-block;
+font-size: 0.62rem;
+font-weight: 700;
+padding: 2px 6px;
+border-radius: 3px;
+margin-right: 4px;
+}
+.grade-sahih { background: #d4edda; color: #155724; }
+.grade-quran { background: #dce8ff; color: #1a3a7a; }
+.src-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+background: none;
+border: 1px solid #d4c9b8;
+border-radius: 50%;
+width: 24px;
+height: 24px;
+font-size: 0.7rem;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #9a7d5a;
+}
+.src-popup {
+display: none;
+margin-top: 10px;
+background: #f6faf7;
+border: 1px solid #b6dfc4;
+border-radius: 8px;
+padding: 10px 12px;
+font-size: 0.72rem;
+line-height: 1.6;
+color: #1a3d26;
+}
+.src-popup.open { display: block; }
+.divider {
+height: 1px;
+background: linear-gradient(to right, transparent, #c9b99a, transparent);
+margin: 20px 30px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>Du'ā al-Istis'āb</h1>
+<p>For One Whose Affairs Have Become Difficult</p>
+</div>
+<div class="info-strip context">
+<div class="info-header">📖 Context of Recitation</div>
+<div class="info-body">
+<p>This supplication is recited when a person encounters hardships, complexities, or challenging situations in life. It serves as an ultimate reliance on Allah, acknowledging that ease and the resolution of hardships come solely through His divine will.</p>
+</div>
+</div>
+<div class="section-label">Part 1 · Core Supplication</div>
+<div class="verse-block">
+<button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+<div class="arabic-line">
+<div class="word-unit">
+<span class="arabic-word">اللَّهُمَّ</span>
+<span class="word-meaning">o Allah</span>
+<span class="word-translit">Allāhumma</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">لَا سَهْلَ</span>
+<span class="word-meaning">there is no ease</span>
+<span class="word-translit">lā saḥla</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">إِلَّا مَا</span>
+<span class="word-meaning">except what</span>
+<span class="word-translit">illā mā</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">جَعَلْتَهُ</span>
+<span class="word-meaning">you have made it</span>
+<span class="word-translit">jaʿaltahu</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">سَهْلًا</span>
+<span class="word-meaning">easy</span>
+<span class="word-translit">sahlan</span>
+</div>
+</div>
+<div class="arabic-line">
+<div class="word-unit">
+<span class="arabic-word">وَأَنْتَ</span>
+<span class="word-meaning">and you</span>
+<span class="word-translit">wa anta</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">تَجْعَلُ</span>
+<span class="word-meaning">make</span>
+<span class="word-translit">tajʿalu</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">الْحَزْنَ</span>
+<span class="word-meaning">the sorrow</span>
+<span class="word-translit">al-ḥazna</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">إِذَا شِئْتَ</span>
+<span class="word-meaning">if you please</span>
+<span class="word-translit">idhā shi'ta</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">سَهْلًا</span>
+<span class="word-meaning">easy</span>
+<span class="word-translit">sahlan</span>
+</div>
+</div>
+<div class="translation">
+<span class="chunk">O Allah, there is no ease other than what You make easy,</span>
+<span class="chunk">and If You please You ease sorrow.</span>
+</div>
+<div class="src-popup">
+<span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+Ibn Hibban, Sahih, Hadith 2427 (No. 2427).
+</div>
+</div>
+<div class="divider"></div>
+<div class="info-strip auth">
+<div class="info-header">✅ Source & Authenticity</div>
+<div class="info-body">
+<p>Narrated by Anas ibn Malik (RA). Recorded by Ibn Hibban in his Sahih (no. 2427) and Ibn As-Sunni (no. 351). Grade: <strong>Ṣaḥīḥ</strong> (Authentic) according to Al-Hafidh Ibn Hajar and 'Abdul-Qadir Al-Arna'ut.</p>
+</div>
+</div>
+<script>
+function toggleSrc(btn) {
+btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mawlid Collection — Selawat &amp; Nashīd</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lateef&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .header {
+    background: #3d2a1a;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.65; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  /* TOC */
+  .toc {
+    margin: 14px 16px 0;
+    background: #fff;
+    border: 1px solid #ede8df;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .toc-toggle {
+    width: 100%;
+    background: #ede8df;
+    border: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #7a5c3a;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .toc-toggle .arrow { font-size: 0.65rem; transition: transform 0.25s ease; color: #888; }
+  .toc-toggle.open .arrow { transform: rotate(180deg); }
+  .toc-body { display: none; padding: 10px 14px 12px; }
+  .toc-body.open { display: block; }
+  .toc-body a {
+    display: block;
+    padding: 5px 0;
+    font-size: 0.78rem;
+    color: #3d2a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #f0ebe2;
+  }
+  .toc-body a:last-child { border-bottom: none; }
+  .toc-body a:hover { color: #8b5e2e; }
+  .toc-body a span { opacity: 0.5; margin-right: 6px; font-size: 0.7rem; }
+
+  /* Info strips */
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+  .info-toggle {
+    width: 100%;
+    background: #eef5fb;
+    border: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .info-strip.auth .info-toggle { background: #f0faf2; color: #2a7040; }
+  .info-toggle .arrow { font-size: 0.65rem; transition: transform 0.25s ease; color: #888; }
+  .info-toggle.open .arrow { transform: rotate(180deg); }
+  .info-body {
+    display: none;
+    padding: 12px 14px 14px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    background: #fff;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body { color: #1a3d26; border-top-color: #b6dfc4; }
+  .info-body.open { display: block; }
+  .info-body p { margin-bottom: 8px; }
+  .info-body p:last-child { margin-bottom: 0; }
+  .info-body a { color: #2a7040; text-decoration: underline; font-size: 0.74rem; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih  { background: #d4edda; color: #155724; }
+  .grade-quran  { background: #e8d5f5; color: #4a1870; }
+  .grade-nashid { background: #fdebd0; color: #7d4e00; }
+  .grade-hasan  { background: #d1ecf1; color: #0c5460; }
+
+  .hadith-quote {
+    background: #f6faf7;
+    border-left: 2px solid #aad4b5;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.74rem;
+    line-height: 1.6;
+    color: #2c3e30;
+  }
+
+  /* Chapter header */
+  .chapter-header {
+    margin: 24px 16px 0;
+    padding: 12px 14px;
+    background: #3d2a1a;
+    color: #f5e6c8;
+    border-radius: 10px;
+    font-family: 'Amiri', serif;
+  }
+  .chapter-header h2 { font-size: 1.05rem; }
+  .chapter-header p { font-size: 0.65rem; opacity: 0.6; margin-top: 2px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* Section label */
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  /* Verse block */
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+  .verse-block.refrain {
+    background: #fdf6ec;
+    border-color: #d4b896;
+  }
+
+  /* Verse number */
+  .verse-num {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Arabic RTL flex — word by word */
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 6px;
+  }
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 42px;
+  }
+  .arabic-word {
+    font-family: 'Amiri', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    direction: rtl;
+    text-align: center;
+  }
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 72px;
+    direction: ltr;
+  }
+
+  /* Arabic block — full line, no breakdown */
+  .arabic-block {
+    font-family: 'Amiri', serif;
+    font-size: 1.45rem;
+    line-height: 2;
+    color: #1a1a1a;
+    direction: rtl;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* Transliteration */
+  .transliteration {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #666;
+    font-style: italic;
+    margin: 6px 0 6px;
+    line-height: 1.6;
+    border-top: 1px dashed #e0d8cc;
+    padding-top: 8px;
+  }
+
+  /* Full translation */
+  .translation {
+    text-align: center;
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.6;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+  }
+
+  /* Malay text block */
+  .malay-line {
+    direction: ltr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 6px;
+  }
+  .malay-word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 42px;
+  }
+  .malay-word {
+    font-size: 0.88rem;
+    color: #1a1a1a;
+    text-align: center;
+    font-style: normal;
+  }
+  .malay-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 72px;
+  }
+
+  /* Repeat tag */
+  .repeat-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    background: #ede8df;
+    color: #7a5c3a;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+    vertical-align: middle;
+    font-style: normal;
+  }
+
+  /* Dividers */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 20px 30px;
+  }
+  .chapter-divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #8b5e2e, transparent);
+    margin: 32px 16px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>Mawlid Collection — مَوْلِد</h1>
+  <p>Selawat, Nashīd &amp; Duʿā · Full Programme</p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <button class="toc-toggle" onclick="toggleToc(this)">
+    <span>📋 Table of Contents</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="toc-body">
+    <a href="#selawat-nabiyy"><span>01</span> Selawat Nabiyy S.A.W — 23 Verses</a>
+    <a href="#quran-interlude"><span>02</span> Qur'ānic Interlude — Sūrat al-Fatḥ &amp; al-Tawbah</a>
+    <a href="#selawat-busro"><span>03</span> Selawat Bushrā</a>
+    <a href="#selawat-adnaani"><span>04</span> Selawat Adnānī</a>
+    <a href="#selawat-mubin"><span>05</span> Selawat al-Mubīn</a>
+    <a href="#selawat-narriyah"><span>06</span> Selawat Nāriyyah</a>
+    <a href="#kisah-nabi"><span>07</span> Kisah Sang Nabi</a>
+    <a href="#mahalul-qiam"><span>08</span> Maḥallul Qiyām</a>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 01 · SELAWAT NABIYY                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="chapter-divider"></div>
+<div class="chapter-header" id="selawat-nabiyy">
+  <h2>Selawat Nabiyy S.A.W</h2>
+  <p>Blessings upon the Prophet ﷺ · 23 Verses</p>
+</div>
+
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span><span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This selawat opens with the Qur'ānic verse commanding the sending of blessings (33:56), then flows through 23 paired verses — each beginning with <em>Yā Rabbī ṣalli ʿalā Muḥammad</em> and paired with a specific supplication covering intercession, the Companions, family, mercy, forgiveness, hope, light, protection, Paradise, and a blessed end.</p>
+  </div>
+</div>
+
+<div class="section-label">Opening · Qur'ānic Command (33:56)</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">إِنَّ</span><span class="word-meaning">indeed</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهَ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمَلَائِكَتَهُ</span><span class="word-meaning">and His angels</span></div>
+    <div class="word-unit"><span class="arabic-word">يُصَلُّونَ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">النَّبِيِّ</span><span class="word-meaning">the Prophet</span></div>
+  </div>
+  <div class="transliteration">Innallāha wa malā'ikatahu yuṣallūna ʿalan Nabiyy</div>
+  <div class="arabic-line" style="margin-top:10px;">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">أَيُّهَا</span><span class="word-meaning">you who</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّذِينَ</span><span class="word-meaning">those</span></div>
+    <div class="word-unit"><span class="arabic-word">آمَنُوا</span><span class="word-meaning">believe</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلُّوا</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلِّمُوا</span><span class="word-meaning">and grant peace</span></div>
+    <div class="word-unit"><span class="arabic-word">تَسْلِيمًا</span><span class="word-meaning">a worthy greeting</span></div>
+  </div>
+  <div class="transliteration">Yā ayyuhal ladhīna āmanū ṣallū ʿalayhi wa sallimū taslīmā</div>
+  <div class="translation">Indeed, Allah and His angels send blessings upon the Prophet. O you who believe, send blessings upon him and greet him with a worthy greeting.</div>
+</div>
+
+<div class="section-label">Recurring Refrain</div>
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّد</span><span class="word-meaning">Muḥammad</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī ṣalli ʿalā Muḥammad</div>
+  <div class="translation">O my Lord, send blessings upon Muḥammad</div>
+</div>
+
+<div class="section-label">Verses 1 – 23</div>
+
+<div class="verse-block">
+  <span class="verse-num">1</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">bless</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلِّم</span><span class="word-meaning">and grant peace</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī ṣalli ʿalayhi wa sallim</div>
+  <div class="translation">O my Lord, send blessings upon him and grant him peace</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">2</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">بَلِّغْهُ</span><span class="word-meaning">grant him</span></div>
+    <div class="word-unit"><span class="arabic-word">الْوَسِيلَة</span><span class="word-meaning">the Wasīlah</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī ballighhul wasīlah</div>
+  <div class="translation">O my Lord, grant him al-Wasīlah (the highest station in Paradise)</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">3</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">خَصِّهُ</span><span class="word-meaning">distinguish him</span></div>
+    <div class="word-unit"><span class="arabic-word">بِالْفَضِيلَة</span><span class="word-meaning">with excellence</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī khaṣṣahu bil faḍīlah</div>
+  <div class="translation">O my Lord, distinguish him with the station of excellence</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">4</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">ارْضَ</span><span class="word-meaning">be pleased</span></div>
+    <div class="word-unit"><span class="arabic-word">عَنِ</span><span class="word-meaning">with</span></div>
+    <div class="word-unit"><span class="arabic-word">الصَّحَابَة</span><span class="word-meaning">the Companions</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī warḍa ʿaniṣ ṣaḥābah</div>
+  <div class="translation">O my Lord, be pleased with his Companions</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">5</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">ارْضَ</span><span class="word-meaning">be pleased</span></div>
+    <div class="word-unit"><span class="arabic-word">عَنِ</span><span class="word-meaning">with</span></div>
+    <div class="word-unit"><span class="arabic-word">السُّلَالَة</span><span class="word-meaning">his lineage</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī warḍa ʿanis sulālah</div>
+  <div class="translation">O my Lord, be pleased with his noble lineage</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">6</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">ارْضَ</span><span class="word-meaning">be pleased</span></div>
+    <div class="word-unit"><span class="arabic-word">عَنِ</span><span class="word-meaning">with</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمَشَايِخ</span><span class="word-meaning">the shuyūkh</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī warḍa ʿanil mashāyikh</div>
+  <div class="translation">O my Lord, be pleased with the scholars and shuyūkh</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">7</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">ارْحَم</span><span class="word-meaning">have mercy on</span></div>
+    <div class="word-unit"><span class="arabic-word">وَالِدِينَا</span><span class="word-meaning">our parents</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī farḥam wālidīnā</div>
+  <div class="translation">O my Lord, have mercy upon our parents</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">8</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">ارْحَمْنَا</span><span class="word-meaning">have mercy on us</span></div>
+    <div class="word-unit"><span class="arabic-word">جَمِيعًا</span><span class="word-meaning">all together</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī warḥamnā jamīʿā</div>
+  <div class="translation">O my Lord, have mercy upon all of us</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">9</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">ارْحَم</span><span class="word-meaning">have mercy on</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلَّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">مُسْلِم</span><span class="word-meaning">Muslim</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī warḥam kulla Muslim</div>
+  <div class="translation">O my Lord, have mercy upon every Muslim</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">10</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">اغْفِر</span><span class="word-meaning">forgive</span></div>
+    <div class="word-unit"><span class="arabic-word">لِكُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">مُذْنِب</span><span class="word-meaning">sinner</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī waghfirli kulli mudhnih</div>
+  <div class="translation">O my Lord, forgive every sinner</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">11</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">سَامِعَ</span><span class="word-meaning">Hearer of</span></div>
+    <div class="word-unit"><span class="arabic-word">دُعَانَا</span><span class="word-meaning">our supplication</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī yā sāmiʿa duʿānā</div>
+  <div class="translation">O my Lord, O Hearer of our supplication</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">12</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">do not</span></div>
+    <div class="word-unit"><span class="arabic-word">تَقْطَع</span><span class="word-meaning">cut off</span></div>
+    <div class="word-unit"><span class="arabic-word">رَجَانَا</span><span class="word-meaning">our hope</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī lā taqṭaʿ rajānā</div>
+  <div class="translation">O my Lord, do not cut off our hope in You</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">13</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">بَلِّغْنَا</span><span class="word-meaning">bring us to</span></div>
+    <div class="word-unit"><span class="arabic-word">نَظُورَه</span><span class="word-meaning">his blessed sight</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī ballignā naẓūrah</div>
+  <div class="translation">O my Lord, grant us the blessing of beholding him ﷺ</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">14</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">تَغْشَانَا</span><span class="word-meaning">envelop us</span></div>
+    <div class="word-unit"><span class="arabic-word">بِنُورِه</span><span class="word-meaning">with his light</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī taghshānā binūrih</div>
+  <div class="translation">O my Lord, envelop us in his light</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">15</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">احْفَظْنَا</span><span class="word-meaning">preserve us</span></div>
+    <div class="word-unit"><span class="arabic-word">وَأَمَانَك</span><span class="word-meaning">in Your protection</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī ḥifẓānā wa amānak</div>
+  <div class="translation">O my Lord, preserve us and keep us in Your protection</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">16</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">أَسْكِنَّا</span><span class="word-meaning">settle us in</span></div>
+    <div class="word-unit"><span class="arabic-word">جِنَانَك</span><span class="word-meaning">Your gardens</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī waskinā jinānakh</div>
+  <div class="translation">O my Lord, settle us in Your gardens of Paradise</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">17</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">أَجِرْنَا</span><span class="word-meaning">protect us</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">عَذَابِك</span><span class="word-meaning">Your punishment</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī ajirnā min ʿadhābik</div>
+  <div class="translation">O my Lord, protect us from Your punishment</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">18</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">ارْزُقْنَا</span><span class="word-meaning">grant us</span></div>
+    <div class="word-unit"><span class="arabic-word">شَهَادَة</span><span class="word-meaning">martyrdom</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī warzuqnā shahādah</div>
+  <div class="translation">O my Lord, grant us the gift of martyrdom</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">19</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">احْطُنَا</span><span class="word-meaning">surround us</span></div>
+    <div class="word-unit"><span class="arabic-word">بِالسَّعَادَة</span><span class="word-meaning">with happiness</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī ḥiṭnā bis saʿādah</div>
+  <div class="translation">O my Lord, surround us with happiness and felicity</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">20</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">أَصْلِح</span><span class="word-meaning">grant success to</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلَّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">مُصْلِح</span><span class="word-meaning">reformer</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī aṣliḥ kulla muṣliḥ</div>
+  <div class="translation">O my Lord, grant success to every reformer</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">21</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">اخْفِ</span><span class="word-meaning">suppress</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلَّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">مُغْضِي</span><span class="word-meaning">oppressor</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī wakhfi kulla mughḍī</div>
+  <div class="translation">O my Lord, suppress every oppressor and envier</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">22</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">بِالْمُصْطَفَاك</span><span class="word-meaning">by Your Chosen One</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī bil muṣṭafāk</div>
+  <div class="translation">O my Lord, by the honour of Your Chosen One ﷺ</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">23</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">bless</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلِّم</span><span class="word-meaning">and grant peace</span></div>
+  </div>
+  <div class="transliteration">Yā Rabbī ṣalli ʿalayhi wa sallim</div>
+  <div class="translation">O my Lord, send blessings upon him and grant him peace</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 02 · QUR'ĀNIC INTERLUDE                     -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="chapter-divider"></div>
+<div class="chapter-header" id="quran-interlude">
+  <h2>Qur'ānic Interlude</h2>
+  <p>Sūrat al-Fatḥ (48:1–3) · Sūrat al-Tawbah (9:128–129)</p>
+</div>
+
+<div class="section-label">Taʿawwudh</div>
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَعُوذُ</span><span class="word-meaning">I seek refuge</span></div>
+    <div class="word-unit"><span class="arabic-word">بِاللهِ</span><span class="word-meaning">in Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">الشَّيْطَانِ</span><span class="word-meaning">Shayṭān</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّجِيم</span><span class="word-meaning">the accursed</span></div>
+  </div>
+  <div class="transliteration">Aʿūdhu billāhi minash shayṭānir rajīm</div>
+  <div class="translation">I seek refuge in Allah from the accursed Shayṭān</div>
+</div>
+
+<div class="section-label">Basmala</div>
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِسْمِ</span><span class="word-meaning">in the name of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهِ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّحْمَنِ</span><span class="word-meaning">the Most Gracious</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّحِيم</span><span class="word-meaning">the Most Merciful</span></div>
+  </div>
+  <div class="transliteration">Bismillāhir Raḥmānir Raḥīm</div>
+  <div class="translation">In the name of Allah, the Most Gracious, the Most Merciful</div>
+</div>
+
+<div class="section-label">Sūrat al-Fatḥ · 48:1</div>
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">إِنَّا</span><span class="word-meaning">verily We</span></div>
+    <div class="word-unit"><span class="arabic-word">فَتَحْنَا</span><span class="word-meaning">have granted</span></div>
+    <div class="word-unit"><span class="arabic-word">لَكَ</span><span class="word-meaning">you</span></div>
+    <div class="word-unit"><span class="arabic-word">فَتْحًا</span><span class="word-meaning">a victory</span></div>
+    <div class="word-unit"><span class="arabic-word">مُبِينًا</span><span class="word-meaning">clear &amp; manifest</span></div>
+  </div>
+  <div class="transliteration">Innā fataḥnā laka fatḥam mubīnā</div>
+  <div class="translation">Verily, We have granted you a clear victory</div>
+</div>
+
+<div class="section-label">Sūrat al-Fatḥ · 48:2</div>
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لِيَغْفِرَ</span><span class="word-meaning">that He may forgive</span></div>
+    <div class="word-unit"><span class="arabic-word">لَكَ</span><span class="word-meaning">you</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">what</span></div>
+    <div class="word-unit"><span class="arabic-word">تَقَدَّمَ</span><span class="word-meaning">preceded</span></div>
+    <div class="word-unit"><span class="arabic-word">مِن</span><span class="word-meaning">of</span></div>
+    <div class="word-unit"><span class="arabic-word">ذَنبِكَ</span><span class="word-meaning">your sin</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمَا</span><span class="word-meaning">and what</span></div>
+    <div class="word-unit"><span class="arabic-word">تَأَخَّر</span><span class="word-meaning">will follow</span></div>
+  </div>
+  <div class="transliteration">Liyaghfira lakalllāhu mā taqaddama min dhambika wa mā ta'akhkhar</div>
+  <div class="translation">That Allah may forgive for you what preceded of your sin and what will follow</div>
+</div>
+
+<div class="section-label">Sūrat al-Fatḥ · 48:3</div>
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيُتِمَّ</span><span class="word-meaning">and complete</span></div>
+    <div class="word-unit"><span class="arabic-word">نِعْمَتَهُ</span><span class="word-meaning">His favour</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْكَ</span><span class="word-meaning">upon you</span></div>
+    <div class="word-unit"><span class="arabic-word">وَيَهْدِيَكَ</span><span class="word-meaning">and guide you</span></div>
+    <div class="word-unit"><span class="arabic-word">صِرَاطًا</span><span class="word-meaning">a path</span></div>
+    <div class="word-unit"><span class="arabic-word">مُسْتَقِيمًا</span><span class="word-meaning">straight</span></div>
+  </div>
+  <div class="transliteration">Wa yutimma niʿmatahu ʿalayka wa yahdiyaka ṣirāṭam mustaqīmā</div>
+  <div class="translation">And that Allah may complete His favour upon you and guide you to a straight path</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيَنصُرَكَ</span><span class="word-meaning">and aid you</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">نَصْرًا</span><span class="word-meaning">a victory</span></div>
+    <div class="word-unit"><span class="arabic-word">عَزِيزًا</span><span class="word-meaning">mighty</span></div>
+  </div>
+  <div class="transliteration">Wa yanṣurakallāhu naṣran ʿazīzā</div>
+  <div class="translation">And that Allah may aid you with a mighty victory</div>
+</div>
+
+<div class="section-label">Sūrat al-Tawbah · 9:128</div>
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَقَدْ</span><span class="word-meaning">certainly</span></div>
+    <div class="word-unit"><span class="arabic-word">جَاءَكُمْ</span><span class="word-meaning">has come to you</span></div>
+    <div class="word-unit"><span class="arabic-word">رَسُولٌ</span><span class="word-meaning">a Messenger</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنفُسِكُمْ</span><span class="word-meaning">among yourselves</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">عَزِيزٌ</span><span class="word-meaning">grievous</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">to him</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">what</span></div>
+    <div class="word-unit"><span class="arabic-word">عَنِتُّمْ</span><span class="word-meaning">you suffer</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">حَرِيصٌ</span><span class="word-meaning">deeply concerned</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْكُم</span><span class="word-meaning">for you</span></div>
+    <div class="word-unit"><span class="arabic-word">بِالْمُؤْمِنِينَ</span><span class="word-meaning">to the believers</span></div>
+    <div class="word-unit"><span class="arabic-word">رَءُوفٌ</span><span class="word-meaning">kind</span></div>
+    <div class="word-unit"><span class="arabic-word">رَحِيم</span><span class="word-meaning">merciful</span></div>
+  </div>
+  <div class="transliteration">Laqad jā'akum rasūlum min anfusikum ʿazīzun ʿalayhi mā ʿanittum · ḥarīṣun ʿalaykum bil mu'minīna ra'ūfur raḥīm</div>
+  <div class="translation">There has certainly come to you a Messenger from among yourselves — grievous to him is your suffering, deeply concerned for you; to the believers he is kind and merciful</div>
+</div>
+
+<div class="section-label">Sūrat al-Tawbah · 9:129</div>
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَإِن</span><span class="word-meaning">but if</span></div>
+    <div class="word-unit"><span class="arabic-word">تَوَلَّوْا</span><span class="word-meaning">they turn away</span></div>
+    <div class="word-unit"><span class="arabic-word">فَقُل</span><span class="word-meaning">then say</span></div>
+    <div class="word-unit"><span class="arabic-word">حَسْبِيَ</span><span class="word-meaning">sufficient for me</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">is Allah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">هُوَ</span><span class="word-meaning">He</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">in Him</span></div>
+    <div class="word-unit"><span class="arabic-word">تَوَكَّلْتُ</span><span class="word-meaning">I put my trust</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَهُوَ</span><span class="word-meaning">and He is</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبُّ</span><span class="word-meaning">the Lord of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَرْشِ</span><span class="word-meaning">the Throne</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَظِيم</span><span class="word-meaning">the Mighty</span></div>
+  </div>
+  <div class="transliteration">Fa in tawallaw faqul ḥasbiyallāhu lā ilāha illā huwa ʿalayhi tawakkaltu · wa huwa rabbul ʿarshil ʿaẓīm</div>
+  <div class="translation">But if they turn away, say: "Sufficient for me is Allah; there is no god but He. In Him I put my trust, and He is the Lord of the Mighty Throne."</div>
+</div>
+
+<div class="section-label">Closing · Ṣalawāt Command (33:56)</div>
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">إِنَّ</span><span class="word-meaning">indeed</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهَ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمَلَائِكَتَهُ</span><span class="word-meaning">and His angels</span></div>
+    <div class="word-unit"><span class="arabic-word">يُصَلُّونَ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">النَّبِيِّ</span><span class="word-meaning">the Prophet</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">أَيُّهَا</span><span class="word-meaning">you who</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّذِينَ</span><span class="word-meaning">those</span></div>
+    <div class="word-unit"><span class="arabic-word">آمَنُوا</span><span class="word-meaning">believe</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلُّوا</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلِّمُوا</span><span class="word-meaning">and grant peace</span></div>
+    <div class="word-unit"><span class="arabic-word">تَسْلِيمًا</span><span class="word-meaning">a worthy greeting</span></div>
+  </div>
+  <div class="transliteration">Innallāha wa malā'ikatahu yuṣallūna ʿalan Nabiyy · Yā ayyuhal ladhīna āmanū ṣallū ʿalayhi wa sallimū taslīmā</div>
+  <div class="translation">Indeed, Allah and His angels send blessings upon the Prophet. O you who believe, send blessings upon him and greet him with a worthy greeting.</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 03 · SELAWAT BUSHRĀ                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="chapter-divider"></div>
+<div class="chapter-header" id="selawat-busro">
+  <h2>Selawat Bushrā</h2>
+  <p>The Glad-Tidings Blessing · صَلَاة الْبُشْرَى</p>
+</div>
+
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span><span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>The Selawat Bushrā asks Allah to send complete blessings upon Sayyidinā Muḥammad "the owner of glad tidings" — a blessing that envelops not only the reciter, but their family, children, teachers, students, and the entire community, from this day until the Day of Resurrection.</p>
+  </div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلِّمْ</span><span class="word-meaning">and peace</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muḥammad</span></div>
+    <div class="word-unit"><span class="arabic-word">صَاحِبِ</span><span class="word-meaning">bearer of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْبُشْرَى</span><span class="word-meaning">glad tidings</span></div>
+  </div>
+  <div class="transliteration">Allāhumma ṣalli wa sallim ʿalā Sayyidinā Muḥammadin ṣāḥibil bushrā</div>
+  <div class="translation">O Allah, send blessings and peace upon our master Muḥammad, the bearer of glad tidings</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَلَاةً</span><span class="word-meaning">a blessing</span></div>
+    <div class="word-unit"><span class="arabic-word">تُبَشِّرُنَا</span><span class="word-meaning">that gives us glad tidings</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">through it</span></div>
+  </div>
+  <div class="transliteration">Ṣalātan tubash shirunā bihā</div>
+  <div class="translation">A blessing through which You give us glad tidings</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَهْلَنَا</span><span class="word-meaning">and our families</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَوْلَادَنَا</span><span class="word-meaning">and our children</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَجَمِيعَ</span><span class="word-meaning">and all of</span></div>
+    <div class="word-unit"><span class="arabic-word">مَشَايِخِنَا</span><span class="word-meaning">our teachers</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَمُعَلِّمِينَا</span><span class="word-meaning">and our instructors</span></div>
+    <div class="word-unit"><span class="arabic-word">وَطَلَبَتَنَا</span><span class="word-meaning">and our male students</span></div>
+    <div class="word-unit"><span class="arabic-word">وَطَالِبَاتِنَا</span><span class="word-meaning">and our female students</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">يَوْمِنَا</span><span class="word-meaning">our day</span></div>
+    <div class="word-unit"><span class="arabic-word">هَذَا</span><span class="word-meaning">this</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَى</span><span class="word-meaning">until</span></div>
+    <div class="word-unit"><span class="arabic-word">يَوْمِ</span><span class="word-meaning">the Day of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْآخِرَة</span><span class="word-meaning">the Hereafter</span></div>
+  </div>
+  <div class="transliteration">Wa ahlanā · wa awladanā · wa jamīʿa mashāyikhinā · wa muʿallimīna wa ṭalabatanā wa ṭālibatinā · min yawminā hādhā ilā yawmil ākhirah</div>
+  <div class="translation">And our families · and our children · and all our teachers and shuyūkh · and our instructors and male and female students · from this day of ours until the Day of the Hereafter</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 04 · SELAWAT ADNĀNĪ                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="chapter-divider"></div>
+<div class="chapter-header" id="selawat-adnaani">
+  <h2>Selawat Adnānī</h2>
+  <p>Blessing upon the Adnānī Messenger · صَلَاة الْعَدْنَانِي</p>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">may bless</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْكَ</span><span class="word-meaning">upon you</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">عَدْنَانِي</span><span class="word-meaning">descendant of Adnān</span></div>
+  </div>
+  <div class="transliteration">Ṣallā ʿalaikalllāhu yā ʿAdnānī</div>
+  <div class="translation">May Allah send blessings upon you, O descendant of Adnān</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">مُصْطَفَى</span><span class="word-meaning">Chosen One</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">صَافِي</span><span class="word-meaning">pure one</span></div>
+    <div class="word-unit"><span class="arabic-word">وَتَاجَ</span><span class="word-meaning">and crown of</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّحْمَانِ</span><span class="word-meaning">the Most Merciful</span></div>
+  </div>
+  <div class="transliteration">Yā Muṣṭafā yā ṣāfī wa tājir Raḥmānī</div>
+  <div class="translation">O Chosen One, O pure one, O crown of the Most Merciful</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اَلْحَمْدُ</span><span class="word-meaning">all praise</span></div>
+    <div class="word-unit"><span class="arabic-word">لِلَّهِ</span><span class="word-meaning">to Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّذِي</span><span class="word-meaning">who</span></div>
+    <div class="word-unit"><span class="arabic-word">أَعْطَانِي</span><span class="word-meaning">has given me</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">هَذَا</span><span class="word-meaning">this</span></div>
+    <div class="word-unit"><span class="arabic-word">الْهَنَاءَ</span><span class="word-meaning">joy &amp; bliss</span></div>
+    <div class="word-unit"><span class="arabic-word">الطَّيِّبَ</span><span class="word-meaning">pleasant</span></div>
+    <div class="word-unit"><span class="arabic-word">الْأَرْدَانِ</span><span class="word-meaning">delightful</span></div>
+  </div>
+  <div class="transliteration">Alḥamdulillāhi lladhī aʿṭānī · hādhal hanā'aṭ ṭayyibal ardānī</div>
+  <div class="translation">All praise to Allah who has given me · this pleasant and delightful joy</div>
+  <div style="text-align:center;margin-top:4px;"><span class="repeat-tag">×2</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 05 · SELAWAT AL-MUBĪN                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="chapter-divider"></div>
+<div class="chapter-header" id="selawat-mubin">
+  <h2>Selawat al-Mubīn</h2>
+  <p>Blessing upon the Manifest Light · صَلَاة الْمُبِين</p>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">may bless</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبُّنَا</span><span class="word-meaning">our Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">النُّورِ</span><span class="word-meaning">the Light</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُبِين</span><span class="word-meaning">the Manifest</span></div>
+  </div>
+  <div class="transliteration">Ṣallallāhu Rabbunā ʿalan Nūril Mubīn</div>
+  <div class="translation">May Allah our Lord send blessings upon the Manifest Light</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَحْمَدَ</span><span class="word-meaning">Aḥmad</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُصْطَفَى</span><span class="word-meaning">the Chosen One</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">سَيِّدِ</span><span class="word-meaning">master of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُرْسَلِين</span><span class="word-meaning">all the Messengers</span></div>
+  </div>
+  <div class="transliteration">Aḥmadal Muṣṭafā · Sayyidil Mursalīn</div>
+  <div class="translation">Aḥmad the Chosen One · Master of all the Messengers</div>
+  <div style="text-align:center;margin-top:4px;"><span class="repeat-tag">×11</span></div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 06 · SELAWAT NĀRIYYAH                       -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="chapter-divider"></div>
+<div class="chapter-header" id="selawat-narriyah">
+  <h2>Selawat Nāriyyah</h2>
+  <p>The Complete Blessing · صَلَاة النَّارِيَّة</p>
+</div>
+
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span><span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>The Selawat Nāriyyah (also known as Ṣalawāt al-Tāziyya) is one of the most widely recited ṣalawāt in the world, beloved across North Africa, West Africa, and Southeast Asia. The name "nāriyyah" (fiery) refers to the belief that it burns away worries and opens closed doors. It is commonly recited 41 or 313 times for relief from hardship. The text lists specific benefits: untying knots of difficulty, relief from distress, fulfilment of needs, attainment of desires, a good ending, and rain through the Prophet's blessed face ﷺ.</p>
+    <div class="hadith-quote">The Prophet ﷺ said: <strong>"Whoever sends one blessing upon me, Allah will send ten blessings upon him."</strong> — Ṣaḥīḥ Muslim 408</div>
+  </div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلَاةً</span><span class="word-meaning">a blessing</span></div>
+    <div class="word-unit"><span class="arabic-word">كَامِلَةً</span><span class="word-meaning">complete</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلِّمْ</span><span class="word-meaning">and grant peace</span></div>
+    <div class="word-unit"><span class="arabic-word">سَلَامًا</span><span class="word-meaning">a greeting</span></div>
+    <div class="word-unit"><span class="arabic-word">تَامًّا</span><span class="word-meaning">perfect</span></div>
+  </div>
+  <div class="transliteration">Allāhumma ṣalli ṣalātan kāmilatan wa sallim salāman tāmmān</div>
+  <div class="translation">O Allah, send a complete blessing and a perfect greeting of peace</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muḥammad</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّذِي</span><span class="word-meaning">the one through whom</span></div>
+  </div>
+  <div class="transliteration">ʿalā Sayyidinā Muḥammadinin lladhī</div>
+  <div class="translation">Upon our master Muḥammad, the one through whom</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">تَنْحَلُّ</span><span class="word-meaning">are untied</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">through him</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعُقَد</span><span class="word-meaning">knots of difficulty</span></div>
+  </div>
+  <div class="transliteration">Tanḥallu bihil ʿuqad</div>
+  <div class="translation">Knots of difficulty are untied</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَتَنْفَرِجُ</span><span class="word-meaning">and are relieved</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">through him</span></div>
+    <div class="word-unit"><span class="arabic-word">الْكُرَب</span><span class="word-meaning">distresses</span></div>
+  </div>
+  <div class="transliteration">Wa tanfariju bihil kurab</div>
+  <div class="translation">And distresses are relieved</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَتُقْضَى</span><span class="word-meaning">and are fulfilled</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">through him</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحَوَائِج</span><span class="word-meaning">needs</span></div>
+  </div>
+  <div class="transliteration">Wa tuqḍā bihil ḥawā'ij</div>
+  <div class="translation">And needs are fulfilled</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَتُنَالُ</span><span class="word-meaning">and are attained</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">through him</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّغَائِب</span><span class="word-meaning">desires</span></div>
+  </div>
+  <div class="transliteration">Wa tunālu bihir raghā'ib</div>
+  <div class="translation">And desires are attained</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَحُسْنُ</span><span class="word-meaning">and a good</span></div>
+    <div class="word-unit"><span class="arabic-word">الْخَوَاتِم</span><span class="word-meaning">ending is granted</span></div>
+  </div>
+  <div class="transliteration">Wa ḥusnul khawātim</div>
+  <div class="translation">And a good ending is granted</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيُسْتَسْقَى</span><span class="word-meaning">and rain is sought</span></div>
+    <div class="word-unit"><span class="arabic-word">الْغَمَامُ</span><span class="word-meaning">the clouds</span></div>
+    <div class="word-unit"><span class="arabic-word">بِوَجْهِهِ</span><span class="word-meaning">through his face</span></div>
+    <div class="word-unit"><span class="arabic-word">الْكَرِيم</span><span class="word-meaning">the noble</span></div>
+  </div>
+  <div class="transliteration">Wa yustasqal ghamāmu biwajhihil karīm</div>
+  <div class="translation">And rain is sought through his noble face</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَعَلَى</span><span class="word-meaning">and upon</span></div>
+    <div class="word-unit"><span class="arabic-word">آلِهِ</span><span class="word-meaning">his family</span></div>
+    <div class="word-unit"><span class="arabic-word">وَصَحْبِهِ</span><span class="word-meaning">and his Companions</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">لَمْحَةٍ</span><span class="word-meaning">glance of an eye</span></div>
+    <div class="word-unit"><span class="arabic-word">وَنَفَسٍ</span><span class="word-meaning">and breath</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِعَدَدِ</span><span class="word-meaning">to the number of</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">مَعْلُومٍ</span><span class="word-meaning">thing known</span></div>
+    <div class="word-unit"><span class="arabic-word">لَك</span><span class="word-meaning">to You</span></div>
+  </div>
+  <div class="transliteration">Wa ʿalā ālihi wa ṣaḥbihi · fī kulli lamḥatin wa nafasin · bi ʿadadī kulli maʿlūmil lak</div>
+  <div class="translation">And upon his family and his Companions · in every glance and every breath · to the number of all that is known to You</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 07 · KISAH SANG NABI                        -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="chapter-divider"></div>
+<div class="chapter-header" id="kisah-nabi">
+  <h2>Kisah Sang Nabi</h2>
+  <p>The Story of the Prophet ﷺ · Nashīd &amp; Arabic Chorus</p>
+</div>
+
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span><span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This nashīd alternates between an Arabic chorus celebrating the Prophet's radiance and Malay verses narrating key events of his blessed life — from his noble lineage and early losses, through his youth and marriage to Khadījah, to his receiving prophethood at 40. A beloved pedagogical nashīd in Southeast Asian mawlid programmes.</p>
+  </div>
+</div>
+
+<div class="section-label">Arabic Chorus · Recurring</div>
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">رَاحَتِ</span><span class="word-meaning">have set off</span></div>
+    <div class="word-unit"><span class="arabic-word">الْأَطْيَارُ</span><span class="word-meaning">the birds</span></div>
+    <div class="word-unit"><span class="arabic-word">تَشْدُو</span><span class="word-meaning">singing joyfully</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">on</span></div>
+    <div class="word-unit"><span class="arabic-word">لَيَالِي</span><span class="word-meaning">the nights of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمَوْلِد</span><span class="word-meaning">the Mawlid</span></div>
+  </div>
+  <div class="transliteration">Rāḥatil aṭyāru tashdū · fī layālil Mawlidī</div>
+  <div class="translation">The birds have set off, singing joyfully · on the nights of the Mawlid</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَبَرِيقُ</span><span class="word-meaning">and the flash of</span></div>
+    <div class="word-unit"><span class="arabic-word">النُّورِ</span><span class="word-meaning">light</span></div>
+    <div class="word-unit"><span class="arabic-word">يَبْدُو</span><span class="word-meaning">appears</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">مَعَانِي</span><span class="word-meaning">the meanings of</span></div>
+    <div class="word-unit"><span class="arabic-word">أَحْمَد</span><span class="word-meaning">Aḥmad ﷺ</span></div>
+  </div>
+  <div class="transliteration">Wa barīqun nūri yabdū · min maʿānī Aḥmadī</div>
+  <div class="translation">And the flash of light appears · from the meanings of Aḥmad ﷺ</div>
+</div>
+
+<!-- Verse 1 Malay -->
+<div class="section-label">Verse 1 · Noble Family</div>
+<div class="verse-block">
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Abdullah</span><span class="malay-meaning">Abdullah</span></div>
+    <div class="malay-word-unit"><span class="malay-word">nama</span><span class="malay-meaning">name</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Ayahnya</span><span class="malay-meaning">his father</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Aminah</span><span class="malay-meaning">Aminah</span></div>
+    <div class="malay-word-unit"><span class="malay-word">ibundanya</span><span class="malay-meaning">his mother</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Abdul</span><span class="malay-meaning">Abdul</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Muṭṭalib</span><span class="malay-meaning">Muṭṭalib</span></div>
+    <div class="malay-word-unit"><span class="malay-word">kakeknya</span><span class="malay-meaning">his grandfather</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Abu</span><span class="malay-meaning">Abu</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Ṭālib</span><span class="malay-meaning">Ṭālib</span></div>
+    <div class="malay-word-unit"><span class="malay-word">pamannya</span><span class="malay-meaning">his uncle</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Khadijah</span><span class="malay-meaning">Khadījah</span></div>
+    <div class="malay-word-unit"><span class="malay-word">isteri</span><span class="malay-meaning">wife</span></div>
+    <div class="malay-word-unit"><span class="malay-word">setia</span><span class="malay-meaning">faithful</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Fāṭimah</span><span class="malay-meaning">Fāṭimah</span></div>
+    <div class="malay-word-unit"><span class="malay-word">puteri</span><span class="malay-meaning">daughter</span></div>
+    <div class="malay-word-unit"><span class="malay-word">tercinta</span><span class="malay-meaning">beloved</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Semuanya</span><span class="malay-meaning">all of them</span></div>
+    <div class="malay-word-unit"><span class="malay-word">bernasab</span><span class="malay-meaning">of lineage</span></div>
+    <div class="malay-word-unit"><span class="malay-word">mulia</span><span class="malay-meaning">noble</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Dari</span><span class="malay-meaning">from</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Quraish</span><span class="malay-meaning">Quraysh</span></div>
+    <div class="malay-word-unit"><span class="malay-word">ternama</span><span class="malay-meaning">renowned</span></div>
+  </div>
+  <div class="translation">Abdullah was his father's name · Aminah his mother · Abdul Muṭṭalib his grandfather · Abū Ṭālib his uncle · Khadījah his faithful wife · Fāṭimah his beloved daughter · All of noble lineage · From the renowned Quraysh</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Inilah</span><span class="malay-meaning">this is</span></div>
+    <div class="malay-word-unit"><span class="malay-word">kisah</span><span class="malay-meaning">the story of</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Sang</span><span class="malay-meaning">the</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Rasul</span><span class="malay-meaning">Messenger</span></div>
+    <div class="malay-word-unit"><span class="malay-word">yang</span><span class="malay-meaning">that is</span></div>
+    <div class="malay-word-unit"><span class="malay-word">penuh</span><span class="malay-meaning">full of</span></div>
+    <div class="malay-word-unit"><span class="malay-word">suka</span><span class="malay-meaning">joy</span></div>
+    <div class="malay-word-unit"><span class="malay-word">duka</span><span class="malay-meaning">and sorrow</span></div>
+  </div>
+  <div class="translation">This is the story of the Messenger, full of joy and sorrow</div>
+</div>
+
+<!-- Verse 2 Malay -->
+<div class="section-label">Verse 2 · Early Life &amp; Loss</div>
+<div class="verse-block">
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Dua</span><span class="malay-meaning">two</span></div>
+    <div class="malay-word-unit"><span class="malay-word">bulan</span><span class="malay-meaning">months</span></div>
+    <div class="malay-word-unit"><span class="malay-word">dikandungan</span><span class="malay-meaning">in the womb</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Wafat</span><span class="malay-meaning">passed away</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Ayahandanya</span><span class="malay-meaning">his father</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Tahun</span><span class="malay-meaning">Year of</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Gajah</span><span class="malay-meaning">the Elephant</span></div>
+    <div class="malay-word-unit"><span class="malay-word">dilahirkan</span><span class="malay-meaning">was born</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Yatim</span><span class="malay-meaning">orphan</span></div>
+    <div class="malay-word-unit"><span class="malay-word">dengan</span><span class="malay-meaning">under</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Kakeknya</span><span class="malay-meaning">his grandfather</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Sesuai</span><span class="malay-meaning">following</span></div>
+    <div class="malay-word-unit"><span class="malay-word">adat</span><span class="malay-meaning">the custom</span></div>
+    <div class="malay-word-unit"><span class="malay-word">disusui</span><span class="malay-meaning">was nursed by</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Ḥalīmah</span><span class="malay-meaning">Ḥalīmah</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Enam</span><span class="malay-meaning">six</span></div>
+    <div class="malay-word-unit"><span class="malay-word">tahun</span><span class="malay-meaning">years</span></div>
+    <div class="malay-word-unit"><span class="malay-word">usianya</span><span class="malay-meaning">his age</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Wafat</span><span class="malay-meaning">passed away</span></div>
+    <div class="malay-word-unit"><span class="malay-word">ibu</span><span class="malay-meaning">his mother</span></div>
+    <div class="malay-word-unit"><span class="malay-word">tercinta</span><span class="malay-meaning">beloved</span></div>
+  </div>
+  <div class="translation">Two months in the womb, his father passed away · Born in the Year of the Elephant · An orphan under his grandfather's care · Following custom, nursed by Ḥalīmah · At the age of six, his beloved mother passed away</div>
+</div>
+
+<!-- Verse 3 Malay -->
+<div class="section-label">Verse 3 · Youth &amp; Marriage</div>
+<div class="verse-block">
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Delapan</span><span class="malay-meaning">eight</span></div>
+    <div class="malay-word-unit"><span class="malay-word">tahun</span><span class="malay-meaning">years</span></div>
+    <div class="malay-word-unit"><span class="malay-word">usia</span><span class="malay-meaning">of age</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Kakeknya</span><span class="malay-meaning">his grandfather</span></div>
+    <div class="malay-word-unit"><span class="malay-word">meninggalkannya</span><span class="malay-meaning">left him</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Abū</span><span class="malay-meaning">Abū</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Ṭālib</span><span class="malay-meaning">Ṭālib</span></div>
+    <div class="malay-word-unit"><span class="malay-word">pun</span><span class="malay-meaning">then</span></div>
+    <div class="malay-word-unit"><span class="malay-word">menjaga</span><span class="malay-meaning">took care</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Paman</span><span class="malay-meaning">uncle</span></div>
+    <div class="malay-word-unit"><span class="malay-word">paling</span><span class="malay-meaning">most</span></div>
+    <div class="malay-word-unit"><span class="malay-word">membela</span><span class="malay-meaning">devoted</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Saat</span><span class="malay-meaning">as a</span></div>
+    <div class="malay-word-unit"><span class="malay-word">kecil</span><span class="malay-meaning">child</span></div>
+    <div class="malay-word-unit"><span class="malay-word">menggembala</span><span class="malay-meaning">tended sheep</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Dagang</span><span class="malay-meaning">traded</span></div>
+    <div class="malay-word-unit"><span class="malay-word">saat</span><span class="malay-meaning">when</span></div>
+    <div class="malay-word-unit"><span class="malay-word">remaja</span><span class="malay-meaning">young man</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Umur</span><span class="malay-meaning">age</span></div>
+    <div class="malay-word-unit"><span class="malay-word">dua</span><span class="malay-meaning">twenty</span></div>
+    <div class="malay-word-unit"><span class="malay-word">puluh</span><span class="malay-meaning">-</span></div>
+    <div class="malay-word-unit"><span class="malay-word">lima</span><span class="malay-meaning">five</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Memperisteri</span><span class="malay-meaning">married</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Khadijah</span><span class="malay-meaning">Khadījah</span></div>
+  </div>
+  <div class="translation">At eight years old, his grandfather departed · Abū Ṭālib then cared for him, the most devoted uncle · As a child he tended sheep, as a young man he traded · At twenty-five he married Khadījah</div>
+</div>
+
+<!-- Verse 4 Malay -->
+<div class="section-label">Verse 4 · Prophethood</div>
+<div class="verse-block">
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Di</span><span class="malay-meaning">at</span></div>
+    <div class="malay-word-unit"><span class="malay-word">umur</span><span class="malay-meaning">age</span></div>
+    <div class="malay-word-unit"><span class="malay-word">ketiga</span><span class="malay-meaning">thirty</span></div>
+    <div class="malay-word-unit"><span class="malay-word">puluh</span><span class="malay-meaning">-</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Mempersatukan</span><span class="malay-meaning">united</span></div>
+    <div class="malay-word-unit"><span class="malay-word">bangsa</span><span class="malay-meaning">the people</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Saat</span><span class="malay-meaning">when</span></div>
+    <div class="malay-word-unit"><span class="malay-word">meletakkan</span><span class="malay-meaning">placing</span></div>
+    <div class="malay-word-unit"><span class="malay-word">batu</span><span class="malay-meaning">the stone</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Ḥajar</span><span class="malay-meaning">Ḥajar</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Aswad</span><span class="malay-meaning">Aswad</span></div>
+    <div class="malay-word-unit"><span class="malay-word">mulia</span><span class="malay-meaning">the noble</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Genap</span><span class="malay-meaning">at the full</span></div>
+    <div class="malay-word-unit"><span class="malay-word">empat</span><span class="malay-meaning">forty</span></div>
+    <div class="malay-word-unit"><span class="malay-word">puluh</span><span class="malay-meaning">-</span></div>
+    <div class="malay-word-unit"><span class="malay-word">tahun</span><span class="malay-meaning">years</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Mendapatkan</span><span class="malay-meaning">received</span></div>
+    <div class="malay-word-unit"><span class="malay-word">risālah</span><span class="malay-meaning">the message</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Ia</span><span class="malay-meaning">he</span></div>
+    <div class="malay-word-unit"><span class="malay-word">pun</span><span class="malay-meaning">then</span></div>
+    <div class="malay-word-unit"><span class="malay-word">menjadi</span><span class="malay-meaning">became</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Rasūl</span><span class="malay-meaning">a Messenger</span></div>
+  </div>
+  <div class="malay-line">
+    <div class="malay-word-unit"><span class="malay-word">Akhir</span><span class="malay-meaning">last of</span></div>
+    <div class="malay-word-unit"><span class="malay-word">para</span><span class="malay-meaning">the</span></div>
+    <div class="malay-word-unit"><span class="malay-word">Anbiyā'</span><span class="malay-meaning">Prophets</span></div>
+  </div>
+  <div class="translation">At age thirty, he united the people in placing the noble Black Stone · At the full age of forty he received the prophetic message · And became the Messenger of Allah, the last of all the Prophets</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 08 · MAḤALLUL QIYĀM                         -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="chapter-divider"></div>
+<div class="chapter-header" id="mahalul-qiam">
+  <h2>Maḥallul Qiyām — مَحَلُّ الْقِيَام</h2>
+  <p>Standing Salutation upon the Prophet ﷺ</p>
+</div>
+
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span><span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>The Maḥallul Qiyām is the standing salutation — the most solemn moment of the mawlid where the congregation rises to their feet. This version contains the Yā Nabī Salām refrain, four verses of praise, the Marhaban welcome section, the Ṭalaʿal Badru salutation, a duʿā of intercession, and a closing with final ṣalawāt.</p>
+  </div>
+</div>
+
+<div class="section-label">Opening Ṣalawāt</div>
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">may bless</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّد</span><span class="word-meaning">Muḥammad</span></div>
+  </div>
+  <div class="transliteration">Ṣallallāhu ʿalā Muḥammad</div>
+  <div class="arabic-line" style="margin-top:10px;">
+    <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">may bless</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلَّم</span><span class="word-meaning">and grant peace</span></div>
+  </div>
+  <div class="transliteration">Ṣallallāhu ʿalayhi wa sallam</div>
+  <div class="translation">May Allah send blessings upon Muḥammad · May Allah's blessings and peace be upon him</div>
+</div>
+
+<div class="section-label">Standing Salutation · Refrain</div>
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">نَبِيُّ</span><span class="word-meaning">Prophet</span></div>
+    <div class="word-unit"><span class="arabic-word">سَلَامٌ</span><span class="word-meaning">peace</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْكَ</span><span class="word-meaning">upon you</span></div>
+  </div>
+  <div class="transliteration">Yā Nabiyyu salāmun ʿalayk</div>
+  <div class="translation">O Prophet, peace be upon you</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَسُولُ</span><span class="word-meaning">Messenger</span></div>
+    <div class="word-unit"><span class="arabic-word">سَلَامٌ</span><span class="word-meaning">peace</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْكَ</span><span class="word-meaning">upon you</span></div>
+  </div>
+  <div class="transliteration">Yā Rasūlu salāmun ʿalayk</div>
+  <div class="translation">O Messenger, peace be upon you</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">حَبِيبُ</span><span class="word-meaning">Beloved</span></div>
+    <div class="word-unit"><span class="arabic-word">سَلَامٌ</span><span class="word-meaning">peace</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْكَ</span><span class="word-meaning">upon you</span></div>
+  </div>
+  <div class="transliteration">Yā Ḥabību salāmun ʿalayk</div>
+  <div class="translation">O Beloved, peace be upon you</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَلَوَاتُ</span><span class="word-meaning">blessings of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهِ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْكَ</span><span class="word-meaning">upon you</span></div>
+  </div>
+  <div class="transliteration">Ṣalawātullāhi ʿalayk</div>
+  <div class="translation">The blessings of Allah be upon you</div>
+</div>
+
+<div class="section-label">Verses 1 – 4</div>
+
+<div class="verse-block">
+  <span class="verse-num">1</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَشْرَقَ</span><span class="word-meaning">radiated</span></div>
+    <div class="word-unit"><span class="arabic-word">الْكَوْنُ</span><span class="word-meaning">the universe</span></div>
+    <div class="word-unit"><span class="arabic-word">ابْتِهَاجًا</span><span class="word-meaning">with joy</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِوُجُودِ</span><span class="word-meaning">at the existence of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُصْطَفَى</span><span class="word-meaning">the Chosen One</span></div>
+    <div class="word-unit"><span class="arabic-word">أَحْمَد</span><span class="word-meaning">Aḥmad</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلِأَهْلِ</span><span class="word-meaning">and for the people of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْكَوْنِ</span><span class="word-meaning">the world</span></div>
+    <div class="word-unit"><span class="arabic-word">أُنْسٌ</span><span class="word-meaning">comfort</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَسُرُورٌ</span><span class="word-meaning">and joy</span></div>
+    <div class="word-unit"><span class="arabic-word">قَدْ</span><span class="word-meaning">that is</span></div>
+    <div class="word-unit"><span class="arabic-word">تَجَدَّد</span><span class="word-meaning">ever renewed</span></div>
+  </div>
+  <div class="transliteration">Ashraqal kawnu btihjājā · bi wujūdil Muṣṭafā Aḥmad · wa li ahlil kawni unsun · wa surūrun qad tajaddad</div>
+  <div class="translation">The universe radiated with joy · at the existence of the Chosen One, Aḥmad · And for the people of the world there is comfort · and a happiness that is ever renewed</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">2</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَاطْرَبُوا</span><span class="word-meaning">so rejoice</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">أَهْلَ</span><span class="word-meaning">people of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمَعَانِي</span><span class="word-meaning">spiritual meaning</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَهَذَا</span><span class="word-meaning">for this is</span></div>
+    <div class="word-unit"><span class="arabic-word">يَوْمٌ</span><span class="word-meaning">a day</span></div>
+    <div class="word-unit"><span class="arabic-word">نِيْ</span><span class="word-meaning">of</span></div>
+    <div class="word-unit"><span class="arabic-word">غَرَّد</span><span class="word-meaning">joyful song</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَاسْتَضِيئُوا</span><span class="word-meaning">and illuminate yourselves</span></div>
+    <div class="word-unit"><span class="arabic-word">بِجَمَالِهِ</span><span class="word-meaning">with his beauty</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَقَفِي</span><span class="word-meaning">for in</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحُسْنِ</span><span class="word-meaning">beauty</span></div>
+    <div class="word-unit"><span class="arabic-word">تَفَرَّد</span><span class="word-meaning">he stands alone</span></div>
+  </div>
+  <div class="transliteration">Fatrabū yā ahla maʿānī · fa hādhā yawmun ghārrad · wastadī'ū bi jamālihi · faqafiil ḥusni tafarrad</div>
+  <div class="translation">So rejoice, O people of spiritual meaning · for this is a day of joyful song · Illuminate yourselves with his beauty · for in beauty he stands alone</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">3</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَنَا</span><span class="word-meaning">and for us</span></div>
+    <div class="word-unit"><span class="arabic-word">الْبُشْرَى</span><span class="word-meaning">is glad news</span></div>
+    <div class="word-unit"><span class="arabic-word">بِسَعْدٍ</span><span class="word-meaning">of felicity</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مُسْتَمِرٍّ</span><span class="word-meaning">continuous</span></div>
+    <div class="word-unit"><span class="arabic-word">لَيْسَ</span><span class="word-meaning">that shall not</span></div>
+    <div class="word-unit"><span class="arabic-word">يَنْفَع</span><span class="word-meaning">diminish</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">حَيْثُ</span><span class="word-meaning">for</span></div>
+    <div class="word-unit"><span class="arabic-word">أُوتِينَا</span><span class="word-meaning">we have been given</span></div>
+    <div class="word-unit"><span class="arabic-word">عَطَاءً</span><span class="word-meaning">a gift</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">جَمَالَ</span><span class="word-meaning">of beauty</span></div>
+    <div class="word-unit"><span class="arabic-word">الْفَخْرِ</span><span class="word-meaning">and honour</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُعَبَّد</span><span class="word-meaning">everlasting</span></div>
+  </div>
+  <div class="transliteration">Wa lanal bushrā bisaʿdin · mustamirrin laysa yanfaʿ · ḥaysu ūtīnā ʿaṭā'an · jamālan fakhral muʿabbad</div>
+  <div class="translation">And for us is glad news of eternal felicity · a happiness that shall not diminish · for we have been given a gift · of everlasting beauty and honour</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">4</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَلِرَبِّي</span><span class="word-meaning">so to my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلُّ</span><span class="word-meaning">all</span></div>
+    <div class="word-unit"><span class="arabic-word">حَمْدٍ</span><span class="word-meaning">praise</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">جَلَّ</span><span class="word-meaning">exalted beyond</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْ</span><span class="word-meaning">any</span></div>
+    <div class="word-unit"><span class="arabic-word">يُحْصَرَ</span><span class="word-meaning">count</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَدّ</span><span class="word-meaning">or limit</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">إِذْ</span><span class="word-meaning">for</span></div>
+    <div class="word-unit"><span class="arabic-word">هَبَا</span><span class="word-meaning">He gifted</span></div>
+    <div class="word-unit"><span class="arabic-word">نَابِي</span><span class="word-meaning">the universe with</span></div>
+    <div class="word-unit"><span class="arabic-word">وُجُودِ</span><span class="word-meaning">the existence of</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">الْمُصْطَفَى</span><span class="word-meaning">the Chosen One</span></div>
+    <div class="word-unit"><span class="arabic-word">الْهَادِي</span><span class="word-meaning">the Guide</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّد</span><span class="word-meaning">Muḥammad</span></div>
+  </div>
+  <div class="transliteration">Fa li Rabbī kullul ḥamdi · jalla an yuḥṣarahul ʿadd · idh habā nābī wujūdil · al-Muṣṭafal hādī Muḥammad</div>
+  <div class="translation">So all praise belongs to my Lord · exalted beyond any count · for He gifted the universe with the existence · of the Chosen Guide, Muḥammad ﷺ</div>
+</div>
+
+<div class="section-label">Marhaban — Welcome</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">نُورَ</span><span class="word-meaning">light of</span></div>
+    <div class="word-unit"><span class="arabic-word">عَيْنِي</span><span class="word-meaning">my eye</span></div>
+  </div>
+  <div class="transliteration">Marḥaban marḥaban yā nūra ʿaynī</div>
+  <div class="translation">Welcome, welcome, O light of my eye</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">جَدَّ</span><span class="word-meaning">grandfather of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحُسَيْنِ</span><span class="word-meaning">al-Ḥusayn</span></div>
+  </div>
+  <div class="transliteration">Marḥaban marḥaban jadda al-Ḥusaynī</div>
+  <div class="translation">Welcome, welcome, O grandfather of al-Ḥusayn</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">1</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَسُولَ</span><span class="word-meaning">Messenger of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهِ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">أَهْلًا</span><span class="word-meaning">how glad we are</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">بِكَ</span><span class="word-meaning">to you</span></div>
+    <div class="word-unit"><span class="arabic-word">إِنَّا</span><span class="word-meaning">truly</span></div>
+    <div class="word-unit"><span class="arabic-word">بِكَ</span><span class="word-meaning">through you</span></div>
+    <div class="word-unit"><span class="arabic-word">نُسْعَد</span><span class="word-meaning">we find happiness</span></div>
+  </div>
+  <div class="transliteration">Marḥaban yā Rasūlallāhi ahlan · marḥaban bika innā bika nusʿad</div>
+  <div class="translation">Welcome O Messenger of Allah, how glad we are to have you · Welcome to you — truly through you we find happiness</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">2</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">وَبِجَاهِهِ</span><span class="word-meaning">and by his honour</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهِي</span><span class="word-meaning">my God</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">جُدْ</span><span class="word-meaning">be generous</span></div>
+    <div class="word-unit"><span class="arabic-word">وَبَلِّغْ</span><span class="word-meaning">and fulfil</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلَّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">مَقْصَد</span><span class="word-meaning">goal</span></div>
+  </div>
+  <div class="transliteration">Marḥaban wa bijāhihi yā ilāhī · marḥaban jud wa balligh kulla maqṣad</div>
+  <div class="translation">Welcome — and by his honour, O my God · be generous and fulfil every goal</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">3</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">وَاهْدِنَا</span><span class="word-meaning">and guide us</span></div>
+    <div class="word-unit"><span class="arabic-word">نَهْجَ</span><span class="word-meaning">the path of</span></div>
+    <div class="word-unit"><span class="arabic-word">سَبِيلِهِ</span><span class="word-meaning">his way</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+    <div class="word-unit"><span class="arabic-word">كَيْ</span><span class="word-meaning">so that</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">through him</span></div>
+    <div class="word-unit"><span class="arabic-word">نُسْعَد</span><span class="word-meaning">we find joy</span></div>
+    <div class="word-unit"><span class="arabic-word">وَنُرْشَد</span><span class="word-meaning">and guidance</span></div>
+  </div>
+  <div class="transliteration">Marḥaban wahdinā nahja sabīlihi · marḥaban kay bihī nusʿad wa nurshad</div>
+  <div class="translation">Welcome — and guide us on the path of his way · so that through him we may find joy and right guidance</div>
+</div>
+
+<div class="section-label">Ṭalaʿal Badru — The Full Moon Rises</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you are</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحَشْرِ</span><span class="word-meaning">the Gathering</span></div>
+    <div class="word-unit"><span class="arabic-word">مَلَاذٌ</span><span class="word-meaning">our refuge</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَكَ</span><span class="word-meaning">towards you</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلُّ</span><span class="word-meaning">all</span></div>
+    <div class="word-unit"><span class="arabic-word">الْخَلْقِ</span><span class="word-meaning">creation</span></div>
+    <div class="word-unit"><span class="arabic-word">تَفْزَع</span><span class="word-meaning">runs in awe</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيُنَادُونَ</span><span class="word-meaning">and they call out</span></div>
+    <div class="word-unit"><span class="arabic-word">تَرُومًا</span><span class="word-meaning">in longing</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">قَدْ</span><span class="word-meaning">having been</span></div>
+    <div class="word-unit"><span class="arabic-word">دَهَا</span><span class="word-meaning">shaken by</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">the most</span></div>
+    <div class="word-unit"><span class="arabic-word">هَوْلٍ</span><span class="word-meaning">fearsome</span></div>
+    <div class="word-unit"><span class="arabic-word">أَفْزَع</span><span class="word-meaning">terror</span></div>
+  </div>
+  <div class="transliteration">Anta fil ḥashri malādhun · laka kullul khalqi tafzaʿ · wa yunādūna tarūmā · qad dahā min hawlin afzaʿ</div>
+  <div class="translation">You are our refuge on the Day of Gathering · towards you all creation runs in awe · and they call out in longing · having been shaken by the most fearsome terror</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">طَلَعَ</span><span class="word-meaning">has risen</span></div>
+    <div class="word-unit"><span class="arabic-word">الْبَدْرُ</span><span class="word-meaning">the full moon</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْنَا</span><span class="word-meaning">over us</span></div>
+  </div>
+  <div class="transliteration">Ṭalaʿal badru ʿalaynā</div>
+  <div class="translation">The full moon has risen over us</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">ثَنِيَّاتِ</span><span class="word-meaning">the valleys of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْوَدَاع</span><span class="word-meaning">al-Wadāʿ</span></div>
+  </div>
+  <div class="transliteration">Min ṯaniyyātil wadāʿ</div>
+  <div class="translation">From the valleys of al-Wadāʿ</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَجَبَ</span><span class="word-meaning">it is due</span></div>
+    <div class="word-unit"><span class="arabic-word">الشُّكْرُ</span><span class="word-meaning">to give thanks</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْنَا</span><span class="word-meaning">upon us</span></div>
+  </div>
+  <div class="transliteration">Wajabash shukru ʿalaynā</div>
+  <div class="translation">And gratitude is due from us</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">as long as</span></div>
+    <div class="word-unit"><span class="arabic-word">دَعَا</span><span class="word-meaning">one calls</span></div>
+    <div class="word-unit"><span class="arabic-word">لِلَّهِ</span><span class="word-meaning">to Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">دَاعٍ</span><span class="word-meaning">a caller</span></div>
+  </div>
+  <div class="transliteration">Mā daʿā lillāhi dāʿ</div>
+  <div class="translation">For as long as anyone calls to Allah</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَلَهَا</span><span class="word-meaning">so then</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span></div>
+    <div class="word-unit"><span class="arabic-word">فَاسْجُد</span><span class="word-meaning">prostrate</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَتُنَادِي</span><span class="word-meaning">and call out</span></div>
+    <div class="word-unit"><span class="arabic-word">اشْفَعْ</span><span class="word-meaning">intercede</span></div>
+    <div class="word-unit"><span class="arabic-word">تُشَفَّع</span><span class="word-meaning">you shall be granted it</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَعَلَيْكَ</span><span class="word-meaning">and upon you</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">may Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">send blessings</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">for as long as</span></div>
+    <div class="word-unit"><span class="arabic-word">بَدَا</span><span class="word-meaning">light</span></div>
+    <div class="word-unit"><span class="arabic-word">نُورٌ</span><span class="word-meaning">shines</span></div>
+    <div class="word-unit"><span class="arabic-word">وَشَعْشَع</span><span class="word-meaning">and gleams</span></div>
+  </div>
+  <div class="transliteration">Falahā anta fatasjud · wa tunādi shfaʿ tushaffaʿ · fa ʿalaikallāhu ṣallā · mā badā nūrun wa shaʿshaʿ</div>
+  <div class="translation">So prostrate, and call out: "Intercede!" — and you shall be granted intercession · And may Allah's blessings be upon you for as long as light shines and gleams</div>
+</div>
+
+<div class="section-label">Duʿā — Supplication</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَبِكَ</span><span class="word-meaning">and by you</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّحْمَانُ</span><span class="word-meaning">the Most Merciful</span></div>
+    <div class="word-unit"><span class="arabic-word">نَسْأَل</span><span class="word-meaning">we ask</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَإِلَهُ</span><span class="word-meaning">and the God of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَرْشِ</span><span class="word-meaning">the Throne</span></div>
+    <div class="word-unit"><span class="arabic-word">يَسْمَع</span><span class="word-meaning">hears</span></div>
+  </div>
+  <div class="transliteration">Wa bikal Raḥmānu nas'al · wa ilāhul ʿArshi yasmaʿ · (Yā Rasūlallāh)</div>
+  <div class="translation">And by you we ask the Most Merciful · and the God of the Throne hears · (O Messenger of Allah)</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">عَظِيمَ</span><span class="word-meaning">Most Great in</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمَنِّ</span><span class="word-meaning">bestowing favour</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبّ</span><span class="word-meaning">Lord</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">شَمِّلْنَا</span><span class="word-meaning">include us</span></div>
+    <div class="word-unit"><span class="arabic-word">بِالْمُصْطَفَى</span><span class="word-meaning">with the Chosen One</span></div>
+    <div class="word-unit"><span class="arabic-word">مَعَك</span><span class="word-meaning">in Your company</span></div>
+  </div>
+  <div class="transliteration">Yā ʿAẓīmal manni yā Rabb · shamilanā bil Muṣṭafā maʿak</div>
+  <div class="translation">O Most Great in bestowing favour, O Lord · include us with the Chosen One in Your company</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">blessings of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّد</span><span class="word-meaning">Muḥammad</span></div>
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">blessings of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلَّم</span><span class="word-meaning">and peace</span></div>
+    <div class="word-unit"><span class="arabic-word">مَرْحَبًا</span><span class="word-meaning">welcome</span></div>
+  </div>
+  <div class="transliteration">Ṣallallāhu ʿalā Muḥammad marḥabān · Ṣallallāhu ʿalayhi wa sallam marḥabān</div>
+  <div class="translation">May Allah bless Muḥammad — welcome · May Allah's blessings and peace be upon him — welcome</div>
+  <div style="text-align:center;margin-top:4px;"><span class="repeat-tag">×2</span></div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَبِهِ</span><span class="word-meaning">and through him</span></div>
+    <div class="word-unit"><span class="arabic-word">انْظُرْ</span><span class="word-meaning">look</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَيْنَا</span><span class="word-meaning">upon us</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَاخْتِمَ</span><span class="word-meaning">and seal</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">with him</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلَّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">مَوْطِع</span><span class="word-meaning">moment</span></div>
+  </div>
+  <div class="transliteration">Wa bihī fanẓur ilaynā · wakhtim bihī kulla mawṭiʿ</div>
+  <div class="translation">And through him look upon us · and seal our every moment with his companionship</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَاكْفِنَا</span><span class="word-meaning">and protect us from</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلَّ</span><span class="word-meaning">all</span></div>
+    <div class="word-unit"><span class="arabic-word">الْبَلَايَا</span><span class="word-meaning">calamities</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَادْفَعِ</span><span class="word-meaning">and repel</span></div>
+    <div class="word-unit"><span class="arabic-word">الْآفَاتِ</span><span class="word-meaning">all afflictions</span></div>
+    <div class="word-unit"><span class="arabic-word">وَارْفَع</span><span class="word-meaning">and lift them away</span></div>
+  </div>
+  <div class="transliteration">Wa akfinā kullal balāyā · wadfa'il āfāti warfaʿ</div>
+  <div class="translation">And protect us from all calamities · and repel all afflictions and lift them away</div>
+</div>
+
+<div class="section-label">Rabbanā Verses · Forgiveness &amp; Grace</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">رَبِّ</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">اغْفِرْ</span><span class="word-meaning">forgive</span></div>
+    <div class="word-unit"><span class="arabic-word">لِي</span><span class="word-meaning">for me</span></div>
+    <div class="word-unit"><span class="arabic-word">ذُنُوبِي</span><span class="word-meaning">my sins</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِبَرَكَاتِ</span><span class="word-meaning">by the blessings of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْهَادِي</span><span class="word-meaning">the Guide</span></div>
+    <div class="word-unit"><span class="arabic-word">مُصْطَفَاك</span><span class="word-meaning">Your Chosen One</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Rabbigh firli dhunūbī yā Allah · bi barakātil hādī Muṣṭafāk yā Allah</div>
+  <div class="translation">My Lord, forgive my sins, O Allah · by the blessings of Your Chosen Guide, O Allah</div>
+  <div style="text-align:center;margin-top:4px;"><span class="repeat-tag">×2</span></div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَاسْقِنَا</span><span class="word-meaning">and give us to drink</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبّ</span><span class="word-meaning">Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">أَغِثْنَا</span><span class="word-meaning">rescue us</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِحَيَا</span><span class="word-meaning">through the life of</span></div>
+    <div class="word-unit"><span class="arabic-word">هَذَا</span><span class="word-meaning">this one</span></div>
+    <div class="word-unit"><span class="arabic-word">ذُو</span><span class="word-meaning">whose</span></div>
+    <div class="word-unit"><span class="arabic-word">الِي</span><span class="word-meaning">honour</span></div>
+    <div class="word-unit"><span class="arabic-word">يَحْمَاك</span><span class="word-meaning">You protect</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Wasqinā yā Rabb aghithnā yā Allah · bi ḥayā hādhā dhūlī yaḥmāk yā Allah</div>
+  <div class="translation">Give us to drink O Lord, rescue us O Allah · through the life of this one whose honour You protect, O Allah</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَاخْتِمِ</span><span class="word-meaning">and seal</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعُمْرَ</span><span class="word-meaning">our lives</span></div>
+    <div class="word-unit"><span class="arabic-word">بِحُسْنَى</span><span class="word-meaning">with goodness</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَحْسِنِ</span><span class="word-meaning">and make beautiful</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعُقْبَى</span><span class="word-meaning">our final return</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمَرْجَعَك</span><span class="word-meaning">and our abode</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Waghtimil ʿumra biḥusnā yā Allah · wa ḥsinilʿuqbā wa marjaʿak yā Allah</div>
+  <div class="translation">Seal our lives with goodness, O Allah · and make our final return and abode a beautiful one, O Allah</div>
+</div>
+
+<div class="section-label">Closing · Final Ṣalawāt</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَصَلَاةُ</span><span class="word-meaning">and the blessings of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهِ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">تَغْشَى</span><span class="word-meaning">envelop</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَنْ</span><span class="word-meaning">the one in whom</span></div>
+    <div class="word-unit"><span class="arabic-word">لَهُ</span><span class="word-meaning">all</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحُسْنُ</span><span class="word-meaning">beauty</span></div>
+    <div class="word-unit"><span class="arabic-word">تَجَمَّع</span><span class="word-meaning">is gathered</span></div>
+  </div>
+  <div class="transliteration">Wa ṣalātullāhi taghshā · mal lahul ḥusnu tajammaʿ</div>
+  <div class="translation">And may the blessings of Allah envelop · the one in whom all beauty is gathered</div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَحْمَدَ</span><span class="word-meaning">Aḥmad</span></div>
+    <div class="word-unit"><span class="arabic-word">الثَّرَى</span><span class="word-meaning">of the noble earth</span></div>
+    <div class="word-unit"><span class="arabic-word">وَآلِهِ</span><span class="word-meaning">and his family</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَصَحَابَ</span><span class="word-meaning">and his Companions</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">who were</span></div>
+    <div class="word-unit"><span class="arabic-word">صَنَّا</span><span class="word-meaning">tested</span></div>
+    <div class="word-unit"><span class="arabic-word">صَعَّع</span><span class="word-meaning">with trials</span></div>
+  </div>
+  <div class="transliteration">Aḥmadath thurā wa ālihi · wa ṣaḥāba maṣṣanā ṣhaʿ</div>
+  <div class="translation">Aḥmad of the noble earth, and his family · and his Companions who were tested with trials</div>
+</div>
+
+<div class="verse-block refrain">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلِّمْ</span><span class="word-meaning">and peace</span></div>
+    <div class="word-unit"><span class="arabic-word">وَبَارِك</span><span class="word-meaning">and bestow grace</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَعَلَى</span><span class="word-meaning">and upon</span></div>
+    <div class="word-unit"><span class="arabic-word">آلِهِ</span><span class="word-meaning">his family</span></div>
+  </div>
+  <div class="transliteration">Allāhumma ṣalli wa sallim wa bārik ʿalayhi wa ʿalā ālih</div>
+  <div class="translation">O Allah, send blessings, peace and Your grace upon him and upon his family</div>
+</div>
+
+<div class="section-label">Three Closing Verses</div>
+
+<div class="verse-block">
+  <span class="verse-num">1</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">بَلِّغْنَا</span><span class="word-meaning">grant us</span></div>
+    <div class="word-unit"><span class="arabic-word">بِجَاهِهِ</span><span class="word-meaning">through his honour</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">جِوَارِ</span><span class="word-meaning">the neighbourhood of</span></div>
+    <div class="word-unit"><span class="arabic-word">خَيْرِ</span><span class="word-meaning">the best</span></div>
+    <div class="word-unit"><span class="arabic-word">مَقْعَد</span><span class="word-meaning">of seats</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Rabbī ballignā bijāhihi yā Allah · fī jiwāri khayri maqʿad yā Allah</div>
+  <div class="translation">My Lord, through his honour grant us, O Allah · a seat in the most excellent of abodes, O Allah</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">2</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَصَلَاةُ</span><span class="word-meaning">and may the blessing of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهِ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">تَشَا</span><span class="word-meaning">encompass</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَشْرَفَ</span><span class="word-meaning">the most noble of</span></div>
+    <div class="word-unit"><span class="arabic-word">الرُّسُلِ</span><span class="word-meaning">Messengers</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّد</span><span class="word-meaning">Muḥammad</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Wa ṣalātullāhi tashā yā Allah · ashrafar Rusli Muḥammad yā Allah</div>
+  <div class="translation">And may the blessing of Allah encompass, O Allah · the most noble of Messengers, Muḥammad, O Allah</div>
+</div>
+
+<div class="verse-block">
+  <span class="verse-num">3</span>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَسَلَامٌ</span><span class="word-meaning">and peace</span></div>
+    <div class="word-unit"><span class="arabic-word">مُسْتَمِرٌّ</span><span class="word-meaning">perpetual</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">كُلَّ</span><span class="word-meaning">at every</span></div>
+    <div class="word-unit"><span class="arabic-word">حِينٍ</span><span class="word-meaning">moment</span></div>
+    <div class="word-unit"><span class="arabic-word">يَتَجَدَّد</span><span class="word-meaning">renewed</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Wa salāmun mustamirrun yā Allah · kulla ḥīnin yatajaddad yā Allah</div>
+  <div class="translation">And perpetual peace, O Allah · renewed at every moment, O Allah</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- AUTHENTICITY STRIP -->
+<div class="info-strip auth">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>✅ About this Collection</span><span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p><span class="grade-badge grade-quran">Qur'ān</span> The Qur'ānic verses (33:56, 48:1–3, 9:128–129) are from the Qur'ān al-Karīm.</p>
+    <p><span class="grade-badge grade-nashid">Nashīd</span> All selawat and nashīd texts are devotional compositions — expressions of love and longing for the Prophet ﷺ, not ḥadīth narrations.</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> The Selawat Nāriyyah is widely attributed to Muḥammad al-Tāzī. Scholars have affirmed the permissibility of such compositions as expressions of love and tawassul.</p>
+    <div class="hadith-quote">The Prophet ﷺ said: <strong>"Whoever sends one blessing upon me, Allah will send ten blessings upon him."</strong> — Ṣaḥīḥ Muslim 408</div>
+  </div>
+</div>
+
+<script>
+  function toggleInfo(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+  function toggleToc(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,628 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du'ā – Ilāhī Aghnīnā bi Ḥalālika</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lateef&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: #3d2a1a;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.65; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  /* ── Collapsible top/bottom info strip ── */
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+
+  .info-toggle {
+    width: 100%;
+    background: #eef5fb;
+    border: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .info-strip.auth .info-toggle {
+    background: #f0faf2;
+    color: #2a7040;
+  }
+
+  .info-toggle .arrow {
+    font-size: 0.65rem;
+    transition: transform 0.25s ease;
+    color: #888;
+  }
+  .info-toggle.open .arrow { transform: rotate(180deg); }
+
+  .info-body {
+    display: none;
+    padding: 12px 14px 14px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    background: #fff;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body {
+    color: #1a3d26;
+    border-top-color: #b6dfc4;
+  }
+  .info-body.open { display: block; }
+
+  .info-body p { margin-bottom: 8px; }
+  .info-body p:last-child { margin-bottom: 0; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih { background: #d4edda; color: #155724; }
+  .grade-hasan { background: #d1ecf1; color: #0c5460; }
+
+  .info-body a { color: #2a7040; text-decoration: underline; font-size: 0.74rem; }
+
+  .hadith-quote {
+    background: #f6faf7;
+    border-left: 2px solid #aad4b5;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.74rem;
+    line-height: 1.6;
+    color: #2c3e30;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  /* ── Verse block ── */
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  /* ── Arabic RTL flex (word by word) ── */
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 10px;
+  }
+
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 42px;
+  }
+
+  .arabic-word {
+    font-family: 'Amiri', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    direction: rtl;
+    text-align: center;
+  }
+
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 72px;
+    direction: ltr;
+  }
+
+  /* ── Transliteration ── */
+  .transliteration {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #666;
+    font-style: italic;
+    margin: 8px 0 6px;
+    line-height: 1.55;
+    border-top: 1px dashed #e0d8cc;
+    padding-top: 8px;
+  }
+
+  /* ── Full translation ── */
+  .translation {
+    text-align: center;
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.55;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+  }
+
+  /* ── 🔍 inline source icon ── */
+  .src-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 1px solid #d4c9b8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7d5a;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+  .src-btn:hover, .src-btn.active { background: #3d2a1a; color: #f5e6c8; border-color: #3d2a1a; }
+
+  /* ── Inline source popup ── */
+  .src-popup {
+    display: none;
+    margin-top: 10px;
+    background: #f6faf7;
+    border: 1px solid #b6dfc4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #1a3d26;
+  }
+  .src-popup.open { display: block; }
+  .src-popup a { color: #2a7040; text-decoration: underline; }
+  .src-popup .grade-badge { font-size: 0.6rem; }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <h1>Du'ā — Yā Ghaniyyu Aghnīnā</h1>
+  <p>Supplication for Sufficiency, Repentance &amp; the Best of Both Worlds</p>
+</div>
+
+<!-- ══ CONTEXT STRIP (collapsed by default) ══ -->
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This beautiful du'ā weaves together praises of Allāh using His beautiful names (al‑Asmā’ al‑Ḥusnā), the powerful plea of Prophet Yūnus (21:87), and a request for lawful provision, obedience, and the ultimate good in this life and the Hereafter (2:201). It is sealed with ṣalawāt upon the Prophet Muḥammad ﷺ.</p>
+  </div>
+</div>
+
+<!-- ══════════════ PART 1 · BLESSINGS FOR LOVED ONES ══════════════ -->
+<div class="section-label">✨ Blessings &amp; Long Life</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">سَنَةٌ</span><span class="word-meaning">a year</span></div>
+    <div class="word-unit"><span class="arabic-word">حَلْوَةٌ</span><span class="word-meaning">sweet</span></div>
+    <div class="word-unit"><span class="arabic-word">حَبِيبِي</span><span class="word-meaning">my beloved</span></div>
+    <div class="word-unit"><span class="arabic-word">وَيَا</span><span class="word-meaning">and O</span></div>
+    <div class="word-unit"><span class="arabic-word">أُسْتَاذِي</span><span class="word-meaning">my teacher</span></div>
+  </div>
+  <div class="transliteration">Sanah ḥalwah ḥabībī wa yā ustādhī</div>
+  <div class="translation">A sweet year, my beloved and my teacher</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> A supplication of goodwill and longevity rooted in prophetic encouragement to pray for fellow Muslims with blessings.</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بَارَكَ</span><span class="word-meaning">may He bless</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">عُمْرِكُمْ</span><span class="word-meaning">your age</span></div>
+    <div class="word-unit"><span class="arabic-word">وَحَيَاتِكُمْ</span><span class="word-meaning">and your life</span></div>
+  </div>
+  <div class="transliteration">Bārakallāhu fī ʿumrikum wa ḥayātikum</div>
+  <div class="translation">May Allah bless your age and your life</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> Traditional prayer for longevity and blessing, found in adab literature.</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">عِيدُ</span><span class="word-meaning">celebration of</span></div>
+    <div class="word-unit"><span class="arabic-word">مِيلَادٍ</span><span class="word-meaning">birth</span></div>
+    <div class="word-unit"><span class="arabic-word">سَنَةٌ</span><span class="word-meaning">a year</span></div>
+    <div class="word-unit"><span class="arabic-word">حَلْوَةٌ</span><span class="word-meaning">sweet</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">حَبِيبَنَا</span><span class="word-meaning">our beloved</span></div>
+  </div>
+  <div class="transliteration">ʿĪdu Mīlād, sanah ḥalwah yā ḥabībanā</div>
+  <div class="translation">Happy birthday, sweet year, O our beloved</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> Expression of joy and supplication for a blessed year.</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بَارَكَ</span><span class="word-meaning">may He bless</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">عُمْرِكُمْ</span><span class="word-meaning">your age</span></div>
+    <div class="word-unit"><span class="arabic-word">وَحَيَاتِكُمْ</span><span class="word-meaning">and your life</span></div>
+  </div>
+  <div class="transliteration">Bārakallāhu fī ʿumrikum wa ḥayātikum</div>
+  <div class="translation">May Allah bless your age and your life</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> Repeated for emphasis and multiple loved ones.</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ PART 2 · INVOKING THE NAMES OF ALLAH ══════════════ -->
+<div class="section-label">🌿 Calling Upon Allāh by His Beautiful Names</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">غَنِيُّ</span><span class="word-meaning">Self‑Sufficient</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">حَمِيدُ</span><span class="word-meaning">Praiseworthy</span></div>
+  </div>
+  <div class="transliteration">Allāhumma yā Ghaniyyu yā Ḥamīd</div>
+  <div class="translation">O Allah, O Self‑Sufficient, O Praiseworthy</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> From the beautiful names of Allah. The Prophet ﷺ said, “Allah has ninety‑nine names; whoever enumerates them enters Paradise.” <a href="https://sunnah.com/bukhari:2736" target="_blank">Bukhārī 2736</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">مُبْدِئُ</span><span class="word-meaning">Originator</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">مُعِيدُ</span><span class="word-meaning">Restorer</span></div>
+  </div>
+  <div class="transliteration">Yā Mubdi’u yā Mu‘īd</div>
+  <div class="translation">O Originator, O Restorer</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Names of Allah mentioned in the Qur’ān (85:13, 27:64).</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَحِيمُ</span><span class="word-meaning">Most Merciful</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">وَدُودُ</span><span class="word-meaning">Most Loving</span></div>
+  </div>
+  <div class="transliteration">Yā Raḥīmu yā Wadūd</div>
+  <div class="translation">O Most Merciful, O Most Loving</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Qur’ān 85:14: “And He is the Forgiving, the Loving.”</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ PART 3 · ASKING FOR LAWFUL SUFFICIENCY ══════════════ -->
+<div class="section-label">🤲 Enrich us with Lawful Provision</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَغْنِنَا</span><span class="word-meaning">enrich us</span></div>
+    <div class="word-unit"><span class="arabic-word">بِحَلَالِكَ</span><span class="word-meaning">by Your lawful</span></div>
+    <div class="word-unit"><span class="arabic-word">عَنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">حَرَامِكَ</span><span class="word-meaning">Your unlawful</span></div>
+  </div>
+  <div class="transliteration">Aghninā biḥalālika ‘an ḥarāmik</div>
+  <div class="translation">Enrich us with Your lawful (provision) so we are independent of what is unlawful</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> Found in the adhkār of Ibn al‑Sunnī and ‘Amal al‑yawm wa al‑laylah.</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَبِطَاعَتِكَ</span><span class="word-meaning">and with Your obedience</span></div>
+    <div class="word-unit"><span class="arabic-word">عَنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">مَعْصِيَتِكَ</span><span class="word-meaning">Your disobedience</span></div>
+  </div>
+  <div class="transliteration">Wa biṭā‘atika ‘an ma‘ṣiyatik</div>
+  <div class="translation">And with obedience to You (so we turn away from) disobedience</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> A request for steadfastness in obedience, known from early pious supplications.</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَبِفَضْلِكَ</span><span class="word-meaning">and by Your grace</span></div>
+    <div class="word-unit"><span class="arabic-word">عَمَّنْ</span><span class="word-meaning">from whom</span></div>
+    <div class="word-unit"><span class="arabic-word">سِوَاكَ</span><span class="word-meaning">other than You</span></div>
+  </div>
+  <div class="transliteration">Wa bi faḍlika ‘amman siwāk</div>
+  <div class="translation">And with Your grace (so we have no need) of anyone besides You</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> Expressing complete reliance (tawakkul) on Allah alone.</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ PART 4 · THE DU‘Ā OF YŪNUS (ALAYHIS SALAM) ══════════════ -->
+<div class="section-label">🌊 The Prayer of the Stricken One</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَٰهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You</span></div>
+    <div class="word-unit"><span class="arabic-word">سُبْحَانَكَ</span><span class="word-meaning">exalted are You</span></div>
+  </div>
+  <div class="transliteration">Lā ilāha illā anta subḥānaka</div>
+  <div class="translation">There is no god but You, exalted are You</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Qur’ān 21:87</span></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">indeed I</span></div>
+    <div class="word-unit"><span class="arabic-word">كُنْتُ</span><span class="word-meaning">have been</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">among</span></div>
+    <div class="word-unit"><span class="arabic-word">الظَّالِمِينَ</span><span class="word-meaning">the wrongdoers</span></div>
+  </div>
+  <div class="transliteration">Innī kuntu minaẓ-ẓālimīn</div>
+  <div class="translation">Indeed I have been among the wrongdoers</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Qur’ān 21:87. The Prophet ﷺ said: “No Muslim prays with it for any matter except that Allah responds.” <a href="https://sunnah.com/tirmidhi:3505" target="_blank">Tirmidhī 3505</a></span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ PART 5 · ASKING FOR ENRICHMENT AND WIDENED PROVISION ══════════════ -->
+<div class="section-label">📿 Prayer for Sufficiency &amp; Bountiful Provision</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَغْنِنَا</span><span class="word-meaning">enrich us</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">غَنِيُّ</span><span class="word-meaning">Self‑Sufficient</span></div>
+  </div>
+  <div class="transliteration">Aghninā yā Ghaniyy</div>
+  <div class="translation">Enrich us, O Self‑Sufficient</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Calling upon Allah by His name al‑Ghaniyy.</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَغْنِنَا</span><span class="word-meaning">enrich us</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">مُغْنِي</span><span class="word-meaning">Enricher</span></div>
+  </div>
+  <div class="transliteration">Aghninā yā Mughnī</div>
+  <div class="translation">Enrich us, O Enricher</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> From the names of Allah (al‑Mughnī).</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَارْزُقْنَا</span><span class="word-meaning">and provide us</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَزَّاقُ</span><span class="word-meaning">Provider</span></div>
+  </div>
+  <div class="transliteration">Warzuqnā yā Razzāq</div>
+  <div class="translation">Provide for us, O Provider</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Allah is ar‑Razzāq (the Provider) — Qur’ān 51:58.</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَغْنِنَا</span><span class="word-meaning">enrich us</span></div>
+    <div class="word-unit"><span class="arabic-word">وَوَسِّعْ</span><span class="word-meaning">and expand</span></div>
+    <div class="word-unit"><span class="arabic-word">أَرْزَاقَنَا</span><span class="word-meaning">our provisions</span></div>
+  </div>
+  <div class="transliteration">Aghninā wa wassi‘ arzāqanā</div>
+  <div class="translation">Enrich us and expand our provisions</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> Request for abundance and blessing in livelihood.</div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِرَحْمَتِكَ</span><span class="word-meaning">by Your mercy</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْرَمَ</span><span class="word-meaning">most generous of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْأَكْرَمِينَ</span><span class="word-meaning">the generous</span></div>
+  </div>
+  <div class="transliteration">Biraḥmatika yā Akramal‑Akramīn</div>
+  <div class="translation">By Your mercy, O Most Generous of the generous</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Qur’ānic attribute: “And He is the Most Generous of the generous” (Yūsuf 12:64, 92).</span></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيَا</span><span class="word-meaning">and O</span></div>
+    <div class="word-unit"><span class="arabic-word">أَرْحَمَ</span><span class="word-meaning">most merciful of</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّاحِمِينَ</span><span class="word-meaning">the merciful</span></div>
+  </div>
+  <div class="transliteration">Wa yā Arḥamar‑Rāḥimīn</div>
+  <div class="translation">And O Most Merciful of the merciful</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Qur’ān 7:151, 12:92, 21:83</span></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيَا</span><span class="word-meaning">and O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَزَّاقَ</span><span class="word-meaning">Provider of</span></div>
+    <div class="word-unit"><span class="arabic-word">ذِي</span><span class="word-meaning">possessor of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْقُوَّةِ</span><span class="word-meaning">strength</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمَتِينِ</span><span class="word-meaning">the firm</span></div>
+  </div>
+  <div class="transliteration">Wa yā Razzāqa dhil‑quwwatil‑matīn</div>
+  <div class="translation">And O Provider of firm strength</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Qur’ān 51:58: “Indeed Allah is the Provider, the Possessor of Strength, the Firm.”</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ PART 6 · THE SUPREME PETITION (QUR’ĀN 2:201) ══════════════ -->
+<div class="section-label">🤲 The Most Comprehensive Du‘ā</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">رَبَّنَا</span><span class="word-meaning">Our Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">آتِنَا</span><span class="word-meaning">grant us</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">الدُّنْيَا</span><span class="word-meaning">the world</span></div>
+    <div class="word-unit"><span class="arabic-word">حَسَنَةً</span><span class="word-meaning">good</span></div>
+  </div>
+  <div class="transliteration">Rabbanā ātinā fī ad‑dunyā ḥasanah</div>
+  <div class="translation">Our Lord, grant us in this world good</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Qur’ān 2:201</span></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَفِي</span><span class="word-meaning">and in</span></div>
+    <div class="word-unit"><span class="arabic-word">الْآخِرَةِ</span><span class="word-meaning">the Hereafter</span></div>
+    <div class="word-unit"><span class="arabic-word">حَسَنَةً</span><span class="word-meaning">good</span></div>
+    <div class="word-unit"><span class="arabic-word">وَقِنَا</span><span class="word-meaning">and protect us</span></div>
+    <div class="word-unit"><span class="arabic-word">عَذَابَ</span><span class="word-meaning">the punishment of</span></div>
+    <div class="word-unit"><span class="arabic-word">النَّارِ</span><span class="word-meaning">the Fire</span></div>
+  </div>
+  <div class="transliteration">Wa fī al‑ākhirati ḥasanah wa qinā ‘adhāba an‑nār</div>
+  <div class="translation">And in the Hereafter good, and protect us from the punishment of the Fire</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Qur’ān 2:201. The Prophet ﷺ said this is the most comprehensive du‘ā. <a href="https://sunnah.com/abudawud:1525" target="_blank">Abū Dāwūd 1525</a></span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ PART 7 · SALAWAT UPON THE PROPHET ﷺ ══════════════ -->
+<div class="section-label">🕊️ The Seal of Du‘ā</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَصَلَّى</span><span class="word-meaning">and may He send prayers</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَىٰ</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muhammad</span></div>
+    <div class="word-unit"><span class="arabic-word">وَعَلَىٰ</span><span class="word-meaning">and upon</span></div>
+    <div class="word-unit"><span class="arabic-word">آلِهِ</span><span class="word-meaning">his family</span></div>
+    <div class="word-unit"><span class="arabic-word">وَصَحْبِهِ</span><span class="word-meaning">and his companions</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلَّمَ</span><span class="word-meaning">and grant peace</span></div>
+  </div>
+  <div class="transliteration">Wa ṣallallāhu ‘alā sayyidinā Muḥammadin wa ‘alā ālihi wa ṣaḥbihi wa sallam</div>
+  <div class="translation">And may Allah send prayers and peace upon our master Muhammad, his family, and his companions</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ. The Prophet ﷺ said: “Whoever sends prayers upon me once, Allah sends ten prayers upon him.” <a href="https://sunnah.com/muslim:408" target="_blank">Muslim 408</a></span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ AUTHENTICITY STRIP (collapsed) ══ -->
+<div class="info-strip auth">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>✅ Full Source &amp; Authenticity</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This du‘ā combines authentic Qur’ānic verses, prophetic invocations, and the beautiful names of Allāh. Each component is well‑attested:</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> The du‘ā of Yūnus (Lā ilāha illā anta…) — Tirmidhī 3505.</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> <em>Rabbanā ātinā</em> — Bukhārī &amp; Muslim.</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Invoking Allāh by His names — Bukhārī 2736.</p>
+    <p><span class="grade-badge grade-hasan">Ḥasan</span> “Aghninā biḥalālika…” — recorded in ‘Amal al‑yawm wa al‑laylah (Ibn al‑Sunnī).</p>
+    <div class="hadith-quote">
+      The Prophet ﷺ said: <strong>“Shall I not teach you a supplication through which, if you are afflicted with any distress, Allah will grant you relief?”</strong> Then he mentioned the du‘ā of Dhū an‑Nūn (Yūnus): <em>Lā ilāha illā anta subḥānaka innī kuntu minaẓ‑ẓālimīn</em>. (Tirmidhī)
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleInfo(btn) {
+    btn.classList.toggle('open');
+    const body = btn.nextElementSibling;
+    body.classList.toggle('open');
+  }
+
+  function toggleSrc(btn) {
+    btn.classList.toggle('active');
+    const popup = btn.closest('.verse-block').querySelector('.src-popup');
+    popup.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
+```

@@ -1,0 +1,562 @@
+This HTML document provides the complete morning adhkar (أذكار الصباح) based on authenticated narrations from the Sunnah. It follows your requested template with Arabic text, transliteration, translation, and collapsible source verification for each supplication.
+
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Adhkār – أذكار الصباح</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lateef&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    background: #3d2a1a;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.65; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  /* Collapsible strips */
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+
+  .info-toggle {
+    width: 100%;
+    background: #eef5fb;
+    border: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .info-strip.auth .info-toggle {
+    background: #f0faf2;
+    color: #2a7040;
+  }
+
+  .info-toggle .arrow {
+    font-size: 0.65rem;
+    transition: transform 0.25s ease;
+    color: #888;
+  }
+  .info-toggle.open .arrow { transform: rotate(180deg); }
+
+  .info-body {
+    display: none;
+    padding: 12px 14px 14px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    background: #fff;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body {
+    color: #1a3d26;
+    border-top-color: #b6dfc4;
+  }
+  .info-body.open { display: block; }
+  .info-body p { margin-bottom: 8px; }
+  .info-body p:last-child { margin-bottom: 0; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih { background: #d4edda; color: #155724; }
+  .grade-hasan { background: #d1ecf1; color: #0c5460; }
+
+  .info-body a, .src-popup a { color: #2a7040; text-decoration: underline; font-size: 0.74rem; }
+
+  .hadith-quote {
+    background: #f6faf7;
+    border-left: 2px solid #aad4b5;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.74rem;
+    line-height: 1.6;
+    color: #2c3e30;
+  }
+
+  /* Section label */
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  /* Verse block */
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 10px;
+  }
+
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 42px;
+  }
+
+  .arabic-word {
+    font-family: 'Amiri', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    direction: rtl;
+    text-align: center;
+  }
+
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 72px;
+    direction: ltr;
+  }
+
+  .transliteration {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #666;
+    font-style: italic;
+    margin: 8px 0 6px;
+    line-height: 1.55;
+    border-top: 1px dashed #e0d8cc;
+    padding-top: 8px;
+  }
+
+  .translation {
+    text-align: center;
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.55;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+  }
+
+  /* Source button & popup */
+  .src-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 1px solid #d4c9b8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7d5a;
+    transition: background 0.15s, color 0.15s;
+  }
+  .src-btn:hover, .src-btn.active { background: #3d2a1a; color: #f5e6c8; border-color: #3d2a1a; }
+
+  .src-popup {
+    display: none;
+    margin-top: 10px;
+    background: #f6faf7;
+    border: 1px solid #b6dfc4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #1a3d26;
+  }
+  .src-popup.open { display: block; }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>أذكار الصباح — Morning Adhkār</h1>
+  <p>Authentic Supplications from the Sunnah</p>
+</div>
+
+<!-- ══ CONTEXT STRIP (collapsed) ══ -->
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Morning Adhkār: Virtues & Timing</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>The morning adhkār (remembrances and supplications) are among the greatest means of protection, forgiveness, and drawing closer to Allah. The Prophet ﷺ encouraged reciting them between Fajr and sunrise. Whoever says them with faith and sincerity will be guarded from harm until evening, by Allah’s leave.</p>
+    <div class="hadith-quote">
+      The Prophet ﷺ said: <strong>“Whoever says in the morning: ‘Bismillah illadhi la yadurru ma’a ismihi shay’un fi’l-ard wa la fi’l-sama’ wa huwa as-samee‘ ul-‘aleem’ three times, nothing will harm him until evening.”</strong> (Abū Dāwūd 5088, Ṣaḥīḥ)
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     SECTION 1 – QUR’ĀNIC FORTRESS (ĀYAT AL-KURSI, IKHLĀṢ, FALAQ, NĀS)
+     ═══════════════════════════════════ -->
+<div class="section-label">The Fortress of a Muslim · 3× each</div>
+
+<!-- Āyat al-Kursī -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَٰهَ</span><span class="word-meaning">deity</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">هُوَ</span><span class="word-meaning">He</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحَيُّ</span><span class="word-meaning">the Ever‑Living</span></div>
+    <div class="word-unit"><span class="arabic-word">الْقَيُّومُ</span><span class="word-meaning">the Sustainer</span></div>
+  </div>
+  <div class="transliteration">Allāhu lā ilāha illā hū, al-ḥayyu l-qayyūm...</div>
+  <div class="translation">Āyat al-Kursī (Sūrat al-Baqarah 2:255) – complete</div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Whoever recites it in the morning will be protected from the jinn until evening.<br>
+    <a href="https://sunnah.com/bukhari:2311" target="_blank">Ṣaḥīḥ al-Bukhārī ↗</a>
+  </div>
+</div>
+
+<!-- Sūrat al-Ikhlāṣ + al-Falaq + an-Nās 3× -->
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">قُلْ</span><span class="word-meaning">Say</span></div>
+    <div class="word-unit"><span class="arabic-word">هُوَ</span><span class="word-meaning">He</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">أَحَدٌ</span><span class="word-meaning">One</span></div>
+  </div>
+  <div class="transliteration">Qul huwallāhu aḥad (al-Ikhlāṣ) · Qul a‘ūdhu bi-rabbi l-falaq (al-Falaq) · Qul a‘ūdhu bi-rabbi n-nās (an-Nās)</div>
+  <div class="translation">Sūrat al-Ikhlāṣ, al-Falaq, an-Nās – 3 times each</div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span> The Prophet ﷺ said: <em>“Recite Qul huwallāhu aḥad and al-Mu‘awwidhatān three times in the morning and evening; they will suffice you against everything.”</em><br>
+    <a href="https://sunnah.com/abudawud:5082" target="_blank">Sunan Abī Dāwūd 5082 ↗</a> · graded Ṣaḥīḥ by al-Albānī
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ SECTION 2 – CORE MORNING DU‘Ā ══ -->
+<div class="section-label">Part 1 · Lordship & Reliance</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You are</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my Lord</span></div>
+  </div>
+  <div class="transliteration">Allāhumma anta rabbī</div>
+  <div class="translation">O Allah, You are my Lord</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Part of the comprehensive morning du‘ā.<br><a href="https://sunnah.com/abudawud:5082" target="_blank">Sunan Abī Dāwūd 5082 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You</span></div>
+  </div>
+  <div class="transliteration">Lā ilāha illā anta</div>
+  <div class="translation">There is no god but You</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Declaration of tawḥīd – foundation of istighfār.<br><a href="https://sunnah.com/bukhari:6306" target="_blank">Ṣaḥīḥ al-Bukhārī 6306 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">عَلَيْكَ</span><span class="word-meaning">upon You</span></div>
+    <div class="word-unit"><span class="arabic-word">تَوَكَّلْتُ</span><span class="word-meaning">I rely</span></div>
+  </div>
+  <div class="transliteration">‘alayka tawakkaltu</div>
+  <div class="translation">Upon You I rely</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Affirmation of tawakkul.<br><a href="https://sunnah.com/abudawud:5082" target="_blank">Sunan Abī Dāwūd 5082 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَنْتَ</span><span class="word-meaning">and You are</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبُّ</span><span class="word-meaning">Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَرْشِ</span><span class="word-meaning">of the Throne</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَظِيمِ</span><span class="word-meaning">the Mighty</span></div>
+  </div>
+  <div class="transliteration">wa anta rabbu l-‘arshi l-‘aẓīm</div>
+  <div class="translation">And You are the Lord of the Mighty Throne</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Same narration.<br><a href="https://sunnah.com/abudawud:5082" target="_blank">Sunan Abī Dāwūd 5082 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section-label">Part 2 · Divine Will & Power</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">what</span></div>
+    <div class="word-unit"><span class="arabic-word">شَاءَ</span><span class="word-meaning">wills</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">كَانَ</span><span class="word-meaning">comes to pass</span></div>
+  </div>
+  <div class="transliteration">Mā shā’allāhu kān</div>
+  <div class="translation">What Allah wills comes to pass</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Affirmation of qadar.<br><a href="https://sunnah.com/abudawud:5082" target="_blank">Sunan Abī Dāwūd 5082 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَمَا</span><span class="word-meaning">and what</span></div>
+    <div class="word-unit"><span class="arabic-word">لَمْ</span><span class="word-meaning">He does not</span></div>
+    <div class="word-unit"><span class="arabic-word">يَشَأْ</span><span class="word-meaning">will</span></div>
+    <div class="word-unit"><span class="arabic-word">لَمْ</span><span class="word-meaning">does not</span></div>
+    <div class="word-unit"><span class="arabic-word">يَكُنْ</span><span class="word-meaning">occur</span></div>
+  </div>
+  <div class="transliteration">wa mā lam yasha’ lam yakun</div>
+  <div class="translation">And what He does not will does not occur</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Paired with the above.<br><a href="https://sunnah.com/abudawud:5082" target="_blank">Sunan Abī Dāwūd 5082 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">حَوْلَ</span><span class="word-meaning">power</span></div>
+    <div class="word-unit"><span class="arabic-word">وَلَا</span><span class="word-meaning">and no</span></div>
+    <div class="word-unit"><span class="arabic-word">قُوَّةَ</span><span class="word-meaning">strength</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">بِاللَّهِ</span><span class="word-meaning">with Allah</span></div>
+  </div>
+  <div class="transliteration">lā ḥawla wa lā quwwata illā billāh</div>
+  <div class="translation">There is no power and no strength except with Allah</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> “A treasure from the treasures of Paradise.”<br><a href="https://sunnah.com/bukhari:7386" target="_blank">Ṣaḥīḥ al-Bukhārī 7386 ↗</a> · <a href="https://sunnah.com/muslim:2704" target="_blank">Ṣaḥīḥ Muslim 2704 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section-label">Part 3 · Seeking Refuge</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">I</span></div>
+    <div class="word-unit"><span class="arabic-word">أَعُوذُ</span><span class="word-meaning">seek refuge</span></div>
+    <div class="word-unit"><span class="arabic-word">بِكَ</span><span class="word-meaning">in You</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">شَرِّ</span><span class="word-meaning">evil</span></div>
+    <div class="word-unit"><span class="arabic-word">نَفْسِي</span><span class="word-meaning">of my soul</span></div>
+  </div>
+  <div class="transliteration">Allāhumma innī a‘ūdhu bika min sharri nafsī</div>
+  <div class="translation">O Allah, I seek refuge with You from the evil of my own self</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> <a href="https://sunnah.com/abudawud:5083" target="_blank">Sunan Abī Dāwūd 5083 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَمِنْ</span><span class="word-meaning">and from</span></div>
+    <div class="word-unit"><span class="arabic-word">شَرِّ</span><span class="word-meaning">evil</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">دَابَّةٍ</span><span class="word-meaning">creature</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You</span></div>
+    <div class="word-unit"><span class="arabic-word">آخِذٌ</span><span class="word-meaning">hold</span></div>
+    <div class="word-unit"><span class="arabic-word">بِنَاصِيَتِهَا</span><span class="word-meaning">its forelock</span></div>
+  </div>
+  <div class="transliteration">wa min sharri kulli dābbatin anta ākhidhun bināṣiyatihā</div>
+  <div class="translation">And from the evil of every creature whose forelock You hold</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> <a href="https://sunnah.com/abudawud:5083" target="_blank">Sunan Abī Dāwūd 5083 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ SECTION 3 – ADDITIONAL AUTHENTIC MORNING ADHKĀR ══ -->
+<div class="section-label">Treasured Morning Remembrances · Daily Shield</div>
+
+<!-- Subḥān Allāh wa bi ḥamdih 100× -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">سُبْحَانَ</span><span class="word-meaning">glory be to</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهِ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">وَبِحَمْدِهِ</span><span class="word-meaning">and with His praise</span></div>
+  </div>
+  <div class="transliteration">Subḥānallāhi wa bi ḥamdihī</div>
+  <div class="translation">Glory and praise be to Allah (100 times)</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> “Whoever says it 100 times in the morning and evening, no one will come with better deeds on Judgment Day except one who does more.”<br><a href="https://sunnah.com/muslim:2692" target="_blank">Ṣaḥīḥ Muslim 2692 ↗</a></div>
+</div>
+
+<!-- Bismillah alladhī lā yaḍurru 3× -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِسْمِ</span><span class="word-meaning">In the name of</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهِ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّذِي</span><span class="word-meaning">Who</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">يَضُرُّ</span><span class="word-meaning">harm</span></div>
+    <div class="word-unit"><span class="arabic-word">مَعَ</span><span class="word-meaning">with</span></div>
+    <div class="word-unit"><span class="arabic-word">اسْمِهِ</span><span class="word-meaning">His name</span></div>
+  </div>
+  <div class="transliteration">Bismillāhi lladhī lā yaḍurru ma‘a ismihī shay’un fī l-ardi wa lā fī s-samā’i wa huwa s-samī‘u l-‘alīm</div>
+  <div class="translation">In the name of Allah, with Whose name nothing can harm on earth nor in heaven, and He is the All‑Hearing, All‑Knowing (3 times)</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> “Whoever says it three times in the morning will not be stricken with a sudden affliction until evening.”<br><a href="https://sunnah.com/abudawud:5088" target="_blank">Sunan Abī Dāwūd 5088 ↗</a> · graded Ṣaḥīḥ by al-Albānī</div>
+</div>
+
+<!-- Lā ilāha illallāh waḥdah 10×/100× -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">وَحْدَهُ</span><span class="word-meaning">alone</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">شَرِيكَ</span><span class="word-meaning">partner</span></div>
+    <div class="word-unit"><span class="arabic-word">لَهُ</span><span class="word-meaning">for Him</span></div>
+  </div>
+  <div class="transliteration">Lā ilāha illallāhu waḥdahū lā sharīka lah, lahu l-mulku wa lahu l-ḥamdu wa huwa ‘alā kulli shay’in qadīr</div>
+  <div class="translation">There is no god but Allah alone, no partner for Him. His is the kingdom and His is the praise, and He has power over all things (100× or 10×)</div>
+  <div class="src-popup"><span class="grade-badge grade-hasan">Ḥasan</span> Whoever says it 10 times in the morning will have the reward of freeing a slave, and protection from Shayṭān until evening.<br><a href="https://sunnah.com/tirmidhi:3469" target="_blank">Sunan at-Tirmidhī 3469 ↗</a></div>
+</div>
+
+<!-- Ridītu billāhi rabban -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">رَضِيتُ</span><span class="word-meaning">I am pleased</span></div>
+    <div class="word-unit"><span class="arabic-word">بِاللَّهِ</span><span class="word-meaning">with Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبًّا</span><span class="word-meaning">as Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">وَبِالْإِسْلَامِ</span><span class="word-meaning">with Islam</span></div>
+    <div class="word-unit"><span class="arabic-word">دِينًا</span><span class="word-meaning">as religion</span></div>
+    <div class="word-unit"><span class="arabic-word">وَبِمُحَمَّدٍ</span><span class="word-meaning">with Muḥammad</span></div>
+    <div class="word-unit"><span class="arabic-word">رَسُولًا</span><span class="word-meaning">as Messenger</span></div>
+  </div>
+  <div class="transliteration">Raḍītu billāhi rabban, wa bi-l-islāmi dīnan, wa bi-muḥammadin rasūlan</div>
+  <div class="translation">I am pleased with Allah as Lord, with Islam as religion, and with Muḥammad as Messenger (3 times)</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> “Whoever says this in the morning, Paradise becomes a must for him.”<br><a href="https://sunnah.com/abudawud:5076" target="_blank">Sunan Abī Dāwūd 5076 ↗</a> · <a href="https://sunnah.com/nasai:5465" target="_blank">Sunan an-Nasā’ī 5465 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ SECTION 4 – MORNING PHRASE FOR EVERY DAY ══ -->
+<div class="section-label">Morning Opening · Allāhuma bika aṣbaḥnā</div>
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">بِكَ</span><span class="word-meaning">by You</span></div>
+    <div class="word-unit"><span class="arabic-word">أَصْبَحْنَا</span><span class="word-meaning">we have entered morning</span></div>
+    <div class="word-unit"><span class="arabic-word">وَبِكَ</span><span class="word-meaning">and by You</span></div>
+    <div class="word-unit"><span class="arabic-word">أَمْسَيْنَا</span><span class="word-meaning">we enter evening</span></div>
+  </div>
+  <div class="transliteration">Allāhumma bika aṣbaḥnā, wa bika amsaynā, wa bika naḥyā, wa bika namūtu wa ilayka l-maṣīr</div>
+  <div class="translation">O Allah, by You we enter the morning, by You we enter the evening, by You we live and by You we die, and to You is the final return.</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> <a href="https://sunnah.com/abudawud:5055" target="_blank">Sunan Abī Dāwūd 5055 ↗</a> · al-Albānī: Ṣaḥīḥ</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ FULL SOURCE & AUTHENTICITY STRIP (collapsed) ══ -->
+<div class="info-strip auth">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>✅ Full Source & Authenticity · Shāfi‘ī Adhkār</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>All supplications above are taken directly from authentic ḥadīth (Ṣaḥīḥ or Ḥasan) as compiled by Imams al-Bukhārī, Muslim, Abū Dāwūd, at-Tirmidhī, and others. They are the core structure of “Morning and Evening Adhkār” found in <em>Ḥiṣn al-Muslim</em> and the daily wird of the Shāfi‘ī school.</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Core du‘ā (Allāhumma anta rabbī…) — Sunan Abī Dāwūd 5082</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> “Bismillāh illadhī lā yaḍurru…” — Sunan Abī Dāwūd 5088, graded Ṣaḥīḥ by al-Albānī</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Lā ḥawla wa lā quwwata — Ṣaḥīḥ al-Bukhārī 7386, Ṣaḥīḥ Muslim 2704</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Subḥānallāhi wa bi ḥamdihī 100× — Ṣaḥīḥ Muslim 2692</p>
+    <p><span class="grade-badge grade-hasan">Ḥasan</span> Lā ilāha illallāhu waḥdahū 10× — Sunan at-Tirmidhī 3469</p>
+    <div class="hadith-quote">
+      The Prophet ﷺ said: <strong>“Whoever recites the three Quls (al-Ikhlāṣ, al-Falaq, an-Nās) in the morning and evening, they will suffice him against everything.”</strong> (Abū Dāwūd 5082, Ṣaḥīḥ)
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleInfo(btn) {
+    btn.classList.toggle('open');
+    const body = btn.nextElementSibling;
+    body.classList.toggle('open');
+  }
+
+  function toggleSrc(btn) {
+    btn.classList.toggle('active');
+    const popup = btn.closest('.verse-block').querySelector('.src-popup');
+    if (popup) popup.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
+```

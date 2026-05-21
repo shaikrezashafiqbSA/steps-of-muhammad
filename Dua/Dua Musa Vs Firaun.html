@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du'ā – Rabbish-raḥlī ṣadrī</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lateef&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: #3d2a1a;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.65; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  /* ── Collapsible top/bottom info strip ── */
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+
+  .info-toggle {
+    width: 100%;
+    background: #eef5fb;
+    border: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .info-strip.auth .info-toggle {
+    background: #f0faf2;
+    color: #2a7040;
+  }
+
+  .info-toggle .arrow {
+    font-size: 0.65rem;
+    transition: transform 0.25s ease;
+    color: #888;
+  }
+  .info-toggle.open .arrow { transform: rotate(180deg); }
+
+  .info-body {
+    display: none;
+    padding: 12px 14px 14px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    background: #fff;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body {
+    color: #1a3d26;
+    border-top-color: #b6dfc4;
+  }
+  .info-body.open { display: block; }
+
+  .info-body p { margin-bottom: 8px; }
+  .info-body p:last-child { margin-bottom: 0; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih { background: #d4edda; color: #155724; }
+
+  .info-body a { color: #2a7040; text-decoration: underline; font-size: 0.74rem; }
+
+  /* ── Section label ── */
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  /* ── Verse block ── */
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 10px;
+  }
+
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 42px;
+  }
+
+  .arabic-word {
+    font-family: 'Amiri', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    direction: rtl;
+    text-align: center;
+  }
+
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 72px;
+    direction: ltr;
+  }
+
+  .transliteration {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #666;
+    font-style: italic;
+    margin: 8px 0 6px;
+    line-height: 1.55;
+    border-top: 1px dashed #e0d8cc;
+    padding-top: 8px;
+  }
+
+  .translation {
+    text-align: center;
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.55;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+  }
+
+  .src-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 1px solid #d4c9b8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7d5a;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+  .src-btn:hover, .src-btn.active { background: #3d2a1a; color: #f5e6c8; border-color: #3d2a1a; }
+
+  .src-popup {
+    display: none;
+    margin-top: 10px;
+    background: #f6faf7;
+    border: 1px solid #b6dfc4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #1a3d26;
+  }
+  .src-popup.open { display: block; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Du'ā — Rabbish-raḥlī ṣadrī</h1>
+  <p>Supplication for Clarity and Speech</p>
+</div>
+
+<div class="info-strip context">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This is the beautiful prayer of Prophet Musa (AS) when he was commanded by Allah to face Pharaoh. It is a profound plea for <strong>spiritual expansion, ease in difficult tasks, and the ability to communicate effectively</strong> so that others may understand one's message.</p>
+  </div>
+</div>
+
+<div class="section-label">Sūrat Ṭāhā · 25–28</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">رَبِّ</span>
+      <span class="word-meaning">My Lord</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">اشْرَحْ</span>
+      <span class="word-meaning">expand</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لِي</span>
+      <span class="word-meaning">for me</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">صَدْرِي</span>
+      <span class="word-meaning">my chest</span>
+    </div>
+  </div>
+  <div class="transliteration">Rabbish-raḥlī ṣadrī</div>
+  <div class="translation">My Lord, expand for me my breast [with assurance]</div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Qur'ān</span>
+    Sūrat Ṭāhā (20:25).<br>
+    <a href="https://quran.com/20/25" target="_blank">Quran.com 20:25 ↗</a>
+  </div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَيَسِّرْ</span>
+      <span class="word-meaning">and ease</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لِي</span>
+      <span class="word-meaning">for me</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَمْرِي</span>
+      <span class="word-meaning">my affair</span>
+    </div>
+  </div>
+  <div class="transliteration">wa yassir lī amrī</div>
+  <div class="translation">And ease for me my task</div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Qur'ān</span>
+    Sūrat Ṭāhā (20:26).<br>
+    <a href="https://quran.com/20/26" target="_blank">Quran.com 20:26 ↗</a>
+  </div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَاحْلُلْ</span>
+      <span class="word-meaning">and untie</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عُقْدَةً</span>
+      <span class="word-meaning">a knot</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِّن</span>
+      <span class="word-meaning">from</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لِّسَانِي</span>
+      <span class="word-meaning">my tongue</span>
+    </div>
+  </div>
+  <div class="transliteration">waḥ-lul ʿuqdatam-mil-lisānī</div>
+  <div class="translation">And untie the knot from my tongue</div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Qur'ān</span>
+    Sūrat Ṭāhā (20:27).<br>
+    <a href="https://quran.com/20/27" target="_blank">Quran.com 20:27 ↗</a>
+  </div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">يَفْقَهُوا</span>
+      <span class="word-meaning">they may understand</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَوْلِي</span>
+      <span class="word-meaning">my speech</span>
+    </div>
+  </div>
+  <div class="transliteration">yaf-qahū qawlī</div>
+  <div class="translation">That they may understand my speech</div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Qur'ān</span>
+    Sūrat Ṭāhā (20:28).<br>
+    <a href="https://quran.com/20/28" target="_blank">Quran.com 20:28 ↗</a>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>✅ Source Reference</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This is a direct prayer from the <strong>Noble Qur'ān</strong>, recorded in Sūrat Ṭāhā, Āyāt 25–28. It is highly recommended for students, speakers, and anyone facing a daunting challenge or meeting.</p>
+    <p>
+      <span class="grade-badge grade-sahih">Qur'ān</span>
+      Full passage: <a href="https://quran.com/20/25-28" target="_blank">Sūrat Ṭāhā 20:25–28 ↗</a>
+    </p>
+  </div>
+</div>
+
+<script>
+  function toggleInfo(btn) {
+    btn.classList.toggle('open');
+    const body = btn.nextElementSibling;
+    body.classList.toggle('open');
+  }
+
+  function toggleSrc(btn) {
+    btn.classList.toggle('active');
+    const popup = btn.closest('.verse-block').querySelector('.src-popup');
+    popup.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
+
+

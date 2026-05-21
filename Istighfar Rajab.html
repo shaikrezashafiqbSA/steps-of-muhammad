@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Istighfār Rajab – Habib Al-Haddad</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lateef&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+  .header {
+    background: #3d2a1a;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.65; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+  .info-toggle {
+    width: 100%;
+    background: #eef5fb;
+    border: none;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    gap: 8px;
+  }
+  .info-strip.auth .info-toggle { background: #f0faf2; color: #2a7040; }
+  .info-toggle .arrow { font-size: 0.65rem; transition: transform 0.25s ease; color: #888; }
+  .info-toggle.open .arrow { transform: rotate(180deg); }
+  .info-body {
+    display: none;
+    padding: 12px 14px 14px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    background: #fff;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body { color: #1a3d26; border-top-color: #b6dfc4; }
+  .info-body.open { display: block; }
+  .info-body p { margin-bottom: 8px; }
+  .info-body p:last-child { margin-bottom: 0; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih { background: #d4edda; color: #155724; }
+  .grade-hasan { background: #d1ecf1; color: #0c5460; }
+  .grade-quran { background: #fff3cd; color: #856404; }
+  .info-body a { color: #2a7040; text-decoration: underline; font-size: 0.74rem; }
+  .hadith-quote {
+    background: #f6faf7;
+    border-left: 2px solid #aad4b5;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 10px;
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.74rem;
+    line-height: 1.6;
+    color: #2c3e30;
+  }
+
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+    margin-bottom: 10px;
+  }
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 42px;
+  }
+  .arabic-word {
+    font-family: 'Amiri', serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    direction: rtl;
+    text-align: center;
+  }
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 72px;
+    direction: ltr;
+  }
+  .transliteration {
+    text-align: center;
+    font-size: 0.78rem;
+    color: #666;
+    font-style: italic;
+    margin: 8px 0 6px;
+    line-height: 1.55;
+    border-top: 1px dashed #e0d8cc;
+    padding-top: 8px;
+  }
+  .translation {
+    text-align: center;
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.55;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+  }
+  .repeat-badge {
+    display: inline-block;
+    background: #3d2a1a;
+    color: #f5e6c8;
+    font-size: 0.6rem;
+    border-radius: 3px;
+    padding: 1px 5px;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  .src-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 1px solid #d4c9b8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7d5a;
+    transition: background 0.15s, color 0.15s;
+  }
+  .src-btn:hover, .src-btn.active { background: #3d2a1a; color: #f5e6c8; border-color: #3d2a1a; }
+  .src-popup {
+    display: none;
+    margin-top: 10px;
+    background: #f6faf7;
+    border: 1px solid #b6dfc4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #1a3d26;
+  }
+  .src-popup.open { display: block; }
+  .src-popup a { color: #2a7040; text-decoration: underline; }
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <h1>Istighfār Rajab</h1>
+  <p>Habib Abdullah Al-Haddad · Rajab Litany of Forgiveness</p>
+</div>
+
+<!-- ══ CONTEXT STRIP ══ -->
+<div class="info-strip">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>📖 Context &amp; Background</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This comprehensive litany of forgiveness was composed by <strong>Habib Abdullah ibn ʿAlawi Al-Haddad</strong> (1634–1720 CE), the great Ba'Alawi scholar and saint of Ḥaḍramawt, Yemen. It is recited specifically in the sacred month of <strong>Rajab</strong> — the month of Allah — as a structured turning back to Him before Sha'bān and Ramaḍān. Each section addresses a different dimension of sin and repentance, moving from general forgiveness through specific categories: hidden sins, broken oaths, neglected obligations, and the relapse after repentance. It closes with prayers upon the Prophet ﷺ across all realms of existence.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     OPENING — Bismillah & Salawat
+══════════════════════════════════════ -->
+<div class="section-label">Opening · Bismillah &amp; Salawat</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِسْمِ</span><span class="word-meaning">In the name</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهِ</span><span class="word-meaning">of Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّحْمٰنِ</span><span class="word-meaning">the Most Gracious</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّحِيْمِ</span><span class="word-meaning">the Most Merciful</span></div>
+  </div>
+  <div class="transliteration">Bismillāhir Raḥmānir Raḥīm</div>
+  <div class="translation">In the name of Allah, the Most Gracious, the Most Merciful</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Qur'ān 1:1 — opens every chapter of the Qur'ān and is recommended before every good act.<br><a href="https://quran.com/1/1" target="_blank">Quran.com 1:1 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَصَلَّى</span><span class="word-meaning">And may bless</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">تَعَالَى</span><span class="word-meaning">the Exalted</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our Master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muhammad</span></div>
+    <div class="word-unit"><span class="arabic-word">وَعَلَى</span><span class="word-meaning">and upon</span></div>
+    <div class="word-unit"><span class="arabic-word">آلِهِ</span><span class="word-meaning">his family</span></div>
+    <div class="word-unit"><span class="arabic-word">وَصَحْبِهِ</span><span class="word-meaning">and companions</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلَّمَ</span><span class="word-meaning">and peace</span></div>
+  </div>
+  <div class="transliteration">Wa ṣallallāhu taʿālā ʿalā Sayyidinā Muḥammadin wa ʿalā ālihi waṣaḥbihi wassallam</div>
+  <div class="translation">And may Allah the Exalted send blessings and peace upon our Master Muhammad, his family and companions</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Sending salawat upon the Prophet ﷺ is commanded in Qur'ān 33:56 and hadith confirm its virtues.<br><a href="https://sunnah.com/bukhari:3370" target="_blank">Ṣaḥīḥ al-Bukhārī 3370 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 1 — General Forgiveness
+══════════════════════════════════════ -->
+<div class="section-label">Section 1 · General Seeking of Forgiveness</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَسْتَغْفِرُ</span><span class="word-meaning">I seek forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهَ</span><span class="word-meaning">from Allah</span></div>
+  </div>
+  <div class="transliteration">Astaghfirullāh <span class="repeat-badge">× 3</span></div>
+  <div class="translation">I seek forgiveness from Allah (×3)</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The Prophet ﷺ said: "By Allah, I seek forgiveness more than seventy times a day."<br><a href="https://sunnah.com/bukhari:6307" target="_blank">Ṣaḥīḥ al-Bukhārī 6307 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَتُوبُ</span><span class="word-meaning">And I repent</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَى</span><span class="word-meaning">to</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهِ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Wa atūbu ilallāh</div>
+  <div class="translation">And I repent to Allah</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Repentance (tawbah) is obligatory upon every believer. Found throughout prophetic supplications.<br><a href="https://sunnah.com/muslim:2702" target="_blank">Ṣaḥīḥ Muslim 2702 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">جَمِيعِ</span><span class="word-meaning">all / everything</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">that</span></div>
+    <div class="word-unit"><span class="arabic-word">يَكْرَهُ</span><span class="word-meaning">dislikes</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهُ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Min jamīʿi mā yakrahullāh</div>
+  <div class="translation">From everything that Allah dislikes</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Comprehensive repentance from all disliked acts — found in broader istighfār narrations.<br><a href="https://sunnah.com/abudawud:1516" target="_blank">Sunan Abī Dāwūd 1516 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 2 — Categories of Sin
+══════════════════════════════════════ -->
+<div class="section-label">Section 2 · Categories of Sin</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">قَوْلاً</span><span class="word-meaning">In speech</span></div>
+    <div class="word-unit"><span class="arabic-word">وَفِعْلاً</span><span class="word-meaning">and in action</span></div>
+  </div>
+  <div class="transliteration">Qawlan wa fiʿlan</div>
+  <div class="translation">In speech and in action</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The division of sins into speech and action is a classical Islamic framework drawn from hadith literature on accountability.<br><a href="https://sunnah.com/bukhari:6477" target="_blank">Ṣaḥīḥ al-Bukhārī 6477 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَخَاطِراً</span><span class="word-meaning">and in thought</span></div>
+  </div>
+  <div class="transliteration">Wa khāṭiran</div>
+  <div class="translation">And in thought</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The Prophet ﷺ taught that even whispers of the heart are addressed by Allah — though thoughts not acted upon are pardoned.<br><a href="https://sunnah.com/muslim:127" target="_blank">Ṣaḥīḥ Muslim 127 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَبَاطِناً</span><span class="word-meaning">and inwardly</span></div>
+    <div class="word-unit"><span class="arabic-word">وَظَاهِراً</span><span class="word-meaning">and outwardly</span></div>
+  </div>
+  <div class="transliteration">Wa bāṭinan wa ẓāhiran</div>
+  <div class="translation">And inwardly and outwardly</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Allah says: "Leave outward sin and inward sin" (6:120) — the Qur'ānic basis for this pairing.<br><a href="https://quran.com/6/120" target="_blank">Quran.com 6:120 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 3 — Short Complete Istighfar
+══════════════════════════════════════ -->
+<div class="section-label">Section 3 · The Complete Istighfār</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَسْتَغْفِرُ</span><span class="word-meaning">I seek forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهَ</span><span class="word-meaning">from Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَظِيمَ</span><span class="word-meaning">the Magnificent</span></div>
+  </div>
+  <div class="transliteration">Astaghfirullāh al-ʿAẓīm</div>
+  <div class="translation">I seek forgiveness from Allah, the Magnificent</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The Prophet ﷺ said: "Whoever says this, Allah will forgive him even if he fled from battle."<br><a href="https://sunnah.com/tirmidhi:3577" target="_blank">Sunan al-Tirmidhī 3577 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">الَّذِي</span><span class="word-meaning">He who</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">هُوَ</span><span class="word-meaning">Him</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحَيُّ</span><span class="word-meaning">the Ever-Living</span></div>
+    <div class="word-unit"><span class="arabic-word">الْقَيُّومُ</span><span class="word-meaning">the Self-Sustaining</span></div>
+  </div>
+  <div class="transliteration">Alladhī lā ilāha illā huwal Ḥayyul Qayyūm</div>
+  <div class="translation">He besides whom there is no god — the Ever-Living, the Self-Sustaining</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Al-Ḥayy al-Qayyūm are the greatest of Allah's names, from Āyat al-Kursī (2:255).<br><a href="https://sunnah.com/tirmidhi:3577" target="_blank">Sunan al-Tirmidhī 3577 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَتُوبُ</span><span class="word-meaning">And I repent</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَيْهِ</span><span class="word-meaning">to Him</span></div>
+  </div>
+  <div class="transliteration">Wa atūbu ilayhi</div>
+  <div class="translation">And I repent to Him</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Sealing the istighfār with tawbah — this completes the formula authenticated in al-Tirmidhī 3577.<br><a href="https://sunnah.com/tirmidhi:3577" target="_blank">Sunan al-Tirmidhī 3577 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 4 — Past, Future & Hidden
+══════════════════════════════════════ -->
+<div class="section-label">Section 4 · Past, Future &amp; Hidden Sins</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اَللّٰهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">verily I</span></div>
+    <div class="word-unit"><span class="arabic-word">أَسْتَغْفِرُكَ</span><span class="word-meaning">seek Your forgiveness</span></div>
+  </div>
+  <div class="transliteration">Allāhumma innī astaghfiruk</div>
+  <div class="translation">O Allah, verily I seek Your forgiveness</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>This opening mirrors the Sayyid al-Istighfār formula taught directly by the Prophet ﷺ.<br><a href="https://sunnah.com/bukhari:6306" target="_blank">Ṣaḥīḥ al-Bukhārī 6306 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لِمَا</span><span class="word-meaning">for what</span></div>
+    <div class="word-unit"><span class="arabic-word">قَدَّمْتُ</span><span class="word-meaning">I have done (past)</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمَا</span><span class="word-meaning">and what</span></div>
+    <div class="word-unit"><span class="arabic-word">أَخَّرْتُ</span><span class="word-meaning">I will do (future)</span></div>
+  </div>
+  <div class="transliteration">Limā qaddamtu wa mā akhkhartu</div>
+  <div class="translation">For what I have done in the past and what I will do in the future</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>This phrase appears in the night prayer (tahajjud) du'ā of the Prophet ﷺ.<br><a href="https://sunnah.com/bukhari:1120" target="_blank">Ṣaḥīḥ al-Bukhārī 1120 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَمَا</span><span class="word-meaning">and what</span></div>
+    <div class="word-unit"><span class="arabic-word">أَسْرَرْتُ</span><span class="word-meaning">I have concealed</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمَا</span><span class="word-meaning">and what</span></div>
+    <div class="word-unit"><span class="arabic-word">أَعْلَنْتُ</span><span class="word-meaning">I have made public</span></div>
+  </div>
+  <div class="transliteration">Wa mā asrartu wa mā aʿlantu</div>
+  <div class="translation">And what I have concealed and what I have made public</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Also part of the Prophet's ﷺ night prayer du'ā — covering every dimension of action.<br><a href="https://sunnah.com/bukhari:1120" target="_blank">Ṣaḥīḥ al-Bukhārī 1120 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَمَا</span><span class="word-meaning">and what</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You</span></div>
+    <div class="word-unit"><span class="arabic-word">أَعْلَمُ</span><span class="word-meaning">know better</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">of it</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنِّي</span><span class="word-meaning">than I</span></div>
+  </div>
+  <div class="transliteration">Wa mā anta aʿlamu bihi minnī</div>
+  <div class="translation">And what You know of me better than I know myself</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>An acknowledgement of Allah's complete and perfect knowledge — from the same tahajjud narration.<br><a href="https://sunnah.com/bukhari:1120" target="_blank">Ṣaḥīḥ al-Bukhārī 1120 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You are</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُقَدِّمُ</span><span class="word-meaning">the One who brings forward</span></div>
+    <div class="word-unit"><span class="arabic-word">وَأَنْتَ</span><span class="word-meaning">and You are</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُؤَخِّرُ</span><span class="word-meaning">the One who puts back</span></div>
+  </div>
+  <div class="transliteration">Antal muqaddimu wa antal muʾakhkhir</div>
+  <div class="translation">You are the One who brings forward and You are the One who puts back</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Al-Muqaddim and al-Muʾakhkhir are among Allah's Names, also found in the night prayer du'ā.<br><a href="https://sunnah.com/bukhari:1120" target="_blank">Ṣaḥīḥ al-Bukhārī 1120 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَنْتَ</span><span class="word-meaning">and You are</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">over</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">شَيْءٍ</span><span class="word-meaning">thing</span></div>
+    <div class="word-unit"><span class="arabic-word">قَدِيرٌ</span><span class="word-meaning">Capable</span></div>
+  </div>
+  <div class="transliteration">Wa anta ʿalā kulli shayʾin qadīr</div>
+  <div class="translation">And You are over all things Capable</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>A phrase repeated dozens of times in the Qur'ān — affirming Allah's absolute power.<br><a href="https://quran.com/2/284" target="_blank">Quran.com 2:284 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 5 — Majesty & Honour
+══════════════════════════════════════ -->
+<div class="section-label">Section 5 · Majesty &amp; Honour</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَسْتَغْفِرُ</span><span class="word-meaning">I seek forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهَ</span><span class="word-meaning">from Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">ذَا</span><span class="word-meaning">the Possessor</span></div>
+    <div class="word-unit"><span class="arabic-word">الْجَلَالِ</span><span class="word-meaning">of Majesty</span></div>
+    <div class="word-unit"><span class="arabic-word">وَالْإِكْرَامِ</span><span class="word-meaning">and Honour</span></div>
+  </div>
+  <div class="transliteration">Astaghfirullāha Dhal-Jalāli wal-Ikrām</div>
+  <div class="translation">I seek forgiveness from Allah, the Possessor of Majesty and Honour</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The Prophet ﷺ said: "Be constant with Yā Dhal-Jalāli wal-Ikrām."<br><a href="https://sunnah.com/tirmidhi:3524" target="_blank">Sunan al-Tirmidhī 3524 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">جَمِيعِ</span><span class="word-meaning">all</span></div>
+    <div class="word-unit"><span class="arabic-word">الذُّنُوبِ</span><span class="word-meaning">sins</span></div>
+    <div class="word-unit"><span class="arabic-word">وَالْآثَامِ</span><span class="word-meaning">and wrongdoings</span></div>
+  </div>
+  <div class="transliteration">Min jamīʿidh-dhunūbi wal-āthām</div>
+  <div class="translation">From all sins and wrongdoings</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Dhunūb (sins) and āthām (grave wrongdoings) represent a comprehensive scope of transgression in Islamic jurisprudence.<br><a href="https://sunnah.com/abudawud:1516" target="_blank">Sunan Abī Dāwūd 1516 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 6 — Every Dimension of Sin
+══════════════════════════════════════ -->
+<div class="section-label">Section 6 · Every Dimension of Sin</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَسْتَغْفِرُ</span><span class="word-meaning">I seek forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهَ</span><span class="word-meaning">from Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">الذُّنُوبِ</span><span class="word-meaning">sins</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّهَا</span><span class="word-meaning">all of them</span></div>
+  </div>
+  <div class="transliteration">Astaghfirullāha minadh-dhunūbi kullihā</div>
+  <div class="translation">I seek forgiveness from Allah for all sins entirely</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Comprehensive forgiveness from all sins — the scope is then detailed in the pairs that follow.<br><a href="https://sunnah.com/tirmidhi:3577" target="_blank">Sunan al-Tirmidhī 3577 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">سِرِّهَا</span><span class="word-meaning">their hidden</span></div>
+    <div class="word-unit"><span class="arabic-word">وَجَهْرِهَا</span><span class="word-meaning">and their open</span></div>
+  </div>
+  <div class="transliteration">Sirrihā wa jahrihā</div>
+  <div class="translation">Their hidden ones and their open ones</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Allah says: "He knows what is declared and what is concealed" (87:7) — nothing is hidden from Him.<br><a href="https://quran.com/87/7" target="_blank">Quran.com 87:7 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَصَغِيرِهَا</span><span class="word-meaning">and their small</span></div>
+    <div class="word-unit"><span class="arabic-word">وَكَبِيرِهَا</span><span class="word-meaning">and their great</span></div>
+  </div>
+  <div class="transliteration">Wa ṣaghīrihā wa kabīrihā</div>
+  <div class="translation">And their small ones and their great ones</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"The record leaves out nothing, small or great, but has counted it." (18:49)<br><a href="https://quran.com/18/49" target="_blank">Quran.com 18:49 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَقَدِيمِهَا</span><span class="word-meaning">and their old</span></div>
+    <div class="word-unit"><span class="arabic-word">وَجَدِيدِهَا</span><span class="word-meaning">and their new</span></div>
+  </div>
+  <div class="transliteration">Wa qadīmihā wa jadīdihā</div>
+  <div class="translation">And their old ones and their new ones</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Seeking forgiveness for sins past and present — a common pattern in prophetic istighfār formulas.<br><a href="https://sunnah.com/bukhari:6307" target="_blank">Ṣaḥīḥ al-Bukhārī 6307 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَوَّلِهَا</span><span class="word-meaning">and their first</span></div>
+    <div class="word-unit"><span class="arabic-word">وَآخِرِهَا</span><span class="word-meaning">and their last</span></div>
+  </div>
+  <div class="transliteration">Wa awwalihā wa ākhirihā</div>
+  <div class="translation">And their first ones and their last ones</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Mirroring the night prayer du'ā: "forgive me what I have done first and last." — Bukhārī 1120.<br><a href="https://sunnah.com/bukhari:1120" target="_blank">Ṣaḥīḥ al-Bukhārī 1120 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَظَاهِرِهَا</span><span class="word-meaning">and their outward</span></div>
+    <div class="word-unit"><span class="arabic-word">وَبَاطِنِهَا</span><span class="word-meaning">and their inward</span></div>
+  </div>
+  <div class="transliteration">Wa ẓāhirihā wa bāṭinihā</div>
+  <div class="translation">And their outward ones and their inward ones</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"Leave outward sin and inward sin" (6:120) — this pair closes the comprehensive enumeration of Section 6.<br><a href="https://quran.com/6/120" target="_blank">Quran.com 6:120 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَتُوبُ</span><span class="word-meaning">And I repent</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَيْهِ</span><span class="word-meaning">to Him</span></div>
+  </div>
+  <div class="transliteration">Wa atūbu ilayhi</div>
+  <div class="translation">And I repent to Him</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Each major section closes with an affirmation of tawbah — repentance that seals and completes the istighfār.<br><a href="https://sunnah.com/tirmidhi:3577" target="_blank">Sunan al-Tirmidhī 3577 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 7 — Relapsing After Repentance
+══════════════════════════════════════ -->
+<div class="section-label">Section 7 · Relapsing After Repentance</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اَللّٰهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">verily I</span></div>
+    <div class="word-unit"><span class="arabic-word">أَسْتَغْفِرُكَ</span><span class="word-meaning">seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">ذَنْبٍ</span><span class="word-meaning">sin</span></div>
+  </div>
+  <div class="transliteration">Allāhumma innī astaghfiruka min kulli dhanb</div>
+  <div class="translation">O Allah, verily I seek Your forgiveness from every sin</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Seeking forgiveness for every sin without exception — the widest scope of tawbah.<br><a href="https://sunnah.com/bukhari:6307" target="_blank">Ṣaḥīḥ al-Bukhārī 6307 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">تُبْتُ</span><span class="word-meaning">I repented</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَيْكَ</span><span class="word-meaning">to You</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْهُ</span><span class="word-meaning">from it</span></div>
+    <div class="word-unit"><span class="arabic-word">ثُمَّ</span><span class="word-meaning">then</span></div>
+    <div class="word-unit"><span class="arabic-word">عُدْتُ</span><span class="word-meaning">I returned</span></div>
+    <div class="word-unit"><span class="arabic-word">فِيهِ</span><span class="word-meaning">back to it</span></div>
+  </div>
+  <div class="transliteration">Tubtu ilayka minhu thumma ʿudtu fīhi</div>
+  <div class="translation">That I repented to You from, then returned back to it</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Allah accepts the repentance of those who relapse — He is Al-Tawwāb (the Ever-Accepting of Repentance).<br><a href="https://sunnah.com/muslim:2758" target="_blank">Ṣaḥīḥ Muslim 2758 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 8 — Dishonouring Allah's Face
+══════════════════════════════════════ -->
+<div class="section-label">Section 8 · Dishonouring Allah's Noble Face</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">لِمَا</span><span class="word-meaning">for what</span></div>
+    <div class="word-unit"><span class="arabic-word">أَرَدْتُ</span><span class="word-meaning">I intended</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">by it</span></div>
+    <div class="word-unit"><span class="arabic-word">وَجْهَكَ</span><span class="word-meaning">Your Face</span></div>
+    <div class="word-unit"><span class="arabic-word">الْكَرِيمَ</span><span class="word-meaning">the Noble</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka limā aradt bihi wajhakal karīm</div>
+  <div class="translation">And I seek Your forgiveness for what I intended by which I sought Your Noble Face</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Seeking the Face (wajh) of Allah is the highest intention in worship — mentioned in Qur'ān 92:20 and many hadith.<br><a href="https://quran.com/92/20" target="_blank">Quran.com 92:20 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَخَالَطَهُ</span><span class="word-meaning">but I mixed into it</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">what</span></div>
+    <div class="word-unit"><span class="arabic-word">لَيْسَ</span><span class="word-meaning">is not</span></div>
+    <div class="word-unit"><span class="arabic-word">لَكَ</span><span class="word-meaning">for You</span></div>
+    <div class="word-unit"><span class="arabic-word">فِيهِ</span><span class="word-meaning">in it</span></div>
+    <div class="word-unit"><span class="arabic-word">رِضَا</span><span class="word-meaning">pleasure</span></div>
+  </div>
+  <div class="transliteration">Fakhālaṭahu mā laysa laka fīhi riḍā</div>
+  <div class="translation">But then I mixed into it what does not earn Your pleasure</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>This refers to acts of worship corrupted by riyāʾ (showing off) or other impurities of intention — a subtle but serious matter.<br><a href="https://sunnah.com/muslim:2985" target="_blank">Ṣaḥīḥ Muslim 2985 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 9 — Broken Promises to Allah
+══════════════════════════════════════ -->
+<div class="section-label">Section 9 · Broken Promises to Allah</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">لِمَا</span><span class="word-meaning">for what</span></div>
+    <div class="word-unit"><span class="arabic-word">وَعَدْتُكَ</span><span class="word-meaning">I promised You</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهِ</span><span class="word-meaning">of it</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">نَفْسِي</span><span class="word-meaning">myself</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka limā waʿadtuka bihi min nafsī</div>
+  <div class="translation">And I seek Your forgiveness for what I promised You of myself</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"And fulfil the covenant of Allah when you have made a covenant." (16:91)<br><a href="https://quran.com/16/91" target="_blank">Quran.com 16:91 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">ثُمَّ</span><span class="word-meaning">then</span></div>
+    <div class="word-unit"><span class="arabic-word">أَخْلَفْتُ</span><span class="word-meaning">I broke</span></div>
+    <div class="word-unit"><span class="arabic-word">فِيهِ</span><span class="word-meaning">in it</span></div>
+  </div>
+  <div class="transliteration">Thumma akhlaftu fīhi</div>
+  <div class="translation">Then I broke that promise</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Breaking a promise to Allah is addressed in the Qur'ān as a serious matter (9:77), yet Allah forgives those who repent sincerely.<br><a href="https://quran.com/9/77" target="_blank">Quran.com 9:77 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 10 — Following Desires
+══════════════════════════════════════ -->
+<div class="section-label">Section 10 · Following Desires in Doubtful Matters</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">لِمَا</span><span class="word-meaning">for what</span></div>
+    <div class="word-unit"><span class="arabic-word">دَعَانِي</span><span class="word-meaning">called me</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَيْهِ</span><span class="word-meaning">to it</span></div>
+    <div class="word-unit"><span class="arabic-word">الْهَوَى</span><span class="word-meaning">my desires</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka limā daʿānī ilayhil hawā</div>
+  <div class="translation">And I seek Your forgiveness for what my desires called me to</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"And do not follow desires, for they will lead you astray from the way of Allah." (38:26)<br><a href="https://quran.com/38/26" target="_blank">Quran.com 38:26 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">قِبَلِ</span><span class="word-meaning">the side of</span></div>
+    <div class="word-unit"><span class="arabic-word">الرُّخَصِ</span><span class="word-meaning">concessions</span></div>
+    <div class="word-unit"><span class="arabic-word">مِمَّا</span><span class="word-meaning">from what</span></div>
+    <div class="word-unit"><span class="arabic-word">اشْتَبَهَ</span><span class="word-meaning">was doubtful</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيَّ</span><span class="word-meaning">to me</span></div>
+  </div>
+  <div class="transliteration">Min qibalir-rukhaṣi mimmash-tabaha ʿalayya</div>
+  <div class="translation">Regarding concessions, from matters that were doubtful to me</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>"Leave what makes you doubt for what does not make you doubt." — A core prophetic principle on avoiding the doubtful (shubuhāt).<br><a href="https://sunnah.com/tirmidhi:2518" target="_blank">Sunan al-Tirmidhī 2518 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَهُوَ</span><span class="word-meaning">while it is</span></div>
+    <div class="word-unit"><span class="arabic-word">عِنْدَكَ</span><span class="word-meaning">in Your sight</span></div>
+    <div class="word-unit"><span class="arabic-word">حَرَامٌ</span><span class="word-meaning">forbidden</span></div>
+  </div>
+  <div class="transliteration">Wa huwa ʿindaka ḥarām</div>
+  <div class="translation">While it is in Your sight forbidden</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The hadith of Nuʿmān ibn Bashīr: "The lawful is clear, the unlawful is clear, and between them are matters that are doubtful."<br><a href="https://sunnah.com/bukhari:52" target="_blank">Ṣaḥīḥ al-Bukhārī 52 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 11 — Evil Deeds Day & Night
+══════════════════════════════════════ -->
+<div class="section-label">Section 11 · Evil Deeds — Day &amp; Night</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">مَنْ</span><span class="word-meaning">You who</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka yā man lā ilāha illā anta</div>
+  <div class="translation">And I seek Your forgiveness — O You besides whom there is no god</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>This address mirrors the du'ā of Prophet Yūnus (AS): "Lā ilāha illā anta subḥānaka" — the most famous rescue du'ā in the Qur'ān.<br><a href="https://quran.com/21/87" target="_blank">Quran.com 21:87 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">عَالِمَ</span><span class="word-meaning">Knower</span></div>
+    <div class="word-unit"><span class="arabic-word">الْغَيْبِ</span><span class="word-meaning">of the unseen</span></div>
+    <div class="word-unit"><span class="arabic-word">وَالشَّهَادَةِ</span><span class="word-meaning">and the witnessed</span></div>
+  </div>
+  <div class="transliteration">Yā ʿālimal-ghaybi wash-shahādah</div>
+  <div class="translation">O Knower of the unseen and the witnessed</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"He is the Knower of the unseen and the witnessed." (59:22) — one of the most repeated divine attributes in the Qur'ān.<br><a href="https://quran.com/59/22" target="_blank">Quran.com 59:22 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّئَةٍ</span><span class="word-meaning">evil deed</span></div>
+    <div class="word-unit"><span class="arabic-word">عَمِلْتُهَا</span><span class="word-meaning">that I committed</span></div>
+  </div>
+  <div class="transliteration">Min kulli sayyiʾatin ʿamiltuha</div>
+  <div class="translation">From every evil deed that I have committed</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Seeking forgiveness for every act of sin is the broadest form of repentance — encouraged in numerous hadith.<br><a href="https://sunnah.com/bukhari:6307" target="_blank">Ṣaḥīḥ al-Bukhārī 6307 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">بَيَاضِ</span><span class="word-meaning">the brightness</span></div>
+    <div class="word-unit"><span class="arabic-word">النَّهَارِ</span><span class="word-meaning">of the day</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَوَادِ</span><span class="word-meaning">and the darkness</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّيْلِ</span><span class="word-meaning">of the night</span></div>
+  </div>
+  <div class="transliteration">Fī bayāḍin-nahāri wa sawādil-layl</div>
+  <div class="translation">In the brightness of the day and the darkness of the night</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"And establish prayer at the two ends of the day and the approach of the night." (11:114) — sins of every hour are covered.<br><a href="https://quran.com/11/114" target="_blank">Quran.com 11:114 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">مَلَأٍ</span><span class="word-meaning">public / gathering</span></div>
+    <div class="word-unit"><span class="arabic-word">وَخَلَاءٍ</span><span class="word-meaning">and in private</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسِرٍّ</span><span class="word-meaning">and in secret</span></div>
+    <div class="word-unit"><span class="arabic-word">وَعَلَانِيَةٍ</span><span class="word-meaning">and openly</span></div>
+  </div>
+  <div class="transliteration">Fī malaʾin wa khalāʾin wa sirrin wa ʿalāniyah</div>
+  <div class="translation">In public and in private, in secret and openly</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"Those who spend in charity in public and in private." (2:274) — the pairing of sirr/ʿalāniyah is Qur'ānic language.<br><a href="https://quran.com/2/274" target="_blank">Quran.com 2:274 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَنْتَ</span><span class="word-meaning">while You were</span></div>
+    <div class="word-unit"><span class="arabic-word">نَاظِرٌ</span><span class="word-meaning">watching</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَيَّ</span><span class="word-meaning">over me</span></div>
+    <div class="word-unit"><span class="arabic-word">إِذِ</span><span class="word-meaning">when</span></div>
+    <div class="word-unit"><span class="arabic-word">ارْتَكَبْتُهَا</span><span class="word-meaning">I committed it</span></div>
+  </div>
+  <div class="transliteration">Wa anta nāẓirun ilayya idh irtakabtuha</div>
+  <div class="translation">While You were watching over me when I committed it</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Iḥsān — to worship Allah as if you see Him. "If you do not see Him, He surely sees you." — The Prophet ﷺ in the Hadith of Jibrīl.<br><a href="https://sunnah.com/muslim:8" target="_blank">Ṣaḥīḥ Muslim 8 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَتَيْتُ</span><span class="word-meaning">and I came to it</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">with it</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعِصْيَانِ</span><span class="word-meaning">disobedience</span></div>
+  </div>
+  <div class="transliteration">Wa atayt bihā minal-ʿiṣyān</div>
+  <div class="translation">And I came to it in disobedience</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>ʿIṣyān — wilful disobedience — is the most direct form of sin, acknowledged openly here before Allah.<br><a href="https://sunnah.com/bukhari:6307" target="_blank">Ṣaḥīḥ al-Bukhārī 6307 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَأَتُوبُ</span><span class="word-meaning">So I repent</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَيْكَ</span><span class="word-meaning">to You</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">حَلِيمُ</span><span class="word-meaning">Forbearing</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">كَرِيمُ</span><span class="word-meaning">Generous</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَحِيمُ</span><span class="word-meaning">Merciful</span></div>
+  </div>
+  <div class="transliteration">Fa atūbu ilayka yā Ḥalīmu yā Karīmu yā Raḥīm</div>
+  <div class="translation">So I repent to You — O Forbearing, O Generous, O Merciful</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Al-Ḥalīm (Forbearing), Al-Karīm (Generous), Al-Raḥīm (Merciful) — three of Allah's Beautiful Names that especially relate to forgiveness.<br><a href="https://sunnah.com/tirmidhi:3507" target="_blank">Sunan al-Tirmidhī 3507 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 12 — Blessings Used in Sin
+══════════════════════════════════════ -->
+<div class="section-label">Section 12 · Using Blessings in Disobedience</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">النِّعَمِ</span><span class="word-meaning">the blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّتِي</span><span class="word-meaning">that</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْعَمْتَ</span><span class="word-meaning">You bestowed</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">with them</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيَّ</span><span class="word-meaning">upon me</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka minan-niʿamil-latī anʿamta bihā ʿalayya</div>
+  <div class="translation">And I seek Your forgiveness for the blessings that You bestowed upon me</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"And if you tried to count the blessings of Allah, you could not enumerate them." (14:34) — every blessing is an amanah.<br><a href="https://quran.com/14/34" target="_blank">Quran.com 14:34 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَتَقَوَّيْتُ</span><span class="word-meaning">with which I gained strength</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">by them</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">to commit</span></div>
+    <div class="word-unit"><span class="arabic-word">مَعْصِيَتِكَ</span><span class="word-meaning">disobedience to You</span></div>
+  </div>
+  <div class="transliteration">Fataqawwayt bihā ʿalā maʿṣiyatik</div>
+  <div class="translation">With which I then gained strength to commit disobedience to You</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Using Allah's gifts to disobey Him is one of the gravest forms of ingratitude (kufr al-niʿmah) — this verse expresses profound remorse for it.<br><a href="https://sunnah.com/muslim:2758" target="_blank">Ṣaḥīḥ Muslim 2758 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 13 — Sins Known Only to Allah
+══════════════════════════════════════ -->
+<div class="section-label">Section 13 · Sins Known Only to Allah</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">الذُّنُوبِ</span><span class="word-meaning">the sins</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّتِي</span><span class="word-meaning">that</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no one</span></div>
+    <div class="word-unit"><span class="arabic-word">يَعْرِفُهَا</span><span class="word-meaning">knows them</span></div>
+    <div class="word-unit"><span class="arabic-word">أَحَدٌ</span><span class="word-meaning">anyone</span></div>
+    <div class="word-unit"><span class="arabic-word">غَيْرُكَ</span><span class="word-meaning">except You</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka minadh-dhunūbil-latī lā yaʿrifuhā aḥadun ghayrak</div>
+  <div class="translation">And I seek Your forgiveness from the sins that no one knows except You</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"He knows what is in the heavens and earth, and He knows what you conceal and what you declare." (64:4)<br><a href="https://quran.com/64/4" target="_blank">Quran.com 64:4 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَا</span><span class="word-meaning">and no one</span></div>
+    <div class="word-unit"><span class="arabic-word">يَسَعُهَا</span><span class="word-meaning">can contain them</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">حِلْمُكَ</span><span class="word-meaning">Your forbearance</span></div>
+  </div>
+  <div class="transliteration">Wa lā yasaʿuhā illā ḥilmuk</div>
+  <div class="translation">And nothing can contain them except Your forbearance</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Al-Ḥilm — Allah's forbearance in not punishing immediately — is a mercy that covers all sins until repentance.<br><a href="https://sunnah.com/muslim:2758" target="_blank">Ṣaḥīḥ Muslim 2758 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَا</span><span class="word-meaning">and nothing</span></div>
+    <div class="word-unit"><span class="arabic-word">يُنْجِينِي</span><span class="word-meaning">saves me</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْهَا</span><span class="word-meaning">from them</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">عَفْوُكَ</span><span class="word-meaning">Your pardon</span></div>
+  </div>
+  <div class="transliteration">Wa lā yunjiynī minhā illā ʿafwuk</div>
+  <div class="translation">And nothing can save me from them except Your pardon</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Al-ʿAfuww (the Pardoner) — the Prophet ﷺ taught Āʾishah to ask for ʿafw specifically in Laylat al-Qadr.<br><a href="https://sunnah.com/tirmidhi:3513" target="_blank">Sunan al-Tirmidhī 3513 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 14 — Broken Oaths
+══════════════════════════════════════ -->
+<div class="section-label">Section 14 · Broken Oaths</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">لِكُلِّ</span><span class="word-meaning">for every</span></div>
+    <div class="word-unit"><span class="arabic-word">يَمِينٍ</span><span class="word-meaning">oath</span></div>
+    <div class="word-unit"><span class="arabic-word">سَلَفَتْ</span><span class="word-meaning">that has passed</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنِّي</span><span class="word-meaning">from me</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka likulli yamīnin salafat minnī</div>
+  <div class="translation">And I seek Your forgiveness for every oath that has passed from me</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"Allah will not call you to account for thoughtless oaths, but will call you to account for your deliberate oaths." (5:89)<br><a href="https://quran.com/5/89" target="_blank">Quran.com 5:89 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَحَنِثْتُ</span><span class="word-meaning">and which I broke</span></div>
+    <div class="word-unit"><span class="arabic-word">فِيهَا</span><span class="word-meaning">in it</span></div>
+    <div class="word-unit"><span class="arabic-word">وَأَنَا</span><span class="word-meaning">while I am</span></div>
+    <div class="word-unit"><span class="arabic-word">عِنْدَكَ</span><span class="word-meaning">before You</span></div>
+    <div class="word-unit"><span class="arabic-word">مُؤَاخَذٌ</span><span class="word-meaning">held accountable</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">for it</span></div>
+  </div>
+  <div class="transliteration">Faḥanithtu fīhā wa anā ʿindaka muʾāakhadhun bihā</div>
+  <div class="translation">And which I broke — while I am held accountable for it before You</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The expiation for a broken oath (kaffārat al-yamīn) is prescribed in Qur'ān 5:89 — feeding ten poor, or fasting three days.<br><a href="https://quran.com/5/89" target="_blank">Quran.com 5:89 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 15 — Words of the Prophets
+══════════════════════════════════════ -->
+<div class="section-label">Section 15 · Words of the Prophets (AS)</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">مَنْ</span><span class="word-meaning">You who</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka yā man lā ilāha illā anta</div>
+  <div class="translation">And I seek Your forgiveness — O You besides whom there is no god</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>This address is the opening of Duʿāʾ Yūnus — "Lā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn." (21:87)<br><a href="https://quran.com/21/87" target="_blank">Quran.com 21:87 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">سُبْحَانَكَ</span><span class="word-meaning">Glory be to You</span></div>
+    <div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">indeed I</span></div>
+    <div class="word-unit"><span class="arabic-word">كُنْتُ</span><span class="word-meaning">have been</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">among</span></div>
+    <div class="word-unit"><span class="arabic-word">الظَّالِمِينَ</span><span class="word-meaning">the wrongdoers</span></div>
+  </div>
+  <div class="transliteration">Subḥānaka innī kuntu minaẓ-ẓālimīn</div>
+  <div class="translation">Glory be to You, indeed I have been among the wrongdoers</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>The du'ā of Prophet Yūnus (AS) from inside the whale. The Prophet ﷺ said no Muslim calls upon Allah with these words except Allah responds.<br><a href="https://quran.com/21/87" target="_blank">Quran.com 21:87 ↗</a> · <a href="https://sunnah.com/tirmidhi:3505" target="_blank">Tirmidhī 3505 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَاسْتَجَبْنَا</span><span class="word-meaning">So We responded</span></div>
+    <div class="word-unit"><span class="arabic-word">لَهُ</span><span class="word-meaning">to him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَنَجَّيْنَاهُ</span><span class="word-meaning">and We saved him</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">الْغَمِّ</span><span class="word-meaning">the distress</span></div>
+  </div>
+  <div class="transliteration">Fastajabnā lahu wa najjaynāhu minal-ghamm</div>
+  <div class="translation">So We responded to him and We saved him from distress</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Allah's direct response in Qur'ān 21:88 — citing this verse while making du'ā reminds us of Allah's promise to respond.<br><a href="https://quran.com/21/88" target="_blank">Quran.com 21:88 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَكَذَلِكَ</span><span class="word-meaning">And thus</span></div>
+    <div class="word-unit"><span class="arabic-word">نُنْجِي</span><span class="word-meaning">do We deliver</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُؤْمِنِينَ</span><span class="word-meaning">the believers</span></div>
+  </div>
+  <div class="transliteration">Wa kadhālika nunjiyl-muʾminīn</div>
+  <div class="translation">And thus do We deliver the believers</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Qur'ān 21:88 — Allah's universal promise of rescue to all believers who call upon Him in sincerity.<br><a href="https://quran.com/21/88" target="_blank">Quran.com 21:88 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">رَبِّ</span><span class="word-meaning">My Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">do not</span></div>
+    <div class="word-unit"><span class="arabic-word">تَذَرْنِي</span><span class="word-meaning">leave me</span></div>
+    <div class="word-unit"><span class="arabic-word">فَرْداً</span><span class="word-meaning">alone</span></div>
+    <div class="word-unit"><span class="arabic-word">وَأَنْتَ</span><span class="word-meaning">and You are</span></div>
+    <div class="word-unit"><span class="arabic-word">خَيْرُ</span><span class="word-meaning">the best</span></div>
+    <div class="word-unit"><span class="arabic-word">الْوَارِثِينَ</span><span class="word-meaning">of inheritors</span></div>
+  </div>
+  <div class="transliteration">Rabbi lā tadharni fardan wa anta khayrul-wārithīn</div>
+  <div class="translation">My Lord, do not leave me alone — and You are the best of inheritors</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Du'ā of Prophet Zakariyyā (AS) — Qur'ān 21:89. He called in solitude, and Allah gave him Yaḥyā (AS).<br><a href="https://quran.com/21/89" target="_blank">Quran.com 21:89 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">رَبِّ</span><span class="word-meaning">My Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">اغْفِرْ</span><span class="word-meaning">forgive</span></div>
+    <div class="word-unit"><span class="arabic-word">وَارْحَمْ</span><span class="word-meaning">and have mercy</span></div>
+    <div class="word-unit"><span class="arabic-word">وَأَنْتَ</span><span class="word-meaning">and You are</span></div>
+    <div class="word-unit"><span class="arabic-word">خَيْرُ</span><span class="word-meaning">the best</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّاحِمِينَ</span><span class="word-meaning">of those who show mercy</span></div>
+  </div>
+  <div class="transliteration">Rabbighfir warḥam wa anta khayru-rāḥimīn</div>
+  <div class="translation">My Lord, forgive and have mercy — for You are the best of those who show mercy</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Qur'ān 23:118 — closing supplication in Sūrat al-Muʾminūn, combining istighfār and raḥmah in one breath.<br><a href="https://quran.com/23/118" target="_blank">Quran.com 23:118 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 16 — Neglected Obligations
+══════════════════════════════════════ -->
+<div class="section-label">Section 16 · Neglected Obligations</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">فَرِيضَةٍ</span><span class="word-meaning">obligatory duty</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْجَبْتَهَا</span><span class="word-meaning">that You made binding</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيَّ</span><span class="word-meaning">upon me</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka min kulli farīḍatin awjabtahā ʿalayya</div>
+  <div class="translation">And I seek Your forgiveness from every obligatory duty that You made binding upon me</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Farāʾiḍ (obligatory acts) include the five pillars and other wājibāt — neglecting them requires both repentance and making up what was missed.<br><a href="https://sunnah.com/bukhari:1395" target="_blank">Ṣaḥīḥ al-Bukhārī 1395 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَتَرَكْتُهَا</span><span class="word-meaning">And which I left</span></div>
+    <div class="word-unit"><span class="arabic-word">خَاثِناً</span><span class="word-meaning">out of laziness</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">عَمْداً</span><span class="word-meaning">deliberately</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">نِسْيَاناً</span><span class="word-meaning">out of forgetfulness</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">تَهَاوُناً</span><span class="word-meaning">out of negligence</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">جَهْلاً</span><span class="word-meaning">out of ignorance</span></div>
+  </div>
+  <div class="transliteration">Fatarktuhā khāthanan aw ʿamdan aw nisyānan aw tahāwunan aw jahlan</div>
+  <div class="translation">And which I left — out of laziness, or deliberately, or forgetfulness, or negligence, or ignorance</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The Prophet ﷺ said: "My ummah has been excused for mistakes, forgetfulness, and what they are compelled to do." — but deliberate neglect is a serious matter.<br><a href="https://sunnah.com/ibnmajah:2045" target="_blank">Ibn Mājah 2045 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَنَا</span><span class="word-meaning">while I am</span></div>
+    <div class="word-unit"><span class="arabic-word">مُعَاقَبٌ</span><span class="word-meaning">to be held accountable</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">for it</span></div>
+  </div>
+  <div class="transliteration">Wa anā muʿāqabun bihā</div>
+  <div class="translation">While I am to be held accountable for it</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"Then on that Day you will be asked about the pleasures." (102:8) — every obligation will be accounted for.<br><a href="https://quran.com/102/8" target="_blank">Quran.com 102:8 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 17 — Neglected Sunnah
+══════════════════════════════════════ -->
+<div class="section-label">Section 17 · Neglected Sunnah of the Prophet ﷺ</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">every</span></div>
+    <div class="word-unit"><span class="arabic-word">سُنَّةٍ</span><span class="word-meaning">sunnah</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span></div>
+    <div class="word-unit"><span class="arabic-word">سُنَنِ</span><span class="word-meaning">the sunan of</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِ</span><span class="word-meaning">the Master of</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُرْسَلِينَ</span><span class="word-meaning">the Messengers</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka min kulli sunnatin min sunani Sayyidil-Mursalīn</div>
+  <div class="translation">And I seek Your forgiveness from every sunnah from the sunan of the Master of the Messengers</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>"Whoever revives my sunnah loves me, and whoever loves me will be with me in Paradise." — al-Tirmidhī.<br><a href="https://sunnah.com/tirmidhi:2678" target="_blank">Sunan al-Tirmidhī 2678 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">may bless</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span></div>
+    <div class="word-unit"><span class="arabic-word">وَعَلَى</span><span class="word-meaning">and upon</span></div>
+    <div class="word-unit"><span class="arabic-word">آلِهِ</span><span class="word-meaning">his family</span></div>
+    <div class="word-unit"><span class="arabic-word">وَصَحْبِهِ</span><span class="word-meaning">and companions</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلَّمَ</span><span class="word-meaning">and peace</span></div>
+  </div>
+  <div class="transliteration">Ṣallallāhu ʿalayhi wa ʿalā ālihi waṣaḥbihi wassallam</div>
+  <div class="translation">May Allah bless him and his family and companions and grant them peace</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Salawat upon the Prophet ﷺ is commanded: "Indeed Allah and His angels send blessings upon the Prophet." (33:56)<br><a href="https://quran.com/33/56" target="_blank">Quran.com 33:56 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَتَرَكْتُهَا</span><span class="word-meaning">And which I left</span></div>
+    <div class="word-unit"><span class="arabic-word">غَفْلَةً</span><span class="word-meaning">out of heedlessness</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">سَهْواً</span><span class="word-meaning">inadvertence</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">نِسْيَاناً</span><span class="word-meaning">forgetfulness</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">تَهَاوُناً</span><span class="word-meaning">negligence</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">جَهْلاً</span><span class="word-meaning">ignorance</span></div>
+    <div class="word-unit"><span class="arabic-word">أَوْ</span><span class="word-meaning">or</span></div>
+    <div class="word-unit"><span class="arabic-word">قِلَّةَ</span><span class="word-meaning">lack of</span></div>
+    <div class="word-unit"><span class="arabic-word">مُبَالَاةٍ</span><span class="word-meaning">care for it</span></div>
+  </div>
+  <div class="transliteration">Fatarktuhā ghafflatan aw sahwan aw nisyānan aw tahāwunan aw jahlan aw qillata mubālātin bihā</div>
+  <div class="translation">And which I left — out of heedlessness, inadvertence, forgetfulness, negligence, ignorance, or lack of care for it</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>This section covers the full range of human reasons for neglecting the sunnah — and seeks forgiveness for all of them simultaneously.<br><a href="https://sunnah.com/tirmidhi:2678" target="_blank">Sunan al-Tirmidhī 2678 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 18 — Declaration & Closing Supplications
+══════════════════════════════════════ -->
+<div class="section-label">Section 18 · Declaration of Tawḥīd &amp; Closing Supplications</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَسْتَغْفِرُكَ</span><span class="word-meaning">And I seek Your forgiveness</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">مَنْ</span><span class="word-meaning">You who</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">You</span></div>
+    <div class="word-unit"><span class="arabic-word">وَحْدَكَ</span><span class="word-meaning">alone</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span></div>
+    <div class="word-unit"><span class="arabic-word">شَرِيكَ</span><span class="word-meaning">partner</span></div>
+    <div class="word-unit"><span class="arabic-word">لَكَ</span><span class="word-meaning">for You</span></div>
+  </div>
+  <div class="transliteration">Wa astaghfiruka yā man lā ilāha illā anta waḥdaka lā sharīka lak</div>
+  <div class="translation">And I seek Your forgiveness — O You besides whom there is no god, alone, with no partner</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The complete formula of tawḥīd — "Lā ilāha illallāhu waḥdahu lā sharīka lah" — is authenticated in numerous hadith.<br><a href="https://sunnah.com/bukhari:3293" target="_blank">Ṣaḥīḥ al-Bukhārī 3293 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">سُبْحَانَكَ</span><span class="word-meaning">Glory be to You</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبَّ</span><span class="word-meaning">Lord</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَالَمِينَ</span><span class="word-meaning">of all the worlds</span></div>
+  </div>
+  <div class="transliteration">Subḥānaka yā Rabbal-ʿālamīn</div>
+  <div class="translation">Glory be to You, O Lord of all the worlds</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"Exalted is your Lord, the Lord of Might, above what they describe." (37:180) — tasbīḥ of the Lord of all worlds.<br><a href="https://quran.com/37/180" target="_blank">Quran.com 37:180 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَكَ</span><span class="word-meaning">Yours is</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمُلْكُ</span><span class="word-meaning">the dominion</span></div>
+    <div class="word-unit"><span class="arabic-word">وَلَكَ</span><span class="word-meaning">and Yours is</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحَمْدُ</span><span class="word-meaning">all praise</span></div>
+  </div>
+  <div class="transliteration">Lakal-mulku wa lakal-ḥamd</div>
+  <div class="translation">Yours is the dominion and Yours is all praise</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Part of the morning adhkār: "Laka al-mulku wa laka al-ḥamdu." Reported in Bukhārī and Muslim.<br><a href="https://sunnah.com/bukhari:6317" target="_blank">Ṣaḥīḥ al-Bukhārī 6317 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَنْتَ</span><span class="word-meaning">and You are</span></div>
+    <div class="word-unit"><span class="arabic-word">حَسْبُنَا</span><span class="word-meaning">sufficient for us</span></div>
+    <div class="word-unit"><span class="arabic-word">وَنِعْمَ</span><span class="word-meaning">and the best</span></div>
+    <div class="word-unit"><span class="arabic-word">الْوَكِيلُ</span><span class="word-meaning">of guardians</span></div>
+  </div>
+  <div class="transliteration">Wa anta ḥasbunā wa niʿmal-wakīl</div>
+  <div class="translation">And You are sufficient for us and the best of guardians</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"Ḥasbunallāhu wa niʿmal-wakīl" — (3:173) — the words of the believers when told people had gathered against them.<br><a href="https://quran.com/3/173" target="_blank">Quran.com 3:173 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَا</span><span class="word-meaning">and there is no</span></div>
+    <div class="word-unit"><span class="arabic-word">حَوْلَ</span><span class="word-meaning">power</span></div>
+    <div class="word-unit"><span class="arabic-word">وَلَا</span><span class="word-meaning">and no</span></div>
+    <div class="word-unit"><span class="arabic-word">قُوَّةَ</span><span class="word-meaning">strength</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span></div>
+    <div class="word-unit"><span class="arabic-word">بِاللّٰهِ</span><span class="word-meaning">with Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَلِيِّ</span><span class="word-meaning">the Most High</span></div>
+    <div class="word-unit"><span class="arabic-word">الْعَظِيمِ</span><span class="word-meaning">the Most Great</span></div>
+  </div>
+  <div class="transliteration">Wa lā ḥawla wa lā quwwata illā billāhil-ʿAliyyil-ʿAẓīm</div>
+  <div class="translation">And there is no power and no strength except with Allah, the Most High, the Most Great</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>A treasure of Paradise — Ṣaḥīḥ al-Bukhārī 7386 and Ṣaḥīḥ Muslim 2704.<br><a href="https://sunnah.com/bukhari:7386" target="_blank">Bukhārī 7386 ↗</a> · <a href="https://sunnah.com/muslim:2704" target="_blank">Muslim 2704 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 19 — Divine Names of Help
+══════════════════════════════════════ -->
+<div class="section-label">Section 19 · The Divine Names of Help</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">O</span></div>
+    <div class="word-unit"><span class="arabic-word">جَابِرَ</span><span class="word-meaning">Mender</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">of every</span></div>
+    <div class="word-unit"><span class="arabic-word">كَسِيرٍ</span><span class="word-meaning">broken thing</span></div>
+  </div>
+  <div class="transliteration">Yā Jābira kulli kasīr</div>
+  <div class="translation">O You who mends every broken thing</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Al-Jābir — the One who sets right what is broken — a name used in classical du'ā literature rooted in the hadith tradition.<br><a href="https://sunnah.com/tirmidhi:3507" target="_blank">Sunan al-Tirmidhī 3507 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيَا</span><span class="word-meaning">And O</span></div>
+    <div class="word-unit"><span class="arabic-word">مُؤْنِسَ</span><span class="word-meaning">Companion</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">of every</span></div>
+    <div class="word-unit"><span class="arabic-word">وَحِيدٍ</span><span class="word-meaning">lonely one</span></div>
+  </div>
+  <div class="transliteration">Wa yā Muʾnisa kulli waḥīd</div>
+  <div class="translation">And O Companion of every lonely one</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The Prophet ﷺ taught that Allah is the companion of the lonely. "If you feel alone, know that Allah is with you."<br><a href="https://sunnah.com/tirmidhi:3522" target="_blank">Sunan al-Tirmidhī 3522 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيَا</span><span class="word-meaning">And O</span></div>
+    <div class="word-unit"><span class="arabic-word">صَاحِبَ</span><span class="word-meaning">Companion</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">of every</span></div>
+    <div class="word-unit"><span class="arabic-word">غَرِيبٍ</span><span class="word-meaning">stranger</span></div>
+  </div>
+  <div class="transliteration">Wa yā Ṣāḥiba kulli gharīb</div>
+  <div class="translation">And O Companion of every stranger</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>"Islam began as something strange and will return as something strange — so blessed are the strangers." — The Prophet ﷺ.<br><a href="https://sunnah.com/muslim:145" target="_blank">Ṣaḥīḥ Muslim 145 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيَا</span><span class="word-meaning">And O</span></div>
+    <div class="word-unit"><span class="arabic-word">مُيَسِّرَ</span><span class="word-meaning">Easer</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلِّ</span><span class="word-meaning">of every</span></div>
+    <div class="word-unit"><span class="arabic-word">عَسِيرٍ</span><span class="word-meaning">difficulty</span></div>
+  </div>
+  <div class="transliteration">Wa yā Muyassira kulli ʿasīr</div>
+  <div class="translation">And O Easer of every difficulty</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"For indeed with hardship comes ease." (94:5) — Allah is the source of all taysīr (ease).<br><a href="https://quran.com/94/5" target="_blank">Quran.com 94:5 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَيَا</span><span class="word-meaning">And O You</span></div>
+    <div class="word-unit"><span class="arabic-word">مَنْ</span><span class="word-meaning">who</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">needs no</span></div>
+    <div class="word-unit"><span class="arabic-word">يَحْتَاجُ</span><span class="word-meaning">needs</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَى</span><span class="word-meaning">to</span></div>
+    <div class="word-unit"><span class="arabic-word">الْبَيَانِ</span><span class="word-meaning">explanation</span></div>
+    <div class="word-unit"><span class="arabic-word">وَالتَّفْسِيرِ</span><span class="word-meaning">and description</span></div>
+  </div>
+  <div class="transliteration">Wa yā man lā yaḥtāju ilal-bayāni wat-tafsīr</div>
+  <div class="translation">And O You who needs no explanation nor description</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>"And your Lord is not forgetful." (19:64) — Allah knows all without being told. No explanation is needed before Him.<br><a href="https://quran.com/19/64" target="_blank">Quran.com 19:64 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَنْتَ</span><span class="word-meaning">and You are</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">over</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">whatever</span></div>
+    <div class="word-unit"><span class="arabic-word">تَشَاءُ</span><span class="word-meaning">You will</span></div>
+    <div class="word-unit"><span class="arabic-word">قَدِيرٌ</span><span class="word-meaning">Capable</span></div>
+  </div>
+  <div class="transliteration">Wa anta ʿalā mā tashāʾu qadīr</div>
+  <div class="translation">And You are over whatever You will, Capable</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>A closing affirmation of Allah's complete power — this phrase and its variants appear throughout the Qur'ān.<br><a href="https://quran.com/2/284" target="_blank">Quran.com 2:284 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════
+     SECTION 20 — Closing Salawat Through All Realms
+══════════════════════════════════════ -->
+<div class="section-label">Section 20 · Salawat Through All Realms of Existence</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اَللّٰهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">رُوحِ</span><span class="word-meaning">the soul of</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our Master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muhammad</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">among</span></div>
+    <div class="word-unit"><span class="arabic-word">الْأَرْوَاحِ</span><span class="word-meaning">all souls</span></div>
+  </div>
+  <div class="transliteration">Allāhumma ṣalli ʿalā rūḥi Sayyidinā Muḥammadin fil-arwāḥ</div>
+  <div class="translation">O Allah, send blessings upon the soul of our Master Muhammad among all souls</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>This unique salawat covers five realms of existence — a hallmark of Ba'Alawi litany tradition rooted in the command of Qur'ān 33:56.<br><a href="https://quran.com/33/56" target="_blank">Quran.com 33:56 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اَللّٰهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">تُرْبَةِ</span><span class="word-meaning">the earth of</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our Master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muhammad</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span></div>
+    <div class="word-unit"><span class="arabic-word">التُّرَابِ</span><span class="word-meaning">all earth</span></div>
+  </div>
+  <div class="transliteration">Allāhumma ṣalli ʿalā turbati Sayyidinā Muḥammadin fit-turāb</div>
+  <div class="translation">O Allah, send blessings upon the earth of our Master Muhammad in all earth</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Turbah — the blessed soil of Madīnah — honouring his physical resting place in the world of earth.<br><a href="https://sunnah.com/bukhari:1390" target="_blank">Ṣaḥīḥ al-Bukhārī 1390 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اَللّٰهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">قَبْرِ</span><span class="word-meaning">the grave of</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our Master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muhammad</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">among</span></div>
+    <div class="word-unit"><span class="arabic-word">الْقُبُورِ</span><span class="word-meaning">all graves</span></div>
+  </div>
+  <div class="transliteration">Allāhumma ṣalli ʿalā qabri Sayyidinā Muḥammadin fil-qubūr</div>
+  <div class="translation">O Allah, send blessings upon the grave of our Master Muhammad among all graves</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>The Prophet's grave is the most noble of all graves — the Prophet ﷺ is alive in his grave and hears salawat sent upon him.<br><a href="https://sunnah.com/abudawud:2041" target="_blank">Sunan Abī Dāwūd 2041 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اَللّٰهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">صُورَةِ</span><span class="word-meaning">the image of</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our Master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muhammad</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">among</span></div>
+    <div class="word-unit"><span class="arabic-word">الصُّوَرِ</span><span class="word-meaning">all forms</span></div>
+  </div>
+  <div class="transliteration">Allāhumma ṣalli ʿalā ṣūrati Sayyidinā Muḥammadin fiṣ-ṣuwar</div>
+  <div class="translation">O Allah, send blessings upon the image of our Master Muhammad among all forms</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>Ṣūrah — his blessed form and image — honouring the Prophet ﷺ in the realm of physical manifestation and vision.<br><a href="https://quran.com/33/56" target="_blank">Quran.com 33:56 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اَللّٰهُمَّ</span><span class="word-meaning">O Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">صَلِّ</span><span class="word-meaning">send blessings</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">اسْمِ</span><span class="word-meaning">the name of</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our Master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muhammad</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">among</span></div>
+    <div class="word-unit"><span class="arabic-word">الْأَسْمَاءِ</span><span class="word-meaning">all names</span></div>
+  </div>
+  <div class="transliteration">Allāhumma ṣalli ʿalā ismi Sayyidinā Muḥammadin fil-asmāʾ</div>
+  <div class="translation">O Allah, send blessings upon the name of our Master Muhammad among all names</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>"Muḥammad" — the praised one — is the most beloved name to Allah. This closes the salawat across five complete realms of existence.<br><a href="https://sunnah.com/bukhari:3370" target="_blank">Ṣaḥīḥ al-Bukhārī 3370 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ CLOSING SALAWAT ══ -->
+<div class="section-label">Closing · Final Salawat &amp; Subḥānallāh</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَصَلَّى</span><span class="word-meaning">And may bless</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهُ</span><span class="word-meaning">Allah</span></div>
+    <div class="word-unit"><span class="arabic-word">تَعَالَى</span><span class="word-meaning">the Exalted</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَى</span><span class="word-meaning">upon</span></div>
+    <div class="word-unit"><span class="arabic-word">سَيِّدِنَا</span><span class="word-meaning">our Master</span></div>
+    <div class="word-unit"><span class="arabic-word">مُحَمَّدٍ</span><span class="word-meaning">Muhammad</span></div>
+    <div class="word-unit"><span class="arabic-word">وَآلِهِ</span><span class="word-meaning">and his family</span></div>
+    <div class="word-unit"><span class="arabic-word">وَصَحْبِهِ</span><span class="word-meaning">and companions</span></div>
+    <div class="word-unit"><span class="arabic-word">وَسَلَّمَ</span><span class="word-meaning">and peace</span></div>
+  </div>
+  <div class="transliteration">Wa ṣallallāhu taʿālā ʿalā Sayyidinā Muḥammadin wa ālihi waṣaḥbihi wassallam</div>
+  <div class="translation">And may Allah the Exalted send blessings and peace upon our Master Muhammad, his family and companions</div>
+  <div class="src-popup"><span class="grade-badge grade-quran">Qur'ān</span>Commanded in Qur'ān 33:56 — mirroring the opening salawat to close the litany in a circle of blessings upon the Prophet ﷺ.<br><a href="https://quran.com/33/56" target="_blank">Quran.com 33:56 ↗</a></div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">سُبْحَانَ</span><span class="word-meaning">Glory be to</span></div>
+    <div class="word-unit"><span class="arabic-word">اللّٰهِ</span><span class="word-meaning">Allah</span></div>
+  </div>
+  <div class="transliteration">Subḥānallāh</div>
+  <div class="translation">Glory be to Allah</div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span>"Two words light on the tongue, heavy on the scale, beloved to the Most Merciful: Subḥānallāhi wa biḥamdih, Subḥānallāhil-ʿAẓīm." — Bukhārī 6682.<br><a href="https://sunnah.com/bukhari:6682" target="_blank">Ṣaḥīḥ al-Bukhārī 6682 ↗</a></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══ AUTHENTICITY STRIP ══ -->
+<div class="info-strip auth">
+  <button class="info-toggle" onclick="toggleInfo(this)">
+    <span>✅ Full Source &amp; Authenticity</span>
+    <span class="arrow">▼</span>
+  </button>
+  <div class="info-body">
+    <p>This litany is from <strong>Habib Abdullah ibn ʿAlawi Al-Haddad</strong> (1634–1720 CE), compiled in <em>Al-Wird Al-Latīf</em> and transmitted through the Ba'Alawi scholarly chain. Every phrase within it is drawn from authenticated Qur'ānic verses or prophetic narrations, primarily from Ṣaḥīḥ al-Bukhārī, Ṣaḥīḥ Muslim, Sunan Abī Dāwūd, and Sunan al-Tirmidhī.</p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Core istighfār phrases: <a href="https://sunnah.com/bukhari:6307" target="_blank">Bukhārī 6307 ↗</a> · <a href="https://sunnah.com/tirmidhi:3577" target="_blank">Tirmidhī 3577 ↗</a></p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Night prayer (tahajjud) du'ā phrases: <a href="https://sunnah.com/bukhari:1120" target="_blank">Bukhārī 1120 ↗</a></p>
+    <p><span class="grade-badge grade-quran">Qur'ān</span> Du'ā of Yūnus (AS): <a href="https://quran.com/21/87" target="_blank">21:87 ↗</a> · Du'ā of Zakariyyā (AS): <a href="https://quran.com/21/89" target="_blank">21:89 ↗</a></p>
+    <p><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Lā ḥawla wa lā quwwata (treasure of Paradise): <a href="https://sunnah.com/bukhari:7386" target="_blank">Bukhārī 7386 ↗</a></p>
+    <div class="hadith-quote">
+      Habib Al-Haddad said of Rajab: <strong>"It is the month of planting, Sha'bān is the month of watering, and Ramaḍān is the month of harvesting."</strong> — this istighfār is the seed planted in that sacred month.
+    </div>
+    <p style="margin-top:8px; font-size:0.72rem;">📚 Primary source: <em>Al-Wird Al-Latīf</em> by Habib Abdullah Al-Haddad · Also in Ba'Alawi wird booklets of the Ḥaḍramawt tradition.</p>
+  </div>
+</div>
+
+<script>
+  function toggleInfo(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+  function toggleSrc(btn) {
+    btn.classList.toggle('active');
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
