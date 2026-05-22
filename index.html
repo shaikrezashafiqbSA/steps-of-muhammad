@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dua Collection Feed</title>
+  <!-- Tailwind CSS for instant, premium mobile UI styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen antialiased selection:bg-amber-500/30">
+
+  <!-- TOP HEADER (Instagram style sticky nav) -->
+  <header class="sticky top-0 z-50 bg-[#0b0f19]/80 backdrop-blur-md border-b border-slate-800/80 px-4 py-3">
+    <div class="max-w-md mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-black tracking-wide bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+        DUA.CARD
+      </h1>
+      <span class="text-xs font-mono text-slate-500 uppercase tracking-widest bg-slate-900 px-2.5 py-1 rounded-full border border-slate-800">
+        Live Collection
+      </span>
+    </div>
+  </header>
+
+  <!-- THE VERTICAL FEED CONTAINER -->
+  <main id="feed-container" class="max-w-md mx-auto px-4 py-6 space-y-8 pb-24">
+    <!-- Loading State -->
+    <div id="loading" class="text-center py-12 text-sm font-mono text-slate-500 tracking-wider animate-pulse">
+      Shuffling the deck... Loading cards...
+    </div>
+  </main>
+
+  <!-- DYNAMIC LOADER SCRIPT -->
+  <script>
+    // 1. ADD YOUR HTML FILENAMES HERE AS YOU CREATE THEM
+    // The script will automatically fetch them and stack them like an Instagram feed.
+    const duaFiles = [
+      "Dua Abu Darda.html",
+      "Istighfar Rajab.html",
+      "Dua - Allahuma ajirna minanaar.html",
+      "Morning Adhkar papa.html"
+    ];
+
+    const feedContainer = document.getElementById('feed-container');
+    const loadingEl = document.getElementById('loading');
+
+    async function loadFeed() {
+      let loadedAny = false;
+
+      for (const file of duaFiles) {
+        try {
+          // Fetch the raw HTML content of each separate file
+          const response = await fetch(file);
+          if (!response.ok) throw new Error(`Could not read ${file}`);
+          
+          const rawHtml = await response.text();
+
+          // Create a temporary browser element to parse the file content
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(rawHtml, 'text/html');
+
+          // Extract ONLY the inner card container from your templates
+          // (This expects your files to have a div with the class or structure of the trading card)
+          const cardContent = doc.querySelector('.max-w-md') || doc.body;
+
+          // Wrap it nicely for our feed stack
+          const cardWrapper = document.createElement('div');
+          cardWrapper.className = "transform transition-all duration-300 hover:scale-[1.01] hover:shadow-amber-500/5";
+          cardWrapper.innerHTML = cardContent.innerHTML;
+
+          // Append to our scrolling feed
+          feedContainer.appendChild(cardWrapper);
+          loadedAny = true;
+
+        } catch (error) {
+          console.error(`Skipping card [${file}]:`, error);
+        }
+      }
+
+      // Clean up loading element
+      if (loadedAny) {
+        loadingEl.remove();
+      } else {
+        loadingEl.innerText = "No active cards found. Add templates to the list inside index.html!";
+      }
+    }
+
+    // Initialize the feed when the page loads
+    window.addEventListener('DOMContentLoaded', loadFeed);
+  </script>
+
+</body>
+</html>
