@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Steps of Muhammad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom style to handle smooth cross-fading of the spiritual transformation */
+    .emblem-container:hover .base-flag { opacity: 0; }
+    .emblem-container:hover .nur-flag { opacity: 1; scale: 1.05; }
+    /* Touch state for mobile screens */
+    .emblem-container:active .base-flag { opacity: 0; }
+    .emblem-container:active .nur-flag { opacity: 1; scale: 1.05; }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 antialiased selection:bg-amber-500/30">
+
+  <div id="yt-audio-player" class="hidden"></div>
+
+  <div class="max-w-md w-full text-center space-y-8">
+    
+    <div class="space-y-4 flex flex-col items-center">
+      
+      <div id="emblem-trigger" class="emblem-container relative w-36 h-36 rounded-full overflow-hidden border border-slate-800 shadow-2xl transition-all duration-500 cursor-pointer group hover:border-amber-500/50 hover:shadow-amber-500/10">
+        
+        <img 
+          src="Black Flag.jpeg" 
+          alt="Nalayn Shareef - Base State" 
+          class="base-flag absolute inset-0 w-full h-full object-cover object-center opacity-100 scale-100 transition-all duration-700 ease-in-out"
+        />
+
+        <img 
+          src="Black Flag (nur).jpeg" 
+          alt="Nalayn Shareef - Filled with Nur" 
+          class="nur-flag absolute inset-0 w-full h-full object-cover object-center opacity-0 scale-100 transition-all duration-700 ease-in-out"
+        />
+        
+        <div class="absolute inset-0 ring-1 ring-inset ring-amber-400/20 rounded-full pointer-events-none group-hover:ring-amber-400/50 transition-all duration-500"></div>
+      </div>
+
+      <div class="space-y-1">
+        <h1 class="text-3xl font-black tracking-wider bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent uppercase">
+          Steps of Muhammad
+        </h1>
+        <p class="text-xs font-mono text-slate-500 uppercase tracking-widest">
+          Interact with the Vault to awaken the path
+        </p>
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      
+      <a href="Dua Haj/" 
+         onmouseenter="igniteNur()" 
+         onmouseleave="extinguishNur()"
+         class="group block bg-[#151d30] border border-slate-800 rounded-2xl p-6 text-left transition-all duration-300 hover:border-amber-500/50 hover:scale-[1.01] hover:shadow-xl hover:shadow-amber-500/5">
+        <div class="flex items-center justify-between">
+          <div class="space-y-1">
+            <h2 class="text-lg font-bold text-slate-100 group-hover:text-amber-400 transition-colors">
+              During Haj
+            </h2>
+            <p class="text-sm text-slate-400">
+              Trace the prophetic steps and supplications for the sacred pilgrimage.
+            </p>
+          </div>
+          <span class="text-2xl opacity-80 group-hover:opacity-100 transition-opacity">🕋</span>
+        </div>
+      </a>
+
+      <a href="Dua Shifa/" 
+         onmouseenter="igniteNur()" 
+         onmouseleave="extinguishNur()"
+         class="group block bg-[#151d30] border border-slate-800 rounded-2xl p-6 text-left transition-all duration-300 hover:border-cyan-500/50 hover:scale-[1.01] hover:shadow-xl hover:shadow-cyan-500/5">
+        <div class="flex items-center justify-between">
+          <div class="space-y-1">
+            <h2 class="text-lg font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">
+              During Sickness
+            </h2>
+            <p class="text-sm text-slate-400">
+              Prophetic remedies, prayers for healing, and divine restoration.
+            </p>
+          </div>
+          <span class="text-2xl opacity-80 group-hover:opacity-100 transition-opacity">🌱</span>
+        </div>
+      </a>
+
+    </div>
+
+    <footer class="text-[10px] text-slate-600 font-mono tracking-widest uppercase pt-4">
+      Decentralized Word Vault ✦ Serverless
+    </footer>
+
+  </div>
+
+  <script>
+    // Load the official YouTube IFrame API script asynchronously
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-audio-player', {
+        height: '0',
+        width: '0',
+        videoId: '8hTUDQEvqk8', // Your chosen Salawat Video ID
+        playerVars: {
+          'autoplay': 0,
+          'controls': 0,
+          'loop': 1,
+          'playlist': '8hTUDQEvqk8' // Required by YouTube to loop a single video
+        },
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      // Setup the event triggers once the player engine finishes spinning up
+      const trigger = document.getElementById('emblem-trigger');
+      
+      // When user hovers/touches the emblem
+      trigger.addEventListener('mouseenter', startAudio);
+      trigger.addEventListener('touchstart', startAudio);
+    }
+
+    function startAudio() {
+      if (player && typeof player.playVideo === 'function') {
+        player.playVideo();
+      }
+    }
+
+    // Helper functions for visual cross-fade synchronization across elements
+    function igniteNur() {
+      document.querySelector('.base-flag').style.opacity = '0';
+      document.querySelector('.nur-flag').style.opacity = '1';
+      startAudio(); // Trigger audio when cards are selected too!
+    }
+
+    function extinguishNur() {
+      document.querySelector('.base-flag').style.opacity = '1';
+      document.querySelector('.nur-flag').style.opacity = '0';
+    }
+  </script>
+
+</body>
+</html>
