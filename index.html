@@ -3,90 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dua Collection Feed</title>
-  <!-- Tailwind CSS for instant, premium mobile UI styling -->
+  <title>Dua Collection Vault</title>
+  <!-- Tailwind CSS for clean dark mode styling -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#0b0f19] text-slate-100 min-h-screen antialiased selection:bg-amber-500/30">
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 antialiased">
 
-  <!-- TOP HEADER (Instagram style sticky nav) -->
-  <header class="sticky top-0 z-50 bg-[#0b0f19]/80 backdrop-blur-md border-b border-slate-800/80 px-4 py-3">
-    <div class="max-w-md mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-black tracking-wide bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-        DUA.CARD
+  <!-- Main Container -->
+  <div class="max-w-md w-full text-center space-y-8">
+    
+    <!-- Title Section -->
+    <div class="space-y-2">
+      <h1 class="text-3xl font-black tracking-wider bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent uppercase">
+        The Dua Vault
       </h1>
-      <span class="text-xs font-mono text-slate-500 uppercase tracking-widest bg-slate-900 px-2.5 py-1 rounded-full border border-slate-800">
-        Live Collection
-      </span>
+      <p class="text-xs font-mono text-slate-500 uppercase tracking-widest">
+        Select a collection to open
+      </p>
     </div>
-  </header>
 
-  <!-- THE VERTICAL FEED CONTAINER -->
-  <main id="feed-container" class="max-w-md mx-auto px-4 py-6 space-y-8 pb-24">
-    <!-- Loading State -->
-    <div id="loading" class="text-center py-12 text-sm font-mono text-slate-500 tracking-wider animate-pulse">
-      Shuffling the deck... Loading cards...
+    <!-- Navigation Deck Links -->
+    <div class="space-y-4">
+      
+      <!-- Link to Dua Haj Folder -->
+      <a href="Dua Haj/" class="group block bg-[#151d30] border border-slate-800 rounded-2xl p-6 text-left transition-all duration-300 hover:border-amber-500/50 hover:scale-[1.01] hover:shadow-xl hover:shadow-amber-500/5">
+        <div class="flex items-center justify-between">
+          <div class="space-y-1">
+            <h2 class="text-lg font-bold text-slate-100 group-hover:text-amber-400 transition-colors">
+              Dua Haj
+            </h2>
+            <p class="text-sm text-slate-400">
+              Supplications for the sacred pilgrimage and journey.
+            </p>
+          </div>
+          <span class="text-2xl opacity-80 group-hover:opacity-100 transition-opacity">🕋</span>
+        </div>
+      </a>
+
+      <!-- Link to Dua Shifa Folder -->
+      <a href="Dua Shifa/" class="group block bg-[#151d30] border border-slate-800 rounded-2xl p-6 text-left transition-all duration-300 hover:border-cyan-500/50 hover:scale-[1.01] hover:shadow-xl hover:shadow-cyan-500/5">
+        <div class="flex items-center justify-between">
+          <div class="space-y-1">
+            <h2 class="text-lg font-bold text-slate-100 group-hover:text-cyan-400 transition-colors">
+              Dua Shifa
+            </h2>
+            <p class="text-sm text-slate-400">
+              Supplications for healing, relief, and restoration.
+            </p>
+          </div>
+          <span class="text-2xl opacity-80 group-hover:opacity-100 transition-opacity">🌱</span>
+        </div>
+      </a>
+
     </div>
-  </main>
 
-  <!-- DYNAMIC LOADER SCRIPT -->
-  <script>
-    // 1. ADD YOUR HTML FILENAMES HERE AS YOU CREATE THEM
-    // The script will automatically fetch them and stack them like an Instagram feed.
-    const duaFiles = [
-      "Dua Abu Darda.html",
-      "Istighfar Rajab.html",
-      "Dua - Allahuma ajirna minanaar.html",
-      "Morning Adhkar papa.html"
-    ];
+    <!-- Subtle branding footer -->
+    <footer class="text-[10px] text-slate-600 font-mono tracking-widest uppercase pt-4">
+      Decentralized Word Vault ✦ Serverless
+    </footer>
 
-    const feedContainer = document.getElementById('feed-container');
-    const loadingEl = document.getElementById('loading');
-
-    async function loadFeed() {
-      let loadedAny = false;
-
-      for (const file of duaFiles) {
-        try {
-          // Fetch the raw HTML content of each separate file
-          const response = await fetch(file);
-          if (!response.ok) throw new Error(`Could not read ${file}`);
-          
-          const rawHtml = await response.text();
-
-          // Create a temporary browser element to parse the file content
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(rawHtml, 'text/html');
-
-          // Extract ONLY the inner card container from your templates
-          // (This expects your files to have a div with the class or structure of the trading card)
-          const cardContent = doc.querySelector('.max-w-md') || doc.body;
-
-          // Wrap it nicely for our feed stack
-          const cardWrapper = document.createElement('div');
-          cardWrapper.className = "transform transition-all duration-300 hover:scale-[1.01] hover:shadow-amber-500/5";
-          cardWrapper.innerHTML = cardContent.innerHTML;
-
-          // Append to our scrolling feed
-          feedContainer.appendChild(cardWrapper);
-          loadedAny = true;
-
-        } catch (error) {
-          console.error(`Skipping card [${file}]:`, error);
-        }
-      }
-
-      // Clean up loading element
-      if (loadedAny) {
-        loadingEl.remove();
-      } else {
-        loadingEl.innerText = "No active cards found. Add templates to the list inside index.html!";
-      }
-    }
-
-    // Initialize the feed when the page loads
-    window.addEventListener('DOMContentLoaded', loadFeed);
-  </script>
+  </div>
 
 </body>
 </html>
