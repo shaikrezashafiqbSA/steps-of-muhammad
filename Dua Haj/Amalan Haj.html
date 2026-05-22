@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practices of the First Ten Days of Dhul Hijjah – File 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .header {
+    background: #1a3d26;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.85; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+    background: #fff;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+
+  .info-header {
+    background: #eef5fb;
+    padding: 8px 14px;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .info-strip.auth .info-header { background: #f0faf2; color: #2a7040; }
+
+  .info-body {
+    padding: 10px 14px 12px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body { color: #1a3d26; border-top-color: #b6dfc4; }
+
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0px 18px;
+    margin-bottom: 14px;
+  }
+
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 48px;
+    margin-bottom: 8px;
+  }
+
+  .arabic-word {
+    font-family: 'Scheherazade New', serif;
+    font-size: 1.75rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    direction: rtl;
+  }
+
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 90px;
+    direction: ltr;
+  }
+
+  .word-translit {
+    font-size: 0.52rem;
+    color: #a08060;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 90px;
+    direction: ltr;
+    letter-spacing: 0.01em;
+  }
+
+  .translation {
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.7;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .translation .chunk { display: block; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih { background: #d4edda; color: #155724; }
+  .grade-quran { background: #dce8ff; color: #1a3a7a; }
+
+  .src-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 1px solid #d4c9b8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7d5a;
+  }
+
+  .src-popup {
+    display: none;
+    margin-top: 10px;
+    background: #f6faf7;
+    border: 1px solid #b6dfc4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #1a3d26;
+  }
+  .src-popup.open { display: block; }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Practices of the First Ten Days of Dhul Ḥijjah</h1>
+  <p>File 1 of 3 · Tahlīl &amp; Shahāda Variants · Sections 1–4</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 The Blessed Ten Days</div>
+  <div class="info-body">
+    <p>The first ten days of Dhul Ḥijjah are among the most virtuous days of the year. The Prophet ﷺ said that no good deeds done on other days are superior to those done during these ten days. This collection gathers the adhkār, du'ās, and ṣalawāt recommended for this blessed period.</p>
+  </div>
+</div>
+
+<div class="section-label">Section 1 · Tahlīl with Full Divine Attributes</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَحْدَهُ</span>
+      <span class="word-meaning">alone</span>
+      <span class="word-translit">waḥdah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَا شَرِيكَ لَهُ</span>
+      <span class="word-meaning">no partner for Him</span>
+      <span class="word-translit">lā sharīka lah</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَهُ الْمُلْكُ</span>
+      <span class="word-meaning">His is the dominion</span>
+      <span class="word-translit">lahul-mulk</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَلَهُ الْحَمْدُ</span>
+      <span class="word-meaning">and His is the praise</span>
+      <span class="word-translit">wa lahul-ḥamd</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">يُحْيِي</span>
+      <span class="word-meaning">He gives life</span>
+      <span class="word-translit">yuḥyī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَيُمِيتُ</span>
+      <span class="word-meaning">and causes death</span>
+      <span class="word-translit">wa yumīt</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَهُوَ حَيٌّ</span>
+      <span class="word-meaning">and He is Ever-Living</span>
+      <span class="word-translit">wa huwa ḥayyun</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَا يَمُوتُ</span>
+      <span class="word-meaning">He does not die</span>
+      <span class="word-translit">lā yamūt</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">بِيَدِهِ الْخَيْرُ</span>
+      <span class="word-meaning">in His hand is all good</span>
+      <span class="word-translit">biyadihil-khayr</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَهُوَ عَلَىٰ كُلِّ شَيْءٍ</span>
+      <span class="word-meaning">and He is over all things</span>
+      <span class="word-translit">wa huwa 'alā kulli shay'in</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَدِيرٌ</span>
+      <span class="word-meaning">all-powerful</span>
+      <span class="word-translit">Qadīr</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">There is no god but Allah, alone, with no partner.</span>
+    <span class="chunk">His is all dominion and all praise.</span>
+    <span class="chunk">He gives life and causes death —</span>
+    <span class="chunk">Ever-Living, undying, in Whose hand is all good, over all things Able.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ al-Bukhārī, Book 80, Hadith 6403. Also in Jāmiʿ at-Tirmidhī, Book 45, Hadith 3474.
+  </div>
+</div>
+
+<div class="section-label">Section 2 · Shahāda with Qur'ānic Attributes</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">I bear witness: no god but Allah</span>
+      <span class="word-translit">Ashhadu an lā ilāha illallāh</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَحْدَهُ</span>
+      <span class="word-meaning">alone</span>
+      <span class="word-translit">waḥdah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَا شَرِيكَ لَهُ</span>
+      <span class="word-meaning">no partner for Him</span>
+      <span class="word-translit">lā sharīka lah</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">إِلَٰهًا وَاحِدًا</span>
+      <span class="word-meaning">one God</span>
+      <span class="word-translit">ilāhan wāḥidā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَحَدًا</span>
+      <span class="word-meaning">singular</span>
+      <span class="word-translit">aḥadā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">صَمَدًا</span>
+      <span class="word-meaning">the Eternal Refuge</span>
+      <span class="word-translit">ṣamadā</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَمْ يَتَّخِذْ</span>
+      <span class="word-meaning">He has not taken</span>
+      <span class="word-translit">lam yattakhidh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">صَاحِبَةً</span>
+      <span class="word-meaning">a spouse</span>
+      <span class="word-translit">ṣāḥibah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَلَا وَلَدًا</span>
+      <span class="word-meaning">nor a child</span>
+      <span class="word-translit">wa lā waladā</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">I bear witness that there is no god but Allah, alone, with no partner —</span>
+    <span class="chunk">one God, singular, the Eternal Refuge,</span>
+    <span class="chunk">Who has taken neither spouse nor child.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-quran">Qur'ān</span>
+    Combines the Shahāda with attributes drawn from Sūrat al-Ikhlāṣ (112:2) and Sūrat al-Jinn (72:3). Formulation found in Bā'alawī awrād compilations.
+  </div>
+</div>
+
+<div class="section-label">Section 3 · Shahāda with Sūrat al-Ikhlāṣ</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">I bear witness: no god but Allah</span>
+      <span class="word-translit">Ashhadu an lā ilāha illallāh</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَحْدَهُ</span>
+      <span class="word-meaning">alone</span>
+      <span class="word-translit">waḥdah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَا شَرِيكَ لَهُ</span>
+      <span class="word-meaning">no partner for Him</span>
+      <span class="word-translit">lā sharīka lah</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَحَدٌ صَمَدٌ</span>
+      <span class="word-meaning">the One, the Eternal</span>
+      <span class="word-translit">Aḥadun Ṣamad</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَمْ يَلِدْ</span>
+      <span class="word-meaning">He did not beget</span>
+      <span class="word-translit">lam yalid</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَلَمْ يُولَدْ</span>
+      <span class="word-meaning">nor was He begotten</span>
+      <span class="word-translit">wa lam yūlad</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَلَمْ يَكُنْ لَهُ</span>
+      <span class="word-meaning">and there is not for Him</span>
+      <span class="word-translit">wa lam yakun lah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">كُفُوًا أَحَدٌ</span>
+      <span class="word-meaning">any equal whatsoever</span>
+      <span class="word-translit">kufuwan Aḥad</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">I bear witness that there is no god but Allah, alone, with no partner —</span>
+    <span class="chunk">the One, the Eternal Refuge.</span>
+    <span class="chunk">He did not beget, nor was He begotten,</span>
+    <span class="chunk">and there is none equal to Him.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-quran">Qur'ān</span>
+    Shahāda prefixed to the full text of Sūrat al-Ikhlāṣ (112), Āyāt 1–4.
+  </div>
+</div>
+
+<div class="section-label">Section 4 · Tahlīl Repeated with Full Attributes</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">I bear witness: no god but Allah</span>
+      <span class="word-translit">Ashhadu an lā ilāha illallāh</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَحْدَهُ</span>
+      <span class="word-meaning">alone</span>
+      <span class="word-translit">waḥdah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَا شَرِيكَ لَهُ</span>
+      <span class="word-meaning">no partner for Him</span>
+      <span class="word-translit">lā sharīka lah</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَهُ الْمُلْكُ</span>
+      <span class="word-meaning">His is the dominion</span>
+      <span class="word-translit">lahul-mulk</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَلَهُ الْحَمْدُ</span>
+      <span class="word-meaning">and His is the praise</span>
+      <span class="word-translit">wa lahul-ḥamd</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">يُحْيِي</span>
+      <span class="word-meaning">He gives life</span>
+      <span class="word-translit">yuḥyī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَيُمِيتُ</span>
+      <span class="word-meaning">and causes death</span>
+      <span class="word-translit">wa yumīt</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَهُوَ حَيٌّ</span>
+      <span class="word-meaning">and He is Ever-Living</span>
+      <span class="word-translit">wa huwa ḥayyun</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَا يَمُوتُ</span>
+      <span class="word-meaning">He does not die</span>
+      <span class="word-translit">lā yamūt</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">بِيَدِهِ الْخَيْرُ</span>
+      <span class="word-meaning">in His hand is all good</span>
+      <span class="word-translit">biyadihil-khayr</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَهُوَ عَلَىٰ كُلِّ شَيْءٍ</span>
+      <span class="word-meaning">and He is over all things</span>
+      <span class="word-translit">wa huwa 'alā kulli shay'in</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَدِيرٌ</span>
+      <span class="word-meaning">all-powerful</span>
+      <span class="word-translit">Qadīr</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">I bear witness that there is no god but Allah, alone, with no partner.</span>
+    <span class="chunk">His is all dominion and all praise.</span>
+    <span class="chunk">He gives life and causes death —</span>
+    <span class="chunk">Ever-Living, undying, in Whose hand is all good, over all things Able.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ al-Bukhārī, Book 80, Hadith 6403. Also in Jāmiʿ at-Tirmidhī, Book 45, Hadith 3474.
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Sections 1 and 4: The tahlīl with full attributes is narrated by Abū Hurayrah (RA) and recorded in <strong>Ṣaḥīḥ al-Bukhārī, Book 80, Hadith 6403</strong>. Grade: <strong>Ṣaḥīḥ</strong>. Sections 2 and 3: The shahāda formulations incorporate verbatim Qur'ānic language from <strong>Sūrat al-Ikhlāṣ (112)</strong> and <strong>Sūrat al-Jinn (72:3)</strong>, compiled in Bā'alawī awrād tradition.</p>
+  </div>
+</div>
+
+<script>
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practices of the First Ten Days of Dhul Hijjah – File 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .header {
+    background: #1a3d26;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.85; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+    background: #fff;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+
+  .info-header {
+    background: #eef5fb;
+    padding: 8px 14px;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .info-strip.auth .info-header { background: #f0faf2; color: #2a7040; }
+
+  .info-body {
+    padding: 10px 14px 12px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body { color: #1a3d26; border-top-color: #b6dfc4; }
+
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0px 18px;
+    margin-bottom: 14px;
+  }
+
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 48px;
+    margin-bottom: 8px;
+  }
+
+  .arabic-word {
+    font-family: 'Scheherazade New', serif;
+    font-size: 1.75rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    direction: rtl;
+  }
+
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 90px;
+    direction: ltr;
+  }
+
+  .word-translit {
+    font-size: 0.52rem;
+    color: #a08060;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 90px;
+    direction: ltr;
+    letter-spacing: 0.01em;
+  }
+
+  .translation {
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.7;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .translation .chunk { display: block; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih { background: #d4edda; color: #155724; }
+  .grade-quran { background: #dce8ff; color: #1a3a7a; }
+
+  .src-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 1px solid #d4c9b8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7d5a;
+  }
+
+  .src-popup {
+    display: none;
+    margin-top: 10px;
+    background: #f6faf7;
+    border: 1px solid #b6dfc4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #1a3d26;
+  }
+  .src-popup.open { display: block; }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Practices of the First Ten Days of Dhul Ḥijjah</h1>
+  <p>File 2 of 3 · Tawakkul Phrases &amp; Debt-Relief Du'ā · Sections 5–7</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Reliance, Relief &amp; Remembrance</div>
+  <div class="info-body">
+    <p>This file contains phrases of tawakkul (reliance on Allah) and a seven-part du'ā for the relief of debt and hardship. These formulations are drawn from Bā'alawī awrād tradition and are especially recommended during the blessed days of Dhul Ḥijjah as a means of drawing near to Allah through supplication.</p>
+  </div>
+</div>
+
+<div class="section-label">Section 5 · Phrases of Sufficiency</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">حَسْبِيَ اللهُ</span>
+      <span class="word-meaning">Allah is sufficient for me</span>
+      <span class="word-translit">Ḥasbiyallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَكَفَىٰ</span>
+      <span class="word-meaning">and He suffices</span>
+      <span class="word-translit">wa kafā</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">سَمِعَ اللهُ</span>
+      <span class="word-meaning">Allah has heard</span>
+      <span class="word-translit">samiʿallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لِمَنْ دَعَا</span>
+      <span class="word-meaning">whoever supplicates</span>
+      <span class="word-translit">liman daʿā</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَيْسَ وَرَاءَهُ</span>
+      <span class="word-meaning">beyond Him there is</span>
+      <span class="word-translit">laysa warāʾahu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مُنْتَهَىٰ</span>
+      <span class="word-meaning">no limit</span>
+      <span class="word-translit">muntahā</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">Allah is sufficient for me, and He suffices.</span>
+    <span class="chunk">Allah hears whoever calls upon Him.</span>
+    <span class="chunk">Beyond Him there is no end.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Attributed to the Bā'alawī awrād tradition. "Ḥasbiyallāhu wa kafā" is also recorded in Ṣaḥīḥ Ibn Ḥibbān and related collections as a phrase of the Prophet ﷺ.
+  </div>
+</div>
+
+<div class="section-label">Section 6 · Phrases of Tawakkul</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مَنْ تَوَكَّلَ</span>
+      <span class="word-meaning">whoever relies</span>
+      <span class="word-translit">man tawakkala</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَى اللهِ</span>
+      <span class="word-meaning">upon Allah</span>
+      <span class="word-translit">ʿalallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">كُفِيَ</span>
+      <span class="word-meaning">is sufficed</span>
+      <span class="word-translit">kufiya</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَمَنِ اعْتَصَمَ</span>
+      <span class="word-meaning">and whoever holds fast</span>
+      <span class="word-translit">wa maniʿtaṣama</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِاللهِ</span>
+      <span class="word-meaning">to Allah</span>
+      <span class="word-translit">billāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">نَجَا</span>
+      <span class="word-meaning">is saved</span>
+      <span class="word-translit">najā</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">Whoever places their reliance upon Allah is sufficed.</span>
+    <span class="chunk">And whoever holds fast to Allah is saved.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Bā'alawī awrād compilation. The first half echoes Qur'ān, Sūrat aṭ-Ṭalāq (65:3); the second echoes Sūrat Āl ʿImrān (3:103). Found in Rātib al-Ḥaddād tradition.
+  </div>
+</div>
+
+<div class="section-label">Section 7 · Du'ā for Relief of Debt · Part A</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+      <span class="word-translit">Allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">فَرَجُكَ</span>
+      <span class="word-meaning">Your relief</span>
+      <span class="word-translit">farajuka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْقَرِيبُ</span>
+      <span class="word-meaning">the near one</span>
+      <span class="word-translit">al-qarīb</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">O Allah, Your relief is near.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Mashāyikh</span>
+    Seven-part du'ā for relief of debt and hardship from the Bā'alawī tradition, attributed to compilations of Habīb ʿAbdullāh al-Ḥaddād (RA).
+  </div>
+</div>
+
+<div class="section-label">Section 7 · Du'ā for Relief of Debt · Part B</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+      <span class="word-translit">Allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">سِتْرُكَ</span>
+      <span class="word-meaning">Your veil</span>
+      <span class="word-translit">sitruka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْحَصِينُ</span>
+      <span class="word-meaning">the fortified one</span>
+      <span class="word-translit">al-ḥaṣīn</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">O Allah, Your protection is an impenetrable fortress.</span>
+  </div>
+</div>
+
+<div class="section-label">Section 7 · Du'ā for Relief of Debt · Part C</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+      <span class="word-translit">Allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مَعْرُوفُكَ</span>
+      <span class="word-meaning">Your kindness</span>
+      <span class="word-translit">maʿrūfuka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْقَدِيمُ</span>
+      <span class="word-meaning">the ancient one</span>
+      <span class="word-translit">al-qadīm</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">O Allah, Your kindness is ancient and ever-present.</span>
+  </div>
+</div>
+
+<div class="section-label">Section 7 · Du'ā for Relief of Debt · Part D</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+      <span class="word-translit">Allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَوَائِدُكَ</span>
+      <span class="word-meaning">Your recurring gifts</span>
+      <span class="word-translit">ʿawāʾiduka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْحَسَنَةُ</span>
+      <span class="word-meaning">the beautiful ones</span>
+      <span class="word-translit">al-ḥasanah</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">O Allah, Your recurring gifts are beautiful.</span>
+  </div>
+</div>
+
+<div class="section-label">Section 7 · Du'ā for Relief of Debt · Part E</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+      <span class="word-translit">Allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَطَاؤُكَ</span>
+      <span class="word-meaning">Your bestowal</span>
+      <span class="word-translit">ʿaṭāʾuka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْحَسَنُ الْجَمِيلُ</span>
+      <span class="word-meaning">the beautiful, the lovely</span>
+      <span class="word-translit">al-ḥasanul-jamīl</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">O Allah, Your bestowal is beautiful and lovely.</span>
+  </div>
+</div>
+
+<div class="section-label">Section 7 · Du'ā for Relief of Debt · Part F</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">يَا قَدِيمَ الْإِحْسَانِ</span>
+      <span class="word-meaning">O Ancient in beneficence</span>
+      <span class="word-translit">Yā Qadīmal-iḥsān</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">إِحْسَانُكَ الْقَدِيمُ</span>
+      <span class="word-meaning">Your beneficence is ancient</span>
+      <span class="word-translit">iḥsānukal-qadīm</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">O Ancient One in beneficence —</span>
+    <span class="chunk">Your beneficence has always been.</span>
+  </div>
+</div>
+
+<div class="section-label">Section 7 · Du'ā for Relief of Debt · Part G</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">يَا دَائِمَ الْمَعْرُوفِ</span>
+      <span class="word-meaning">O Eternal in kindness</span>
+      <span class="word-translit">Yā Dāʾimal-maʿrūf</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مَعْرُوفُكَ الدَّائِمُ</span>
+      <span class="word-meaning">Your kindness is eternal</span>
+      <span class="word-translit">maʿrūfukad-dāʾim</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">O Eternal One in kindness —</span>
+    <span class="chunk">Your kindness is everlasting.</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Sections 5–6: Phrases of tawakkul drawn from the Bā'alawī awrād tradition, echoing Qur'ānic language from <strong>Sūrat aṭ-Ṭalāq (65:3)</strong> and <strong>Sūrat Āl ʿImrān (3:103)</strong>. Section 7: A seven-part du'ā for the relief of debt and hardship, attributed to the Bā'alawī mashāyikh tradition and associated with <strong>Habīb ʿAbdullāh al-Ḥaddād (RA)</strong>. Grade: Mashāyikh — sound in transmission through the Bā'alawī chain.</p>
+  </div>
+</div>
+
+<script>
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practices of the First Ten Days of Dhul Hijjah – File 3</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'Georgia', serif;
+    color: #2c2c2c;
+    padding: 0 0 80px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .header {
+    background: #1a3d26;
+    color: #f5e6c8;
+    text-align: center;
+    padding: 18px 16px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header h1 { font-family: 'Amiri', serif; font-size: 1.15rem; }
+  .header p  { font-size: 0.68rem; opacity: 0.85; margin-top: 3px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  .info-strip {
+    margin: 14px 16px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #cde0f0;
+    background: #fff;
+  }
+  .info-strip.auth { border-color: #b6dfc4; }
+
+  .info-header {
+    background: #eef5fb;
+    padding: 8px 14px;
+    font-family: 'Georgia', serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #2d6ea8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .info-strip.auth .info-header { background: #f0faf2; color: #2a7040; }
+
+  .info-body {
+    padding: 10px 14px 12px;
+    font-size: 0.77rem;
+    line-height: 1.65;
+    color: #1e3a52;
+    border-top: 1px solid #cde0f0;
+  }
+  .info-strip.auth .info-body { color: #1a3d26; border-top-color: #b6dfc4; }
+
+  .section-label {
+    text-align: center;
+    background: #ede8df;
+    color: #7a5c3a;
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin: 16px 16px 0;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+
+  .verse-block {
+    background: #fff;
+    margin: 10px 16px 0;
+    border-radius: 10px;
+    padding: 16px 12px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    border: 1px solid #ede8df;
+    position: relative;
+  }
+
+  .arabic-line {
+    direction: rtl;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0px 18px;
+    margin-bottom: 14px;
+  }
+
+  .word-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    min-width: 48px;
+    margin-bottom: 8px;
+  }
+
+  .arabic-word {
+    font-family: 'Scheherazade New', serif;
+    font-size: 1.75rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    direction: rtl;
+  }
+
+  .word-meaning {
+    font-size: 0.6rem;
+    color: #7a5c3a;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 90px;
+    direction: ltr;
+  }
+
+  .word-translit {
+    font-size: 0.52rem;
+    color: #a08060;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+    max-width: 90px;
+    direction: ltr;
+    letter-spacing: 0.01em;
+  }
+
+  .translation {
+    font-size: 0.81rem;
+    color: #3d2a1a;
+    line-height: 1.7;
+    margin-top: 6px;
+    border-top: 1px solid #ede8df;
+    padding-top: 8px;
+    font-weight: 500;
+    text-align: center;
+  }
+  .translation .chunk { display: block; }
+
+  .grade-badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  .grade-sahih { background: #d4edda; color: #155724; }
+  .grade-quran { background: #dce8ff; color: #1a3a7a; }
+
+  .src-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: 1px solid #d4c9b8;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9a7d5a;
+  }
+
+  .src-popup {
+    display: none;
+    margin-top: 10px;
+    background: #f6faf7;
+    border: 1px solid #b6dfc4;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.72rem;
+    line-height: 1.6;
+    color: #1a3d26;
+  }
+  .src-popup.open { display: block; }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9b99a, transparent);
+    margin: 20px 30px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Practices of the First Ten Days of Dhul Ḥijjah</h1>
+  <p>File 3 of 3 · Extended Tahlīl &amp; Ṣalawāt · Sections 8–9</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Tahlīl of Infinite Measure &amp; Ṣalawāt</div>
+  <div class="info-body">
+    <p>Section 8 is an extended tahlīl in which lā ilāha illallāh is repeated with 21 different measures of creation — nights, days, waves, trees, rain, and more — multiplying the weight of remembrance to an immeasurable degree. Section 9 is a ṣalawāt upon the Prophet ﷺ tied to the signs and moments of Ḥajj, both closing with the formula of infinite multiplication found in Ṣaḥīḥ Muslim.</p>
+  </div>
+</div>
+
+<div class="section-label">Section 8 · Extended Tahlīl · Measures 1–4</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ اللَّيَالِي</span>
+      <span class="word-meaning">to the count of nights</span>
+      <span class="word-translit">ʿadadal-layālī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالدُّهُورِ</span>
+      <span class="word-meaning">and the ages</span>
+      <span class="word-translit">wad-duhūr</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ الْأَيَّامِ</span>
+      <span class="word-meaning">to the count of days</span>
+      <span class="word-translit">ʿadadal-ayyām</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالشُّهُورِ</span>
+      <span class="word-meaning">and the months</span>
+      <span class="word-translit">wash-shuhūr</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ أَمْوَاجِ</span>
+      <span class="word-meaning">to the count of waves of</span>
+      <span class="word-translit">ʿadadal-amwāj</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْبُحُورِ</span>
+      <span class="word-meaning">the seas</span>
+      <span class="word-translit">al-buḥūr</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ أَضْعَافِ</span>
+      <span class="word-meaning">to the count of multiples of</span>
+      <span class="word-translit">ʿadadal-aḍʿāf</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْأُجُورِ</span>
+      <span class="word-meaning">the rewards</span>
+      <span class="word-translit">al-ujūr</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">There is no god but Allah — to the count of nights and ages,</span>
+    <span class="chunk">to the count of days and months,</span>
+    <span class="chunk">to the count of waves of the seas,</span>
+    <span class="chunk">to the count of multiples of all rewards.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Mashāyikh</span>
+    Extended tahlīl from the Bā'alawī ḥizb tradition, associated with Habīb ʿAbdullāh al-Ḥaddād (RA) and the Wird al-Laṭīf. The closing multiplier formula echoes Ṣaḥīḥ Muslim, Book 48, Hadith 2726.
+  </div>
+</div>
+
+<div class="section-label">Section 8 · Extended Tahlīl · Measures 5–9</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ الْقَطْرِ</span>
+      <span class="word-meaning">to the count of raindrops</span>
+      <span class="word-translit">ʿadadal-qaṭr</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْمَطَرِ</span>
+      <span class="word-meaning">and the rain</span>
+      <span class="word-translit">wal-maṭar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ أَوْرَاقِ</span>
+      <span class="word-meaning">to the count of leaves of</span>
+      <span class="word-translit">ʿadadal-awrāq</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الشَّجَرِ</span>
+      <span class="word-meaning">the trees</span>
+      <span class="word-translit">ash-shajar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ الشَّعْرِ</span>
+      <span class="word-meaning">to the count of hair</span>
+      <span class="word-translit">ʿadadash-shaʿr</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْوَبَرِ</span>
+      <span class="word-meaning">and the wool</span>
+      <span class="word-translit">wal-wabar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ الرَّمْلِ</span>
+      <span class="word-meaning">to the count of grains of sand</span>
+      <span class="word-translit">ʿadadar-raml</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْحَجَرِ</span>
+      <span class="word-meaning">and the stones</span>
+      <span class="word-translit">wal-ḥajar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ الزَّهْرِ</span>
+      <span class="word-meaning">to the count of blossoms</span>
+      <span class="word-translit">ʿadadaz-zahr</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالشَّمَرِ</span>
+      <span class="word-meaning">and the fruits</span>
+      <span class="word-translit">wash-shamar</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">There is no god but Allah — to the count of raindrops and all rain,</span>
+    <span class="chunk">to the count of leaves on every tree,</span>
+    <span class="chunk">to the count of hair and wool,</span>
+    <span class="chunk">to the count of grains of sand and stones, and of blossoms and fruits.</span>
+  </div>
+</div>
+
+<div class="section-label">Section 8 · Extended Tahlīl · Measures 10–14</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ أَنْفَاسِ</span>
+      <span class="word-meaning">to the count of breaths of</span>
+      <span class="word-translit">ʿadadal-anfās</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْبَشَرِ</span>
+      <span class="word-meaning">all humankind</span>
+      <span class="word-translit">al-bashar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ ذُنُوبِنَا</span>
+      <span class="word-meaning">to the count of our sins</span>
+      <span class="word-translit">ʿadadal-dhunūbinā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">حَتَّىٰ تُغْفَرَ</span>
+      <span class="word-meaning">until they are forgiven</span>
+      <span class="word-translit">ḥattā tughfar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ لَمْحِ</span>
+      <span class="word-meaning">to the count of glances of</span>
+      <span class="word-translit">ʿadadal-lamḥ</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْعُيُونِ</span>
+      <span class="word-meaning">all eyes</span>
+      <span class="word-translit">al-ʿuyūn</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ مَا كَانَ</span>
+      <span class="word-meaning">to the count of what was</span>
+      <span class="word-translit">ʿadada mā kāna</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَمَا يَكُونُ</span>
+      <span class="word-meaning">and what shall be</span>
+      <span class="word-translit">wa mā yakūn</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ تَعَالَىٰ</span>
+      <span class="word-meaning">to the count of His transcendence over</span>
+      <span class="word-translit">ʿadada taʿālā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَمَّا يُشْرِكُونَ</span>
+      <span class="word-meaning">what they associate</span>
+      <span class="word-translit">ʿammā yushrikūn</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">There is no god but Allah — to the count of every human breath,</span>
+    <span class="chunk">to the count of our sins until they are all forgiven,</span>
+    <span class="chunk">to the count of every glance of every eye,</span>
+    <span class="chunk">to the count of all that was and all that shall be, and of His transcendence above all they associate.</span>
+  </div>
+</div>
+
+<div class="section-label">Section 8 · Extended Tahlīl · Measures 15–21 &amp; Closing</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">خَيْرٌ مِمَّا</span>
+      <span class="word-meaning">better than all</span>
+      <span class="word-translit">khayrun mimmā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">يَجْمَعُونَ</span>
+      <span class="word-meaning">they accumulate</span>
+      <span class="word-translit">yajmaʿūn</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">فِي اللَّيْلِ</span>
+      <span class="word-meaning">in the night</span>
+      <span class="word-translit">fil-layl</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِذَا أَعْسَعَسَ</span>
+      <span class="word-meaning">when it recedes</span>
+      <span class="word-translit">idhā aʿsaʿas</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">فِي الصُّبْحِ</span>
+      <span class="word-meaning">in the dawn</span>
+      <span class="word-translit">fiṣ-ṣubḥ</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِذَا تَنَفَّسَ</span>
+      <span class="word-meaning">when it breathes</span>
+      <span class="word-translit">idhā tanaffas</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ الرِّيَاحِ</span>
+      <span class="word-meaning">to the count of winds</span>
+      <span class="word-translit">ʿadadar-riyāḥ</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">فِي الْبَرَارِي</span>
+      <span class="word-meaning">in the open lands</span>
+      <span class="word-translit">fil-barārī</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَالصُّخُورِ</span>
+      <span class="word-meaning">and the rocks</span>
+      <span class="word-translit">waṣ-ṣukhūr</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ يَوْمِنَا هَٰذَا</span>
+      <span class="word-meaning">from this day of ours</span>
+      <span class="word-translit">min yawminā hādhā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَىٰ يَوْمِ</span>
+      <span class="word-meaning">until the day</span>
+      <span class="word-translit">ilā yawm</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">يُنْفَخُ فِي الصُّورِ</span>
+      <span class="word-meaning">the Trumpet is blown</span>
+      <span class="word-translit">yunfakhu fiṣ-ṣūr</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ خَلْقِهِ</span>
+      <span class="word-meaning">to the count of His creation</span>
+      <span class="word-translit">ʿadada khalqih</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَجْمَعِينَ</span>
+      <span class="word-meaning">all together</span>
+      <span class="word-translit">ajmaʿīn</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللهُ</span>
+      <span class="word-meaning">there is no god but Allah</span>
+      <span class="word-translit">Lā ilāha illallāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ يَوْمِنَا هَٰذَا</span>
+      <span class="word-meaning">from this day of ours</span>
+      <span class="word-translit">min yawminā hādhā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَىٰ يَوْمِ الدِّينِ</span>
+      <span class="word-meaning">until the Day of Judgement</span>
+      <span class="word-translit">ilā yawmid-dīn</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">فِي كُلِّ لَحْظَةٍ أَبَدًا</span>
+      <span class="word-meaning">in every moment, forever</span>
+      <span class="word-translit">fī kulli laḥẓatin abadā</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ خَلْقِهِ</span>
+      <span class="word-meaning">to the count of His creation</span>
+      <span class="word-translit">ʿadada khalqih</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَرِضَا نَفْسِهِ</span>
+      <span class="word-meaning">and the pleasure of His Self</span>
+      <span class="word-translit">wa riḍā nafsih</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَزِنَةَ عَرْشِهِ</span>
+      <span class="word-meaning">and the weight of His Throne</span>
+      <span class="word-translit">wa zinata ʿarshih</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَمِدَادَ كَلِمَاتِهِ</span>
+      <span class="word-meaning">and the ink of His words</span>
+      <span class="word-translit">wa midāda kalimātih</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">There is no god but Allah — better than all they accumulate,</span>
+    <span class="chunk">in the night as it recedes and the dawn as it breathes,</span>
+    <span class="chunk">to the count of winds across open lands and rocks,</span>
+    <span class="chunk">from this day until the Trumpet is blown and until the Day of Judgement — in every moment, forever — to the count of His creation, the pleasure of His Self, the weight of His Throne, and the ink of His words.</span>
+  </div>
+</div>
+
+<div class="section-label">Section 9 · Ṣalawāt of Ḥajj upon the Prophet ﷺ</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ صَلِّ</span>
+      <span class="word-meaning">O Allah, send blessings</span>
+      <span class="word-translit">Allāhumma ṣalli</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَىٰ سَيِّدِنَا مُحَمَّدٍ</span>
+      <span class="word-meaning">upon our master Muḥammad</span>
+      <span class="word-translit">ʿalā Sayyidinā Muḥammad</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مَا تَصَالَتِ</span>
+      <span class="word-meaning">as long as eyes gaze</span>
+      <span class="word-translit">mā taṣālat</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْعُيُونُ</span>
+      <span class="word-meaning">the eyes</span>
+      <span class="word-translit">al-ʿuyūn</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِالنَّظَرِ</span>
+      <span class="word-meaning">with sight</span>
+      <span class="word-translit">bin-naẓar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَتَزَخْرَفَتِ</span>
+      <span class="word-meaning">and as the earth is adorned</span>
+      <span class="word-translit">wa tazakhrafat</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْأَرَضُونَ</span>
+      <span class="word-meaning">the lands</span>
+      <span class="word-translit">al-araḍūn</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِالْمَطَرِ</span>
+      <span class="word-meaning">with rain</span>
+      <span class="word-translit">bil-maṭar</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">O Allah, send blessings upon our master Muḥammad —</span>
+    <span class="chunk">as long as eyes continue to gaze,</span>
+    <span class="chunk">and as long as the earth is adorned by rain.</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Mashāyikh</span>
+    Ṣalawāt al-Ḥajj from the Bā'alawī tradition. Associated with Habīb ʿAbdullāh al-Ḥaddād (RA) and recited during the days of Ḥajj and Dhul Ḥijjah.
+  </div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَحَجَّ حَاجٌّ</span>
+      <span class="word-meaning">and as pilgrims perform Ḥajj</span>
+      <span class="word-translit">wa ḥajja ḥājj</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَاعْتَمَرَ</span>
+      <span class="word-meaning">and perform ʿUmrah</span>
+      <span class="word-translit">waʿtamar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَلَبَّىٰ</span>
+      <span class="word-meaning">and they say Labbayk</span>
+      <span class="word-translit">wa labbā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَحَلَقَ</span>
+      <span class="word-meaning">and they shave</span>
+      <span class="word-translit">wa ḥalaqa</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">نَحَرَ</span>
+      <span class="word-meaning">and they sacrifice</span>
+      <span class="word-translit">naḥar</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَطَافَ</span>
+      <span class="word-meaning">and they perform ṭawāf</span>
+      <span class="word-translit">wa ṭāfa</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِالْبَيْتِ الْعَتِيقِ</span>
+      <span class="word-meaning">around the Ancient House</span>
+      <span class="word-translit">bil-baytil-ʿatīq</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَقَبَّلَ الْحَجَرَ</span>
+      <span class="word-meaning">and kissed the Stone</span>
+      <span class="word-translit">wa qabbalal-ḥajar</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">And as pilgrims perform Ḥajj and ʿUmrah,</span>
+    <span class="chunk">pronouncing the talbiyah, shaving, and offering sacrifice,</span>
+    <span class="chunk">and as they circle the Ancient House</span>
+    <span class="chunk">and kiss the sacred Stone.</span>
+  </div>
+</div>
+
+<div class="verse-block">
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَعَلَىٰ آلِهِ</span>
+      <span class="word-meaning">and upon his family</span>
+      <span class="word-translit">wa ʿalā ālih</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَصَحْبِهِ</span>
+      <span class="word-meaning">and his companions</span>
+      <span class="word-translit">wa ṣaḥbih</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَسَلَّمَ</span>
+      <span class="word-meaning">and peace</span>
+      <span class="word-translit">wa sallam</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">فِي كُلِّ لَحْظَةٍ أَبَدًا</span>
+      <span class="word-meaning">in every moment, forever</span>
+      <span class="word-translit">fī kulli laḥẓatin abadā</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">عَدَدَ خَلْقِهِ</span>
+      <span class="word-meaning">to the count of His creation</span>
+      <span class="word-translit">ʿadada khalqih</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَرِضَا نَفْسِهِ</span>
+      <span class="word-meaning">and the pleasure of His Self</span>
+      <span class="word-translit">wa riḍā nafsih</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَزِنَةَ عَرْشِهِ</span>
+      <span class="word-meaning">and the weight of His Throne</span>
+      <span class="word-translit">wa zinata ʿarshih</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَمِدَادَ كَلِمَاتِهِ</span>
+      <span class="word-meaning">and the ink of His words</span>
+      <span class="word-translit">wa midāda kalimātih</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">And upon his family and companions, peace —</span>
+    <span class="chunk">in every moment, forever,</span>
+    <span class="chunk">to the count of His creation, the pleasure of His Self,</span>
+    <span class="chunk">the weight of His Throne, and the ink of His words.</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Section 8: Extended tahlīl from the Bā'alawī ḥizb tradition, associated with <strong>Habīb ʿAbdullāh al-Ḥaddād (RA)</strong>. The closing multiplier formula — عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ — is recorded in <strong>Ṣaḥīḥ Muslim, Book 48, Hadith 2726</strong>, narrated by Juwayriyyah (RA). Grade: <strong>Ṣaḥīḥ</strong> for the closing formula; <strong>Mashāyikh</strong> for the full extended form. Section 9: Ṣalawāt al-Ḥajj from the Bā'alawī tradition, recommended during the blessed days of Dhul Ḥijjah. ×5 repetition as transmitted.</p>
+  </div>
+</div>
+
+<script>
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
