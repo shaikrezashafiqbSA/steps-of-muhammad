@@ -11,115 +11,163 @@
     .emblem-container:hover .nur-flag { opacity: 1; scale: 1.05; }
     .emblem-container:active .base-flag { opacity: 0; }
     .emblem-container:active .nur-flag { opacity: 1; scale: 1.05; }
+    
+    /* Smooth transitions for the accordion dropdown branches */
+    .branch-container {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .root-node.active .branch-container {
+      max-height: 500px; /* Gives plenty of vertical breathing room for deep lists */
+    }
+    .chevron-icon {
+      transition: transform 0.25s ease;
+    }
+    .root-node.active .chevron-icon {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
 <body class="bg-[#05140b] text-emerald-50 min-h-screen flex flex-col justify-between antialiased selection:bg-emerald-500/30">
 
   <div id="yt-audio-player" class="hidden"></div>
 
-  <main class="flex-1 flex flex-col items-center justify-center p-6 min-w-0">
-    <div/ class="max-w-2xl w-full text-center space-y-8 my-8">
+  <main class="flex-1 flex flex-col items-center justify-center p-4 min-w-0">
+    <div class="max-w-xl w-full text-center space-y-6 my-6">
       
       <div class="space-y-4 flex flex-col items-center">
-        <div id="emblem-trigger" class="emblem-container relative w-40 h-40 rounded-full overflow-hidden border border-emerald-900 shadow-2xl transition-all duration-500 cursor-pointer group hover:border-emerald-500/50 hover:shadow-emerald-500/10">
+        <div id="emblem-trigger" class="emblem-container relative w-32 h-32 rounded-full overflow-hidden border border-emerald-900 shadow-2xl transition-all duration-500 cursor-pointer group hover:border-emerald-500/50 hover:shadow-emerald-500/10">
           <img src="./Black Flag.jpeg" alt="Base State" class="base-flag absolute inset-0 w-full h-full object-cover object-center opacity-100 scale-100 transition-all duration-700 ease-in-out" />
           <img src="./Black Flag (nur).jpeg" alt="Filled with Nur" class="nur-flag absolute inset-0 w-full h-full object-cover object-center opacity-0 scale-100 transition-all duration-700 ease-in-out" />
           <div class="absolute inset-0 ring-1 ring-inset ring-emerald-400/20 rounded-full pointer-events-none group-hover:ring-emerald-400/50 transition-all duration-500"></div>
         </div>
 
-        <div class="space-y-2">
-          <h1 id="root-title" class="text-3xl md:text-4xl font-black tracking-widest bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent uppercase">
+        <div class="space-y-1">
+          <h1 id="root-title" class="text-2xl md:text-3xl font-black tracking-widest bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent uppercase">
             Follow the steps
           </h1>
-          <p id="root-subtitle" class="text-xs md:text-sm font-mono text-emerald-600 uppercase tracking-widest max-w-md mx-auto leading-relaxed">
+          <p id="root-subtitle" class="text-xs font-mono text-emerald-600 uppercase tracking-widest max-w-md mx-auto leading-relaxed">
             Prophet Muhammad ﷺ
           </p>
         </div>
 
-        <div class="w-full max-w-xs mx-auto pt-2">
+        <div class="w-full max-w-xs mx-auto pt-1">
           <img 
             src="./verse-3-31.jpeg" 
-            alt="Surah Ali Imran Ayat 31 Screenshot" 
-            class="w-full h-auto rounded-xl border border-emerald-900/60 shadow-2xl transition-opacity duration-300 hover:opacity-95" 
+            alt="Surah Ali Imran Ayat 31" 
+            class="w-full h-auto rounded-xl border border-emerald-900/40 shadow-2xl" 
           />
         </div>
-
       </div>
 
-      <div id="categories-grid-target" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto pt-4">
-      </div>
+      <div id="navigation-tree" class="w-full text-left space-y-2 pt-2">
+        </div>
 
     </div>
   </main>
 
-  <footer class="w-full text-center text-[10px] text-emerald-800 font-mono tracking-widest uppercase pb-6">
-    Compiled for ✦ the foam of the seas
+  <footer class="w-full text-center text-[9px] text-emerald-800 font-mono tracking-widest uppercase pb-4">
+    Decentralized Word Vault ✦ Serverless Architecture
   </footer>
 
   <script>
     const ROOT_CONFIG = {
-      title: "Follow the steps of",
+      title: "Follow the steps ",
       subtitle: "Prophet Muhammad ﷺ",
       youtubeAudioId: "8hTUDQEvqk8"
     };
 
-    const ROOT_CATEGORIES = [
-                  { 
-        path: "after solat/", 
-        badge: "after solat",
-        desc: "Dua to make after solat"
+    // =========================================================
+    // BOOKMARK: EDIT YOUR CATEGORIES AND LINKS HERE DIRECTLY
+    // =========================================================
+    const VAULT_NAVIGATION_TREE = [
+      {
+        category: "Pilgrimage (Haj)",
+        items: [
+          { label: "Station-by-Station Rituals", path: "Dua Haj/rituals.html" },
+          { label: "Mounting the Mount of Arafah", path: "Dua Haj/arafah.html" }
+        ]
       },
-            { 
-        path: "Wird/", 
-        badge: "Wird 💦🌱",
-        desc: "Liturgies and historical protective sequences across lineages."
+      {
+        category: "Anxiety and sadness",
+        items: [
+          { label: "Invocations in times of worry and grief", path: "Dua Shifa/worry.html" },
+          { label: "Invocations for anguish", path: "Dua Shifa/anguish.html" },
+          { label: "When something you dislike happens", path: "Dua Shifa/dislike.html" }
+        ]
       },
-      { 
-        path: "Dua Haj/", 
-        badge: "Dhul Hijjah",
-        desc: "Dhikr and Duas related to the month of Dhul Hijjah"
+      {
+        category: "Remedies & Shifa",
+        items: [
+          { label: "Prophetic Protection Parameters", path: "Dua Shifa/protection.html" },
+          { label: "Restorative Healing Supplications", path: "Dua Shifa/healing.html" }
+        ]
       },
-      { 
-        path: "Dua Shifa/", 
-        badge: "Shifa",
-        desc: "Prophetic protection and healing"
-      },
+      {
+        category: "Liturgy Vault",
+        items: [
+          { label: "Morning Adhkar Sequences", path: "collections/morning-adhkar.html" },
+          { label: "Dua of Abu Darda", path: "collections/abu-darda.html" }
+        ]
+      }
     ];
 
-    // 🏗️ ENGINE LOGIC (Do not edit below this line)
+    // 🏗️ ENGINE LOGIC (Handles UI building and toggle operations automatically)
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('meta-title').textContent = ROOT_CONFIG.title;
       document.getElementById('root-title').textContent = ROOT_CONFIG.title;
       document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
       
-      const gridTarget = document.getElementById('categories-grid-target');
-      let gridHTML = '';
+      const treeTarget = document.getElementById('navigation-tree');
+      let treeHTML = '';
 
-      ROOT_CATEGORIES.forEach(cat => {
-        gridHTML += `
-          <a href="./${cat.path}" 
-             onmouseenter="igniteNur()" 
-             onmouseleave="extinguishNur()"
-             class="group relative block bg-[#092213]/60 border border-emerald-900/60 rounded-xl p-5 text-left transition-all duration-300 hover:border-emerald-500/40 hover:bg-[#0c2e1a] hover:scale-[1.02] hover:shadow-lg hover:shadow-emerald-500/5">
-            <div class="flex flex-col h-full justify-between space-y-2">
-              <div>
-                <div class="flex items-center justify-between border-b border-emerald-900/40 pb-2 mb-2">
-                  <span class="text-xs font-mono font-bold tracking-widest uppercase px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:text-emerald-300 group-hover:border-emerald-400/30 transition-colors">
-                    ${cat.badge}
-                  </span>
-                  <span class="text-xs font-mono text-emerald-800 group-hover:text-emerald-400 transform group-hover:translate-x-0.5 transition-all">➔</span>
-                </div>
-                <p class="text-xs text-emerald-300/80 group-hover:text-emerald-200 leading-relaxed pt-0.5 transition-colors">
-                  ${cat.desc}
-                </p>
+      VAULT_NAVIGATION_TREE.forEach((node, index) => {
+        treeHTML += `
+          <div class="root-node border border-emerald-900/50 bg-[#071c10]/40 rounded-xl overflow-hidden transition-all duration-200" id="node-${index}">
+            
+            <button onclick="toggleNode(${index})" class="w-full flex items-center justify-between p-4 bg-[#092213]/40 hover:bg-[#0c2e1a]/60 active:bg-[#061c10] transition-colors group">
+              <span class="text-sm font-bold tracking-wide text-emerald-100 group-hover:text-emerald-300 transition-colors">
+                ${node.category}
+              </span>
+              <div class="w-5 h-5 rounded-full border border-emerald-800/60 flex items-center justify-center text-[10px] text-emerald-500 bg-[#05140b] group-hover:border-emerald-500/40 transition-all">
+                <span class="chevron-icon inline-block transform origin-center">▼</span>
+              </div>
+            </button>
+
+            <div class="branch-container bg-[#05140b]/50">
+              <div class="p-2 space-y-1 border-t border-emerald-950/60">
+                ${node.items.map(item => `
+                  <a href="./${item.path}" 
+                     onmouseenter="igniteNur()" 
+                     onmouseleave="extinguishNur()"
+                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-emerald-300/90 hover:text-amber-300 hover:bg-[#092213]/80 transition-all group">
+                    <span class="text-emerald-700 group-hover:text-amber-500 font-mono select-none">↳</span>
+                    <span class="leading-relaxed">${item.label}</span>
+                  </a>
+                `).join('')}
               </div>
             </div>
-          </a>`;
+
+          </div>`;
       });
 
-      gridTarget.innerHTML = gridHTML;
+      treeTarget.innerHTML = treeHTML;
       initAudioEngine();
     });
+
+    // Toggle operations function
+    function toggleNode(index) {
+      const selectedNode = document.getElementById(`node-${index}`);
+      const isActive = selectedNode.classList.contains('active');
+      
+      // OPTIONAL CLOSE ALL: Closes any previously opened node when a new one is selected
+      document.querySelectorAll('.root-node').forEach(node => node.classList.remove('active'));
+      
+      if (!isActive) {
+        selectedNode.classList.add('active');
+      }
+    }
 
     function initAudioEngine() {
       var tag = document.createElement('script');
