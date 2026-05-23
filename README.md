@@ -1,5 +1,5 @@
 
-```markdown
+
 # 🕋 Steps of Muhammad ﷺ — Digital Litany Repository
 
 Welcome to the technical architecture and content management guide for **Steps of Muhammad ﷺ**. This repository functions as a lightweight, lightning-fast, zero-build web application hosted entirely via GitHub Pages. 
