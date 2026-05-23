@@ -1,8 +1,3 @@
-Here is a comprehensive, beautifully formatted `README.md` designed for your GitHub repository. It breaks down the entire system architecture, file meanings, and step-by-step workflow in a way that is incredibly easy for anyone (or your future self) to follow.
-
-You can copy and paste this text directly into your repository's `README.md` file.
-
----
 
 ```markdown
 # 🕋 Steps of Muhammad ﷺ — Digital Litany Repository
