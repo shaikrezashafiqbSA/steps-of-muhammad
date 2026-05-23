@@ -20,6 +20,10 @@ your-repo-name/
 ├── Black Flag (nur).jpeg         # Assets used by index.html
 ├── verse-3-31.jpeg               # Assets used by index.html
 │
+├── prompt/                       # Prompt templates for user asset generation
+│   └── dua-shell-template.html                        # supplied to LLM
+│   └── system-instruction-dua-html-generator.md       # supplied to LLM   
+|
 ├── wird/                         # Category Folder 1
 │   └── dua-xyz.html              # Individual slim Du'a files
 │
