@@ -4,66 +4,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhikr After Salah – Sunan an-Nasā'ī 1339</title>
-<link rel="stylesheet" href="./dua-core.css">
+<link rel="stylesheet" href="../dua-core.css">
 </head>
 <body>
 
-<!-- ── Zoom dock ── -->
 <div class="zoom-dock">
   <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
   <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
 </div>
 
-<!-- ── Header ── -->
 <div class="header">
-  <h1>Dhikr Ba'da al-Ṣalāh</h1>
+  <h1>Dhikr Baʿda al-Ṣalāh</h1>
   <p>Remembrance After the Prayer</p>
 </div>
 
-<!-- ══════════════════════════════════
-     INTRO — Scene setter
-     ══════════════════════════════════ -->
-
+<!-- ══ CONTEXT ══ -->
 <div class="info-strip context">
   <div class="info-header">📖 The Moment This Was Taught</div>
   <div class="info-body">
-    <p>After every obligatory prayer, the Prophet ﷺ would conclude with the <em>taslim</em> — the salutation of peace — and immediately follow it with this declaration of Tawḥīd. It was not a private act. <strong>ʿAbdullāh ibn al-Zubayr (RA) recited it publicly from the Minbar</strong>, teaching the community exactly as he had witnessed it from the Messenger ﷺ.</p>
+    <p>After every obligatory prayer, the Prophet ﷺ would conclude with the <em>taslim</em> and immediately follow it with this declaration. It was not a private act — <strong>ʿAbdullāh ibn al-Zubayr (RA) recited it publicly from the Minbar</strong>, teaching the ummah exactly as he witnessed it.</p>
   </div>
 </div>
 
-<!-- ── Scene block: narrator + chain + speech ── -->
+<!-- ══ SCENE BLOCK ══ -->
 <div class="scene-block">
 
-  <!-- Arabic chain of transmission -->
-  <div class="arabic-block">
-    سَمِعْتُ عَبْدَ اللَّهِ بْنَ الزُّبَيْرِ يُحَدِّثُ عَلَى هَذَا الْمِنْبَرِ وَهُوَ يَقُولُ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا سَلَّمَ يَقُولُ
-  </div>
+  <div class="scene-label">The Narrator</div>
 
-  <!-- Narrator line with 🌙 tooltip trigger -->
   <div class="narrator-line">
     <span class="narrator-name">Abū al-Zubayr</span>
-    <button class="narrator-btn" onclick="toggleNarrator(this)" title="Who is Abū al-Zubayr?">🌙</button>
-    <span class="scene-text">said:</span>
+    <button class="narrator-btn" onclick="openNarrator()" title="Who is Abū al-Zubayr?">🌙</button>
+    <span class="scene-text">reported:</span>
   </div>
 
-  <!-- Narrator info — expands on tap -->
-  <div class="narrator-info">
-    <p><strong>Abū al-Zubayr al-Makkī</strong> — full name Muḥammad ibn Muslim ibn Tadrus al-Asadī (d. ~126 AH). A Tābiʿī (Successor generation) scholar from Makkah, known for his extensive transmission from the Companions, particularly <strong>Jābir ibn ʿAbdullāh (RA)</strong>. He is regarded as <em>thiqqah</em> (trustworthy) by the majority of hadith scholars, though some noted he occasionally transmitted by meaning. His narrations appear in all six major hadith collections (al-Kutub al-Sittah).</p>
-  </div>
-
-  <!-- The speech introducing the dua -->
   <div class="hadith-quote">
-    "I heard <em>ʿAbdullāh ibn al-Zubayr</em> speaking from the Minbar, saying: <em>'When the Messenger of Allah ﷺ said the taslim, he would say…'</em>"
+    <em>"I heard ʿAbdullāh ibn al-Zubayr</em> speaking from the Minbar, saying:
+    <em>'When the Messenger of Allah ﷺ said the taslim, he would say…'"</em>
+  </div>
+
+  <div class="scene-label" style="margin-top:14px;">The Arabic Narration</div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">سَمِعْتُ</span>
+      <span class="word-meaning">I heard</span>
+      <span class="word-translit"></span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَبْدَ اللَّهِ</span>
+      <span class="word-meaning">ʿAbdullāh</span>
+      <span class="word-translit"></span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بْنَ الزُّبَيْرِ</span>
+      <span class="word-meaning">son of al-Zubayr</span>
+      <span class="word-translit"></span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">يُحَدِّثُ</span>
+      <span class="word-meaning">narrating</span>
+      <span class="word-translit"></span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَى الْمِنْبَرِ</span>
+      <span class="word-meaning">from the Minbar</span>
+      <span class="word-translit"></span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">كَانَ رَسُولُ اللَّهِ ﷺ</span>
+      <span class="word-meaning">the Messenger of Allah ﷺ</span>
+      <span class="word-translit"></span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِذَا سَلَّمَ</span>
+      <span class="word-meaning">when he said taslim</span>
+      <span class="word-translit"></span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">يَقُولُ</span>
+      <span class="word-meaning">would say</span>
+      <span class="word-translit"></span>
+    </div>
   </div>
 
 </div>
 
-<!-- ══════════════════════════════════
-     DU'Ā SECTION — word-by-word
-     ══════════════════════════════════ -->
+<!-- ══ NARRATOR OVERLAY ══ -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Abū al-Zubayr al-Makkī</div>
+    <p><strong>Full name:</strong> Muḥammad ibn Muslim ibn Tadrus al-Asadī (d. ~126 AH).</p>
+    <p>A <em>Tābiʿī</em> (Successor generation) scholar from Makkah, known for extensive transmission from the Companions — particularly <strong>Jābir ibn ʿAbdullāh (RA)</strong>.</p>
+    <p>Regarded as <em>thiqqah</em> (trustworthy) by the majority of hadith scholars. His narrations appear in all six major collections (al-Kutub al-Sittah).</p>
+    <p><strong>Role here:</strong> He transmits from ʿAbdullāh ibn al-Zubayr (RA) — a Companion and son of al-Zubayr ibn al-ʿAwwām, one of the ten promised Paradise.</p>
+  </div>
+</div>
+
+<!-- ══ DU'Ā SECTION ══ -->
 
 <div class="section-label">Part 1 · Declaration of Oneness</div>
-
 <div class="verse-block">
   <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
   <div class="arabic-line">
@@ -99,7 +141,6 @@
 </div>
 
 <div class="section-label">Part 2 · His Dominion &amp; Power</div>
-
 <div class="verse-block">
   <div class="arabic-line">
     <div class="word-unit">
@@ -109,7 +150,7 @@
     </div>
     <div class="word-unit">
       <span class="arabic-word">وَلَهُ الْحَمْدُ</span>
-      <span class="word-meaning">to Him is all praise</span>
+      <span class="word-meaning">to Him all praise</span>
       <span class="word-translit">wa lahu-l-ḥamd</span>
     </div>
   </div>
@@ -131,14 +172,12 @@
     </div>
   </div>
   <div class="translation">
-    <span class="chunk">His is the dominion,</span>
-    <span class="chunk">to Him be all praise,</span>
+    <span class="chunk">His is the dominion and to Him all praise,</span>
     <span class="chunk">and He is able to do all things.</span>
   </div>
 </div>
 
 <div class="section-label">Part 3 · No Power Except with Allah</div>
-
 <div class="verse-block">
   <div class="arabic-line">
     <div class="word-unit">
@@ -164,16 +203,13 @@
 </div>
 
 <div class="section-label">Part 4 · Worship of Him Alone</div>
-
 <div class="verse-block">
   <div class="arabic-line">
     <div class="word-unit">
       <span class="arabic-word">لَا إِلَهَ إِلَّا اللَّهُ</span>
-      <span class="word-meaning">none worthy of worship but Allah</span>
+      <span class="word-meaning">none worthy but Allah</span>
       <span class="word-translit">Lā ilāha illā-llāh</span>
     </div>
-  </div>
-  <div class="arabic-line">
     <div class="word-unit">
       <span class="arabic-word">لَا نَعْبُدُ</span>
       <span class="word-meaning">we worship not</span>
@@ -211,12 +247,11 @@
 </div>
 
 <div class="section-label">Part 5 · Sincerity Even Against Opposition</div>
-
 <div class="verse-block">
   <div class="arabic-line">
     <div class="word-unit">
       <span class="arabic-word">لَا إِلَهَ إِلَّا اللَّهُ</span>
-      <span class="word-meaning">none worthy of worship but Allah</span>
+      <span class="word-meaning">none worthy but Allah</span>
       <span class="word-translit">Lā ilāha illā-llāh</span>
     </div>
   </div>
@@ -235,7 +270,7 @@
   <div class="arabic-line">
     <div class="word-unit">
       <span class="arabic-word">وَلَوْ كَرِهَ</span>
-      <span class="word-meaning">even though detest it</span>
+      <span class="word-meaning">even if they detest</span>
       <span class="word-translit">wa law kariha</span>
     </div>
     <div class="word-unit">
@@ -251,41 +286,42 @@
   </div>
 </div>
 
-<!-- ── Divider ── -->
 <div class="divider"></div>
 
-<!-- ── Authenticity strip ── -->
 <div class="info-strip auth">
   <div class="info-header">✅ Source &amp; Authenticity</div>
   <div class="info-body">
-    <p>Narrated by Abū al-Zubayr, from ʿAbdullāh ibn al-Zubayr (RA). Recorded in <strong>Sunan an-Nasā'ī, Book 13 (The Book of Forgetfulness in Prayer), Hadith 161</strong> (No. 1339). Grade: <strong>Ṣaḥīḥ</strong> (Darussalam). Chapter: <em>The tahlīl after the taslim</em>.</p>
+    <p>Narrated by Abū al-Zubayr, from ʿAbdullāh ibn al-Zubayr (RA). Recorded in <strong>Sunan an-Nasā'ī, Book 13, Hadith 161 (No. 1339)</strong>. Chapter: The tahlīl after the taslim. Grade: <strong>Ṣaḥīḥ</strong> (Darussalam).</p>
   </div>
 </div>
 
-<!-- ── Sunnah.com button ── -->
-<a class="source-link-btn" href="https://sunnah.com/nasai:1339" target="_blank" rel="noopener">
-  📖 Read full hadith on Sunnah.com →
-</a>
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/nasai:1339" target="_blank" rel="noopener">
+      https://sunnah.com/nasai:1339
+    </a>
+  </div>
+</div>
 
 <script>
-  /* Zoom */
   const zoomSteps = [11, 13, 16, 19, 22, 25];
   let zoomIndex = 2;
   function adjustZoom(dir) {
     zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
     document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
   }
-
-  /* Source popup */
   function toggleSrc(btn) {
     btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
   }
-
-  /* Narrator info toggle */
-  function toggleNarrator(btn) {
-    const info = btn.closest('.scene-block').querySelector('.narrator-info');
-    info.classList.toggle('open');
-    btn.style.transform = info.classList.contains('open') ? 'rotate(20deg) scale(1.2)' : '';
+  function openNarrator() {
+    document.getElementById('narratorOverlay').classList.add('open');
+  }
+  function closeNarrator() {
+    document.getElementById('narratorOverlay').classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
   }
 </script>
 </body>
