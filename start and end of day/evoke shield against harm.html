@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protection Against Harm – Riyad as-Salihin 1457</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+.narration-drawer {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+margin-bottom: 0;
+}
+.narration-drawer.open {
+max-height: 2000px;
+margin-bottom: 16px;
+}
+.narration-tab {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #eef0f2;
+border: 1px solid #dcdfe3;
+border-radius: 6px;
+padding: 10px 14px;
+margin-bottom: 12px;
+cursor: pointer;
+}
+.narration-tab-title {
+font-size: 0.95rem;
+font-weight: 600;
+color: #555;
+margin: 0;
+}
+.narration-toggle-btn {
+background: #e2e4e6;
+border: 1px solid #cfd3d6;
+border-radius: 4px;
+padding: 4px 8px;
+cursor: pointer;
+font-size: 0.85rem;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+</style>
+</head>
+<body>
+<div class="zoom-dock">
+<button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+<button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+<div class="header">
+<h1>Bismillāh al-Ladhī Lā Yaḍurru</h1>
+<p>In the Name of Allah with Whose Name Nothing Harms</p>
+</div>
+<div class="info-strip context">
+<div class="info-header">📖 Morning and Evening Protection</div>
+<div class="info-body">
+<p>The Prophet ﷺ taught that reciting this supplication <strong>three times every morning and evening</strong> serves as an absolute shield. Whoever says it sincerely will be granted complete immunity from sudden afflictions and all earthly or celestial harm throughout their day or night.</p>
+</div>
+</div>
+<div class="narration-tab" onclick="toggleNarration()">
+<h2 class="narration-tab-title">The Narration Chain</h2>
+<button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+<div id="narrationDrawer" class="narration-drawer">
+<div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+<div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+<span class="narrator-name" style="color: #555; font-weight: 600;">ʿUthmān ibn ʿAffān</span>
+<button class="narrator-btn" onclick="openNarrator(event)" title="Who is ʿUthmān ibn ʿAffān?" style="background: #e2e4e6;">🔍</button>
+<span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+</div>
+<div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+"The Messenger of Allah ﷺ said: 'There is no servant who says in the morning of every day and the evening of every night...'"
+</div>
+<div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration</div>
+<div class="arabic-line">
+<div class="word-unit">
+<span class="arabic-word" style="color: #444;">مَا مِنْ</span>
+<span class="word-meaning">there is no</span>
+<span class="word-translit">mā min</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word" style="color: #444;">عَبْدٍ</span>
+<span class="word-meaning">servant</span>
+<span class="word-translit">ʿabdin</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word" style="color: #444;">يَقُولُ</span>
+<span class="word-meaning">who says</span>
+<span class="word-translit">yaqūlu</span>
+</div>
+</div>
+</div>
+</div>
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+<div class="narrator-overlay-card">
+<button class="narrator-close" onclick="closeNarrator()">✕</button>
+<div class="narrator-overlay-title">ʿUthmān ibn ʿAffān al-Umawī</div>
+<p><strong>Full name:</strong> ʿUthmān ibn ʿAffān ibn Abī al-ʿĀṣ (d. 35 AH).</p>
+<p>The third Rightly Guided Caliph (Amīr al-Mu'minīn) and son-in-law of the Prophet ﷺ, known as Dhū al-Nūrayn. He was celebrated for his deep modesty, immense generosity, and compilation of the standard Mushaf of the Qur'ān.</p>
+<p><strong>Role here:</strong> He heard this direct instruction from the lips of the Messenger of Allah ﷺ and transmitted it to his children and companions.</p>
+</div>
+</div>
+<div class="section-label">Part 1 · Covenant of Protection</div>
+<div class="verse-block">
+<button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+<div class="arabic-line">
+<div class="word-unit">
+<span class="arabic-word">بِسْمِ اللَّهِ</span>
+<span class="word-meaning">in the name of Allah</span>
+<span class="word-translit">Bismi-llāh</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">الَّذِي</span>
+<span class="word-meaning">with Whose</span>
+<span class="word-translit">al-ladhī</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">لَا يَضُرُّ</span>
+<span class="word-meaning">nothing harms</span>
+<span class="word-translit">lā yaḍurru</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">مَعَ اسْمِهِ</span>
+<span class="word-meaning">with His Name</span>
+<span class="word-translit">maʿas-mihī</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">شَيْءٌ</span>
+<span class="word-meaning">anything</span>
+<span class="word-translit">shay'un</span>
+</div>
+</div>
+<div class="arabic-line">
+<div class="word-unit">
+<span class="arabic-word">فِي الْأَرْضِ</span>
+<span class="word-meaning">in the earth</span>
+<span class="word-translit">fil-arḍi</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">وَلَا</span>
+<span class="word-meaning">and not</span>
+<span class="word-translit">wa lā</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">فِي السَّمَاءِ</span>
+<span class="word-meaning">in the heaven</span>
+<span class="word-translit">fis-samā'i</span>
+</div>
+</div>
+<div class="translation">
+<span class="chunk">In the Name of Allah, with Whose Name there is protection against every kind of harm in the earth or in the heaven,</span>
+</div>
+<div class="src-popup">
+<span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+Riyad as-Salihin, Book 15, Hadith 50 (No. 1457).
+</div>
+</div>
+<div class="section-label">Part 2 · Divine Attributes</div>
+<div class="verse-block">
+<button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+<div class="arabic-line">
+<div class="word-unit">
+<span class="arabic-word">وَهُوَ</span>
+<span class="word-meaning">and He</span>
+<span class="word-translit">wa Huwa</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">السَّمِيعُ</span>
+<span class="word-meaning">the All-Hearing</span>
+<span class="word-translit">as-Samīʿu</span>
+</div>
+<div class="word-unit">
+<span class="arabic-word">الْعَلِيمُ</span>
+<span class="word-meaning">the All-Knowing</span>
+<span class="word-translit">al-ʿAlīm</span>
+</div>
+</div>
+<div class="translation">
+<span class="chunk">and He is the All-Hearing, the All-Knowing.</span>
+</div>
+<div class="src-popup">
+<span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+Riyad as-Salihin, Book 15, Hadith 50 (No. 1457).
+</div>
+</div>
+<div class="divider"></div>
+<div class="info-strip auth">
+<div class="info-header">✅ Source & Authenticity</div>
+<div class="info-body">
+<p>Narrated by ʿUthmān ibn ʿAffān (RA). Recorded by Abū Dāwūd (No. 5088) and At-Tirmidhī (No. 3388). Formally compiled in <strong>Riyad as-Salihin, Book 15, Hadith 50 (No. 1457)</strong>. Grade: <strong>Ḥasan Ṣaḥīḥ</strong> according to Imam At-Tirmidhī.</p>
+</div>
+</div>
+<div class="info-strip auth">
+<div class="info-header">🔗 Verify This Hadith</div>
+<div class="info-body">
+<a class="source-url" href="[https://sunnah.com/riyadussalihin:1457](https://sunnah.com/riyadussalihin:1457)" target="_blank" rel="noopener">
+https://sunnah.com/riyadussalihin:1457
+</a>
+</div>
+</div>
+<script>
+const zoomSteps = [11, 13, 16, 19, 22, 25];
+let zoomIndex = 2;
+function adjustZoom(dir) {
+zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+}
+function toggleSrc(btn) {
+btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+}
+function toggleNarration() {
+const drawer = document.getElementById('narrationDrawer');
+if (drawer) drawer.classList.toggle('open');
+}
+function openNarrator(e) {
+if (e) e.stopPropagation();
+const overlay = document.getElementById('narratorOverlay');
+if (overlay) overlay.classList.add('open');
+}
+function closeNarrator() {
+const overlay = document.getElementById('narratorOverlay');
+if (overlay) overlay.classList.remove('open');
+}
+function handleOverlayClick(e) {
+if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+}
+</script>
+</body>
+</html>
