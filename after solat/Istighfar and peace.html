@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, initial-scale=1.0">
+<title>Du'ā After Prayer – Thawbān (Ṣaḥīḥ Muslim 591)</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Collapsible elements for Hadith narration pages */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Accessibility Zoom Engine ── -->
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<!-- ── Display Identity Header ── -->
+<div class="header">
+  <h1>اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ</h1>
+  <p>Allāhumma Anta as-Salām wa Minka as-Salām</p>
+</div>
+
+<!-- ── Historical Context Strip ── -->
+<div class="info-strip context">
+  <div class="info-header">📖 After the Ṣalām – The Prophet’s ﷺ Immediate Practice</div>
+  <div class="info-body">
+    <p>Thawbān (RA) reports that after completing every prayer, the Messenger of Allah ﷺ would seek forgiveness three times, then recite this powerful declaration. This du'ā affirms that all true peace and safety belong to Allah alone, and He is the source of all peace. It is a sunnah that transforms the moments after ṣalāh into a profound act of worship.</p>
+  </div>
+</div>
+
+<!-- ── Collapsible Narration Drawer (Hadith chain & context) ── -->
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Thawbān (RA)</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="Who is Thawbān?" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "When the Messenger of Allah ﷺ finished his prayer, he would seek forgiveness three times and then say: O Allah, You are Peace and from You comes peace. Blessed are You, O Owner of majesty and honor."
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (partial chain)</div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَدَّثَنَا</span>
+        <span class="word-meaning" style="color: #666;">narrated to us</span>
+        <span class="word-translit" style="color: #777;">ḥaddathanā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">دَاوُدُ بْنُ رُشَيْدٍ</span>
+        <span class="word-meaning" style="color: #666;">Dāwūd ibn Rushayd</span>
+        <span class="word-translit" style="color: #777;">Dāwūdu bnu Rushayd</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنِ الْوَلِيدِ</span>
+        <span class="word-meaning" style="color: #666;">from al-Walīd</span>
+        <span class="word-translit" style="color: #777;">ʿani-l-Walīd</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنِ الأَوْزَاعِيِّ</span>
+        <span class="word-meaning" style="color: #666;">from al-Awzāʿī</span>
+        <span class="word-translit" style="color: #777;">ʿani-l-Awzāʿī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنْ أَبِي عَمَّارٍ</span>
+        <span class="word-meaning" style="color: #666;">from Abū ʿAmmār</span>
+        <span class="word-translit" style="color: #777;">ʿan Abī ʿAmmār</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">The chain: Dāwūd ibn Rushayd → al-Walīd → al-Awzāʿī → Abū ʿAmmār (Shaddād ibn ʿAbdullāh) → Abū Asmā’ → Thawbān (RA).</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Biographical Bio Overlay (Narrator: Thawbān) ── -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Thawbān (RA) – مَوْلَى رَسُولِ اللَّهِ</div>
+    <p><strong>Full name:</strong> Thawbān ibn Bujdud (d. ~54 AH), a freed slave of the Prophet ﷺ.</p>
+    <p>A noble Companion who served the Prophet ﷺ closely. Renowned for his deep knowledge and piety. Lived in Hims (Syria) and transmitted many key aḥādīth. Scholars unanimously regard him as trustworthy (thiqqah).</p>
+    <p><strong>Role here:</strong> Direct eyewitness reporting the Prophet’s ﷺ post-prayer practice — a primary source for this beloved du'ā.</p>
+  </div>
+</div>
+
+<!-- ═══════════ MAIN SUPPLICATION SEGMENTS ═══════════ -->
+<div class="section-label">Part 1 · Seeking Forgiveness (Al-Istighfār) x 3</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَسْتَغْفِرُ اللَّهَ</span>
+      <span class="word-meaning">I seek forgiveness from Allah</span>
+      <span class="word-translit">Astaghfiru-llāh</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">“I seek Allah’s forgiveness x 3”</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ Muslim, Book 5 (Masājid), Hadith 171 (No. 591).
+  </div>
+</div>
+
+<div class="section-label">Part 2 · Declaration of All Peace</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">O Allah</span>
+      <span class="word-translit">Allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَنْتَ</span>
+      <span class="word-meaning">You are</span>
+      <span class="word-translit">Anta</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">السَّلَامُ</span>
+      <span class="word-meaning">the Peace</span>
+      <span class="word-translit">as-Salām</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَمِنْكَ</span>
+      <span class="word-meaning">and from You</span>
+      <span class="word-translit">wa Minka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">السَّلَامُ</span>
+      <span class="word-meaning">is peace</span>
+      <span class="word-translit">as-Salām</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">“O Allah, You are Peace, and from You comes peace.”</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ Muslim 591
+  </div>
+</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">تَبَارَكْتَ</span>
+      <span class="word-meaning">Blessed are You</span>
+      <span class="word-translit">Tabārakta</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ذَا</span>
+      <span class="word-meaning">O Possessor of</span>
+      <span class="word-translit">Dhā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْجَلَالِ</span>
+      <span class="word-meaning">majesty</span>
+      <span class="word-translit">al-Jalāl</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَ</span>
+      <span class="word-meaning">and</span>
+      <span class="word-translit">wa</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْإِكْرَامِ</span>
+      <span class="word-meaning">honour / generosity</span>
+      <span class="word-translit">al-Ikrām</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">“Blessed are You, O Owner of majesty and honour.”</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ Muslim 591
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Verification & Authentication Strip ── -->
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Narrated by Thawbān (RA), the freed servant of the Prophet ﷺ. Recorded by Imām Muslim in his Ṣaḥīḥ, Book of Mosques and Places of Prayer (Kitāb al-Masājid), Hadith 591. Graded as <strong>Ṣaḥīḥ</strong> by unanimous consensus of hadith scholars. Also reported by al-Tirmidhī, Abū Dāwūd, and Aḥmad with similar wording.</p>
+  </div>
+</div>
+
+<!-- ── External Reference Link Strip (sunnah.com) ── -->
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/muslim:591" target="_blank" rel="noopener noreferrer">
+      https://sunnah.com/muslim:591
+    </a>
+  </div>
+</div>
+
+<!-- ── Monolithic Control JavaScript Controller ── -->
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>

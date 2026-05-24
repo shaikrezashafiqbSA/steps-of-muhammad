@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhikr After Salah – Sahih Muslim 591</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* ── Nalayn glow — injected per-page, not in dua-core.css ── */
+  .nalayn-wrap {
+    position: relative;
+    margin: 0 16px;
+  }
+  .nalayn-bg {
+    position: absolute;
+    inset: -18px -16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Cellipse cx='100' cy='60' rx='95' ry='52' fill='none' stroke='%23c9a84c' stroke-width='1.2' opacity='0.18'/%3E%3Cellipse cx='100' cy='60' rx='75' ry='38' fill='none' stroke='%23c9a84c' stroke-width='0.8' opacity='0.12'/%3E%3Cpath d='M30 60 Q60 20 100 18 Q140 20 170 60 Q140 100 100 102 Q60 100 30 60Z' fill='%23c9a84c' opacity='0.04'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  .nalayn-wrap.active .nalayn-bg {
+    opacity: 1;
+  }
+  /* glow border on the verse blocks inside */
+  .nalayn-wrap.active .verse-block {
+    border-color: rgba(201,168,76,0.35);
+    box-shadow: 0 2px 18px rgba(201,168,76,0.12);
+    transition: border-color 0.6s ease, box-shadow 0.6s ease;
+  }
+  .nalayn-wrap.active .section-label {
+    background: #f5edd8;
+    color: #7a5c1a;
+    transition: background 0.6s ease, color 0.6s ease;
+  }
+
+  /* ── Collapsible hadith context ── */
+  .context-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    border-top: 1px solid #ede8df;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #9a7d5a;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  .context-toggle .ct-arrow {
+    font-size: 0.6rem;
+    transition: transform 0.25s ease;
+    color: #bbb;
+  }
+  .context-toggle.open .ct-arrow { transform: rotate(180deg); }
+
+  .context-body {
+    display: none;
+    padding: 2px 14px 14px;
+  }
+  .context-body.open { display: block; }
+
+  /* hadith chain word-units in context — slightly muted */
+  .context-body .arabic-line { opacity: 0.88; }
+
+  /* Gold left-bar quote */
+  .hadith-quote {
+    background: #fffdf8;
+    border-left: 3px solid #c9a84c;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 12px;
+    font-size: 0.78rem;
+    color: #3d2a1a;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .hadith-quote em { font-style: normal; font-weight: 700; color: #1a3d26; }
+
+  /* scene label */
+  .scene-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a08060;
+    margin: 10px 0 6px;
+  }
+
+  /* Narrator 🌙 */
+  .narrator-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .narrator-name { font-size: 0.8rem; font-weight: 700; color: #1a3d26; }
+  .narrator-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: 0.95rem; padding: 0 2px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .scene-text { font-size: 0.76rem; color: #7a5c3a; font-style: italic; }
+
+  /* Narrator overlay */
+  .narrator-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    padding: 60px 16px 0;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .narrator-overlay.open { display: flex; }
+  .narrator-overlay-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 16px 16px;
+    max-width: 460px; width: 100%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    position: relative;
+    font-size: 0.78rem; line-height: 1.7; color: #1a3d26;
+    max-height: 80vh; overflow-y: auto;
+  }
+  .narrator-overlay-title {
+    font-family: 'Amiri', serif; font-size: 1.1rem; font-weight: 700;
+    color: #1a3d26; margin-bottom: 12px;
+    padding-bottom: 8px; padding-right: 30px;
+    border-bottom: 1px solid #b6dfc4;
+  }
+  .narrator-overlay-card p { margin-bottom: 8px; }
+  .narrator-close {
+    position: absolute; top: 14px; right: 14px;
+    background: #f0faf2; border: 1px solid #b6dfc4;
+    border-radius: 50%; width: 28px; height: 28px;
+    font-size: 0.75rem; cursor: pointer; color: #2a7040;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Dhikr Baʿda al-Ṣalāh</h1>
+  <p>Remembrance After the Prayer</p>
+</div>
+
+<!-- ══ CONTEXT STRIP — always visible summary ══ -->
+<div class="info-strip context">
+  <div class="info-header">📖 When to Recite</div>
+  <div class="info-body">
+    <p>Recited immediately after completing each obligatory prayer — beginning with three times saying <em>Astaghfirullāh</em>, then this supplication once.</p>
+  </div>
+</div>
+
+<!-- ══ NARRATION CONTEXT BLOCK — collapsed by default ══ -->
+<div class="verse-block" style="margin-top:10px;">
+  <button class="context-toggle" onclick="toggleContext(this)">
+    <span>📜 The Hadith Narration</span>
+    <span class="ct-arrow">▼</span>
+  </button>
+  <div class="context-body">
+
+    <div class="scene-label">Narrator</div>
+    <div class="narrator-line">
+      <span class="narrator-name">Thawbān</span>
+      <button class="narrator-btn" onclick="openNarrator('thawban')" title="Who is Thawbān?">🌙</button>
+      <span class="scene-text">reported:</span>
+    </div>
+
+    <div class="hadith-quote">
+      <em>"When the Messenger of Allah ﷺ finished his prayer,</em> he would seek forgiveness three times and say…"
+    </div>
+
+    <div class="scene-label">The Arabic Chain</div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word">كَانَ رَسُولُ اللَّهِ</span>
+        <span class="word-meaning">the Messenger of Allah ﷺ used to</span>
+        <span class="word-translit">kāna Rasūlu-llāh</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word">إِذَا انْصَرَفَ</span>
+        <span class="word-meaning">when he finished</span>
+        <span class="word-translit">idhā-nṣarafa</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word">مِنْ صَلَاتِهِ</span>
+        <span class="word-meaning">from his prayer</span>
+        <span class="word-translit">min ṣalātih</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word">اسْتَغْفَرَ ثَلَاثًا</span>
+        <span class="word-meaning">seek forgiveness three times</span>
+        <span class="word-translit">istaghfara thalāthan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word">وَقَالَ</span>
+        <span class="word-meaning">and say</span>
+        <span class="word-translit">wa qāla</span>
+      </div>
+    </div>
+
+    <div class="scene-label" style="margin-top:10px;">On Seeking Forgiveness</div>
+    <div class="hadith-quote">
+      Walīd said: <em>"I asked al-Awzāʿī: How is the seeking of forgiveness done?"</em>
+      He replied: <em>"You say: Astaghfirullāh, Astaghfirullāh."</em>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ DU'Ā — FRONT STAGE with nalayn glow ══ -->
+<div id="dua-section">
+
+  <!-- Istighfar -->
+  <div class="nalayn-wrap" id="nalayn-1">
+    <div class="nalayn-bg"></div>
+    <div class="section-label" style="margin:16px 0 0;">Part 1 · Seeking Forgiveness</div>
+    <div class="verse-block">
+      <div class="arabic-line">
+        <div class="word-unit">
+          <span class="arabic-word">أَسْتَغْفِرُ اللَّهَ</span>
+          <span class="word-meaning">I seek forgiveness from Allah</span>
+          <span class="word-translit">Astaghfiru-llāh</span>
+        </div>
+      </div>
+      <div class="translation">
+        <span class="chunk">I seek forgiveness from Allah — ×3</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main dua -->
+  <div class="nalayn-wrap" id="nalayn-2">
+    <div class="nalayn-bg"></div>
+    <div class="section-label" style="margin:12px 0 0;">Part 2 · The Supplication</div>
+
+    <div class="verse-block">
+      <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+      <div class="arabic-line">
+        <div class="word-unit">
+          <span class="arabic-word">اللَّهُمَّ</span>
+          <span class="word-meaning">O Allah</span>
+          <span class="word-translit">Allāhumma</span>
+        </div>
+        <div class="word-unit">
+          <span class="arabic-word">أَنْتَ السَّلَامُ</span>
+          <span class="word-meaning">You are Peace</span>
+          <span class="word-translit">Anta-s-salām</span>
+        </div>
+        <div class="word-unit">
+          <span class="arabic-word">وَمِنْكَ السَّلَامُ</span>
+          <span class="word-meaning">and from You is peace</span>
+          <span class="word-translit">wa minka-s-salām</span>
+        </div>
+      </div>
+      <div class="arabic-line">
+        <div class="word-unit">
+          <span class="arabic-word">تَبَارَكْتَ</span>
+          <span class="word-meaning">Blessed are You</span>
+          <span class="word-translit">tabārakta</span>
+        </div>
+        <div class="word-unit">
+          <span class="arabic-word">يَا ذَا الْجَلَالِ</span>
+          <span class="word-meaning">O Possessor of Majesty</span>
+          <span class="word-translit">yā dha-l-jalāl</span>
+        </div>
+        <div class="word-unit">
+          <span class="arabic-word">وَالْإِكْرَامِ</span>
+          <span class="word-meaning">and Honour</span>
+          <span class="word-translit">wa-l-ikrām</span>
+        </div>
+      </div>
+      <div class="translation">
+        <span class="chunk">O Allah, You are Peace</span>
+        <span class="chunk">and from You comes peace.</span>
+        <span class="chunk">Blessed are You,</span>
+        <span class="chunk">O Possessor of Majesty and Honour.</span>
+      </div>
+      <div class="src-popup">
+        <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+        Sahih Muslim, Book 5, Hadith 171 (No. 591).
+      </div>
+    </div>
+  </div>
+
+</div><!-- end #dua-section -->
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Narrated by Thawbān (RA), a freed slave and devoted Companion of the Prophet ﷺ. Recorded in <strong>Sahih Muslim, Book 5 (The Book of Mosques), Hadith 171 (No. 591)</strong>. Grade: <strong>Ṣaḥīḥ</strong>.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/muslim:591" target="_blank" rel="noopener">
+      https://sunnah.com/muslim:591
+    </a>
+  </div>
+</div>
+
+<!-- ══ NARRATOR OVERLAY ══ -->
+<div class="narrator-overlay" id="overlay-thawban" onclick="if(event.target===this)closeNarrator('thawban')">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator('thawban')">✕</button>
+    <div class="narrator-overlay-title">Thawbān ibn Bajdad (RA)</div>
+    <p><strong>Status:</strong> Ṣaḥābī (Companion of the Prophet ﷺ). Originally a prisoner of war, he was freed by the Prophet ﷺ and thereafter never left his service.</p>
+    <p>He was known for his intense love of the Prophet ﷺ — narrators recorded that he would grow visibly distressed at the thought of separation from him in the Hereafter, which prompted the revelation of hadith about intercession.</p>
+    <p><strong>Narrations:</strong> Over 100 hadith attributed to him. His reports appear in all major collections.</p>
+  </div>
+</div>
+
+<script>
+  /* Zoom */
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+
+  /* Source popup */
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+
+  /* Collapsible context */
+  function toggleContext(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+
+  /* Narrator overlay */
+  function openNarrator(id) {
+    document.getElementById('overlay-' + id).classList.add('open');
+  }
+  function closeNarrator(id) {
+    document.getElementById('overlay-' + id).classList.remove('open');
+  }
+
+  /* Nalayn glow — fires when dua section scrolls into view */
+  const glowTargets = document.querySelectorAll('.nalayn-wrap');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('active');
+        else e.target.classList.remove('active');
+      });
+    }, { threshold: 0.4 });
+    glowTargets.forEach(t => obs.observe(t));
+  }
+</script>
+</body>
+</html>
