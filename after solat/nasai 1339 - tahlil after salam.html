@@ -5,6 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dhikr After Salah – Sunan an-Nasā'ī 1339</title>
 <link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Clean styling for the expandable narration drawer */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px; /* High enough to accommodate content */
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
 </head>
 <body>
 
@@ -26,69 +67,77 @@
   </div>
 </div>
 
-<!-- ══ SCENE BLOCK ══ -->
-<div class="scene-block">
+<!-- ══ COLLAPSIBLE NARRATION SECTION ══ -->
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
 
-  <div class="scene-label">The Narrator</div>
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <!-- Narrator Interactive Header -->
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Abū al-Zubayr</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="Who is Abū al-Zubayr?" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
 
-  <div class="narrator-line">
-    <span class="narrator-name">Abū al-Zubayr</span>
-    <button class="narrator-btn" onclick="openNarrator()" title="Who is Abū al-Zubayr?">🌙</button>
-    <span class="scene-text">reported:</span>
+    <!-- Arabic Line 1 -->
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">سَمِعْتُ</span>
+        <span class="word-meaning">I heard</span>
+        <span class="word-translit">Samiʿtu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَبْدَ اللَّهِ</span>
+        <span class="word-meaning">ʿAbdullāh</span>
+        <span class="word-translit">ʿAbda-llāhi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بْنَ الزُّبَيْرِ</span>
+        <span class="word-meaning">son of al-Zubayr</span>
+        <span class="word-translit">bna-z-Zubayri</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يُحَدِّثُ</span>
+        <span class="word-meaning">narrating</span>
+        <span class="word-translit">yuḥaddithu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَلَى الْمِنْبَرِ</span>
+        <span class="word-meaning">from the Minbar</span>
+        <span class="word-translit">ʿala-l-minbari</span>
+      </div>
+    </div>
+
+    <!-- Arabic Line 2 -->
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كَانَ رَسُولُ اللَّهِ ﷺ</span>
+        <span class="word-meaning">the Messenger of Allah ﷺ</span>
+        <span class="word-translit">kāna Rasūlu-llāhi ﷺ</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">إِذَا سَلَّمَ</span>
+        <span class="word-meaning">when he said taslim</span>
+        <span class="word-translit">idhā sallama</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يَقُولُ</span>
+        <span class="word-meaning">would say</span>
+        <span class="word-translit">yaqūlu</span>
+      </div>
+    </div>
+
+    <!-- Translation Chunks -->
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"I heard ʿAbdullāh ibn al-Zubayr speaking from the Minbar, saying</span>
+      <span class="chunk">that when the Messenger of Allah ﷺ finished the prayer with taslim, he would say..."</span>
+    </div>
+
   </div>
-
-  <div class="hadith-quote">
-    <em>"I heard ʿAbdullāh ibn al-Zubayr</em> speaking from the Minbar, saying:
-    <em>'When the Messenger of Allah ﷺ said the taslim, he would say…'"</em>
-  </div>
-
-  <div class="scene-label" style="margin-top:14px;">The Arabic Narration</div>
-
-  <div class="arabic-line">
-    <div class="word-unit">
-      <span class="arabic-word">سَمِعْتُ</span>
-      <span class="word-meaning">I heard</span>
-      <span class="word-translit"></span>
-    </div>
-    <div class="word-unit">
-      <span class="arabic-word">عَبْدَ اللَّهِ</span>
-      <span class="word-meaning">ʿAbdullāh</span>
-      <span class="word-translit"></span>
-    </div>
-    <div class="word-unit">
-      <span class="arabic-word">بْنَ الزُّبَيْرِ</span>
-      <span class="word-meaning">son of al-Zubayr</span>
-      <span class="word-translit"></span>
-    </div>
-    <div class="word-unit">
-      <span class="arabic-word">يُحَدِّثُ</span>
-      <span class="word-meaning">narrating</span>
-      <span class="word-translit"></span>
-    </div>
-    <div class="word-unit">
-      <span class="arabic-word">عَلَى الْمِنْبَرِ</span>
-      <span class="word-meaning">from the Minbar</span>
-      <span class="word-translit"></span>
-    </div>
-  </div>
-  <div class="arabic-line">
-    <div class="word-unit">
-      <span class="arabic-word">كَانَ رَسُولُ اللَّهِ ﷺ</span>
-      <span class="word-meaning">the Messenger of Allah ﷺ</span>
-      <span class="word-translit"></span>
-    </div>
-    <div class="word-unit">
-      <span class="arabic-word">إِذَا سَلَّمَ</span>
-      <span class="word-meaning">when he said taslim</span>
-      <span class="word-translit"></span>
-    </div>
-    <div class="word-unit">
-      <span class="arabic-word">يَقُولُ</span>
-      <span class="word-meaning">would say</span>
-      <span class="word-translit"></span>
-    </div>
-  </div>
-
 </div>
 
 <!-- ══ NARRATOR OVERLAY ══ -->
@@ -314,7 +363,15 @@
   function toggleSrc(btn) {
     btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
   }
-  function openNarrator() {
+  
+  /* Dropdown logic for Narration Chain */
+  function toggleNarration() {
+    document.getElementById('narrationDrawer').classList.toggle('open');
+  }
+  
+  /* Prevent overlay popup click from folding the drawer up */
+  function openNarrator(e) {
+    e.stopPropagation(); 
     document.getElementById('narratorOverlay').classList.add('open');
   }
   function closeNarrator() {
