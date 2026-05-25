@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lā ilāha illallāh al-Malik al-Haqq al-Mubīn – The Clear Truth Dhikr</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>لَا إِلَٰهَ إِلَّا اللَّهُ الْمَلِكُ الْحَقُّ الْمُبِينُ</h1>
+  <p>Lā ilāha illallāh al-Malik al-Ḥaqq al-Mubīn — Muḥammad Rasūlullāh Ṣādiq al-Waʿd al-Amīn</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Context of the Dhikr</div>
+  <div class="info-body">
+    <p>This noble invocation combines the pure declaration of Allāh’s absolute sovereignty and undeniable truth with the attestation of Prophet Muḥammad’s (ﷺ) truthfulness in promise and trustworthiness. It has been transmitted in several hadith works with varying degrees of authenticity, yet numerous scholars have affirmed its spiritual virtue as part of righteous deeds (faḍāʾil al-aʿmāl). The first part appears in <em>Tārīkh Baghdād</em> of al-Khaṭīb al-Baghdādī and <em>Ḥilyat al-Awliyāʾ</em> of Abū Nuʿaym, while the second half is widely known as the inscription on the door of the Kaʿbah and the Prophet’s Mosque [citation:1][citation:3][citation:8].</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">📜 The Narration Chain &amp; Scholarly Notes</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Al-Khaṭīb al-Baghdādī</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">narrated via a chain —</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      “Whoever says every day one hundred times: <strong>Lā ilāha illallāh al-Malik al-Ḥaqq al-Mubīn</strong>, it will be for him a protection from poverty, he will acquire prosperity thereby, be safe from the loneliness of the grave, and by this kalimah he will knock at the door of Paradise.”
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration</div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">قَالَ</span>
+        <span class="word-meaning" style="color: #666;">he said</span>
+        <span class="word-translit" style="color: #777;">qāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">النَّبِيُّ</span>
+        <span class="word-meaning" style="color: #666;">the Prophet</span>
+        <span class="word-translit" style="color: #777;">an-nabiyyu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">صَلَّى</span>
+        <span class="word-meaning" style="color: #666;">may He bless</span>
+        <span class="word-translit" style="color: #777;">ṣallā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱللَّٰهُ</span>
+        <span class="word-meaning" style="color: #666;">Allah</span>
+        <span class="word-translit" style="color: #777;">allāhu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَلَيْهِ</span>
+        <span class="word-meaning" style="color: #666;">upon him</span>
+        <span class="word-translit" style="color: #777;">ʿalayhi</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَسَلَّمَ</span>
+        <span class="word-meaning" style="color: #666;">and granted peace</span>
+        <span class="word-translit" style="color: #777;">wa-sallam</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">مَنْ</span>
+        <span class="word-meaning" style="color: #666;">whoever</span>
+        <span class="word-translit" style="color: #777;">man</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">قَالَ</span>
+        <span class="word-meaning" style="color: #666;">says</span>
+        <span class="word-translit" style="color: #777;">qāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">فِي</span>
+        <span class="word-meaning" style="color: #666;">in</span>
+        <span class="word-translit" style="color: #777;">fī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كُلِّ</span>
+        <span class="word-meaning" style="color: #666;">every</span>
+        <span class="word-translit" style="color: #777;">kulli</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يَوْمٍ</span>
+        <span class="word-meaning" style="color: #666;">day</span>
+        <span class="word-translit" style="color: #777;">yawmin</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">مِائَةَ</span>
+        <span class="word-meaning" style="color: #666;">one hundred</span>
+        <span class="word-translit" style="color: #777;">miʾata</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">مَرَّةً</span>
+        <span class="word-meaning" style="color: #666;">times</span>
+        <span class="word-translit" style="color: #777;">marratan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لَا</span>
+        <span class="word-meaning" style="color: #666;">no</span>
+        <span class="word-translit" style="color: #777;">lā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">إِلَٰهَ</span>
+        <span class="word-meaning" style="color: #666;">deity</span>
+        <span class="word-translit" style="color: #777;">ilāha</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">إِلَّا</span>
+        <span class="word-meaning" style="color: #666;">except</span>
+        <span class="word-translit" style="color: #777;">illā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱللَّٰهُ</span>
+        <span class="word-meaning" style="color: #666;">Allah</span>
+        <span class="word-translit" style="color: #777;">allāhu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْمَلِكُ</span>
+        <span class="word-meaning" style="color: #666;">the King</span>
+        <span class="word-translit" style="color: #777;">al-maliku</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْحَقُّ</span>
+        <span class="word-meaning" style="color: #666;">the Truth</span>
+        <span class="word-translit" style="color: #777;">al-ḥaqqu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْمُبِينُ</span>
+        <span class="word-meaning" style="color: #666;">the Clear</span>
+        <span class="word-translit" style="color: #777;">al-mubīnu</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كَانَ</span>
+        <span class="word-meaning" style="color: #666;">it becomes</span>
+        <span class="word-translit" style="color: #777;">kāna</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لَهُۥ</span>
+        <span class="word-meaning" style="color: #666;">for him</span>
+        <span class="word-translit" style="color: #777;">lahū</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَمَانًا</span>
+        <span class="word-meaning" style="color: #666;">a protection</span>
+        <span class="word-translit" style="color: #777;">amānan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">مِنَ</span>
+        <span class="word-meaning" style="color: #666;">from</span>
+        <span class="word-translit" style="color: #777;">mina</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْفَقْرِ</span>
+        <span class="word-meaning" style="color: #666;">poverty</span>
+        <span class="word-translit" style="color: #777;">al-faqri</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَٱسْتَجْلَبَ</span>
+        <span class="word-meaning" style="color: #666;">and acquires</span>
+        <span class="word-translit" style="color: #777;">wa-stajlaba</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بِهِۦ</span>
+        <span class="word-meaning" style="color: #666;">by it</span>
+        <span class="word-translit" style="color: #777;">bihī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْغِنَىٰ</span>
+        <span class="word-meaning" style="color: #666;">prosperity</span>
+        <span class="word-translit" style="color: #777;">al-ghinā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَأُمِنَ</span>
+        <span class="word-meaning" style="color: #666;">and is safe</span>
+        <span class="word-translit" style="color: #777;">wa-umina</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">مِن</span>
+        <span class="word-meaning" style="color: #666;">from</span>
+        <span class="word-translit" style="color: #777;">min</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَحْشَةِ</span>
+        <span class="word-meaning" style="color: #666;">the loneliness</span>
+        <span class="word-translit" style="color: #777;">waḥshati</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْقَبْرِ</span>
+        <span class="word-meaning" style="color: #666;">the grave</span>
+        <span class="word-translit" style="color: #777;">al-qabri</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَٱسْتَقْرَعَ</span>
+        <span class="word-meaning" style="color: #666;">and knocks</span>
+        <span class="word-translit" style="color: #777;">wa-staqraʿa</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بِهِۦ</span>
+        <span class="word-meaning" style="color: #666;">by it</span>
+        <span class="word-translit" style="color: #777;">bihī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بَابَ</span>
+        <span class="word-meaning" style="color: #666;">the door</span>
+        <span class="word-translit" style="color: #777;">bāba</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْجَنَّةِ</span>
+        <span class="word-meaning" style="color: #666;">of Paradise</span>
+        <span class="word-translit" style="color: #777;">al-jannah</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">“The Prophet (ﷺ) said: ‘Whoever says each day one hundred times: There is no deity but Allah, the King, the Truth, the Clear — it becomes for him a protection from poverty, he acquires prosperity through it, he is safe from the loneliness of the grave, and by it he knocks at the door of Paradise.’”</span>
+    </div>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Al-Khaṭīb al-Baghdādī (Abū Bakr Aḥmad ibn ʿAlī)</div>
+    <p><strong>Full name:</strong> Abū Bakr Aḥmad ibn ʿAlī ibn Thābit ibn Aḥmad ibn Mahdī al-Baghdādī (392–463 AH / 1002–1071 CE). Eminent ḥadīth master, historian, and jurist of the Shāfiʿī school. Author of the monumental <em>Tārīkh Baghdād</em> (History of Baghdad), a 14-volume encyclopedia of narrators and scholars.</p>
+    <p>Known for his meticulous biographical methodology and critical scrutiny of chains. Al-Khaṭīb recorded this narration from chains through Imam Mālik, though later ḥadīth critics (al-Dāraquṭnī, Ibn ʿAbd al-Barr, al-Dhahabī) indicated weakness (ḍaʿīf) in the attribution to Mālik. However, the text remains a recognized supplication for virtues.</p>
+    <p><strong>Role here:</strong> Primary compiler and transmitter of this hadith text in <em>Tārīkh Baghdād</em> (vol. 14, pg. 322), preserving it for scholarly transmission despite its chain vulnerabilities. The narration is cited within the framework of encouragement for good deeds (faḍāʾil al-aʿmāl) where leniency is traditionally practiced.</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Sovereignty & Clarity of Allāh</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا</span>
+      <span class="word-meaning">no</span>
+      <span class="word-translit">lā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَٰهَ</span>
+      <span class="word-meaning">deity</span>
+      <span class="word-translit">ilāha</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَّا</span>
+      <span class="word-meaning">except</span>
+      <span class="word-translit">illā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱللَّٰهُ</span>
+      <span class="word-meaning">Allah</span>
+      <span class="word-translit">allāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْمَلِكُ</span>
+      <span class="word-meaning">the King</span>
+      <span class="word-translit">al-malik</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْحَقُّ</span>
+      <span class="word-meaning">the Truth</span>
+      <span class="word-translit">al-ḥaqq</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْمُبِينُ</span>
+      <span class="word-meaning">the Clear</span>
+      <span class="word-translit">al-mubīn</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">“There is no deity worthy of worship except Allah,</span>
+    <span class="chunk">the Sovereign King, the Absolute Truth,</span>
+    <span class="chunk">the One who makes all things clear.”</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ḍaʿīf li-ʿillah but Ṣāliḥ li-l-faḍāʾil</span>
+    Recorded by al-Khaṭīb al-Baghdādī in <em>Tārīkh Baghdād</em> (14/322); also in Abū Nuʿaym’s <em>Ḥilyat al-Awliyāʾ</em> (8/309). Graded weak by al-Albānī, al-Dhahabī, and al-Dāraquṭnī due to the narrator al-Faḍl ibn Ghānim. Ibn ʿAbd al-Barr stated: “It is a good supplication and its blessing is hoped for.” [citation:1][citation:2][citation:4]
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section-label">Part 2 · Attestation of the Prophet’s Truthfulness</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مُحَمَّدٌ</span>
+      <span class="word-meaning">Muhammad</span>
+      <span class="word-translit">muḥammad</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">رَسُولُ</span>
+      <span class="word-meaning">messenger</span>
+      <span class="word-translit">rasūl</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱللَّٰهِ</span>
+      <span class="word-meaning">of Allah</span>
+      <span class="word-translit">allāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">صَادِقُ</span>
+      <span class="word-meaning">truthful</span>
+      <span class="word-translit">ṣādiq</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْوَعْدِ</span>
+      <span class="word-meaning">in promise</span>
+      <span class="word-translit">al-waʿd</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْأَمِينُ</span>
+      <span class="word-meaning">the trustworthy</span>
+      <span class="word-translit">al-amīn</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">“Muḥammad is the Messenger of Allah,</span>
+    <span class="chunk">truthful in His promise, and the trustworthy one.”</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Widely Known &amp; Established</span>
+    This second phrase is not part of the primary narrated hadith text found in al-Khaṭīb’s report, but is an established part of the complete dhikr inscribed on the door of the Kaʿbah and the Prophet’s Mosque in Madīnah. It is affirmed by numerous scholars as a correct description of the Prophet ﷺ based on the Qurʾān (Sūrat al-Najm 53:3–4) and ḥadīth (Bukhārī, 3629; Muslim, 2320a). [citation:1][citation:6][citation:8]
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity Assessment</div>
+  <div class="info-body">
+    <p>The first half <em>“Lā ilāha illallāh al-Malik al-Ḥaqq al-Mubīn”</em> is documented in <strong>Tārīkh Baghdād</strong> (vol. 14, pg. 322) and <strong>Ḥilyat al-Awliyāʾ</strong> (vol. 8, pg. 309) with a chain containing weakness (ḍaʿīf). Prominent critics including Imām al-Dāraquṭnī, Ḥāfiẓ al-Dhahabī, and Shaykh al-Albānī classified the attribution to Mālik as unreliable [citation:2][citation:4][citation:5]. However, as a supplication for virtue (faḍāʾil al-aʿmāl), scholars like Ibn ʿAbd al-Barr permitted acting upon it, saying: “It is a good duʿāʾ and its blessing is hoped for” [citation:2][citation:4]. The second half <em>“Muḥammad Rasūlullāh Ṣādiq al-Waʿd al-Amīn”</em> carries authentic meanings confirmed by the Qurʾān and Ṣaḥīḥ ḥadīth, describing the Prophet’s perfect truthfulness and trustworthiness. The complete dhikr is widely recommended for daily recitation, particularly 100 times, for expansion of provision (rizq) and spiritual protection [citation:6].</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Dhikr</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/search?q=al-malik+al-haqq+al-mubin" target="_blank" rel="noopener">
+      https://sunnah.com/search?q=al-malik+al-haqq+al-mubin
+    </a>
+    <p style="margin-top: 8px; font-size: 0.85rem;">Primary sources: <em>Tārīkh Baghdād</em> (al-Khaṭīb), <em>Ḥilyat al-Awliyāʾ</em> (Abū Nuʿaym), <em>Al-Tamhīd</em> (Ibn ʿAbd al-Barr). Additional reference: <em>Mīzān al-Iʿtidāl</em> (al-Dhahabī).</p>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>
