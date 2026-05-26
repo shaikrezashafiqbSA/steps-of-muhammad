@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Takbir al-Tashrīq – Eid al-Adha Takbir (Word-for-Word)</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Takbir al-ʿĪd (ʿĪd al-Aḍḥā)</h1>
+  <p>The Magnification of Allāh · Word‑for‑Word Recitation</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 When to Recite this Takbir</div>
+  <div class="info-body">
+    <p>The restricted (<em>muqayyad</em>) takbir for ʿĪd al‑Aḍḥā begins after the Fajr prayer on the day of ʿArafah (9th Dhū al‑Ḥijjah) and continues until the ʿAṣr prayer of the 13th of Dhū al‑Ḥijjah, after every obligatory prayer. It is also Sunnah to proclaim it loudly while travelling to the ʿĪd prayer. This practice was the consensus of the Companions, including ʿUmar, ʿAlī, Ibn Masʿūd and Ibn ʿAbbās (may Allāh be pleased with them all).</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Transmission Chain &amp; Scholarly Source</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">ʿAbdullāh ibn Masʿūd</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      “Ibn Masʿūd, may Allāh be pleased with him, used to recite the takbīr during the days of tashrīq saying… ”
+    </div>
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (Word‑for‑Word)</div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">عَنْ</span><span class="word-meaning" style="color:#666;">on authority of</span><span class="word-translit" style="color:#777;">ʿan</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">عَبْدِ</span><span class="word-meaning" style="color:#666;">servant</span><span class="word-translit" style="color:#777;">ʿabdi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">اللَّهِ</span><span class="word-meaning" style="color:#666;">allah</span><span class="word-translit" style="color:#777;">llāhi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">ابْنِ</span><span class="word-meaning" style="color:#666;">son of</span><span class="word-translit" style="color:#777;">bni</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">مَسْعُودٍ</span><span class="word-meaning" style="color:#666;">masʿūd</span><span class="word-translit" style="color:#777;">masʿūdin</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">رَضِيَ</span><span class="word-meaning" style="color:#666;">may be pleased</span><span class="word-translit" style="color:#777;">raḍiya</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">اللَّهُ</span><span class="word-meaning" style="color:#666;">allah</span><span class="word-translit" style="color:#777;">llāhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">عَنْهُ</span><span class="word-meaning" style="color:#666;">from him</span><span class="word-translit" style="color:#777;">ʿanhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">أَنَّهُ</span><span class="word-meaning" style="color:#666;">that he</span><span class="word-translit" style="color:#777;">annahu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">كَانَ</span><span class="word-meaning" style="color:#666;">used to</span><span class="word-translit" style="color:#777;">kāna</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">يُكَبِّرُ</span><span class="word-meaning" style="color:#666;">say the takbir</span><span class="word-translit" style="color:#777;">yukabbiru</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">أَيَّامَ</span><span class="word-meaning" style="color:#666;">days of</span><span class="word-translit" style="color:#777;">ayyāma</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">التَّشْرِيقِ</span><span class="word-meaning" style="color:#666;">tashriq</span><span class="word-translit" style="color:#777;">t-tashrīqi</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">اللَّهُ</span><span class="word-meaning" style="color:#666;">allah</span><span class="word-translit" style="color:#777;">allāhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">أَكْبَرُ</span><span class="word-meaning" style="color:#666;">is greatest</span><span class="word-translit" style="color:#777;">akbaru</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">اللَّهُ</span><span class="word-meaning" style="color:#666;">allah</span><span class="word-translit" style="color:#777;">allāhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">أَكْبَرُ</span><span class="word-meaning" style="color:#666;">is greatest</span><span class="word-translit" style="color:#777;">akbaru</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">لَا</span><span class="word-meaning" style="color:#666;">no</span><span class="word-translit" style="color:#777;">lā</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">إِلَهَ</span><span class="word-meaning" style="color:#666;">god</span><span class="word-translit" style="color:#777;">ilāha</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">إِلَّا</span><span class="word-meaning" style="color:#666;">except</span><span class="word-translit" style="color:#777;">illā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">اللَّهُ</span><span class="word-meaning" style="color:#666;">allah</span><span class="word-translit" style="color:#777;">llāhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">وَاللَّهُ</span><span class="word-meaning" style="color:#666;">and allah</span><span class="word-translit" style="color:#777;">wa llāhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">أَكْبَرُ</span><span class="word-meaning" style="color:#666;">is greatest</span><span class="word-translit" style="color:#777;">akbaru</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">اللَّهُ</span><span class="word-meaning" style="color:#666;">allah</span><span class="word-translit" style="color:#777;">allāhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">أَكْبَرُ</span><span class="word-meaning" style="color:#666;">is greatest</span><span class="word-translit" style="color:#777;">akbaru</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">وَلِلَّهِ</span><span class="word-meaning" style="color:#666;">and to allah</span><span class="word-translit" style="color:#777;">wa li llāhi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color:#444;">الْحَمْدُ</span><span class="word-meaning" style="color:#666;">the praise</span><span class="word-translit" style="color:#777;">l-ḥamdu</span></div>
+    </div>
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">“On the authority of ʿAbdillāh ibn Masʿūd (may Allah be pleased with him): that he used to say the takbīr during the days of Tashrīq: ‘Allāhu Akbar, Allāhu Akbar, Lā ilāha illā-llāh, wa-llāhu Akbar, Allāhu Akbar, wa lillāhi-l-ḥamd.’”</span>
+    </div>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">ʿAbdullāh ibn Masʿūd (d. 32 AH / 652 CE)</div>
+    <p><strong>Full name:</strong> ʿAbdullāh ibn Masʿūd ibn Ghāfil ibn Ḥabīb al-Hudhalī. A Companion of the Prophet ﷺ, renowned for his profound knowledge of the Qur’ān and Ḥadīth. He was the sixth person to embrace Islam publicly and a close attendant of the Prophet, often mistaken for a member of the Prophet’s household due to his intimate companionship.</p>
+    <p>He served as a governor of Kufa under ʿUmar ibn al-Khaṭṭāb. His transmission of Islamic sciences is among the most authoritative, and his recitation of the Qur’ān was praised directly by the Prophet ﷺ. He died in Medina in 32 AH.</p>
+    <p><strong>Role here:</strong> The takbīr wording is authentically transmitted from him through multiple chains in the <em>muṣannaf</em> works of Ibn Abī Shaybah, al-Bayhaqī, and al-Ḥākim. His practice was emulated by the early Muslim community during the days of tashrīq.</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Complete Eid Takbir (Word‑for‑Word)</div>
+
+<!-- Word 1: اللَّهُ -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">is greatest</span><span class="word-translit">akbaru</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">is greatest</span><span class="word-translit">akbaru</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">is greatest</span><span class="word-translit">akbaru</span></div>
+  </div>
+  <div class="translation"><span class="chunk">Allah is the Greatest, Allah is the Greatest, Allah is the Greatest.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah, 2/165–168; Irwāʾ al-Ghalīl, 3/125</div>
+</div>
+
+<!-- Sixth verse: Lā ilāha illallāhu wallāhu akbar -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span><span class="word-translit">ilāha</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">llāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">وَاللَّهُ</span><span class="word-meaning">and allah</span><span class="word-translit">wa llāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">is greatest</span><span class="word-translit">akbaru</span></div>
+  </div>
+  <div class="translation"><span class="chunk">There is no god but Allah, and Allah is the Greatest.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah; al‑Ḥākim</div>
+</div>
+
+<!-- Seventh verse: Allāhu akbar wa lillāhi l-ḥamd -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">is greatest</span><span class="word-translit">akbaru</span></div>
+    <div class="word-unit"><span class="arabic-word">وَلِلَّهِ</span><span class="word-meaning">and to allah</span><span class="word-translit">wa li llāhi</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحَمْدُ</span><span class="word-meaning">the praise</span><span class="word-translit">l-ḥamdu</span></div>
+  </div>
+  <div class="translation"><span class="chunk">Allah is the Greatest, and all praise belongs to Allah.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah; al‑Albānī</div>
+</div>
+
+<div class="section-label">Part 2 · The Complete Eid Takbir (Word‑for‑Word)</div>
+
+<!-- Second verse: Allāhu Akbar kabīrā ... -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">is greatest</span><span class="word-translit">akbaru</span></div>
+    <div class="word-unit"><span class="arabic-word">كَبِيرًا</span><span class="word-meaning">greatly</span><span class="word-translit">kabīrā</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَالْحَمْدُ</span><span class="word-meaning">and the praise</span><span class="word-translit">wal ḥamdu</span></div>
+    <div class="word-unit"><span class="arabic-word">لِلَّهِ</span><span class="word-meaning">to allah</span><span class="word-translit">lillāhi</span></div>
+    <div class="word-unit"><span class="arabic-word">كَثِيرًا</span><span class="word-meaning">abundantly</span><span class="word-translit">kathīrā</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَسُبْحَانَ</span><span class="word-meaning">and glory be to</span><span class="word-translit">wa subḥāna</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهِ</span><span class="word-meaning">allah</span><span class="word-translit">llāhi</span></div>
+    <div class="word-unit"><span class="arabic-word">بُكْرَةً</span><span class="word-meaning">in the morning</span><span class="word-translit">bukratan</span></div>
+    <div class="word-unit"><span class="arabic-word">وَأَصِيلًا</span><span class="word-meaning">and evening</span><span class="word-translit">wa aṣīlā</span></div>
+  </div>
+  <div class="translation"><span class="chunk">Allah is the Greatest, truly great, and all praise belongs to Allah, abundantly, and glory be to Allah in the morning and evening.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah; al-Albānī, Irwāʾ al-Ghalīl</div>
+</div>
+
+<!-- Third verse: Lā ilāha illallāh ... -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span><span class="word-translit">ilāha</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">llāhu</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَا</span><span class="word-meaning">and not</span><span class="word-translit">wa lā</span></div>
+    <div class="word-unit"><span class="arabic-word">نَعْبُدُ</span><span class="word-meaning">we worship</span><span class="word-translit">naʿbudu</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div>
+    <div class="word-unit"><span class="arabic-word">إِيَّاهُ</span><span class="word-meaning">him</span><span class="word-translit">iyyāhū</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مُخْلِصِينَ</span><span class="word-meaning">sincerely devoted</span><span class="word-translit">mukhliṣīna</span></div>
+    <div class="word-unit"><span class="arabic-word">لَهُ</span><span class="word-meaning">to him</span><span class="word-translit">lahu</span></div>
+    <div class="word-unit"><span class="arabic-word">الدِّينَ</span><span class="word-meaning">the religion</span><span class="word-translit">d-dīna</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَوْ</span><span class="word-meaning">even if</span><span class="word-translit">wa law</span></div>
+    <div class="word-unit"><span class="arabic-word">كَرِهَ</span><span class="word-meaning">dislike</span><span class="word-translit">kariha</span></div>
+    <div class="word-unit"><span class="arabic-word">الْكَافِرُونَ</span><span class="word-meaning">the disbelievers</span><span class="word-translit">l-kāfirūna</span></div>
+  </div>
+  <div class="translation"><span class="chunk">There is no god but Allah, and we worship none except Him, making our faith sincerely His, even if the disbelievers detest it.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah; al-Bayhaqī</div>
+</div>
+
+<!-- Fourth verse: Lā ilāha illallāhu waḥdah ... -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span><span class="word-translit">ilāha</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">llāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">وَحْدَهُ</span><span class="word-meaning">alone</span><span class="word-translit">waḥdah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">صَدَقَ</span><span class="word-meaning">fulfilled</span><span class="word-translit">ṣadaqa</span></div>
+    <div class="word-unit"><span class="arabic-word">وَعْدَهُ</span><span class="word-meaning">his promise</span><span class="word-translit">waʿdah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَنَصَرَ</span><span class="word-meaning">and gave victory to</span><span class="word-translit">wa naṣara</span></div>
+    <div class="word-unit"><span class="arabic-word">عَبْدَهُ</span><span class="word-meaning">his servant</span><span class="word-translit">ʿabdah</span></div>
+  </div>
+  <div class="translation"><span class="chunk">There is no god but Allah alone, He fulfilled His promise, and granted victory to His servant.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah; al-Albānī</div>
+</div>
+
+<!-- Fifth verse: Wa aʿazza jundah ... -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَعَزَّ</span><span class="word-meaning">and gave honour to</span><span class="word-translit">wa aʿazza</span></div>
+    <div class="word-unit"><span class="arabic-word">جُنْدَهُ</span><span class="word-meaning">his army</span><span class="word-translit">jundah</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَهَزَمَ</span><span class="word-meaning">and defeated</span><span class="word-translit">wa hazama</span></div>
+    <div class="word-unit"><span class="arabic-word">الْأَحْزَابَ</span><span class="word-meaning">the confederates</span><span class="word-translit">l-aḥzāba</span></div>
+    <div class="word-unit"><span class="arabic-word">وَحْدَهُ</span><span class="word-meaning">alone</span><span class="word-translit">waḥdah</span></div>
+  </div>
+  <div class="translation"><span class="chunk">He honoured His forces and defeated the confederates by Himself.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah; al‑Bayhaqī</div>
+</div>
+
+<!-- Sixth verse: Lā ilāha illallāhu wallāhu akbar -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span><span class="word-translit">ilāha</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">llāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">وَاللَّهُ</span><span class="word-meaning">and allah</span><span class="word-translit">wa llāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">is greatest</span><span class="word-translit">akbaru</span></div>
+  </div>
+  <div class="translation"><span class="chunk">There is no god but Allah, and Allah is the Greatest.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah; al‑Ḥākim</div>
+</div>
+
+<!-- Seventh verse: Allāhu akbar wa lillāhi l-ḥamd -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">is greatest</span><span class="word-translit">akbaru</span></div>
+    <div class="word-unit"><span class="arabic-word">وَلِلَّهِ</span><span class="word-meaning">and to allah</span><span class="word-translit">wa li llāhi</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحَمْدُ</span><span class="word-meaning">the praise</span><span class="word-translit">l-ḥamdu</span></div>
+  </div>
+  <div class="translation"><span class="chunk">Allah is the Greatest, and all praise belongs to Allah.</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ṣaḥīḥ</span> Ibn Abī Shaybah; al‑Albānī</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>This word‑for‑word recitation is the <strong>Takbīr al-Tashrīq</strong> transmitted from ʿAbdullāh ibn Masʿūd (may Allāh be pleased with him) with a ṣaḥīḥ chain. Recorded by <strong>Ibn Abī Shaybah</strong> (<em>Muṣannaf</em>, 2/165–168), <strong>al-Bayhaqī</strong> (<em>Sunan al-Kubrā</em>), and authenticated by <strong>al-Albānī</strong> in <em>Irwāʾ al‑Ghalīl</em> (3/125, no. 654). It is recited after each obligatory prayer from Fajr of ʿArafah (9th Dhū al‑Ḥijjah) until ʿAṣr of the 13th of Dhū al‑Ḥijjah, and loudly on the way to the ʿĪd prayer.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/search?q=takbir+eid+adha" target="_blank" rel="noopener">Sunnah.com – Eid Takbir</a><br><br>
+    <a class="source-url" href="https://islamqa.info/en/answers/158543" target="_blank" rel="noopener">Islam Q&amp;A: Eid Takbir Formulas (158543)</a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>
