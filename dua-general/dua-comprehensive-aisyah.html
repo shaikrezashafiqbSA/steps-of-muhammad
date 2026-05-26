@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allāhumma innī asʼaluka mina-l-khayri kullihi – Comprehensive Goodness Supplication</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Allāhumma innī asʼaluka mina-l-khayri kullihi</h1>
+  <p>Comprehensive Supplication for All Good · Refuge from All Evil · Seeking Paradise & Good in Decree</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 When This Duʿāʾ Was Taught</div>
+  <div class="info-body">
+    <p>The Messenger of Allah (peace be upon him) personally taught this all-encompassing supplication to ʿĀʾishah (may Allah be pleased with her). It asks for every form of goodness — known and unknown, immediate and delayed — seeks refuge from all evil, requests the specific good asked by the Prophet ﷺ, pleads for Paradise and proximity to it, seeks protection from Hellfire, and ends with a profound request: that every divine decree concerning the believer be turned into pure good.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain &amp; Context</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">ʿĀʾishah (ra)</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "The Messenger of Allah (saas) taught me this supplication..."
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (Chain Text)</div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَدَّثَنَا</span>
+        <span class="word-meaning" style="color: #666;">narrated to us</span>
+        <span class="word-translit" style="color: #777;">ḥaddathanā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَبُو بَكْرِ بْنُ أَبِي شَيْبَةَ</span>
+        <span class="word-meaning" style="color: #666;">Abū Bakr ibn Abī Shaybah</span>
+        <span class="word-translit" style="color: #777;">Abū Bakr ibn Abī Shaybah</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَدَّثَنَا</span>
+        <span class="word-meaning" style="color: #666;">narrated to us</span>
+        <span class="word-translit" style="color: #777;">ḥaddathanā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَفَّانُ</span>
+        <span class="word-meaning" style="color: #666;">ʿAffān</span>
+        <span class="word-translit" style="color: #777;">ʿAffān</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَدَّثَنَا</span>
+        <span class="word-meaning" style="color: #666;">narrated to us</span>
+        <span class="word-translit" style="color: #777;">ḥaddathanā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَمَّادُ بْنُ سَلَمَةَ</span>
+        <span class="word-meaning" style="color: #666;">Ḥammād ibn Salamah</span>
+        <span class="word-translit" style="color: #777;">Ḥammād ibn Salamah</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَخْبَرَنِي</span>
+        <span class="word-meaning" style="color: #666;">informed me</span>
+        <span class="word-translit" style="color: #777;">akhbaranī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">جَبْرُ بْنُ حَبِيبٍ</span>
+        <span class="word-meaning" style="color: #666;">Jabr ibn Ḥabīb</span>
+        <span class="word-translit" style="color: #777;">Jabr ibn Ḥabīb</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنْ</span>
+        <span class="word-meaning" style="color: #666;">on authority of</span>
+        <span class="word-translit" style="color: #777;">ʿan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أُمِّ كُلْثُومٍ بِنْتِ أَبِي بَكْرٍ</span>
+        <span class="word-meaning" style="color: #666;">Umm Kulthūm bint Abī Bakr</span>
+        <span class="word-translit" style="color: #777;">Umm Kulthūm bint Abī Bakr</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنْ</span>
+        <span class="word-meaning" style="color: #666;">from</span>
+        <span class="word-translit" style="color: #777;">ʿan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَائِشَةَ</span>
+        <span class="word-meaning" style="color: #666;">ʿĀʾishah</span>
+        <span class="word-translit" style="color: #777;">ʿĀʾishah</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَنَّ</span>
+        <span class="word-meaning" style="color: #666;">that</span>
+        <span class="word-translit" style="color: #777;">anna</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">رَسُولَ اللَّهِ</span>
+        <span class="word-meaning" style="color: #666;">Messenger of Allah</span>
+        <span class="word-translit" style="color: #777;">rasūla-llāh</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ</span>
+        <span class="word-meaning" style="color: #666;">peace be upon him</span>
+        <span class="word-translit" style="color: #777;">ṣalla-llāhu ʿalayhi wa-sallam</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَلَّمَهَا</span>
+        <span class="word-meaning" style="color: #666;">taught her</span>
+        <span class="word-translit" style="color: #777;">ʿallamahā</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">هَذَا</span>
+        <span class="word-meaning" style="color: #666;">this</span>
+        <span class="word-translit" style="color: #777;">hādhā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الدُّعَاءَ</span>
+        <span class="word-meaning" style="color: #666;">supplication</span>
+        <span class="word-translit" style="color: #777;">duʿāʾa</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"Abū Bakr ibn Abī Shaybah narrated to us — ʿAffān narrated to us — Ḥammād ibn Salamah narrated to us — Jabr ibn Ḥabīb informed me — from Umm Kulthūm bint Abī Bakr — from ʿĀʾishah, that the Messenger of Allah (peace be upon him) taught her this supplication."</span>
+    </div>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">ʿĀʾishah bint Abī Bakr (ra)</div>
+    <p><strong>Full name:</strong> ʿĀʾishah bint Abī Bakr al-Ṣiddīq (d. 58 AH / 678 CE). Mother of the Believers, wife of Prophet Muhammad ﷺ, daughter of Abū Bakr al-Ṣiddīq. One of the most prolific narrators of ḥadīth, renowned for her scholarship, jurisprudence, and deep understanding of the Qurʾān and Sunnah.</p>
+    <p>She transmitted over 2,000 narrations and was frequently consulted by the Companions on legal and theological matters. Her narrations are found in all six major ḥadīth collections, with the highest standards of authentication.</p>
+    <p><strong>Role here:</strong> Direct recipient and transmitter of this comprehensive supplication from the Prophet ﷺ herself, establishing a direct, unbroken chain of teaching and practice.</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Complete Duʿāʾ as Taught by the Prophet ﷺ</div>
+
+<!-- Verse Block 1: Asking for all good, known & unknown -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">o allah</span>
+      <span class="word-translit">allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِنِّي</span>
+      <span class="word-meaning">indeed i</span>
+      <span class="word-translit">innī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَسْأَلُكَ</span>
+      <span class="word-meaning">ask you</span>
+      <span class="word-translit">asʼaluka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنَ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">mina</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْخَيْرِ</span>
+      <span class="word-meaning">the good</span>
+      <span class="word-translit">l-khayri</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">كُلِّهِ</span>
+      <span class="word-meaning">all of it</span>
+      <span class="word-translit">kullihi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَاجِلِهِ</span>
+      <span class="word-meaning">its immediate</span>
+      <span class="word-translit">ʿājilihi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَآجِلِهِ</span>
+      <span class="word-meaning">and its delayed</span>
+      <span class="word-translit">wa-ājilihi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مَا</span>
+      <span class="word-meaning">what</span>
+      <span class="word-translit">mā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلِمْتُ</span>
+      <span class="word-meaning">i know</span>
+      <span class="word-translit">ʿalimtu</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مِنْهُ</span>
+      <span class="word-meaning">of it</span>
+      <span class="word-translit">minhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَمَا</span>
+      <span class="word-meaning">and what</span>
+      <span class="word-translit">wa-mā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَمْ</span>
+      <span class="word-meaning">not</span>
+      <span class="word-translit">lam</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَعْلَمْ</span>
+      <span class="word-meaning">i do not know</span>
+      <span class="word-translit">aʿlam</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"O Allah, I ask You for all that is good,</span>
+    <span class="chunk">its immediate and its delayed,</span>
+    <span class="chunk">what I know of it and what I do not know."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan Ibn Mājah 3846, Book 34, Hadith 20
+  </div>
+</div>
+
+<!-- Verse Block 2: Seeking refuge from all evil -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَأَعُوذُ</span>
+      <span class="word-meaning">and i seek refuge</span>
+      <span class="word-translit">wa-aʿūdhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِكَ</span>
+      <span class="word-meaning">with you</span>
+      <span class="word-translit">bika</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنَ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">mina</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الشَّرِّ</span>
+      <span class="word-meaning">the evil</span>
+      <span class="word-translit">sh-sharri</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">كُلِّهِ</span>
+      <span class="word-meaning">all of it</span>
+      <span class="word-translit">kullihi</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">عَاجِلِهِ</span>
+      <span class="word-meaning">its immediate</span>
+      <span class="word-translit">ʿājilihi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَآجِلِهِ</span>
+      <span class="word-meaning">and its delayed</span>
+      <span class="word-translit">wa-ājilihi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مَا</span>
+      <span class="word-meaning">what</span>
+      <span class="word-translit">mā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلِمْتُ</span>
+      <span class="word-meaning">i know</span>
+      <span class="word-translit">ʿalimtu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْهُ</span>
+      <span class="word-meaning">of it</span>
+      <span class="word-translit">minhu</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَمَا</span>
+      <span class="word-meaning">and what</span>
+      <span class="word-translit">wa-mā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَمْ</span>
+      <span class="word-meaning">not</span>
+      <span class="word-translit">lam</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَعْلَمْ</span>
+      <span class="word-meaning">i do not know</span>
+      <span class="word-translit">aʿlam</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"And I seek refuge with You from all evil,</span>
+    <span class="chunk">its immediate and its delayed,</span>
+    <span class="chunk">what I know of it and what I do not know."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan Ibn Mājah 3846
+  </div>
+</div>
+
+<!-- Verse Block 3: Asking for the specific good sought by the Prophet ﷺ -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">o allah</span>
+      <span class="word-translit">allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِنِّي</span>
+      <span class="word-meaning">indeed i</span>
+      <span class="word-translit">innī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَسْأَلُكَ</span>
+      <span class="word-meaning">ask you</span>
+      <span class="word-translit">asʼaluka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">min</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">خَيْرِ</span>
+      <span class="word-meaning">the good of</span>
+      <span class="word-translit">khayri</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مَا</span>
+      <span class="word-meaning">what</span>
+      <span class="word-translit">mā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">سَأَلَكَ</span>
+      <span class="word-meaning">asked you</span>
+      <span class="word-translit">saʼalaka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَبْدُكَ</span>
+      <span class="word-meaning">your slave</span>
+      <span class="word-translit">ʿabduka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَنَبِيُّكَ</span>
+      <span class="word-meaning">and your prophet</span>
+      <span class="word-translit">wa-nabiyyuka</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"O Allah, I ask You for the good of what Your slave and Prophet has asked You for."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan Ibn Mājah 3846
+  </div>
+</div>
+
+<!-- Verse Block 4: Seeking refuge from the specific evil sought by the Prophet ﷺ -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَأَعُوذُ</span>
+      <span class="word-meaning">and i seek refuge</span>
+      <span class="word-translit">wa-aʿūdhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِكَ</span>
+      <span class="word-meaning">with you</span>
+      <span class="word-translit">bika</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">min</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">شَرِّ</span>
+      <span class="word-meaning">the evil of</span>
+      <span class="word-translit">sharri</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مَا</span>
+      <span class="word-meaning">what</span>
+      <span class="word-translit">mā</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">عَاذَ</span>
+      <span class="word-meaning">sought refuge</span>
+      <span class="word-translit">ʿādha</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِهِ</span>
+      <span class="word-meaning">in it</span>
+      <span class="word-translit">bihi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَبْدُكَ</span>
+      <span class="word-meaning">your slave</span>
+      <span class="word-translit">ʿabduka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَنَبِيُّكَ</span>
+      <span class="word-meaning">and your prophet</span>
+      <span class="word-translit">wa-nabiyyuka</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"And I seek refuge with You from the evil of what Your slave and Prophet sought refuge from."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan Ibn Mājah 3846
+  </div>
+</div>
+
+<!-- Verse Block 5: Asking for Paradise and its means -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">o allah</span>
+      <span class="word-translit">allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِنِّي</span>
+      <span class="word-meaning">indeed i</span>
+      <span class="word-translit">innī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَسْأَلُكَ</span>
+      <span class="word-meaning">ask you</span>
+      <span class="word-translit">asʼaluka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْجَنَّةَ</span>
+      <span class="word-meaning">paradise</span>
+      <span class="word-translit">l-jannah</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَمَا</span>
+      <span class="word-meaning">and what</span>
+      <span class="word-translit">wa-mā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَرَّبَ</span>
+      <span class="word-meaning">brings near</span>
+      <span class="word-translit">qarraba</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَيْهَا</span>
+      <span class="word-meaning">to it</span>
+      <span class="word-translit">ilayhā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">min</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَوْلٍ</span>
+      <span class="word-meaning">speech</span>
+      <span class="word-translit">qawlin</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَوْ</span>
+      <span class="word-meaning">or</span>
+      <span class="word-translit">aw</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَمَلٍ</span>
+      <span class="word-meaning">deed</span>
+      <span class="word-translit">ʿamalin</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"O Allah, I ask You for Paradise</span>
+    <span class="chunk">and for that which brings one closer to it,</span>
+    <span class="chunk">in word or deed."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan Ibn Mājah 3846
+  </div>
+</div>
+
+<!-- Verse Block 6: Seeking refuge from Hellfire and its means -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَأَعُوذُ</span>
+      <span class="word-meaning">and i seek refuge</span>
+      <span class="word-translit">wa-aʿūdhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِكَ</span>
+      <span class="word-meaning">with you</span>
+      <span class="word-translit">bika</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنَ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">mina</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">النَّارِ</span>
+      <span class="word-meaning">the fire</span>
+      <span class="word-translit">n-nār</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَمَا</span>
+      <span class="word-meaning">and what</span>
+      <span class="word-translit">wa-mā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَرَّبَ</span>
+      <span class="word-meaning">brings near</span>
+      <span class="word-translit">qarraba</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَيْهَا</span>
+      <span class="word-meaning">to it</span>
+      <span class="word-translit">ilayhā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">min</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَوْلٍ</span>
+      <span class="word-meaning">speech</span>
+      <span class="word-translit">qawlin</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَوْ</span>
+      <span class="word-meaning">or</span>
+      <span class="word-translit">aw</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَمَلٍ</span>
+      <span class="word-meaning">deed</span>
+      <span class="word-translit">ʿamalin</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"And I seek refuge with You from Hellfire</span>
+    <span class="chunk">and from that which brings one closer to it,</span>
+    <span class="chunk">in word or deed."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan Ibn Mājah 3846
+  </div>
+</div>
+
+<!-- Verse Block 7: Asking for every decree to be good -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَأَسْأَلُكَ</span>
+      <span class="word-meaning">and i ask you</span>
+      <span class="word-translit">wa-asʼaluka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَنْ</span>
+      <span class="word-meaning">that</span>
+      <span class="word-translit">an</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">تَجْعَلَ</span>
+      <span class="word-meaning">you make</span>
+      <span class="word-translit">tajʿala</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">كُلَّ</span>
+      <span class="word-meaning">every</span>
+      <span class="word-translit">kulla</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">قَضَاءٍ</span>
+      <span class="word-meaning">decree</span>
+      <span class="word-translit">qaḍāʾin</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">قَضَيْتَهُ</span>
+      <span class="word-meaning">you decree</span>
+      <span class="word-translit">qaḍaytahū</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لِي</span>
+      <span class="word-meaning">for me</span>
+      <span class="word-translit">lī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">خَيْرًا</span>
+      <span class="word-meaning">good</span>
+      <span class="word-translit">khayran</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"And I ask You to make every decree that You decree concerning me good."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan Ibn Mājah 3846
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Narrated by ʿĀʾishah (ra) and recorded by Imām Ibn Mājah in his <em>Sunan</em> (Book of Supplication, Chapter on Comprehensive Supplications). The ḥadīth is transmitted through an authentic chain (Ṣaḥīḥ) as graded by Dārus salām. The supplication is remarkable for its comprehensiveness — it covers all good and all evil, known and unknown, immediate and delayed, follows the Prophet's own requests, asks for Paradise and avoidance of Hell, and culminates in the uniquely profound request that every divine decree be transformed into good for the believer.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/ibnmajah/34/20" target="_blank" rel="noopener">
+      https://sunnah.com/ibnmajah/34/20
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>
