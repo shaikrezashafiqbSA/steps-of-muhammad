@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du'ā [NAME] – [ENGLISH SUBTITLE]</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Collapsible elements for Hadith narration pages */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Accessibility Zoom Engine ── -->
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<!-- ── Display Identity Header ── -->
+<div class="header">
+  <h1>[DUA NAME IN ARABIC OR TRANSLITERATION]</h1>
+  <p>[English subtitle]</p>
+</div>
+
+<!-- ── Historical Context Strip ── -->
+<div class="info-strip context">
+  <div class="info-header">📖 [Short Title Context]</div>
+  <div class="info-body">
+    <p>[2–3 sentences: detail when, where, and why this specific statement was taught.]</p>
+  </div>
+</div>
+
+<!-- ── Collapsible Narration Drawer (Omit if simple du'ā with no textual narrative chain) ── -->
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">[Narrator Name]</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="Who is [Narrator]?" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">[ARABIC_CHAIN_WORD]</span>
+        <span class="word-meaning">[chain translation]</span>
+        <span class="word-translit">[chain translit]</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"[Exact opening description of text contextualization narrative in quotes]"</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Biographical Bio Overlay (Omit if simple du'ā with no narrative chain) ── -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">[Full Biography Identity Title]</div>
+    <p><strong>Full name:</strong> [Complete lineage names and historical target dates].</p>
+    <p>[Scholastic generational standing and authority tracking metrics].</p>
+    <p><strong>Role here:</strong> [Specific link context explanations].</p>
+  </div>
+</div>
+
+<!-- ═══════════ MAIN SUPPLICATION SEGMENTS ═══════════ -->
+<div class="section-label">Part 1 · [Segment Motif Title]</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">[ARABIC_VOWELED_WORD]</span>
+      <span class="word-meaning">[lowercase meaning]</span>
+      <span class="word-translit">[transliteration]</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">[Segmented translation clause element,]</span>
+    <span class="chunk">[broken systematically at natural pauses.]</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    [Collection Reference Citation Detail Structure Data.]
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── Verification & Authentication Strip ── -->
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>[Narrator tracking list path. Full collection documentation parameters. Textual grade assignments.]</p>
+  </div>
+</div>
+
+<!-- ── External Reference Link Strip (Omit if simple du'ā with no URL) ── -->
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="[[https://sunnah.com/](https://sunnah.com/)...]" target="_blank" rel="noopener">
+      [[https://sunnah.com/](https://sunnah.com/)...]
+    </a>
+  </div>
+</div>
+
+<!-- ── Monolithic Control JavaScript Controller ── -->
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>

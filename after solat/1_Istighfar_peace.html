@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allāhumma Antas-Salām – The Supplication After Prayer</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>اللهم أنت السلام</h1>
+  <p>Allāhumma Antas-Salām · The Supplication After Obligatory Prayer</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Context of Recitation</div>
+  <div class="info-body">
+    <p>After completing the obligatory prayer (ṣalāh), before changing position or speaking to others, the Prophet (ﷺ) would seek forgiveness three times and then recite this profound du'ā, affirming Allāh as the source of perfect peace and blessing.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain &amp; Context</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Thawbān</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "When the Messenger of Allah (ﷺ) finished his prayer, he begged forgiveness three times and said: O Allah! Thou art Peace, and peace comes from Thee; Blessed art Thou, O Possessor of Glory and Honour."
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration</div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَدَّثَنَا</span>
+        <span class="word-meaning" style="color: #666;">he narrated to us</span>
+        <span class="word-translit" style="color: #777;">ḥaddathanā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">دَاوُدُ</span>
+        <span class="word-meaning" style="color: #666;">dāwūd</span>
+        <span class="word-translit" style="color: #777;">dāwūdu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بْنُ</span>
+        <span class="word-meaning" style="color: #666;">son of</span>
+        <span class="word-translit" style="color: #777;">bnu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">رُشَيْدٍ</span>
+        <span class="word-meaning" style="color: #666;">rushayd</span>
+        <span class="word-translit" style="color: #777;">rushayd</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَدَّثَنَا</span>
+        <span class="word-meaning" style="color: #666;">he narrated to us</span>
+        <span class="word-translit" style="color: #777;">ḥaddathanā</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الْوَلِيدُ</span>
+        <span class="word-meaning" style="color: #666;">al-walīd</span>
+        <span class="word-translit" style="color: #777;">al-walīdu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنِ</span>
+        <span class="word-meaning" style="color: #666;">from</span>
+        <span class="word-translit" style="color: #777;">ʿani</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الأَوْزَاعِيِّ</span>
+        <span class="word-meaning" style="color: #666;">al-awzāʿī</span>
+        <span class="word-translit" style="color: #777;">al-awzāʿī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنْ</span>
+        <span class="word-meaning" style="color: #666;">from</span>
+        <span class="word-translit" style="color: #777;">ʿan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَبِي</span>
+        <span class="word-meaning" style="color: #666;">abī</span>
+        <span class="word-translit" style="color: #777;">abī</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَمَّارٍ</span>
+        <span class="word-meaning" style="color: #666;">ʿammār</span>
+        <span class="word-translit" style="color: #777;">ʿammār</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اسْمُهُ</span>
+        <span class="word-meaning" style="color: #666;">his name</span>
+        <span class="word-translit" style="color: #777;">smuhū</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">شَدَّادُ</span>
+        <span class="word-meaning" style="color: #666;">shaddād</span>
+        <span class="word-translit" style="color: #777;">shaddādu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بْنُ</span>
+        <span class="word-meaning" style="color: #666;">son of</span>
+        <span class="word-translit" style="color: #777;">bnu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَبْدِ</span>
+        <span class="word-meaning" style="color: #666;">ʿabd</span>
+        <span class="word-translit" style="color: #777;">ʿabdi</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهِ</span>
+        <span class="word-meaning" style="color: #666;">allāh</span>
+        <span class="word-translit" style="color: #777;">allāh</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنْ</span>
+        <span class="word-meaning" style="color: #666;">from</span>
+        <span class="word-translit" style="color: #777;">ʿan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَبِي</span>
+        <span class="word-meaning" style="color: #666;">abī</span>
+        <span class="word-translit" style="color: #777;">abī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَسْمَاءَ</span>
+        <span class="word-meaning" style="color: #666;">asmāʾ</span>
+        <span class="word-translit" style="color: #777;">asmāʾa</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنْ</span>
+        <span class="word-meaning" style="color: #666;">from</span>
+        <span class="word-translit" style="color: #777;">ʿan</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ثَوْبَانَ</span>
+        <span class="word-meaning" style="color: #666;">thawbān</span>
+        <span class="word-translit" style="color: #777;">thawbān</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">قَالَ</span>
+        <span class="word-meaning" style="color: #666;">he said</span>
+        <span class="word-translit" style="color: #777;">qāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كَانَ</span>
+        <span class="word-meaning" style="color: #666;">was</span>
+        <span class="word-translit" style="color: #777;">kāna</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">رَسُولُ</span>
+        <span class="word-meaning" style="color: #666;">messenger</span>
+        <span class="word-translit" style="color: #777;">rasūlu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهِ</span>
+        <span class="word-meaning" style="color: #666;">allāh</span>
+        <span class="word-translit" style="color: #777;">allāhi</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">صَلَّى</span>
+        <span class="word-meaning" style="color: #666;">may he bless</span>
+        <span class="word-translit" style="color: #777;">ṣallā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهُ</span>
+        <span class="word-meaning" style="color: #666;">allāh</span>
+        <span class="word-translit" style="color: #777;">allāhu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَلَيْهِ</span>
+        <span class="word-meaning" style="color: #666;">upon him</span>
+        <span class="word-translit" style="color: #777;">ʿalayhi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَسَلَّمَ</span>
+        <span class="word-meaning" style="color: #666;">and grant peace</span>
+        <span class="word-translit" style="color: #777;">wasallam</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">إِذَا</span>
+        <span class="word-meaning" style="color: #666;">when</span>
+        <span class="word-translit" style="color: #777;">idhā</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">انْصَرَفَ</span>
+        <span class="word-meaning" style="color: #666;">he turned away</span>
+        <span class="word-translit" style="color: #777;">inṣarafa</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">مِنْ</span>
+        <span class="word-meaning" style="color: #666;">from</span>
+        <span class="word-translit" style="color: #777;">min</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">صَلَاتِهِ</span>
+        <span class="word-meaning" style="color: #666;">his prayer</span>
+        <span class="word-translit" style="color: #777;">ṣalātihi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اسْتَغْفَرَ</span>
+        <span class="word-meaning" style="color: #666;">he sought forgiveness</span>
+        <span class="word-translit" style="color: #777;">staghfara</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ثَلَاثًا</span>
+        <span class="word-meaning" style="color: #666;">three times</span>
+        <span class="word-translit" style="color: #777;">thalāthan</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَقَالَ</span>
+        <span class="word-meaning" style="color: #666;">and he said</span>
+        <span class="word-translit" style="color: #777;">waqāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهُمَّ</span>
+        <span class="word-meaning" style="color: #666;">o allāh</span>
+        <span class="word-translit" style="color: #777;">allāhumma</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَنْتَ</span>
+        <span class="word-meaning" style="color: #666;">you are</span>
+        <span class="word-translit" style="color: #777;">anta</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">السَّلَامُ</span>
+        <span class="word-meaning" style="color: #666;">peace</span>
+        <span class="word-translit" style="color: #777;">salāmu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَمِنْكَ</span>
+        <span class="word-meaning" style="color: #666;">and from you</span>
+        <span class="word-translit" style="color: #777;">wa-minka</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">السَّلَامُ</span>
+        <span class="word-meaning" style="color: #666;">peace</span>
+        <span class="word-translit" style="color: #777;">salāmu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">تَبَارَكْتَ</span>
+        <span class="word-meaning" style="color: #666;">blessed are you</span>
+        <span class="word-translit" style="color: #777;">tabārakta</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ذَا</span>
+        <span class="word-meaning" style="color: #666;">possessor of</span>
+        <span class="word-translit" style="color: #777;">dhā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الْجَلَالِ</span>
+        <span class="word-meaning" style="color: #666;">majesty</span>
+        <span class="word-translit" style="color: #777;">jalāli</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَالْإِكْرَامِ</span>
+        <span class="word-meaning" style="color: #666;">and honour</span>
+        <span class="word-translit" style="color: #777;">wal-ikrāmi</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">قَالَ</span>
+        <span class="word-meaning" style="color: #666;">he said</span>
+        <span class="word-translit" style="color: #777;">qāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الْوَلِيدُ</span>
+        <span class="word-meaning" style="color: #666;">al-walīd</span>
+        <span class="word-translit" style="color: #777;">al-walīdu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">فَقُلْتُ</span>
+        <span class="word-meaning" style="color: #666;">so i said</span>
+        <span class="word-translit" style="color: #777;">faqultu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لِلأَوْزَاعِيِّ</span>
+        <span class="word-meaning" style="color: #666;">to al-awzāʿī</span>
+        <span class="word-translit" style="color: #777;">lil-awzāʿī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كَيْفَ</span>
+        <span class="word-meaning" style="color: #666;">how</span>
+        <span class="word-translit" style="color: #777;">kayfa</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الِاسْتِغْفَارُ</span>
+        <span class="word-meaning" style="color: #666;">seeking forgiveness</span>
+        <span class="word-translit" style="color: #777;">istighfāru</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">قَالَ</span>
+        <span class="word-meaning" style="color: #666;">he said</span>
+        <span class="word-translit" style="color: #777;">qāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">تَقُولُ</span>
+        <span class="word-meaning" style="color: #666;">you say</span>
+        <span class="word-translit" style="color: #777;">taqūlu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَسْتَغْفِرُ</span>
+        <span class="word-meaning" style="color: #666;">i seek forgiveness</span>
+        <span class="word-translit" style="color: #777;">astaghfiru</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهَ</span>
+        <span class="word-meaning" style="color: #666;">allāh</span>
+        <span class="word-translit" style="color: #777;">allāha</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَسْتَغْفِرُ</span>
+        <span class="word-meaning" style="color: #666;">i seek forgiveness</span>
+        <span class="word-translit" style="color: #777;">astaghfiru</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهَ</span>
+        <span class="word-meaning" style="color: #666;">allāh</span>
+        <span class="word-translit" style="color: #777;">allāha</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">Dāwud ibn Rushayd narrated to us,</span>
+      <span class="chunk">al-Walīd narrated to us from al-Awzāʿī from Abū ʿAmmār,</span>
+      <span class="chunk">whose name is Shaddād ibn ʿAbdillāh,</span>
+      <span class="chunk">from Abū Asmāʾ from Thawbān,</span>
+      <span class="chunk">who said: When the Messenger of Allah (ﷺ) finished his prayer,</span>
+      <span class="chunk">he sought forgiveness three times and said:</span>
+      <span class="chunk">"O Allah, You are Peace, and from You is peace,</span>
+      <span class="chunk">blessed are You, O Possessor of Majesty and Honour."</span>
+      <span class="chunk">Al-Walīd said: I asked al-Awzāʿī:</span>
+      <span class="chunk">"How is seeking forgiveness?" He replied:</span>
+      <span class="chunk">"You say: Astaghfirullāh, Astaghfirullāh."</span>
+    </div>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Thawbān (ثوبان) – The Freed Slave of the Messenger of Allah</div>
+    <p><strong>Full name:</strong> Thawbān ibn Bujdud, Abū ‘Abdillāh (or Abū ‘Abd al-Raḥmān). Originally from Syria or Yemen, he was taken as a slave and then freed by the Prophet (ﷺ). He died in the year 54 AH (674 CE) in Hims (Homs), Syria.</p>
+    <p>Thawbān served the Prophet (ﷺ) closely for several years and was known for his deep devotion and knowledge of fiqh. He narrated approximately 40 hadith, which appear in all six major canonical collections (Ṣaḥīḥ al-Bukhārī, Muslim, Abū Dāwūd, al-Tirmidhī, al-Nasā’ī, Ibn Mājah). He was a reliable transmitter (thiqqah) with a direct, personal connection to the Prophet.</p>
+    <p><strong>Role here:</strong> Thawbān is the primary narrator of this hadith, reporting directly from the Prophet (ﷺ) about his post-prayer practice. His testimony establishes the sunnah of saying "Astaghfirullāh" three times followed by the "Allāhumma Antas-Salām" supplication.</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Threefold Seeking of Forgiveness (Istighfār)</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَسْتَغْفِرُ</span>
+      <span class="word-meaning">i seek forgiveness</span>
+      <span class="word-translit">astaghfiru</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهَ</span>
+      <span class="word-meaning">allāh</span>
+      <span class="word-translit">allāha</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">I seek forgiveness from Allah.</span>
+    <span class="chunk">(repeated three times)</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ Muslim, Book 5, Hadīth 171 (Sunnah.com ref: Book 4, Hadīth 1226)
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section-label">Part 2 · The Core Supplication After Prayer</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">o allāh</span>
+      <span class="word-translit">allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَنْتَ</span>
+      <span class="word-meaning">you are</span>
+      <span class="word-translit">anta</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">السَّلَامُ</span>
+      <span class="word-meaning">the peace</span>
+      <span class="word-translit">salāmu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَمِنْكَ</span>
+      <span class="word-meaning">and from you</span>
+      <span class="word-translit">wa-minka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">السَّلَامُ</span>
+      <span class="word-meaning">peace</span>
+      <span class="word-translit">salāmu</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">تَبَارَكْتَ</span>
+      <span class="word-meaning">blessed are you</span>
+      <span class="word-translit">tabārakta</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ذَا</span>
+      <span class="word-meaning">possessor of</span>
+      <span class="word-translit">dhā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْجَلَالِ</span>
+      <span class="word-meaning">majesty</span>
+      <span class="word-translit">jalāli</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْإِكْرَامِ</span>
+      <span class="word-meaning">and honour</span>
+      <span class="word-translit">wal-ikrāmi</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">O Allah, You are Peace, and from You is peace.</span>
+    <span class="chunk">Blessed are You, O Possessor of Majesty and Honour.</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ Muslim, Book 5, Hadīth 171 (Sunnah.com ref: Book 4, Hadīth 1226)
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>This ḥadīth is recorded by Imām Muslim ibn al-Ḥajjāj in his Ṣaḥīḥ (Book 5, The Book of Mosques and Places of Prayer, Chapter 26: The Recommendation of Remembrances After Prayer). The chain is authentic (ṣaḥīḥ) through al-Awzāʿī, Abū ʿAmmār (Shaddād ibn ʿAbdillāh), Abū Asmāʾ, and Thawbān. Muslim scholars unanimously consider this narration sound and its practice a confirmed sunnah.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/muslim/5/171" target="_blank" rel="noopener">
+      https://sunnah.com/muslim/5/171
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>

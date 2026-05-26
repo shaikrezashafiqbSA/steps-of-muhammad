@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lā ilāha illa-llāh – Post-Taslīm Dhikr & Tahlīl</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Lā ilāha illa-llāh · waḥdahū · lā sharīka lah</h1>
+  <p>The Prophet’s (ﷺ) remembrance after the taslīm — complete tahlīl, praise, and sincere devotion</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Context of this Dhikr</div>
+  <div class="info-body">
+    <p>After completing the obligatory prayer and giving the taslīm (salutation of peace), the Messenger of Allah (ﷺ) would consistently recite this profound declaration of divine oneness, sovereignty, gratitude, and sincere faith — even when disbelievers detest it. This supplication collects multiple layers of tawḥīd and is a model for post-salah remembrance.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain &amp; Context</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Abū al-Zubayr</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "I heard ʿAbdullāh ibn al-Zubayr speaking from the Minbar, saying: 'When the Messenger of Allah (ﷺ) said the taslīm, he would say (the following duʿā).'"
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration</div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">سَمِعْتُ</span>
+        <span class="word-meaning" style="color: #666;">i heard</span>
+        <span class="word-translit" style="color: #777;">samiʿtu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَبْدَ اللَّهِ بْنَ الزُّبَيْرِ</span>
+        <span class="word-meaning" style="color: #666;">abdullāh ibn az-zubayr</span>
+        <span class="word-translit" style="color: #777;">ʿabdallāhi bna z-zubayr</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يُحَدِّثُ</span>
+        <span class="word-meaning" style="color: #666;">narrating</span>
+        <span class="word-translit" style="color: #777;">yuḥaddithu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَلَى هَذَا الْمِنْبَرِ</span>
+        <span class="word-meaning" style="color: #666;">on this minbar</span>
+        <span class="word-translit" style="color: #777;">ʿalā hāḏā l-minbar</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَهُوَ يَقُولُ</span>
+        <span class="word-meaning" style="color: #666;">and he was saying</span>
+        <span class="word-translit" style="color: #777;">wa-huwa yaqūlu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كَانَ رَسُولُ اللَّهِ ﷺ</span>
+        <span class="word-meaning" style="color: #666;">the messenger of allah (ﷺ) was</span>
+        <span class="word-translit" style="color: #777;">kāna rasūlu llāh</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">إِذَا سَلَّمَ</span>
+        <span class="word-meaning" style="color: #666;">when he said the taslīm</span>
+        <span class="word-translit" style="color: #777;">iḏā sallama</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يَقُولُ</span>
+        <span class="word-meaning" style="color: #666;">he would say</span>
+        <span class="word-translit" style="color: #777;">yaqūlu</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"I heard Abdullah ibn az-Zubayr speaking on this minbar, saying: 'When the Messenger of Allah (ﷺ) said the taslīm, he would say:</span>
+      <span class="chunk">There is none worthy of worship except Allah alone, without any partner. To Him belongs the dominion, to Him is all praise, and He is over all things competent.</span>
+      <span class="chunk">There is no power nor strength except with Allah the Almighty.</span>
+      <span class="chunk">There is none worthy of worship except Allah, and we worship none but Him, the source of blessing, favour, and good praise.</span>
+      <span class="chunk">There is none worthy of worship except Allah, making the religion sincerely for Him even if the disbelievers dislike it.'"</span>
+    </div>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Abū al-Zubayr Muḥammad ibn Muslim ibn Tadrūs al-Makkī</div>
+    <p><strong>Full name:</strong> Abū al-Zubayr Muḥammad ibn Muslim ibn Tadrūs al-Qurashī al-Makkī (d. 126 AH / 744 CE). A prominent Successor (Tābiʿī) known for narrating from companions like Jābir ibn ʿAbdillāh, ʿAbdullāh ibn ʿUmar, and ʿAbdullāh ibn al-Zubayr.</p>
+    <p>Hadith critics extensively discussed his tadlīs (concealing weak links), but when he explicitly states "samītu" (I heard) — as here — his narration is considered authentic (sahīh) by leading imams. His transmission is preserved in the Six Books.</p>
+    <p><strong>Role here:</strong> Direct auditory testimony from ʿAbdullāh ibn al-Zubayr on the Prophet’s practice. The chain is explicit, avoiding tadlīs, strengthening the reliability of this post-sunnah dhikr.</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Complete Tahlīl & Praise after Taslīm</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللَّهُ</span>
+      <span class="word-meaning">no deity except allah</span>
+      <span class="word-translit">lā ilāha illā-llāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَحْدَهُ</span>
+      <span class="word-meaning">alone</span>
+      <span class="word-translit">waḥdahū</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَا شَرِيكَ لَهُ</span>
+      <span class="word-meaning">no partner for him</span>
+      <span class="word-translit">lā sharīka lah</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَهُ الْمُلْكُ</span>
+      <span class="word-meaning">to him belongs the dominion</span>
+      <span class="word-translit">lahu l-mulk</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَلَهُ الْحَمْدُ</span>
+      <span class="word-meaning">and to him belongs praise</span>
+      <span class="word-translit">wa-lahu l-ḥamd</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</span>
+      <span class="word-meaning">he over all things is competent</span>
+      <span class="word-translit">wa-huwa ʿalā kulli shayʾin qadīr</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا حَوْلَ وَلَا قُوَّةَ</span>
+      <span class="word-meaning">no power and no strength</span>
+      <span class="word-translit">lā ḥawla wa-lā quwwata</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِلَّا بِاللَّهِ</span>
+      <span class="word-meaning">except with allah</span>
+      <span class="word-translit">illā billāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْعَظِيمِ</span>
+      <span class="word-meaning">the almighty</span>
+      <span class="word-translit">l-ʿaẓīm</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللَّهُ</span>
+      <span class="word-meaning">no deity except allah</span>
+      <span class="word-translit">lā ilāha illā-llāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَا نَعْبُدُ إِلَّا إِيَّاهُ</span>
+      <span class="word-meaning">we worship none except him</span>
+      <span class="word-translit">lā naʿbudu illā iyyāh</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَهْلَ النِّعْمَةِ</span>
+      <span class="word-meaning">source of blessing</span>
+      <span class="word-translit">ahla n-niʿmah</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْفَضْلِ</span>
+      <span class="word-meaning">and favour</span>
+      <span class="word-translit">wa-l-faḍl</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالثَّنَاءِ الْحَسَنِ</span>
+      <span class="word-meaning">and good praise</span>
+      <span class="word-translit">wa-ṯ-ṯanāʾi l-ḥasan</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">لَا إِلَٰهَ إِلَّا اللَّهُ</span>
+      <span class="word-meaning">no deity except allah</span>
+      <span class="word-translit">lā ilāha illā-llāh</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مُخْلِصِينَ لَهُ الدِّينَ</span>
+      <span class="word-meaning">making sincere for him the religion</span>
+      <span class="word-translit">mukhliṣīna lahu d-dīn</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَلَوْ كَرِهَ الْكَافِرُونَ</span>
+      <span class="word-meaning">even if the disbelievers detest</span>
+      <span class="word-translit">wa-law kariha l-kāfirūn</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">There is none worthy of worship except Allah alone, without any partner.</span>
+    <span class="chunk">To Him belongs the dominion, and to Him be all praise, and He is over all things competent.</span>
+    <span class="chunk">There is no power nor any strength except with Allah the Almighty.</span>
+    <span class="chunk">There is none worthy of worship except Allah; we worship none but Him,</span>
+    <span class="chunk">the Source of blessing, favour, and good praise.</span>
+    <span class="chunk">There is none worthy of worship except Allah, making the religion sincerely for Him, even if the disbelievers detest it.</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan an-Nasāʾī 1339 · Book 13, Hadith 161 · Vol. 2, Book 13, Hadith 1340
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Recorded by Imām Aḥmad ibn Shuʿayb al-Nasāʾī (215–303 AH) in his <em>Sunan al-Ṣughrā</em>. The chain: Muḥammad ibn Shujāʿ al-Marwadhī ← Ismāʿīl ibn ʿUlayyah ← al-Ḥajjāj ibn Abī ʿUthmān ← Abū al-Zubayr ← ʿAbdullāh ibn al-Zubayr ← the Prophet (ﷺ). The narration is declared <strong>Ṣaḥīḥ (authentic)</strong> by Dārusallām’s editorial verification, and its content is reinforced by parallel narrations in Muslim and Abū Dāwūd. The multiple declarations of tawḥīd, praising Allah’s sole dominion, and announcing sincerity despite opposition form a sunnah dhikr for after the prayer.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/nasai/13/161" target="_blank" rel="noopener">
+      https://sunnah.com/nasai/13/161
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>

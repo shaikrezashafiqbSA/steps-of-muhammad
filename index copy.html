@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="meta-title">Steps of Muhammad</title>
+  <title id="meta-title">Al-Khazā'in</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Cross-fade for the spiritual emblem transformation */
@@ -16,10 +17,10 @@
     .branch-container {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .root-node.active .branch-container {
-      max-height: 600px; /* Provides vertical breathing room for content branches */
+      max-height: 800px; /* Provides vertical breathing room for expanded lists */
     }
     .chevron-icon {
       transition: transform 0.25s ease;
@@ -48,23 +49,19 @@
 
   <div id="yt-audio-player" class="hidden"></div>
 
-  <!-- ── CENTRALIZED, APPARENT FIXED BACKGROUND NALAYN ENGINE ── -->
   <div class="fixed inset-0 -z-10 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-    <!-- Base Nalayn state: Smaller (max-w-md/lg), perfectly centered, crisp visibility -->
     <img 
       id="bg-base"
       src="./Black Flag.jpeg" 
       alt="Nalayn Shareef - Base State" 
       class="w-full max-w-sm md:max-w-md h-auto object-contain transition-all duration-1000 ease-in-out opacity-55 saturate-[0.85]"
     />
-    <!-- Active Nur Nalayn state: Cross-fades to radiant form on hover interaction -->
     <img 
       id="bg-nur"
       src="./Black Flag (nur).jpeg" 
       alt="Nalayn Shareef - Filled with Nur" 
       class="absolute w-full max-w-sm md:max-w-md h-auto object-contain transition-all duration-1000 ease-in-out opacity-0 scale-105"
     />
-    <!-- Premium radial atmosphere overlay to fade edges beautifully into the dark background -->
     <div class="absolute inset-0 bg-gradient-to-t from-[#05140b] via-[#05140b]/75 to-[#05140b]/90"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#05140b_75%)]"></div>
   </div>
@@ -72,7 +69,6 @@
   <main class="flex-1 flex flex-col items-center justify-center p-6 min-w-0 relative z-10">
     <div class="max-w-2xl w-full text-center space-y-8 my-8">
       
-      <!-- Top Emblem / Trigger Module -->
       <div class="space-y-4 flex flex-col items-center">
         <div id="emblem-trigger" 
              onmouseenter="igniteNur()" 
@@ -85,10 +81,10 @@
 
         <div class="space-y-2 select-none">
           <h1 id="root-title" class="text-3xl md:text-4xl font-black tracking-widest bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent uppercase">
-            Follow the steps
+            Al-Khazā'in
           </h1>
           <p id="root-subtitle" class="text-xs md:text-sm font-mono text-emerald-600 uppercase tracking-widest max-w-md mx-auto leading-relaxed">
-            Prophet Muhammad ﷺ
+            Spiritual Daily Operating System · الـخَـزَائِـن
           </p>
         </div>
 
@@ -101,10 +97,8 @@
         </div>
       </div>
 
-      <!-- ── ACCOMMODATING ACCORDION TREE MENU (ḤIṢN AL-MUSLIM SYSTEM) ── -->
-      <div id="navigation-tree" class="w-full max-w-xl mx-auto text-left space-y-3 pt-4">
-        <!-- Rendered Dynamically by Engine Script below -->
-      </div>
+      <div id="navigation-tree" class="w-full max-w-xl mx-auto text-left space-y-4 pt-4">
+        </div>
 
     </div>
   </main>
@@ -115,8 +109,8 @@
 
   <script>
     const ROOT_CONFIG = {
-      title: "Follow the steps of",
-      subtitle: "Prophet Muhammad ﷺ",
+      title: "Al-Khazā'in",
+      subtitle: "Spiritual Daily Operating System · الـخَـزَائِـن",
       youtubeAudioId: "8hTUDQEvqk8"
     };
 
@@ -125,61 +119,55 @@
     // =========================================================
     const VAULT_NAVIGATION_TREE = [
       {
-        category: "after solat",
-        desc: "Prophetic Dua right after solat",
+        category: "🕒 Section 1 · Al-Awrād al-Yawmiyyah",
+        desc: "Core daily liturgies, post-prayer clearance protocols, and morning/evening horizon loops",
         items: [
-          { label: "1) Istighfar + Source of Peace", path: "after solat/1_Istighfar_peace.html"},
-          { label: "2a) Tahlil - When Facing Spiritual Lethargy or External Hostility", path: "after solat/2a_tahlil.html" },
-          { label: "2b) Tahlil - When Facing Financial Anxiety or Material Decisions", path: "after solat/2b_tahlil.html" },
-          { label: "Dua: Protect me from Hellfire", path: "after solat/dua-allahuma-ajirnaar.html" },
-
-        ]
-      },
-            {
-        category: "The Heart Shakers",
-        desc: "Prophetic Dua for deeply anchoring and alignment to the command / amr",
-        items: [
-          { label: "Dua: Oh Turner of Hearts...", path: "dua-general/dua-turner-of-hearts.html" },
-          { label: "Dua: In the Greatest of Names", path: "dua-general/dua-greatest-of-names.html" },
-          { label: "Dua: Istikhara - Guidance", path: "dua-general/dua-istikhara.html" },
-          { label: "Dua: Aisyah's Comprehensive ask", path: "dua-general/dua-comprehensive-aisyah.html" },
-          { label: "Dua Set: Habeeb Umar", path: "dua-general/dua-habeeb-umar.html"}
-        ]
-      },
-          {
-        category: "Morning/Evening shields 🛡",
-        desc: "Daily morning and evening adhkar",
-        items: [
-          { label: "Bismillahi ladhi ya Durru...", path: "/start and end of day/evoke shield against harm.html" },
-        ]
-      },
-                  {
-        category: "Grant us amal solihan (righteous work) / Destroy Laziness",
-        desc: "Prophetic invigoration evocations for daily work",
-        items: [
-          { label: "Dua - ease of work", path: "dua-work/dua-la-sahlan.html" },
-          { label: "Dua - ease of work", path: "dua-work/dua-laziness.html" },
-          { label: "Dua - Musa before facing firaun", path: "dua-work/dua-musa-before-facing-firaun.html" }
+          { label: "Wāẓīfah Baʿda al-Ṣalāh (Baseline Litany)", spec: "🛡️ Baseline Shields", path: "duas/post-salah-core.html" },
+          { label: "Tahlil After Salam [Nasa'i 1339]", spec: "🛡️ Baseline Shields", path: "after solat/nasai 1339 - tahlil after salam.html" },
+          { label: "Du'ā bil-Ism al-Aʿẓam (Greatest Name)", spec: "✨ Aura Cultivation", path: "after solat/Du'ā bil-Ism al-Aʿsub.html" },
+          { label: "Wird al-Laṭīf · Al-Ḥabīb ʿAbdullāh al-Ḥaddād", spec: "🌅 Horizon Buff (Fajr)", path: "wird/wird-al-latif.html" },
+          { label: "Rātib al-Ḥaddād · Grand House Parameter Loop", spec: "🌌 Horizon Buff (Maghrib)", path: "wird/ratib-al-haddad.html" },
+          { label: "Nashr-ul-Fadhail Sequence", spec: "🔢 Stat Multipliers", path: "wird/fadhail.html" },
+          { label: "Du'ā Istikhārah · Choice Matrix Calibration", spec: "🔮 Intent Calibration", path: "after solat/Dua Istikhara.html" },
+          { label: "Du'ā al-Habīb ʿUmar bin Ḥafīẓ", spec: "✨ Aura Cultivation", path: "after solat/dua-habeeb-umar.html" }
         ]
       },
       {
-        category: "Dua Collections of Sacred Months",
-        desc: "Dhikr / Wird 💦🌱 pieced by mashuyuks related to the sacred months",
+        category: "🛡️ Section 2 · Al-Ḥiṣn al-Ḥaṣīn",
+        desc: "High-intensity defense modules, active metaphysical wards, and anti-debuff formulas",
         items: [
-          { label: "Dua: Best Dua what all the Prophets made during Arafah", path: "Dua Haj/dua-prophets-made-on-arafah.html" },
-          { label: "Dua: Ali and Ibn 'Umar during Arafah", path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
-          { label: "Dua Collection: Dhul Hijjah - First 10 Days", path: "Dua Haj/Amalan Haj.html" },
-          { label: "Dua Collection: Istighfar Rajab", path: "Wird/istighfar-rajab.html" },
+          { label: "Bismillahi ladhi ya Durru... (Harm Shield)", spec: "⚡ Instant Cast Ward", path: "start and end of day/evoke shield against harm.html" },
+          { label: "Du'ā al-Karb · Distress Protocol Node", spec: "🧘‍♂️ Anti-Debuff Cleanser", path: "shields/anxiety-node.html" },
+          { label: "Ayāt ar-Ruqyah · Metaphysical Boundary Defense", spec: "⚡ Active Protection Ward", path: "shields/ruqyah-core.html" }
         ]
       },
       {
-        category: "Dua for Healing",
-        desc: "Prophetic restorative evocations",
+        category: "📿 Section 3 · Anwār aṣ-Ṣalawāt",
+        desc: "Prophetic invocation profiles for opening closed paths and clearing structural gridlocks",
         items: [
-          { label: "Seeking Wellness Against Physical Ailments", path: "Dua Shifa/dua-shifa.html" },
-          { label: "Full Ruqyah for face pains", path: "Dua Shifa/Ruqyah.html" }
+          { label: "Ṣalāt al-Fātiḥ · Unlocking Realities", spec: "🔓 Pathway Opener", path: "salawat/salat-al-fatih.html" },
+          { label: "Ṣalāt al-Nāriyah (Al-Tafrijiyyah) · Crisis Relief", spec: "🔥 Crisis Cleanser", path: "salawat/salat-al-nariyah.html" },
+          { label: "Ṣalāt al-Tanjīnā · Emergency Rescue Anchor", spec: "🌊 Emergency Rescue", path: "salawat/salat-al-tanjina.html" }
         ]
       },
+      {
+        category: "🏛️ Section 4 · Riyāḍ al-ʿIlm",
+        desc: "Deep narrative storage mapping raw transmission chains and contemplative insight vaults",
+        items: [
+          { label: "Hadith Transmission Cabinet Registries", spec: "📜 Transmission Logs", path: "lore/hadith-cabinet.html" },
+          { label: "Tadabbur Framework Modules & Action Steps", spec: "💡 Contemplative Insights", path: "lore/quran-tadabbur.html" }
+        ]
+      },
+      {
+        category: "🌙 Section 5 · Mawāsim al-Khayr",
+        desc: "Time-locked seasonal event expansions, high-yield tracking, and sacred journey blueprints",
+        items: [
+          { label: "Amalan for the First 10 Days of Dhul Hijjah", spec: "⏳ Season Expansion", path: "Dua Haj/Amalan Haj.html" },
+          { label: "Amalan for the Sacred Month of Rajab (Istighfar)", spec: "⏳ Season Expansion", path: "Wird/istighfar-rajab.html" },
+          { label: "Al-Ramadhān Portal · Vigilance & Fasting Arrays", spec: "⏳ Time-Locked Expansion", path: "seasons/ramadhan-portal.html" },
+          { label: "Hajj & ʿUmrah Route Waypoint Navigator", spec: "🗺️ Waypoint Navigator", path: "seasons/hajj-map.html" }
+        ]
+      }
     ];
 
     // 🏗️ APPLICATION ENGINE ASSEMBLY
@@ -192,15 +180,22 @@
       let treeHTML = '';
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
+        // Compute precise styling classes tailored dynamically to each section type
+        let specColorClass = "bg-emerald-500/10 text-emerald-400 border-emerald-500/20 group-hover:text-emerald-300";
+        if (node.category.includes("Section 2")) specColorClass = "bg-amber-500/10 text-amber-400 border-amber-500/20 group-hover:text-amber-300";
+        if (node.category.includes("Section 3")) specColorClass = "bg-purple-500/10 text-purple-400 border-purple-500/20 group-hover:text-purple-300";
+        if (node.category.includes("Section 4")) specColorClass = "bg-blue-500/10 text-blue-400 border-blue-500/20 group-hover:text-blue-300";
+        if (node.category.includes("Section 5")) specColorClass = "bg-yellow-500/10 text-yellow-400 border-yellow-500/20 group-hover:text-yellow-300";
+
         treeHTML += `
-          <div class="root-node border border-emerald-900/40 bg-[#071c10]/40 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-black/20" id="node-${index}">
+          <div class="root-node border border-emerald-900/40 bg-[#071c10]/40 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-black/20" id="node-${index}">
             
             <button onclick="toggleNode(${index})" class="w-full flex items-center justify-between p-4 bg-[#092213]/50 hover:bg-[#0c2e1a]/70 active:bg-[#061c10] transition-colors group text-left">
               <div class="space-y-1 pr-4">
-                <span class="text-xs font-mono font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:text-emerald-300 transition-colors">
+                <span class="text-xs font-mono font-bold tracking-widest uppercase px-2.5 py-0.5 rounded border ${specColorClass} transition-colors">
                   ${node.category}
                 </span>
-                <p class="text-[11px] text-emerald-400/60 leading-relaxed pt-1 font-sans group-hover:text-emerald-300/60 transition-colors">
+                <p class="text-[11px] text-emerald-400/60 leading-relaxed pt-1.5 font-sans group-hover:text-emerald-300/60 transition-colors">
                   -- ${node.desc}
                 </p>
               </div>
@@ -210,14 +205,19 @@
             </button>
 
             <div class="branch-container bg-[#05140b]/30">
-              <div class="p-2 space-y-0.5 border-t border-emerald-950/80">
+              <div class="p-2 space-y-1 border-t border-emerald-950/80">
                 ${node.items.map(item => `
                   <a href="./${item.path}" 
                      onmouseenter="igniteNur()" 
                      onmouseleave="extinguishNur()"
-                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-emerald-300/80 hover:text-amber-300 hover:bg-[#092213]/60 transition-all group">
-                    <span class="text-emerald-800 group-hover:text-amber-500 font-mono select-none">↳</span>
-                    <span class="leading-relaxed">${item.label}</span>
+                     class="flex items-center justify-between p-3 rounded-lg text-xs font-medium text-emerald-300/80 hover:text-amber-300 hover:bg-[#092213]/60 transition-all group">
+                    <div class="flex items-center gap-3">
+                      <span class="text-emerald-800 group-hover:text-amber-500 font-mono select-none">↳</span>
+                      <span class="leading-relaxed font-sans">${item.label}</span>
+                    </div>
+                    <span class="text-[9px] font-mono tracking-wider uppercase px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-900/60 group-hover:border-amber-500/30 group-hover:text-amber-300 transition-all whitespace-nowrap">
+                      ${item.spec}
+                    </span>
                   </a>
                 `).join('')}
               </div>
@@ -262,7 +262,7 @@
       });
     }
 
-    // Controls crisp background layer cross-fade states elegantly on interaction
+    // Controls background layer cross-fade states elegantly on interaction
     function igniteNur() {
       const baseFlag = document.getElementById('bg-base');
       const nurFlag = document.getElementById('bg-nur');
@@ -271,8 +271,8 @@
         nurFlag.style.opacity = '0.75';
         nurFlag.style.transform = 'scale(1.03)';
       }
-      document.querySelector('.base-flag').style.opacity = '0';
-      document.querySelector('.nur-flag').style.opacity = '1';
+      if (document.querySelector('.base-flag')) document.querySelector('.base-flag').style.opacity = '0';
+      if (document.querySelector('.nur-flag')) document.querySelector('.nur-flag').style.opacity = '1';
       if (player && typeof player.playVideo === 'function') player.playVideo();
     }
 
@@ -284,8 +284,8 @@
         nurFlag.style.opacity = '0';
         nurFlag.style.transform = 'scale(1.0)';
       }
-      document.querySelector('.base-flag').style.opacity = '1';
-      document.querySelector('.nur-flag').style.opacity = '0';
+      if (document.querySelector('.base-flag')) document.querySelector('.base-flag').style.opacity = '1';
+      if (document.querySelector('.nur-flag')) document.querySelector('.nur-flag').style.opacity = '0';
     }
   </script>
 </body>

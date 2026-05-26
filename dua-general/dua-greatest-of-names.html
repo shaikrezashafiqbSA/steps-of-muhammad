@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dua in the The Greatest Name of Allah</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّكَ أَنْتَ اللَّهُ الأَحَدُ الصَّمَدُ</h1>
+  <p>Allahumma Inni As'aluka bi-Annaka Antallah — The Supplication that Invokes Allah’s Greatest Name</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 When & Why</div>
+  <div class="info-body">
+    <p>The Prophet ﷺ heard a man supplicating using this powerful invocation, which testifies to Allah’s absolute Oneness, Self-Sufficiency, and Eternality. The Prophet ﷺ then declared that the man had asked Allah by His Greatest Name — the Name that, when invoked, guarantees a response and fulfillment of need.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain &amp; Context</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">‘Abdullāh ibn Buraidah</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported from his father:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      “The Prophet ﷺ heard a man say: ‘O Allah, I ask You by virtue of Your being Allah, the One, the Self-Sufficient Master, Who begets not nor was begotten, and there is none co‑equal or comparable to Him.’ Then the Messenger of Allah ﷺ said: ‘He has asked Allah by His Greatest Name, which if He is asked thereby He gives, and if He is called upon thereby He answers.’”
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration</div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">سَمِعَ</span>
+        <span class="word-meaning" style="color: #666;">heard</span>
+        <span class="word-translit" style="color: #777;">sami‘a</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">النَّبِيُّ</span>
+        <span class="word-meaning" style="color: #666;">the prophet</span>
+        <span class="word-translit" style="color: #777;">an-nabiyyu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ـﷺـ</span>
+        <span class="word-meaning" style="color: #666;">(saws)</span>
+        <span class="word-translit" style="color: #777;">—</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">رَجُلاً</span>
+        <span class="word-meaning" style="color: #666;">a man</span>
+        <span class="word-translit" style="color: #777;">rajulan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يَقُولُ</span>
+        <span class="word-meaning" style="color: #666;">saying</span>
+        <span class="word-translit" style="color: #777;">yaqūlu</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهُمَّ</span>
+        <span class="word-meaning" style="color: #666;">o allah</span>
+        <span class="word-translit" style="color: #777;">allāhumma</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">إِنِّي</span>
+        <span class="word-meaning" style="color: #666;">indeed i</span>
+        <span class="word-translit" style="color: #777;">innī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَسْأَلُكَ</span>
+        <span class="word-meaning" style="color: #666;">ask you</span>
+        <span class="word-translit" style="color: #777;">as’aluka</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بِأَنَّكَ</span>
+        <span class="word-meaning" style="color: #666;">by (the fact) that you</span>
+        <span class="word-translit" style="color: #777;">bi-annaka</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَنْتَ</span>
+        <span class="word-meaning" style="color: #666;">you</span>
+        <span class="word-translit" style="color: #777;">anta</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهُ</span>
+        <span class="word-meaning" style="color: #666;">allah</span>
+        <span class="word-translit" style="color: #777;">allāhu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الأَحَدُ</span>
+        <span class="word-meaning" style="color: #666;">the one</span>
+        <span class="word-translit" style="color: #777;">al-aḥadu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الصَّمَدُ</span>
+        <span class="word-meaning" style="color: #666;">the self-sufficient master</span>
+        <span class="word-translit" style="color: #777;">aṣ-ṣamadu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الَّذِي</span>
+        <span class="word-meaning" style="color: #666;">who</span>
+        <span class="word-translit" style="color: #777;">alladhī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لَمْ يَلِدْ</span>
+        <span class="word-meaning" style="color: #666;">did not beget</span>
+        <span class="word-translit" style="color: #777;">lam yalid</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَلَمْ يُولَدْ</span>
+        <span class="word-meaning" style="color: #666;">nor was begotten</span>
+        <span class="word-translit" style="color: #777;">wa lam yūlad</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَلَمْ يَكُنْ</span>
+        <span class="word-meaning" style="color: #666;">and there is not</span>
+        <span class="word-translit" style="color: #777;">wa lam yakun</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لَهُ</span>
+        <span class="word-meaning" style="color: #666;">to him</span>
+        <span class="word-translit" style="color: #777;">lahu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كُفُوًا</span>
+        <span class="word-meaning" style="color: #666;">equal / comparable</span>
+        <span class="word-translit" style="color: #777;">kufuwan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَحَدٌ</span>
+        <span class="word-meaning" style="color: #666;">anyone</span>
+        <span class="word-translit" style="color: #777;">aḥad</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">فَقَالَ</span>
+        <span class="word-meaning" style="color: #666;">then said</span>
+        <span class="word-translit" style="color: #777;">faqāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">رَسُولُ اللَّهِ</span>
+        <span class="word-meaning" style="color: #666;">messenger of allah</span>
+        <span class="word-translit" style="color: #777;">rasūlu allāhi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ـﷺـ</span>
+        <span class="word-meaning" style="color: #666;">(saws)</span>
+        <span class="word-translit" style="color: #777;">—</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لَقَدْ سَأَلَ</span>
+        <span class="word-meaning" style="color: #666;">indeed he asked</span>
+        <span class="word-translit" style="color: #777;">laqad sa’ala</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهَ</span>
+        <span class="word-meaning" style="color: #666;">allah</span>
+        <span class="word-translit" style="color: #777;">allāha</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بِاسْمِهِ</span>
+        <span class="word-meaning" style="color: #666;">by his name</span>
+        <span class="word-translit" style="color: #777;">bismihi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الأَعْظَمِ</span>
+        <span class="word-meaning" style="color: #666;">the greatest</span>
+        <span class="word-translit" style="color: #777;">al-a‘ẓami</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">الَّذِي</span>
+        <span class="word-meaning" style="color: #666;">which</span>
+        <span class="word-translit" style="color: #777;">alladhī</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">إِذَا سُئِلَ</span>
+        <span class="word-meaning" style="color: #666;">if he is asked</span>
+        <span class="word-translit" style="color: #777;">idhā su’ila</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بِهِ</span>
+        <span class="word-meaning" style="color: #666;">by it</span>
+        <span class="word-translit" style="color: #777;">bihi</span>
+      </div>
+    </div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَعْطَى</span>
+        <span class="word-meaning" style="color: #666;">he gives</span>
+        <span class="word-translit" style="color: #777;">a‘ṭā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَإِذَا دُعِيَ</span>
+        <span class="word-meaning" style="color: #666;">and if he is called upon</span>
+        <span class="word-translit" style="color: #777;">wa idhā du‘iya</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بِهِ</span>
+        <span class="word-meaning" style="color: #666;">by it</span>
+        <span class="word-translit" style="color: #777;">bihi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَجَابَ</span>
+        <span class="word-meaning" style="color: #666;">he answers</span>
+        <span class="word-translit" style="color: #777;">ajāba</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"The Prophet ﷺ heard a man saying: 'O Allah, I ask You by virtue of Your being Allah, the One, the Self-Sufficient Master, Who begets not nor was begotten, and there is none co‑equal or comparable to Him.' </span>
+      <span class="chunk">Then the Messenger of Allah ﷺ said: 'He has asked Allah by His Greatest Name, which if He is asked thereby He gives, and if He is called upon thereby He answers.'"</span>
+    </div>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">‘Abdullāh ibn Buraidah & his father Buraidah ibn al-Husayb</div>
+    <p><strong>Full name:</strong> ‘Abdullāh ibn Buraidah ibn al-Husayb al-Aslamī (d. 115 AH / 733 CE). His father, Buraidah (d. 63 AH / 682 CE), was a famous Companion of the Prophet ﷺ who accepted Islam early and participated in many campaigns.</p>
+    <p>‘Abdullāh is known as a reliable narrator (thiqah) from the generation of the Successors (tābi‘ūn). He transmitted from his father, ‘Umar, and other Companions. Scholars such as Ibn Ḥibbān and Aḥmad praised his integrity. This narration appears in Sunan Ibn Mājah and is graded Ṣaḥīḥ.</p>
+    <p><strong>Role here:</strong> ‘Abdullāh ibn Buraidah heard this statement directly from his father Buraidah, who witnessed the Prophet ﷺ responding to the man’s du‘ā. The chain is strong and goes back to the Prophet ﷺ without interruption.</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Invocation of the Greatest Name</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">o allah</span>
+      <span class="word-translit">allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِنِّي</span>
+      <span class="word-meaning">indeed i</span>
+      <span class="word-translit">innī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَسْأَلُكَ</span>
+      <span class="word-meaning">ask you</span>
+      <span class="word-translit">as’aluka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِأَنَّكَ</span>
+      <span class="word-meaning">by (the fact) that you</span>
+      <span class="word-translit">bi-annaka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَنْتَ</span>
+      <span class="word-meaning">you</span>
+      <span class="word-translit">anta</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُ</span>
+      <span class="word-meaning">allah</span>
+      <span class="word-translit">allāhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الأَحَدُ</span>
+      <span class="word-meaning">the one</span>
+      <span class="word-translit">al-aḥadu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الصَّمَدُ</span>
+      <span class="word-meaning">the self-sufficient master</span>
+      <span class="word-translit">aṣ-ṣamadu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الَّذِي</span>
+      <span class="word-meaning">who</span>
+      <span class="word-translit">alladhī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَمْ يَلِدْ</span>
+      <span class="word-meaning">did not beget</span>
+      <span class="word-translit">lam yalid</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَلَمْ يُولَدْ</span>
+      <span class="word-meaning">nor was begotten</span>
+      <span class="word-translit">wa lam yūlad</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَلَمْ يَكُنْ</span>
+      <span class="word-meaning">and there is not</span>
+      <span class="word-translit">wa lam yakun</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لَهُ</span>
+      <span class="word-meaning">to him</span>
+      <span class="word-translit">lahu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">كُفُوًا</span>
+      <span class="word-meaning">equal / comparable</span>
+      <span class="word-translit">kufuwan</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَحَدٌ</span>
+      <span class="word-meaning">anyone</span>
+      <span class="word-translit">aḥad</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">“O Allah, I ask You by virtue of Your being Allah, the One, the Self-Sufficient Master, </span>
+    <span class="chunk">Who begets not nor was begotten, </span>
+    <span class="chunk">and there is none co‑equal or comparable to Him.”</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan Ibn Mājah, Book 34 (Supplication), Hadith 3857 (Vol. 5, Book 34, Hadith 3857)
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Narrated by ‘Abdullāh ibn Buraidah from his father Buraidah ibn al-Husayb al-Aslamī. Recorded by Ibn Mājah in his <em>Sunan</em> (3857). The chain includes ‘Alī ibn Muḥammad (trustworthy), Wakī‘ ibn al-Jarrāḥ (thiqah ḥāfiẓ), and Mālik ibn Mighwal (thiqah). Graded <strong>Ṣaḥīḥ (Authentic)</strong> by Dārus Salām’s editorial team. This du‘ā invokes Allah’s <em>Ism al-A‘ẓam</em> (Greatest Name), a means of guaranteed response when used sincerely.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/ibnmajah/34/31" target="_blank" rel="noopener">
+      https://sunnah.com/ibnmajah/34/31
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="meta-title">Vault Index - Steps of Muhammad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .emblem-container:hover .base-flag { opacity: 0; }
+    .emblem-container:hover .nur-flag { opacity: 1; scale: 1.05; }
+    .emblem-container:active .base-flag { opacity: 0; }
+    .emblem-container:active .nur-flag { opacity: 1; scale: 1.05; }
+    
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen flex antialiased selection:bg-amber-500/30">
+
+  <div id="yt-audio-player" class="hidden"></div>
+
+  <aside id="aem-sidebar" class="fixed inset-y-0 left-0 z-50 w-72 bg-[#0e1422] border-r border-slate-800/80 p-5 transform -translate-x-full md:translate-x-0 md:static md:flex md:flex-col transition-transform duration-300 ease-in-out no-scrollbar overflow-y-auto shrink-0">
+    
+    <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+      <div class="flex items-center gap-2">
+        <span id="sidebar-icon" class="text-amber-500 text-sm">✦</span>
+        <h2 class="text-xs font-mono font-bold tracking-widest text-slate-400 uppercase">Vault Hierarchy</h2>
+      </div>
+      <button onclick="toggleSidebar()" class="md:hidden text-slate-500 hover:text-slate-200 p-1 text-sm">✕</button>
+    </div>
+
+    <div class="space-y-3 text-sm font-mono">
+      <div class="flex items-center gap-2 text-slate-500 hover:text-slate-300">
+        <span>📂</span>
+        <a href="../" class="hover:underline">root /</a>
+      </div>
+
+      <div class="pl-4 space-y-2 border-l border-slate-800/60 ml-2">
+        <div class="space-y-1.5">
+          <div class="flex items-center gap-2 text-amber-400 font-semibold">
+            <span>▼ 📂</span>
+            <a href="./" class="hover:underline current-folder-node">Folder</a>
+          </div>
+          
+          <div id="sidebar-links-target" class="pl-5 space-y-1.5 border-l border-amber-500/20 ml-2 text-xs">
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div id="sidebar-overlay" onclick="toggleSidebar()" class="fixed inset-0 z-40 bg-black/60 hidden md:hidden transition-opacity"></div>
+
+  <main class="flex-1 flex flex-col items-center justify-center p-4 min-w-0 relative">
+    
+    <div class="w-full max-w-md md:max-w-none absolute top-4 left-4 right-4 flex items-center justify-between md:justify-end">
+      <button onclick="toggleSidebar()" class="md:hidden flex items-center gap-2 bg-[#151d30] border border-slate-800 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-400 hover:text-slate-200">
+        📂 View Tree Hierarchy
+      </button>
+      <a href="../" class="inline-flex items-center text-xs font-mono text-slate-500 hover:text-amber-400 transition-colors group">
+        <span class="mr-2 transform group-hover:-translate-x-1 transition-transform">⇠</span> Back to Main Layout
+      </a>
+    </div>
+
+    <div class="max-w-md w-full text-center space-y-6 mt-12 md:mt-0">
+      
+      <div class="space-y-4 flex flex-col items-center">
+        <div id="emblem-trigger" class="emblem-container relative w-36 h-36 rounded-full overflow-hidden border border-slate-800 shadow-2xl transition-all duration-500 cursor-pointer group hover:border-amber-500/50 hover:shadow-amber-500/10">
+          <img src="../Black Flag.jpeg" alt="Base State" class="base-flag absolute inset-0 w-full h-full object-cover object-center opacity-100 scale-100 transition-all duration-700 ease-in-out" />
+          <img src="../Black Flag (nur).jpeg" alt="Filled with Nur" class="nur-flag absolute inset-0 w-full h-full object-cover object-center opacity-0 scale-100 transition-all duration-700 ease-in-out" />
+          <div class="absolute inset-0 ring-1 ring-inset ring-amber-400/20 rounded-full pointer-events-none group-hover:ring-amber-400/50 transition-all duration-500"></div>
+        </div>
+
+        <div class="space-y-1">
+          <h1 id="folder-title" class="text-2xl font-black tracking-wider bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent uppercase">📂</h1>
+          <p id="folder-subtitle" class="text-xs font-mono text-slate-500 uppercase tracking-widest">📋</p>
+        </div>
+      </div>
+
+      <div id="cards-grid-target" class="space-y-3">
+      </div>
+
+      <footer class="text-[10px] text-slate-600 font-mono tracking-widest uppercase pt-2">
+        Decentralized Word Vault ✦ Serverless
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    // 🎛️ MANUALLY EDIT ONLY THIS CONFIG BLOCK FOR FUTURE ADDITIONS
+    const VAULT_CONFIG = {
+      folderPath: "wird",       // The directory folder name
+      title: "Wird",            // Main text title matching your theme
+      subtitle: "Arriving at the water 💦🌱", 
+      sidebarIcon: "✦",                // 🌟 Custom icon safely managed here
+      youtubeAudioId: "8hTUDQEvqk8"    // Background track code
+    };
+
+    const VAULT_ITEMS = [
+      { 
+        file: "dua-habeeb-umar.html", 
+        title: "Dua Habeeb Umar", 
+        desc: "Aspiration prayers and continuous opening invocations compiled by the Habib." 
+      },
+      { 
+        file: "dua-abu-darda.html", 
+        title: "Dua Abu Darda", 
+        desc: "The immense defensive formula for protecting the homestead from unexpected calamities." 
+      },
+        { 
+        file: "morning-adhkar.html", 
+        title: "Morning Adhkar", 
+        desc: "Prophetic shield for the morning hours to preserve barakah and peace." 
+      },
+      { 
+        file: "istighfar-rajab.html", 
+        title: "Istighfar Rajab", 
+        desc: "The deep seasonal seeking of pardon to ready the heart for sacred horizons." 
+      },
+      { 
+        file: "maulid-collection.html", 
+        title: "Maulid Collection", 
+        desc: "Poetic assemblies of history and prayers highlighting the birth of illumination." 
+      }
+    ];
+
+    // 🏗️ ENGINE LOGIC (Do not edit below this line)
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById('meta-title').textContent = `${VAULT_CONFIG.title} - Steps of Muhammad`;
+      document.getElementById('folder-title').textContent = VAULT_CONFIG.title;
+      document.getElementById('folder-subtitle').textContent = VAULT_CONFIG.subtitle;
+      document.getElementById('sidebar-icon').textContent = VAULT_CONFIG.sidebarIcon;
+      
+      const folderNodes = document.querySelectorAll('.current-folder-node');
+      folderNodes.forEach(node => { node.textContent = VAULT_CONFIG.folderPath; });
+
+      const sidebarTarget = document.getElementById('sidebar-links-target');
+      const cardsTarget = document.getElementById('cards-grid-target');
+
+      let sidebarHTML = `
+        <div class="flex items-center gap-2 text-slate-300 bg-amber-500/10 px-2 py-1 rounded border border-amber-500/20">
+          <span>📄</span><span class="font-bold">index.html <span class="text-[9px] text-amber-500/70">(active)</span></span>
+        </div>`;
+      
+      let cardsHTML = '';
+
+      VAULT_ITEMS.forEach(item => {
+        sidebarHTML += `
+          <a href="${item.file}" class="flex items-center gap-2 text-slate-400 hover:text-slate-200 px-2 py-1 rounded hover:bg-slate-800/40 transition-colors">
+            <span>📄</span><span>${item.file}</span>
+          </a>`;
+
+        cardsHTML += `
+          <a href="${item.file}" 
+             onmouseenter="igniteNur()" 
+             onmouseleave="extinguishNur()"
+             class="group block bg-[#151d30] border border-slate-800/80 rounded-xl p-5 text-left transition-all duration-300 hover:border-amber-500/40 hover:scale-[1.01] hover:shadow-lg hover:shadow-amber-500/5">
+            <div class="flex items-center justify-between">
+              <div class="space-y-1 pr-4">
+                <h3 class="text-base font-bold text-slate-200 group-hover:text-amber-400 transition-colors">${item.title}</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">${item.desc}</p>
+              </div>
+              <span class="text-sm font-mono text-slate-600 group-hover:text-amber-500 transform group-hover:translate-x-1 transition-all">➔</span>
+            </div>
+          </a>`;
+      });
+
+      sidebarTarget.innerHTML = sidebarHTML;
+      cardsTarget.innerHTML = cardsHTML;
+      initAudioEngine();
+    });
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('aem-sidebar');
+      const overlay = document.getElementById('sidebar-overlay');
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+    }
+
+    function initAudioEngine() {
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    }
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('yt-audio-player', {
+        height: '0', width: '0', videoId: VAULT_CONFIG.youtubeAudioId,
+        playerVars: { 'autoplay': 0, 'controls': 0, 'loop': 1, 'playlist': VAULT_CONFIG.youtubeAudioId },
+        events: { 'onReady': () => {
+          const trigger = document.getElementById('emblem-trigger');
+          trigger.addEventListener('mouseenter', () => player.playVideo());
+          trigger.addEventListener('touchstart', () => player.playVideo());
+        }}
+      });
+    }
+
+    function igniteNur() {
+      document.querySelector('.base-flag').style.opacity = '0';
+      document.querySelector('.nur-flag').style.opacity = '1';
+      if (player && typeof player.playVideo === 'function') player.playVideo();
+    }
+
+    function extinguishNur() {
+      document.querySelector('.base-flag').style.opacity = '1';
+      document.querySelector('.nur-flag').style.opacity = '0';
+    }
+  </script>
+</body>
+</html>
