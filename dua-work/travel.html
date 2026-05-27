@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Du'ā for Travel & Riding – Jamiʿ at-Tirmidhi 3447</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 3000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* ensure word-wrap for long arabic */
+  .arabic-word {
+    word-break: break-word;
+  }
+  .src-popup {
+    display: none;
+  }
+  .src-popup.open {
+    display: block;
+  }
+  .narrator-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  .narrator-overlay.open {
+    display: flex;
+  }
+  .narrator-overlay-card {
+    background: white;
+    max-width: 500px;
+    width: 90%;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+  }
+  .narrator-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Duʿāʾ ar-Rukūb wa s-Safar</h1>
+  <p>Supplications of the Prophet ﷺ when mounting a transport and during travel</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Context of the Hadith</div>
+  <div class="info-body">
+    <p>ʿAbdullāh ibn ʿUmar (ra) reports that whenever the Messenger of Allah ﷺ intended to travel and mounted his riding camel, he would glorify Allah, recite specific verses of the Qur’an, and supplicate for righteousness, safety, and family protection. Upon returning, he would utter another beautiful duʿā of gratitude and repentance.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">📜 The Narration Chain &amp; Full Context</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">ʿAbdullāh ibn ʿUmar (ra)</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">narrated:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "When the Prophet (ﷺ) wanted to travel, when he mounted his riding camel, he would say the Takbir three times and say: 'Glory is to Him Who has subjected this to us, and we were not able to do it. And, surely, to our Lord are we returning.' Then he would say: 'O Allah, I ask You in this journey of mine from the righteousness and piety and actions that which You are pleased with. O Allah, ease for us the path, and make near for us the distance of the land. O Allah, You are the companion in the journey, and the caretaker for the family. O Allah, accompany us in our journey, and take care of our families.' And when he would return to his family, he would say: '(We are) Returning, if Allah wills, repenting, worshipping, and to our Lord directing the praise.'"
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (with word‑by‑word)</div>
+
+    <!-- Narration Arabic word-by-word blocks -->
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">عَنِ</span><span class="word-meaning">from</span><span class="word-translit">ʿan</span></div>
+      <div class="word-unit"><span class="arabic-word">ابْنِ</span><span class="word-meaning">son of</span><span class="word-translit">ibni</span></div>
+      <div class="word-unit"><span class="arabic-word">عُمَرَ</span><span class="word-meaning">ʿumar</span><span class="word-translit">ʿumara</span></div>
+      <div class="word-unit"><span class="arabic-word">أَنَّ</span><span class="word-meaning">that</span><span class="word-translit">anna</span></div>
+      <div class="word-unit"><span class="arabic-word">النَّبِيَّ</span><span class="word-meaning">the prophet</span><span class="word-translit">an-nabiyya</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">bless</span><span class="word-translit">ṣallā</span></div>
+      <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">llāhu</span></div>
+      <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span><span class="word-translit">ʿalayhi</span></div>
+      <div class="word-unit"><span class="arabic-word">وَسَلَّمَ</span><span class="word-meaning">and peace</span><span class="word-translit">wasallam</span></div>
+      <div class="word-unit"><span class="arabic-word">كَانَ</span><span class="word-meaning">was</span><span class="word-translit">kāna</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">إِذَا</span><span class="word-meaning">when</span><span class="word-translit">idhā</span></div>
+      <div class="word-unit"><span class="arabic-word">سَافَرَ</span><span class="word-meaning">he traveled</span><span class="word-translit">sāfara</span></div>
+      <div class="word-unit"><span class="arabic-word">فَرَكِبَ</span><span class="word-meaning">and mounted</span><span class="word-translit">farakiba</span></div>
+      <div class="word-unit"><span class="arabic-word">رَاحِلَتَهُ</span><span class="word-meaning">his riding camel</span><span class="word-translit">rāḥilatahu</span></div>
+      <div class="word-unit"><span class="arabic-word">كَبَّرَ</span><span class="word-meaning">he said allahu akbar</span><span class="word-translit">kabbara</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">ثَلَاثًا</span><span class="word-meaning">three times</span><span class="word-translit">thalāthan</span></div>
+      <div class="word-unit"><span class="arabic-word">وَيَقُولُ</span><span class="word-meaning">and says</span><span class="word-translit">wayaqūlu</span></div>
+      <div class="word-unit"><span class="arabic-word">سُبْحَانَ</span><span class="word-meaning">glory be to</span><span class="word-translit">subḥāna</span></div>
+      <div class="word-unit"><span class="arabic-word">الَّذِي</span><span class="word-meaning">the one who</span><span class="word-translit">alladhī</span></div>
+      <div class="word-unit"><span class="arabic-word">سَخَّرَ</span><span class="word-meaning">subjugated</span><span class="word-translit">sakhkhara</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">لَنَا</span><span class="word-meaning">for us</span><span class="word-translit">lanā</span></div>
+      <div class="word-unit"><span class="arabic-word">هَذَا</span><span class="word-meaning">this</span><span class="word-translit">hādhā</span></div>
+      <div class="word-unit"><span class="arabic-word">وَمَا</span><span class="word-meaning">and not</span><span class="word-translit">wamā</span></div>
+      <div class="word-unit"><span class="arabic-word">كُنَّا</span><span class="word-meaning">we were</span><span class="word-translit">kunnā</span></div>
+      <div class="word-unit"><span class="arabic-word">لَهُ</span><span class="word-meaning">to it</span><span class="word-translit">lahū</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">مُقْرِنِينَ</span><span class="word-meaning">able</span><span class="word-translit">muqrinīn</span></div>
+      <div class="word-unit"><span class="arabic-word">وَإِنَّا</span><span class="word-meaning">and indeed we</span><span class="word-translit">wa-innā</span></div>
+      <div class="word-unit"><span class="arabic-word">إِلَى</span><span class="word-meaning">to</span><span class="word-translit">ilā</span></div>
+      <div class="word-unit"><span class="arabic-word">رَبِّنَا</span><span class="word-meaning">our lord</span><span class="word-translit">rabbinā</span></div>
+      <div class="word-unit"><span class="arabic-word">لَمُنْقَلِبُونَ</span><span class="word-meaning">surely returning</span><span class="word-translit">lamunqalibūn</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">ثُمَّ</span><span class="word-meaning">then</span><span class="word-translit">thumma</span></div>
+      <div class="word-unit"><span class="arabic-word">يَقُولُ</span><span class="word-meaning">he says</span><span class="word-translit">yaqūlu</span></div>
+      <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+      <div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">indeed i</span><span class="word-translit">innī</span></div>
+      <div class="word-unit"><span class="arabic-word">أَسْأَلُكَ</span><span class="word-meaning">ask you</span><span class="word-translit">as’aluka</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+      <div class="word-unit"><span class="arabic-word">سَفَرِي</span><span class="word-meaning">my journey</span><span class="word-translit">safarī</span></div>
+      <div class="word-unit"><span class="arabic-word">هَذَا</span><span class="word-meaning">this</span><span class="word-translit">hādhā</span></div>
+      <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">of</span><span class="word-translit">mina</span></div>
+      <div class="word-unit"><span class="arabic-word">الْبِرِّ</span><span class="word-meaning">righteousness</span><span class="word-translit">l-birri</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">وَالتَّقْوَى</span><span class="word-meaning">and piety</span><span class="word-translit">wat-taqwā</span></div>
+      <div class="word-unit"><span class="arabic-word">وَمِنَ</span><span class="word-meaning">and of</span><span class="word-translit">wamina</span></div>
+      <div class="word-unit"><span class="arabic-word">الْعَمَلِ</span><span class="word-meaning">the action</span><span class="word-translit">l-ʿamali</span></div>
+      <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">what</span><span class="word-translit">mā</span></div>
+      <div class="word-unit"><span class="arabic-word">تَرْضَى</span><span class="word-meaning">you are pleased with</span><span class="word-translit">tarḍā</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+      <div class="word-unit"><span class="arabic-word">هَوِّنْ</span><span class="word-meaning">make easy</span><span class="word-translit">hawwin</span></div>
+      <div class="word-unit"><span class="arabic-word">عَلَيْنَا</span><span class="word-meaning">upon us</span><span class="word-translit">ʿalaynā</span></div>
+      <div class="word-unit"><span class="arabic-word">الْمَسِيرَ</span><span class="word-meaning">the journey</span><span class="word-translit">l-masīra</span></div>
+      <div class="word-unit"><span class="arabic-word">وَاطْوِ</span><span class="word-meaning">and fold / shorten</span><span class="word-translit">waṭwi</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">عَنَّا</span><span class="word-meaning">for us</span><span class="word-translit">ʿannā</span></div>
+      <div class="word-unit"><span class="arabic-word">بُعْدَ</span><span class="word-meaning">distance</span><span class="word-translit">buʿda</span></div>
+      <div class="word-unit"><span class="arabic-word">الأَرْضِ</span><span class="word-meaning">the land</span><span class="word-translit">l-arḍi</span></div>
+      <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+      <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">الصَّاحِبُ</span><span class="word-meaning">the companion</span><span class="word-translit">ṣ-ṣāḥibu</span></div>
+      <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+      <div class="word-unit"><span class="arabic-word">السَّفَرِ</span><span class="word-meaning">the travel</span><span class="word-translit">s-safari</span></div>
+      <div class="word-unit"><span class="arabic-word">وَالْخَلِيفَةُ</span><span class="word-meaning">and the caretaker</span><span class="word-translit">wal-khalīfatu</span></div>
+      <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">for</span><span class="word-translit">fī</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">الأَهْلِ</span><span class="word-meaning">the family</span><span class="word-translit">l-ahli</span></div>
+      <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+      <div class="word-unit"><span class="arabic-word">اصْحَبْنَا</span><span class="word-meaning">accompany us</span><span class="word-translit">aṣḥabnā</span></div>
+      <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+      <div class="word-unit"><span class="arabic-word">سَفَرِنَا</span><span class="word-meaning">our travel</span><span class="word-translit">safarinā</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">وَاخْلُفْنَا</span><span class="word-meaning">and take care of us (family)</span><span class="word-translit">wakhlufnā</span></div>
+      <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+      <div class="word-unit"><span class="arabic-word">أَهْلِنَا</span><span class="word-meaning">our family</span><span class="word-translit">ahlinā</span></div>
+      <div class="word-unit"><span class="arabic-word">وَكَانَ</span><span class="word-meaning">and he would</span><span class="word-translit">wakāna</span></div>
+      <div class="word-unit"><span class="arabic-word">يَقُولُ</span><span class="word-meaning">say</span><span class="word-translit">yaqūlu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">إِذَا</span><span class="word-meaning">when</span><span class="word-translit">idhā</span></div>
+      <div class="word-unit"><span class="arabic-word">رَجَعَ</span><span class="word-meaning">he returned</span><span class="word-translit">rajaʿa</span></div>
+      <div class="word-unit"><span class="arabic-word">إِلَى</span><span class="word-meaning">to</span><span class="word-translit">ilā</span></div>
+      <div class="word-unit"><span class="arabic-word">أَهْلِهِ</span><span class="word-meaning">his family</span><span class="word-translit">ahlihi</span></div>
+      <div class="word-unit"><span class="arabic-word">آيِبُونَ</span><span class="word-meaning">returning</span><span class="word-translit">āyibūn</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">إِنْ</span><span class="word-meaning">if</span><span class="word-translit">in</span></div>
+      <div class="word-unit"><span class="arabic-word">شَاءَ</span><span class="word-meaning">wills</span><span class="word-translit">shā'a</span></div>
+      <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">llāhu</span></div>
+      <div class="word-unit"><span class="arabic-word">تَائِبُونَ</span><span class="word-meaning">repenting</span><span class="word-translit">tā'ibūn</span></div>
+      <div class="word-unit"><span class="arabic-word">عَابِدُونَ</span><span class="word-meaning">worshipping</span><span class="word-translit">ʿābidūn</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">لِرَبِّنَا</span><span class="word-meaning">to our lord</span><span class="word-translit">lirabbinā</span></div>
+      <div class="word-unit"><span class="arabic-word">حَامِدُونَ</span><span class="word-meaning">praising</span><span class="word-translit">ḥāmidūn</span></div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"From Ibn ʿUmar that the Prophet (ﷺ), when he traveled and mounted his riding camel, he said Allāhu Akbar three times and said: 'Glory be to Him Who has subjected this to us, and we were not capable of it, and indeed to our Lord we are returning.'</span>
+      <span class="chunk">Then he said: 'O Allah, I ask You in this journey of mine from righteousness, piety, and from actions that which You are pleased with. O Allah, make the journey easy for us and shorten the distance of the land.</span>
+      <span class="chunk">O Allah, You are the Companion in travel and the Caretaker for the family. O Allah, accompany us in our journey and take care of our families.'</span>
+      <span class="chunk">And when he returned to his family he would say: 'Returning, if Allah wills, repenting, worshipping, and to our Lord directing praise.'"</span>
+    </div>
+  </div>
+</div>
+
+<!-- Narrator Biography Overlay -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">ʿAbdullāh ibn ʿUmar ibn al-Khaṭṭāb (ra)</div>
+    <p><strong>Full name:</strong> ʿAbdullāh ibn ʿUmar ibn al-Khaṭṭāb al-ʿAdawī (d. 74 AH / 693 CE). Companion of the Prophet ﷺ, renowned for his strict adherence to the Sunnah, vast knowledge of fiqh and hadith. He narrated over 2,600 traditions.</p>
+    <p><strong>Role here:</strong> Direct narrator from the Prophet ﷺ, transmitting the authentic practice of supplication during travel. His reports are foundational in the chapters of adhkār and duʿā.</p>
+    <p><strong>Authenticity:</strong> This hadith is graded Ṣaḥīḥ (Darussalam) and recorded by Imām at-Tirmidhī.</p>
+  </div>
+</div>
+
+<!-- FRONTSTAGE: DU'Ā EXTRACTION (3 PARTS) -->
+
+<!-- Part 1: Takbir & Subhan alladhi -->
+<div class="section-label">Part 1 · Takbīr and the Qur’ānic Supplication</div>
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">greatest</span><span class="word-translit">akbaru</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">greatest</span><span class="word-translit">akbaru</span></div>
+    <div class="word-unit"><span class="arabic-word">اللهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَكْبَرُ</span><span class="word-meaning">greatest</span><span class="word-translit">akbaru</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">سُبْحَانَ</span><span class="word-meaning">glory be to</span><span class="word-translit">subḥāna</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّذِي</span><span class="word-meaning">the one who</span><span class="word-translit">alladhī</span></div>
+    <div class="word-unit"><span class="arabic-word">سَخَّرَ</span><span class="word-meaning">subjected</span><span class="word-translit">sakhkhara</span></div>
+    <div class="word-unit"><span class="arabic-word">لَنَا</span><span class="word-meaning">for us</span><span class="word-translit">lanā</span></div>
+    <div class="word-unit"><span class="arabic-word">هَذَا</span><span class="word-meaning">this</span><span class="word-translit">hādhā</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَمَا</span><span class="word-meaning">and not</span><span class="word-translit">wamā</span></div>
+    <div class="word-unit"><span class="arabic-word">كُنَّا</span><span class="word-meaning">we were</span><span class="word-translit">kunnā</span></div>
+    <div class="word-unit"><span class="arabic-word">لَهُ</span><span class="word-meaning">to it</span><span class="word-translit">lahū</span></div>
+    <div class="word-unit"><span class="arabic-word">مُقْرِنِينَ</span><span class="word-meaning">able</span><span class="word-translit">muqrinīn</span></div>
+    <div class="word-unit"><span class="arabic-word">وَإِنَّا</span><span class="word-meaning">and indeed we</span><span class="word-translit">wa-innā</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">إِلَى</span><span class="word-meaning">to</span><span class="word-translit">ilā</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّنَا</span><span class="word-meaning">our lord</span><span class="word-translit">rabbinā</span></div>
+    <div class="word-unit"><span class="arabic-word">لَمُنْقَلِبُونَ</span><span class="word-meaning">surely returning</span><span class="word-translit">lamunqalibūn</span></div>
+  </div>
+  <div class="translation">
+    <span class="chunk">“Allāhu Akbar, Allāhu Akbar, Allāhu Akbar. Glory be to Him Who has subjected this (animal/vehicle) to us, and we were not capable of it, and indeed to our Lord we are returning.”</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Jami` at-Tirmidhi 3447 (part 1)
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Part 2: Long travel du'ā -->
+<div class="section-label">Part 2 · The Comprehensive Travel Supplication</div>
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+    <div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">indeed i</span><span class="word-translit">innī</span></div>
+    <div class="word-unit"><span class="arabic-word">أَسْأَلُكَ</span><span class="word-meaning">ask you</span><span class="word-translit">as'aluka</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+    <div class="word-unit"><span class="arabic-word">سَفَرِي</span><span class="word-meaning">my journey</span><span class="word-translit">safarī</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">هَذَا</span><span class="word-meaning">this</span><span class="word-translit">hādhā</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">of</span><span class="word-translit">mina</span></div>
+    <div class="word-unit"><span class="arabic-word">الْبِرِّ</span><span class="word-meaning">righteousness</span><span class="word-translit">l-birri</span></div>
+    <div class="word-unit"><span class="arabic-word">وَالتَّقْوَى</span><span class="word-meaning">and piety</span><span class="word-translit">wat-taqwā</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمِنَ</span><span class="word-meaning">and of</span><span class="word-translit">wamina</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">الْعَمَلِ</span><span class="word-meaning">the action</span><span class="word-translit">l-ʿamali</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">what</span><span class="word-translit">mā</span></div>
+    <div class="word-unit"><span class="arabic-word">تَرْضَى</span><span class="word-meaning">you are pleased with</span><span class="word-translit">tarḍā</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+    <div class="word-unit"><span class="arabic-word">هَوِّنْ</span><span class="word-meaning">make easy</span><span class="word-translit">hawwin</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">عَلَيْنَا</span><span class="word-meaning">upon us</span><span class="word-translit">ʿalaynā</span></div>
+    <div class="word-unit"><span class="arabic-word">الْمَسِيرَ</span><span class="word-meaning">the journey</span><span class="word-translit">l-masīra</span></div>
+    <div class="word-unit"><span class="arabic-word">وَاطْوِ</span><span class="word-meaning">and fold</span><span class="word-translit">waṭwi</span></div>
+    <div class="word-unit"><span class="arabic-word">عَنَّا</span><span class="word-meaning">for us</span><span class="word-translit">ʿannā</span></div>
+    <div class="word-unit"><span class="arabic-word">بُعْدَ</span><span class="word-meaning">distance</span><span class="word-translit">buʿda</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">الأَرْضِ</span><span class="word-meaning">the land</span><span class="word-translit">l-arḍi</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div>
+    <div class="word-unit"><span class="arabic-word">الصَّاحِبُ</span><span class="word-meaning">the companion</span><span class="word-translit">ṣ-ṣāḥibu</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">السَّفَرِ</span><span class="word-meaning">the travel</span><span class="word-translit">s-safari</span></div>
+    <div class="word-unit"><span class="arabic-word">وَالْخَلِيفَةُ</span><span class="word-meaning">and the caretaker</span><span class="word-translit">wal-khalīfatu</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">for</span><span class="word-translit">fī</span></div>
+    <div class="word-unit"><span class="arabic-word">الأَهْلِ</span><span class="word-meaning">the family</span><span class="word-translit">l-ahli</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اصْحَبْنَا</span><span class="word-meaning">accompany us</span><span class="word-translit">aṣḥabnā</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+    <div class="word-unit"><span class="arabic-word">سَفَرِنَا</span><span class="word-meaning">our travel</span><span class="word-translit">safarinā</span></div>
+    <div class="word-unit"><span class="arabic-word">وَاخْلُفْنَا</span><span class="word-meaning">and take care of us (family)</span><span class="word-translit">wakhlufnā</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَهْلِنَا</span><span class="word-meaning">our family</span><span class="word-translit">ahlinā</span></div>
+  </div>
+  <div class="translation">
+    <span class="chunk">“O Allah, I ask You in this journey of mine from righteousness, piety, and from actions that which You are pleased with. O Allah, make the journey easy for us and shorten the distance of the land. O Allah, You are the Companion in travel and the Caretaker for the family. O Allah, accompany us in our journey and take care of our families.”</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Jami` at-Tirmidhi 3447 (part 2)
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Part 3: Return supplication -->
+<div class="section-label">Part 3 · Upon Returning to Family</div>
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">آيِبُونَ</span><span class="word-meaning">returning</span><span class="word-translit">āyibūn</span></div>
+    <div class="word-unit"><span class="arabic-word">إِنْ</span><span class="word-meaning">if</span><span class="word-translit">in</span></div>
+    <div class="word-unit"><span class="arabic-word">شَاءَ</span><span class="word-meaning">wills</span><span class="word-translit">shā'a</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">llāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">تَائِبُونَ</span><span class="word-meaning">repenting</span><span class="word-translit">tā'ibūn</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">عَابِدُونَ</span><span class="word-meaning">worshipping</span><span class="word-translit">ʿābidūn</span></div>
+    <div class="word-unit"><span class="arabic-word">لِرَبِّنَا</span><span class="word-meaning">to our lord</span><span class="word-translit">lirabbinā</span></div>
+    <div class="word-unit"><span class="arabic-word">حَامِدُونَ</span><span class="word-meaning">praising</span><span class="word-translit">ḥāmidūn</span></div>
+  </div>
+  <div class="translation">
+    <span class="chunk">“(We are) Returning, if Allah wills, repenting, worshipping, and to our Lord directing the praise.”</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Jami` at-Tirmidhi 3447 (part 3)
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Recorded by Imām Abū ʿĪsā at-Tirmidhī in <em>Jāmiʿ aṣ-Ṣaḥīḥ</em> (Kitāb ad-Daʿawāt, Bāb mā yaqūlu idhā rakiba an-nāqah, Hadith 3447). Graded <strong>Ṣaḥīḥ</strong> by Dārusalām. The ḥadīth is ḥasan gharīb from this chain according to at-Tirmidhī, but authentic and recommended for practice.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/tirmidhi:3447" target="_blank" rel="noopener">
+      https://sunnah.com/tirmidhi:3447
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>
