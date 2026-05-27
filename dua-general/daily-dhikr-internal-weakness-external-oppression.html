@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Shields: Internal Weakness & External Oppression</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Daily Shields 🛡: Internal Weakness & External Oppression</h1>
+  <p>Worry, grief, incapacity, laziness, miserliness, cowardice & being overpowered by men</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 When did the Prophet ﷺ recite this?</div>
+  <div class="info-body">
+    <p>This comprehensive du‘ā was among the supplications the Messenger of Allah ﷺ never abandoned. He would recite it regularly — morning and evening, and especially when feeling overwhelmed by life's burdens or fearing the dominance of others. It is a shield against internal weaknesses and external oppression.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain &amp; Context</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Anas ibn Mālik</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      “The Messenger of Allah ﷺ had supplications that he never omitted to recite. He used to say: ‘O Allah, I seek refuge with You from worry, grief, incapacity, laziness, miserliness, cowardice and being overpowered by (other) men.’”
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration</div>
+
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَخْبَرَنَا</span>
+        <span class="word-meaning" style="color: #666;">informed us</span>
+        <span class="word-translit" style="color: #777;">akhbaranā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَلِيُّ بْنُ الْمُنْذِرِ</span>
+        <span class="word-meaning" style="color: #666;">ʿAlī ibn al-Mundhir</span>
+        <span class="word-translit" style="color: #777;">ʿaliyyu‿bnu‿l-mundhiri</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنِ ابْنِ فُضَيْلٍ</span>
+        <span class="word-meaning" style="color: #666;">from ibn Fuḍayl</span>
+        <span class="word-translit" style="color: #777;">ʿani‿bni‿fuḍayl</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">قَالَ</span>
+        <span class="word-meaning" style="color: #666;">he said</span>
+        <span class="word-translit" style="color: #777;">qāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَدَّثَنَا</span>
+        <span class="word-meaning" style="color: #666;">narrated to us</span>
+        <span class="word-translit" style="color: #777;">ḥaddathanā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">مُحَمَّدُ بْنُ إِسْحَاقَ</span>
+        <span class="word-meaning" style="color: #666;">Muḥammad ibn Isḥāq</span>
+        <span class="word-translit" style="color: #777;">muḥammadu‿bnu‿isḥāqa</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنِ الْمِنْهَالِ بْنِ عَمْرٍو</span>
+        <span class="word-meaning" style="color: #666;">from al-Minhāl ibn ʿAmr</span>
+        <span class="word-translit" style="color: #777;">ʿani‿l-minhāli‿bni‿ʿamr</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَنْ أَنَسِ بْنِ مَالِكٍ</span>
+        <span class="word-meaning" style="color: #666;">from Anas ibn Mālik</span>
+        <span class="word-translit" style="color: #777;">ʿan anasi‿bni‿mālik</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">قَالَ</span>
+        <span class="word-meaning" style="color: #666;">he said</span>
+        <span class="word-translit" style="color: #777;">qāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كَانَ</span>
+        <span class="word-meaning" style="color: #666;">was</span>
+        <span class="word-translit" style="color: #777;">kāna</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لِرَسُولِ اللَّهِ</span>
+        <span class="word-meaning" style="color: #666;">for Messenger of Allah</span>
+        <span class="word-translit" style="color: #777;">li-rasūli‿llāh</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ</span>
+        <span class="word-meaning" style="color: #666;">ﷺ</span>
+        <span class="word-translit" style="color: #777;">ṣallā‿llāhu ʿalayhi wa-sallam</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">دَعَوَاتٌ</span>
+        <span class="word-meaning" style="color: #666;">supplications</span>
+        <span class="word-translit" style="color: #777;">daʿawātun</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لَا يَدَعُهُنَّ</span>
+        <span class="word-meaning" style="color: #666;">he never omitted them</span>
+        <span class="word-translit" style="color: #777;">lā yadaʿuhunna</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كَانَ يَقُولُ</span>
+        <span class="word-meaning" style="color: #666;">he used to say</span>
+        <span class="word-translit" style="color: #777;">kāna yaqūlu</span>
+      </div>
+
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"ʿAlī ibn al-Mundhir informed us from Ibn Fuḍayl, he said: Muḥammad ibn Isḥāq narrated to us from al-Minhāl ibn ʿAmr, from Anas ibn Mālik, who said: </span>
+      <span class="chunk">The Messenger of Allah ﷺ had supplications that he never omitted. </span>
+      <span class="chunk">He used to say: "</span>
+    </div>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Anas ibn Mālik al-Anṣārī (d. 93 AH / 712 CE)</div>
+    <p><strong>Full name:</strong> Anas ibn Mālik ibn al-Naḍr al-Khazrajī. He served the Prophet ﷺ for ten years as his personal attendant. He was among the most prolific narrators of ḥadīth (over 2,286 narrations). He was the last of the major Companions to die in Basra.</p>
+    <p>His reliability is unanimously accepted (thiqah thābit). He transmitted from the Prophet ﷺ directly. Scholars like Aḥmad ibn Ḥanbal and Yaḥyā ibn Ma‘īn affirmed his authenticity. His narrations appear in all six canonical collections.</p>
+    <p><strong>Role here:</strong> Direct Companion (ṣaḥābī) reporting from the Messenger of Allah ﷺ — the primary source for this du‘ā. The chain through Minhāl and Ibn Isḥāq is graded Ṣaḥīḥ by Dārusalām.</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Complete Prophetic Supplication</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">اللَّهُمَّ</span>
+      <span class="word-meaning">o allah</span>
+      <span class="word-translit">allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">إِنِّي</span>
+      <span class="word-meaning">indeed i</span>
+      <span class="word-translit">innī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَعُوذُ</span>
+      <span class="word-meaning">i seek refuge</span>
+      <span class="word-translit">a‘ūdhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِكَ</span>
+      <span class="word-meaning">with you</span>
+      <span class="word-translit">bika</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مِنَ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">mina</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الْهَمِّ</span>
+      <span class="word-meaning">the worry</span>
+      <span class="word-translit">l-hammi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْحَزَنِ</span>
+      <span class="word-meaning">and the grief</span>
+      <span class="word-translit">wal-ḥazani</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْعَجْزِ</span>
+      <span class="word-meaning">and the incapacity</span>
+      <span class="word-translit">wal-‘ajzi</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَالْكَسَلِ</span>
+      <span class="word-meaning">and the laziness</span>
+      <span class="word-translit">wal-kasali</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْبُخْلِ</span>
+      <span class="word-meaning">and the miserliness</span>
+      <span class="word-translit">wal-bukhli</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَالْجُبْنِ</span>
+      <span class="word-meaning">and the cowardice</span>
+      <span class="word-translit">wal-jubni</span>
+    </div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَغَلَبَةِ</span>
+      <span class="word-meaning">and overpowering</span>
+      <span class="word-translit">wa ghalabati</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">الرِّجَالِ</span>
+      <span class="word-meaning">of (other) men</span>
+      <span class="word-translit">r-rijāl</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"O Allah, I seek refuge with You from worry and grief,</span>
+    <span class="chunk">from incapacity and laziness,</span>
+    <span class="chunk">from miserliness and cowardice,</span>
+    <span class="chunk">and from being overpowered by (other) men."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Sunan an-Nasa’i 5449 — Book 50, Hadith 22 | Also in Aḥmad, Abū Dāwūd 1541
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Recorded by Imām al-Nasā’ī in <em>As-Sunan al-Kubrā</em> (5449) through a chain from ʿAlī ibn al-Mundhir ← Ibn Fuḍayl ← Muḥammad ibn Isḥāq ← al-Minhāl ibn ʿAmr ← Anas ibn Mālik. The ḥadīth is graded <strong>Ṣaḥīḥ</strong> by Dārusalām and corroborated by narrations in Ṣaḥīḥ al-Bukhārī (6369, 6393), Muslim (2706), and Abū Dāwūd (1541). The text is mutawātir in meaning and practiced by the Prophet ﷺ regularly.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/nasai/50/22" target="_blank" rel="noopener">
+      https://sunnah.com/nasai/50/22
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>

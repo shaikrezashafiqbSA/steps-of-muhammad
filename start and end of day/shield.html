@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bismillāhi Alladhī Lā Yaḍurru – Morning & Evening Protection</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Bismillāhi Alladhī Lā Yaḍurru Maʿa Ismihi Shayʾ</h1>
+  <p>The Morning & Evening Invocation of Protection • Jamiʿ at-Tirmidhi 3388</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Context of this Supplication</div>
+  <div class="info-body">
+    <p>The Prophet ﷺ taught this powerful duʿā to be recited every morning and every evening, three times, as a shield against all harm from earth and heavens. ʿUthmān ibn ʿAffān (ra) narrated it, and his son Abān later experienced its reality when he missed a single day.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain &amp; Context (Part 1)</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Core Morning & Evening Duʿā</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِسْمِ</span><span class="word-meaning">in the name of</span><span class="word-translit">bismi</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّهِ</span><span class="word-meaning">allah</span><span class="word-translit">allāh</span></div>
+    <div class="word-unit"><span class="arabic-word">الَّذِي</span><span class="word-meaning">the one who</span><span class="word-translit">alladhī</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">not</span><span class="word-translit">lā</span></div>
+    <div class="word-unit"><span class="arabic-word">يَضُرُّ</span><span class="word-meaning">can cause harm</span><span class="word-translit">yaḍurru</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَعَ</span><span class="word-meaning">along with</span><span class="word-translit">maʿa</span></div>
+    <div class="word-unit"><span class="arabic-word">اسْمِهِ</span><span class="word-meaning">his name</span><span class="word-translit">ismihi</span></div>
+    <div class="word-unit"><span class="arabic-word">شَيْءٌ</span><span class="word-meaning">anything</span><span class="word-translit">shayʾun</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+    <div class="word-unit"><span class="arabic-word">الْأَرْضِ</span><span class="word-meaning">the earth</span><span class="word-translit">l-arḍi</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَا</span><span class="word-meaning">nor</span><span class="word-translit">wa lā</span></div>
+    <div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div>
+    <div class="word-unit"><span class="arabic-word">السَّمَاءِ</span><span class="word-meaning">the heaven</span><span class="word-translit">s-samāʾi</span></div>
+    <div class="word-unit"><span class="arabic-word">وَهُوَ</span><span class="word-meaning">and he is</span><span class="word-translit">wa huwa</span></div>
+    <div class="word-unit"><span class="arabic-word">السَّمِيعُ</span><span class="word-meaning">the all-hearing</span><span class="word-translit">s-samīʿu</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">الْعَلِيمُ</span><span class="word-meaning">the all-knowing</span><span class="word-translit">l-ʿalīmu</span></div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"In the Name of Allah,</span>
+    <span class="chunk">the One with Whose Name nothing in the earth or the heavens can cause harm,</span>
+    <span class="chunk">and He is the All-Hearing, the All-Knowing."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ḥasan</span>
+    Jamiʿ at-Tirmidhi 3388 • Book 48, Hadith 19 • Vol. 6, Book 45, Hadith 3388
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section-label">Part 2 · The Post-Narration (Aban's Personal Account)</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَكَانَ</span><span class="word-meaning">and had been</span><span class="word-translit">wa kāna</span></div>
+    <div class="word-unit"><span class="arabic-word">أَبَانُ</span><span class="word-meaning">abān</span><span class="word-translit">abānu</span></div>
+    <div class="word-unit"><span class="arabic-word">قَدْ</span><span class="word-meaning">indeed</span><span class="word-translit">qad</span></div>
+    <div class="word-unit"><span class="arabic-word">أَصَابَهُ</span><span class="word-meaning">struck him</span><span class="word-translit">aṣābahu</span></div>
+    <div class="word-unit"><span class="arabic-word">طَرَفُ</span><span class="word-meaning">a type of</span><span class="word-translit">ṭarafu</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَالَجٍ</span><span class="word-meaning">semi-paralysis</span><span class="word-translit">fālajin</span></div>
+    <div class="word-unit"><span class="arabic-word">فَجَعَلَ</span><span class="word-meaning">so began</span><span class="word-translit">fajaʿala</span></div>
+    <div class="word-unit"><span class="arabic-word">الرَّجُلُ</span><span class="word-meaning">the man</span><span class="word-translit">r-rajulu</span></div>
+    <div class="word-unit"><span class="arabic-word">يَنْظُرُ</span><span class="word-meaning">to look</span><span class="word-translit">yanẓuru</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَيْهِ</span><span class="word-meaning">at him</span><span class="word-translit">ilayhi</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">فَقَالَ</span><span class="word-meaning">so he said</span><span class="word-translit">faqāla</span></div>
+    <div class="word-unit"><span class="arabic-word">لَهُ</span><span class="word-meaning">to him</span><span class="word-translit">lahu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَبَانُ</span><span class="word-meaning">abān</span><span class="word-translit">abānu</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">what</span><span class="word-translit">mā</span></div>
+    <div class="word-unit"><span class="arabic-word">تَنْظُرُ</span><span class="word-meaning">are you looking at</span><span class="word-translit">tanẓuru</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَمَا</span><span class="word-meaning">indeed</span><span class="word-translit">amā</span></div>
+    <div class="word-unit"><span class="arabic-word">إِنَّ</span><span class="word-meaning">verily</span><span class="word-translit">inna</span></div>
+    <div class="word-unit"><span class="arabic-word">الْحَدِيثَ</span><span class="word-meaning">the hadith</span><span class="word-translit">l-ḥadītha</span></div>
+    <div class="word-unit"><span class="arabic-word">كَمَا</span><span class="word-meaning">as</span><span class="word-translit">kamā</span></div>
+    <div class="word-unit"><span class="arabic-word">حَدَّثْتُكَ</span><span class="word-meaning">i narrated to you</span><span class="word-translit">ḥaddathtuka</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَكِنِّي</span><span class="word-meaning">but i</span><span class="word-translit">walākinnī</span></div>
+    <div class="word-unit"><span class="arabic-word">لَمْ</span><span class="word-meaning">not</span><span class="word-translit">lam</span></div>
+    <div class="word-unit"><span class="arabic-word">أَقُلْهُ</span><span class="word-meaning">i said it</span><span class="word-translit">aqulhu</span></div>
+    <div class="word-unit"><span class="arabic-word">يَوْمَئِذٍ</span><span class="word-meaning">that day</span><span class="word-translit">yawmaʾidhin</span></div>
+    <div class="word-unit"><span class="arabic-word">لِيُمْضِيَ</span><span class="word-meaning">so that allah might carry out</span><span class="word-translit">liyumḍiya</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَيَّ</span><span class="word-meaning">upon me</span><span class="word-translit">ʿalayya</span></div>
+    <div class="word-unit"><span class="arabic-word">قَدَرَهُ</span><span class="word-meaning">his decree</span><span class="word-translit">qadarahu</span></div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"And Abān had been stricken with a type of semi-paralysis,</span>
+    <span class="chunk">so a man began to look at him.</span>
+    <span class="chunk">Abān said to him,</span>
+    <span class="chunk">'What are you looking at?</span>
+    <span class="chunk">Indeed the Hadith is as I reported it to you,</span>
+    <span class="chunk">but I did not say it one day,</span>
+    <span class="chunk">so Allah carried out His decree upon me.'"</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ḥasan</span>
+    Jamiʿ at-Tirmidhi 3388 • Book 48, Hadith 19
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>This ḥadīth is recorded by Imām at-Tirmidhī in his Jāmiʿ (Book 48, Chapter 13, Hadith 3388). He declared it <strong>Ḥasan Ṣaḥīḥ Gharīb</strong>. The chain goes through ʿAbd ar-Raḥmān ibn Abī az-Zinād from his father from Abān ibn ʿUthmān from his father ʿUthmān ibn ʿAffān (ra) directly from the Prophet ﷺ. The duʿā is to be recited three times every morning and every evening. The narration includes Abān's personal testimony of its effectiveness when observed and consequence when omitted.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/tirmidhi:3388" target="_blank" rel="noopener">
+      https://sunnah.com/tirmidhi:3388
+    </a>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Abān ibn ʿUthmān ibn ʿAffān (d. 105 AH / 723 CE)</div>
+    <p><strong>Full name:</strong> Abān ibn ʿUthmān ibn ʿAffān al-Umawī al-Madanī. Born during the caliphate of his father ʿUthmān (ra), he grew up in Medina and became a renowned scholar of ḥadīth, fiqh, and qirāʾāt. He served as the governor of Medina under ʿAbd al-Malik ibn Marwān and later under his son al-Walīd.</p>
+    <p>He narrated from his father ʿUthmān, Zayd ibn Thābit, and other Companions. His narrations appear in the six major ḥadīth collections. He was known for his piety, reliability, and for preserving this specific duʿā along with its experiential lesson. He died in Medina around 105 AH.</p>
+    <p><strong>Role here:</strong> Direct narrator from his father ʿUthmān (ra), and the living witness to the duʿā's power — he shares how missing it one day led to affliction, proving the ḥadīth's truth through personal trial.</p>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation();
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+
+</body>
+</html>

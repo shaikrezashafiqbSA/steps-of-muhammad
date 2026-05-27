@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allahumma a'innī 'alā dhikrika – Du'ā after prayer</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>اللهم أعني على ذكرك وشكرك وحسن عبادتك</h1>
+  <p>Allahumma a'innī 'alā dhikrika, wa shukrika, wa ḥusni 'ibādatika</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 The Beloved Advice of the Messenger ﷺ</div>
+  <div class="info-body">
+    <p>The Prophet Muhammad (ﷺ) held the hand of Mu‘ādh ibn Jabal (رضي الله عنه), declared his love for him, and gifted him this everlasting supplication. He instructed Mu‘ādh to never abandon this du‘ā after every obligatory prayer — a concise but profound request for divine assistance in three pillars of worship: remembrance, gratitude, and excellence in devotion.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">📜 The Narration Chain &amp; Context</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Mu‘ādh ibn Jabal</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "The Messenger of Allah (ﷺ) took hold of my hand and said, 'O Mu‘ādh! By Allah I love you, so I advise you to never forget to recite after every prayer: O Allah, help me remember You, to be grateful to You, and to worship You in an excellent manner.'"
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (full text)</div>
+
+    <!-- Arabic narration broken into word-units, max 5 per row -->
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">وَعَنْ</span><span class="word-meaning" style="color: #666;">and from</span><span class="word-translit" style="color: #777;">wa 'an</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">مُعَاذٍ</span><span class="word-meaning" style="color: #666;">mu‘ādh</span><span class="word-translit" style="color: #777;">mu‘ādhin</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">رَضِيَ</span><span class="word-meaning" style="color: #666;">may allah be pleased</span><span class="word-translit" style="color: #777;">raḍiya</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">ٱللَّهُ</span><span class="word-meaning" style="color: #666;">allah</span><span class="word-translit" style="color: #777;">allāhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">عَنْهُ</span><span class="word-meaning" style="color: #666;">about him</span><span class="word-translit" style="color: #777;">‘anhu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَنَّ</span><span class="word-meaning" style="color: #666;">that</span><span class="word-translit" style="color: #777;">anna</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">رَسُولَ</span><span class="word-meaning" style="color: #666;">messenger</span><span class="word-translit" style="color: #777;">rasūla</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">ٱللَّهِ</span><span class="word-meaning" style="color: #666;">allah</span><span class="word-translit" style="color: #777;">allāhi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">صَلَّى</span><span class="word-meaning" style="color: #666;">bless</span><span class="word-translit" style="color: #777;">ṣallā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">ٱللَّهُ</span><span class="word-meaning" style="color: #666;">allah</span><span class="word-translit" style="color: #777;">allāhu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">عَلَيْهِ</span><span class="word-meaning" style="color: #666;">upon him</span><span class="word-translit" style="color: #777;">‘alayhi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">وَسَلَّمَ</span><span class="word-meaning" style="color: #666;">and grant peace</span><span class="word-translit" style="color: #777;">wa sallama</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَخَذَ</span><span class="word-meaning" style="color: #666;">took</span><span class="word-translit" style="color: #777;">akhadha</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">بِيَدِهِ</span><span class="word-meaning" style="color: #666;">by his hand</span><span class="word-translit" style="color: #777;">biyadihi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">وَقَالَ</span><span class="word-meaning" style="color: #666;">and said</span><span class="word-translit" style="color: #777;">wa qāla</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">يَا</span><span class="word-meaning" style="color: #666;">o</span><span class="word-translit" style="color: #777;">yā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">مُعَاذُ</span><span class="word-meaning" style="color: #666;">mu‘ādh</span><span class="word-translit" style="color: #777;">mu‘ādhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">وَٱللَّهِ</span><span class="word-meaning" style="color: #666;">by allah</span><span class="word-translit" style="color: #777;">wallāhi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">إِنِّي</span><span class="word-meaning" style="color: #666;">indeed i</span><span class="word-translit" style="color: #777;">innī</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">لَأُحِبُّكَ</span><span class="word-meaning" style="color: #666;">love you</span><span class="word-translit" style="color: #777;">la-uḥibbuka</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">فَقَالَ</span><span class="word-meaning" style="color: #666;">then he said</span><span class="word-translit" style="color: #777;">faqāla</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أُوصِيكَ</span><span class="word-meaning" style="color: #666;">i advise you</span><span class="word-translit" style="color: #777;">ūṣīka</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">يَا</span><span class="word-meaning" style="color: #666;">o</span><span class="word-translit" style="color: #777;">yā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">مُعَاذُ</span><span class="word-meaning" style="color: #666;">mu‘ādh</span><span class="word-translit" style="color: #777;">mu‘ādhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">لَا</span><span class="word-meaning" style="color: #666;">do not</span><span class="word-translit" style="color: #777;">lā</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">تَدَعَنَّ</span><span class="word-meaning" style="color: #666;">ever leave</span><span class="word-translit" style="color: #777;">tada‘anna</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">فِي</span><span class="word-meaning" style="color: #666;">in</span><span class="word-translit" style="color: #777;">fī</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">دُبُرِ</span><span class="word-meaning" style="color: #666;">after</span><span class="word-translit" style="color: #777;">duburi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">كُلِّ</span><span class="word-meaning" style="color: #666;">every</span><span class="word-translit" style="color: #777;">kulli</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">صَلَاةٍ</span><span class="word-meaning" style="color: #666;">prayer</span><span class="word-translit" style="color: #777;">ṣalātin</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">تَقُولُ</span><span class="word-meaning" style="color: #666;">you say</span><span class="word-translit" style="color: #777;">taqūlu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">ٱللَّهُمَّ</span><span class="word-meaning" style="color: #666;">o allah</span><span class="word-translit" style="color: #777;">allāhumma</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَعِنِّي</span><span class="word-meaning" style="color: #666;">help me</span><span class="word-translit" style="color: #777;">a‘innī</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">عَلَىٰ</span><span class="word-meaning" style="color: #666;">upon</span><span class="word-translit" style="color: #777;">‘alā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">ذِكْرِكَ</span><span class="word-meaning" style="color: #666;">remembrance of you</span><span class="word-translit" style="color: #777;">dhikrika</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">وَشُكْرِكَ</span><span class="word-meaning" style="color: #666;">and gratitude to you</span><span class="word-translit" style="color: #777;">wa shukrika</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">وَحُسْنِ</span><span class="word-meaning" style="color: #666;">and excellence</span><span class="word-translit" style="color: #777;">wa ḥusni</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">عِبَادَتِكَ</span><span class="word-meaning" style="color: #666;">worship of you</span><span class="word-translit" style="color: #777;">‘ibādatika</span></div>
+    </div>
+    <div class="arabic-line" style="margin-top: 8px;">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">رَوَاهُ</span><span class="word-meaning" style="color: #666;">narrated by</span><span class="word-translit" style="color: #777;">rawāhu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَبُو</span><span class="word-meaning" style="color: #666;">abū</span><span class="word-translit" style="color: #777;">abū</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">دَاوُدَ</span><span class="word-meaning" style="color: #666;">dāwūd</span><span class="word-translit" style="color: #777;">dāwūda</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">بِإِسْنَادٍ</span><span class="word-meaning" style="color: #666;">with a chain</span><span class="word-translit" style="color: #777;">bi’isnādin</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">صَحِيحٍ</span><span class="word-meaning" style="color: #666;">authentic</span><span class="word-translit" style="color: #777;">ṣaḥīḥin</span></div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"And from Mu‘ādh (may Allah be pleased with him) that the Messenger of Allah (ﷺ) took his hand and said: </span>
+      <span class="chunk">'O Mu‘ādh, by Allah I love you, so I advise you: never abandon after every prayer to say: </span>
+      <span class="chunk">O Allah, help me remember You, thank You, and perfect my worship of You.'</span>
+      <span class="chunk">Narrated by Abu Dawud with an authentic chain."</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">✨ The Core Supplication · After Every Prayer</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <!-- Du'ā word-units with full tashkeel, gloss, transliteration -->
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">ٱللَّهُمَّ</span>
+      <span class="word-meaning">o allah</span>
+      <span class="word-translit">allāhumma</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَعِنِّي</span>
+      <span class="word-meaning">help me</span>
+      <span class="word-translit">a‘innī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَىٰ</span>
+      <span class="word-meaning">upon / to</span>
+      <span class="word-translit">‘alā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ذِكْرِكَ</span>
+      <span class="word-meaning">remembrance of you</span>
+      <span class="word-translit">dhikrika</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">وَشُكْرِكَ</span>
+      <span class="word-meaning">and gratitude to you</span>
+      <span class="word-translit">wa shukrika</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَحُسْنِ</span>
+      <span class="word-meaning">and excellence / beauty</span>
+      <span class="word-translit">wa ḥusni</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عِبَادَتِكَ</span>
+      <span class="word-meaning">worship of you</span>
+      <span class="word-translit">‘ibādatika</span>
+    </div>
+  </div>
+
+  <!-- Translation chunks (each ≤10 words) -->
+  <div class="translation">
+    <span class="chunk">O Allah, help me remember You,</span>
+    <span class="chunk">to be grateful to You,</span>
+    <span class="chunk">and to worship You in an excellent manner.</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Riyad as-Salihin 1422 | Book 15, Hadith 15 | Abu Dawud (authentic chain)
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Recorded by Imam Abū Dāwūd in his Sunan (no. 1522) with a <strong>ṣaḥīḥ (authentic)</strong> chain. Imam al-Nawawi included it in <em>Riyad as-Salihin</em> (Book of Remembrance, Chapter on the Excellence of Dhikr, hadith 1422). The chain goes through Mu‘ādh ibn Jabal directly to the Prophet ﷺ, and scholars have unanimously graded its core statement as reliable and actionable.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/riyadussalihin:1422" target="_blank" rel="noopener">
+      https://sunnah.com/riyadussalihin:1422
+    </a>
+  </div>
+</div>
+
+<!-- Narrator biography overlay (hidden by default) -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Mu‘ādh ibn Jabal (مُعَاذ بْن جَبَل)</div>
+    <p><strong>Full name:</strong> Mu‘ādh ibn Jabal ibn ‘Amr ibn Aws al-Khazrajī al-Ansārī. A eminent companion from the tribe of Khazraj in Medina. He embraced Islam at a young age during the second ‘Aqabah pledge. The Prophet ﷺ described him as “the most knowledgeable of my Ummah about what is lawful and unlawful.” He was appointed as governor and judge over Yemen. Died in 18 AH (639 CE) during the plague of ‘Amawās.</p>
+    <p><strong>Role here:</strong> Direct narrator of this hadīth; the Prophet ﷺ held his hand, expressed personal love, and commanded him to preserve and practice this du‘ā after every prayer. His transmission is carried through reliable chains into the Sunan and the Riyad collections.</p>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>
