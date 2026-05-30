@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayyid al-Istighfār – The Master of Forgiveness</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Sayyid al-Istighfār</h1>
+  <p>The Master of Seeking Forgiveness – Most Superior Du'ā for Repentance</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 When to Recite</div>
+  <div class="info-body">
+    <p>This supreme supplication for forgiveness was taught by the Prophet Muhammad (ﷺ) as the most excellent way to ask Allah for pardon. It is to be recited in the morning and evening with firm faith, and whoever dies on that day or night will enter Paradise. It acknowledges Allah's lordship, His creation of us, our covenant with Him, and our sins — ending with seeking His exclusive forgiveness.</p>
+  </div>
+</div>
+
+<!-- Narration Drawer for full hadith chain & context -->
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">The Narration Chain &amp; Context</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Shaddād bin Aws</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">narrated:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "The Prophet (ﷺ) said: 'The most superior way of asking for forgiveness from Allah is: O Allah, You are my Lord, there is none worthy of worship except You. You have created me, and I am Your servant, and I am faithful to Your covenant and promise as much as I can. I seek refuge in You from the evil of what I have done. I acknowledge Your blessings upon me, and I admit my sins. So forgive me, for none forgives sins except You.' Then the Prophet added: 'If somebody recites it during the day with firm faith in it, and dies on the same day before the evening, he will be from the people of Paradise; and if somebody recites it at night with firm faith in it, and dies before the morning, he will be from the people of Paradise.'"
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (Full Hadith)</div>
+
+    <!-- Full hadith chain in word-by-word format: first part of narration -->
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">حَدَّثَنَا</span><span class="word-meaning">narrated to us</span><span class="word-translit">ḥaddathanā</span></div>
+      <div class="word-unit"><span class="arabic-word">أَبُو</span><span class="word-meaning">abū</span><span class="word-translit">abū</span></div>
+      <div class="word-unit"><span class="arabic-word">مَعْمَرٍ</span><span class="word-meaning">maʿmar</span><span class="word-translit">maʿmarin</span></div>
+      <div class="word-unit"><span class="arabic-word">حَدَّثَنَا</span><span class="word-meaning">narrated to us</span><span class="word-translit">ḥaddathanā</span></div>
+      <div class="word-unit"><span class="arabic-word">عَبْدُ</span><span class="word-meaning">ʿabd</span><span class="word-translit">ʿabdu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">الْوَارِثِ</span><span class="word-meaning">al-wārith</span><span class="word-translit">al-wārithi</span></div>
+      <div class="word-unit"><span class="arabic-word">حَدَّثَنَا</span><span class="word-meaning">narrated to us</span><span class="word-translit">ḥaddathanā</span></div>
+      <div class="word-unit"><span class="arabic-word">الْحُسَيْنُ</span><span class="word-meaning">al-ḥusayn</span><span class="word-translit">al-ḥusaynu</span></div>
+      <div class="word-unit"><span class="arabic-word">حَدَّثَنَا</span><span class="word-meaning">narrated to us</span><span class="word-translit">ḥaddathanā</span></div>
+      <div class="word-unit"><span class="arabic-word">عَبْدُ</span><span class="word-meaning">ʿabd</span><span class="word-translit">ʿabdu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">اللَّهِ</span><span class="word-meaning">allāh</span><span class="word-translit">allāhi</span></div>
+      <div class="word-unit"><span class="arabic-word">ابْنُ</span><span class="word-meaning">ibn</span><span class="word-translit">ibnu</span></div>
+      <div class="word-unit"><span class="arabic-word">بُرَيْدَةَ</span><span class="word-meaning">buraydah</span><span class="word-translit">buraydah</span></div>
+      <div class="word-unit"><span class="arabic-word">عَنْ</span><span class="word-meaning">from</span><span class="word-translit">ʿan</span></div>
+      <div class="word-unit"><span class="arabic-word">بُشَيْرِ</span><span class="word-meaning">bushayr</span><span class="word-translit">bushayri</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">ابْنِ</span><span class="word-meaning">ibn</span><span class="word-translit">ibni</span></div>
+      <div class="word-unit"><span class="arabic-word">كَعْبٍ</span><span class="word-meaning">kaʿb</span><span class="word-translit">kaʿbin</span></div>
+      <div class="word-unit"><span class="arabic-word">الْعَدَوِيِّ</span><span class="word-meaning">al-ʿadawī</span><span class="word-translit">al-ʿadawiyy</span></div>
+      <div class="word-unit"><span class="arabic-word">قَالَ</span><span class="word-meaning">he said</span><span class="word-translit">qāla</span></div>
+      <div class="word-unit"><span class="arabic-word">حَدَّثَنِي</span><span class="word-meaning">narrated to me</span><span class="word-translit">ḥaddathanī</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">شَدَّادُ</span><span class="word-meaning">shaddād</span><span class="word-translit">shaddādu</span></div>
+      <div class="word-unit"><span class="arabic-word">ابْنُ</span><span class="word-meaning">ibn</span><span class="word-translit">bnu</span></div>
+      <div class="word-unit"><span class="arabic-word">أَوْسٍ</span><span class="word-meaning">aws</span><span class="word-translit">aws</span></div>
+      <div class="word-unit"><span class="arabic-word">رَضِيَ</span><span class="word-meaning">may allah be pleased</span><span class="word-translit">raḍiya</span></div>
+      <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allāh</span><span class="word-translit">allāhu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">عَنْهُ</span><span class="word-meaning">about him</span><span class="word-translit">ʿanhu</span></div>
+      <div class="word-unit"><span class="arabic-word">عَنِ</span><span class="word-meaning">from</span><span class="word-translit">ʿani</span></div>
+      <div class="word-unit"><span class="arabic-word">النَّبِيِّ</span><span class="word-meaning">the prophet</span><span class="word-translit">al-nabiyy</span></div>
+      <div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">may allah bless</span><span class="word-translit">ṣallā</span></div>
+      <div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">allāhu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span><span class="word-translit">ʿalayhi</span></div>
+      <div class="word-unit"><span class="arabic-word">وَسَلَّمَ</span><span class="word-meaning">and granted peace</span><span class="word-translit">wasallam</span></div>
+      <div class="word-unit"><span class="arabic-word">قَالَ</span><span class="word-meaning">he said</span><span class="word-translit">qāla</span></div>
+      <div class="word-unit"><span class="arabic-word">سَيِّدُ</span><span class="word-meaning">the master</span><span class="word-translit">sayyidu</span></div>
+      <div class="word-unit"><span class="arabic-word">الِاسْتِغْفَارِ</span><span class="word-meaning">of seeking forgiveness</span><span class="word-translit">al-istighfār</span></div>
+    </div>
+
+    <!-- The second narration section after du'ā (Prophet's explanation) -->
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Prophet's Statement on Its Virtue</div>
+    
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">قَالَ</span><span class="word-meaning">he said</span><span class="word-translit">qāla</span></div>
+      <div class="word-unit"><span class="arabic-word">وَمَنْ</span><span class="word-meaning">and whoever</span><span class="word-translit">waman</span></div>
+      <div class="word-unit"><span class="arabic-word">قَالَهَا</span><span class="word-meaning">recites it</span><span class="word-translit">qālahā</span></div>
+      <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">during</span><span class="word-translit">mina</span></div>
+      <div class="word-unit"><span class="arabic-word">النَّهَارِ</span><span class="word-meaning">the day</span><span class="word-translit">al-nahār</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">مُوقِنًا</span><span class="word-meaning">with certainty</span><span class="word-translit">mūqinan</span></div>
+      <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">in it</span><span class="word-translit">bihā</span></div>
+      <div class="word-unit"><span class="arabic-word">فَمَاتَ</span><span class="word-meaning">and dies</span><span class="word-translit">famāta</span></div>
+      <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">of</span><span class="word-translit">min</span></div>
+      <div class="word-unit"><span class="arabic-word">يَوْمِهِ</span><span class="word-meaning">his day</span><span class="word-translit">yawmihi</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">قَبْلَ</span><span class="word-meaning">before</span><span class="word-translit">qabla</span></div>
+      <div class="word-unit"><span class="arabic-word">أَنْ</span><span class="word-meaning">that</span><span class="word-translit">an</span></div>
+      <div class="word-unit"><span class="arabic-word">يُمْسِيَ</span><span class="word-meaning">he enters the evening</span><span class="word-translit">yumsiya</span></div>
+      <div class="word-unit"><span class="arabic-word">فَهُوَ</span><span class="word-meaning">then he</span><span class="word-translit">fahuwa</span></div>
+      <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span><span class="word-translit">min</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">أَهْلِ</span><span class="word-meaning">the people</span><span class="word-translit">ahli</span></div>
+      <div class="word-unit"><span class="arabic-word">الْجَنَّةِ</span><span class="word-meaning">of paradise</span><span class="word-translit">al-jannah</span></div>
+      <div class="word-unit"><span class="arabic-word">وَمَنْ</span><span class="word-meaning">and whoever</span><span class="word-translit">waman</span></div>
+      <div class="word-unit"><span class="arabic-word">قَالَهَا</span><span class="word-meaning">recites it</span><span class="word-translit">qālahā</span></div>
+      <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">during</span><span class="word-translit">mina</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">اللَّيْلِ</span><span class="word-meaning">the night</span><span class="word-translit">al-layl</span></div>
+      <div class="word-unit"><span class="arabic-word">وَهُوَ</span><span class="word-meaning">and he</span><span class="word-translit">wahuwa</span></div>
+      <div class="word-unit"><span class="arabic-word">مُوقِنٌ</span><span class="word-meaning">certain</span><span class="word-translit">mūqinun</span></div>
+      <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">in it</span><span class="word-translit">bihā</span></div>
+      <div class="word-unit"><span class="arabic-word">فَمَاتَ</span><span class="word-meaning">and dies</span><span class="word-translit">famāta</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">قَبْلَ</span><span class="word-meaning">before</span><span class="word-translit">qabla</span></div>
+      <div class="word-unit"><span class="arabic-word">أَنْ</span><span class="word-meaning">that</span><span class="word-translit">an</span></div>
+      <div class="word-unit"><span class="arabic-word">يُصْبِحَ</span><span class="word-meaning">he enters the morning</span><span class="word-translit">yuṣbiḥa</span></div>
+      <div class="word-unit"><span class="arabic-word">فَهْوَ</span><span class="word-meaning">then he</span><span class="word-translit">fahwa</span></div>
+      <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span><span class="word-translit">min</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word">أَهْلِ</span><span class="word-meaning">the people</span><span class="word-translit">ahli</span></div>
+      <div class="word-unit"><span class="arabic-word">الْجَنَّةِ</span><span class="word-meaning">of paradise</span><span class="word-translit">al-jannah</span></div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"Narrated to us Abū Maʿmar: Narrated to us ʿAbd al-Wārith: Narrated to us al-Ḥusayn: Narrated to us ʿAbdullāh ibn Buraydah, from Bushayr ibn Kaʿb al-ʿAdawī, who said: Narrated to me Shaddād ibn Aws (may Allah be pleased with him), from the Prophet (ﷺ) who said: 'The master of seeking forgiveness is that you say: O Allah, You are my Lord...' He added: 'And whoever recites it during the day with firm faith in it, and dies on that day before the evening — he will be from the people of Paradise; and whoever recites it at night while certain in it, and dies before the morning — he will be from the people of Paradise.'"</span>
+    </div>
+  </div>
+</div>
+
+<!-- Narrator overlay biography -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Shaddād ibn Aws (raḍiyallāhu ʿanhu)</div>
+    <p><strong>Full name:</strong> Shaddād ibn Aws ibn Thābit al-Anṣārī. A distinguished Companion of the Prophet (ﷺ) from the tribe of Khazraj in Medina. He was known for his profound piety, knowledge, and transmission of several key ḥadīth. He passed away in 58 AH (678 CE) in Palestine during the caliphate of Muʿāwiyah.</p>
+    <p>He was a judge in Jerusalem under Muʿāwiyah and is considered a reliable narrator whose aḥādīth are recorded in the Six Canonical Books, including Ṣaḥīḥ al-Bukhārī and Ṣaḥīḥ Muslim.</p>
+    <p><strong>Role here:</strong> Direct narrator from the Prophet (ﷺ) of this supreme supplication, quoted by his student Bushayr ibn Kaʿb, forming a ṣaḥīḥ chain through ʿAbdullāh ibn Buraydah and the early traditionists.</p>
+  </div>
+</div>
+
+<!-- Part Label -->
+<div class="section-label">Part 1 · The Du'ā of Sayyid al-Istighfār (Master Supplication for Forgiveness)</div>
+
+<!-- FRONTSTAGE: The pure du'ā, outside the drawer -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div>
+    <div class="word-unit"><span class="arabic-word">رَبِّي</span><span class="word-meaning">my lord</span><span class="word-translit">rabbī</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَٰهَ</span><span class="word-meaning">deity</span><span class="word-translit">ilāha</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div>
+    <div class="word-unit"><span class="arabic-word">خَلَقْتَنِي</span><span class="word-meaning">you created me</span><span class="word-translit">khalaqtanī</span></div>
+    <div class="word-unit"><span class="arabic-word">وَأَنَا</span><span class="word-meaning">and i</span><span class="word-translit">wa-anā</span></div>
+    <div class="word-unit"><span class="arabic-word">عَبْدُكَ</span><span class="word-meaning">your slave</span><span class="word-translit">ʿabduka</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَأَنَا</span><span class="word-meaning">and i</span><span class="word-translit">wa-anā</span></div>
+    <div class="word-unit"><span class="arabic-word">عَلَىٰ</span><span class="word-meaning">upon</span><span class="word-translit">ʿalā</span></div>
+    <div class="word-unit"><span class="arabic-word">عَهْدِكَ</span><span class="word-meaning">your covenant</span><span class="word-translit">ʿahdika</span></div>
+    <div class="word-unit"><span class="arabic-word">وَوَعْدِكَ</span><span class="word-meaning">and your promise</span><span class="word-translit">wawaʿdika</span></div>
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">as much as</span><span class="word-translit">mā</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">اسْتَطَعْتُ</span><span class="word-meaning">i am able</span><span class="word-translit">istaṭaʿtu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَعُوذُ</span><span class="word-meaning">i seek refuge</span><span class="word-translit">aʿūdhu</span></div>
+    <div class="word-unit"><span class="arabic-word">بِكَ</span><span class="word-meaning">in you</span><span class="word-translit">bika</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span><span class="word-translit">min</span></div>
+    <div class="word-unit"><span class="arabic-word">شَرِّ</span><span class="word-meaning">the evil</span><span class="word-translit">sharri</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">مَا</span><span class="word-meaning">of what</span><span class="word-translit">mā</span></div>
+    <div class="word-unit"><span class="arabic-word">صَنَعْتُ</span><span class="word-meaning">i have done</span><span class="word-translit">ṣanaʿtu</span></div>
+    <div class="word-unit"><span class="arabic-word">أَبُوءُ</span><span class="word-meaning">i acknowledge</span><span class="word-translit">abūʾu</span></div>
+    <div class="word-unit"><span class="arabic-word">لَكَ</span><span class="word-meaning">to you</span><span class="word-translit">laka</span></div>
+    <div class="word-unit"><span class="arabic-word">بِنِعْمَتِكَ</span><span class="word-meaning">with your blessing</span><span class="word-translit">biniʿmatika</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">عَلَيَّ</span><span class="word-meaning">upon me</span><span class="word-translit">ʿalayya</span></div>
+    <div class="word-unit"><span class="arabic-word">وَأَبُوءُ</span><span class="word-meaning">and i confess</span><span class="word-translit">wa-abūʾu</span></div>
+    <div class="word-unit"><span class="arabic-word">لَكَ</span><span class="word-meaning">to you</span><span class="word-translit">laka</span></div>
+    <div class="word-unit"><span class="arabic-word">بِذَنْبِي</span><span class="word-meaning">with my sin</span><span class="word-translit">bidhanbī</span></div>
+    <div class="word-unit"><span class="arabic-word">فَاغْفِرْ</span><span class="word-meaning">so forgive</span><span class="word-translit">faghfir</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">لِي</span><span class="word-meaning">me</span><span class="word-translit">lī</span></div>
+    <div class="word-unit"><span class="arabic-word">فَإِنَّهُ</span><span class="word-meaning">for indeed he</span><span class="word-translit">fa-innahū</span></div>
+    <div class="word-unit"><span class="arabic-word">لَا</span><span class="word-meaning">does not</span><span class="word-translit">lā</span></div>
+    <div class="word-unit"><span class="arabic-word">يَغْفِرُ</span><span class="word-meaning">forgive</span><span class="word-translit">yaghfiru</span></div>
+    <div class="word-unit"><span class="arabic-word">الذُّنُوبَ</span><span class="word-meaning">the sins</span><span class="word-translit">al-dhunūba</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">إِلَّا</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div>
+    <div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"O Allah, You are my Lord,</span>
+    <span class="chunk">none has the right to be worshipped except You.</span>
+    <span class="chunk">You created me, and I am Your servant,</span>
+    <span class="chunk">and I am faithful to Your covenant and promise as much as I can.</span>
+    <span class="chunk">I seek refuge in You from the evil of what I have done.</span>
+    <span class="chunk">I acknowledge Your blessings upon me,</span>
+    <span class="chunk">and I admit my sins.</span>
+    <span class="chunk">So forgive me, for indeed none forgives sins except You."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ al-Bukhārī 6306, Book 80 (Invocations), Ḥadīth 3
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Part 2: The Prophet's statement on virtue (sandwiched after the du'ā) -->
+<div class="section-label">Part 2 · The Prophet's Promise: Virtue of Reciting Morning & Evening</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <div class="translation" style="margin-bottom: 12px;">
+    <span class="chunk">The Prophet (ﷺ) said:</span>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَمَنْ</span><span class="word-meaning">and whoever</span><span class="word-translit">waman</span></div>
+    <div class="word-unit"><span class="arabic-word">قَالَهَا</span><span class="word-meaning">recites it</span><span class="word-translit">qālahā</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">during</span><span class="word-translit">mina</span></div>
+    <div class="word-unit"><span class="arabic-word">النَّهَارِ</span><span class="word-meaning">the day</span><span class="word-translit">al-nahār</span></div>
+    <div class="word-unit"><span class="arabic-word">مُوقِنًا</span><span class="word-meaning">with certainty</span><span class="word-translit">mūqinan</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">in it</span><span class="word-translit">bihā</span></div>
+    <div class="word-unit"><span class="arabic-word">فَمَاتَ</span><span class="word-meaning">and dies</span><span class="word-translit">famāta</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">of</span><span class="word-translit">min</span></div>
+    <div class="word-unit"><span class="arabic-word">يَوْمِهِ</span><span class="word-meaning">his day</span><span class="word-translit">yawmihi</span></div>
+    <div class="word-unit"><span class="arabic-word">قَبْلَ</span><span class="word-meaning">before</span><span class="word-translit">qabla</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَنْ</span><span class="word-meaning">that</span><span class="word-translit">an</span></div>
+    <div class="word-unit"><span class="arabic-word">يُمْسِيَ</span><span class="word-meaning">he enters the evening</span><span class="word-translit">yumsiya</span></div>
+    <div class="word-unit"><span class="arabic-word">فَهُوَ</span><span class="word-meaning">then he</span><span class="word-translit">fahuwa</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span><span class="word-translit">min</span></div>
+    <div class="word-unit"><span class="arabic-word">أَهْلِ</span><span class="word-meaning">the people</span><span class="word-translit">ahli</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">الْجَنَّةِ</span><span class="word-meaning">of paradise</span><span class="word-translit">al-jannah</span></div>
+    <div class="word-unit"><span class="arabic-word">وَمَنْ</span><span class="word-meaning">and whoever</span><span class="word-translit">waman</span></div>
+    <div class="word-unit"><span class="arabic-word">قَالَهَا</span><span class="word-meaning">recites it</span><span class="word-translit">qālahā</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">during</span><span class="word-translit">mina</span></div>
+    <div class="word-unit"><span class="arabic-word">اللَّيْلِ</span><span class="word-meaning">the night</span><span class="word-translit">al-layl</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَهُوَ</span><span class="word-meaning">and he</span><span class="word-translit">wahuwa</span></div>
+    <div class="word-unit"><span class="arabic-word">مُوقِنٌ</span><span class="word-meaning">certain</span><span class="word-translit">mūqinun</span></div>
+    <div class="word-unit"><span class="arabic-word">بِهَا</span><span class="word-meaning">in it</span><span class="word-translit">bihā</span></div>
+    <div class="word-unit"><span class="arabic-word">فَمَاتَ</span><span class="word-meaning">and dies</span><span class="word-translit">famāta</span></div>
+    <div class="word-unit"><span class="arabic-word">قَبْلَ</span><span class="word-meaning">before</span><span class="word-translit">qabla</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَنْ</span><span class="word-meaning">that</span><span class="word-translit">an</span></div>
+    <div class="word-unit"><span class="arabic-word">يُصْبِحَ</span><span class="word-meaning">he enters the morning</span><span class="word-translit">yuṣbiḥa</span></div>
+    <div class="word-unit"><span class="arabic-word">فَهْوَ</span><span class="word-meaning">then he</span><span class="word-translit">fahwa</span></div>
+    <div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span><span class="word-translit">min</span></div>
+    <div class="word-unit"><span class="arabic-word">أَهْلِ</span><span class="word-meaning">the people</span><span class="word-translit">ahli</span></div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">الْجَنَّةِ</span><span class="word-meaning">of paradise</span><span class="word-translit">al-jannah</span></div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">"And whoever recites it during the day with firm faith in it,</span>
+    <span class="chunk">and dies on the same day before the evening —</span>
+    <span class="chunk">he will be from the people of Paradise.</span>
+    <span class="chunk">And whoever recites it at night while certain in it,</span>
+    <span class="chunk">and dies before the morning —</span>
+    <span class="chunk">he will be from the people of Paradise."</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ</span>
+    Ṣaḥīḥ al-Bukhārī 6306, Book 80, Hadith 3
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>This ḥadīth is recorded by Imām al-Bukhārī in his Ṣaḥīḥ (Book 80: Invocations, Hadith 6306). It is graded <strong>Ṣaḥīḥ</strong> (authentic) by consensus of ḥadīth scholars. The chain is from Shaddād ibn Aws (ra) directly to the Prophet Muḥammad (ﷺ) through reliable narrators including ʿAbdullāh ibn Buraydah and Bushayr ibn Kaʿb al-ʿAdawī.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/bukhari:6306" target="_blank" rel="noopener">
+      https://sunnah.com/bukhari:6306
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>

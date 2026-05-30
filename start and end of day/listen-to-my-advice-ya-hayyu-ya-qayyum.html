@@ -1,0 +1,294 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yā Ḥayyu Yā Qayyūm – Morning & Evening Supplication</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Yā Ḥayyu Yā Qayyūm</h1>
+  <p>Supplication for Morning and Evening — Seeking Allah to Set Right All Affairs</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Context & Virtue</div>
+  <div class="info-body">
+    <p>This powerful du'ā was taught by the Prophet Muḥammad ﷺ to his daughter Fāṭimah (raḍiya Allāhu ʿanhā) as a comprehensive invocation for entering the morning and evening. It acknowledges Allah’s eternal, self-sustaining nature, seeks His mercy, and asks Him to take charge of every affair—spiritual and worldly—without leaving the servant to their own weakness, even for the blink of an eye.</p>
+  </div>
+</div>
+
+<!-- NARRATION TAB (Entire Hadith folded) -->
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">📜 The Hadith Narration (Chain & Context)</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <!-- Narrator introduction line with biography button -->
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Anas ibn Mālik</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reports that the Prophet ﷺ said to Fāṭimah:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "What prevents you from listening to what I advise you to say? Say, when you enter the morning and when you enter the evening: Yā Ḥayyu Yā Qayyūm, bi-raḥmatika astaghīth, aṣliḥ lī shaʾnī kullah, wa-lā takilnī ilā nafsī ṭarfata ʿayn."
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (Full Chain & Text)</div>
+
+    <!-- Word-by-word breakdown of the entire hadith narration chain -->
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَخْبَرَنَا</span><span class="word-meaning" style="color: #666;">informed us</span><span class="word-translit" style="color: #777;">akhbaranā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">عَبْدُ الرَّحْمَنِ</span><span class="word-meaning" style="color: #666;">ʿabdur-raḥmān</span><span class="word-translit" style="color: #777;">ʿabdu r-raḥmāni</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">بْنُ</span><span class="word-meaning" style="color: #666;">son of</span><span class="word-translit" style="color: #777;">bnu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">مُحَمَّدِ</span><span class="word-meaning" style="color: #666;">muḥammad</span><span class="word-translit" style="color: #777;">muḥammadi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">بْنِ</span><span class="word-meaning" style="color: #666;">son of</span><span class="word-translit" style="color: #777;">bni</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">سَلَامٍ</span><span class="word-meaning" style="color: #666;">salām</span><span class="word-translit" style="color: #777;">salāmin</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">حَدَّثَنَا</span><span class="word-meaning" style="color: #666;">related to us</span><span class="word-translit" style="color: #777;">ḥaddathanā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">زَيْدُ</span><span class="word-meaning" style="color: #666;">zayd</span><span class="word-translit" style="color: #777;">zaydu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">بْنُ</span><span class="word-meaning" style="color: #666;">son of</span><span class="word-translit" style="color: #777;">bnu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">الْحُبَابِ</span><span class="word-meaning" style="color: #666;">al-ḥubāb</span><span class="word-translit" style="color: #777;">al-ḥubābi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَخْبَرَنِي</span><span class="word-meaning" style="color: #666;">informed me</span><span class="word-translit" style="color: #777;">akhbaranī</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">عُثْمَانُ</span><span class="word-meaning" style="color: #666;">ʿuthmān</span><span class="word-translit" style="color: #777;">ʿuthmānu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">بْنُ</span><span class="word-meaning" style="color: #666;">son of</span><span class="word-translit" style="color: #777;">bnu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">مَوْهَبٍ</span><span class="word-meaning" style="color: #666;">mawhab</span><span class="word-translit" style="color: #777;">mawhabin</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">الْهَاشِمِيُّ</span><span class="word-meaning" style="color: #666;">al-hāshimī</span><span class="word-translit" style="color: #777;">al-hāshimiyyu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">سَمِعْتُ</span><span class="word-meaning" style="color: #666;">i heard</span><span class="word-translit" style="color: #777;">samiʿtu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَنَسَ</span><span class="word-meaning" style="color: #666;">anas</span><span class="word-translit" style="color: #777;">anasa</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">بْنَ</span><span class="word-meaning" style="color: #666;">son of</span><span class="word-translit" style="color: #777;">bna</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">مَالِكٍ</span><span class="word-meaning" style="color: #666;">mālik</span><span class="word-translit" style="color: #777;">mālikin</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">يَقُولُ</span><span class="word-meaning" style="color: #666;">saying</span><span class="word-translit" style="color: #777;">yaqūlu</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">قَالَ</span><span class="word-meaning" style="color: #666;">said</span><span class="word-translit" style="color: #777;">qāla</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">النَّبِيُّ</span><span class="word-meaning" style="color: #666;">the prophet</span><span class="word-translit" style="color: #777;">an-nabiyyu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">ﷺ</span><span class="word-meaning" style="color: #666;">(ṣallallāhu ʿalayhi wa-sallam)</span><span class="word-translit" style="color: #777;">ṣallallāhu ʿalayhi wa-sallam</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">لِفَاطِمَةَ</span><span class="word-meaning" style="color: #666;">to fāṭimah</span><span class="word-translit" style="color: #777;">li-fāṭimata</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">مَا</span><span class="word-meaning" style="color: #666;">what</span><span class="word-translit" style="color: #777;">mā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">يَمْنَعُكِ</span><span class="word-meaning" style="color: #666;">prevents you</span><span class="word-translit" style="color: #777;">yamnaʿuki</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَنْ</span><span class="word-meaning" style="color: #666;">that</span><span class="word-translit" style="color: #777;">an</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">تَسْمَعِي</span><span class="word-meaning" style="color: #666;">you listen</span><span class="word-translit" style="color: #777;">tasmaʿī</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">مَا</span><span class="word-meaning" style="color: #666;">to what</span><span class="word-translit" style="color: #777;">mā</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أُوصِيكِ</span><span class="word-meaning" style="color: #666;">i advise you</span><span class="word-translit" style="color: #777;">ūṣīki</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">بِهِ</span><span class="word-meaning" style="color: #666;">with it</span><span class="word-translit" style="color: #777;">bihi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَنْ</span><span class="word-meaning" style="color: #666;">that</span><span class="word-translit" style="color: #777;">an</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">تَقُولِي</span><span class="word-meaning" style="color: #666;">you say</span><span class="word-translit" style="color: #777;">taqūlī</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">إِذَا</span><span class="word-meaning" style="color: #666;">when</span><span class="word-translit" style="color: #777;">idhā</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَصْبَحْتِ</span><span class="word-meaning" style="color: #666;">you enter morning</span><span class="word-translit" style="color: #777;">aṣbaḥti</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">وَإِذَا</span><span class="word-meaning" style="color: #666;">and when</span><span class="word-translit" style="color: #777;">wa-idhā</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">أَمْسَيْتِ</span><span class="word-meaning" style="color: #666;">you enter evening</span><span class="word-translit" style="color: #777;">amsayti</span></div>
+    </div>
+
+    <!-- Full continuous translation of narration drawer -->
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">ʿAbd al-Raḥmān ibn Muḥammad ibn Salām informed us: Zayd ibn al-Ḥubāb related to us: ʿUthmān ibn Mawhab al-Hāshimī informed me: I heard Anas ibn Mālik saying: </span>
+      <span class="chunk">The Prophet ﷺ said to Fāṭimah: "What prevents you from listening to what I advise you with? </span>
+      <span class="chunk">Say, when you enter the morning and when you enter the evening: Yā Ḥayyu Yā Qayyūm, bi-raḥmatika astaghīth, aṣliḥ lī shaʾnī kullah, wa-lā takilnī ilā nafsī ṭarfata ʿayn."</span>
+    </div>
+  </div>
+</div>
+
+<!-- NARRATOR BIO OVERLAY (Anas ibn Mālik) -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Anas ibn Mālik (أَنَس بْن مَالِك)</div>
+    <p><strong>Full name:</strong> Anas ibn Mālik ibn al-Naḍr al-Khazrajī al-Anṣārī (c. 612 – 712 CE / 93 AH). He was one of the most prolific companions and narrators of ḥadīth, serving the Prophet ﷺ for ten years as his personal attendant.</p>
+    <p>His mother Umm Sulaym was among the early Anṣārī women to accept Islam. Anas is known for transmitting over 2,000 narrations, including critical details of the Prophet’s daily life, duʿās, and practices. He resided in Basra later in life and was highly respected among the tābiʿūn.</p>
+    <p><strong>Role here:</strong> Anas ibn Mālik is the direct narrator hearing the Prophet ﷺ address his daughter Fāṭimah. His transmission preserves this morning/evening supplication with its full chain through ʿUthmān ibn Mawhab.</p>
+  </div>
+</div>
+
+<!-- SECTION LABEL (The extracted Dua – Frontstage) -->
+<div class="section-label">Part 1 · The Core Supplication (Morning & Evening)</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <!-- Word-by-word unit sequence for the du'ā -->
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">o</span><span class="word-translit">yā</span></div>
+    <div class="word-unit"><span class="arabic-word">حَيُّ</span><span class="word-meaning">ever-living</span><span class="word-translit">ḥayyu</span></div>
+    <div class="word-unit"><span class="arabic-word">يَا</span><span class="word-meaning">o</span><span class="word-translit">yā</span></div>
+    <div class="word-unit"><span class="arabic-word">قَيُّومُ</span><span class="word-meaning">sustainer</span><span class="word-translit">qayyūmu</span></div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">بِرَحْمَتِكَ</span><span class="word-meaning">by your mercy</span><span class="word-translit">bi-raḥmatika</span></div>
+    <div class="word-unit"><span class="arabic-word">أَسْتَغِيثُ</span><span class="word-meaning">i seek relief</span><span class="word-translit">astaghīthu</span></div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">أَصْلِحْ</span><span class="word-meaning">set right</span><span class="word-translit">aṣliḥ</span></div>
+    <div class="word-unit"><span class="arabic-word">لِي</span><span class="word-meaning">for me</span><span class="word-translit">lī</span></div>
+    <div class="word-unit"><span class="arabic-word">شَأْنِي</span><span class="word-meaning">my affair</span><span class="word-translit">shaʾnī</span></div>
+    <div class="word-unit"><span class="arabic-word">كُلَّهُ</span><span class="word-meaning">all of it</span><span class="word-translit">kullah</span></div>
+  </div>
+
+  <div class="arabic-line">
+    <div class="word-unit"><span class="arabic-word">وَلَا</span><span class="word-meaning">and do not</span><span class="word-translit">wa-lā</span></div>
+    <div class="word-unit"><span class="arabic-word">تَكِلْنِي</span><span class="word-meaning">leave me</span><span class="word-translit">takilnī</span></div>
+    <div class="word-unit"><span class="arabic-word">إِلَى</span><span class="word-meaning">to</span><span class="word-translit">ilā</span></div>
+    <div class="word-unit"><span class="arabic-word">نَفْسِي</span><span class="word-meaning">myself</span><span class="word-translit">nafsī</span></div>
+    <div class="word-unit"><span class="arabic-word">طَرْفَةَ</span><span class="word-meaning">blink</span><span class="word-translit">ṭarfata</span></div>
+    <div class="word-unit"><span class="arabic-word">عَيْنٍ</span><span class="word-meaning">of an eye</span><span class="word-translit">ʿayn</span></div>
+  </div>
+
+  <!-- Translation chunks -->
+  <div class="translation">
+    <span class="chunk">O Ever-Living, O Sustainer, by Your mercy I seek relief. </span>
+    <span class="chunk">Set right all my affairs for me, </span>
+    <span class="chunk">and do not leave me to myself for the blink of an eye.</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge">No Grade (N/A)</span>
+    Al-Sunan al-Kubrā lil-Nasāʾī 10330
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Post-Du'ā Section: "Another Type of Action" continuation of hadith body -->
+<div class="narration-tab" onclick="toggleNarrationPart2()">
+  <h2 class="narration-tab-title">📖 Another Action from the Book "Actions of the Day and Night"</h2>
+  <button class="narration-toggle-btn" title="Toggle continued narration context">📘</button>
+</div>
+
+<div id="narrationDrawerPart2" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    <div class="scene-label" style="margin-top: 6px; margin-bottom: 8px; color: #666; font-size: 0.8rem; text-transform: uppercase;">Section Context (From al-Nasāʾī al-Kubrā)</div>
+    <div class="hadith-quote" style="color: #555; font-style: italic;">
+      "Another type of action in the chapter on actions to perform during the day and night. The compiler, Imām al-Nasāʾī, placed this narration under a sub-section after mentioning various morning and evening adhkār, indicating that this du'ā is part of a broader set of prophetic practices for protection and rectification of one’s state."
+    </div>
+    <div class="arabic-line" style="margin-top: 12px;">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">نَوْعٌ</span><span class="word-meaning" style="color: #666;">a type</span><span class="word-translit" style="color: #777;">nawʿun</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">آخَرُ</span><span class="word-meaning" style="color: #666;">another</span><span class="word-translit" style="color: #777;">ākharu</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">فِي</span><span class="word-meaning" style="color: #666;">in</span><span class="word-translit" style="color: #777;">fī</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">كِتَابِ</span><span class="word-meaning" style="color: #666;">the book of</span><span class="word-translit" style="color: #777;">kitābi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">عَمَلِ</span><span class="word-meaning" style="color: #666;">action of</span><span class="word-translit" style="color: #777;">ʿamali</span></div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">الْيَوْمِ</span><span class="word-meaning" style="color: #666;">the day</span><span class="word-translit" style="color: #777;">al-yawmi</span></div>
+      <div class="word-unit"><span class="arabic-word" style="color: #444;">وَاللَّيْلَةِ</span><span class="word-meaning" style="color: #666;">and the night</span><span class="word-translit" style="color: #777;">wa-laylah</span></div>
+    </div>
+    <div class="translation" style="padding-top: 8px;">
+      <span class="chunk">(Section header) “Another Type of Action in the Book of Day and Night Actions.”</span>
+    </div>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source & Authenticity</div>
+  <div class="info-body">
+    <p>Narrated by Imām Aḥmad ibn Shuʿayb al-Nasāʾī in <em>Al-Sunan al-Kubrā</em> (vol. 6, p. 176, hadith 10330). The chain: ʿAbd al-Raḥmān ibn Muḥammad ibn Salām ← Zayd ibn al-Ḥubāb ← ʿUthmān ibn Mawhab al-Hāshimī ← Anas ibn Mālik. No explicit grade is provided in this source; some scholars classify the chain as ḥasan due to ʿUthmān ibn Mawhab being trustworthy, while others consider it acceptable for virtuous actions (faḍāʾil al-aʿmāl).</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/nasai/50/10330" target="_blank" rel="noopener">
+      https://sunnah.com/nasai/50/10330 (Reference approximation)
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function toggleNarrationPart2() {
+    const drawer = document.getElementById('narrationDrawerPart2');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>
+```
