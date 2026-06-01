@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duʿāʾ al-Ṣabāḥ wa al-Masāʾ – Morning & Evening Supplications</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>Duʿāʾ al-Ṣabāḥ wa al-Masāʾ</h1>
+  <p>Morning & Evening Supplications — Health, Protection, and Reliance on Allāh</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Context of Revelation & Practice</div>
+  <div class="info-body">
+    <p>ʿAbdurRahmān ibn Abī Bakrah observed his father repeating specific supplications every morning and evening. Abū Bakrah (may Allāh be pleased with him) explained that he heard the Messenger of Allāh (ﷺ) using these very words, and he loved to follow his Sunnah. The narration also includes additional duʿās for refuge from disbelief, poverty, grave punishment, and a powerful prayer for the distressed.</p>
+  </div>
+</div>
+
+<!-- ================= MAIN HADITH NARRATION (BACKSTAGE) ================= -->
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">📜 The Narration Chain &amp; Context — Sunan Abī Dāwūd 5090</h2>
+  <button class="navigation-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">ʿAbdurRahmān ibn Abī Bakrah</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">narrates from his father Abū Bakrah:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "ʿAbdurRahmān ibn Abī Bakrah said to his father: 'O my father! I hear you supplicating every morning: O Allah! Grant me health in my body. O Allah! Grant me good hearing. O Allah! Grant me good eyesight. There is no god but Thou.' You repeat them three times in the morning and three times in the evening. He said: I heard the Messenger of Allah (ﷺ) using these words as a supplication and I like to follow his practice."
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (Full Chain & Text)</div>
+
+    <!-- Word-by-word for hadith text (backstage) -->
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">حَدَّثَنَا</span><span class="word-meaning">narrated to us</span><span class="word-translit">ḥaddathanā</span></div><div class="word-unit"><span class="arabic-word">الْعَبَّاسُ</span><span class="word-meaning">al-ʿabbās</span><span class="word-translit">al-ʿabbāsu</span></div><div class="word-unit"><span class="arabic-word">بْنُ</span><span class="word-meaning">son of</span><span class="word-translit">bnu</span></div><div class="word-unit"><span class="arabic-word">عَبْدِ الْعَظِيمِ</span><span class="word-meaning">ʿabdil-ʿaẓīm</span><span class="word-translit">ʿabdil-ʿaẓīmi</span></div><div class="word-unit"><span class="arabic-word">وَمُحَمَّدُ</span><span class="word-meaning">and muḥammad</span><span class="word-translit">wa muḥammadu</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">بْنُ</span><span class="word-meaning">son of</span><span class="word-translit">bnu</span></div><div class="word-unit"><span class="arabic-word">الْمُثَنَّى</span><span class="word-meaning">al-muthannā</span><span class="word-translit">al-muthannā</span></div><div class="word-unit"><span class="arabic-word">قَالاَ</span><span class="word-meaning">both said</span><span class="word-translit">qālā</span></div><div class="word-unit"><span class="arabic-word">حَدَّثَنَا</span><span class="word-meaning">narrated to us</span><span class="word-translit">ḥaddathanā</span></div><div class="word-unit"><span class="arabic-word">عَبْدُ الْمَلِكِ</span><span class="word-meaning">ʿabdul-malik</span><span class="word-translit">ʿabdul-maliki</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">بْنُ</span><span class="word-meaning">son of</span><span class="word-translit">bnu</span></div><div class="word-unit"><span class="arabic-word">عَمْرٍو</span><span class="word-meaning">ʿamr</span><span class="word-translit">ʿamrin</span></div><div class="word-unit"><span class="arabic-word">عَنْ</span><span class="word-meaning">from</span><span class="word-translit">ʿan</span></div><div class="word-unit"><span class="arabic-word">عَبْدِ الْجَلِيلِ</span><span class="word-meaning">ʿabdil-jalīl</span><span class="word-translit">ʿabdil-jalīli</span></div><div class="word-unit"><span class="arabic-word">بْنِ</span><span class="word-meaning">son of</span><span class="word-translit">bni</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">عَطِيَّةَ</span><span class="word-meaning">ʿaṭiyyah</span><span class="word-translit">ʿaṭiyyah</span></div><div class="word-unit"><span class="arabic-word">عَنْ</span><span class="word-meaning">from</span><span class="word-translit">ʿan</span></div><div class="word-unit"><span class="arabic-word">جَعْفَرِ</span><span class="word-meaning">jaʿfar</span><span class="word-translit">jaʿfari</span></div><div class="word-unit"><span class="arabic-word">بْنِ</span><span class="word-meaning">son of</span><span class="word-translit">bni</span></div><div class="word-unit"><span class="arabic-word">مَيْمُونٍ</span><span class="word-meaning">maymūn</span><span class="word-translit">maymūnin</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">قَالَ</span><span class="word-meaning">he said</span><span class="word-translit">qāla</span></div><div class="word-unit"><span class="arabic-word">حَدَّثَنِي</span><span class="word-meaning">narrated to me</span><span class="word-translit">ḥaddathanī</span></div><div class="word-unit"><span class="arabic-word">عَبْدُ الرَّحْمَنِ</span><span class="word-meaning">ʿabdur-raḥmān</span><span class="word-translit">ʿabdur-raḥmānu</span></div><div class="word-unit"><span class="arabic-word">بْنُ</span><span class="word-meaning">son of</span><span class="word-translit">bnu</span></div><div class="word-unit"><span class="arabic-word">أَبِي بَكْرَةَ</span><span class="word-meaning">abī bakrah</span><span class="word-translit">abī bakrah</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">أَنَّهُ</span><span class="word-meaning">that he</span><span class="word-translit">annahu</span></div><div class="word-unit"><span class="arabic-word">قَالَ</span><span class="word-meaning">said</span><span class="word-translit">qāla</span></div><div class="word-unit"><span class="arabic-word">لأَبِيهِ</span><span class="word-meaning">to his father</span><span class="word-translit">li-abīhi</span></div><div class="word-unit"><span class="arabic-word">يَا أَبَةِ</span><span class="word-meaning">o my father</span><span class="word-translit">yā abati</span></div><div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">indeed i</span><span class="word-translit">innī</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">أَسْمَعُكَ</span><span class="word-meaning">hear you</span><span class="word-translit">asmaʿuka</span></div><div class="word-unit"><span class="arabic-word">تَدْعُو</span><span class="word-meaning">supplicating</span><span class="word-translit">tadʿū</span></div><div class="word-unit"><span class="arabic-word">كُلَّ</span><span class="word-meaning">every</span><span class="word-translit">kulla</span></div><div class="word-unit"><span class="arabic-word">غَدَاةٍ</span><span class="word-meaning">morning</span><span class="word-translit">ghadātin</span></div><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">عَافِنِي</span><span class="word-meaning">grant me health</span><span class="word-translit">ʿāfinī</span></div><div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div><div class="word-unit"><span class="arabic-word">بَدَنِي</span><span class="word-meaning">my body</span><span class="word-translit">bada nī</span></div><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div><div class="word-unit"><span class="arabic-word">عَافِنِي</span><span class="word-meaning">grant me health</span><span class="word-translit">ʿāfinī</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div><div class="word-unit"><span class="arabic-word">سَمْعِي</span><span class="word-meaning">my hearing</span><span class="word-translit">samʿī</span></div><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div><div class="word-unit"><span class="arabic-word">عَافِنِي</span><span class="word-meaning">grant me health</span><span class="word-translit">ʿāfinī</span></div><div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">بَصَرِي</span><span class="word-meaning">my eyesight</span><span class="word-translit">baṣarī</span></div><div class="word-unit"><span class="arabic-word">لاَ</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div><div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span><span class="word-translit">ilāha</span></div><div class="word-unit"><span class="arabic-word">إِلاَّ</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div><div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">تُعِيدُهَا</span><span class="word-meaning">you repeat them</span><span class="word-translit">tuʿīduhā</span></div><div class="word-unit"><span class="arabic-word">ثَلاَثًا</span><span class="word-meaning">three times</span><span class="word-translit">thalāthan</span></div><div class="word-unit"><span class="arabic-word">حِينَ</span><span class="word-meaning">when</span><span class="word-translit">ḥīna</span></div><div class="word-unit"><span class="arabic-word">تُصْبِحُ</span><span class="word-meaning">you enter morning</span><span class="word-translit">tuṣbiḥu</span></div><div class="word-unit"><span class="arabic-word">وَثَلاَثًا</span><span class="word-meaning">and three times</span><span class="word-translit">wa thalāthan</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">حِينَ</span><span class="word-meaning">when</span><span class="word-translit">ḥīna</span></div><div class="word-unit"><span class="arabic-word">تُمْسِي</span><span class="word-meaning">you enter evening</span><span class="word-translit">tumsī</span></div><div class="word-unit"><span class="arabic-word">فَقَالَ</span><span class="word-meaning">then he said</span><span class="word-translit">faqāla</span></div><div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">indeed i</span><span class="word-translit">innī</span></div><div class="word-unit"><span class="arabic-word">سَمِعْتُ</span><span class="word-meaning">i heard</span><span class="word-translit">samiʿtu</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">رَسُولَ</span><span class="word-meaning">messenger of</span><span class="word-translit">rasūla</span></div><div class="word-unit"><span class="arabic-word">اللَّهِ</span><span class="word-meaning">allah</span><span class="word-translit">l-lahi</span></div><div class="word-unit"><span class="arabic-word">صَلَّى</span><span class="word-meaning">may he bless</span><span class="word-translit">ṣallā</span></div><div class="word-unit"><span class="arabic-word">اللَّهُ</span><span class="word-meaning">allah</span><span class="word-translit">l-lahu</span></div><div class="word-unit"><span class="arabic-word">عَلَيْهِ</span><span class="word-meaning">upon him</span><span class="word-translit">ʿalayhi</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">وَسَلَّمَ</span><span class="word-meaning">and grant peace</span><span class="word-translit">wasallam</span></div><div class="word-unit"><span class="arabic-word">يَدْعُو</span><span class="word-meaning">supplicates</span><span class="word-translit">yadʿū</span></div><div class="word-unit"><span class="arabic-word">بِهِنَّ</span><span class="word-meaning">with them</span><span class="word-translit">bihinna</span></div><div class="word-unit"><span class="arabic-word">فَأَنَا</span><span class="word-meaning">so i</span><span class="word-translit">fa-anā</span></div><div class="word-unit"><span class="arabic-word">أُحِبُّ</span><span class="word-meaning">love</span><span class="word-translit">uḥibbu</span></div></div>
+    <div class="arabic-line"><div class="word-unit"><span class="arabic-word">أَنْ</span><span class="word-meaning">to</span><span class="word-translit">an</span></div><div class="word-unit"><span class="arabic-word">أَسْتَنَّ</span><span class="word-meaning">follow the sunnah</span><span class="word-translit">astanna</span></div><div class="word-unit"><span class="arabic-word">بِسُنَّتِهِ</span><span class="word-meaning">by his way</span><span class="word-translit">bisunnatihi</span></div></div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"Al-ʿAbbās ibn ʿAbdil-ʿAẓīm and Muḥammad ibn al-Muthannā narrated to us from ʿAbdul-Malik ibn ʿAmr, from ʿAbdul-Jalīl ibn ʿAṭiyyah, from Jaʿfar ibn Maymūn who said: ʿAbdurRahmān ibn Abī Bakrah narrated to me that he told his father: 'O my father, I hear you supplicating every morning: O Allāh, grant me health in my body, O Allāh grant me health in my hearing, O Allāh grant me health in my eyesight, there is no god but You.' You repeat them three times in the morning and three times in the evening. He replied: I heard the Messenger of Allāh (ﷺ) using these words as a supplication, and I love to follow his Sunnah."</span>
+    </div>
+  </div>
+</div>
+
+<!-- NARRATOR OVERLAY (BIOGRAPHY) -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Abū Bakrah (Nufayʿ ibn al-Ḥārith)</div>
+    <p><strong>Full name:</strong> Nufayʿ ibn al-Ḥārith ibn Kaladah ath-Thaqafī, famously known as Abū Bakrah (may Allāh be pleased with him). He was a notable Companion who embraced Islam in the year of the conquest of Ṭāʾif (8 AH). He lived in Basra and narrated several ḥadīth. Died c. 51 AH.</p>
+    <p><strong>Reliability:</strong> Abū Bakrah is considered a trustworthy narrator; his reports appear in the six major ḥadīth collections. He was known for his piety and direct transmission from the Prophet (ﷺ).</p>
+    <p><strong>Role here:</strong> Abū Bakrah is the direct source of this duʿā practice; his son ʿAbdurRahmān heard him repeating the supplications and documented the chain, preserving the prophetic instruction for morning and evening invocations.</p>
+  </div>
+</div>
+
+<!-- ========== FRONTSTAGE: DUʿĀ SECTIONS (EXTRACTED) ========== -->
+
+<!-- SECTION LABEL: PART 1 - MAIN MORNING DUʿĀ -->
+<div class="section-label">Part 1 · The Threefold Morning & Evening Duʿā for Well-being</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div><div class="word-unit"><span class="arabic-word">عَافِنِي</span><span class="word-meaning">grant me health</span><span class="word-translit">ʿāfinī</span></div><div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div><div class="word-unit"><span class="arabic-word">بَدَنِي</span><span class="word-meaning">my body</span><span class="word-translit">badanī</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div><div class="word-unit"><span class="arabic-word">عَافِنِي</span><span class="word-meaning">grant me health</span><span class="word-translit">ʿāfinī</span></div><div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div><div class="word-unit"><span class="arabic-word">سَمْعِي</span><span class="word-meaning">my hearing</span><span class="word-translit">samʿī</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div><div class="word-unit"><span class="arabic-word">عَافِنِي</span><span class="word-meaning">grant me health</span><span class="word-translit">ʿāfinī</span></div><div class="word-unit"><span class="arabic-word">فِي</span><span class="word-meaning">in</span><span class="word-translit">fī</span></div><div class="word-unit"><span class="arabic-word">بَصَرِي</span><span class="word-meaning">my eyesight</span><span class="word-translit">baṣarī</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">لاَ</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div><div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span><span class="word-translit">ilāha</span></div><div class="word-unit"><span class="arabic-word">إِلاَّ</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div><div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div></div>
+  <div class="translation"><span class="chunk">"O Allāh, grant me health in my body. O Allāh, grant me good hearing. O Allāh, grant me good eyesight. There is no god but You."</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ḥasan al-Isnād</span> Sunan Abī Dāwūd 5090, Book 43, Hadith 318</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PART 2 - REFUGE FROM DISBELIEF & POVERTY -->
+<div class="section-label">Part 2 · Seeking Refuge Morning & Evening</div>
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div><div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">indeed i</span><span class="word-translit">innī</span></div><div class="word-unit"><span class="arabic-word">أَعُوذُ</span><span class="word-meaning">i seek refuge</span><span class="word-translit">aʿūdhu</span></div><div class="word-unit"><span class="arabic-word">بِكَ</span><span class="word-meaning">in you</span><span class="word-translit">bika</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">مِنَ</span><span class="word-meaning">from</span><span class="word-translit">mina</span></div><div class="word-unit"><span class="arabic-word">الْكُفْرِ</span><span class="word-meaning">disbelief</span><span class="word-translit">l-kufri</span></div><div class="word-unit"><span class="arabic-word">وَالْفَقْرِ</span><span class="word-meaning">and poverty</span><span class="word-translit">wal-faqri</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div><div class="word-unit"><span class="arabic-word">إِنِّي</span><span class="word-meaning">indeed i</span><span class="word-translit">innī</span></div><div class="word-unit"><span class="arabic-word">أَعُوذُ</span><span class="word-meaning">i seek refuge</span><span class="word-translit">aʿūdhu</span></div><div class="word-unit"><span class="arabic-word">بِكَ</span><span class="word-meaning">in you</span><span class="word-translit">bika</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">مِنْ</span><span class="word-meaning">from</span><span class="word-translit">min</span></div><div class="word-unit"><span class="arabic-word">عَذَابِ</span><span class="word-meaning">punishment of</span><span class="word-translit">ʿadhābi</span></div><div class="word-unit"><span class="arabic-word">الْقَبْرِ</span><span class="word-meaning">the grave</span><span class="word-translit">l-qabri</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">لاَ</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div><div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span><span class="word-translit">ilāha</span></div><div class="word-unit"><span class="arabic-word">إِلاَّ</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div><div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div></div>
+  <div class="translation"><span class="chunk">"O Allāh, I seek refuge in You from disbelief and poverty. O Allāh, I seek refuge in You from the punishment of the grave. There is no god but You."</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ḥasan al-Isnād</span> Sunan Abī Dāwūd 5090 — additional narration of ʿAbbās</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PART 3 - DUʿĀ FOR THE DISTRESSED -->
+<div class="section-label">Part 3 · Duʿāʾ al-Makrūb (The Distressed Supplication)</div>
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">اللَّهُمَّ</span><span class="word-meaning">o allah</span><span class="word-translit">allāhumma</span></div><div class="word-unit"><span class="arabic-word">رَحْمَتَكَ</span><span class="word-meaning">your mercy</span><span class="word-translit">raḥmataka</span></div><div class="word-unit"><span class="arabic-word">أَرْجُو</span><span class="word-meaning">i hope for</span><span class="word-translit">arjū</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">فَلاَ</span><span class="word-meaning">so do not</span><span class="word-translit">falā</span></div><div class="word-unit"><span class="arabic-word">تَكِلْنِي</span><span class="word-meaning">leave me to</span><span class="word-translit">takilnī</span></div><div class="word-unit"><span class="arabic-word">إِلَى</span><span class="word-meaning">to</span><span class="word-translit">ilā</span></div><div class="word-unit"><span class="arabic-word">نَفْسِي</span><span class="word-meaning">myself</span><span class="word-translit">nafsī</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">طَرْفَةَ</span><span class="word-meaning">for an instant</span><span class="word-translit">ṭarfata</span></div><div class="word-unit"><span class="arabic-word">عَيْنٍ</span><span class="word-meaning">of an eye</span><span class="word-translit">ʿaynin</span></div><div class="word-unit"><span class="arabic-word">وَأَصْلِحْ</span><span class="word-meaning">and set right</span><span class="word-translit">wa aṣliḥ</span></div><div class="word-unit"><span class="arabic-word">لِي</span><span class="word-meaning">for me</span><span class="word-translit">lī</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">شَأْنِي</span><span class="word-meaning">my affair</span><span class="word-translit">shaʾnī</span></div><div class="word-unit"><span class="arabic-word">كُلَّهُ</span><span class="word-meaning">all of it</span><span class="word-translit">kullahū</span></div></div>
+  <div class="arabic-line"><div class="word-unit"><span class="arabic-word">لاَ</span><span class="word-meaning">no</span><span class="word-translit">lā</span></div><div class="word-unit"><span class="arabic-word">إِلَهَ</span><span class="word-meaning">god</span><span class="word-translit">ilāha</span></div><div class="word-unit"><span class="arabic-word">إِلاَّ</span><span class="word-meaning">except</span><span class="word-translit">illā</span></div><div class="word-unit"><span class="arabic-word">أَنْتَ</span><span class="word-meaning">you</span><span class="word-translit">anta</span></div></div>
+  <div class="translation"><span class="chunk">"O Allāh, it is Your mercy that I hope for. Do not abandon me to myself for an instant, but set right all my affairs for me. There is no god but You."</span></div>
+  <div class="src-popup"><span class="grade-badge grade-sahih">Ḥasan al-Isnād</span> Sunan Abī Dāwūd 5090 — Duʿāʾ al-Makrūb</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SOURCE AND AUTHENTICITY -->
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>Recorded by Abū Dāwūd in <em>Kitāb al-Adab</em>, Bāb mā yaqūlu idhā aṣbaḥ (Book 43, Hadith 318). Shaykh al-Albānī graded it <strong>Ḥasan al-Isnād</strong> (good chain). The supplications are to be recited three times each morning and three times each evening, following the noble practice of the Prophet (ﷺ). The final duʿā (for the distressed) is also part of the same ḥadīth tradition and carries strong prophetic instruction.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/abudawud:5090" target="_blank" rel="noopener">
+      https://sunnah.com/abudawud:5090
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>
