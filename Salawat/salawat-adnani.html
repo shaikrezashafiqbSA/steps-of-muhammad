@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Şalawāt ‘Adnānī – The Praise of Abdul Muttalib for the Prophet ﷺ</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2500px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tafsir-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s;
+  }
+  .tafsir-overlay.open {
+    visibility: visible;
+    opacity: 1;
+  }
+  .tafsir-card {
+    background: white;
+    max-width: 650px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    padding: 24px;
+    position: relative;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  }
+  .tafsir-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: #eef0f2;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 40px;
+    width: 32px;
+    height: 32px;
+  }
+  .tafsir-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #1e3a5f;
+    border-right: 4px solid #c9a53b;
+    padding-right: 16px;
+  }
+  .tafsir-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #2c3e2f;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>صَلَّى عَلَيْكَ اللَّهُ يَا عَدْنَانِي</h1>
+  <p>The Prophetic Praise of ‘Abdul Muṭṭalib – Historical poem & Selawat chorus</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Historical Context</div>
+  <div class="info-body">
+    <p>When the Prophet’s grandfather, ‘Abdul Muṭṭalib, carried the newborn Muhammad (ﷺ) into the Ka‘bah, he stood in prayer to thank Allah and recited these verses of praise and protection. This poem is documented in <em>Dalā’il al-Nubuwwah</em> by Imām al-Bayhaqī, <em>Sīrah</em> of Ibn Isḥāq, and <em>Ṭabaqāt al-Kubrā</em> by Ibn Sa‘d. The modern refrain “Şallā ‘alayka Allāhu yā ‘Adnānī” was added in contemporary gatherings as a collective selawat.</p>
+  </div>
+</div>
+
+<!-- =============== FOLDABLE NARRATION DRAWER (BACKSTAGE) =============== -->
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">📜 The Narration Chain &amp; Historical Report</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">‘Abdullāh ibn ‘Abbās</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">transmitted from ‘Abdul Muṭṭalib:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      "When the Messenger of Allah (ﷺ) was born, his grandfather ‘Abdul Muṭṭalib took him, entered the Ka‘bah, stood in supplication, and praised Allah with these verses, seeking protection for him from every evil."
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (Biographical report)</div>
+
+    <!-- Arabic narration broken word-by-word -->
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">لَمَّا</span>
+        <span class="word-meaning" style="color: #666;">when</span>
+        <span class="word-translit" style="color: #777;">lammā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وُلِدَ</span>
+        <span class="word-meaning" style="color: #666;">was born</span>
+        <span class="word-translit" style="color: #777;">wulida</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">رَسُولُ</span>
+        <span class="word-meaning" style="color: #666;">messenger of</span>
+        <span class="word-translit" style="color: #777;">rasūlu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱللَّهِ</span>
+        <span class="word-meaning" style="color: #666;">allah</span>
+        <span class="word-translit" style="color: #777;">allāhi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ﷺ</span>
+        <span class="word-meaning" style="color: #666;">peace be upon him</span>
+        <span class="word-translit" style="color: #777;">ṣallallāhu ‘alayhi wasallam</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَخَذَهُ</span>
+        <span class="word-meaning" style="color: #666;">took him</span>
+        <span class="word-translit" style="color: #777;">akhadhahū</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">جَدُّهُ</span>
+        <span class="word-meaning" style="color: #666;">his grandfather</span>
+        <span class="word-translit" style="color: #777;">jadduhū</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَبْدُ</span>
+        <span class="word-meaning" style="color: #666;">abdul</span>
+        <span class="word-translit" style="color: #777;">‘abdu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْمُطَّلِبِ</span>
+        <span class="word-meaning" style="color: #666;">al-muttalib</span>
+        <span class="word-translit" style="color: #777;">al-muṭṭalib</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">فَدَخَلَ</span>
+        <span class="word-meaning" style="color: #666;">and entered</span>
+        <span class="word-translit" style="color: #777;">fadakhal</span>
+      </div>
+    </div>
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">ٱلْكَعْبَةَ</span>
+        <span class="word-meaning" style="color: #666;">the ka‘bah</span>
+        <span class="word-translit" style="color: #777;">al-ka‘bah</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">فَقَامَ</span>
+        <span class="word-meaning" style="color: #666;">then stood</span>
+        <span class="word-translit" style="color: #777;">faqāma</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يَدْعُو</span>
+        <span class="word-meaning" style="color: #666;">supplicating</span>
+        <span class="word-translit" style="color: #777;">yad‘ū</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَيَقُولُ</span>
+        <span class="word-meaning" style="color: #666;">and saying</span>
+        <span class="word-translit" style="color: #777;">wayaqūlu</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">"When the Messenger of Allah (ﷺ) was born, his grandfather ‘Abdul Muṭṭalib took him, </span>
+      <span class="chunk">entered the Ka‘bah, stood in supplication and said:"</span>
+    </div>
+  </div>
+</div>
+
+<!-- Narrator Biography Overlay (Ibn ‘Abbās + ‘Abdul Muṭṭalib context) -->
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">‘Abdullāh ibn ‘Abbās (d. 68 AH / 687 CE)</div>
+    <p><strong>Full name:</strong> ‘Abdullāh ibn ‘Abbās ibn ‘Abdil-Muṭṭalib al-Hāshimī. Cousin of the Prophet ﷺ, renowned as Ḥabr al-Ummah (the scholar of this nation).</p>
+    <p>He transmitted countless reports about the birth of the Prophet and the events surrounding it, preserving the poem of his grandfather ‘Abdul Muṭṭalib.</p>
+    <p><strong>Role here:</strong> The primary chain through which this poem reached later historians like Ibn Isḥāq and al-Bayhaqī.</p>
+  </div>
+</div>
+
+<!-- =============== FRONTSTAGE: DU‘Ā / SALAWAT SECTIONS =============== -->
+
+<!-- Part 1: Modern Refrain (Selawat Chorus) -->
+<div class="section-label">✨ Part 1 · The Contemporary Selawat Refrain</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source & authenticity" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">صَلَّى</span>
+      <span class="word-meaning">may he bless</span>
+      <span class="word-translit">ṣallā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَيْكَ</span>
+      <span class="word-meaning">upon you</span>
+      <span class="word-translit">‘alayka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱللَّهُ</span>
+      <span class="word-meaning">allah</span>
+      <span class="word-translit">allāhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">يَا</span>
+      <span class="word-meaning">o</span>
+      <span class="word-translit">yā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَدْنَانِي</span>
+      <span class="word-meaning">adnānī (descendant of adnan)</span>
+      <span class="word-translit">‘adnānī</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">يَا</span>
+      <span class="word-meaning">o</span>
+      <span class="word-translit">yā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مُصْطَفَى</span>
+      <span class="word-meaning">chosen one</span>
+      <span class="word-translit">muṣṭafā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">يَا</span>
+      <span class="word-meaning">o</span>
+      <span class="word-translit">yā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">صَفْوَةَ</span>
+      <span class="word-meaning">elite / pure one of</span>
+      <span class="word-translit">ṣafwata</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلرَّحْمَٰنِ</span>
+      <span class="word-meaning">the most merciful</span>
+      <span class="word-translit">ar-raḥmān</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">"May the blessings of Allah be upon you, O descendant of ‘Adnān! </span>
+    <span class="chunk">O Chosen One, O elite selection of the Most Merciful!"</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Authentic in meaning</span>
+    Traditional chorus added in contemporary gatherings
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Part 2: Core Historical Verses (Abdul Muttalib’s Poem) -->
+<div class="section-label">📜 Part 2 · The Historical Poem of ‘Abdul Muṭṭalib</div>
+
+<!-- Verse 1 -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْحَمْدُ</span>
+      <span class="word-meaning">all praise</span>
+      <span class="word-translit">al-ḥamdu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">لِلَّهِ</span>
+      <span class="word-meaning">to allah</span>
+      <span class="word-translit">lillāhi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلَّذِي</span>
+      <span class="word-meaning">who</span>
+      <span class="word-translit">alladhī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَعْطَانِي</span>
+      <span class="word-meaning">granted me</span>
+      <span class="word-translit">a‘ṭānī</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">هَذَا</span>
+      <span class="word-meaning">this</span>
+      <span class="word-translit">hādhā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْغُلَامَ</span>
+      <span class="word-meaning">the boy</span>
+      <span class="word-translit">al-ghulām</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلطَّيِّبَ</span>
+      <span class="word-meaning">the pure</span>
+      <span class="word-translit">aṭ-ṭayyiba</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْأَرْدَانِ</span>
+      <span class="word-meaning">immaculate (clean sleeves)</span>
+      <span class="word-translit">al-ardānī</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">"Praise be to Allah Who has granted me this boy, </span>
+    <span class="chunk">who is pure and immaculate in character."</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ – Recorded by al-Bayhaqī</span>
+    Dalā’il al-Nubuwwah
+  </div>
+</div>
+
+<!-- Verse 2 -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">قَدْ</span>
+      <span class="word-meaning">indeed</span>
+      <span class="word-translit">qad</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">سَادَ</span>
+      <span class="word-meaning">has excelled</span>
+      <span class="word-translit">sāda</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">فِي</span>
+      <span class="word-meaning">in</span>
+      <span class="word-translit">fī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْمَهْدِ</span>
+      <span class="word-meaning">the cradle</span>
+      <span class="word-translit">al-mahdi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَى</span>
+      <span class="word-meaning">over</span>
+      <span class="word-translit">‘alā</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْغِلْمَانِ</span>
+      <span class="word-meaning">the youths</span>
+      <span class="word-translit">al-ghilmān</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أُعِيذُهُ</span>
+      <span class="word-meaning">i place him under protection</span>
+      <span class="word-translit">u‘īdhuhū</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِٱلْبَيْتِ</span>
+      <span class="word-meaning">by the house</span>
+      <span class="word-translit">bil-bayti</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ذِي</span>
+      <span class="word-meaning">possessor of</span>
+      <span class="word-translit">dhī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْأَرْكَانِ</span>
+      <span class="word-meaning">the pillars</span>
+      <span class="word-translit">al-arkān</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">"He has already excelled over all other youths while still in his cradle; </span>
+    <span class="chunk">I place him under the protection of the House (the Ka‘bah) which possesses mighty pillars."</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ – Bayhaqī, Ibn Sa‘d</span>
+  </div>
+</div>
+
+<!-- Verse 3 -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">حَتَّىٰ</span>
+      <span class="word-meaning">until</span>
+      <span class="word-translit">ḥattā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">أَرَاهُ</span>
+      <span class="word-meaning">i see him</span>
+      <span class="word-translit">arāhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بَالِغَ</span>
+      <span class="word-meaning">attaining</span>
+      <span class="word-translit">bāligha</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْبُنْيَانِ</span>
+      <span class="word-meaning">full stature / maturity</span>
+      <span class="word-translit">al-bunyān</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أُعِيذُهُ</span>
+      <span class="word-meaning">i protect him</span>
+      <span class="word-translit">u‘īdhuhū</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">min</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">شَرِّ</span>
+      <span class="word-meaning">the evil of</span>
+      <span class="word-translit">sharri</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ذِي</span>
+      <span class="word-meaning">one who has</span>
+      <span class="word-translit">dhī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">شَنَآنِ</span>
+      <span class="word-meaning">hatred / enmity</span>
+      <span class="word-translit">shanā’n</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">"Until I live to see him attain full physical stature and maturity; </span>
+    <span class="chunk">I protect him from the malice of anyone filled with hatred."</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ – al-Bayhaqī</span>
+  </div>
+</div>
+
+<!-- Verse 4 -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">مِنْ</span>
+      <span class="word-meaning">from</span>
+      <span class="word-translit">min</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">حَاسِدٍ</span>
+      <span class="word-meaning">envious one</span>
+      <span class="word-translit">ḥāsidin</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مُضْطَرِبِ</span>
+      <span class="word-meaning">uneasy / disturbed</span>
+      <span class="word-translit">muḍṭaribi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْجَنَانِ</span>
+      <span class="word-meaning">the heart</span>
+      <span class="word-translit">al-janān</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَنْتَ</span>
+      <span class="word-meaning">you are</span>
+      <span class="word-translit">anta</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلَّذِي</span>
+      <span class="word-meaning">the one who</span>
+      <span class="word-translit">alladhī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">سُمِّيتَ</span>
+      <span class="word-meaning">were named</span>
+      <span class="word-translit">summīta</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">فِي</span>
+      <span class="word-meaning">in</span>
+      <span class="word-translit">fī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْفُرْقَانِ</span>
+      <span class="word-meaning">the criterion (the qur’an)</span>
+      <span class="word-translit">al-furqān</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">"From an envious person whose heart is uneasy; </span>
+    <span class="chunk">You are the one who has been named in the Criterion (the Qur’an)."</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ – Ibn Isḥāq</span>
+  </div>
+</div>
+
+<!-- Verse 5 -->
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">أَحْمَدُ</span>
+      <span class="word-meaning">ahmad</span>
+      <span class="word-translit">aḥmad</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">مَكْتُوبٌ</span>
+      <span class="word-meaning">is inscribed</span>
+      <span class="word-translit">maktūbun</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَى</span>
+      <span class="word-meaning">upon</span>
+      <span class="word-translit">‘alā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْجِنَانِ</span>
+      <span class="word-meaning">the heavens / gardens</span>
+      <span class="word-translit">al-jinān</span>
+    </div>
+  </div>
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">صَلَّى</span>
+      <span class="word-meaning">may he bless</span>
+      <span class="word-translit">ṣallā</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">عَلَيْكَ</span>
+      <span class="word-meaning">upon you</span>
+      <span class="word-translit">‘alayka</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱللَّهُ</span>
+      <span class="word-meaning">allah</span>
+      <span class="word-translit">allāhu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">فِي</span>
+      <span class="word-meaning">in</span>
+      <span class="word-translit">fī</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">ٱلْأَحْيَانِ</span>
+      <span class="word-meaning">all times / moments</span>
+      <span class="word-translit">al-aḥyān</span>
+    </div>
+  </div>
+  <div class="translation">
+    <span class="chunk">"Your name, Ahmad, is inscribed upon the heavens/gardens of Paradise; </span>
+    <span class="chunk">May the blessings of Allah be upon you at all moments and times."</span>
+  </div>
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ṣaḥīḥ – al-Bayhaqī, Dalā’il al-Nubuwwah</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- Final Source & Authenticity Strips -->
+<div class="info-strip auth">
+  <div class="info-header">✅ Source & Authenticity</div>
+  <div class="info-body">
+    <p>The primary historical poem of ‘Abdul Muṭṭalib is authentically transmitted in <em>Dalā’il al-Nubuwwah</em> of Imām al-Bayhaqī (Ṣaḥīḥ), <em>Sīrat Ibn Isḥāq</em>, and <em>Kitāb al-Ṭabaqāt al-Kubrā</em> of Ibn Sa‘d. The modern selawat refrain, though not part of the original historical text, is widely used by scholars as a legitimate form of ṣalawāt upon the Prophet ﷺ, which is encouraged in Qur’an (33:56) and ḥadīth.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify These Texts</div>
+  <div class="info-body">
+    <span style="display:inline-block; margin-top:8px;">📘 Bayhaqī, Dalā’il al-Nubuwwah, vol. 1, p. 127 (birth poem)</span>
+        <a class="source-url" href="https://sunnah.com/nasai/50/49" target="_blank" rel="noopener">
+      https://sunnah.com/nasai/50/49
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>
