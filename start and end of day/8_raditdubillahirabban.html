@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raḍītu Billāhi Rabbān – Evening Supplication | Tirmidhi 3389</title>
+<link rel="stylesheet" href="../dua-core.css">
+<style>
+  /* Embedded strictly to control Hadith drawer animations and display states */
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="zoom-dock">
+  <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
+  <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
+</div>
+
+<div class="header">
+  <h1>رَضِيتُ بِٱللَّٰهِ رَبًّا وَبِٱلْإِسْلَامِ دِينًا وَبِمُحَمَّدٍ نَبِيًّا</h1>
+  <p>Raḍītu billāhi rabban wa bil-islāmi dīnan wa bi-Muḥammadin nabiyyan — “I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad as my Prophet.”</p>
+</div>
+
+<div class="info-strip context">
+  <div class="info-header">📖 Evening Declaration of Divine Pleasure</div>
+  <div class="info-body">
+    <p>This powerful supplication was taught by the Prophet ﷺ to be recited every evening (after ‘Asr or at the onset of Maghrib). It expresses complete contentment with Allah’s Lordship, Islam as the way of life, and Muḥammad ﷺ as the final Messenger. The Prophet ﷺ guaranteed that whoever says these words with conviction in the evening, Allah makes it His duty to grant him pleasure and contentment.</p>
+  </div>
+</div>
+
+<div class="narration-tab" onclick="toggleNarration()">
+  <h2 class="narration-tab-title">📜 The Narration Chain &amp; Context (Jāmi‘ at-Tirmidhī)</h2>
+  <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
+</div>
+
+<div id="narrationDrawer" class="narration-drawer">
+  <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
+    
+    <div class="narrator-line" style="margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+      <span class="narrator-name" style="color: #555; font-weight: 600;">Thawbān (رضي الله عنه)</span>
+      <button class="narrator-btn" onclick="openNarrator(event)" title="View Biography" style="background: #e2e4e6;">🔍</button>
+      <span class="scene-text" style="color: #666; font-size: 0.9rem;">reported that the Messenger of Allah ﷺ said:</span>
+    </div>
+
+    <div class="hadith-quote" style="color: #555; font-style: italic; margin-bottom: 14px;">
+      “Whoever says when he reaches the evening: ‘I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad as my Prophet,’ it is a duty upon Allah to please him.”
+    </div>
+
+    <div class="scene-label" style="margin-top: 14px; margin-bottom: 6px; color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">The Arabic Narration (word-by-word)</div>
+
+    <!-- Line 1: مَنْ قَالَ حِينَ يُمْسِي -->
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">مَنْ</span>
+        <span class="word-meaning" style="color: #666;">whoever</span>
+        <span class="word-translit" style="color: #777;">man</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">قَالَ</span>
+        <span class="word-meaning" style="color: #666;">says</span>
+        <span class="word-translit" style="color: #777;">qāla</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حِينَ</span>
+        <span class="word-meaning" style="color: #666;">when</span>
+        <span class="word-translit" style="color: #777;">ḥīna</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يُمْسِي</span>
+        <span class="word-meaning" style="color: #666;">enters the evening</span>
+        <span class="word-translit" style="color: #777;">yumsī</span>
+      </div>
+    </div>
+
+    <!-- Line 2: رَضِيتُ بِاللَّهِ رَبًّا وَبِالإِسْلَامِ دِينًا -->
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">رَضِيتُ</span>
+        <span class="word-meaning" style="color: #666;">I am pleased</span>
+        <span class="word-translit" style="color: #777;">raḍītu</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">بِاللَّهِ</span>
+        <span class="word-meaning" style="color: #666;">with Allah</span>
+        <span class="word-translit" style="color: #777;">billāhi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">رَبًّا</span>
+        <span class="word-meaning" style="color: #666;">as Lord</span>
+        <span class="word-translit" style="color: #777;">rabban</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَبِالإِسْلَامِ</span>
+        <span class="word-meaning" style="color: #666;">and with Islam</span>
+        <span class="word-translit" style="color: #777;">wa bil-islāmi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">دِينًا</span>
+        <span class="word-meaning" style="color: #666;">as religion</span>
+        <span class="word-translit" style="color: #777;">dīnan</span>
+      </div>
+    </div>
+
+    <!-- Line 3: وَبِمُحَمَّدٍ نَبِيًّا كَانَ حَقًّا -->
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">وَبِمُحَمَّدٍ</span>
+        <span class="word-meaning" style="color: #666;">and with Muhammad</span>
+        <span class="word-translit" style="color: #777;">wa bi-Muḥammadin</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">نَبِيًّا</span>
+        <span class="word-meaning" style="color: #666;">as Prophet</span>
+        <span class="word-translit" style="color: #777;">nabiyyan</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">كَانَ</span>
+        <span class="word-meaning" style="color: #666;">it becomes</span>
+        <span class="word-translit" style="color: #777;">kāna</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">حَقًّا</span>
+        <span class="word-meaning" style="color: #666;">a duty/obligation</span>
+        <span class="word-translit" style="color: #777;">ḥaqqan</span>
+      </div>
+    </div>
+
+    <!-- Line 4: عَلَى اللَّهِ أَنْ يُرْضِيَهُ -->
+    <div class="arabic-line">
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">عَلَى</span>
+        <span class="word-meaning" style="color: #666;">upon</span>
+        <span class="word-translit" style="color: #777;">‘alā</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">اللَّهِ</span>
+        <span class="word-meaning" style="color: #666;">Allah</span>
+        <span class="word-translit" style="color: #777;">allāhi</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">أَنْ</span>
+        <span class="word-meaning" style="color: #666;">that</span>
+        <span class="word-translit" style="color: #777;">an</span>
+      </div>
+      <div class="word-unit">
+        <span class="arabic-word" style="color: #444;">يُرْضِيَهُ</span>
+        <span class="word-meaning" style="color: #666;">He pleases him</span>
+        <span class="word-translit" style="color: #777;">yurḍiyahu</span>
+      </div>
+    </div>
+
+    <div class="translation" style="color: #555; border-top: 1px solid #e2e4e6; padding-top: 8px;">
+      <span class="chunk">“Whoever says when he reaches the evening: ‘I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad as my Prophet,’ </span>
+      <span class="chunk">it is a duty upon Allah to please him.”</span>
+    </div>
+  </div>
+</div>
+
+<div class="narrator-overlay" id="narratorOverlay" onclick="handleOverlayClick(event)">
+  <div class="narrator-overlay-card">
+    <button class="narrator-close" onclick="closeNarrator()">✕</button>
+    <div class="narrator-overlay-title">Thawbān ibn Bujdud (أبو عبد الله)</div>
+    <p><strong>Full name:</strong> Thawbān (also spelled Thauban) ibn Bujdud, a freed slave (mawlā) of the Messenger of Allah ﷺ. He was originally from Yemen or from the tribe of Khawlān. He served the Prophet ﷺ closely and accompanied him on many journeys. He died in 54 AH (674 CE) in Hims (Homs), Syria, at the age of approximately 80.</p>
+    <p>Thawbān (ra) is known for his deep devotion and reliability. His narrations are found in the six major ḥadīth collections. Scholars regard him as a trustworthy Companion with a direct link to the Prophet ﷺ. In this chain, he reports directly from the Prophet ﷺ without intermediary, making the narration a high-probability transmission.</p>
+    <p><strong>Role here:</strong> Thawbān transmits the very words of the Prophet ﷺ concerning the evening supplication, establishing a direct, prophetic source for this powerful duʿāʾ.</p>
+  </div>
+</div>
+
+<div class="section-label">Part 1 · The Evening Plea (Operational Duʿāʾ)</div>
+
+<div class="verse-block">
+  <button class="src-btn" title="View source" onclick="toggleSrc(this)">🔍</button>
+
+  <!-- Line 1: رَضِيتُ بِاللَّهِ رَبًّا -->
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">رَضِيتُ</span>
+      <span class="word-meaning">I am pleased</span>
+      <span class="word-translit">raḍītu</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">بِاللَّهِ</span>
+      <span class="word-meaning">with Allah</span>
+      <span class="word-translit">billāhi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">رَبًّا</span>
+      <span class="word-meaning">as Lord</span>
+      <span class="word-translit">rabban</span>
+    </div>
+  </div>
+
+  <!-- Line 2: وَبِالإِسْلَامِ دِينًا -->
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَبِالإِسْلَامِ</span>
+      <span class="word-meaning">and with Islam</span>
+      <span class="word-translit">wa bil-islāmi</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">دِينًا</span>
+      <span class="word-meaning">as religion</span>
+      <span class="word-translit">dīnan</span>
+    </div>
+  </div>
+
+  <!-- Line 3: وَبِمُحَمَّدٍ نَبِيًّا -->
+  <div class="arabic-line">
+    <div class="word-unit">
+      <span class="arabic-word">وَبِمُحَمَّدٍ</span>
+      <span class="word-meaning">and with Muhammad</span>
+      <span class="word-translit">wa bi-Muḥammadin</span>
+    </div>
+    <div class="word-unit">
+      <span class="arabic-word">نَبِيًّا</span>
+      <span class="word-meaning">as Prophet</span>
+      <span class="word-translit">nabiyyan</span>
+    </div>
+  </div>
+
+  <div class="translation">
+    <span class="chunk">“I am pleased with Allah as my Lord, </span>
+    <span class="chunk">with Islam as my religion, </span>
+    <span class="chunk">and with Muhammad as my Prophet.”</span>
+  </div>
+
+  <div class="src-popup">
+    <span class="grade-badge grade-sahih">Ḥasan Gharīb</span>
+    Jāmiʿ at-Tirmidhī 3389 · Book 48, Ḥadīth 20 · Graded Ḥasan Gharīb by Imām Tirmidhī
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="info-strip auth">
+  <div class="info-header">✅ Source &amp; Authenticity</div>
+  <div class="info-body">
+    <p>This ḥadīth is recorded by Imām Abū ʿĪsā Muḥammad at-Tirmidhī in his <em>Jāmiʿ</em> (Sunan at-Tirmidhī) under <strong>Book 48: Chapters on Supplication (Kitāb ad-Daʿawāt), Chapter 13: What has been related about supplication in the morning and evening</strong>. Imām Tirmidhī declared it <strong>Ḥasan Gharīb</strong> (sound and uncommon) via this chain. The narration is also supported by other Companions’ reports, making it a reliable and recommended dhikr for the evening. Scholars encourage its repetition as a means of attaining Allah’s pleasure and protection.</p>
+  </div>
+</div>
+
+<div class="info-strip auth">
+  <div class="info-header">🔗 Verify This Hadith</div>
+  <div class="info-body">
+    <a class="source-url" href="https://sunnah.com/tirmidhi:3389" target="_blank" rel="noopener">
+      https://sunnah.com/tirmidhi:3389
+    </a>
+  </div>
+</div>
+
+<script>
+  const zoomSteps = [11, 13, 16, 19, 22, 25];
+  let zoomIndex = 2;
+  function adjustZoom(dir) {
+    zoomIndex = Math.min(Math.max(zoomIndex + dir, 0), zoomSteps.length - 1);
+    document.documentElement.style.fontSize = zoomSteps[zoomIndex] + 'px';
+  }
+  function toggleSrc(btn) {
+    btn.closest('.verse-block').querySelector('.src-popup').classList.toggle('open');
+  }
+  function toggleNarration() {
+    const drawer = document.getElementById('narrationDrawer');
+    if (drawer) drawer.classList.toggle('open');
+  }
+  function openNarrator(e) {
+    if (e) e.stopPropagation(); 
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.add('open');
+  }
+  function closeNarrator() {
+    const overlay = document.getElementById('narratorOverlay');
+    if (overlay) overlay.classList.remove('open');
+  }
+  function handleOverlayClick(e) {
+    if (e.target === document.getElementById('narratorOverlay')) closeNarrator();
+  }
+</script>
+</body>
+</html>

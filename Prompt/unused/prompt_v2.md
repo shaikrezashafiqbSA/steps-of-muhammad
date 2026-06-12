@@ -207,11 +207,14 @@ The three `.info-strip` variants create a fixed visual hierarchy — use them in
 - `.info-strip auth` → green: source authentication and verification (✅ / 🔗)
 - `.info-strip` (no modifier) → blue: general informational content
 
-**Line Break Word Thresholds:**
-Any single `.arabic-line` horizontal row container has a strict maximum of 5 `.word-unit` blocks. If a clause exceeds this density, insert a line break at the nearest natural semantic boundary. Arabic grammar particles (e.g., وَ، فَ، مَنْ) must be joined within the word unit they govern.
+Three-Span Child Integrity: Every single .word-unit parent container must output exactly three child span classes in this exact order: .arabic-word ➔ .word-meaning ➔ .word-translit. FOR EACH ARABIC WORD. Leaving arrays asymmetric or leaving empty text nodes is a system execution failure. 
 
 **Three-Span Child Integrity:**
 Every `.word-unit` parent container must output exactly three child spans in this exact order: `.arabic-word` → `.word-meaning` → `.word-translit`. Leaving arrays asymmetric or leaving empty text nodes is a system execution failure.
 
-**Granular Translation Chunking:**
-Sentences inside the `.translation` selector must be broken into `.chunk` elements at distinct punctuation or pause boundaries. No individual `.chunk` can exceed 10 words, to guarantee clean wrapping on small viewports.
+Multi-File State Continuity: When splitting large invocations across multiple pages based on the Pre-Flight Check, compile each chunk into its own entirely complete, standalone HTML page following this exact script structure. Ensure that .section-label numbering sequences increment continuously across the file breaks (e.g., if File 1 finishes at Part 2, File 2 must immediately open with Part 3). 
+
+
+Please do the word for word for all the hadith content. and make the hadith sections foldable under hadith body. and the dua separated. and then follow with another hadith body part 2 if the dua is sandwiched inside the hadith. 
+The following is tafsir of at taubah 2nd last + the last ayat hadith, 
+===========================================================

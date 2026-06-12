@@ -5,12 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Allāhumma ṣalli wa sallim – Morning & Evening Blessings on the Prophet</title>
 <link rel="stylesheet" href="../dua-core.css">
+<style>
+  .narration-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+    margin-bottom: 0;
+  }
+  .narration-drawer.open {
+    max-height: 2000px;
+    margin-bottom: 16px;
+  }
+  .narration-tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef0f2;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  .narration-tab-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+  }
+  .narration-toggle-btn {
+    background: #e2e4e6;
+    border: 1px solid #cfd3d6;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
 </head>
 <body>
+
 <div class="zoom-dock">
   <button class="zoom-btn" onclick="adjustZoom(-1)">A−</button>
   <button class="zoom-btn" onclick="adjustZoom(1)">A+</button>
 </div>
+
 <div class="header">
   <h1>اللَّهُمَّ صَلِّ وَ سَلِّمْ عَلَى نَبِيِّنَا مُحَمَّد</h1>
   <p>Morning & Evening Salawat – Seeking the Prophet’s Intercession</p>
@@ -28,6 +70,7 @@
   <h2 class="narration-tab-title">The Narration Chain &amp; Context (Part 1)</h2>
   <button class="narration-toggle-btn" title="Toggle Narration Details">🔍</button>
 </div>
+
 <div id="narrationDrawer" class="narration-drawer">
   <div class="verse-block" style="background-color: #f4f5f6; border-left: 4px solid #b0b5b9; box-shadow: none; margin-top: 0;">
     
@@ -180,13 +223,11 @@
       <span class="word-translit">muḥammad</span>
     </div>
   </div>
-</div>
-
-<div class="divider"></div>
 
   <div class="translation">
     <span class="chunk">O Allah, we ask for your peace and blessings upon our Prophet Muhammad.</span>
   </div>
+
   <div class="src-popup">
     <span class="grade-badge grade-sahih">Jayyid (Reliable)</span>
     At-Ṭabarānī, two chains; one is reliable (Jayyid). See Haythami’s Majma‘uz-Zawā’id 10/120, Al-Albānī’s Ṣaḥīḥ at-Targhīb wat-Tarhīb 1/273.
@@ -318,7 +359,7 @@
     if (drawer) drawer.classList.toggle('open');
   }
   function openNarrator(e) {
-    if (e) e.stopPropagation();
+    if (e) e.stopPropagation(); 
     const overlay = document.getElementById('narratorOverlay');
     if (overlay) overlay.classList.add('open');
   }
