@@ -6,77 +6,441 @@
   <title>Document Viewer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <style>
-    /* Styling elements translated out of markdown parsing */
-    .markdown-body h1 { @apply text-2xl font-black text-emerald-300 border-b border-emerald-900/40 pb-2 mb-4 uppercase tracking-wider; }
-    .markdown-body h2 { @apply text-lg font-bold text-emerald-400 mt-6 mb-3 tracking-wide; }
-    .markdown-body h3 { @apply text-base font-semibold text-teal-400 mt-4 mb-2; }
-    .markdown-body p { @apply text-xs md:text-sm text-emerald-100/90 leading-relaxed mb-4 font-sans; }
-    .markdown-body ul { @apply list-disc list-inside space-y-2 mb-4 text-xs md:text-sm text-emerald-200/80 pl-2; }
-    .markdown-body ol { @apply list-decimal list-inside space-y-2 mb-4 text-xs md:text-sm text-emerald-200/80 pl-2; }
-    .markdown-body li strong { @apply text-amber-300 font-semibold; }
-    .markdown-body blockquote { @apply border-l-2 border-emerald-500 bg-[#092213]/40 p-4 rounded-r-xl my-4 text-xs md:text-sm text-emerald-300/90 italic font-serif; }
-    .markdown-body code { @apply font-mono text-xs bg-[#05140b] text-amber-400 px-1.5 py-0.5 rounded border border-emerald-950; }
-    .markdown-body hr { @apply border-emerald-900/40 my-6; }
+
+
+  <!-- Fallback Arabic font (Google Fonts) in case self-hosted KFGQPC is missing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+  <style type="text/tailwindcss">
+    /* ════════════════════════════════════════════════
+       KFGQPC UTHMANIC HAFS — self-hosted
+       Place UthmanicHafs1Ver18.ttf in ./fonts/
+       Download: https://fonts.qurancomplex.gov.sa
+       ════════════════════════════════════════════════ */
+    @font-face {
+      font-family: 'UthmanicHafs';
+      src: url('./fonts/UthmanicHafs1Ver18.ttf') format('truetype');
+      font-display: swap;
+    }
+
+
+    /* ════════════════════════════════════════════════
+       WARM TERRACOTTA MINIMALIST THEME
+       ════════════════════════════════════════════════ */
+    :root {
+      --bg-cream:        #FFFBF1;
+      --structural:      #7D5243;
+      --divider-sand:    #E6DCD0;
+      --text-espresso:   #3A2E2B;
+      --text-taupe:      #7A6F6C;
+      --accent-crimson:  #A94442;
+      --accent-olive:    #3C763D;
+      --accent-ochre:    #B08A4B;
+    }
+
+
+    html, body {
+      background: var(--bg-cream);
+      color: var(--text-espresso);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+
+    /* Paper-card effect on main content */
+    .paper-card {
+      background: var(--bg-cream);
+      box-shadow:
+        0 1px 2px rgba(125, 82, 67, 0.05),
+        0 8px 24px rgba(125, 82, 67, 0.08);
+      border: 1px solid var(--divider-sand);
+      border-radius: 8px;
+    }
+
+
+    /* ════════════════════════════════════════════════
+       MARKDOWN BODY TYPOGRAPHY
+       ════════════════════════════════════════════════ */
+    .markdown-body h1 {
+      color: var(--structural);
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--divider-sand);
+    }
+    .markdown-body h2 {
+      color: var(--accent-crimson);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--divider-sand);
+    }
+    .markdown-body h3 {
+      color: var(--structural);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .markdown-body p {
+      color: var(--text-espresso);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .markdown-body ul, .markdown-body ol {
+      color: var(--text-espresso);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    .markdown-body ul { list-style: disc; }
+    .markdown-body ol { list-style: decimal; }
+    .markdown-body li { margin-bottom: 0.35rem; }
+    .markdown-body li strong { color: var(--accent-ochre); font-weight: 600; }
+    .markdown-body strong { color: var(--structural); font-weight: 600; }
+    .markdown-body em { color: var(--text-taupe); font-style: italic; }
+    .markdown-body hr {
+      border: none;
+      border-top: 1px solid var(--divider-sand);
+      margin: 2rem 0;
+    }
+    .markdown-body a {
+      color: var(--accent-olive);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+    .markdown-body a:hover { color: var(--accent-crimson); }
+
+
+    .markdown-body blockquote {
+      border-left: 3px solid var(--accent-ochre);
+      background: rgba(176, 138, 75, 0.06);
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      border-radius: 0 4px 4px 0;
+      color: var(--text-espresso);
+      font-style: italic;
+      font-size: 0.92rem;
+    }
+    .markdown-body code {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.82em;
+      background: rgba(125, 82, 67, 0.08);
+      color: var(--structural);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+    }
+
+
+    /* ════════════════════════════════════════════════
+       TABLES — Word-by-Word Grids
+       ════════════════════════════════════════════════ */
+    .markdown-body table {
+      width: 100%;
+      margin: 1rem 0;
+      border-collapse: collapse;
+      background: var(--bg-cream);
+      border: 1px solid var(--divider-sand);
+      border-radius: 6px;
+      overflow: hidden;
+      table-layout: fixed;
+    }
+    .markdown-body thead {
+      background: rgba(125, 82, 67, 0.06);
+    }
+    .markdown-body th {
+      padding: 0.6rem 0.75rem;
+      font-weight: 600;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-taupe);
+      border-bottom: 1px solid var(--divider-sand);
+      text-align: left;
+    }
+    .markdown-body td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid rgba(230, 220, 208, 0.5);
+      vertical-align: middle;
+      color: var(--text-espresso);
+    }
+    .markdown-body tbody tr:last-child td { border-bottom: none; }
+    .markdown-body tbody tr:nth-child(even) {
+      background: rgba(230, 220, 208, 0.18);
+    }
+    .markdown-body tbody tr:hover {
+      background: rgba(176, 138, 75, 0.08);
+    }
+
+
+    /* ────────────────────────────────────────────────
+       ARABIC COLUMN — Uthmanic Hafs
+       Always the 1st column in markdown source
+       ──────────────────────────────────────────────── */
+    .markdown-body td:nth-child(1),
+    .markdown-body th:nth-child(1) {
+      font-family: 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif;
+      direction: rtl;
+      text-align: right;
+      color: var(--text-espresso);
+      line-height: 2.4;
+    }
+    .markdown-body td:nth-child(1) {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+
+
+    /* English meaning column (always 2nd) */
+    .markdown-body td:nth-child(2) {
+      font-size: 0.88rem;
+      color: var(--text-espresso);
+    }
+
+
+    /* Transliteration column (always 3rd) */
+    .markdown-body td:nth-child(3) {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-size: 0.78rem;
+      color: var(--accent-ochre);
+      letter-spacing: 0.02em;
+    }
+
+
+    /* ════════════════════════════════════════════════
+       READING MODE A — ARABIC-FIRST (default)
+       Hide transliteration, widen Arabic
+       ════════════════════════════════════════════════ */
+    body[data-mode="arabic-first"] .markdown-body td:nth-child(3),
+    body[data-mode="arabic-first"] .markdown-body th:nth-child(3) {
+      display: none;
+    }
+    body[data-mode="arabic-first"] .markdown-body td:nth-child(1) {
+      font-size: 1.85rem;
+      width: 55%;
+    }
+    body[data-mode="arabic-first"] .markdown-body td:nth-child(2) {
+      font-size: 0.95rem;
+      width: 45%;
+    }
+
+
+    /* ════════════════════════════════════════════════
+       READING MODE B — LEARNER
+       Show all three: Arabic | English | Translit
+       (this is the natural markdown order, no reorder needed)
+       ════════════════════════════════════════════════ */
+    body[data-mode="learner"] .markdown-body td:nth-child(1) {
+      width: 38%;
+      font-size: 1.55rem;
+    }
+    body[data-mode="learner"] .markdown-body td:nth-child(2) { width: 35%; }
+    body[data-mode="learner"] .markdown-body td:nth-child(3) { width: 27%; }
+
+
+    /* ════════════════════════════════════════════════
+       READING MODE C — VERBAL LEARNER
+       Visual order: Transliteration | English | Arabic
+       Uses CSS flex on table rows to reorder cells
+       ════════════════════════════════════════════════ */
+    body[data-mode="verbal"] .markdown-body table { display: block; }
+    body[data-mode="verbal"] .markdown-body thead,
+    body[data-mode="verbal"] .markdown-body tbody { display: block; width: 100%; }
+    body[data-mode="verbal"] .markdown-body tr {
+      display: flex;
+      width: 100%;
+      align-items: center;
+    }
+    body[data-mode="verbal"] .markdown-body td,
+    body[data-mode="verbal"] .markdown-body th {
+      flex: 1;
+      display: block;
+    }
+    body[data-mode="verbal"] .markdown-body td:nth-child(1),
+    body[data-mode="verbal"] .markdown-body th:nth-child(1) { order: 3; flex: 0 0 35%; }
+    body[data-mode="verbal"] .markdown-body td:nth-child(2),
+    body[data-mode="verbal"] .markdown-body th:nth-child(2) { order: 2; flex: 0 0 35%; }
+    body[data-mode="verbal"] .markdown-body td:nth-child(3),
+    body[data-mode="verbal"] .markdown-body th:nth-child(3) {
+      order: 1;
+      flex: 0 0 30%;
+      font-size: 0.95rem;
+      font-style: normal;
+      color: var(--text-espresso);
+      font-weight: 500;
+    }
+
+
+    /* ════════════════════════════════════════════════
+       MODE TOGGLE — segmented control
+       ════════════════════════════════════════════════ */
+    .mode-toggle {
+      display: inline-flex;
+      background: rgba(230, 220, 208, 0.4);
+      border: 1px solid var(--divider-sand);
+      border-radius: 6px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .mode-btn {
+      padding: 0.4rem 0.85rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--text-taupe);
+      background: transparent;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .mode-btn:hover { color: var(--structural); }
+    .mode-btn.active {
+      background: var(--structural);
+      color: var(--bg-cream);
+      box-shadow: 0 1px 3px rgba(125, 82, 67, 0.25);
+    }
+
+
+    /* Small screens: tighten everything */
+    @media (max-width: 640px) {
+      .markdown-body td:nth-child(1) { font-size: 1.4rem; line-height: 2.2; }
+      body[data-mode="arabic-first"] .markdown-body td:nth-child(1) { font-size: 1.55rem; }
+      .markdown-body h1 { font-size: 1.4rem; }
+      .markdown-body h2 { font-size: 1.1rem; }
+      .mode-btn { padding: 0.35rem 0.55rem; font-size: 0.65rem; }
+    }
   </style>
 </head>
-<body class="bg-[#05140b] text-emerald-50 min-h-screen flex flex-col justify-between antialiased p-6 selection:bg-emerald-500/30">
+<body data-mode="arabic-first" class="min-h-screen antialiased">
 
-  <main class="flex-1 flex flex-col items-center justify-start w-full max-w-2xl mx-auto py-8">
-    
-    <div class="w-full flex items-center justify-between mb-8 border-b border-emerald-900/40 pb-4">
-      <a href="./index.html" class="text-xs font-mono text-emerald-500 hover:text-emerald-300 transition-colors flex items-center gap-1">
-        ← Return to Vault Tree
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+
+
+    <!-- ────────── Header bar ────────── -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4" style="border-bottom: 1px solid var(--divider-sand);">
+      <a href="./index.html" class="text-xs font-medium hover:underline" style="color: var(--text-taupe);">
+        ← Return
       </a>
-      <span class="text-[10px] font-mono text-emerald-700 tracking-widest uppercase">Markdown Engine Node</span>
+      <span class="text-[10px] font-semibold tracking-widest uppercase" style="color: var(--text-taupe);">
+        Markdown Reader
+      </span>
     </div>
 
-    <div id="markdown-target" class="markdown-body w-full space-y-1">
-      <p class="text-xs font-mono text-emerald-600 italic">Parsing localized markdown streams...</p>
+
+    <!-- ────────── Mode toggle ────────── -->
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="text-[10px] font-semibold tracking-widest uppercase" style="color: var(--text-taupe);">
+        Reading Mode
+      </span>
+      <div class="mode-toggle" id="modeToggle">
+        <button class="mode-btn active" data-set="arabic-first">Arabic-first</button>
+        <button class="mode-btn" data-set="learner">Learner</button>
+        <button class="mode-btn" data-set="verbal">Verbal</button>
+      </div>
     </div>
+
+
+    <!-- ────────── Markdown content (paper card) ────────── -->
+    <article class="paper-card p-6 sm:p-10">
+      <div id="markdown-target" class="markdown-body">
+        <p class="text-xs italic" style="color: var(--text-taupe);">Loading content...</p>
+      </div>
+    </article>
+
 
   </main>
 
-  <footer class="text-center text-[10px] text-emerald-800 font-mono tracking-widest uppercase py-6">
-    Steps of Muhammad ✦ Serverless Parser Terminal
+
+  <footer class="text-center text-[10px] font-semibold tracking-widest uppercase py-6" style="color: var(--text-taupe);">
+    Steps of Muhammad · Paper Reader
   </footer>
 
+
   <script>
-    document.addEventListener("DOMContentLoaded", async () => {
-      // 🕵️ Extract the file parameter out of the URL string (e.g., ?file=notes.md)
-      const URLParameters = new URLSearchParams(window.location.search);
-      const targetMarkdownFile = URLParameters.get('file');
+    // ════════════════════════════════════════════
+    // Mode toggle with localStorage persistence
+    // ════════════════════════════════════════════
+    const MODE_KEY = 'tahlil-reading-mode';
+    const savedMode = localStorage.getItem(MODE_KEY) || 'arabic-first';
+    document.body.setAttribute('data-mode', savedMode);
 
-      const outputContainer = document.getElementById('markdown-target');
 
-      if (!targetMarkdownFile) {
-        outputContainer.innerHTML = `<p class="text-xs font-mono text-red-400">⚠️ Error: No target file vector specified in execution string.</p>`;
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+      if (btn.dataset.set === savedMode) btn.classList.add('active');
+      else btn.classList.remove('active');
+
+
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.set;
+        document.body.setAttribute('data-mode', mode);
+        localStorage.setItem(MODE_KEY, mode);
+        document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+
+    // ════════════════════════════════════════════
+    // Markdown fetch & render
+    // ════════════════════════════════════════════
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('file');
+      const target = document.getElementById('markdown-target');
+
+
+      if (!file) {
+        target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ No file specified. Append <code>?file=yourfile.md</code> to the URL.</p>`;
         return;
       }
 
+
       try {
-        const response = await fetch(targetMarkdownFile);
-        if (!response.ok) throw new Error(`HTTP Error Status: ${response.status}`);
-        
-        const rawMarkdownText = await response.text();
-        
-        // Execute compilation map
-        outputContainer.innerHTML = marked.parse(rawMarkdownText);
-        
-        // Dynamically update document title to match header
-        const documentHeader = outputContainer.querySelector('h1');
-        if (documentHeader) {
-          document.title = documentHeader.textContent + " | Vault System";
-        }
-      } catch (error) {
-        console.error("Markdown execution processing failure:", error);
-        outputContainer.innerHTML = `
-          <p class="text-xs font-mono text-red-400">
-            ⚠️ <strong>Parser Interruption:</strong> Failed to fetch or decode the file string <code>${targetMarkdownFile}</code>.<br> 
-            Verify the file path array rule matches its exact relative directory placement.
+        const res = await fetch(file);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const md = await res.text();
+
+
+        marked.setOptions({ gfm: true, breaks: false });
+        target.innerHTML = marked.parse(md);
+
+
+        const h1 = target.querySelector('h1');
+        if (h1) document.title = h1.textContent;
+      } catch (err) {
+        console.error(err);
+        target.innerHTML = `
+          <p style="color: var(--accent-crimson);">
+            ⚠️ <strong>Could not load file:</strong> <code>${file}</code><br>
+            <span style="color: var(--text-taupe); font-size: 0.85em;">Check that the path is correct and the file exists relative to this HTML.</span>
           </p>`;
+      }
+    });
+
+
+    // Font availability check (helpful console hint)
+    document.fonts.ready.then(() => {
+      const hasUthmanic = Array.from(document.fonts).some(f => f.family.includes('UthmanicHafs') && f.status === 'loaded');
+      if (!hasUthmanic) {
+        console.info('ℹ️  KFGQPC UthmanicHafs font not found at ./fonts/UthmanicHafs1Ver18.ttf — falling back to Amiri Quran. Download the KFGQPC font from https://fonts.qurancomplex.gov.sa for authentic Mushaf rendering.');
       }
     });
   </script>
 </body>
-</html>
+</html> 
+
