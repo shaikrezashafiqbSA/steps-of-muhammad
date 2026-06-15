@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    /* Styling elements translated out of markdown parsing */
+    .markdown-body h1 { @apply text-2xl font-black text-emerald-300 border-b border-emerald-900/40 pb-2 mb-4 uppercase tracking-wider; }
+    .markdown-body h2 { @apply text-lg font-bold text-emerald-400 mt-6 mb-3 tracking-wide; }
+    .markdown-body h3 { @apply text-base font-semibold text-teal-400 mt-4 mb-2; }
+    .markdown-body p { @apply text-xs md:text-sm text-emerald-100/90 leading-relaxed mb-4 font-sans; }
+    .markdown-body ul { @apply list-disc list-inside space-y-2 mb-4 text-xs md:text-sm text-emerald-200/80 pl-2; }
+    .markdown-body ol { @apply list-decimal list-inside space-y-2 mb-4 text-xs md:text-sm text-emerald-200/80 pl-2; }
+    .markdown-body li strong { @apply text-amber-300 font-semibold; }
+    .markdown-body blockquote { @apply border-l-2 border-emerald-500 bg-[#092213]/40 p-4 rounded-r-xl my-4 text-xs md:text-sm text-emerald-300/90 italic font-serif; }
+    .markdown-body code { @apply font-mono text-xs bg-[#05140b] text-amber-400 px-1.5 py-0.5 rounded border border-emerald-950; }
+    .markdown-body hr { @apply border-emerald-900/40 my-6; }
+  </style>
+</head>
+<body class="bg-[#05140b] text-emerald-50 min-h-screen flex flex-col justify-between antialiased p-6 selection:bg-emerald-500/30">
+
+  <main class="flex-1 flex flex-col items-center justify-start w-full max-w-2xl mx-auto py-8">
+    
+    <div class="w-full flex items-center justify-between mb-8 border-b border-emerald-900/40 pb-4">
+      <a href="./index.html" class="text-xs font-mono text-emerald-500 hover:text-emerald-300 transition-colors flex items-center gap-1">
+        ← Return to Vault Tree
+      </a>
+      <span class="text-[10px] font-mono text-emerald-700 tracking-widest uppercase">Markdown Engine Node</span>
+    </div>
+
+    <div id="markdown-target" class="markdown-body w-full space-y-1">
+      <p class="text-xs font-mono text-emerald-600 italic">Parsing localized markdown streams...</p>
+    </div>
+
+  </main>
+
+  <footer class="text-center text-[10px] text-emerald-800 font-mono tracking-widest uppercase py-6">
+    Steps of Muhammad ✦ Serverless Parser Terminal
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      // 🕵️ Extract the file parameter out of the URL string (e.g., ?file=notes.md)
+      const URLParameters = new URLSearchParams(window.location.search);
+      const targetMarkdownFile = URLParameters.get('file');
+
+      const outputContainer = document.getElementById('markdown-target');
+
+      if (!targetMarkdownFile) {
+        outputContainer.innerHTML = `<p class="text-xs font-mono text-red-400">⚠️ Error: No target file vector specified in execution string.</p>`;
+        return;
+      }
+
+      try {
+        const response = await fetch(targetMarkdownFile);
+        if (!response.ok) throw new Error(`HTTP Error Status: ${response.status}`);
+        
+        const rawMarkdownText = await response.text();
+        
+        // Execute compilation map
+        outputContainer.innerHTML = marked.parse(rawMarkdownText);
+        
+        // Dynamically update document title to match header
+        const documentHeader = outputContainer.querySelector('h1');
+        if (documentHeader) {
+          document.title = documentHeader.textContent + " | Vault System";
+        }
+      } catch (error) {
+        console.error("Markdown execution processing failure:", error);
+        outputContainer.innerHTML = `
+          <p class="text-xs font-mono text-red-400">
+            ⚠️ <strong>Parser Interruption:</strong> Failed to fetch or decode the file string <code>${targetMarkdownFile}</code>.<br> 
+            Verify the file path array rule matches its exact relative directory placement.
+          </p>`;
+      }
+    });
+  </script>
+</body>
+</html>
