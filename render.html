@@ -7,25 +7,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-
-  <!-- Fallback Arabic font (Google Fonts) in case self-hosted KFGQPC is missing -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-
   <style type="text/tailwindcss">
     /* ════════════════════════════════════════════════
        KFGQPC UTHMANIC HAFS — self-hosted
-       Place UthmanicHafs1Ver18.ttf in ./fonts/
-       Download: https://fonts.qurancomplex.gov.sa
        ════════════════════════════════════════════════ */
     @font-face {
       font-family: 'UthmanicHafs';
       src: url('./fonts/UthmanicHafs1Ver18.ttf') format('truetype');
       font-display: swap;
     }
-
 
     /* ════════════════════════════════════════════════
        WARM TERRACOTTA MINIMALIST THEME
@@ -41,16 +35,14 @@
       --accent-ochre:    #B08A4B;
     }
 
-
     html, body {
       background: var(--bg-cream);
       color: var(--text-espresso);
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       letter-spacing: 0.01em;
+      scroll-behavior: smooth;
     }
 
-
-    /* Paper-card effect on main content */
     .paper-card {
       background: var(--bg-cream);
       box-shadow:
@@ -59,7 +51,6 @@
       border: 1px solid var(--divider-sand);
       border-radius: 8px;
     }
-
 
     /* ════════════════════════════════════════════════
        MARKDOWN BODY TYPOGRAPHY
@@ -82,6 +73,7 @@
       margin-bottom: 0.75rem;
       padding-bottom: 0.25rem;
       border-bottom: 1px solid var(--divider-sand);
+      scroll-margin-top: 1rem;
     }
     .markdown-body h3 {
       color: var(--structural);
@@ -89,6 +81,7 @@
       font-weight: 600;
       margin-top: 1.25rem;
       margin-bottom: 0.5rem;
+      scroll-margin-top: 1rem;
     }
     .markdown-body p {
       color: var(--text-espresso);
@@ -122,7 +115,6 @@
     }
     .markdown-body a:hover { color: var(--accent-crimson); }
 
-
     .markdown-body blockquote {
       border-left: 3px solid var(--accent-ochre);
       background: rgba(176, 138, 75, 0.06);
@@ -142,152 +134,121 @@
       border-radius: 3px;
     }
 
-
     /* ════════════════════════════════════════════════
-       TABLES — Word-by-Word Grids
+       AYAH BLOCK — Quran-app style word-grid
+       Author syntax:  [[arabic|english|translit]]
+       Renders as:     <div class="ayah"><span class="w">...</span>...</div>
        ════════════════════════════════════════════════ */
-    .markdown-body table {
-      width: 100%;
-      margin: 1rem 0;
-      border-collapse: collapse;
-      background: var(--bg-cream);
+    .markdown-body .ayah {
+      direction: rtl;                    /* whole block flows R→L */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0.4rem 0.85rem;
+      background: rgba(230, 220, 208, 0.22);
       border: 1px solid var(--divider-sand);
-      border-radius: 6px;
-      overflow: hidden;
-      table-layout: fixed;
+      border-radius: 10px;
+      padding: 1.4rem 1.1rem 1.1rem;
+      margin: 1.5rem 0;
     }
-    .markdown-body thead {
+
+    .markdown-body .ayah .w {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      min-width: 60px;
+      padding: 0.35rem 0.25rem;
+      border-radius: 6px;
+      transition: background 0.15s ease;
+    }
+    .markdown-body .ayah .w:hover {
       background: rgba(125, 82, 67, 0.06);
     }
-    .markdown-body th {
-      padding: 0.6rem 0.75rem;
-      font-weight: 600;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-taupe);
-      border-bottom: 1px solid var(--divider-sand);
-      text-align: left;
-    }
-    .markdown-body td {
-      padding: 0.5rem 0.75rem;
-      border-bottom: 1px solid rgba(230, 220, 208, 0.5);
-      vertical-align: middle;
-      color: var(--text-espresso);
-    }
-    .markdown-body tbody tr:last-child td { border-bottom: none; }
-    .markdown-body tbody tr:nth-child(even) {
-      background: rgba(230, 220, 208, 0.18);
-    }
-    .markdown-body tbody tr:hover {
-      background: rgba(176, 138, 75, 0.08);
-    }
 
-
-    /* ────────────────────────────────────────────────
-       ARABIC COLUMN — Uthmanic Hafs
-       Always the 1st column in markdown source
-       ──────────────────────────────────────────────── */
-    .markdown-body td:nth-child(1),
-    .markdown-body th:nth-child(1) {
+    /* Row 1 — Arabic word (the visual anchor) */
+    .markdown-body .ayah .w > b {
       font-family: 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif;
-      direction: rtl;
-      text-align: right;
-      color: var(--text-espresso);
-      line-height: 2.4;
-    }
-    .markdown-body td:nth-child(1) {
-      font-size: 1.6rem;
       font-weight: 400;
-    }
-
-
-    /* English meaning column (always 2nd) */
-    .markdown-body td:nth-child(2) {
-      font-size: 0.88rem;
+      font-size: 2.1rem;
+      line-height: 2.6;
       color: var(--text-espresso);
+      direction: rtl;
+      letter-spacing: 0;
     }
 
-
-    /* Transliteration column (always 3rd) */
-    .markdown-body td:nth-child(3) {
+    /* Row 2 — English gloss */
+    .markdown-body .ayah .w > i {
       font-family: 'Inter', sans-serif;
-      font-style: italic;
-      font-size: 0.78rem;
-      color: var(--accent-ochre);
-      letter-spacing: 0.02em;
-    }
-
-
-    /* ════════════════════════════════════════════════
-       READING MODE A — ARABIC-FIRST (default)
-       Hide transliteration, widen Arabic
-       ════════════════════════════════════════════════ */
-    body[data-mode="arabic-first"] .markdown-body td:nth-child(3),
-    body[data-mode="arabic-first"] .markdown-body th:nth-child(3) {
-      display: none;
-    }
-    body[data-mode="arabic-first"] .markdown-body td:nth-child(1) {
-      font-size: 1.85rem;
-      width: 55%;
-    }
-    body[data-mode="arabic-first"] .markdown-body td:nth-child(2) {
-      font-size: 0.95rem;
-      width: 45%;
-    }
-
-
-    /* ════════════════════════════════════════════════
-       READING MODE B — LEARNER
-       Show all three: Arabic | English | Translit
-       (this is the natural markdown order, no reorder needed)
-       ════════════════════════════════════════════════ */
-    body[data-mode="learner"] .markdown-body td:nth-child(1) {
-      width: 38%;
-      font-size: 1.55rem;
-    }
-    body[data-mode="learner"] .markdown-body td:nth-child(2) { width: 35%; }
-    body[data-mode="learner"] .markdown-body td:nth-child(3) { width: 27%; }
-
-
-    /* ════════════════════════════════════════════════
-       READING MODE C — VERBAL LEARNER
-       Visual order: Transliteration | English | Arabic
-       Uses CSS flex on table rows to reorder cells
-       ════════════════════════════════════════════════ */
-    body[data-mode="verbal"] .markdown-body table { display: block; }
-    body[data-mode="verbal"] .markdown-body thead,
-    body[data-mode="verbal"] .markdown-body tbody { display: block; width: 100%; }
-    body[data-mode="verbal"] .markdown-body tr {
-      display: flex;
-      width: 100%;
-      align-items: center;
-    }
-    body[data-mode="verbal"] .markdown-body td,
-    body[data-mode="verbal"] .markdown-body th {
-      flex: 1;
-      display: block;
-    }
-    body[data-mode="verbal"] .markdown-body td:nth-child(1),
-    body[data-mode="verbal"] .markdown-body th:nth-child(1) { order: 3; flex: 0 0 35%; }
-    body[data-mode="verbal"] .markdown-body td:nth-child(2),
-    body[data-mode="verbal"] .markdown-body th:nth-child(2) { order: 2; flex: 0 0 35%; }
-    body[data-mode="verbal"] .markdown-body td:nth-child(3),
-    body[data-mode="verbal"] .markdown-body th:nth-child(3) {
-      order: 1;
-      flex: 0 0 30%;
-      font-size: 0.95rem;
       font-style: normal;
-      color: var(--text-espresso);
+      font-size: 0.78rem;
       font-weight: 500;
+      color: var(--text-espresso);
+      direction: ltr;
+      margin-top: 0.15rem;
+      line-height: 1.3;
+      max-width: 130px;
     }
 
+    /* Row 3 — Transliteration */
+    .markdown-body .ayah .w > u {
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      font-style: italic;
+      font-size: 0.7rem;
+      color: var(--accent-ochre);
+      direction: ltr;
+      margin-top: 0.1rem;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      max-width: 130px;
+    }
+
+    /* ════════════════════════════════════════════════
+       READING MODES — toggle visibility of rows
+       ════════════════════════════════════════════════ */
+    /* Mode A: Arabic-first — hide transliteration */
+    body[data-mode="arabic-first"] .ayah .w > u { display: none; }
+    body[data-mode="arabic-first"] .ayah .w > b { font-size: 2.3rem; }
+
+    /* Mode B: Learner — show everything (default styling) */
+
+    /* Mode C: Verbal — translit prominent, Arabic recedes */
+    body[data-mode="verbal"] .ayah .w > b {
+      font-size: 1.6rem;
+      opacity: 0.65;
+      line-height: 2.2;
+    }
+    body[data-mode="verbal"] .ayah .w > u {
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--text-espresso);
+      order: -1;            /* moves translit to top */
+      margin-top: 0;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Mode D: Arabic-only — pure recitation, hide both glosses */
+    body[data-mode="arabic-only"] .ayah .w > i,
+    body[data-mode="arabic-only"] .ayah .w > u { display: none; }
+    body[data-mode="arabic-only"] .ayah .w > b {
+      font-size: 2.6rem;
+      line-height: 2.8;
+    }
+    body[data-mode="arabic-only"] .ayah {
+      padding: 1.6rem 1.2rem;
+      gap: 0.6rem 1.2rem;
+    }
 
     /* ════════════════════════════════════════════════
        MODE TOGGLE — segmented control
        ════════════════════════════════════════════════ */
     .mode-toggle {
       display: inline-flex;
+      flex-wrap: wrap;
       background: rgba(230, 220, 208, 0.4);
       border: 1px solid var(--divider-sand);
       border-radius: 6px;
@@ -295,8 +256,8 @@
       gap: 2px;
     }
     .mode-btn {
-      padding: 0.4rem 0.85rem;
-      font-size: 0.72rem;
+      padding: 0.4rem 0.7rem;
+      font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.04em;
       color: var(--text-taupe);
@@ -314,22 +275,97 @@
       box-shadow: 0 1px 3px rgba(125, 82, 67, 0.25);
     }
 
+    /* ════════════════════════════════════════════════
+       TABLE OF CONTENTS (auto-built from h2 + h3)
+       ════════════════════════════════════════════════ */
+    .toc-card {
+      background: rgba(230, 220, 208, 0.25);
+      border: 1px solid var(--divider-sand);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+    }
+    .toc-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--structural);
+    }
+    .toc-toggle {
+      font-size: 0.75rem;
+      color: var(--text-taupe);
+      transition: transform 0.2s ease;
+    }
+    .toc-card.collapsed .toc-toggle { transform: rotate(-90deg); }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 0 0;
+      max-height: 600px;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.2s ease, margin-top 0.2s ease;
+    }
+    .toc-card.collapsed .toc-list {
+      max-height: 0;
+      opacity: 0;
+      margin-top: 0;
+    }
+    .toc-list li { margin: 0; padding: 0; }
+    .toc-list a {
+      display: block;
+      padding: 0.4rem 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-espresso);
+      text-decoration: none;
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      transition: all 0.15s ease;
+    }
+    .toc-list a:hover {
+      background: rgba(125, 82, 67, 0.08);
+      border-left-color: var(--structural);
+      color: var(--structural);
+    }
+    .toc-list .toc-h2 { font-weight: 600; }
+    .toc-list .toc-h3 a {
+      padding-left: 1.5rem;
+      font-size: 0.76rem;
+      color: var(--text-taupe);
+    }
 
-    /* Small screens: tighten everything */
+    /* ════════════════════════════════════════════════
+       MOBILE TIGHTENING
+       ════════════════════════════════════════════════ */
     @media (max-width: 640px) {
-      .markdown-body td:nth-child(1) { font-size: 1.4rem; line-height: 2.2; }
-      body[data-mode="arabic-first"] .markdown-body td:nth-child(1) { font-size: 1.55rem; }
       .markdown-body h1 { font-size: 1.4rem; }
       .markdown-body h2 { font-size: 1.1rem; }
-      .mode-btn { padding: 0.35rem 0.55rem; font-size: 0.65rem; }
+      .mode-btn { padding: 0.3rem 0.5rem; font-size: 0.62rem; }
+
+      .markdown-body .ayah { padding: 1rem 0.7rem 0.8rem; gap: 0.3rem 0.5rem; }
+      .markdown-body .ayah .w { min-width: 50px; padding: 0.25rem 0.15rem; }
+      .markdown-body .ayah .w > b { font-size: 1.75rem; line-height: 2.4; }
+
+      body[data-mode="arabic-first"] .ayah .w > b { font-size: 1.95rem; }
+      body[data-mode="arabic-only"] .ayah .w > b { font-size: 2.2rem; line-height: 2.6; }
+      body[data-mode="verbal"] .ayah .w > b { font-size: 1.35rem; }
+      body[data-mode="verbal"] .ayah .w > u { font-size: 0.85rem; }
+
+      .markdown-body .ayah .w > i { font-size: 0.72rem; max-width: 95px; }
+      .markdown-body .ayah .w > u { font-size: 0.64rem; max-width: 95px; }
     }
   </style>
 </head>
 <body data-mode="arabic-first" class="min-h-screen antialiased">
 
-
   <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
-
 
     <!-- ────────── Header bar ────────── -->
     <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4" style="border-bottom: 1px solid var(--divider-sand);">
@@ -341,7 +377,6 @@
       </span>
     </div>
 
-
     <!-- ────────── Mode toggle ────────── -->
     <div class="flex flex-wrap items-center gap-3 mb-6">
       <span class="text-[10px] font-semibold tracking-widest uppercase" style="color: var(--text-taupe);">
@@ -351,25 +386,32 @@
         <button class="mode-btn active" data-set="arabic-first">Arabic-first</button>
         <button class="mode-btn" data-set="learner">Learner</button>
         <button class="mode-btn" data-set="verbal">Verbal</button>
+        <button class="mode-btn" data-set="arabic-only">Arabic-only</button>
       </div>
     </div>
 
-
     <!-- ────────── Markdown content (paper card) ────────── -->
     <article class="paper-card p-6 sm:p-10">
+
+      <!-- TOC auto-injected here -->
+      <nav id="toc" class="toc-card" style="display:none;">
+        <div class="toc-header" id="tocHeader">
+          <span class="toc-title">📑 Contents</span>
+          <span class="toc-toggle">▼</span>
+        </div>
+        <ul class="toc-list" id="tocList"></ul>
+      </nav>
+
       <div id="markdown-target" class="markdown-body">
         <p class="text-xs italic" style="color: var(--text-taupe);">Loading content...</p>
       </div>
     </article>
 
-
   </main>
-
 
   <footer class="text-center text-[10px] font-semibold tracking-widest uppercase py-6" style="color: var(--text-taupe);">
     Steps of Muhammad · Paper Reader
   </footer>
-
 
   <script>
     // ════════════════════════════════════════════
@@ -379,11 +421,9 @@
     const savedMode = localStorage.getItem(MODE_KEY) || 'arabic-first';
     document.body.setAttribute('data-mode', savedMode);
 
-
     document.querySelectorAll('.mode-btn').forEach(btn => {
       if (btn.dataset.set === savedMode) btn.classList.add('active');
       else btn.classList.remove('active');
-
 
       btn.addEventListener('click', () => {
         const mode = btn.dataset.set;
@@ -394,6 +434,129 @@
       });
     });
 
+    // ════════════════════════════════════════════
+    // Word-stack parser
+    //   [[arabic|english|translit]]  →  <span class="w"><b>...</b><i>...</i><u>...</u></span>
+    //   Consecutive .w siblings auto-wrapped in <div class="ayah">
+    //   Escape with \[[  to render literal "[["
+    // ════════════════════════════════════════════
+    function parseWordStacks(rootEl) {
+      // 1. Walk every text-bearing element; transform [[...]] in raw HTML
+      const html = rootEl.innerHTML;
+
+      // Match [[arabic|english|translit]] or [[arabic|english]] (2-part) gracefully
+      // Negative lookbehind for backslash to allow escaping
+      const wordRe = /(?<!\\)\[\[([^\[\]|]+)(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?\]\]/g;
+
+      const transformed = html.replace(wordRe, (match, ar, en, tr) => {
+        const arabic = (ar || '').trim();
+        const english = (en || '').trim();
+        const translit = (tr || '').trim();
+        let inner = `<b>${arabic}</b>`;
+        if (english) inner += `<i>${english}</i>`;
+        if (translit) inner += `<u>${translit}</u>`;
+        return `<span class="w">${inner}</span>`;
+      })
+      // Unescape \[[  →  [[
+      .replace(/\\\[\[/g, '[[');
+
+      rootEl.innerHTML = transformed;
+
+      // 2. Group consecutive <span class="w"> siblings into .ayah containers
+      groupAyahs(rootEl);
+    }
+
+    function groupAyahs(rootEl) {
+      // Find every .w that is NOT already inside an .ayah
+      const allW = Array.from(rootEl.querySelectorAll('span.w'));
+      let i = 0;
+      while (i < allW.length) {
+        const first = allW[i];
+        if (first.closest('.ayah')) { i++; continue; }
+
+        // Gather consecutive siblings that are .w (allowing whitespace text nodes between)
+        const group = [first];
+        let next = first.nextSibling;
+        while (next) {
+          if (next.nodeType === Node.TEXT_NODE && next.textContent.trim() === '') {
+            next = next.nextSibling;
+            continue;
+          }
+          if (next.nodeType === Node.ELEMENT_NODE && next.classList && next.classList.contains('w')) {
+            group.push(next);
+            next = next.nextSibling;
+            continue;
+          }
+          break;
+        }
+
+        // Wrap the group in a .ayah div
+        const ayah = document.createElement('div');
+        ayah.className = 'ayah';
+        first.parentNode.insertBefore(ayah, first);
+        group.forEach(node => ayah.appendChild(node));
+
+        // Advance the index past all members we just consumed
+        i += group.length;
+      }
+
+      // Clean up: if an .ayah ended up inside a <p>, lift it out
+      // (marked.js may wrap inline content in <p> tags)
+      rootEl.querySelectorAll('p > .ayah').forEach(ayah => {
+        const p = ayah.parentNode;
+        // If <p> contained only this .ayah (and whitespace), replace <p> entirely
+        const onlyChild = Array.from(p.childNodes).every(n =>
+          n === ayah || (n.nodeType === Node.TEXT_NODE && n.textContent.trim() === '')
+        );
+        if (onlyChild) {
+          p.parentNode.insertBefore(ayah, p);
+          p.remove();
+        } else {
+          // Otherwise lift the .ayah out but keep the <p> with remaining content
+          p.parentNode.insertBefore(ayah, p.nextSibling);
+        }
+      });
+    }
+
+    // ════════════════════════════════════════════
+    // TOC builder
+    // ════════════════════════════════════════════
+    function slugify(text) {
+      return text.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim();
+    }
+
+    function buildTOC(target) {
+      const tocNav = document.getElementById('toc');
+      const tocList = document.getElementById('tocList');
+      const headings = target.querySelectorAll('h2, h3');
+
+      if (headings.length < 2) {
+        tocNav.style.display = 'none';
+        return;
+      }
+
+      tocList.innerHTML = '';
+      headings.forEach((h, i) => {
+        if (!h.id) h.id = slugify(h.textContent) || `section-${i}`;
+        const li = document.createElement('li');
+        li.className = h.tagName === 'H2' ? 'toc-h2' : 'toc-h3';
+        const a = document.createElement('a');
+        a.href = `#${h.id}`;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+
+      tocNav.style.display = 'block';
+
+      document.getElementById('tocHeader').addEventListener('click', () => {
+        tocNav.classList.toggle('collapsed');
+      });
+    }
 
     // ════════════════════════════════════════════
     // Markdown fetch & render
@@ -403,22 +566,22 @@
       const file = params.get('file');
       const target = document.getElementById('markdown-target');
 
-
       if (!file) {
         target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ No file specified. Append <code>?file=yourfile.md</code> to the URL.</p>`;
         return;
       }
-
 
       try {
         const res = await fetch(file);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const md = await res.text();
 
-
         marked.setOptions({ gfm: true, breaks: false });
         target.innerHTML = marked.parse(md);
 
+        // Run our word-stack parser BEFORE TOC build (so any heading-text containing [[]] is normalized)
+        parseWordStacks(target);
+        buildTOC(target);
 
         const h1 = target.querySelector('h1');
         if (h1) document.title = h1.textContent;
@@ -427,20 +590,19 @@
         target.innerHTML = `
           <p style="color: var(--accent-crimson);">
             ⚠️ <strong>Could not load file:</strong> <code>${file}</code><br>
-            <span style="color: var(--text-taupe); font-size: 0.85em;">Check that the path is correct and the file exists relative to this HTML.</span>
+            <span style="color: var(--text-taupe); font-size: 0.85em;">Check the path and that the file exists relative to this HTML.</span>
           </p>`;
       }
     });
 
-
-    // Font availability check (helpful console hint)
     document.fonts.ready.then(() => {
       const hasUthmanic = Array.from(document.fonts).some(f => f.family.includes('UthmanicHafs') && f.status === 'loaded');
       if (!hasUthmanic) {
-        console.info('ℹ️  KFGQPC UthmanicHafs font not found at ./fonts/UthmanicHafs1Ver18.ttf — falling back to Amiri Quran. Download the KFGQPC font from https://fonts.qurancomplex.gov.sa for authentic Mushaf rendering.');
+        console.info('ℹ️  KFGQPC UthmanicHafs not found at ./fonts/UthmanicHafs1Ver18.ttf — falling back to Amiri Quran.');
       }
     });
   </script>
 </body>
-</html> 
+</html>
+
 
