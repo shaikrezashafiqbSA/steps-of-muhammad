@@ -136,11 +136,9 @@
 
     /* ════════════════════════════════════════════════
        AYAH BLOCK — Quran-app style word-grid
-       Author syntax:  [[arabic|english|translit]]
-       Renders as:     <div class="ayah"><span class="w">...</span>...</div>
        ════════════════════════════════════════════════ */
     .markdown-body .ayah {
-      direction: rtl;                    /* whole block flows R→L */
+      direction: rtl;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -168,7 +166,6 @@
       background: rgba(125, 82, 67, 0.06);
     }
 
-    /* Row 1 — Arabic word (the visual anchor) */
     .markdown-body .ayah .w > b {
       font-family: 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif;
       font-weight: 400;
@@ -179,7 +176,6 @@
       letter-spacing: 0;
     }
 
-    /* Row 2 — English gloss */
     .markdown-body .ayah .w > i {
       font-family: 'Inter', sans-serif;
       font-style: normal;
@@ -192,7 +188,6 @@
       max-width: 130px;
     }
 
-    /* Row 3 — Transliteration */
     .markdown-body .ayah .w > u {
       font-family: 'Inter', sans-serif;
       text-decoration: none;
@@ -207,15 +202,11 @@
     }
 
     /* ════════════════════════════════════════════════
-       READING MODES — toggle visibility of rows
+       READING MODES
        ════════════════════════════════════════════════ */
-    /* Mode A: Arabic-first — hide transliteration */
     body[data-mode="arabic-first"] .ayah .w > u { display: none; }
     body[data-mode="arabic-first"] .ayah .w > b { font-size: 2.3rem; }
 
-    /* Mode B: Learner — show everything (default styling) */
-
-    /* Mode C: Verbal — translit prominent, Arabic recedes */
     body[data-mode="verbal"] .ayah .w > b {
       font-size: 1.6rem;
       opacity: 0.65;
@@ -226,12 +217,11 @@
       font-style: normal;
       font-weight: 600;
       color: var(--text-espresso);
-      order: -1;            /* moves translit to top */
+      order: -1;
       margin-top: 0;
       margin-bottom: 0.2rem;
     }
 
-    /* Mode D: Arabic-only — pure recitation, hide both glosses */
     body[data-mode="arabic-only"] .ayah .w > i,
     body[data-mode="arabic-only"] .ayah .w > u { display: none; }
     body[data-mode="arabic-only"] .ayah .w > b {
@@ -244,7 +234,7 @@
     }
 
     /* ════════════════════════════════════════════════
-       MODE TOGGLE — segmented control
+       MODE TOGGLE
        ════════════════════════════════════════════════ */
     .mode-toggle {
       display: inline-flex;
@@ -276,7 +266,7 @@
     }
 
     /* ════════════════════════════════════════════════
-       TABLE OF CONTENTS (auto-built from h2 + h3)
+       TABLE OF CONTENTS
        ════════════════════════════════════════════════ */
     .toc-card {
       background: rgba(230, 220, 208, 0.25);
@@ -342,6 +332,54 @@
     }
 
     /* ════════════════════════════════════════════════
+       COLLAPSIBLE DETAILS — Hadith narration drawer
+       ════════════════════════════════════════════════ */
+    .markdown-body details {
+      background: rgba(125, 82, 67, 0.04);
+      border: 1px solid var(--divider-sand);
+      border-left: 3px solid var(--accent-ochre);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      margin: 1.25rem 0;
+      transition: background 0.18s ease;
+    }
+    .markdown-body details[open] {
+      background: rgba(230, 220, 208, 0.18);
+    }
+    .markdown-body summary {
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--structural);
+      user-select: none;
+      padding: 0.15rem 0;
+      list-style: none;
+    }
+    .markdown-body summary::-webkit-details-marker { display: none; }
+    .markdown-body summary::before {
+      content: '▶';
+      display: inline-block;
+      margin-right: 0.5rem;
+      font-size: 0.65rem;
+      color: var(--accent-ochre);
+      transition: transform 0.2s ease;
+    }
+    .markdown-body details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .markdown-body details > *:not(summary) {
+      margin-top: 0.85rem;
+    }
+    .markdown-body details .ayah {
+      background: rgba(230, 220, 208, 0.35);
+    }
+    .markdown-body details blockquote {
+      background: rgba(125, 82, 67, 0.04);
+      font-size: 0.85rem;
+    }
+
+    /* ════════════════════════════════════════════════
        MOBILE TIGHTENING
        ════════════════════════════════════════════════ */
     @media (max-width: 640px) {
@@ -367,7 +405,7 @@
 
   <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
 
-    <!-- ────────── Header bar ────────── -->
+    <!-- Header bar -->
     <div class="flex flex-wrap items-center justify-between gap-4 mb-6 pb-4" style="border-bottom: 1px solid var(--divider-sand);">
       <a href="./index.html" class="text-xs font-medium hover:underline" style="color: var(--text-taupe);">
         ← Return
@@ -377,7 +415,7 @@
       </span>
     </div>
 
-    <!-- ────────── Mode toggle ────────── -->
+    <!-- Mode toggle -->
     <div class="flex flex-wrap items-center gap-3 mb-6">
       <span class="text-[10px] font-semibold tracking-widest uppercase" style="color: var(--text-taupe);">
         Reading Mode
@@ -390,10 +428,9 @@
       </div>
     </div>
 
-    <!-- ────────── Markdown content (paper card) ────────── -->
+    <!-- Markdown content -->
     <article class="paper-card p-6 sm:p-10">
 
-      <!-- TOC auto-injected here -->
       <nav id="toc" class="toc-card" style="display:none;">
         <div class="toc-header" id="tocHeader">
           <span class="toc-title">📑 Contents</span>
@@ -435,17 +472,22 @@
     });
 
     // ════════════════════════════════════════════
+    // Slugify helper (used by TOC)
+    // ════════════════════════════════════════════
+    function slugify(text) {
+      return text.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim();
+    }
+
+    // ════════════════════════════════════════════
     // Word-stack parser
     //   [[arabic|english|translit]]  →  <span class="w"><b>...</b><i>...</i><u>...</u></span>
-    //   Consecutive .w siblings auto-wrapped in <div class="ayah">
-    //   Escape with \[[  to render literal "[["
     // ════════════════════════════════════════════
     function parseWordStacks(rootEl) {
-      // 1. Walk every text-bearing element; transform [[...]] in raw HTML
       const html = rootEl.innerHTML;
-
-      // Match [[arabic|english|translit]] or [[arabic|english]] (2-part) gracefully
-      // Negative lookbehind for backslash to allow escaping
       const wordRe = /(?<!\\)\[\[([^\[\]|]+)(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?\]\]/g;
 
       const transformed = html.replace(wordRe, (match, ar, en, tr) => {
@@ -457,24 +499,19 @@
         if (translit) inner += `<u>${translit}</u>`;
         return `<span class="w">${inner}</span>`;
       })
-      // Unescape \[[  →  [[
       .replace(/\\\[\[/g, '[[');
 
       rootEl.innerHTML = transformed;
-
-      // 2. Group consecutive <span class="w"> siblings into .ayah containers
       groupAyahs(rootEl);
     }
 
     function groupAyahs(rootEl) {
-      // Find every .w that is NOT already inside an .ayah
       const allW = Array.from(rootEl.querySelectorAll('span.w'));
       let i = 0;
       while (i < allW.length) {
         const first = allW[i];
         if (first.closest('.ayah')) { i++; continue; }
 
-        // Gather consecutive siblings that are .w (allowing whitespace text nodes between)
         const group = [first];
         let next = first.nextSibling;
         while (next) {
@@ -490,21 +527,16 @@
           break;
         }
 
-        // Wrap the group in a .ayah div
         const ayah = document.createElement('div');
         ayah.className = 'ayah';
         first.parentNode.insertBefore(ayah, first);
         group.forEach(node => ayah.appendChild(node));
 
-        // Advance the index past all members we just consumed
         i += group.length;
       }
 
-      // Clean up: if an .ayah ended up inside a <p>, lift it out
-      // (marked.js may wrap inline content in <p> tags)
       rootEl.querySelectorAll('p > .ayah').forEach(ayah => {
         const p = ayah.parentNode;
-        // If <p> contained only this .ayah (and whitespace), replace <p> entirely
         const onlyChild = Array.from(p.childNodes).every(n =>
           n === ayah || (n.nodeType === Node.TEXT_NODE && n.textContent.trim() === '')
         );
@@ -512,23 +544,14 @@
           p.parentNode.insertBefore(ayah, p);
           p.remove();
         } else {
-          // Otherwise lift the .ayah out but keep the <p> with remaining content
           p.parentNode.insertBefore(ayah, p.nextSibling);
         }
       });
     }
 
     // ════════════════════════════════════════════
-    // TOC builder
+    // TOC builder — with auto-expand of <details> on click
     // ════════════════════════════════════════════
-    function slugify(text) {
-      return text.toLowerCase()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .trim();
-    }
-
     function buildTOC(target) {
       const tocNav = document.getElementById('toc');
       const tocList = document.getElementById('tocList');
@@ -547,6 +570,23 @@
         const a = document.createElement('a');
         a.href = `#${h.id}`;
         a.textContent = h.textContent;
+
+        // Auto-expand any <details> inside the target section when TOC link is clicked
+        a.addEventListener('click', () => {
+          const heading = document.getElementById(h.id);
+          if (!heading) return;
+          let node = heading.nextElementSibling;
+          while (node && !['H1','H2','H3'].includes(node.tagName)) {
+            if (node.tagName === 'DETAILS') node.open = true;
+            if (node.querySelectorAll) {
+              node.querySelectorAll('details').forEach(d => d.open = true);
+            }
+            node = node.nextElementSibling;
+          }
+          const parentDetails = heading.closest('details');
+          if (parentDetails) parentDetails.open = true;
+        });
+
         li.appendChild(a);
         tocList.appendChild(li);
       });
@@ -556,6 +596,23 @@
       document.getElementById('tocHeader').addEventListener('click', () => {
         tocNav.classList.toggle('collapsed');
       });
+    }
+
+    // ════════════════════════════════════════════
+    // Auto-expand <details> when URL hash targets one
+    // ════════════════════════════════════════════
+    function handleHashOpen() {
+      if (!window.location.hash) return;
+      setTimeout(() => {
+        const targetEl = document.querySelector(window.location.hash);
+        if (!targetEl) return;
+        let parent = targetEl.closest('details');
+        while (parent) {
+          parent.open = true;
+          parent = parent.parentElement ? parent.parentElement.closest('details') : null;
+        }
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
 
     // ════════════════════════════════════════════
@@ -579,9 +636,9 @@
         marked.setOptions({ gfm: true, breaks: false });
         target.innerHTML = marked.parse(md);
 
-        // Run our word-stack parser BEFORE TOC build (so any heading-text containing [[]] is normalized)
         parseWordStacks(target);
         buildTOC(target);
+        handleHashOpen();
 
         const h1 = target.querySelector('h1');
         if (h1) document.title = h1.textContent;
@@ -603,6 +660,5 @@
     });
   </script>
 </body>
-</html>
-
+</html> 
 
