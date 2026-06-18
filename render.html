@@ -133,6 +133,91 @@
       padding: 0.1rem 0.35rem;
       border-radius: 3px;
     }
+    /* ════════════════════════════════════════════════
+       HADITH META-CARD (Pokémon-style top header)
+       Auto-built by parser from ::meta block
+       ════════════════════════════════════════════════ */
+    .hadith-meta-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      background: linear-gradient(135deg, rgba(125, 82, 67, 0.06), rgba(176, 138, 75, 0.04));
+      border: 1px solid var(--divider-sand);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hadith-meta-card .meta-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hadith-meta-card .meta-row {
+      font-size: 0.78rem;
+      color: var(--text-espresso);
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+
+    .hadith-meta-card .meta-label {
+      font-weight: 600;
+      color: var(--text-taupe);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.62rem;
+      margin-right: 0.4rem;
+    }
+
+    .hadith-meta-card .meta-value {
+      font-weight: 500;
+    }
+
+    .hadith-meta-card .grade-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 78px;
+      padding: 0.5rem 0.7rem;
+      border-radius: 8px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
+    }
+
+    .hadith-meta-card .grade-badge .grade-icon {
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .hadith-meta-card .grade-badge .grade-text {
+      font-size: 0.65rem;
+      line-height: 1.1;
+    }
+
+    /* Grade colour variants */
+    .grade-sahih     { background: #3C763D; color: #FFFBF1; }
+    .grade-hasan     { background: #2C7BB0; color: #FFFBF1; }
+    .grade-daif      { background: #B08A4B; color: #FFFBF1; }
+    .grade-mawdu     { background: #A94442; color: #FFFBF1; }
+    .grade-mutawatir { background: #2D5F2D; color: #FFFBF1; }
+    .grade-unknown   { background: #7A6F6C; color: #FFFBF1; }
+
+    @media (max-width: 640px) {
+      .hadith-meta-card { padding: 0.85rem 0.9rem; gap: 0.7rem; }
+      .hadith-meta-card .meta-row { font-size: 0.72rem; }
+      .hadith-meta-card .grade-badge { min-width: 64px; padding: 0.4rem 0.55rem; }
+      .hadith-meta-card .grade-badge .grade-text { font-size: 0.58rem; }
+    }
+
 
     /* ════════════════════════════════════════════════
        AYAH BLOCK — Quran-app style word-grid
@@ -481,7 +566,59 @@
         .replace(/-+/g, '-')
         .trim();
     }
+// ════════════════════════════════════════════
+    // Meta-card parser
+    //   Converts ::meta ... :: front-matter block
+    //   into Pokémon-style header card
+    // ════════════════════════════════════════════
+    const GRADE_MAP = {
+      sahih:     { icon: '✅', text: 'ṢAḤĪḤ' },
+      hasan:     { icon: '🟦', text: 'ḤASAN' },
+      daif:      { icon: '⚠️', text: 'ḌAʿĪF' },
+      mawdu:     { icon: '❌', text: 'MAWḌŪʿ' },
+      mutawatir: { icon: '🌟', text: 'MUTAWĀTIR' },
+      unknown:   { icon: '❓', text: 'UNGRADED' }
+    };
 
+    function parseMetaBlock(mdSource) {
+      const metaRe = /^::meta\s*\n([\s\S]*?)\n::\s*\n?/m;
+      const match = mdSource.match(metaRe);
+      if (!match) return { meta: null, stripped: mdSource };
+
+      const lines = match[1].split('\n');
+      const meta = {};
+      lines.forEach(line => {
+        const idx = line.indexOf(':');
+        if (idx === -1) return;
+        const key = line.slice(0, idx).trim().toLowerCase();
+        const val = line.slice(idx + 1).trim();
+        if (key) meta[key] = val;
+      });
+
+      const stripped = mdSource.replace(metaRe, '');
+      return { meta, stripped };
+    }
+
+    function renderMetaCard(meta) {
+      if (!meta) return '';
+      const gradeKey = (meta.grade || 'unknown').toLowerCase();
+      const gradeInfo = GRADE_MAP[gradeKey] || GRADE_MAP.unknown;
+
+      const rows = [];
+      if (meta.narrator)   rows.push(`<div class="meta-row"><span class="meta-label">Narrator</span><span class="meta-value">${meta.narrator}</span></div>`);
+      if (meta.collection) rows.push(`<div class="meta-row"><span class="meta-label">Collection</span><span class="meta-value">${meta.collection}</span></div>`);
+      if (meta.book)       rows.push(`<div class="meta-row"><span class="meta-label">Book</span><span class="meta-value">${meta.book}</span></div>`);
+      if (meta.hadith)     rows.push(`<div class="meta-row"><span class="meta-label">Hadith</span><span class="meta-value">#${meta.hadith}</span></div>`);
+
+      return `
+        <div class="hadith-meta-card">
+          <div class="meta-left">${rows.join('')}</div>
+          <div class="grade-badge grade-${gradeKey}">
+            <span class="grade-icon">${gradeInfo.icon}</span>
+            <span class="grade-text">${gradeInfo.text}</span>
+          </div>
+        </div>`;
+    } 
     // ════════════════════════════════════════════
     // Word-stack parser
     //   [[arabic|english|translit]]  →  <span class="w"><b>...</b><i>...</i><u>...</u></span>
@@ -634,7 +771,9 @@
         const md = await res.text();
 
         marked.setOptions({ gfm: true, breaks: false });
-        target.innerHTML = marked.parse(md);
+        const { meta, stripped } = parseMetaBlock(md);
+        const metaCardHTML = renderMetaCard(meta);
+        target.innerHTML = metaCardHTML + marked.parse(stripped); 
 
         parseWordStacks(target);
         buildTOC(target);

@@ -5,12 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="meta-title">Steps of Muhammad</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <!-- Inter (body) + JetBrains Mono (category labels) — matches render.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+
   <style>
-    /* Cross-fade for the spiritual emblem transformation */
-    .emblem-container:hover .base-flag { opacity: 0; }
-    .emblem-container:hover .nur-flag { opacity: 1; scale: 1.05; }
-    .emblem-container:active .base-flag { opacity: 0; }
-    .emblem-container:active .nur-flag { opacity: 1; scale: 1.05; }
+    /* Typography unification with render.html */
+    html, body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .font-mono-app {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+    }
+
 
     /* Fortress App Accordion Tree Transitions */
     .branch-container {
@@ -19,7 +30,7 @@
       transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .root-node.active .branch-container {
-      max-height: 600px; /* Provides vertical breathing room for content branches */
+      max-height: 600px;
     }
     .chevron-icon {
       transition: transform 0.25s ease;
@@ -28,280 +39,333 @@
       transform: rotate(180deg);
     }
 
-    /* Smooth localized scrollbar aesthetics */
-    ::-webkit-scrollbar {
-      width: 4px;
-    }
-    ::-webkit-scrollbar-track {
-      background: rgba(5, 20, 11, 0.6);
-    }
+
+    /* Paper-cream scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: rgba(230, 220, 208, 0.4); }
     ::-webkit-scrollbar-thumb {
-      background: rgba(16, 185, 129, 0.2);
+      background: rgba(125, 82, 67, 0.25);
       border-radius: 2px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(52, 211, 153, 0.4);
+    ::-webkit-scrollbar-thumb:hover { background: rgba(125, 82, 67, 0.5); }
+
+
+    /* Decorative divider under title */
+    .title-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      margin: 1.5rem auto 0;
+      max-width: 18rem;
+    }
+    .title-divider .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #B08A4B, transparent);
+      opacity: 0.5;
+    }
+    .title-divider .seal {
+      color: #B08A4B;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+
+    /* Category icon tile */
+    .node-icon-tile {
+      flex-shrink: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      background: rgba(125, 82, 67, 0.08);
+      border: 1px solid rgba(230, 220, 208, 0.8);
+      border-radius: 8px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .root-node:hover .node-icon-tile {
+      background: rgba(176, 138, 75, 0.18);
+      border-color: rgba(176, 138, 75, 0.4);
     }
   </style>
 </head>
-<body class="bg-[#05140b] text-emerald-50 min-h-screen flex flex-col justify-between antialiased selection:bg-emerald-500/30 relative overflow-x-hidden">
+<body class="bg-[#FFFBF1] text-[#3A2E2B] min-h-screen flex flex-col justify-between antialiased selection:bg-[#B08A4B]/30 relative overflow-x-hidden">
 
-  <div id="yt-audio-player" class="hidden"></div>
 
-  <!-- ── CENTRALIZED, APPARENT FIXED BACKGROUND NALAYN ENGINE ── -->
-  <div class="fixed inset-0 -z-10 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-    <!-- Base Nalayn state: Smaller (max-w-md/lg), perfectly centered, crisp visibility -->
-    <img 
+  <!-- ══════════════════════════════════════════════════════════════
+       FULL-BLEED BACKGROUND FLAG ENGINE
+       Black Flag covers viewport; Nūr cross-fades on category hover
+       ══════════════════════════════════════════════════════════════ -->
+  <div class="fixed inset-0 -z-10 pointer-events-none select-none overflow-hidden">
+    <img
       id="bg-base"
-      src="./Black Flag.jpeg" 
-      alt="Nalayn Shareef - Base State" 
-      class="w-full max-w-sm md:max-w-md h-auto object-contain transition-all duration-1000 ease-in-out opacity-55 saturate-[0.85]"
+      src="./black-flag.jpeg"
+      alt="Nalayn Shareef - Base State"
+      class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-55 saturate-[0.85]"
     />
-    <!-- Active Nur Nalayn state: Cross-fades to radiant form on hover interaction -->
-    <img 
+    <img
       id="bg-nur"
-      src="./Black Flag (nur).jpeg" 
-      alt="Nalayn Shareef - Filled with Nur" 
-      class="absolute w-full max-w-sm md:max-w-md h-auto object-contain transition-all duration-1000 ease-in-out opacity-0 scale-105"
+      src="./black-flag-nur.jpeg"
+      alt="Nalayn Shareef - Filled with Nur"
+      class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-0"
     />
-    <!-- Premium radial atmosphere overlay to fade edges beautifully into the dark background -->
-    <div class="absolute inset-0 bg-gradient-to-t from-[#05140b] via-[#05140b]/75 to-[#05140b]/90"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#05140b_75%)]"></div>
+    <div class="absolute inset-0 bg-[#FFFBF1]/35"></div>
   </div>
+
 
   <main class="flex-1 flex flex-col items-center justify-center p-6 min-w-0 relative z-10">
     <div class="max-w-2xl w-full text-center space-y-8 my-8">
-      
-      <!-- Top Emblem / Trigger Module -->
-      <div class="space-y-4 flex flex-col items-center">
-        <div id="emblem-trigger" 
-             onmouseenter="igniteNur()" 
-             onmouseleave="extinguishNur()"
-             class="emblem-container relative w-40 h-40 rounded-full overflow-hidden border border-emerald-900 shadow-2xl transition-all duration-500 cursor-pointer group hover:border-emerald-500/50 hover:shadow-emerald-500/10">
-          <img src="./Black Flag.jpeg" alt="Base State" class="base-flag absolute inset-0 w-full h-full object-cover object-center opacity-100 scale-100 transition-all duration-700 ease-in-out" />
-          <img src="./Black Flag (nur).jpeg" alt="Filled with Nur" class="nur-flag absolute inset-0 w-full h-full object-cover object-center opacity-0 scale-100 transition-all duration-700 ease-in-out" />
-          <div class="absolute inset-0 ring-1 ring-inset ring-emerald-400/20 rounded-full pointer-events-none group-hover:ring-emerald-400/50 transition-all duration-500"></div>
+
+
+      <!-- Title block -->
+      <div class="space-y-2 select-none pt-4">
+        <h1 id="root-title" class="text-3xl md:text-4xl font-black tracking-widest bg-gradient-to-r from-[#7D5243] via-[#B08A4B] to-[#7D5243] bg-clip-text text-transparent uppercase">
+          Follow the Steps
+        </h1>
+        <p id="root-subtitle" class="text-xs md:text-sm font-mono-app text-[#7A6F6C] uppercase tracking-widest max-w-md mx-auto leading-relaxed">
+          Prophet Muḥammad ﷺ
+        </p>
+
+
+        <!-- Decorative ✦ divider -->
+        <div class="title-divider">
+          <span class="line"></span>
+          <span class="seal">✦</span>
+          <span class="line"></span>
         </div>
-
-        <div class="space-y-2 select-none">
-          <h1 id="root-title" class="text-3xl md:text-4xl font-black tracking-widest bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent uppercase">
-            Follow the steps
-          </h1>
-          <p id="root-subtitle" class="text-xs md:text-sm font-mono text-emerald-600 uppercase tracking-widest max-w-md mx-auto leading-relaxed">
-            Prophet Muhammad ﷺ
-          </p>
-        </div>
-
-
       </div>
 
-      <!-- ── ACCOMMODATING ACCORDION TREE MENU (ḤIṢN AL-MUSLIM SYSTEM) ── -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           ACCORDION TREE MENU
+           ══════════════════════════════════════════════════════════ -->
       <div id="navigation-tree" class="w-full max-w-xl mx-auto text-left space-y-3 pt-4">
-        <!-- Rendered Dynamically by Engine Script below -->
+        <!-- Rendered dynamically below -->
       </div>
+
 
     </div>
   </main>
 
-  <footer class="w-full text-center text-[10px] text-emerald-800 font-mono tracking-widest uppercase pb-6 select-none relative z-10">
+
+  <footer class="w-full text-center text-[10px] text-[#7A6F6C] font-mono-app tracking-widest uppercase pb-6 select-none relative z-10">
     Compiled for ✦ the foam of the seas
   </footer>
 
+
   <script>
     const ROOT_CONFIG = {
-      title: "Follow the steps of",
-      subtitle: "Prophet Muhammad ﷺ",
-      youtubeAudioId: "8hTUDQEvqk8"
+      title: "Follow the Steps",
+      subtitle: "Prophet Muḥammad ﷺ"
     };
+
 
     // =========================================================
     // VAULT ACCORDION DATA CONFIGURATION ENGINE
+    // Each category has: { icon, category, desc, items: [...] }
+    // Icon emojis — non-living symbols only
     // =========================================================
     const VAULT_NAVIGATION_TREE = [
       {
-        category: "Tahleel Collections",
-        desc: "Tahleel collection pieced by mashuyuks related to the sacred months",
+        icon: "📿",
+        category: "Tahlīl Collections",
+        desc: "Tahlīl collections pieced by mashāyikh related to the sacred months",
         items: [
-          { label: "Tahlīl al‑Arwāḥ", path: "/Wird/tahlil.html" },
-          
+          { label: "Tahlīl al-Arwāḥ", path: "Wird/tahlil.html" }
         ]
       },
       {
-        category: "after solat",
-        desc: "Prophetic Dua right after solat",
+        icon: "🕌",
+        category: "After Ṣalāh",
+        desc: "Prophetic du'ās right after ṣalāh",
         items: [
-          { label: "1) Istighfar + Source of Peace", path: "after solat/1_Istighfar_peace.html"},
-          { label: "2a) Tahlil - When Facing Spiritual Lethargy or External Hostility", path: "after solat/2a_tahlil.html" },
-          { label: "2b) Tahlil - When Facing Financial Anxiety or Material Decisions", path: "after solat/2b_tahlil.html" },
-          { label: "3) Istighfar: Protect me from Hellfire", path: "after solat/dua-allahuma-ajirnaar.html" },
-
+          { label: "1a) Istighfār + Source of Peace", path: "render.html?file=after solat/1_istigfar_peace.md" },
+          { label: "1b) Istighfār + Source of Peace", path: "after solat/1_Istighfar_peace.html" },
+          { label: "2a) Tahlīl — When Facing Spiritual Lethargy or External Hostility", path: "after solat/2a_tahlil.html" },
+          { label: "2b) Tahlīl — When Facing Financial Anxiety or Material Decisions", path: "after solat/2b_tahlil.html" },
+          { label: "3) Istighfār: Protect me from Hellfire", path: "after solat/dua-allahuma-ajirnaar.html" }
         ]
       },
-            {
+      {
+        icon: "💎",
         category: "The Heart Shakers",
-        desc: "Prophetic Dua for deeply anchoring and alignment to the command / amr",
+        desc: "Prophetic du'ās for deeply anchoring and alignment to the command / amr",
         items: [
-          { label: "Dua: Oh Turner of Hearts...", path: "dua-general/dua-turner-of-hearts.html" },
-          { label: "Dua: In the Greatest of Names", path: "dua-general/dua-greatest-of-names.html" },
-          { label: "Dua: Istikhara - Guidance", path: "dua-general/dua-istikhara.html" },
-          { label: "Dua: Aisyah's Comprehensive ask", path: "dua-general/dua-comprehensive-aisyah.html" },
-          { label: "Dua Set: Habeeb Umar", path: "dua-general/dua-habeeb-umar.html"}
+          { label: "Du'ā: Oh Turner of Hearts...", path: "dua-general/dua-turner-of-hearts.html" },
+          { label: "Du'ā: In the Greatest of Names", path: "dua-general/dua-greatest-of-names.html" },
+          { label: "Du'ā: Istikhārah — Guidance", path: "dua-general/dua-istikhara.html" },
+          { label: "Du'ā: ʿĀʾishah's Comprehensive Ask", path: "dua-general/dua-comprehensive-aisyah.html" },
+          { label: "Du'ā Set: Ḥabīb ʿUmar", path: "dua-general/dua-habeeb-umar.html" }
         ]
       },
-          {
-        category: "Morning/Evening shields 🛡",
-        desc: "Morning and evening adhkar",
+      {
+        icon: "🛡️",
+        category: "Morning & Evening Shields",
+        desc: "Morning and evening adhkār",
         items: [
           { label: "1) Refuge: I Seek Refuge in the Perfect Words of Allah from Evil", path: "start and end of day/1_audhubikatillah.html" },
           { label: "2) Shield: In the Name of Allah, NOTHING in earth/heavens can cause harm", path: "start and end of day/2_bismillahiladhi_layadurru.html" },
-          { label: "3) Trust/ Tawakkaltu: Allah is Sufficient for me x 7", path: "start and end of day/3_habiyallahu_7.html" },
-          { label: "4) Jannah: Chief of Seeking Forgiveness", path: "start and end of day/4_sayyidul-istighfar.html"},
-          { label: "5) Protection: Internal Weakness (Laziness) + External Oppression", path: "start and end of day/5_hammi_wal_Hazan.html" },      
-          { label: "6) Obedience: Dua of Fatimah r.a", path: "start and end of day/6_ya-hayyu-ya-qayyum.html" },
-          { label: "7) Strengthen: Body, Hearing, (in)Sight + Protection: Self - Kafir / Faqr", path: "start and end of day/7_body-hearing-sight.html" },
-          { label: "8) Contentment: Raditu Billahi Rabban", path: "start and end of day/8_raditdubillahirabban.html" },
-          { label: "9) Never Abandoned --> Dua for Afwa and Afiyah", path: "start and end of day/never-abandoned.html"},
-          { label: "10) Law Anzalna", path: "render.html?file=start and end of day/c_law_anzalna.md"},
+          { label: "3) Trust / Tawakkaltu: Allah is Sufficient for me × 7", path: "start and end of day/3_habiyallahu_7.html" },
+          { label: "4) Jannah: Chief of Seeking Forgiveness", path: "start and end of day/4_sayyidul-istighfar.html" },
+          { label: "5) Protection: Internal Weakness (Laziness) + External Oppression", path: "start and end of day/5_hammi_wal_Hazan.html" },
+          { label: "6) Obedience: Du'ā of Fāṭimah (raḍiyallāhu ʿanhā)", path: "start and end of day/6_ya-hayyu-ya-qayyum.html" },
+          { label: "7) Strengthen: Body, Hearing, (in)Sight + Protection: Self — Kāfir / Faqr", path: "start and end of day/7_body-hearing-sight.html" },
+          { label: "8) Contentment: Raḍītu billāhi rabbā", path: "start and end of day/8_raditdubillahirabban.html" },
+          { label: "9) Never Abandoned → Du'ā for ʿAfwa and ʿĀfiyah", path: "start and end of day/never-abandoned.html" },
+          { label: "10) Law Anzalnā", path: "render.html?file=start and end of day/c_law_anzalna.md" }
         ]
       },
-                  {
+      {
+        icon: "⚙️",
         category: "Path of Work",
         desc: "Prophetic invigoration evocations for daily work",
         items: [
-          { label: "Dua - ease of work", path: "dua-work/dua-la-sahlan.html" },
-          ,
-          {label: "Dua - Travel", path: "/dua-work/travel.html"}
-        ]
-      },
-            {
-        category: "salawat",
-        desc: "Send Salawat upon the prophet",
-        items: [
-          { label: "Salawat Adnani", path: "Salawat/salawat-adnani.html" },
+          { label: "Du'ā — Ease of Work", path: "dua-work/dua-la-sahlan.html" },
+          { label: "Du'ā — Travel", path: "dua-work/travel.html" }
         ]
       },
       {
-        category: "Dua for Healing",
+        icon: "🌙",
+        category: "Ṣalawāt",
+        desc: "Send ṣalawāt upon the Prophet ﷺ",
+        items: [
+          { label: "Ṣalawāt Adnānī", path: "Salawat/salawat-adnani.html" }
+        ]
+      },
+      {
+        icon: "💧",
+        category: "Du'ā for Healing",
         desc: "Prophetic restorative evocations",
         items: [
           { label: "Seeking Wellness Against Physical Ailments", path: "Dua Shifa/dua-shifa.html" },
-          { label: "Full Ruqyah for face pains", path: "Dua Shifa/Ruqyah.html" }
+          { label: "Full Ruqyah for Face Pains", path: "Dua Shifa/Ruqyah.html" }
         ]
       },
       {
-        category: "Staging Wird for Validation and Verification",
-        desc: "Wird and compilations to be validated",
+        icon: "🌾",
+        category: "Sacred Months",
+        desc: "Dhikr / wird pieced by mashāyikh related to the sacred months",
+        items: [
+          { label: "Takbīr ʿĪd al-Aḍḥā", path: "Dua Haj/takbir-eiduladha.html" },
+          { label: "Du'ā: The Best the Prophets Made During ʿArafah", path: "Dua Haj/dua-prophets-made-on-arafah.html" },
+          { label: "Du'ā: ʿAlī and Ibn ʿUmar During ʿArafah", path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
+          { label: "Du'ā Collection: Dhū al-Ḥijjah — First 10 Days", path: "Dua Haj/Amalan Haj.html" },
+          { label: "Du'ā Collection: Istighfār Rajab", path: "Wird/istighfar-rajab.html" }
+        ]
+      },
+      {
+        icon: "🧪",
+        category: "In Review",
+        desc: "Recently added wird and compilations — pending validation",
         items: [
           { label: "🟢 Doa Hamil (Complete Line-by-Line Guide)", path: "render.html?file=Wird/dua-hamil.md" },
-          { label: "🟢 Dua Akhir Tahun Awal Tahun (Complete Line-by-Line Guide)", path: "render.html?file=Wird/Dua Awal wa Akhir Hijra.md" }
+          { label: "🟢 Du'ā Akhir Tahun wa Awal Tahun (Complete Line-by-Line Guide)", path: "render.html?file=Wird/Dua Awal wa Akhir Hijra.md" }
         ]
-      },
-              {
-        category: "Dua Collections of Sacred Months",
-        desc: "Dhikr / Wird 💦🌱 pieced by mashuyuks related to the sacred months",
-        items: [
-          { label: "Takbir Eid ul Adha", path: "/Dua Haj/takbir-eiduladha.html" },
-          { label: "Dua: Best Dua what all the Prophets made during Arafah", path: "Dua Haj/dua-prophets-made-on-arafah.html" },
-          { label: "Dua: Ali and Ibn 'Umar during Arafah", path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
-          { label: "Dua Collection: Dhul Hijjah - First 10 Days", path: "Dua Haj/Amalan Haj.html" },
-          { label: "Dua Collection: Istighfar Rajab", path: "Wird/istighfar-rajab.html" },
-        ]
-      },
+      }
     ];
+
 
     // 🏗️ APPLICATION ENGINE ASSEMBLY
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('meta-title').textContent = ROOT_CONFIG.title;
       document.getElementById('root-title').textContent = ROOT_CONFIG.title;
       document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
-      
+
+
       const treeTarget = document.getElementById('navigation-tree');
+
+
+      // SVG chevron — cleaner, scales perfectly, no font quirks
+      const chevronSVG = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>`;
+
+
       let treeHTML = '';
+
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
         treeHTML += `
-          <div class="root-node border border-emerald-900/40 bg-[#071c10]/40 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-black/20" id="node-${index}">
-            
-            <button onclick="toggleNode(${index})" class="w-full flex items-center justify-between p-4 bg-[#092213]/50 hover:bg-[#0c2e1a]/70 active:bg-[#061c10] transition-colors group text-left">
-              <div class="space-y-1 pr-4">
-                <span class="text-xs font-mono font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:text-emerald-300 transition-colors">
+          <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0" id="node-${index}">
+
+
+            <button onclick="toggleNode(${index})" class="w-full flex items-center justify-between gap-3 p-4 bg-[#FFFBF1]/10 hover:bg-[#E6DCD0]/10 active:bg-[#E6DCD0]/70 transition-colors group text-left">
+
+
+              <!-- Icon tile (left) -->
+              <div class="node-icon-tile">${node.icon || '✦'}</div>
+
+
+              <!-- Category + description (center, takes available space) -->
+              <div class="space-y-1 pr-2 flex-1 min-w-0">
+                <span class="font-mono-app inline-block text-xs font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-[#B08A4B]/10 text-[#7D5243] border border-[#B08A4B]/20 group-hover:text-[#A94442] transition-colors">
                   ${node.category}
                 </span>
-                <p class="text-[11px] text-emerald-400/60 leading-relaxed pt-1 font-sans group-hover:text-emerald-300/60 transition-colors">
-                  -- ${node.desc}
+                <p class="text-[11px] text-[#7A6F6C] leading-relaxed pt-1 font-sans group-hover:text-[#3A2E2B] transition-colors">
+                  — ${node.desc}
                 </p>
               </div>
-              <div class="w-6 h-6 rounded-full border border-emerald-900/60 flex items-center justify-center text-[9px] text-emerald-500 bg-[#05140b] group-hover:border-emerald-500/40 flex-shrink-0 transition-all">
-                <span class="chevron-icon inline-block transform origin-center">▼</span>
+
+
+              <!-- SVG chevron (right) -->
+              <div class="w-6 h-6 rounded-full border border-[#E6DCD0] flex items-center justify-center text-[#B08A4B] bg-[#FFFBF1]/70 group-hover:border-[#B08A4B]/60 flex-shrink-0 transition-all">
+                <span class="chevron-icon inline-block transform origin-center">${chevronSVG}</span>
               </div>
             </button>
 
-            <div class="branch-container bg-[#05140b]/30">
-              <div class="p-2 space-y-0.5 border-t border-emerald-950/80">
+
+            <div class="branch-container bg-[#FFFBF1]/00">
+              <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
                 ${node.items.map(item => `
-                  <a href="./${item.path}" 
-                     onmouseenter="igniteNur()" 
+                  <a href="./${item.path}"
+                     onmouseenter="igniteNur()"
                      onmouseleave="extinguishNur()"
-                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-emerald-300/80 hover:text-amber-300 hover:bg-[#092213]/60 transition-all group">
-                    <span class="text-emerald-800 group-hover:text-amber-500 font-mono select-none">↳</span>
+                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] hover:bg-[#B08A4B]/10 transition-all group">
+                    <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none">↳</span>
                     <span class="leading-relaxed">${item.label}</span>
                   </a>
                 `).join('')}
               </div>
             </div>
 
+
           </div>`;
       });
 
+
       treeTarget.innerHTML = treeHTML;
-      initAudioEngine();
     });
+
 
     function toggleNode(index) {
       const selectedNode = document.getElementById(`node-${index}`);
       const isActive = selectedNode.classList.contains('active');
-      
-      // Collapse sibling nodes cleanly on new tree category activations
+
+
       document.querySelectorAll('.root-node').forEach(node => node.classList.remove('active'));
-      
+
+
       if (!isActive) {
         selectedNode.classList.add('active');
       }
     }
 
-    function initAudioEngine() {
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
 
-    var player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('yt-audio-player', {
-        height: '0', width: '0', videoId: ROOT_CONFIG.youtubeAudioId,
-        playerVars: { 'autoplay': 0, 'controls': 0, 'loop': 1, 'playlist': ROOT_CONFIG.youtubeAudioId },
-        events: { 'onReady': () => {
-          const trigger = document.getElementById('emblem-trigger');
-          trigger.addEventListener('mouseenter', () => player.playVideo());
-          trigger.addEventListener('touchstart', () => player.playVideo());
-        }}
-      });
-    }
-
-    // Controls crisp background layer cross-fade states elegantly on interaction
+    // Background flag cross-fade — triggered by category item hover
     function igniteNur() {
       const baseFlag = document.getElementById('bg-base');
       const nurFlag = document.getElementById('bg-nur');
       if (baseFlag && nurFlag) {
         baseFlag.style.opacity = '0';
-        nurFlag.style.opacity = '0.75';
+        nurFlag.style.opacity = '0.85';
         nurFlag.style.transform = 'scale(1.03)';
       }
-      document.querySelector('.base-flag').style.opacity = '0';
-      document.querySelector('.nur-flag').style.opacity = '1';
-      if (player && typeof player.playVideo === 'function') player.playVideo();
     }
+
 
     function extinguishNur() {
       const baseFlag = document.getElementById('bg-base');
@@ -311,9 +375,8 @@
         nurFlag.style.opacity = '0';
         nurFlag.style.transform = 'scale(1.0)';
       }
-      document.querySelector('.base-flag').style.opacity = '1';
-      document.querySelector('.nur-flag').style.opacity = '0';
     }
   </script>
 </body>
-</html>
+</html> 
+
