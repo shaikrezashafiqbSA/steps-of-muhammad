@@ -39,6 +39,6 @@ Abū al-Zubayr said: "I heard ʿAbdullāh ibn al-Zubayr speaking from the minbar
 
 ---
 
-*🔗 Verify on sunnah.com — [Nasāʾī 1339](https://sunnah.com/nasai:1339)*
+*🔗 Verify on sunnah.com — [Nasāʾī 1339](https://sunnah.com/nasai/13/161)*
 
 
