@@ -5,7 +5,8 @@ book: Book 13 · The Book of Forgetfulness in Prayer
 hadith: 1339
 grade: sahih
 verify: https://sunnah.com/nasai:1339
-left-orb: CAT
+left-orb: Sunan an-Nasāʾī 1339
+right-orb: Sahih (Darussalam)
 ::
 
 # Lā Ilāha Illā Allāh after Taslīm — The Prophet's ﷺ Closing Tahlīl
