@@ -59,4 +59,4 @@ And when he would return to his family, he would say: *“(We are) Returning, if
 
 </details>
 
-*🔗 Verify on sunnah.com — [Tirmidhit 3447](https://sunnah.com/tirmidhi:3447)*
+*🔗 Verify on sunnah.com — [Tirmidhi 3447](https://sunnah.com/tirmidhi:3447)*
