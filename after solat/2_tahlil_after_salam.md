@@ -8,9 +8,9 @@ verify: https://sunnah.com/nasai:1339
 left-orb: Sunan an-Nasāʾī 1339
 ::
 
-# Lā Ilāha Illā Allāh after Taslīm — The Prophet's ﷺ Closing Tahlīl
+## Lā Ilāha Illā Allāh after Taslīm — The Prophet's ﷺ Closing Tahlīl
 
-## 📜 The Hadith
+### 📜 The Hadith
 
 Abū al-Zubayr said: "I heard ʿAbdullāh ibn al-Zubayr speaking from the minbar, saying: **When the Messenger of Allah ﷺ said the taslīm, he would say:**" 
 
@@ -18,7 +18,7 @@ Abū al-Zubayr said: "I heard ʿAbdullāh ibn al-Zubayr speaking from the minbar
 
 
 
-## 🔤 Evoke This — Word by Word
+### 🔤 Evoke This — Word by Word
 
 [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[اللَّهُ|Allah|llāhu]] [[وَحْدَهُ|alone|waḥdahu]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُ|for Him|lahu]]
 
@@ -34,9 +34,7 @@ Abū al-Zubayr said: "I heard ʿAbdullāh ibn al-Zubayr speaking from the minbar
 
 ---
 <details>
-<summary>📚 Original Arabic Source (chain · matn)</summary>
-
-**Sanad (chain of transmission):**
+<summary> 📚 Original Arabic Source </summary>
 
 [[أَخْبَرَنَا|informed us|akhbaranā]] [[مُحَمَّدُ|Muhammad|muḥammadu]] [[بْنُ|son of|bnu]] [[شُجَاعٍ|Shuja'|shujāʿin]] [[الْمَرُّوذِيُّ|the Marwadhi|l-marrūdhī]] [[قَالَ|he said|qāla]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[إِسْمَاعِيلُ|Isma'il|ismāʿīlu]] [[ابْنُ|son of|bnu]] [[عُلَيَّةَ|Ulayyah|ʿulayyata]] [[عَنِ|from|ʿani]] [[الْحَجَّاجِ|al-Hajjaj|l-ḥajjāji]] [[بْنِ|son of|bni]] [[أَبِي|Abi|abī]] [[عُثْمَانَ|Uthman|ʿuthmāna]] [[قَالَ|he said|qāla]] [[حَدَّثَنِي|narrated to me|ḥaddathanī]] [[أَبُو|Abu|abū]] [[الزُّبَيْرِ|az-Zubair|z-zubayri]] [[قَالَ|he said|qāla]] [[سَمِعْتُ|I heard|samiʿtu]] [[عَبْدَ|Abdullah|ʿabda]] [[اللَّهِ|of Allah|llāhi]] [[بْنَ|son of|bna]] [[الزُّبَيْرِ|az-Zubair|z-zubayri]] [[يُحَدِّثُ|speaking/narrating|yuḥaddithu]] [[عَلَىٰ|upon|ʿalā]] [[هَٰذَا|this|hādhā]] [[الْمِنْبَرِ|the pulpit/minbar|l-minbari]] [[وَهُوَ|while he|wa huwa]] [[يَقُولُ|was saying|yaqūlu]] [[كَانَ|used to be|kāna]] [[رَسُولُ|the Messenger|rasūlu]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[إِذَا|when|idhā]] [[سَلَّمَ|he finished with taslim|sallama]] [[يَقُولُ|he would say|yaqūlu]] [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[اللَّهُ|Allah|llāhu]] [[وَحْدَهُ|alone|waḥdahu]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُ|for Him|lahu]] [[لَهُ|to Him|lahu]] [[الْمُلْكُ|the dominion|l-mulku]] [[وَلَهُ|and to Him|wa lahu]] [[الْحَمْدُ|all praise|l-ḥamdu]] [[وَهُوَ|and He is|wa huwa]] [[عَلَىٰ|over|ʿalā]] [[كُلِّ|every|kulli]] [[شَيْءٍ|thing|shayʾin]] [[قَدِيرٌ|capable|qadīr]] [[لَا|no|lā]] [[حَوْلَ|might/power|ḥawla]] [[وَلَا|and no|wa lā]] [[قُوَّةَ|strength|quwwata]] [[إِلَّا|except|illā]] [[بِاللَّهِ|with Allah|bi-llāh]] [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[اللَّهُ|Allah|llāhu]] [[لَا|not|lā]] [[نَعْبُدُ|we worship|naʿbudu]] [[إِلَّا|except|illā]] [[إِيَّاهُ|Him alone|iyyāhu]] [[أَهْلَ|the Owner/Source|ahla]] [[النِّعْمَةِ|of blessing|n-niʿmati]] [[وَالْفَضْلِ|and bounty|wa-l-faḍli]] [[وَالثَّنَاءِ|and the praise|wa-th-thanāʾi]] [[الْحَسَنِ|the good|l-ḥasani]] [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[اللَّهُ|Allah|llāhu]] [[مُخْلِصِينَ|being sincere|mukhliṣīna]] [[لَهُ|to Him|lahu]] [[الدِّينَ|in devotion/religion|d-dīna]] [[وَلَوْ|even if|wa law]] [[كَرِهَ|detest it|kariha]] [[الْكَافِرُونَ|the disbelievers|l-kāfirūn]]
 </details>
@@ -45,14 +43,14 @@ Abū al-Zubayr said: "I heard ʿAbdullāh ibn al-Zubayr speaking from the minbar
 
 
 
-# Lā Māniʿa Limā Aʿṭayta — The Prophet's ﷺ Post-Salām Duʿāʾ of Divine Sovereignty
+## Lā Māniʿa Limā Aʿṭayta — The Prophet's ﷺ Post-Salām Duʿāʾ of Divine Sovereignty
 
-## 📜 The Hadith
+### 📜 The Hadith
 Warrād, the freed slave of al-Mughīra ibn Shuʿba, said: "Al-Mughīra ibn Shuʿba wrote to Muʿāwiya [reporting that] **when the Messenger of Allah ﷺ finished the prayer and said the salutation, he would say:"** 
 > *"There is no god but Allah. He is alone, Who has no partner. To Him belongs the sovereignty and to Him praise is due and He is Potent over everything. O Allah! no one can withhold what Thou givest, or give what Thou withholdest, and the riches cannot avail a wealthy person with Thee."*
 
 
-## 🔤 Evoke This — Word by Word
+### 🔤 Evoke This — Word by Word
 [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[اللَّهُ|Allah|llāhu]] [[وَحْدَهُ|alone|waḥdahu]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُ|for Him|lahu]]
 [[لَهُ|to Him|lahu]] [[الْمُلْكُ|the dominion|l-mulku]] [[وَلَهُ|and to Him|wa lahu]] [[الْحَمْدُ|all praise|l-ḥamdu]] 
 
@@ -64,9 +62,8 @@ Warrād, the freed slave of al-Mughīra ibn Shuʿba, said: "Al-Mughīra ibn Shu�
 [[وَلَا|nor|wa lā]] [[يَنْفَعُ|avails|yanfaʿu]] [[ذَا|the one of|dhā]] [[الْجَدِّ|riches|l-jaddi]] [[مِنْكَ|with You|minka]] [[الْجَدُّ|his riches|l-jaddu]]
 
 <details>
-<summary>📚 Original Arabic Source (chain · matn)</summary>
+<summary>📚 Original Arabic Source</summary>
 
-**Sanad (chain of transmission):**
 
 [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[إِسْحَاقُ|Isḥāq|isḥāqu]] [[بْنُ|son of|bnu]] [[إِبْرَاهِيمَ|Ibrāhīm|ibrāhīma]] [[أَخْبَرَنَا|informed us|akhbaranā]] [[جَرِيرٌ|Jarīr|jarīrun]] [[عَنْ|from|ʿan]] [[مَنْصُورٍ|Manṣūr|manṣūrin]] [[عَنِ|from|ʿani]] [[الْمُسَيَّبِ|al-Musayyab|l-musayyabi]] [[بْنِ|son of|bni]] [[رَافِعٍ|Rāfiʿ|rāfiʿin]] [[عَنْ|from|ʿan]] [[وَرَّادٍ|Warrād|warrādin]] [[مَوْلَى|freed slave of|mawlā]] [[الْمُغِيرَةِ|al-Mughīra|l-mughīrati]] [[بْنِ|son of|bni]] [[شُعْبَةَ|Shuʿba|shuʿbata]] [[قَالَ|he said|qāla]] [[كَتَبَ|wrote|kataba]] [[الْمُغِيرَةُ|al-Mughīra|l-mughīratu]] [[بْنُ|son of|bnu]] [[شُعْبَةَ|Shuʿba|shuʿbata]] [[إِلَى|to|ilā]] [[مُعَاوِيَةَ|Muʿāwiya|muʿāwiyata]] [[أَنَّ|that|anna]] [[رَسُولَ|the Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[كَانَ|used to|kāna]] [[إِذَا|when|idhā]] [[فَرَغَ|he finished|faragha]] [[مِنَ|from|mina]] [[الصَّلَاةِ|the prayer|ṣ-ṣalāti]] [[وَسَلَّمَ|and said the salutation|wa sallama]] [[قَالَ|he would say|qāla]]
 

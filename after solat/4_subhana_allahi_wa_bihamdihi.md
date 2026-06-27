@@ -10,6 +10,7 @@ hadith: 1433
 
 grade: sahih
 left-orb: Riyāḍ al-Ṣāliḥīn
+right-orb: Sahih
 
 ::
 
@@ -28,11 +29,9 @@ Juwayriyah bint al-Ḥārith (raḍiyallāhu ʿanhā), the Mother of the Believe
 [[وَمِدَادَ|and to the ink of|wa midāda]] [[كَلِمَاتِهِ|His words|kalimātihī]]
 
 <details>
-<summary>📚 Original Arabic Source (chain · matn)</summary>
+<summary>📚 Original Arabic Source </summary>
 
-**Sanad (chain of transmission):**
-Sanad (chain of transmission):
 [[وَعَنْ|and from|wa ʿan]] [[أُمِّ|Mother of|ummi]] [[الْمُؤْمِنِينَ|the Believers|l-muʾminīna]] [[جُوَيْرِيَةَ|Juwayriyah|juwayriyata]] [[بِنْتِ|daughter of|binti]] [[الْحَارِثِ|al-Ḥārith|l-ḥārithi]] [[رَضِيَ|may be pleased|raḍiya]] [[اللَّهُ|Allah|llāhu]] [[عَنْهَا|with her|ʿanhā]] [[أَنَّ|that|anna]] [[النَّبِيَّ|the Prophet|n-nabiyya]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[خَرَجَ|went out|kharaja]] [[مِنْ|from|min]] [[عِنْدِهَا|her place|ʿindihā]] [[بُكْرَةً|early morning|bukratan]] [[حِينَ|when|ḥīna]] [[صَلَّى|he had prayed|ṣallā]] [[الصُّبْحَ|the dawn prayer|ṣ-ṣubḥa]] [[وَهِيَ|while she was|wa hiya]] [[فِي|in|fī]] [[مَسْجِدِهَا|her prayer place|masjidihā]] [[ثُمَّ|then|thumma]] [[رَجَعَ|he returned|rajaʿa]] [[بَعْدَ|after|baʿda]] [[أَنْ|that|an]] [[أَضْحَى|the forenoon had come|aḍḥā]] [[وَهِيَ|while she was|wa hiya]] [[جَالِسَةٌ|sitting|jālisatun]] [[فَقَالَ|and he said|fa qāla]] [[مَا زِلْتِ|are you still|mā zilti]] [[عَلَى|upon|ʿalā]] [[الْحَالَةِ|the state|l-ḥālati]] [[الَّتِي|which|llatī]] [[فَارَقْتُكِ|I left you on|fāraqtuki]] [[عَلَيْهَا|upon it|ʿalayhā]] [[قَالَتْ|she said|qālat]] [[نَعَمْ|yes|naʿam]] [[فَقَالَ|and he said|fa qāla]] [[النَّبِيُّ|the Prophet|n-nabiyyu]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[لَقَدْ|indeed|laqad]] [[قُلْتُ|I said|qultu]] [[بَعْدَكِ|after leaving you|baʿdaki]] [[أَرْبَعَ|four|arbaʿa]] [[كَلِمَاتٍ|phrases|kalimātin]] [[ثَلَاثَ|three|thalātha]] [[مَرَّاتٍ|times|marrātin]] [[لَوْ|if|law]] [[وُزِنَتْ|they were weighed|wuzinnat]] [[بِمَا|against what|bi mā]] [[قُلْتِ|you said|qulti]] [[مُنْذُ|since|mundhu]] [[الْيَوْمِ|this morning|l-yawmi]] [[لَوَزَنَتْهُنَّ|they would outweigh them|la wazanat-hunna]]
 </details>
 
-*🔗 Verify on sunnah.com — Riyāḍ al-Ṣāliḥīn 1433 (https://sunnah.com/riyadussalihin:1433)*
+*🔗 Verify on sunnah.com — [Riyāḍ al-Ṣāliḥīn 1433](https://sunnah.com/riyadussalihin:1433)*
