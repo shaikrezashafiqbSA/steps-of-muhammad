@@ -5,29 +5,13 @@ book: Book 5 · The Book of Prayer - Travellers
 hadith: 591
 grade: sahih
 verify: https://sunnah.com/muslim:591
+left-orb: Muslim
 ::
 
-The Post-Prayer Seeking of Forgiveness and Declaration of Peace
-## 📜 The Hadiths
-Thauban reported: When the Messenger of Allah (ﷺ) finished his prayer, he begged forgiveness three times and said: "O Allah! Thou art Peace, and peace comes from Thee; Blessed art Thou, O Possessor of Glory and Honour." Walid reported: I said to al-Awzāʿī: "How is the seeking of forgiveness?" He replied: "You should say: I beg forgiveness from Allah, I beg forgiveness from Allah."
+# The Post-Prayer Seeking of Forgiveness and Declaration of Peace
+## 📜 The Hadith
+Thauban reported: When the Messenger of Allah (ﷺ) finished his prayer, he begged forgiveness three times and said: **"O Allah! Thou art Peace, and peace comes from Thee; Blessed art Thou, O Possessor of Glory and Honour."** Walid reported: I said to al-Awzāʿī: "How is the seeking of forgiveness?" He replied: **"You should say: I beg forgiveness from Allah, I beg forgiveness from Allah."**
 
-<details> <summary>📚 Original Arabic Source (chain · matn · compiler note)</summary>
-
-### Sanad (chain of transmission):
-
-
-حَدَّثَنَا دَاوُدُ بْنُ رُشَيْدٍ، حَدَّثَنَا الْوَلِيدُ، عَنِ الأَوْزَاعِيِّ، عَنْ أَبِي عَمَّارٍ، - اسْمُهُ شَدَّادُ بْنُ عَبْدِ اللَّهِ - عَنْ أَبِي أَسْمَاءَ، عَنْ ثَوْبَانَ،
-
-### Matn (the prophetic statement):
-
-قَالَ كَانَ رَسُولُ اللَّهِ صلى الله عليه وسلم إِذَا انْصَرَفَ مِنْ صَلاَتِهِ اسْتَغْفَرَ ثَلاَثًا وَقَالَ ‏"‏ اللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ تَبَارَكْتَ ذَا الْجَلاَلِ وَالإِكْرَامِ ‏" ‏ ‏.‏
-
-### Compiler's note:
-
-قَالَ الْوَلِيدُ فَقُلْتُ لِلأَوْزَاعِيِّ كَيْفَ الاِسْتِغْفَارُ قَالَ تَقُولُ أَسْتَغْفِرُ اللَّهَ أَسْتَغْفِرُ اللَّهَ ‏.‏
-Walid said: I asked al-Awzāʿī, "How is the seeking of forgiveness?" He replied, "You say: I seek forgiveness from Allah, I seek forgiveness from Allah."
-
-</details>
 
 ## 🔤 Word-by-Word
 [[x 3||]][[أَسْتَغْفِرُ|I seek forgiveness|astaghfiru]] [[ٱللَّٰهَ|Allah|llāha]]
@@ -37,6 +21,10 @@ Walid said: I asked al-Awzāʿī, "How is the seeking of forgiveness?" He replie
 
 [[تَبَارَكْتَ|Blessed are You|tabārakta]] [[ذَا|Possessor of|dhā]] [[ٱلْجَلَالِ|the Majesty|al-jalāli]] [[وَٱلْإِكْرَامِ|and the Honor|wa-l-ikrāmi]]
 
+<details> <summary>📚 Original Arabic Source (chain · matn · compiler note)</summary>
 
-## 🔗 Verify on sunnah.com
-Muslim 591: https://sunnah.com/muslim:591
+[[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[دَاوُدُ|Dāwūd|dāwūdu]] [[بْنُ|son of|bnu]] [[رُشَيْدٍ|Rushayd|rushaydin]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[الْوَلِيدُ|al-Walīd|al-walīdu]] [[عَنِ|from|ʿani]] [[الْأَوْزَاعِيِّ|al-Awzāʿī|al-awzāʿī]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[عَمَّارٍ|ʿAmmār|ʿammārin]] [[اسْمُهُ|his name|smuhu]] [[شَدَّادُ|Shaddād|shaddādu]] [[بْنُ|son of|bnu]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah|llāhi]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[أَسْمَاءَ|Asmāʾ|asmāʾa]] [[عَنْ|from|ʿan]] [[ثَوْبَانَ|Thawbān|thawbāna]] [[قَالَ|he said|qāla]] [[كَانَ|used to be|kāna]] [[رَسُولُ|the Messenger|rasūlu]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[إِذَا|when|idhā]] [[انْصَرَفَ|finished|inṣarafa]] [[مِنْ|from|min]] [[صَلَاتِهِ|his prayer|ṣalātihi]] [[اسْتَغْفَرَ|he sought forgiveness|istaghfara]] [[ثَلَاثًا|three times|thalāthan]] [[وَقَالَ|and said|wa qāla]] [[اللَّهُمَّ|O Allah|allāhumma]] [[أَنْتَ|You|anta]] [[السَّلَامُ|the Peace|al-salāmu]] [[وَمِنْكَ|and from You|wa minka]] [[السَّلَامُ|is peace|al-salāmu]] [[تَبَارَكْتَ|Blessed are You|tabārakta]] [[ذَا|O Possessor|dhā]] [[الْجَلَالِ|of Majesty|al-jalāli]] [[وَالإِكْرَامِ|and Honor|wa al-ikrāmi]] [[قَالَ|said|qāla]] [[الْوَلِيدُ|al-Walīd|al-walīdu]] [[فَقُلْتُ|so I said|fa qultu]] [[لِلْأَوْزَاعِيِّ|to al-Awzāʿī|li-l-awzāʿī]] [[كَيْفَ|how|kayfa]] [[الِاسْتِغْفَارُ|is the seeking of forgiveness|al-istighfāru]] [[قَالَ|he said|qāla]] [[تَقُولُ|you say|taqūlu]] [[أَسْتَغْفِرُ|I seek forgiveness|astaghfiru]] [[اللَّهَ|Allah|llāha]] [[أَسْتَغْفِرُ|I seek forgiveness|astaghfiru]] [[اللَّهَ|Allah|llāha]]
+
+</details>
+
+*🔗 Verify on sunnah.com - [Muslim 591: ](https://sunnah.com/muslim:591)

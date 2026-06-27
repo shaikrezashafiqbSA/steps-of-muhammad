@@ -10,7 +10,6 @@ hadith: 1433
 
 grade: sahih
 left-orb: Riyāḍ al-Ṣāliḥīn
-right-orb: Sahih
 
 ::
 

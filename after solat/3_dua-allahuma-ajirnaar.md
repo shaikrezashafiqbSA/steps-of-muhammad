@@ -16,8 +16,6 @@ Al-Ḥārith ibn Muslim al-Tamīmī quoted his father Muslim ibn al-Ḥārith al
 
 ## 🔤 Evoke This — Word by Word
  [[اللَّهُمَّ|O Allah|allāhumma]] [[أَجِرْنِي|protect me|ajirnī]] [[مِنَ|from|mina]] [[النَّارِ|the Fire|n-nāri]]
-[[سَبْعَ|seven|sabʿa]] [[مَرَّاتٍ|times|marātin]]
-
 
 <details>
 <summary>📚 Original Arabic Source (chain · matn)</summary>
