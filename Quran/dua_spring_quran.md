@@ -13,7 +13,10 @@ right-orb: Sahih
 ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: 
 >*"No one is ever afflicted with anxiety or grief and then says:*
   
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 560px; margin: auto;">
+  <iframe src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+</div>
+
 
 ## 🔤 Evoke This — Word by Word
 <div align="right">O Allah indeed I am ...</div>
