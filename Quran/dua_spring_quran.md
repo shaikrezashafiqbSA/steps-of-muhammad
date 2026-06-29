@@ -1,0 +1,91 @@
+::meta
+narrator: ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu)
+collection: Musnad Aḥmad
+book: Book 10 · Musnad ʿAbdullah ibn Masʿūd
+hadith: 3712
+grade: sahih
+left-orb: Musnad Aḥmad 3712
+right-orb: Sahih
+::
+
+# Duʿāʾ for Anxiety and Grief — The Prophet's ﷺ Supplication for Removal of Distress
+## 📜 The Hadith
+ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: 
+>*No one is ever afflicted with anxiety or grief and then says:*
+
+
+## 🔤 Evoke This — Word by Word
+<div align="right">O Allah indeed I am ...</div>
+[[اللَّهُمَّ|O Allah|allāhumma]] [[إِنِّي|indeed I|innī]] 
+<div align="right"> Your slave, son of Your slave, son of Your maidservant</div>
+[[عَبْدُك|Your slave|ʿabduka]] [[ابْنُ|son of|bnu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنُ|son of|bnu]] [[أَمَتِك|Your maidservant|amatika]]
+<div align="right"> Your maidservant, daughter of Your slave, daughter of Your maidservant</div>
+[[أَمَتُكَ|Your maidservant|amatuka]] [[ابْنَةُ|daughter of|bintu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنَةُ|daughter of|bintu]] [[أَمَتِكَ|Your maidservant|amatika]]
+
+<div align="right">my forelock is in Your hand</div>
+[[نَاصِيَتِي|my forelock|nāṣiyatī]] [[بِيَدِك|in Your hand|bi-yadika]] 
+
+<div align="right">Your command over me is ever executed</div>
+[[مَاضٍ|ever executed|māḍin]] [[فِيَّ|upon me|fiyya]] [[حُكْمُك|Your command|ḥukmuka]] 
+<div align="right">Your decree over me is just</div>
+[[عَدْلٌ|just|ʿadlun]] [[فِيَّ|in me|fiyya]] [[قَضَاؤُك|Your decree|qaḍāʾuka]]
+
+<div align="right">I ask You by every name that is Yours</div>
+[[أَسْأَلُك|I ask You|asʾaluka]] [[بِكُلِّ|by every|bi-kulli]] [[اسْمٍ|name|ismin]] 
+<div align="right">which You have named Yourself with</div>
+[[هُوَ|it is|huwa]] [[لَك|Yours|laka]] [[سَمَّيْتَ|You have named|sammayta]] [[بِهِ|with it|bihi]] [[نَفْسَك|Yourself|nafsaka]]
+<div align="right">or taught to any of Your creation</div>
+[[أَوْ|or|aw]] [[عَلَّمْتَه|taught it|ʿallamtahu]] [[أَحَدًا|to anyone|aḥadan]] [[مِنْ|from|min]] [[خَلْقِك|Your creation|khalqika]]
+
+<div align="right">or revealed in Your Book</div>
+[[أَوْ|or|aw]] [[أَنْزَلْتَه|revealed it|anzaltahu]] [[فِي|in|fī]] [[كِتَابِك|Your Book|kitābika]]
+<div align="right">or kept in the knowledge of the unseen with You</div>
+[[أَوْ|or|aw]] [[اسْتَأْثَرْتَ|kept exclusively|istaʾtharta]] [[بِهِ|with it|bihi]] [[فِي|in|fī]] [[عِلْمِ|knowledge|ʿilmi]] [[الْغَيْبِ|the unseen|ghaybi]] [[عِنْدَك|with You|ʿindaka]]
+<div align="right">that You make the Qur’an the spring of my heart</div>
+[[أَنْ|that|an]] [[تَجْعَلَ|make|tajʿala]] [[الْقُرْآنَ|the Qur’an|qurʾāna]] [[رَبِيعَ|the spring|rabīʿa]] [[قَلْبِي|of my heart|qalbī]]
+<div align="right">the light of my chest</div>
+[[وَنُورَ|and the light|wa-nūra]] [[صَدْرِي|of my chest|ṣadrī]]
+<div align="right">the removal of my sadness</div>
+[[وَجِلَاءَ|and the removal|wa-jilāʾa]] [[حُزْنِي|of my grief|ḥuznī]]
+<div align="right"> and the departure of my grief.</div>
+[[وَذَهَابَ|and the departure|wa-dhahāba]] [[هَمِّي|of my anxiety|hammī]]
+
+*Except that Allah will remove his grief and sadness and replace it with joy. It was said: “O Messenger of Allah, shall we learn it?” He said: “Yes, it is fitting for the one who hears it to learn it.”*
+
+
+<details> <summary>📚 Original Arabic Source </summary>
+
+[[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[اللَّهِ|Allah|llāhi]] [[بْنُ|son of|bnu]] [[مُحَمَّدٍ|Muḥammad|muḥammadin]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[مُعَاوِيَةَ|Muʿāwiyah|muʿāwiyah]] [[عَنِ|from|ʿani]] [[الْأَعْمَشِ|al-Aʿmash|l-aʿmashi]] [[عَنْ|from|ʿan]] [[شَقِيقٍ|Shaqīq|shaqīqin]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah|llāhi]] [[ابْنِ|Ibn|ibni]] [[مَسْعُودٍ|Masʿūd|masʿūdin]] [[قَالَ|he said|qāla]] [[قَالَ|he said|qāla]] [[رَسُولُ|the Messenger|rasūlu]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]]
+
+[[مَا|not|mā]] [[أَصَابَ|afflicted|aṣāba]] [[أَحَدًا|anyone|aḥadan]] [[قَطُّ|ever|qaṭṭu]] [[هَمٌّ|anxiety|hammun]] [[وَلَا|nor|wa-lā]] [[حَزَنٌ|grief|ḥazanun]] [[فَقَالَ|and says|fa-qāla]]
+
+[[اللَّهُمَّ|O Allah|allāhumma]] [[إِنِّي|indeed I|innī]] [[عَبْدُك|Your slave|ʿabduka]] [[ابْنُ|son of|bnu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنُ|son of|bnu]] [[أَمَتِك|Your maidservant|amatika]]
+
+[[نَاصِيَتِي|my forelock|nāṣiyatī]] [[بِيَدِك|in Your hand|bi-yadika]] [[مَاضٍ|ever executed|māḍin]] [[فِيَّ|upon me|fiyya]] [[حُكْمُك|Your command|ḥukmuka]] [[عَدْلٌ|just|ʿadlun]] [[فِيَّ|in me|fiyya]] [[قَضَاؤُك|Your decree|qaḍāʾuka]]
+
+[[أَسْأَلُك|I ask You|asʾaluka]] [[بِكُلِّ|by every|bi-kulli]] [[اسْمٍ|name|ismin]] [[هُوَ|it is|huwa]] [[لَك|Yours|laka]] [[سَمَّيْتَ|You have named|sammayta]] [[بِهِ|with it|bihi]] [[نَفْسَك|Yourself|nafsaka]]
+
+[[أَوْ|or|aw]] [[عَلَّمْتَه|taught it|ʿallamtahu]] [[أَحَدًا|to anyone|aḥadan]] [[مِنْ|from|min]] [[خَلْقِك|Your creation|khalqika]]
+
+[[أَوْ|or|aw]] [[أَنْزَلْتَه|revealed it|anzaltahu]] [[فِي|in|fī]] [[كِتَابِك|Your Book|kitābika]]
+
+[[أَوْ|or|aw]] [[اسْتَأْثَرْتَ|kept exclusively|istaʾtharta]] [[بِهِ|with it|bihi]] [[فِي|in|fī]] [[عِلْمِ|knowledge|ʿilmi]] [[الْغَيْبِ|the unseen|ghaybi]] [[عِنْدَك|with You|ʿindaka]]
+
+[[أَنْ|that|an]] [[تَجْعَلَ|make|tajʿala]] [[الْقُرْآنَ|the Qur’an|qurʾāna]] [[رَبِيعَ|the spring|rabīʿa]] [[قَلْبِي|of my heart|qalbī]]
+
+[[وَنُورَ|and the light|wa-nūra]] [[صَدْرِي|of my chest|ṣadrī]]
+
+[[وَجِلَاءَ|and the removal|wa-jilāʾa]] [[حُزْنِي|of my grief|ḥuznī]]
+
+[[وَذَهَابَ|and the departure|wa-dhahāba]] [[هَمِّي|of my anxiety|hammī]]
+
+[[إِلَّا|except that|illā]] [[أَذْهَبَ|He removes|adhhaba]] [[اللَّهُ|Allah|llāhu]] [[هَمَّهُ|his anxiety|hammahu]] [[وَحُزْنَهُ|and his grief|wa-ḥuznahu]] [[وَأَبْدَلَهُ|and replaces for him|wa-abdalahu]] [[مَكَانَهُ|in its place|makānahu]] [[فَرَجًا|joy|farajan]]
+
+[[فَقِيلَ|so it was said|fa-qīla]] [[يَا|O|yā]] [[رَسُولَ|Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[أَلَا|shall we not|alā]] [[نَتَعَلَّمُهَا|learn it|nataʿallamuhā]] [[فَقَالَ|and he said|fa-qāla]] [[بَلَى|yes|balā]] [[يَنْبَغِي|it is fitting|yanbaghī]] [[لِمَنْ|for the one who|liman]] [[سَمِعَهَا|hears it|samiʿahā]] [[أَنْ|that|an]] [[يَتَعَلَّمَهَا|learn it|yataʿallamahā]]
+</details>
+
+🔗 Verify 
+
+on sunnah.com — *[Hisn al-Muslim 120](https://sunnah.com/hisn:120)
+
+on dorar.net — *[Musnad Aḥmad 3712](https://dorar.net/hadith/sharh/116355)
