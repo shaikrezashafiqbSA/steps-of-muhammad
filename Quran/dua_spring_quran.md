@@ -12,7 +12,8 @@ right-orb: Sahih
 ## 📜 The Hadith
 ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: 
 >*"No one is ever afflicted with anxiety or grief and then says:*
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 🔤 Evoke This — Word by Word
 <div align="right">O Allah indeed I am ...</div>
@@ -56,7 +57,6 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 
 > *“Yes, it is fitting for the one who hears it to learn it.”*
 
-
 <details> <summary>📚 Original Arabic Source </summary>
 
 [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[اللَّهِ|Allah|llāhi]] [[بْنُ|son of|bnu]] [[مُحَمَّدٍ|Muḥammad|muḥammadin]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[مُعَاوِيَةَ|Muʿāwiyah|muʿāwiyah]] [[عَنِ|from|ʿani]] [[الْأَعْمَشِ|al-Aʿmash|l-aʿmashi]] [[عَنْ|from|ʿan]] [[شَقِيقٍ|Shaqīq|shaqīqin]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah|llāhi]] [[ابْنِ|Ibn|ibni]] [[مَسْعُودٍ|Masʿūd|masʿūdin]] [[قَالَ|he said|qāla]] [[قَالَ|he said|qāla]] [[رَسُولُ|the Messenger|rasūlu]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]]
@@ -88,6 +88,13 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 [[فَقِيلَ|so it was said|fa-qīla]] [[يَا|O|yā]] [[رَسُولَ|Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[أَلَا|shall we not|alā]] [[نَتَعَلَّمُهَا|learn it|nataʿallamuhā]] [[فَقَالَ|and he said|fa-qāla]] [[بَلَى|yes|balā]] [[يَنْبَغِي|it is fitting|yanbaghī]] [[لِمَنْ|for the one who|liman]] [[سَمِعَهَا|hears it|samiʿahā]] [[أَنْ|that|an]] [[يَتَعَلَّمَهَا|learn it|yataʿallamahā]]
 </details>
 
-🔗 Verify on sunnah.com — *[Hisn al-Muslim 120](https://sunnah.com/hisn:120) and dorar.net *[Musnad Aḥmad 3712](https://dorar.net/hadith/sharh/116355)
+*🔗 Verify on [sunnah.com — Hisn al-Muslim 120](https://sunnah.com/hisn:120) • [dorar.net - Musnad Aḥmad 3712](https://dorar.net/hadith/sharh/116355)*
 
-📺 Why this dua? [It will strengthen your relationship with Allah and His book](https://www.youtube.com/watch?v=CeA7CzM_15U)
+<details>
+<summary>📺 Why this dua? (Recommended context video) </summary>
+
+[It will strengthen your relationship with Allah and His book →]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CeA7CzM_15U?si=U-qJ9MBFs1JZrrdp&amp;start=207" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+</details>
