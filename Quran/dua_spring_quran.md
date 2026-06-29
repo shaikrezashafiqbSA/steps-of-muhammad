@@ -11,14 +11,14 @@ right-orb: Sahih
 # Duʿāʾ for Anxiety and Grief — The Prophet's ﷺ Supplication for Removal of Distress
 ## 📜 The Hadith
 ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: 
->*No one is ever afflicted with anxiety or grief and then says:*
-
+>*"No one is ever afflicted with anxiety or grief and then says:*
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 🔤 Evoke This — Word by Word
 <div align="right">O Allah indeed I am ...</div>
 [[اللَّهُمَّ|O Allah|allāhumma]] [[إِنِّي|indeed I|innī]] 
 <div align="right"> Your slave, son of Your slave, son of Your maidservant</div>
-[[عَبْدُك|Your slave|ʿabduka]] [[ابْنُ|son of|bnu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنُ|son of|bnu]] [[أَمَتِك|Your maidservant|amatika]]
+[[عَبْدُك|Your slave|ʿabduka]] [[ابْنُ|son of|ibnu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنُ|son of|ibnu]] [[أَمَتِك|Your maidservant|amatika]]
 <div align="right"> Your maidservant, daughter of Your slave, daughter of Your maidservant</div>
 [[أَمَتُكَ|Your maidservant|amatuka]] [[ابْنَةُ|daughter of|bintu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنَةُ|daughter of|bintu]] [[أَمَتِكَ|Your maidservant|amatika]]
 
@@ -50,7 +50,11 @@ right-orb: Sahih
 <div align="right"> and the departure of my grief.</div>
 [[وَذَهَابَ|and the departure|wa-dhahāba]] [[هَمِّي|of my anxiety|hammī]]
 
-*Except that Allah will remove his grief and sadness and replace it with joy. It was said: “O Messenger of Allah, shall we learn it?” He said: “Yes, it is fitting for the one who hears it to learn it.”*
+>*Except that Allah will remove his grief and sadness and replace it with joy."* 
+
+It was said: “O Messenger of Allah, shall we learn it?” He said:
+
+> *“Yes, it is fitting for the one who hears it to learn it.”*
 
 
 <details> <summary>📚 Original Arabic Source </summary>
@@ -84,8 +88,6 @@ right-orb: Sahih
 [[فَقِيلَ|so it was said|fa-qīla]] [[يَا|O|yā]] [[رَسُولَ|Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[أَلَا|shall we not|alā]] [[نَتَعَلَّمُهَا|learn it|nataʿallamuhā]] [[فَقَالَ|and he said|fa-qāla]] [[بَلَى|yes|balā]] [[يَنْبَغِي|it is fitting|yanbaghī]] [[لِمَنْ|for the one who|liman]] [[سَمِعَهَا|hears it|samiʿahā]] [[أَنْ|that|an]] [[يَتَعَلَّمَهَا|learn it|yataʿallamahā]]
 </details>
 
-🔗 Verify 
+🔗 Verify on sunnah.com — *[Hisn al-Muslim 120](https://sunnah.com/hisn:120) and dorar.net *[Musnad Aḥmad 3712](https://dorar.net/hadith/sharh/116355)
 
-on sunnah.com — *[Hisn al-Muslim 120](https://sunnah.com/hisn:120)
-
-on dorar.net — *[Musnad Aḥmad 3712](https://dorar.net/hadith/sharh/116355)
+📺 Why this dua? [It will strengthen your relationship with Allah and His book](https://www.youtube.com/watch?v=CeA7CzM_15U)
