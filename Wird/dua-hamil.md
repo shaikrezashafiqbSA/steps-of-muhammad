@@ -10,27 +10,27 @@
 
 > **Full meaning:** *O Allah, if You have created a being in this womb of mine, then form it as a male, and shape it in a beautiful, complete form. Make him a righteous man — knowledgeable, wise, obedient to the Lord of Allah Most High, to His Messenger ﷺ, and to his parents. Make him among those granted lawful, pure, blessed, abundant provision. Protect him from the two disgraces — poverty and debt. Keep him safe from the calamities of this world and the next, and from their trials. O Allah, do not make him among the people of harm, and guide us to the straight path — the path of those You have favored, not of those who incurred Your anger nor of those who went astray. Āmīn, by Your mercy, O Most Merciful of the merciful. All praise is for Allah, Lord of the worlds. My Lord, do not leave me alone, for You are the best of inheritors.*
 
-[[اَللَّهُمَّ|O Allah|Allāhumma]] [[إِنْ كُنْتَ|if You have|in kunta]] [[خَلَقْتَ|created|khalaqta]] [[خَلْقاً|a being|khalqan]] [[فِي|in|fī]] [[بَطْنِي|my womb|baṭnī]] [[هَذَا|this|hādhā]] [[فَكَوِّنْهُ|then form it|fa-kawwinhu]] [[ذَكَراً|a male|dhakaran]] [[(أنثى )| (female) | untha ]]
+[[اَللَّهُمَّ|O Allah|Allāhumma]] [[إِنْ كُنْتَ|if You have|in kunta]] [[خَلَقْتَ|created|khalaqta]] [[خَلْقًا|a being|khalqan]] [[فِي|in|fī]] [[بَطْنِي|my womb|baṭnī]] [[هَذَا|this|hādhā]] [[فَكَوِّنْهُ|then form it|fa-kawwinhu]] [[ذَكَرًا|a male|dhakaran]] [[(أُنْثَى)|(female)|unthā]]
 
-[[وَصَوِّرْهُ|and shape it|wa-ṣawwirhu]] [[صُورَةً|a form|ṣūratan]] [[جَمِيلَةً|beautiful|jamīlatan]] [[كَامِلاً|complete|kāmilan]] 
+[[وَصَوِّرْهُ|and shape it|wa-ṣawwirhu]] [[صُورَةً|a form|ṣūratan]] [[جَمِيلَةً|beautiful|jamīlatan]] [[كَامِلًا|complete|kāmilan]]
 
-[[وَاجْعَلْهُ|and make him|wa-jʿalhu]] [[رَجُلاً|a man|rajulan]] [[(امْرَأَةً )| (a woman) | imra'atan]] [[صَالِحاً|righteous|ṣāliḥan]] [[عَالِماً|knowledgeable|ʿāliman]] [[عَاقِلاً,|wise|ʿāqilan]] 
+[[وَاجْعَلْهُ|and make him|wa-jʿalhu]] [[رَجُلًا|a man|rajulan]] [[(امْرَأَةً)|(a woman)|imra'atan]] [[صَالِحًا|righteous|ṣāliḥan]] [[عَالِمًا|knowledgeable|ʿāliman]] [[عَاقِلًا,|wise|ʿāqilan]]
 
-[[مُطِيعاً|obedient|muṭīʿan]] [[لِرَبِّ|to the Lord|li-rabbi]] [[اللهِ| Allah|llāhi]] [[تَعَالَى|Most High|taʿālā]] [[وَلِرَسُولِهِ|and His Messenger|wa-li-rasūlihi]] [[ﷺ|ﷺ|ṣallallāhu ʿalayhi wa sallam]] [[وَلِوَالِدَيْهِ|and his parents|wa-li-wālidayhi]] 
+[[مُطِيعًا|obedient|muṭīʿan]] [[لِلَّهِ|to Allah|lillāhi]] [[تَعَالَى|Most High|taʿālā]] [[وَلِرَسُولِهِ|and His Messenger|wa-li-rasūlihi]] [[ﷺ|ﷺ|ṣallallāhu ʿalayhi wa sallam]] [[وَلِوَالِدَيْهِ|and his parents|wa-li-wālidayhi]]
 
-[[وَمِنَ|and (make him) from (among those)|wa mina]] [[الْمَرْزُوقِينَ|those provided for|l-marzūqīn]] [[رِزْقاً|provision|rizqan]] [[حَلَالاً|lawful|ḥalālan]] [[طَيِّباً|pure|ṭayyiban]] [[مُبَارَكاً|blessed|mubārakan]] [[وَاسِعاً|abundant|wāsiʿan]] 
+[[وَمِنَ|and (make him) from (among those)|wa mina]] [[الْمَرْزُوقِينَ|those provided for|l-marzūqīn]] [[رِزْقًا|provision|rizqan]] [[حَلَالًا|lawful|ḥalālan]] [[طَيِّبًا|pure|ṭayyiban]] [[مُبَارَكًا|blessed|mubārakan]] [[وَاسِعًا|abundant|wāsiʿan]]
 
-[[وَاحْفَظْهُ|and protect him|wa-ḥfaẓhu]] [[مِنَ|from|mina]] [[الْفَضِيحَتَيْنِ|the two disgraces|l-faḍīḥatayn]] [[- الْفَقْرِ|poverty|al-faqri]] [[وَالدَّيْنِ|and debt|wa-d-dayn]] 
+[[وَاحْفَظْهُ|and protect him|wa-ḥfaẓhu]] [[مِنَ|from|mina]] [[الْفَضِيحَتَيْنِ|the two disgraces|l-faḍīḥatayn]] [[- الْفَقْرِ|poverty|al-faqri]] [[وَالدَّيْنِ|and debt|wa-d-dayn]]
 
-[[وَسَلِّمْهُ|and keep him safe|wa-sallimhu]] [[مِنْ|from|min]] [[آفَاتِ|the calamities of|āfāti]] [[الدُّنْيَا|this world|d-dunyā]] [[وَالآخِرَةِ|and the next|wa-l-ākhirah]] [[وَفِتْنَتِهِمَا|and their trials|wa-fitnatihimā]]
+[[وَسَلِّمْهُ|and keep him safe|wa-sallimhu]] [[مِنْ|from|min]] [[آفَاتِ|the calamities of|āfāti]] [[الدُّنْيَا|this world|d-dunyā]] [[وَالآخِرَةِ|and the next|wa-l-ākhirati]] [[وَفِتْنَتِهِمَا|and their trials|wa-fitnatihimā]]
 
- [[اَللَّهُمَّ|O Allah|Allāhumma]] [[لَا تَجْعَلْهُ|do not make him|lā tajʿalhu]] [[مِنْ|from|min]] [[أَهْلِ الضَّيْرِ|the people of harm|ahli-ḍ-ḍayr]]
- 
-  [[وَاهْدِنَا|and guide us to|wa-hdinā]] [[الصِّرَاطَ|the path|aṣ-ṣirāṭa]] [[الْمُسْتَقِيمَ|the straight|l-mustaqīm]] [[صِرَاطَ|the path of|ṣirāṭa]] [[الَّذِينَ|those whom|lladhīna]] [[أَنْعَمْتَ|You favored|anʿamta]] [[عَلَيْهِمْ|upon them|ʿalayhim]] [[غَيْرِ|not of|ghayri]] [[الْمَغْضُوبِ|those incurring anger|l-maghḍūbi]] [[عَلَيْهِمْ|upon them|ʿalayhim]] [[وَلَا|nor|wa lā]] [[الضَّالِّينَ|those who go astray|ḍ-ḍāllīn]] [[آمِينَ|Amen|āmīn]] 
-  
-  [[بِرَحْمَتِكَ|by Your mercy|bi-raḥmatika]] [[يَا أَرْحَمَ الرَّاحِمِينَ|O Most Merciful|yā arḥama-r-rāḥimīn]] [[وَالْحَمْدُ|and all praise|wa-l-ḥamdu]] [[لِلَّهِ|is for Allah|lillāhi]] [[رَبِّ|Lord of|rabbi]] [[الْعَالَمِينَ|the worlds|l-ʿālamīn]] 
-  
-  [[رَبِّ|my Lord|Rabbi]] [[لَا تَذَرْنِي|do not leave me|lā tadharnī]] [[فَرْداً|alone|fardan]] [[وَأَنْتَ|and You are|wa anta]] [[خَيْرُ|the best of|khayru]] [[الْوَارِثِينَ|inheritors|l-wārithīn]]
+[[اَللَّهُمَّ|O Allah|Allāhumma]] [[لَا تَجْعَلْهُ|do not make him|lā tajʿalhu]] [[مِنْ|from|min]] [[أَهْلِ الضَّيْرِ|the people of harm|ahli-ḍ-ḍayr]]
+
+[[وَاهْدِنَا|and guide us to|wa-hdinā]] [[الصِّرَاطَ|the path|aṣ-ṣirāṭa]] [[الْمُسْتَقِيمَ|the straight|l-mustaqīma]] [[صِرَاطَ|the path of|ṣirāṭa]] [[الَّذِينَ|those whom|lladhīna]] [[أَنْعَمْتَ|You favored|anʿamta]] [[عَلَيْهِمْ|upon them|ʿalayhim]] [[غَيْرِ|not of|ghayri]] [[الْمَغْضُوبِ|those incurring anger|l-maghḍūbi]] [[عَلَيْهِمْ|upon them|ʿalayhim]] [[وَلَا|nor|wa lā]] [[الضَّالِّينَ|those who go astray|ḍ-ḍāllīn]] [[آمِينَ|Amen|āmīn]]
+
+[[بِرَحْمَتِكَ|by Your mercy|bi-raḥmatika]] [[يَا أَرْحَمَ الرَّاحِمِينَ|O Most Merciful|yā arḥama-r-rāḥimīn]] [[وَالْحَمْدُ|and all praise|wa-l-ḥamdu]] [[لِلَّهِ|is for Allah|lillāhi]] [[رَبِّ|Lord of|rabbi]] [[الْعَالَمِينَ|the worlds|l-ʿālamīn]]
+
+[[رَبِّ|my Lord|Rabbi]] [[لَا تَذَرْنِي|do not leave me|lā tadharnī]] [[فَرْدًا|alone|fardan]] [[وَأَنْتَ|and You are|wa anta]] [[خَيْرُ|the best of|khayru]] [[الْوَارِثِينَ|inheritors|l-wārithīn]]
 
 ---
 
