@@ -62,23 +62,23 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 
 <details> <summary>📚 Original Arabic Source </summary>
 
-[[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[اللَّهِ|Allah|llāhi]] [[بْنُ|son of|bnu]] [[مُحَمَّدٍ|Muḥammad|muḥammadin]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[مُعَاوِيَةَ|Muʿāwiyah|muʿāwiyah]] [[عَنِ|from|ʿani]] [[الْأَعْمَشِ|al-Aʿmash|l-aʿmashi]] [[عَنْ|from|ʿan]] [[شَقِيقٍ|Shaqīq|shaqīqin]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah|llāhi]] [[ابْنِ|Ibn|ibni]] [[مَسْعُودٍ|Masʿūd|masʿūdin]] [[قَالَ|he said|qāla]] [[قَالَ|he said|qāla]] [[رَسُولُ|the Messenger|rasūlu]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]]
+[[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[ٱللَّهِ|Allah|llāhi]] [[بْنُ|son of|bnu]] [[مُحَمَّدٍ|Muḥammad|muḥammadin]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[مُعَاوِيَةَ|Muʿāwiyah|muʿāwiyata]] [[عَنِ|from|ʿani]] [[ٱلْأَعْمَشِ|al-Aʿmash|l-aʿmashi]] [[عَنْ|from|ʿan]] [[شَقِيقٍ|Shaqīq|shaqīqin]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[ٱللَّهِ|Allah|llāhi]] [[بْنِ|son of|bni]] [[مَسْعُودٍ|Masʿūd|masʿūdin]] [[قَالَ|he said|qāla]] [[قَالَ|he said|qāla]] [[رَسُولُ|the Messenger|rasūlu]] [[ٱللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[ٱللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]]
 
 [[مَا|not|mā]] [[أَصَابَ|afflicted|aṣāba]] [[أَحَدًا|anyone|aḥadan]] [[قَطُّ|ever|qaṭṭu]] [[هَمٌّ|anxiety|hammun]] [[وَلَا|nor|wa-lā]] [[حَزَنٌ|grief|ḥazanun]] [[فَقَالَ|and says|fa-qāla]]
 
-[[اللَّهُمَّ|O Allah|allāhumma]] [[إِنِّي|indeed I|innī]] [[عَبْدُك|Your slave|ʿabduka]] [[ابْنُ|son of|bnu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنُ|son of|bnu]] [[أَمَتِك|Your maidservant|amatika]]
+[[ٱللَّهُمَّ|O Allah|allāhumma]] [[إِنِّي|indeed I|innī]] [[عَبْدُكَ|Your slave|ʿabduka]] [[بْنُ|son of|bnu]] [[عَبْدِكَ|Your slave|ʿabdika]] [[بْنُ|son of|bnu]] [[أَمَتِكَ|Your maidservant|amatika]]
 
-[[نَاصِيَتِي|my forelock|nāṣiyatī]] [[بِيَدِك|in Your hand|bi-yadika]] [[مَاضٍ|ever executed|māḍin]] [[فِيَّ|upon me|fiyya]] [[حُكْمُك|Your command|ḥukmuka]] [[عَدْلٌ|just|ʿadlun]] [[فِيَّ|in me|fiyya]] [[قَضَاؤُك|Your decree|qaḍāʾuka]]
+[[نَاصِيَتِي|my forelock|nāṣiyatī]] [[بِيَدِكَ|in Your hand|bi-yadika]] [[مَاضٍ|ever executed|māḍin]] [[فِيَّ|upon me|fiyya]] [[حُكْمُكَ|Your command|ḥukmuka]] [[عَدْلٌ|just|ʿadlun]] [[فِيَّ|in me|fiyya]] [[قَضَاؤُكَ|Your decree|qaḍāʾuka]]
 
-[[أَسْأَلُك|I ask You|asʾaluka]] [[بِكُلِّ|by every|bi-kulli]] [[اسْمٍ|name|ismin]] [[هُوَ|it is|huwa]] [[لَك|Yours|laka]] [[سَمَّيْتَ|You have named|sammayta]] [[بِهِ|with it|bihi]] [[نَفْسَك|Yourself|nafsaka]]
+[[أَسْأَلُكَ|I ask You|asʾaluka]] [[بِكُلِّ|by every|bi-kulli]] [[ٱسْمٍ|name|smin]] [[هُوَ|it is|huwa]] [[لَكَ|Yours|laka]] [[سَمَّيْتَ|You have named|sammayta]] [[بِهِ|with it|bihi]] [[نَفْسَكَ|Yourself|nafsaka]]
 
-[[أَوْ|or|aw]] [[عَلَّمْتَه|taught it|ʿallamtahu]] [[أَحَدًا|to anyone|aḥadan]] [[مِنْ|from|min]] [[خَلْقِك|Your creation|khalqika]]
+[[أَوْ|or|aw]] [[عَلَّمْتَهُ|taught it|ʿallamtahu]] [[أَحَدًا|to anyone|aḥadan]] [[مِنْ|from|min]] [[خَلْقِكَ|Your creation|khalqika]]
 
-[[أَوْ|or|aw]] [[أَنْزَلْتَه|revealed it|anzaltahu]] [[فِي|in|fī]] [[كِتَابِك|Your Book|kitābika]]
+[[أَوْ|or|aw]] [[أَنْزَلْتَهُ|revealed it|anzaltahu]] [[فِي|in|fī]] [[كِتَابِكَ|Your Book|kitābika]]
 
-[[أَوْ|or|aw]] [[اسْتَأْثَرْتَ|kept exclusively|istaʾtharta]] [[بِهِ|with it|bihi]] [[فِي|in|fī]] [[عِلْمِ|knowledge|ʿilmi]] [[الْغَيْبِ|the unseen|ghaybi]] [[عِنْدَك|with You|ʿindaka]]
+[[أَوْ|or|aw]] [[ٱسْتَأْثَرْتَ|kept exclusively|staʾtharta]] [[بِهِ|with it|bihi]] [[فِي|in|fī]] [[عِلْمِ|knowledge|ʿilmi]] [[ٱلْغَيْبِ|the unseen|l-ghaybi]] [[عِنْدَكَ|with You|ʿindaka]]
 
-[[أَنْ|that|an]] [[تَجْعَلَ|make|tajʿala]] [[الْقُرْآنَ|the Qur’an|qurʾāna]] [[رَبِيعَ|the spring|rabīʿa]] [[قَلْبِي|of my heart|qalbī]]
+[[أَنْ|that|an]] [[تَجْعَلَ|make|tajʿala]] [[ٱلْقُرْآنَ|the Qur’an|l-qurʾāna]] [[رَبِيعَ|the spring|rabīʿa]] [[قَلْبِي|of my heart|qalbī]]
 
 [[وَنُورَ|and the light|wa-nūra]] [[صَدْرِي|of my chest|ṣadrī]]
 
