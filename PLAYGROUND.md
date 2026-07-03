@@ -77,9 +77,54 @@ book: Book [N] · [Book title]
 hadith: [Hadith number]
 grade: [sahih | hasan | daif | mawdu | mutawatir | unknown]
 left-orb: [📖 Display text for left pill]
-right-orb: [Display text for right pill]
+right-orb: 🟢✦✦✦
+right-orb-color: #28a745 (optional hex color override)
 verify: https://sunnah.com/...
+
 ::
+
+Advanced:
+Basic usage (matches your current files)
+::meta
+left-orb: 📖 Musnad Aḥmad 3712
+right-orb: 🟢 Ṣaḥīḥ (Darussalam)
+::
+
+Auto behavior:
+Initial: shows full text
+After scroll: compact form auto-extracts the leading emoji (📖 and 🟢)
+Right orb auto-colors green because text contains "Ṣaḥīḥ"
+With custom colors
+::meta
+left-orb: 📖 Musnad Aḥmad 3712
+left-orb-color: #F5E9DC
+left-orb-text: #3A2E2B
+right-orb: 🟢✦✦✦ Ṣaḥīḥ (Darussalam)
+right-orb-color: #2D5F2D
+right-orb-text: #FFFBF1
+::
+
+Colors override defaults. Text color defaults reasonably if you only specify background.
+With explicit compact form
+::meta
+left-orb: Musnad Aḥmad 3712 · Book of Adhkār
+left-orb-compact: 📖
+right-orb: Ṣaḥīḥ (Darussalam)
+right-orb-compact: 🟢
+::
+
+Use this when the leading emoji doesn't auto-extract right (rare) or when you want a totally different symbol on scroll vs full view.
+Full Pokémon-card style with pips
+::meta
+left-orb: 📖 Ṣaḥīḥ al-Bukhārī 6306
+left-orb-color: #F5E9DC
+right-orb: 🟢✦✦✦✦✦ Mutawātir (mass-transmitted)
+right-orb-color: #1B5E20
+right-orb-compact: 🟢✦✦✦✦✦
+::
+
+The pips (✦) become part of the compact display, giving you your rank-badge feel.
+
 ```
 
 ### Field-by-Field Behavior
