@@ -3,9 +3,11 @@ narrator: Muslim ibn al-Ḥārith al-Tamīmī (raḍiyallāhu ʿanhu)
 collection: Sunan Abī Dāwūd
 book: Book 43 · General Behavior (Kitab al-Adab)
 hadith: 5079
+
 left-orb: Sunan Abī Dāwūd 5079
+left-orb-compact: ﷴﷺ📜
 right-orb: Da'if (Al-Albani)
-verify: https://sunnah.com/abudawud:5079
+right-orb-compact: ۞۞۞
 ::
 # Protection from the Fire — Morning and Evening Supplication
 ## 📜 The Hadith

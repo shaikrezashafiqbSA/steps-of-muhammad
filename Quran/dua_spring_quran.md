@@ -5,7 +5,9 @@ book: Book 10 · Musnad ʿAbdullah ibn Masʿūd
 hadith: 3712
 grade: sahih
 left-orb: Musnad Aḥmad 3712
+left-orb-compact: ﷴﷺ📜
 right-orb: Sahih
+right-orb-compact: ۞۞۞۞۞
 ::
 
 # Duʿāʾ for Anxiety and Grief — The Prophet's ﷺ Supplication for Removal of Distress
@@ -19,39 +21,34 @@ right-orb: Sahih
 
 
 ## 🔤 Evoke This — Word by Word
-<div align="right">O Allah indeed I am ...</div>
-[[اللَّهُمَّ|O Allah|allāhumma]] [[إِنِّي|indeed I|innī]] 
-<div align="right"> Your slave, son of Your slave, son of Your maidservant</div>
-[[عَبْدُك|Your slave|ʿabduka]] [[ابْنُ|son of|ibnu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنُ|son of|ibnu]] [[أَمَتِك|Your maidservant|amatika]]
-<div align="right"> Your maidservant, daughter of Your slave, daughter of Your maidservant</div>
-[[أَمَتُكَ|Your maidservant|amatuka]] [[ابْنَةُ|daughter of|bintu]] [[عَبْدِك|Your slave|ʿabdika]] [[ابْنَةُ|daughter of|bintu]] [[أَمَتِكَ|Your maidservant|amatika]]
+[[ٱللَّهُمَّ|O Allah|Allāhumma]] [[إِنِّي|indeed I|innī]]
 
-<div align="right">my forelock is in Your hand</div>
-[[نَاصِيَتِي|my forelock|nāṣiyatī]] [[بِيَدِك|in Your hand|bi-yadika]] 
+[[عَبْدُكَ|Your slave|ʿabduka]] [[ٱبْنُ|son of|bnu]] [[عَبْدِكَ|Your slave|ʿabdika]] [[ٱبْنُ|son of|bnu]] [[أَمَتِكَ|Your maidservant|amatika]]
 
-<div align="right">Your command over me is ever executed</div>
-[[مَاضٍ|ever executed|māḍin]] [[فِيَّ|upon me|fiyya]] [[حُكْمُك|Your command|ḥukmuka]] 
-<div align="right">Your decree over me is just</div>
-[[عَدْلٌ|just|ʿadlun]] [[فِيَّ|in me|fiyya]] [[قَضَاؤُك|Your decree|qaḍāʾuka]]
+[[أَمَتُكَ|Your maidservant|amatuka]] [[ٱبْنَةُ|daughter of|bnatu]] [[عَبْدِكَ|Your slave|ʿabdika]] [[ٱبْنَةُ|daughter of|bnatu]] [[أَمَتِكَ|Your maidservant|amatika]]
 
-<div align="right">I ask You by every name that is Yours</div>
-[[أَسْأَلُك|I ask You|asʾaluka]] [[بِكُلِّ|by every|bi-kulli]] [[اسْمٍ|name|ismin]] 
-<div align="right">which You have named Yourself with</div>
-[[هُوَ|it is|huwa]] [[لَك|Yours|laka]] [[سَمَّيْتَ|You have named|sammayta]] [[بِهِ|with it|bihi]] [[نَفْسَك|Yourself|nafsaka]]
-<div align="right">or taught to any of Your creation</div>
-[[أَوْ|or|aw]] [[عَلَّمْتَه|taught it|ʿallamtahu]] [[أَحَدًا|to anyone|aḥadan]] [[مِنْ|from|min]] [[خَلْقِك|Your creation|khalqika]]
+[[نَاصِيَتِي|my forelock|nāṣiyatī]] [[بِيَدِكَ|in Your hand|bi-yadika]]
 
-<div align="right">or revealed in Your Book</div>
-[[أَوْ|or|aw]] [[أَنْزَلْتَه|revealed it|anzaltahu]] [[فِي|in|fī]] [[كِتَابِك|Your Book|kitābika]]
-<div align="right">or kept in the knowledge of the unseen with You</div>
-[[أَوْ|or|aw]] [[اسْتَأْثَرْتَ|kept exclusively|istaʾtharta]] [[بِهِ|with it|bihi]] [[فِي|in|fī]] [[عِلْمِ|knowledge|ʿilmi]] [[الْغَيْبِ|the unseen|ghaybi]] [[عِنْدَك|with You|ʿindaka]]
-<div align="right">that You make the Qur’an the spring of my heart</div>
-[[أَنْ|that|an]] [[تَجْعَلَ|make|tajʿala]] [[الْقُرْآنَ|the Qur’an|qurʾāna]] [[رَبِيعَ|the spring|rabīʿa]] [[قَلْبِي|of my heart|qalbī]]
-<div align="right">the light of my chest</div>
+[[مَاضٍ|ever executed|māḍin]] [[فِيَّ|upon me|fiyya]] [[حُكْمُكَ|Your command|ḥukmuka]]
+
+[[عَدْلٌ|just|ʿadlun]] [[فِيَّ|in me|fiyya]] [[قَضَاؤُكَ|Your decree|qaḍāʾuka]]
+
+[[أَسْأَلُكَ|I ask You|asʾaluka]] [[بِكُلِّ|by every|bi-kulli]] [[ٱسْمٍ|name|smin]]
+
+[[هُوَ|it is|huwa]] [[لَكَ|Yours|laka]] [[سَمَّيْتَ|You have named|sammayta]] [[بِهِ|with it|bihi]] [[نَفْسَكَ|Yourself|nafsaka]]
+
+[[أَوْ|or|aw]] [[عَلَّمْتَهُ|taught it|ʿallamtahu]] [[أَحَدًا|to anyone|aḥadan]] [[مِنْ|from|min]] [[خَلْقِكَ|Your creation|khalqika]]
+
+[[أَوْ|or|aw]] [[أَنْزَلْتَهُ|revealed it|anzaltahu]] [[فِي|in|fī]] [[كِتَابِكَ|Your Book|kitābika]]
+
+[[أَوِ|or|awi]] [[ٱسْتَأْثَرْتَ|kept exclusively|staʾtharta]] [[بِهِ|with it|bihi]] [[فِي|in|fī]] [[عِلْمِ|knowledge|ʿilmi]] [[ٱلْغَيْبِ|the unseen|l-ghaybi]] [[عِنْدَكَ|with You|ʿindaka]]
+
+[[أَنْ|that|an]] [[تَجْعَلَ|make|tajʿala]] [[ٱلْقُرْآنَ|the Qur’an|l-qurʾāna]] [[رَبِيعَ|the spring|rabīʿa]] [[قَلْبِي|of my heart|qalbī]]
+
 [[وَنُورَ|and the light|wa-nūra]] [[صَدْرِي|of my chest|ṣadrī]]
-<div align="right">the removal of my sadness</div>
+
 [[وَجِلَاءَ|and the removal|wa-jilāʾa]] [[حُزْنِي|of my grief|ḥuznī]]
-<div align="right"> and the departure of my grief.</div>
+
 [[وَذَهَابَ|and the departure|wa-dhahāba]] [[هَمِّي|of my anxiety|hammī]]
 
 >*Except that Allah will remove his grief and sadness and replace it with joy."* 
@@ -100,7 +97,7 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 560px; margin: auto;">
-<iframe src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; max-width: 560px; aspect-ratio: 16 / 9; height: auto; display: block; margin: auto;"></iframe>
+<iframe src="https://www.youtube.com/embed/CeA7CzM_15U?si=GqCa7R7ch4nGITFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; max-width: 560px; aspect-ratio: 16 / 9; height: auto; display: block; margin: auto;"></iframe>
 
 </div>
 </details>
