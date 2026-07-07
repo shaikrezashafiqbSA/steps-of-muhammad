@@ -174,10 +174,13 @@
         category: "After Ṣalāh",
         desc: "Prophetic du'ās right after ṣalāh",
         items: [
-          { label: "1) Istighfār + Source of Peace", path: "render.html?file=after solat/1_istigfar_peace.md" },
-          { label: "2) Tahlil after Salaam", path: "render.html?file=after solat/2_tahlil_after_salam.md" },
-          { label: "3) Protect me from Hellfire", path: "render.html?file=after solat/3_dua-allahuma-ajirnaar.md" },
-          { label: "4) 4 x Morning Adhkar", path: "render.html?file=after solat/4_subhana_allahi_wa_bihamdihi.md" },
+          { label: "1) Istighfār - Source of Peace", path: "render.html?file=after-salah/1_istigfar_peace.md" },
+          { type: "family", label: "All Post-Taslīm Tahlil", path: "render.html?file=after-salah/post-taslim-overview.md" },
+          { label: "1a) Tahlīl - Mukhlisina-lahud-din / Sincere Devotion", path: "render.html?file=after-salah/tahlil-mukhlisina.md" },
+          { label: "1b) Tahlīl - Laa-maani' / Divine Sovereignty", path: "render.html?file=after-salah/tahlil-la-mania.md" },
+          { label: "2) Tahlīl - Yuhyi wa Yumitu' / Gives life Causes Death", path: "render.html?file=after-salah/tahlil-fajr-maghrib-10-times.md"},
+          { label: "3) Protect me from Hellfire", path: "render.html?file=after-salah/3_dua-allahuma-ajirnaar.md" },
+          { label: "4) 4 x Morning Adhkar", path: "render.html?file=after-salah/4_subhana_allahi_wa_bihamdihi.md" },
         ]
       },
       {
@@ -188,7 +191,7 @@
           { label: "Du'ā: Oh Turner of Hearts...", path: "dua-general/dua-turner-of-hearts.html" },
           { label: "Du'ā: In the Greatest of Names", path: "dua-general/dua-greatest-of-names.html" },
           { label: "Du'ā: Istikhārah — Guidance", path: "dua-general/dua-istikhara.html" },
-          { label: "Du'ā: ʿĀʾishah's Comprehensive Ask", path: "dua-general/dua-comprehensive-aisyah.html" },,
+          { label: "Du'ā: ʿĀʾishah's Comprehensive Ask", path: "dua-general/dua-comprehensive-aisyah.html" },
           { label: "Du'ā: Spring of the Heart", path: "render.html?file=Quran/dua_spring_quran.md" },
           { label: "Du'ā Set: Ḥabīb ʿUmar", path: "dua-general/dua-habeeb-umar.html" }
         ]
@@ -286,6 +289,52 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>`;
+      // =========================================================
+      // ITEM TYPE TAG SYSTEM
+      //   Items with `type` get a visual pill + custom prefix icon.
+      //   Add new type entries here to extend.
+      // =========================================================
+      const ITEM_TYPE_TAGS = {
+        overview: {
+          tag: "OVERVIEW",
+          prefix: "📚",                                    // replaces ↳ arrow
+          bg: "bg-[#B08A4B]/15",
+          border: "border-[#B08A4B]/40",
+          text: "text-[#7D5243]"
+        },
+        family: {
+          tag: "FAMILY",
+          prefix: "📚",
+          bg: "bg-[#B08A4B]/15",
+          border: "border-[#B08A4B]/40",
+          text: "text-[#7D5243]"
+        },
+        wird: {
+          tag: "WIRD",
+          prefix: "📿",
+          bg: "bg-[#2C7BB0]/15",
+          border: "border-[#2C7BB0]/40",
+          text: "text-[#2C7BB0]"
+        },
+        new: {
+          tag: "NEW",
+          prefix: "✦",
+          bg: "bg-[#3C763D]/15",
+          border: "border-[#3C763D]/40",
+          text: "text-[#3C763D]"
+        }
+      };
+
+      function getItemPrefix(type) {
+        if (type && ITEM_TYPE_TAGS[type]) return ITEM_TYPE_TAGS[type].prefix;
+        return '↳';
+      }
+
+      function renderItemTag(type) {
+        if (!type || !ITEM_TYPE_TAGS[type]) return '';
+        const t = ITEM_TYPE_TAGS[type];
+        return `<span class="font-mono-app inline-block text-[9px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded mr-1.5 ${t.bg} ${t.border} ${t.text} border align-middle">${t.tag}</span>`;
+      }
 
 
       let treeHTML = '';
@@ -328,8 +377,8 @@
                      onmouseenter="igniteNur()"
                      onmouseleave="extinguishNur()"
                      class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] hover:bg-[#B08A4B]/10 transition-all group">
-                    <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none">↳</span>
-                    <span class="leading-relaxed">${item.label}</span>
+                    <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
+                    <span class="leading-relaxed">${renderItemTag(item.type)}${item.label}</span>
                   </a>
                 `).join('')}
               </div>

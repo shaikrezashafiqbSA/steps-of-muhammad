@@ -12,7 +12,7 @@ grade: sahih
 left-orb: Riyāḍ al-Ṣāliḥīn
 left-orb-compact: ﷴﷺ📜 
 right-orb: Sahih
-right-orb-compact: ۞۞۞۞۞
+right-orb-compact: ۞۞۞
 
 ::
 

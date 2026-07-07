@@ -1,7 +1,7 @@
 ::meta
 grade: Sahih
 right-orb: Ṣaḥīḥ (Darussalam)
-right-orb-compact: ۞۞۞۞۞
+right-orb-compact: ۞۞۞
 left-orb: Muslim
 left-orb-compact: ﷴﷺ📜
 ::
