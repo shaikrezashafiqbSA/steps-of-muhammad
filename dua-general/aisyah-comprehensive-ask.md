@@ -7,7 +7,7 @@ grade: sahih
 
 left-orb: 📜Ibn Majah 3846
 left-orb-compact: ﷴﷺ
-right-orb: Sunan Ibn Majah
+right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 

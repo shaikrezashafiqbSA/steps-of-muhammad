@@ -7,7 +7,7 @@ hadith: 5079
 left-orb: Sunan Abī Dāwūd 5079
 left-orb-compact: ﷴﷺ📜
 right-orb: Da'if (Al-Albani)
-right-orb-compact: ۞۞۞
+right-orb-compact: ۞
 ::
 # Protection from the Fire — Morning and Evening Supplication
 ## 📜 The Hadith

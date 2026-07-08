@@ -7,7 +7,7 @@ grade: sahih
 left-orb: Musnad Aḥmad 3712
 left-orb-compact: ﷴﷺ📜
 right-orb: Sahih
-right-orb-compact: ۞۞۞۞۞
+right-orb-compact: ۞۞۞
 ::
 
 # Duʿāʾ for Anxiety and Grief — The Prophet's ﷺ Supplication for Removal of Distress
