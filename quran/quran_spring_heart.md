@@ -14,18 +14,17 @@ right-orb-compact: ۞۞۞
 ## 📜 The Hadith
 ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: 
 >*"No one is ever afflicted with anxiety or grief and then says:*
-  
+<details> <summary>📚 Listen and follow along </summary>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 560px; margin: auto;">
   <iframe src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
 </div>
 
+</details>
 
 ## 🔤 Evoke This — Word by Word
 [[ٱللَّهُمَّ|O Allah|Allāhumma]] [[إِنِّي|indeed I|innī]]
 
-[[عَبْدُكَ|Your slave|ʿabduka]] [[ٱبْنُ|son of|bnu]] [[عَبْدِكَ|Your slave|ʿabdika]] [[ٱبْنُ|son of|bnu]] [[أَمَتِكَ|Your maidservant|amatika]]
-
-[[أَمَتُكَ|Your maidservant|amatuka]] [[ٱبْنَةُ|daughter of|bnatu]] [[عَبْدِكَ|Your slave|ʿabdika]] [[ٱبْنَةُ|daughter of|bnatu]] [[أَمَتِكَ|Your maidservant|amatika]]
+[[عَبْدُكَ|Your slave|ʿabduka]] [[ٱبْنُ (ٱبْنَةُ) |son of (daughter of) |bnu (bnatu) ]] [[عَبْدِكَ|Your slave|ʿabdika]] [[ٱبْنُ|son of|bnu]] [[أَمَتِكَ|Your maidservant|amatika]]
 
 [[نَاصِيَتِي|my forelock|nāṣiyatī]] [[بِيَدِكَ|in Your hand|bi-yadika]]
 
