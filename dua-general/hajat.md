@@ -16,8 +16,6 @@ right-orb-compact: ۞
 ### 📜 The Hadith
 It was narrated that ʿAbdullāh bin Abī Awfā Al-Aslamī (رضي الله عنه) said:
 “The Messenger of Allah (ﷺ) came out to us and said: ‘Whoever has some need from Allah or from any of His creation, let him perform ablution and pray two Rakʿah, then let him say:
-> *“None has the right to be worshipped but Allah, the Forbearing, the Most Generous. Glory is to Allah, the Lord of the Mighty Throne. Praise is to Allah, the Lord of the worlds. O Allah, I ask You for the means of Your mercy and forgiveness, the benefit of every good deed and safety from all sins. I ask You not to leave any sin of mine but You forgive it, or any distress but You relieve it, or any need that is pleasing to You but You meet it.”*
-Then he should ask Allah for whatever he wants in this world and in the Hereafter, for it is decreed.’”
 
 
 ### 🔤 Evoke This — Word by Word
@@ -45,6 +43,7 @@ Then he should ask Allah for whatever he wants in this world and in the Hereafte
 
 [[وَلَا|nor|wa-lā]] [[حَاجَةً|any need|ḥājatan]] [[هِيَ|which|hiya]] [[لَكَ|is for You|laka]] [[رِضًا|pleasing|riḍan]] [[إِلَّا|except|illā]] [[قَضَيْتَهَا|You fulfill it|qaḍaytahā]] [[لِي|for me.|lī.]]
 
+>Then he should ask Allah for whatever he wants in this world and in the Hereafter, for it is decreed.’”
 
 <details>
 <summary>📚 Original Arabic Source & Scholarly Reference Details</summary>

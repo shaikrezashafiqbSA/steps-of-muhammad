@@ -38,7 +38,7 @@ The Prophet (ﷺ) or his Companion indicated that whoever recites this seven tim
 
 ##### The Core Dhikr Formula (Recited 7 Times)
 
-[[ x 3 حَسْبِيَ|Sufficient for me is|ḥasbiya]] [[اللَّهُ|Allah,|llāhu,]]
+[[ x 7 حَسْبِيَ|Sufficient for me is|ḥasbiya]] [[اللَّهُ|Allah,|llāhu,]]
 
 [[لَا|there is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him,|huwa,]]
 

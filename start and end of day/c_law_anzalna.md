@@ -43,13 +43,18 @@ Imam al-Tirmidhi's Commentary
 
 [[ x 3 أَعُوذُ|I seek refuge|aʿūdhu]] [[بِاللَّهِ|with Allah|billāhi]] [[السَّمِيعِ|the All-Hearing|s-samīʿi]] [[الْعَلِيمِ|the All-Knowing|l-ʿalīm]] [[مِنَ|from|mina]] [[الشَّيْطَانِ|the Satan|sh-shayṭāni]] [[الرَّجِيمِ|the accursed|r-rajīm]]
 
+**Optional**
 
-[[هُوَ|He is|huwa]] [[اللَّهُ|Allah|llāhu]] [[الَّذِي|the One|lladhī]] [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him|huwa]] [[عَالِمُ|Knower of|ʿālimu]] [[الْغَيْبِ|the unseen|l-ghaybi]] [[وَالشَّهَادَةِ|and the witnessed|wa-sh-shahādah]] [[هُوَ|He is|huwa]] [[الرَّحْمَٰنُ|the Most Gracious|r-raḥmānu]] [[الرَّحِيمُ|the Most Merciful|r-raḥīm]]
+[[لَوْ|If|law]] [[أَنزَلْنَا|We had sent down|anzalnā]] [[هَـٰذَا|this|hādhā]] [[ٱلْقُرْءَانَ|Qur’an|l-qur'āna]] [[عَلَىٰ|upon|ʿalā]] [[جَبَلٍ|a mountain,|jabalin]] [[لَّرَأَيْتَهُۥ|you would have seen it|la-ra'aytahū]] [[خَـٰشِعًۭا|humbled|khāshiʿan]] [[مُّتَصَدِّعًۭا|splitting apart|mutasaḍḍiʿan]] [[مِّنْ|from|min]] [[خَشْيَةِ|fear of|khashyati]] [[ٱللَّهِۚ|Allah.|llāh.]] [[وَتِلْكَ|And these|wa-tilka]] [[ٱلْأَمْثَـٰلُ|examples|l-amthālu]] [[نَضْرِبُهَا|We present them|naḍribuhā]] [[لِلنَّاسِ|to humanity|li-n-nāsi]] [[لَعَلَّهُمْ|that perhaps they|laʿallahum]] [[يَتَفَكَّرُونَ|will reflect.|yatafakkarūn.]] [[﴿٢١﴾]]
 
-[[هُوَ|He is|huwa]] [[اللَّهُ|Allah|llāhu]] [[الَّذِي|the One|lladhī]] [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him|huwa]] [[الْمَلِكُ|the Sovereign|l-maliku]] [[الْقُدُّوسُ|the Pure|l-quddūsu]] [[السَّلَامُ|the Source of Peace|s-salāmu]] [[الْمُؤْمِنُ|the Granter of Security|l-muʾminu]] [[الْمُهَيْمِنُ|the Overseer|l-muhayminu]] [[الْعَزِيزُ|the Almighty|l-ʿazīzu]] [[الْجَبَّارُ|the Compeller|l-jabbāru]] [[الْمُتَكَبِّرُ|the Supreme|l-mutakabbir]] [[سُبْحَانَ|glory be to|subḥāna]] [[اللَّهِ|Allah|llāhi]] [[عَمَّا|far above what|ʿammā]] [[يُشْرِكُونَ|they associate|yushrikūn]]
 
-[[هُوَ|He is|huwa]] [[اللَّهُ|Allah|llāhu]] [[الْخَالِقُ|the Creator|l-khāliqu]] [[الْبَارِئُ|the Originator|l-bāriʾu]] [[الْمُصَوِّرُ|the Fashioner|l-muṣawwiru]] [[لَهُ|to Him belong|lahu]] [[الْأَسْمَاءُ|the names|l-asmāʾu]] [[الْحُسْنَىٰ|the most beautiful|l-ḥusnā]] [[يُسَبِّحُ|glorifies|yusabbiḥu]] [[لَهُ|Him|lahu]] [[مَا|whatever|mā]] [[فِي|is in|fī]] [[السَّمَاوَاتِ|the heavens|s-samāwāti]] [[وَالْأَرْضِ|and the earth|wa-l-arḍi]] [[وَهُوَ|and He is|wa huwa]] [[الْعَزِيزُ|the Almighty|l-ʿazīzu]] [[الْحَكِيمُ|the Wise|l-ḥakīm]]
+**Recite this**
 
+[[هُوَ|He is|huwa]] [[ٱللَّهُ|Allah,|llāhu]] [[ٱلَّذِى|the One who|l-ladhī]] [[لَآ|there is no|lā]] [[إِلَـٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَۖ|Him,|huwa,]] [[عَـٰلِمُ|Knower of|ʿālimu]] [[ٱلْغَيْبِ|the unseen|l-ghaybi]] [[وَٱلشَّهَـٰدَةِۖ|and the witnessed.|wa-sh-shahādah.]] [[هُوَ|He is|huwa]] [[ٱلرَّحْمَـٰنُ|the Entirely Merciful,|r-raḥmānu]] [[ٱلرَّحِيمُ|the Especially Merciful.|r-raḥīm.]] [[﴿٢٢﴾]]
+
+[[هُوَ|He is|huwa]] [[ٱللَّهُ|Allah,|llāhu]] [[ٱلَّذِى|the One who|l-ladhī]] [[لَآ|there is no|lā]] [[إِلَـٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him,|huwa,]] [[ٱلْمَلِكُ|the Sovereign,|l-maliku]] [[ٱلْقُدُّوسُ|the Most Holy,|l-quddūsu]] [[ٱالسَّلَـٰمُ|the Source of Peace,|s-salāmu]] [[ٱلْمُؤْمِنُ|the Giver of Faith,|l-mu'minu]] [[ٱلْمُهَيْمِنُ|the Overseer,|l-muhayminu]] [[ٱلْعَزِيزُ|the All-Mighty,|l-ʿazīzu]] [[ٱلْجَبَّارُ|the Compeller,|l-jabbāru]] [[ٱلْمُتَكَبِّرُۚ|the Supreme.|l-mutakabbir.]] [[سُبْحَـٰنَ|Glory be to|subḥāna]] [[ٱللَّهِ|Allah|llāhi]] [[عَمَّا|above what|ʿammā]] [[يُشْرِكُونَ|they associate with Him.|yushrikūn.]] [[﴿٢٣﴾]]
+
+[[هُوَ|He is|huwa]] [[ٱللَّهُ|Allah,|llāhu]] [[ٱلْخَـٰلِقُ|the Creator,|l-khāliqu]] [[ٱلْبَارِئُ|the Producer,|l-bāri'u]] [[ٱلْمُصَوِّرُۖ|the Fashioner;|l-muṣawwir;]] [[لَهُ|to Him belong|lahu]] [[ٱلْأَسْمَآءُ|the Names|l-asmā'u]] [[ٱلْحُسْنَىٰۚ|the Most Beautiful.|l-ḥusnā.]] [[يُسَبِّحُ|Exalts|yusabbiḥu]] [[لَهُۥ|Him|lahū]] [[مَا|whatever is|mā]] [[فِى|in|fī]] [[ٱالسَّمَـٰوَٰتِ|the heavens|s-samāwāti]] [[وَٱلْأَرْضِۖ|and the earth,|wa-l-arḍ;]] [[وَهُوَ|and He is|wa-huwa]] [[ٱلْعَزِيزُ|the All-Mighty,|l-ʿazīzu]] [[ٱلْحَكِيمُ|the All-Wise.|l-ḥakīm.]] [[﴿٢٤﴾]]
 
 ---
 
