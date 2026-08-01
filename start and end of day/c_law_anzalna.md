@@ -8,10 +8,10 @@ grade-comment: Gharib (uniquely transmitted); we do not know it except from this
 left-orb: Jāmiʿ at-Tirmidhī 2922
 left-orb-compact: ﷴﷺ📜
 right-orb: Da'if
-right-orb-compact: ۞۞۞
+right-orb-compact: ۞
 ::
 
-# The Refuge & End of Al-Ḥashr
+# Allah appoints 70,000 Angels who say Salat upon you - when you read this: The Refuge & End of Al-Ḥashr
 
 ## 📜 The Hadith
 

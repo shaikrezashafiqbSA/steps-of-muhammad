@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-## Ḥasbiyallāhu Lā Ilāha Illā Huwa — The Sevenfold Sufficiency for Morning and Evening
+## Allah will suffice them in whatever concerns them of the matters of this world and the Hereafter - Ḥasbiyallāhu Lā Ilāha Illā Huwa — The Sevenfold Sufficiency for Morning and Evening
 
 ### 📜 The Supplication
 It is prescribed to recite this formula **seven times** during the morning (after Fajr) and **seven times** during the evening (after ʿAsr or Maghrib):
