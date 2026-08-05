@@ -90,6 +90,56 @@
       background: rgba(176, 138, 75, 0.18);
       border-color: rgba(176, 138, 75, 0.4);
     }
+
+    /* Favourite star toggle — sits inside each favouritable item row */
+    .fav-star {
+      flex-shrink: 0;
+      margin-left: auto;
+      padding: 0.15rem 0.35rem;
+      font-size: 0.95rem;
+      line-height: 1;
+      color: rgba(176, 138, 75, 0.45);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+    .fav-star:hover { color: #B08A4B; transform: scale(1.15); }
+    .fav-star.is-fav { color: #B08A4B; }
+
+    /* Favourites node — pinned "My Collection" row */
+    #node-favourites .fav-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      transition: background 0.15s ease;
+    }
+    #node-favourites .fav-row:hover { background: rgba(176, 138, 75, 0.08); }
+    .fav-move-group { display: flex; flex-direction: column; gap: 0; flex-shrink: 0; }
+    .fav-move {
+      font-size: 0.6rem; line-height: 1; padding: 0.1rem 0.3rem; color: #7A6F6C;
+      background: transparent; border: none; cursor: pointer; transition: color 0.15s ease;
+    }
+    .fav-move:hover:not(:disabled) { color: #A94442; }
+    .fav-move:disabled { opacity: 0.25; cursor: not-allowed; }
+    .fav-remove {
+      flex-shrink: 0; font-size: 0.75rem; color: #7A6F6C; background: transparent;
+      border: none; cursor: pointer; padding: 0.2rem 0.4rem; transition: color 0.15s ease;
+    }
+    .fav-remove:hover { color: #A94442; }
+    .fav-empty-hint {
+      font-size: 0.72rem; color: #7A6F6C; font-style: italic; padding: 0.75rem 1rem; line-height: 1.6;
+    }
+    .fav-open-collection {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      margin: 0.5rem 0.25rem 0.25rem; padding: 0.65rem 1rem; border-radius: 8px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em;
+      background: rgba(176, 138, 75, 0.12); border: 1px solid rgba(176, 138, 75, 0.35);
+      color: #7D5243; text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .fav-open-collection:hover { background: rgba(176, 138, 75, 0.22); border-color: rgba(176, 138, 75, 0.55); }
   </style>
 </head>
 <body class="bg-[#FFFBF1] text-[#3A2E2B] min-h-screen flex flex-col justify-between antialiased selection:bg-[#B08A4B]/30 relative overflow-x-hidden">
@@ -178,7 +228,7 @@
             path: "render.html?file=during-solat/iftitah.md" },
           { label: "Fajr in Salam", path: "render.html?file=after-salah/fajr-in-salam.md" },
           { label: "1) Istighfār - Source of Peace", path: "render.html?file=after-salah/1_istigfar_peace.md" },
-          { type: "family", label: "All Post-Taslīm Tahlil", path: "render.html?file=after-salah/post-taslim-overview.md" },
+          { type: "family", label: "Post-Ṣalāh Collection — Full Sequence", path: "render_collection.html?file=after-salah/post-solat-collection.md" },
           { label: "1a) Tahlīl - Mukhlisina-lahud-din / Sincere Devotion", path: "render.html?file=after-salah/tahlil-mukhlisina.md" },
           { label: "1b) Tahlīl - Laa-maani' / Divine Sovereignty", path: "render.html?file=after-salah/tahlil-la-mania.md" },
           { label: "2) Tahlīl - Yuhyi wa Yumitu' / Gives life Causes Death", path: "render.html?file=after-salah/tahlil-fajr-maghrib-10-times.md"},
@@ -282,78 +332,183 @@
     ];
 
 
+    // =========================================================
+    // FAVOURITES — localStorage-backed "build your own collection"
+    //   Stores an ordered [{label, path}] array of atomic dua paths
+    //   (the same shape render_collection.html's item builder takes).
+    //   Only items rendered through render.html?file=... are
+    //   favouritable — family/collection items and legacy .html
+    //   pages aren't atomic markdown, so they're excluded.
+    // =========================================================
+    const FAVOURITES_KEY = 'som-favourites';
+
+    function loadFavourites() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(FAVOURITES_KEY) || '[]');
+        return Array.isArray(raw) ? raw : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveFavourites(favs) {
+      localStorage.setItem(FAVOURITES_KEY, JSON.stringify(favs));
+    }
+
+    function getAtomicPath(itemPath) {
+      const marker = 'render.html?file=';
+      if (!itemPath || !itemPath.startsWith(marker)) return null;
+      return decodeURIComponent(itemPath.slice(marker.length));
+    }
+
+    function isFavourite(atomicPath) {
+      return loadFavourites().some(f => f.path === atomicPath);
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[c]);
+    }
+
+    function toggleFavourite(label, path) {
+      const favs = loadFavourites();
+      const idx = favs.findIndex(f => f.path === path);
+      if (idx === -1) favs.push({ label, path });
+      else favs.splice(idx, 1);
+      saveFavourites(favs);
+      renderApp();
+    }
+
+    function moveFavourite(index, direction) {
+      const favs = loadFavourites();
+      const target = direction === 'up' ? index - 1 : index + 1;
+      if (target < 0 || target >= favs.length) return;
+      [favs[index], favs[target]] = [favs[target], favs[index]];
+      saveFavourites(favs);
+      renderApp();
+    }
+
+    function removeFavourite(index) {
+      const favs = loadFavourites();
+      favs.splice(index, 1);
+      saveFavourites(favs);
+      renderApp();
+    }
+
+    function renderFavouritesNode(isActive) {
+      const favs = loadFavourites();
+
+      const rowsHTML = favs.length
+        ? favs.map((f, i) => `
+            <div class="fav-row">
+              <span class="fav-move-group">
+                <button type="button" class="fav-move" data-fav-move="up" data-fav-index="${i}" ${i === 0 ? 'disabled' : ''} title="Move up">▲</button>
+                <button type="button" class="fav-move" data-fav-move="down" data-fav-index="${i}" ${i === favs.length - 1 ? 'disabled' : ''} title="Move down">▼</button>
+              </span>
+              <span class="text-xs font-medium text-[#3A2E2B] leading-relaxed flex-1">${escapeHtml(f.label)}</span>
+              <button type="button" class="fav-remove" data-fav-remove="${i}" title="Remove">✕</button>
+            </div>
+          `).join('')
+        : `<p class="fav-empty-hint">☆ Tap the star next to any duʿā below to add it here — no writing required, this list becomes its own collection.</p>`;
+
+      const openLinkHTML = favs.length
+        ? `<a href="render_collection.html?favorites=1" class="fav-open-collection">📖 Open as Collection ↗</a>`
+        : '';
+
+      return `
+        <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${isActive ? ' active' : ''}" id="node-favourites">
+          <button onclick="toggleNode('node-favourites')" class="w-full flex items-center justify-between gap-3 p-4 bg-[#FFFBF1]/10 hover:bg-[#E6DCD0]/10 active:bg-[#E6DCD0]/70 transition-colors group text-left">
+            <div class="node-icon-tile">⭐</div>
+            <div class="space-y-1 pr-2 flex-1 min-w-0">
+              <span class="font-mono-app inline-block text-xs font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-[#B08A4B]/10 text-[#7D5243] border border-[#B08A4B]/20 group-hover:text-[#A94442] transition-colors">
+                My Collection${favs.length ? ` (${favs.length})` : ''}
+              </span>
+              <p class="text-[11px] text-[#7A6F6C] leading-relaxed pt-1 font-sans group-hover:text-[#3A2E2B] transition-colors">
+                — Your saved duʿās, reorder and read as one sequence
+              </p>
+            </div>
+            <div class="w-6 h-6 rounded-full border border-[#E6DCD0] flex items-center justify-center text-[#B08A4B] bg-[#FFFBF1]/70 group-hover:border-[#B08A4B]/60 flex-shrink-0 transition-all">
+              <span class="chevron-icon inline-block transform origin-center">${CHEVRON_SVG}</span>
+            </div>
+          </button>
+          <div class="branch-container bg-[#FFFBF1]/00">
+            <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
+              ${rowsHTML}
+              ${openLinkHTML}
+            </div>
+          </div>
+        </div>`;
+    }
+
+    // SVG chevron — cleaner, scales perfectly, no font quirks
+    const CHEVRON_SVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>`;
+
+    // =========================================================
+    // ITEM TYPE TAG SYSTEM
+    //   Items with `type` get a visual pill + custom prefix icon.
+    //   Add new type entries here to extend.
+    // =========================================================
+    const ITEM_TYPE_TAGS = {
+      overview: {
+        tag: "OVERVIEW",
+        prefix: "📚",                                    // replaces ↳ arrow
+        bg: "bg-[#B08A4B]/15",
+        border: "border-[#B08A4B]/40",
+        text: "text-[#7D5243]"
+      },
+      family: {
+        tag: "FAMILY",
+        prefix: "📚",
+        bg: "bg-[#B08A4B]/15",
+        border: "border-[#B08A4B]/40",
+        text: "text-[#7D5243]"
+      },
+      wird: {
+        tag: "WIRD",
+        prefix: "📿",
+        bg: "bg-[#2C7BB0]/15",
+        border: "border-[#2C7BB0]/40",
+        text: "text-[#2C7BB0]"
+      },
+      new: {
+        tag: "NEW",
+        prefix: "✦",
+        bg: "bg-[#3C763D]/15",
+        border: "border-[#3C763D]/40",
+        text: "text-[#3C763D]"
+      }
+    };
+
+    function getItemPrefix(type) {
+      if (type && ITEM_TYPE_TAGS[type]) return ITEM_TYPE_TAGS[type].prefix;
+      return '↳';
+    }
+
+    function renderItemTag(type) {
+      if (!type || !ITEM_TYPE_TAGS[type]) return '';
+      const t = ITEM_TYPE_TAGS[type];
+      return `<span class="font-mono-app inline-block text-[9px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded mr-1.5 ${t.bg} ${t.border} ${t.text} border align-middle">${t.tag}</span>`;
+    }
+
     // 🏗️ APPLICATION ENGINE ASSEMBLY
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('meta-title').textContent = ROOT_CONFIG.title;
-      document.getElementById('root-title').textContent = ROOT_CONFIG.title;
-      document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
+    let activeNodeId = null;
 
-
+    function renderApp() {
       const treeTarget = document.getElementById('navigation-tree');
 
-
-      // SVG chevron — cleaner, scales perfectly, no font quirks
-      const chevronSVG = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>`;
-      // =========================================================
-      // ITEM TYPE TAG SYSTEM
-      //   Items with `type` get a visual pill + custom prefix icon.
-      //   Add new type entries here to extend.
-      // =========================================================
-      const ITEM_TYPE_TAGS = {
-        overview: {
-          tag: "OVERVIEW",
-          prefix: "📚",                                    // replaces ↳ arrow
-          bg: "bg-[#B08A4B]/15",
-          border: "border-[#B08A4B]/40",
-          text: "text-[#7D5243]"
-        },
-        family: {
-          tag: "FAMILY",
-          prefix: "📚",
-          bg: "bg-[#B08A4B]/15",
-          border: "border-[#B08A4B]/40",
-          text: "text-[#7D5243]"
-        },
-        wird: {
-          tag: "WIRD",
-          prefix: "📿",
-          bg: "bg-[#2C7BB0]/15",
-          border: "border-[#2C7BB0]/40",
-          text: "text-[#2C7BB0]"
-        },
-        new: {
-          tag: "NEW",
-          prefix: "✦",
-          bg: "bg-[#3C763D]/15",
-          border: "border-[#3C763D]/40",
-          text: "text-[#3C763D]"
-        }
-      };
-
-      function getItemPrefix(type) {
-        if (type && ITEM_TYPE_TAGS[type]) return ITEM_TYPE_TAGS[type].prefix;
-        return '↳';
-      }
-
-      function renderItemTag(type) {
-        if (!type || !ITEM_TYPE_TAGS[type]) return '';
-        const t = ITEM_TYPE_TAGS[type];
-        return `<span class="font-mono-app inline-block text-[9px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded mr-1.5 ${t.bg} ${t.border} ${t.text} border align-middle">${t.tag}</span>`;
-      }
-
-
-      let treeHTML = '';
-
+      let treeHTML = renderFavouritesNode(activeNodeId === 'node-favourites');
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
+        const nodeId = `node-${index}`;
         treeHTML += `
-          <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0" id="node-${index}">
+          <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${activeNodeId === nodeId ? ' active' : ''}" id="${nodeId}">
 
 
-            <button onclick="toggleNode(${index})" class="w-full flex items-center justify-between gap-3 p-4 bg-[#FFFBF1]/10 hover:bg-[#E6DCD0]/10 active:bg-[#E6DCD0]/70 transition-colors group text-left">
+            <button onclick="toggleNode('${nodeId}')" class="w-full flex items-center justify-between gap-3 p-4 bg-[#FFFBF1]/10 hover:bg-[#E6DCD0]/10 active:bg-[#E6DCD0]/70 transition-colors group text-left">
 
 
               <!-- Icon tile (left) -->
@@ -373,22 +528,30 @@
 
               <!-- SVG chevron (right) -->
               <div class="w-6 h-6 rounded-full border border-[#E6DCD0] flex items-center justify-center text-[#B08A4B] bg-[#FFFBF1]/70 group-hover:border-[#B08A4B]/60 flex-shrink-0 transition-all">
-                <span class="chevron-icon inline-block transform origin-center">${chevronSVG}</span>
+                <span class="chevron-icon inline-block transform origin-center">${CHEVRON_SVG}</span>
               </div>
             </button>
 
 
             <div class="branch-container bg-[#FFFBF1]/00">
               <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
-                ${node.items.map(item => `
+                ${node.items.map(item => {
+                  const atomicPath = getAtomicPath(item.path);
+                  const starHTML = atomicPath
+                    ? `<button type="button" class="fav-star${isFavourite(atomicPath) ? ' is-fav' : ''}"
+                         data-fav-label="${escapeHtml(item.label)}" data-fav-path="${escapeHtml(atomicPath)}"
+                         title="${isFavourite(atomicPath) ? 'Remove from My Collection' : 'Add to My Collection'}">${isFavourite(atomicPath) ? '★' : '☆'}</button>`
+                    : '';
+                  return `
                   <a href="./${item.path}"
                      onmouseenter="igniteNur()"
                      onmouseleave="extinguishNur()"
                      class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] hover:bg-[#B08A4B]/10 transition-all group">
                     <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
-                    <span class="leading-relaxed">${renderItemTag(item.type)}${item.label}</span>
+                    <span class="leading-relaxed flex-1">${renderItemTag(item.type)}${item.label}</span>
+                    ${starHTML}
                   </a>
-                `).join('')}
+                `; }).join('')}
               </div>
             </div>
 
@@ -398,11 +561,43 @@
 
 
       treeTarget.innerHTML = treeHTML;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById('meta-title').textContent = ROOT_CONFIG.title;
+      document.getElementById('root-title').textContent = ROOT_CONFIG.title;
+      document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
+      renderApp();
     });
 
+    // Delegated click handling for favourite stars + collection row controls
+    // (delegated on document since the tree is fully re-rendered on every mutation)
+    document.addEventListener('click', (e) => {
+      const starBtn = e.target.closest('.fav-star');
+      if (starBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFavourite(starBtn.dataset.favLabel, starBtn.dataset.favPath);
+        return;
+      }
+      const moveBtn = e.target.closest('.fav-move');
+      if (moveBtn && !moveBtn.disabled) {
+        e.preventDefault();
+        e.stopPropagation();
+        moveFavourite(parseInt(moveBtn.dataset.favIndex, 10), moveBtn.dataset.favMove);
+        return;
+      }
+      const removeBtn = e.target.closest('.fav-remove');
+      if (removeBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        removeFavourite(parseInt(removeBtn.dataset.favRemove, 10));
+        return;
+      }
+    });
 
-    function toggleNode(index) {
-      const selectedNode = document.getElementById(`node-${index}`);
+    function toggleNode(id) {
+      const selectedNode = document.getElementById(id);
       const isActive = selectedNode.classList.contains('active');
 
 
@@ -411,6 +606,9 @@
 
       if (!isActive) {
         selectedNode.classList.add('active');
+        activeNodeId = id;
+      } else {
+        activeNodeId = null;
       }
     }
 

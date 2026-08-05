@@ -25,15 +25,16 @@
    - [Pattern W2 — Scholarly Wird (Inline)](#pattern-w2--scholarly-wird-inline)
    - [Pattern F1 — Folk Compilation](#pattern-f1--folk-compilation)
    - [Pattern C1 — Compendium of Compendiums](#pattern-c1--compendium-of-compendiums)
-5. [Sourcing Methodology](#-sourcing-methodology)
-6. [Tashkeel & Tajwīd Standards](#-tashkeel--tajwīd-standards)
-7. [Transliteration Standards](#-transliteration-standards)
-8. [Honest Provenance Flags](#-honest-provenance-flags)
-9. [Creative Patterns](#-creative-patterns)
-10. [Full Feature Inventory](#-full-feature-inventory)
-11. [Legacy HTML Migration Workflow](#-legacy-html-migration-workflow)
-12. [Role of the LLM Scaffolding Prompt](#-role-of-the-llm-scaffolding-prompt)
-13. [Quality Checklist](#-quality-checklist-before-publishing)
+5. [Collections & render_collection.html](#-collections--render_collectionhtml)
+6. [Sourcing Methodology](#-sourcing-methodology)
+7. [Tashkeel & Tajwīd Standards](#-tashkeel--tajwīd-standards)
+8. [Transliteration Standards](#-transliteration-standards)
+9. [Honest Provenance Flags](#-honest-provenance-flags)
+10. [Creative Patterns](#-creative-patterns)
+11. [Full Feature Inventory](#-full-feature-inventory)
+12. [Legacy HTML Migration Workflow](#-legacy-html-migration-workflow)
+13. [Role of the LLM Scaffolding Prompt](#-role-of-the-llm-scaffolding-prompt)
+14. [Quality Checklist](#-quality-checklist-before-publishing)
 
 ---
 
@@ -563,7 +564,61 @@ verify:
 Ḥiṣn al-Muslim is a modern compilation (late 20th century) by Sh. Saʿīd al-Qaḥṭānī. It is **not itself a ḥadīth collection** — it is a curated index drawing from authentic ḥadīth collections. Each entry above links to its underlying source. Use individual file gradings to assess authenticity.
 
 
-🔎 Sourcing Methodology
+## 🧩 Collections & `render_collection.html`
+
+A **collection** is a manifest file (Pattern W1/C1) rendered as one continuous, scrollable page — every linked duʿā expands inline as a collapsible card instead of navigating to a new page. This is the "read top to bottom after ṣalāh" experience: open once, scroll through the whole sequence.
+
+### How it works
+
+`render_collection.html` is a **separate, self-contained viewer** from `render.html`. It is never edited when `render.html` changes and vice versa — they intentionally duplicate the rendering engine (meta parsing, word-stack parsing, orb rendering, zoom, reading modes) rather than share code, so a change to one can't silently break the other.
+
+Given a manifest file via `?file=`, it:
+
+1. Fetches the manifest, renders its `::meta` header and intro prose exactly like `render.html` would
+2. Scans the intro markdown for every `[label](?file=path/to/atomic.md)` link, **in the order they appear**
+3. Rewrites each of those links to jump to an inline anchor (`#collection-item-N`) instead of navigating away
+4. Fetches each linked atomic file and renders it as a `<details>` card — same word-stacks, same orb badges (source pill + color-coded grade pill, folding to compact icons on scroll), same "Open standalone ↗" link back to `render.html` for the full dalīl-check view
+5. The first item opens expanded; the rest start collapsed
+
+### Authoring a collection manifest
+
+Any existing W1/C1-style manifest already works — no format change required. To get the cleanest render:
+
+- Use `[label](?file=path/to/file.md)` links exactly as in Pattern W1 — this is the *only* syntax the parser looks for
+- Links can sit inside prose, bold text, or a numbered list; the regex only cares about the `[...]( ?file=...md)` shape, so `**[→ Some Duʿā](?file=x.md)**` works fine
+- Keep each linked path **unique** — the parser dedupes by path, so linking the same file twice will jump to the same card both times
+- An item you want listed but haven't authored yet (still pending sourcing) should **not** be wrapped in a real `[...]​(?file=...)` link — write it as plain text (e.g. `6. **Āyat al-Kursī** — 🔜 *pending authoring*`). A link to a file that doesn't exist yet will render as a visible error card in that slot rather than breaking the rest of the page — harmless, but a plain-text placeholder is cleaner while a piece is still unauthored
+- The manifest's own `::meta` (`left-orb`/`right-orb`) becomes the collection's header pills — use it for a collection-level label (e.g. `left-orb: 📚 Collection · Post-Ṣalāh Adhkār`), not a hadith citation
+- Mark timing/optionality inline in your list item text (`*(optional)*`, `*(Fajr & Maghrib only)*`) — the parser doesn't understand structured metadata for this, it's just prose the reader sees
+
+### Wiring it into `index.html`
+
+A collection is exposed to users the same way a `family`-type item already is — just point its `path` at `render_collection.html` instead of `render.html`:
+
+```js
+{ type: "family", label: "Post-Ṣalāh Collection — Full Sequence",
+  path: "render_collection.html?file=after-salah/post-solat-collection.md" }
+```
+
+### Testing a collection locally
+
+`fetch()` requires `http://`, not `file://` — opening the HTML file directly from disk will fail silently on every linked card. Serve the folder locally first:
+
+```
+python -m http.server 8791
+```
+
+Then open `http://localhost:8791/render_collection.html?file=your-manifest.md` and check:
+
+- [ ] Every linked card loads (no `⚠️ Could not load` error cards)
+- [ ] First item auto-expands; rest start collapsed
+- [ ] Clicking an intro link jumps to and opens the right card
+- [ ] Each card's orb pair matches its standalone `render.html?file=...` rendering exactly
+- [ ] No console errors
+
+---
+
+## 🔎 Sourcing Methodology
 Primary sources (always preferred)
 Source
 Use for
