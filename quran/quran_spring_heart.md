@@ -14,12 +14,13 @@ right-orb-compact: ۞۞۞
 ## 📜 The Hadith
 ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: 
 >*"No one is ever afflicted with anxiety or grief and then says:*
-<details> <summary>📚 Listen and follow along </summary>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 560px; margin: auto;">
-  <iframe src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div>
 
-</details>
+📺 **Listen and follow along** — tap 📌 on the video to pin it while you read the word-by-word below.
+
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<button class="video-pin-toggle" title="Pin video so it stays visible while you scroll">📌 Follow along</button>
+</div>
 
 ## 🔤 Evoke This — Word by Word
 [[ٱللَّهُمَّ|O Allah|Allāhumma]] [[إِنِّي|indeed I|innī]]
@@ -46,7 +47,7 @@ right-orb-compact: ۞۞۞
 
 [[وَنُورَ|and the light|wa-nūra]] [[صَدْرِي|of my chest|ṣadrī]]
 
-[[وَجِلَاءَ|and the removal|wa-jilāʾa]] [[حُزْنِي|of my grief|ḥuznī]]
+[[وجَلَاءَ|and the removal|wa-jalāʾa]] [[حُزْنِي|of my grief|ḥuznī]]
 
 [[وَذَهَابَ|and the departure|wa-dhahāba]] [[هَمِّي|of my anxiety|hammī]]
 
@@ -78,7 +79,7 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 
 [[وَنُورَ|and the light|wa-nūra]] [[صَدْرِي|of my chest|ṣadrī]]
 
-[[وَجِلَاءَ|and the removal|wa-jilāʾa]] [[حُزْنِي|of my grief|ḥuznī]]
+[[وجَلَاءَ|and the removal|wa-jalāʾa]] [[حُزْنِي|of my grief|ḥuznī]]
 
 [[وَذَهَابَ|and the departure|wa-dhahāba]] [[هَمِّي|of my anxiety|hammī]]
 

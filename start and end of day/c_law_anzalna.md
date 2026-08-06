@@ -17,6 +17,13 @@ right-orb-compact: ۞
 
 Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three times when he gets up in the morning: *Aʿūdhu billāhi-s-Samīʿi-l-ʿAlīm min ash-shayṭāni-r-rajīm*, and then recites three āyāt from the end of Sūrat Al-Ḥashr — Allah appoints seventy thousand angels who send ṣalāt upon him until the evening. If he dies on that day, he dies a martyr. And whoever recites it in the evening holds the same status."
 
+📺 **Listen and follow along** — tap 📌 on the video to pin it while you read the word-by-word below.
+
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/ckeUnDhp-40?si=InRO8u27yP_QfRjk&amp;start=72&end=135" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<button class="video-pin-toggle" title="Pin video so it stays visible while you scroll">📌 Follow along</button>
+</div>
+
 <details>
 <summary>📚 Original Arabic Source </summary>
 

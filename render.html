@@ -245,6 +245,69 @@
     }
 
     /* ════════════════════════════════════════════════
+       FOLLOW-ALONG VIDEO PANE (v4.5)
+       Normal embed by default (scrolls away like any
+       image). Reader can pin it via the 📌 button so it
+       freezes near the top of the viewport (below the
+       orbs) while they scroll the word-by-word text
+       beneath it — useful for learners, skippable for
+       those who've memorized it. Resets to unpinned on
+       every page load (no persistence).
+       ════════════════════════════════════════════════ */
+
+    .markdown-body .video-card {
+      position: relative;
+      max-width: 360px;
+      margin: 0 auto 1.25rem;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(125, 82, 67, 0.25);
+      border: 1px solid var(--divider-sand);
+      transition: max-width 0.25s ease, top 0.25s ease;
+    }
+    .markdown-body .video-card iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      display: block;
+    }
+    .markdown-body .video-card.pinned {
+      position: sticky;
+      top: 4rem;
+      z-index: 70;
+      max-width: 240px;
+    }
+
+    .video-pin-toggle {
+      position: absolute;
+      bottom: 6px;
+      right: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 999px;
+      color: #fff;
+      padding: 0.3rem 0.65rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 5;
+      backdrop-filter: blur(2px);
+      transition: background 0.15s ease;
+    }
+    .video-pin-toggle:hover { background: rgba(0, 0, 0, 0.8); }
+    .markdown-body .video-card.pinned .video-pin-toggle {
+      background: var(--accent-crimson);
+    }
+    @media (max-width: 640px) {
+      .markdown-body .video-card.pinned { top: 3.2rem; max-width: 180px; }
+    }
+
+    /* ════════════════════════════════════════════════
        FLOATING TOC PANEL (v4.1)
        ════════════════════════════════════════════════ */
 
@@ -820,6 +883,19 @@
 
     buildModeFan();
     applyMode(getCurrentMode());
+
+    // ════════════════════════════════════════════
+    // Follow-along video — pin/unpin toggle
+    // Off by default on every load; reader opts in.
+    // ════════════════════════════════════════════
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.video-pin-toggle');
+      if (!btn) return;
+      const card = btn.closest('.video-card');
+      if (!card) return;
+      const pinned = card.classList.toggle('pinned');
+      btn.textContent = pinned ? '📌 Pinned' : '📌 Follow along';
+    });
 
     // ════════════════════════════════════════════
     // Zoom engine v4.2
