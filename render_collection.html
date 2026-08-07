@@ -729,43 +729,61 @@
     // Main load
     // ════════════════════════════════════════════
     // ════════════════════════════════════════════
-    // Favourites-as-collection ("My Collection")
-    //   ?favorites=1 skips fetching a manifest .md entirely and
+    // User-built collections ("My Collections")
+    //   ?collection=<id> skips fetching a manifest .md entirely and
     //   instead reads the same localStorage array index.html's
-    //   star toggles write to — a blank-slate, user-built
-    //   collection with no authored manifest file at all.
+    //   star toggles + collection editor write to — a blank-slate,
+    //   user-built collection with no authored manifest file at all.
+    //   ?favorites=1 (legacy) falls back to the first saved collection.
     // ════════════════════════════════════════════
-    const FAVOURITES_KEY = 'som-favourites';
+    const COLLECTIONS_KEY = 'som-collections';
 
-    function loadFavouritesFromStorage() {
+    function loadCollectionsFromStorage() {
       try {
-        const raw = JSON.parse(localStorage.getItem(FAVOURITES_KEY) || '[]');
+        const raw = JSON.parse(localStorage.getItem(COLLECTIONS_KEY) || '[]');
         return Array.isArray(raw) ? raw : [];
       } catch {
         return [];
       }
     }
 
-    async function renderFavouritesCollection() {
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[c]);
+    }
+
+    async function renderUserCollection(collectionId) {
       const introTarget = document.getElementById('intro-target');
       const itemsTarget = document.getElementById('items-target');
       const headerTarget = document.getElementById('collection-header');
 
       marked.setOptions({ gfm: true, breaks: false });
-      document.title = 'My Collection';
 
-      headerTarget.innerHTML = `<span class="collection-pill">⭐ My Collection</span><span class="collection-pill">✦ Saved on this device</span>`;
+      const cols = loadCollectionsFromStorage();
+      const col = collectionId ? cols.find(c => c.id === collectionId) : cols[0];
+
+      if (!col) {
+        introTarget.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Collection not found. It may have been deleted or renamed. <a href="./index.html">Back to home</a>.</p>`;
+        return;
+      }
+
+      const name = escapeHtml(col.name || 'My Collection');
+      document.title = col.name || 'My Collection';
+
+      headerTarget.innerHTML = `<span class="collection-pill">⭐ ${name}</span><span class="collection-pill">✦ Saved on this device</span>`;
       headerTarget.style.display = 'flex';
 
       introTarget.innerHTML = `
-        <h1>My Collection</h1>
-        <p>A sequence you've built yourself by starring duʿās — no manifest file, no authoring, just your own picks in your own order. Saved locally to this browser only. Star or unstar items, and reorder with the ▲▼ buttons, from the <a href="./index.html">home page</a>.</p>
+        <h1>${name}</h1>
+        ${col.note ? `<p class="text-xs italic" style="color: var(--text-taupe);">${escapeHtml(col.note)}</p>` : ''}
+        <p>A sequence you've built yourself by starring duʿās — no manifest file, no authoring, just your own picks in your own order. Saved locally to this browser only. Star, rename, or reorder from the <a href="./index.html">home page</a>.</p>
       `;
 
-      const favs = loadFavouritesFromStorage();
+      const favs = Array.isArray(col.items) ? col.items : [];
 
       if (favs.length === 0) {
-        itemsTarget.innerHTML = `<p class="item-error" style="margin-top:1.5rem;">☆ No favourites saved yet. Go to the <a href="./index.html">home page</a> and tap the star (☆) next to any duʿā to add it here.</p>`;
+        itemsTarget.innerHTML = `<p class="item-error" style="margin-top:1.5rem;">☆ No duʿās saved in this collection yet. Go to the <a href="./index.html">home page</a> and tap the star (☆) next to any duʿā to add it here.</p>`;
         return;
       }
 
@@ -780,23 +798,24 @@
     document.addEventListener('DOMContentLoaded', async () => {
       const params = new URLSearchParams(window.location.search);
       const file = params.get('file');
-      const isFavourites = params.get('favorites') === '1';
+      const collectionId = params.get('collection');
+      const isFavourites = params.get('favorites') === '1'; // legacy link, falls back to first collection
       const introTarget = document.getElementById('intro-target');
       const itemsTarget = document.getElementById('items-target');
       const headerTarget = document.getElementById('collection-header');
 
-      if (isFavourites) {
+      if (collectionId || isFavourites) {
         try {
-          await renderFavouritesCollection();
+          await renderUserCollection(collectionId);
         } catch (err) {
           console.error(err);
-          introTarget.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Could not load My Collection. <span style="color: var(--text-taupe); font-size: 0.85em;">${err.message || ''}</span></p>`;
+          introTarget.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Could not load this collection. <span style="color: var(--text-taupe); font-size: 0.85em;">${err.message || ''}</span></p>`;
         }
         return;
       }
 
       if (!file) {
-        introTarget.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ No collection specified. Append <code>?file=yourcollection.md</code> to the URL, or <code>?favorites=1</code> to open My Collection.</p>`;
+        introTarget.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ No collection specified. Append <code>?file=yourcollection.md</code> to the URL, or <code>?collection=&lt;id&gt;</code> to open one of your saved collections.</p>`;
         return;
       }
 

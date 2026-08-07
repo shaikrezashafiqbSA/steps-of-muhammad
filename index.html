@@ -141,6 +141,80 @@
     }
     .fav-open-collection:hover { background: rgba(176, 138, 75, 0.22); border-color: rgba(176, 138, 75, 0.55); }
 
+    /* Multi-collection editing UI */
+    .collection-block {
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      border-radius: 10px;
+      padding: 0.6rem 0.65rem;
+      background: rgba(255, 251, 241, 0.4);
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .collection-block.is-active-collection {
+      border-color: rgba(176, 138, 75, 0.6);
+      background: rgba(176, 138, 75, 0.06);
+    }
+    .collection-block-head {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .collection-move-group { display: flex; flex-direction: column; gap: 0; flex-shrink: 0; }
+    .collection-active-toggle {
+      flex-shrink: 0;
+      font-size: 0.95rem;
+      line-height: 1;
+      padding: 0.15rem 0.3rem;
+      color: rgba(176, 138, 75, 0.45);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+    .collection-active-toggle:hover { color: #B08A4B; transform: scale(1.15); }
+    .collection-active-toggle.active { color: #B08A4B; }
+    .collection-name-input {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #3A2E2B;
+      background: transparent;
+      border: none;
+      border-bottom: 1px dashed transparent;
+      padding: 0.15rem 0.1rem;
+      outline: none;
+    }
+    .collection-name-input:hover,
+    .collection-name-input:focus { border-bottom-color: rgba(176, 138, 75, 0.5); }
+    .collection-delete {
+      flex-shrink: 0; font-size: 0.75rem; color: #7A6F6C; background: transparent;
+      border: none; cursor: pointer; padding: 0.2rem 0.35rem; transition: color 0.15s ease;
+    }
+    .collection-delete:hover { color: #A94442; }
+    .collection-note-input {
+      width: 100%;
+      font-size: 0.7rem;
+      font-style: italic;
+      color: #7A6F6C;
+      background: transparent;
+      border: none;
+      border-bottom: 1px dashed transparent;
+      padding: 0.2rem 0.35rem 0.35rem;
+      outline: none;
+      margin-bottom: 0.2rem;
+    }
+    .collection-note-input:hover,
+    .collection-note-input:focus { border-bottom-color: rgba(176, 138, 75, 0.35); }
+    .collection-items { display: flex; flex-direction: column; gap: 0.1rem; }
+    .collection-add-btn {
+      width: 100%;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 0.55rem 1rem; border-radius: 8px;
+      background: rgba(176, 138, 75, 0.08); border: 1px dashed rgba(176, 138, 75, 0.4);
+      color: #7D5243; cursor: pointer; transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .collection-add-btn:hover { background: rgba(176, 138, 75, 0.16); border-color: rgba(176, 138, 75, 0.6); }
+
     /* Tawakkul tier system — global switch (bulk-set all categories) */
     .tier-global-switch {
       margin-bottom: 0.25rem;
@@ -419,26 +493,67 @@
 
 
     // =========================================================
-    // FAVOURITES — localStorage-backed "build your own collection"
-    //   Stores an ordered [{label, path}] array of atomic dua paths
-    //   (the same shape render_collection.html's item builder takes).
+    // COLLECTIONS — localStorage-backed "build your own collections"
+    //   Stores an array of { id, name, note, items: [{label, path}] }.
+    //   Each collection is an ordered list of atomic dua paths (the
+    //   same shape render_collection.html's item builder takes).
     //   Only items rendered through render.html?file=... are
     //   favouritable — family/collection items and legacy .html
     //   pages aren't atomic markdown, so they're excluded.
+    //   One collection is "active" at a time — that's the one the
+    //   star toggle on each dua adds to / removes from.
     // =========================================================
-    const FAVOURITES_KEY = 'som-favourites';
+    const COLLECTIONS_KEY = 'som-collections';
+    const ACTIVE_COLLECTION_KEY = 'som-active-collection';
+    const LEGACY_FAVOURITES_KEY = 'som-favourites'; // pre-multi-collection storage
 
-    function loadFavourites() {
-      try {
-        const raw = JSON.parse(localStorage.getItem(FAVOURITES_KEY) || '[]');
-        return Array.isArray(raw) ? raw : [];
-      } catch {
-        return [];
-      }
+    function uid() {
+      return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
     }
 
-    function saveFavourites(favs) {
-      localStorage.setItem(FAVOURITES_KEY, JSON.stringify(favs));
+    function loadCollections() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(COLLECTIONS_KEY) || 'null');
+        if (Array.isArray(raw) && raw.length) return raw;
+      } catch {}
+
+      // First run after upgrading from the single-favourites version:
+      // migrate whatever was saved there into one starter collection.
+      let migratedItems = [];
+      try {
+        const legacy = JSON.parse(localStorage.getItem(LEGACY_FAVOURITES_KEY) || '[]');
+        if (Array.isArray(legacy)) migratedItems = legacy;
+      } catch {}
+
+      const initial = [{ id: uid(), name: 'My Collection', note: '', items: migratedItems }];
+      saveCollections(initial);
+      return initial;
+    }
+
+    function saveCollections(cols) {
+      localStorage.setItem(COLLECTIONS_KEY, JSON.stringify(cols));
+    }
+
+    function findCollection(cols, id) {
+      return cols.find(c => c.id === id);
+    }
+
+    function getActiveCollectionId() {
+      const cols = loadCollections();
+      let id = localStorage.getItem(ACTIVE_COLLECTION_KEY);
+      if (!cols.some(c => c.id === id)) id = cols[0].id;
+      return id;
+    }
+
+    function setActiveCollectionId(id) {
+      localStorage.setItem(ACTIVE_COLLECTION_KEY, id);
+      renderApp();
+    }
+
+    function getActiveCollectionName() {
+      const cols = loadCollections();
+      const active = findCollection(cols, getActiveCollectionId());
+      return active ? active.name : 'My Collection';
     }
 
     function getAtomicPath(itemPath) {
@@ -448,7 +563,9 @@
     }
 
     function isFavourite(atomicPath) {
-      return loadFavourites().some(f => f.path === atomicPath);
+      const cols = loadCollections();
+      const active = findCollection(cols, getActiveCollectionId());
+      return !!active && active.items.some(f => f.path === atomicPath);
     }
 
     function escapeHtml(str) {
@@ -458,49 +575,120 @@
     }
 
     function toggleFavourite(label, path) {
-      const favs = loadFavourites();
-      const idx = favs.findIndex(f => f.path === path);
-      if (idx === -1) favs.push({ label, path });
-      else favs.splice(idx, 1);
-      saveFavourites(favs);
+      const cols = loadCollections();
+      const active = findCollection(cols, getActiveCollectionId());
+      if (!active) return;
+      const idx = active.items.findIndex(f => f.path === path);
+      if (idx === -1) active.items.push({ label, path });
+      else active.items.splice(idx, 1);
+      saveCollections(cols);
       renderApp();
     }
 
-    function moveFavourite(index, direction) {
-      const favs = loadFavourites();
+    function moveFavourite(collectionId, index, direction) {
+      const cols = loadCollections();
+      const col = findCollection(cols, collectionId);
+      if (!col) return;
       const target = direction === 'up' ? index - 1 : index + 1;
-      if (target < 0 || target >= favs.length) return;
-      [favs[index], favs[target]] = [favs[target], favs[index]];
-      saveFavourites(favs);
+      if (target < 0 || target >= col.items.length) return;
+      [col.items[index], col.items[target]] = [col.items[target], col.items[index]];
+      saveCollections(cols);
       renderApp();
     }
 
-    function removeFavourite(index) {
-      const favs = loadFavourites();
-      favs.splice(index, 1);
-      saveFavourites(favs);
+    function removeFavourite(collectionId, index) {
+      const cols = loadCollections();
+      const col = findCollection(cols, collectionId);
+      if (!col) return;
+      col.items.splice(index, 1);
+      saveCollections(cols);
       renderApp();
+    }
+
+    function addCollection() {
+      const cols = loadCollections();
+      const newCol = { id: uid(), name: 'New Collection', note: '', items: [] };
+      cols.push(newCol);
+      saveCollections(cols);
+      setActiveCollectionId(newCol.id); // also re-renders
+    }
+
+    function removeCollection(id) {
+      const cols = loadCollections();
+      if (cols.length <= 1) return; // always keep at least one collection
+      const idx = cols.findIndex(c => c.id === id);
+      if (idx === -1) return;
+      if (!window.confirm(`Delete "${cols[idx].name}"? This can't be undone.`)) return;
+      cols.splice(idx, 1);
+      saveCollections(cols);
+      if (!cols.some(c => c.id === localStorage.getItem(ACTIVE_COLLECTION_KEY))) {
+        localStorage.setItem(ACTIVE_COLLECTION_KEY, cols[0].id);
+      }
+      renderApp();
+    }
+
+    function moveCollection(index, direction) {
+      const cols = loadCollections();
+      const target = direction === 'up' ? index - 1 : index + 1;
+      if (target < 0 || target >= cols.length) return;
+      [cols[index], cols[target]] = [cols[target], cols[index]];
+      saveCollections(cols);
+      renderApp();
+    }
+
+    function updateCollectionField(id, field, value) {
+      const cols = loadCollections();
+      const col = findCollection(cols, id);
+      if (!col) return;
+      col[field] = value;
+      saveCollections(cols);
     }
 
     function renderFavouritesNode(isActive) {
-      const favs = loadFavourites();
+      const cols = loadCollections();
+      const activeId = getActiveCollectionId();
 
-      const rowsHTML = favs.length
-        ? favs.map((f, i) => `
-            <div class="fav-row">
-              <span class="fav-move-group">
-                <button type="button" class="fav-move" data-fav-move="up" data-fav-index="${i}" ${i === 0 ? 'disabled' : ''} title="Move up">▲</button>
-                <button type="button" class="fav-move" data-fav-move="down" data-fav-index="${i}" ${i === favs.length - 1 ? 'disabled' : ''} title="Move down">▼</button>
+      const collectionsHTML = cols.map((col, ci) => {
+        const rowsHTML = col.items.length
+          ? col.items.map((f, i) => `
+              <div class="fav-row">
+                <span class="fav-move-group">
+                  <button type="button" class="fav-move" data-fav-move="up" data-fav-collection="${col.id}" data-fav-index="${i}" ${i === 0 ? 'disabled' : ''} title="Move up">▲</button>
+                  <button type="button" class="fav-move" data-fav-move="down" data-fav-collection="${col.id}" data-fav-index="${i}" ${i === col.items.length - 1 ? 'disabled' : ''} title="Move down">▼</button>
+                </span>
+                <span class="text-xs font-medium text-[#3A2E2B] leading-relaxed flex-1">${escapeHtml(f.label)}</span>
+                <button type="button" class="fav-remove" data-fav-remove="${i}" data-fav-collection="${col.id}" title="Remove">✕</button>
+              </div>
+            `).join('')
+          : `<p class="fav-empty-hint">☆ Set this as your active collection (★ toggle) and tap the star next to any duʿā below to add it here.</p>`;
+
+        const openLinkHTML = col.items.length
+          ? `<a href="render_collection.html?collection=${encodeURIComponent(col.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>`
+          : '';
+
+        const isColActive = col.id === activeId;
+
+        return `
+          <div class="collection-block${isColActive ? ' is-active-collection' : ''}" data-collection-id="${col.id}">
+            <div class="collection-block-head">
+              <span class="collection-move-group">
+                <button type="button" class="fav-move" data-col-move="up" data-col-index="${ci}" ${ci === 0 ? 'disabled' : ''} title="Move collection up">▲</button>
+                <button type="button" class="fav-move" data-col-move="down" data-col-index="${ci}" ${ci === cols.length - 1 ? 'disabled' : ''} title="Move collection down">▼</button>
               </span>
-              <span class="text-xs font-medium text-[#3A2E2B] leading-relaxed flex-1">${escapeHtml(f.label)}</span>
-              <button type="button" class="fav-remove" data-fav-remove="${i}" title="Remove">✕</button>
+              <button type="button" class="collection-active-toggle${isColActive ? ' active' : ''}" data-col-activate="${col.id}"
+                title="${isColActive ? 'Stars add here' : 'Set as active — stars will add here'}">${isColActive ? '★' : '☆'}</button>
+              <input type="text" class="collection-name-input" value="${escapeHtml(col.name)}" data-col-rename="${col.id}"
+                placeholder="Collection name" />
+              ${cols.length > 1 ? `<button type="button" class="collection-delete" data-col-delete="${col.id}" title="Delete collection">🗑</button>` : ''}
             </div>
-          `).join('')
-        : `<p class="fav-empty-hint">☆ Tap the star next to any duʿā below to add it here — no writing required, this list becomes its own collection.</p>`;
-
-      const openLinkHTML = favs.length
-        ? `<a href="render_collection.html?favorites=1" class="fav-open-collection">📖 Open as Collection ↗</a>`
-        : '';
+            <input type="text" class="collection-note-input" value="${escapeHtml(col.note || '')}" data-col-note="${col.id}"
+              placeholder="Add a short note…" />
+            <div class="collection-items">
+              ${rowsHTML}
+            </div>
+            ${openLinkHTML}
+          </div>`;
+      }).join('');
 
       return `
         <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${isActive ? ' active' : ''}" id="node-favourites">
@@ -508,10 +696,10 @@
             <div class="node-icon-tile">⭐</div>
             <div class="space-y-1 pr-2 flex-1 min-w-0">
               <span class="font-mono-app inline-block text-xs font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-[#B08A4B]/10 text-[#7D5243] border border-[#B08A4B]/20 group-hover:text-[#A94442] transition-colors">
-                My Collection${favs.length ? ` (${favs.length})` : ''}
+                My Ijazah${cols.length ? ` (${cols.length})` : ''}
               </span>
               <p class="text-[11px] text-[#7A6F6C] leading-relaxed pt-1 font-sans group-hover:text-[#3A2E2B] transition-colors">
-                — Your saved duʿās, reorder and read as one sequence
+                ⇒ Sadaqah Jariyah / Lasting Beneficial Knowledge - Build your own sets of duʿās, name them, reorder freely ⇒ Share them
               </p>
             </div>
             <div class="w-6 h-6 rounded-full border border-[#E6DCD0] flex items-center justify-center text-[#B08A4B] bg-[#FFFBF1]/70 group-hover:border-[#B08A4B]/60 flex-shrink-0 transition-all">
@@ -519,9 +707,9 @@
             </div>
           </button>
           <div class="branch-container bg-[#FFFBF1]/00">
-            <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
-              ${rowsHTML}
-              ${openLinkHTML}
+            <div class="p-2 space-y-2 border-t border-[#E6DCD0]">
+              ${collectionsHTML}
+              <button type="button" class="collection-add-btn" data-col-add="1">＋ New collection</button>
             </div>
           </div>
         </div>`;
@@ -668,6 +856,7 @@
 
     function renderApp() {
       const treeTarget = document.getElementById('navigation-tree');
+      const activeColName = escapeHtml(getActiveCollectionName());
 
       let treeHTML = renderGlobalTierSwitch();
       treeHTML += renderFavouritesNode(activeNodeId === 'node-favourites');
@@ -715,7 +904,7 @@
                   const starHTML = atomicPath
                     ? `<button type="button" class="fav-star${isFavourite(atomicPath) ? ' is-fav' : ''}"
                          data-fav-label="${escapeHtml(item.label)}" data-fav-path="${escapeHtml(atomicPath)}"
-                         title="${isFavourite(atomicPath) ? 'Remove from My Collection' : 'Add to My Collection'}">${isFavourite(atomicPath) ? '★' : '☆'}</button>`
+                         title="${isFavourite(atomicPath) ? `Remove from ${activeColName}` : `Add to ${activeColName}`}">${isFavourite(atomicPath) ? '★' : '☆'}</button>`
                     : '';
                   return `
                   <a href="./${item.path}"
@@ -755,18 +944,46 @@
         toggleFavourite(starBtn.dataset.favLabel, starBtn.dataset.favPath);
         return;
       }
-      const moveBtn = e.target.closest('.fav-move');
+      const moveBtn = e.target.closest('.fav-move[data-fav-move]');
       if (moveBtn && !moveBtn.disabled) {
         e.preventDefault();
         e.stopPropagation();
-        moveFavourite(parseInt(moveBtn.dataset.favIndex, 10), moveBtn.dataset.favMove);
+        moveFavourite(moveBtn.dataset.favCollection, parseInt(moveBtn.dataset.favIndex, 10), moveBtn.dataset.favMove);
         return;
       }
       const removeBtn = e.target.closest('.fav-remove');
       if (removeBtn) {
         e.preventDefault();
         e.stopPropagation();
-        removeFavourite(parseInt(removeBtn.dataset.favRemove, 10));
+        removeFavourite(removeBtn.dataset.favCollection, parseInt(removeBtn.dataset.favRemove, 10));
+        return;
+      }
+      const colMoveBtn = e.target.closest('.fav-move[data-col-move]');
+      if (colMoveBtn && !colMoveBtn.disabled) {
+        e.preventDefault();
+        e.stopPropagation();
+        moveCollection(parseInt(colMoveBtn.dataset.colIndex, 10), colMoveBtn.dataset.colMove);
+        return;
+      }
+      const colActivateBtn = e.target.closest('.collection-active-toggle');
+      if (colActivateBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        setActiveCollectionId(colActivateBtn.dataset.colActivate);
+        return;
+      }
+      const colDeleteBtn = e.target.closest('.collection-delete');
+      if (colDeleteBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        removeCollection(colDeleteBtn.dataset.colDelete);
+        return;
+      }
+      const colAddBtn = e.target.closest('.collection-add-btn');
+      if (colAddBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        addCollection();
         return;
       }
       const tierChipBtn = e.target.closest('.tier-chip-btn');
@@ -782,6 +999,44 @@
         e.stopPropagation();
         setGlobalTier(tierGlobalBtn.dataset.tierGlobal);
         return;
+      }
+    });
+
+    // Live-save collection name/note as the user types, without a full
+    // re-render (which would drop focus and cursor position mid-keystroke).
+    document.addEventListener('input', (e) => {
+      const nameInput = e.target.closest('.collection-name-input');
+      if (nameInput) {
+        updateCollectionField(nameInput.dataset.colRename, 'name', nameInput.value);
+        return;
+      }
+      const noteInput = e.target.closest('.collection-note-input');
+      if (noteInput) {
+        updateCollectionField(noteInput.dataset.colNote, 'note', noteInput.value);
+      }
+    });
+
+    // On blur, normalize (trim / fallback name) and re-render so header
+    // counts, star titles, and the active-collection highlight catch up.
+    document.addEventListener('focusout', (e) => {
+      const nameInput = e.target.closest('.collection-name-input');
+      if (nameInput) {
+        updateCollectionField(nameInput.dataset.colRename, 'name', nameInput.value.trim() || 'Untitled Collection');
+        renderApp();
+        return;
+      }
+      const noteInput = e.target.closest('.collection-note-input');
+      if (noteInput) {
+        updateCollectionField(noteInput.dataset.colNote, 'note', noteInput.value.trim());
+        renderApp();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      if (e.target.classList.contains('collection-name-input') || e.target.classList.contains('collection-note-input')) {
+        e.preventDefault();
+        e.target.blur();
       }
     });
 
