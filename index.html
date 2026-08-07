@@ -140,6 +140,90 @@
       color: #7D5243; text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease;
     }
     .fav-open-collection:hover { background: rgba(176, 138, 75, 0.22); border-color: rgba(176, 138, 75, 0.55); }
+
+    /* Tawakkul tier system — global switch (bulk-set all categories) */
+    .tier-global-switch {
+      margin-bottom: 0.25rem;
+      padding: 0.85rem 0.9rem 0.9rem;
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      border-radius: 12px;
+      background: rgba(255, 251, 241, 0.5);
+      backdrop-filter: blur(6px);
+    }
+    .tier-global-hint {
+      font-size: 10px;
+      color: #7A6F6C;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+    .tier-global-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+    }
+    .tier-global-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      padding: 0.5rem 0.35rem;
+      border-radius: 9px;
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      background: rgba(255, 251, 241, 0.6);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    }
+    .tier-global-btn:hover { border-color: rgba(176, 138, 75, 0.5); transform: translateY(-1px); }
+    .tier-global-btn.active {
+      background: rgba(176, 138, 75, 0.16);
+      border-color: #B08A4B;
+    }
+    .tier-global-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #7D5243;
+    }
+    .tier-global-desc {
+      font-size: 9px;
+      color: #7A6F6C;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    /* Tawakkul tier system — per-category chip */
+    .tier-chip-row {
+      padding: 0 0.9rem 0.6rem;
+      display: flex;
+      justify-content: center;
+    }
+    .tier-chip-group {
+      display: inline-flex;
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 251, 241, 0.6);
+    }
+    .tier-chip-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.28rem 0.65rem;
+      border: none;
+      background: transparent;
+      color: #7A6F6C;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .tier-chip-btn:not(:last-child) { border-right: 1px solid rgba(230, 220, 208, 0.9); }
+    .tier-chip-btn:hover { background: rgba(176, 138, 75, 0.1); color: #7D5243; }
+    .tier-chip-btn.active { background: #B08A4B; color: #FFFBF1; }
+    .tier-empty-hint {
+      font-size: 0.72rem; color: #7A6F6C; font-style: italic; padding: 0.75rem 1rem; text-align: center;
+    }
   </style>
 </head>
 <body class="bg-[#FFFBF1] text-[#3A2E2B] min-h-screen flex flex-col justify-between antialiased selection:bg-[#B08A4B]/30 relative overflow-x-hidden">
@@ -224,17 +308,17 @@
         category: "Ṣalāh",
         desc: "Prophetic du'ās before, during and after ṣalāh",
         items: [
-           { label: "۞۞۞ Dua Iftitah",
+           { label: "۞۞۞ Dua Iftitah", tier: "jemaah",
             path: "render.html?file=during-solat/iftitah.md" },
-          { label: "Fajr in Salam", path: "render.html?file=after-salah/fajr-in-salam.md" },
-          { label: "1) Istighfār - Source of Peace", path: "render.html?file=after-salah/1_istigfar_peace.md" },
-          { type: "family", label: "Post-Ṣalāh Collection — Full Sequence", path: "render_collection.html?file=after-salah/post-solat-collection.md" },
-          { label: "1a) Tahlīl - Mukhlisina-lahud-din / Sincere Devotion", path: "render.html?file=after-salah/tahlil-mukhlisina.md" },
-          { label: "1b) Tahlīl - Laa-maani' / Divine Sovereignty", path: "render.html?file=after-salah/tahlil-la-mania.md" },
-          { label: "2) Tahlīl - Yuhyi wa Yumitu' / Gives life Causes Death", path: "render.html?file=after-salah/tahlil-fajr-maghrib-10-times.md"},
-          { label: "3) Protect me from Hellfire", path: "render.html?file=after-salah/3_dua-allahuma-ajirnaar.md" },
-          { label: "4) Help me be grateful", path: "render.html?file=after-salah/help-me-be-grateful.md" },
-          { label: "4 x Morning Adhkar", path: "render.html?file=after-salah/4_subhana_allahi_wa_bihamdihi.md" }
+          { label: "Fajr in Salam", tier: "jemaah", path: "render.html?file=after-salah/fajr-in-salam.md" },
+          { label: "1) Istighfār - Source of Peace", tier: "jemaah", path: "render.html?file=after-salah/1_istigfar_peace.md" },
+          { type: "family", label: "Post-Ṣalāh Collection — Full Sequence", tier: "imam", path: "render_collection.html?file=after-salah/post-solat-collection.md" },
+          { label: "1a) Tahlīl - Mukhlisina-lahud-din / Sincere Devotion", tier: "jemaah", path: "render.html?file=after-salah/tahlil-mukhlisina.md" },
+          { label: "1b) Tahlīl - Laa-maani' / Divine Sovereignty", tier: "jemaah", path: "render.html?file=after-salah/tahlil-la-mania.md" },
+          { label: "2) Tahlīl - Yuhyi wa Yumitu' / Gives life Causes Death", tier: "imam", path: "render.html?file=after-salah/tahlil-fajr-maghrib-10-times.md"},
+          { label: "3) Protect me from Hellfire", tier: "wali", path: "render.html?file=after-salah/3_dua-allahuma-ajirnaar.md" },
+          { label: "4) Help me be grateful", tier: "jemaah", path: "render.html?file=after-salah/help-me-be-grateful.md" },
+          { label: "4 x Morning Adhkar", tier: "jemaah", path: "render.html?file=after-salah/4_subhana_allahi_wa_bihamdihi.md" }
         ]
       },
       {
@@ -242,15 +326,15 @@
         category: "The Nur in the Heart",
         desc: "Prophetic du'ās for deeply anchoring and alignment to the command / amr",
         items: [
-          { label: "۞۞۞ Dua most often recited: Ya muqallibal-qulub", path: "render.html?file=dua-general/ya-muqallibal-qulub.md" },
-          { label: "۞۞۞ He answers: In the Greatest of Names", path: "render.html?file=dua-general/in-greatest-of-names.md" },
-          { label: "۞۞۞ Istikhārah — Guidance", path: "render.html?file=dua-general/istikhara.md" },
-          { label: "۞ Dua Hajat", path: "render.html?file=dua-general/hajat.md"},
-          { label: "۞۞۞ Āʾishah's Comprehensive Ask", path: "render.html?file=dua-general/aisyah-comprehensive-ask.md" },
-          { label: "۞۞۞ Make the Quran the Spring of my Heart", path: "render.html?file=quran/quran_spring_heart.md" },
-          { label: "📒 Memoriser's Dua", path: "render.html?file=quran/memoriser.md" },
-          { label: "📒 Dua ḥamdan yuwāfī", path: "render.html?file=dua-general/dua-hamdan-yuwafi.md" },
-          { label: "۞۞۞ Dua Sulaiman - Increase my capacity to be thankful", path: "render.html?file=thankfulness/sulaiman.md" },
+          { label: "۞۞۞ Dua most often recited: Ya muqallibal-qulub", tier: "jemaah", path: "render.html?file=dua-general/ya-muqallibal-qulub.md" },
+          { label: "۞۞۞ He answers: In the Greatest of Names", tier: "jemaah", path: "render.html?file=dua-general/in-greatest-of-names.md" },
+          { label: "۞۞۞ Istikhārah — Guidance", tier: "jemaah", path: "render.html?file=dua-general/istikhara.md" },
+          { label: "۞ Dua Hajat", tier: "wali", path: "render.html?file=dua-general/hajat.md"},
+          { label: "۞۞۞ Āʾishah's Comprehensive Ask", tier: "imam", path: "render.html?file=dua-general/aisyah-comprehensive-ask.md" },
+          { label: "۞۞۞ Make the Quran the Spring of my Heart", tier: "imam", path: "render.html?file=quran/quran_spring_heart.md" },
+          { label: "📒 Memoriser's Dua", tier: "wali", path: "render.html?file=quran/memoriser.md" },
+          { label: "📒 Dua ḥamdan yuwāfī", tier: "wali", path: "render.html?file=dua-general/dua-hamdan-yuwafi.md" },
+          { label: "۞۞۞ Dua Sulaiman - Increase my capacity to be thankful", tier: "jemaah", path: "render.html?file=thankfulness/sulaiman.md" },
         ]
       },
       {
@@ -258,19 +342,19 @@
         category: "Shields: ☀️Morning & 🌙Evening",
         desc: "Recite this du'ā set at the start and end of your day for protection and alignment",
         items: [
-          { label: "1) ۞۞۞ Refuge: I Seek Refuge in the Perfect Words of Allah from Evil", path: "render.html?file=start and end of day/1_audhubikatillah.md" },
-          { label: "2) ۞۞۞ Nothing will harm you - when you read this", path: "render.html?file=start and end of day/2_bismillahiladhi_layadurru.md" },
-          { label: "3) ۞۞۞ Allah will suffice you in whatever concerns you of the matters of this world and the Hereafter - Ḥasbiyallāhu Lā Ilāha Illā Hu... x 7", path: "render.html?file=start and end of day/3_hasbiyallahu_7.md" },
-          { label: "4) ۞  Allah appoints 70,000 Angels who say Salat upon you - when you read this", path: "render.html?file=start and end of day/c_law_anzalna.md" },
-          { label: "5) ۞۞ Allah grants you Shifa'at Rasullullah - Salawat x 10", path: "render.html?file=start and end of day/b_salawat_10.md"},
-          { label: "6) ۞۞۞ People of Jannah: Read with Firm Faith - Chief of Seeking Forgiveness", path: "render.html?file=start and end of day/4_sayyidul-istighfar.md" },
-          { label: "7) ۞۞۞ Prophet never abandon these - Complete Well-Being", path: "render.html?file=start and end of day/never-abandoned.md" },
-          { label: "8) ۞۞۞ Allah removes your worries and settles your debts", path: "render.html?file=start and end of day/5_hammi_wal_Hazan.md" },
-          { label: "9) ۞ Allah removes your worries and settles your debts", path: "render.html?file=start and end of day/5b_hammi_wal_Hazan.md" },
-          { label: "10) ۞۞۞ Obedience: Du'ā of Fāṭimah", path: "render.html?file=start and end of day/6_ya-hayyu-ya-qayyum.md" },
-          { label: "11) ۞۞ Strengthen: Body, Hearing, (in)Sight + Protection: Self — Kāfir / Faqr", path: "render.html?file=start and end of day/7_body-hearing-sight.md" },
-          { label: "12) ۞۞ Contentment: Raḍītu billāhi rabbā", path: "render.html?file=start and end of day/8_raditdubillahirabban.md" },
-          { label: "13) ۞۞۞ 10 Tahlil", path: "render.html?file=start and end of day/a_la_ilaha_illallah_wahdahu_la_sharikalah.md" }
+          { label: "1) ۞۞۞ Refuge: I Seek Refuge in the Perfect Words of Allah from Evil", tier: "jemaah", path: "render.html?file=start and end of day/1_audhubikatillah.md" },
+          { label: "2) ۞۞۞ Nothing will harm you - when you read this", tier: "jemaah", path: "render.html?file=start and end of day/2_bismillahiladhi_layadurru.md" },
+          { label: "3) ۞۞۞ Allah will suffice you in whatever concerns you of the matters of this world and the Hereafter - Ḥasbiyallāhu Lā Ilāha Illā Hu... x 7", tier: "imam", path: "render.html?file=start and end of day/3_hasbiyallahu_7.md" },
+          { label: "4) ۞  Allah appoints 70,000 Angels who say Salat upon you - when you read this", tier: "wali", path: "render.html?file=start and end of day/c_law_anzalna.md" },
+          { label: "5) ۞۞ Allah grants you Shifa'at Rasullullah - Salawat x 10", tier: "imam", path: "render.html?file=start and end of day/b_salawat_10.md"},
+          { label: "6) ۞۞۞ People of Jannah: Read with Firm Faith - Chief of Seeking Forgiveness", tier: "jemaah", path: "render.html?file=start and end of day/4_sayyidul-istighfar.md" },
+          { label: "7) ۞۞۞ Prophet never abandon these - Complete Well-Being", tier: "jemaah", path: "render.html?file=start and end of day/never-abandoned.md" },
+          { label: "8) ۞۞۞ Allah removes your worries and settles your debts", tier: "jemaah", path: "render.html?file=start and end of day/5_hammi_wal_Hazan.md" },
+          { label: "9) ۞ Allah removes your worries and settles your debts", tier: "wali", path: "render.html?file=start and end of day/5b_hammi_wal_Hazan.md" },
+          { label: "10) ۞۞۞ Obedience: Du'ā of Fāṭimah", tier: "jemaah", path: "render.html?file=start and end of day/6_ya-hayyu-ya-qayyum.md" },
+          { label: "11) ۞۞ Strengthen: Body, Hearing, (in)Sight + Protection: Self — Kāfir / Faqr", tier: "imam", path: "render.html?file=start and end of day/7_body-hearing-sight.md" },
+          { label: "12) ۞۞ Contentment: Raḍītu billāhi rabbā", tier: "jemaah", path: "render.html?file=start and end of day/8_raditdubillahirabban.md" },
+          { label: "13) ۞۞۞ 10 Tahlil", tier: "jemaah", path: "render.html?file=start and end of day/a_la_ilaha_illallah_wahdahu_la_sharikalah.md" }
         ]
       },
             {
@@ -278,9 +362,9 @@
         category: "'Afiyah (Well-being) + Shifa (Healing)",
         desc: "Prophetic restorative evocations",
         items: [
-          { label: "Seeking Wellness Against Physical Ailments", path: "shifa/dua-shifa.html" },
-          { label: "📒Doa Hamil (Pregnancy)", path: "render.html?file=shifa/dua-hamil.md" },
-          {label: "Dua for righteous offspring", path: "render.html?file=shifa/dua-righteous-offspring-2.md"},
+          { label: "Seeking Wellness Against Physical Ailments", tier: "imam", path: "shifa/dua-shifa.html" },
+          { label: "📒Doa Hamil (Pregnancy)", tier: "wali", path: "render.html?file=shifa/dua-hamil.md" },
+          {label: "Dua for righteous offspring", tier: "jemaah", path: "render.html?file=shifa/dua-righteous-offspring-2.md"},
           { label: "Full Ruqyah for Face Pains", path: "shifa/Ruqyah.html" },
         ]
       },
@@ -289,8 +373,8 @@
         category: "Shields: Travel",
         desc: "Prophetic du'ās for protection and guidance during travel",
         items: [
-          { label: "Du'ā — Ease of Work", path: "render.html?file=dua-work/la-sahla.md" },
-          { label: "Du'ā — Travel", path: "render.html?file=dua-work/dua-safar.md" }
+          { label: "Du'ā — Ease of Work", tier: "jemaah", path: "render.html?file=dua-work/la-sahla.md" },
+          { label: "Du'ā — Travel", tier: "jemaah", path: "render.html?file=dua-work/dua-safar.md" }
         ]
       },
       {
@@ -298,8 +382,8 @@
         category: "Ṣalawāt",
         desc: "Send ṣalawāt upon the Prophet ﷺ",
         items: [
-          { label: "Ṣalawāt Adnānī", path: "Salawat/salawat-adnani.html" },
-          { label: "Ṣalawāt Tafrijiyyah", path: "render.html?file=Salawat/salawat-tafrijiyyah.md" }
+          { label: "Ṣalawāt Adnānī", tier: "wali", path: "Salawat/salawat-adnani.html" },
+          { label: "Ṣalawāt Tafrijiyyah", tier: "imam", path: "render.html?file=Salawat/salawat-tafrijiyyah.md" }
         ]
       },
       {
@@ -315,9 +399,9 @@
         category: "Sacred Months",
         desc: "Dhikr / wird pieced by mashāyikh related to the sacred months",
         items: [
-          { label: "Takbīr ʿĪd al-Aḍḥā", path: "Dua Haj/takbir-eiduladha.html" },
-          { label: "Du'ā: The Best the Prophets Made During ʿArafah", path: "Dua Haj/dua-prophets-made-on-arafah.html" },
-          { label: "Du'ā: ʿAlī and Ibn ʿUmar During ʿArafah", path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
+          { label: "Takbīr ʿĪd al-Aḍḥā", tier: "jemaah", path: "Dua Haj/takbir-eiduladha.html" },
+          { label: "Du'ā: The Best the Prophets Made During ʿArafah", tier: "imam", path: "Dua Haj/dua-prophets-made-on-arafah.html" },
+          { label: "Du'ā: ʿAlī and Ibn ʿUmar During ʿArafah", tier: "imam", path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
           { label: "Du'ā Collection: Dhū al-Ḥijjah — First 10 Days", path: "Dua Haj/Amalan Haj.html" },
           { label: "Du'ā Collection: Istighfār Rajab", path: "Wird/istighfar-rajab.html" }
         ]
@@ -496,16 +580,102 @@
       return `<span class="font-mono-app inline-block text-[9px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded mr-1.5 ${t.bg} ${t.border} ${t.text} border align-middle">${t.tag}</span>`;
     }
 
+    // =========================================================
+    // TAWAKKUL TIER SYSTEM
+    //   Tiers are cumulative, not exclusive: Jemaah ⊂ Imam ⊂ Wali Allah.
+    //   An item's `tier` marks the level it FIRST appears at.
+    //   Items with no `tier` (e.g. large mashāyikh-compiled
+    //   collections) are exempt — always shown, at every tier.
+    //   Per-category tier is the source of truth; the global switch
+    //   is a bulk-set convenience over the per-category state.
+    // =========================================================
+    const TIER_ORDER = ["jemaah", "imam", "wali"];
+    const TIER_META = {
+      jemaah: { label: "Jemaah",     short: "Jemaah",  desc: "Everyday · quick · sahih essentials" },
+      imam:   { label: "Imam", short: "Imam",   desc: "+ fuller, hasan-graded and compound duʿās" },
+      wali:   { label: "Muhsin ⇒ Wali Allah",  short: "Muhsin ⇒ Wali",    desc: "+ every good narrated — da'if (rare) & mashāyikh wird too" }
+    };
+    const TIER_STATE_KEY = 'som-tier-state';
+
+    function loadTierState() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(TIER_STATE_KEY) || '{}');
+        return (raw && typeof raw === 'object') ? raw : {};
+      } catch {
+        return {};
+      }
+    }
+
+    function saveTierState(state) {
+      localStorage.setItem(TIER_STATE_KEY, JSON.stringify(state));
+    }
+
+    function getCategoryTier(nodeId) {
+      const state = loadTierState();
+      return TIER_ORDER.includes(state[nodeId]) ? state[nodeId] : 'wali';
+    }
+
+    function setCategoryTier(nodeId, tier) {
+      const state = loadTierState();
+      state[nodeId] = tier;
+      saveTierState(state);
+      renderApp();
+    }
+
+    function setGlobalTier(tier) {
+      const state = loadTierState();
+      VAULT_NAVIGATION_TREE.forEach((node, index) => {
+        state[`node-${index}`] = tier;
+      });
+      saveTierState(state);
+      renderApp();
+    }
+
+    function itemVisibleAtTier(item, activeTier) {
+      if (!item.tier) return true; // exempt (large collections, undated items)
+      return TIER_ORDER.indexOf(item.tier) <= TIER_ORDER.indexOf(activeTier);
+    }
+
+    function renderTierChip(nodeId, activeTier) {
+      const buttons = TIER_ORDER.map(t => `
+        <button type="button" data-tier-set="${t}" data-tier-node="${nodeId}"
+          class="tier-chip-btn${t === activeTier ? ' active' : ''}" title="${TIER_META[t].desc}">${TIER_META[t].short}</button>
+      `).join('');
+      return `<div class="tier-chip-group">${buttons}</div>`;
+    }
+
+    function renderGlobalTierSwitch() {
+      const state = loadTierState();
+      const tiers = Object.values(state);
+      const allSame = tiers.length === VAULT_NAVIGATION_TREE.length && tiers.every(t => t === tiers[0]);
+      const activeGlobal = allSame ? tiers[0] : null;
+      const buttons = TIER_ORDER.map(t => `
+        <button type="button" data-tier-global="${t}"
+          class="tier-global-btn${t === activeGlobal ? ' active' : ''}">
+          <span class="tier-global-label">${TIER_META[t].label}</span>
+          <span class="tier-global-desc">${TIER_META[t].desc}</span>
+        </button>
+      `).join('');
+      return `
+        <div class="tier-global-switch">
+          <p class="tier-global-hint">Set every category's tawakkul level at once — each stays adjustable below</p>
+          <div class="tier-global-group">${buttons}</div>
+        </div>`;
+    }
+
     // 🏗️ APPLICATION ENGINE ASSEMBLY
     let activeNodeId = null;
 
     function renderApp() {
       const treeTarget = document.getElementById('navigation-tree');
 
-      let treeHTML = renderFavouritesNode(activeNodeId === 'node-favourites');
+      let treeHTML = renderGlobalTierSwitch();
+      treeHTML += renderFavouritesNode(activeNodeId === 'node-favourites');
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
         const nodeId = `node-${index}`;
+        const activeTier = getCategoryTier(nodeId);
+        const visibleItems = node.items.filter(item => itemVisibleAtTier(item, activeTier));
         treeHTML += `
           <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${activeNodeId === nodeId ? ' active' : ''}" id="${nodeId}">
 
@@ -534,10 +704,13 @@
               </div>
             </button>
 
+            <div class="tier-chip-row">
+              ${renderTierChip(nodeId, activeTier)}
+            </div>
 
             <div class="branch-container bg-[#FFFBF1]/00">
               <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
-                ${node.items.map(item => {
+                ${visibleItems.length ? visibleItems.map(item => {
                   const atomicPath = getAtomicPath(item.path);
                   const starHTML = atomicPath
                     ? `<button type="button" class="fav-star${isFavourite(atomicPath) ? ' is-fav' : ''}"
@@ -553,7 +726,7 @@
                     <span class="leading-relaxed flex-1">${renderItemTag(item.type)}${item.label}</span>
                     ${starHTML}
                   </a>
-                `; }).join('')}
+                `; }).join('') : `<p class="tier-empty-hint">Nothing at this tier yet — try leveling up ↑</p>`}
               </div>
             </div>
 
@@ -594,6 +767,20 @@
         e.preventDefault();
         e.stopPropagation();
         removeFavourite(parseInt(removeBtn.dataset.favRemove, 10));
+        return;
+      }
+      const tierChipBtn = e.target.closest('.tier-chip-btn');
+      if (tierChipBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        setCategoryTier(tierChipBtn.dataset.tierNode, tierChipBtn.dataset.tierSet);
+        return;
+      }
+      const tierGlobalBtn = e.target.closest('.tier-global-btn');
+      if (tierGlobalBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        setGlobalTier(tierGlobalBtn.dataset.tierGlobal);
         return;
       }
     });
