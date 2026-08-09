@@ -5,12 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="meta-title">Steps of Muhammad</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+
+  <!-- Inter (body) + JetBrains Mono (category labels) — matches render.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+
   <style>
-    /* Cross-fade for the spiritual emblem transformation */
-    .emblem-container:hover .base-flag { opacity: 0; }
-    .emblem-container:hover .nur-flag { opacity: 1; scale: 1.05; }
-    .emblem-container:active .base-flag { opacity: 0; }
-    .emblem-container:active .nur-flag { opacity: 1; scale: 1.05; }
+    /* Typography unification with render.html */
+    html, body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    .font-mono-app {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+    }
+
 
     /* Fortress App Accordion Tree Transitions */
     .branch-container {
@@ -19,7 +30,7 @@
       transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .root-node.active .branch-container {
-      max-height: 600px; /* Provides vertical breathing room for content branches */
+      max-height: 4000px;
     }
     .chevron-icon {
       transition: transform 0.25s ease;
@@ -28,253 +39,1035 @@
       transform: rotate(180deg);
     }
 
-    /* Smooth localized scrollbar aesthetics */
-    ::-webkit-scrollbar {
-      width: 4px;
-    }
-    ::-webkit-scrollbar-track {
-      background: rgba(5, 20, 11, 0.6);
-    }
+
+    /* Paper-cream scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: rgba(230, 220, 208, 0.4); }
     ::-webkit-scrollbar-thumb {
-      background: rgba(16, 185, 129, 0.2);
+      background: rgba(125, 82, 67, 0.25);
       border-radius: 2px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(52, 211, 153, 0.4);
+    ::-webkit-scrollbar-thumb:hover { background: rgba(125, 82, 67, 0.5); }
+
+
+    /* Decorative divider under title */
+    .title-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      margin: 1.5rem auto 0;
+      max-width: 18rem;
+    }
+    .title-divider .line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #B08A4B, transparent);
+      opacity: 0.5;
+    }
+    .title-divider .seal {
+      color: #B08A4B;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+
+    /* Category icon tile */
+    .node-icon-tile {
+      flex-shrink: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      background: rgba(125, 82, 67, 0.08);
+      border: 1px solid rgba(230, 220, 208, 0.8);
+      border-radius: 8px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .root-node:hover .node-icon-tile {
+      background: rgba(176, 138, 75, 0.18);
+      border-color: rgba(176, 138, 75, 0.4);
+    }
+
+    /* Favourite star toggle — sits inside each favouritable item row */
+    .fav-star {
+      flex-shrink: 0;
+      margin-left: auto;
+      padding: 0.15rem 0.35rem;
+      font-size: 0.95rem;
+      line-height: 1;
+      color: rgba(176, 138, 75, 0.45);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+    .fav-star:hover { color: #B08A4B; transform: scale(1.15); }
+    .fav-star.is-fav { color: #B08A4B; }
+
+    /* Favourites node — pinned "My Collection" row */
+    #node-favourites .fav-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      transition: background 0.15s ease;
+    }
+    #node-favourites .fav-row:hover { background: rgba(176, 138, 75, 0.08); }
+    .fav-move-group { display: flex; flex-direction: column; gap: 0; flex-shrink: 0; }
+    .fav-move {
+      font-size: 0.6rem; line-height: 1; padding: 0.1rem 0.3rem; color: #7A6F6C;
+      background: transparent; border: none; cursor: pointer; transition: color 0.15s ease;
+    }
+    .fav-move:hover:not(:disabled) { color: #A94442; }
+    .fav-move:disabled { opacity: 0.25; cursor: not-allowed; }
+    .fav-remove {
+      flex-shrink: 0; font-size: 0.75rem; color: #7A6F6C; background: transparent;
+      border: none; cursor: pointer; padding: 0.2rem 0.4rem; transition: color 0.15s ease;
+    }
+    .fav-remove:hover { color: #A94442; }
+    .fav-empty-hint {
+      font-size: 0.72rem; color: #7A6F6C; font-style: italic; padding: 0.75rem 1rem; line-height: 1.6;
+    }
+    .fav-open-collection {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      margin: 0.5rem 0.25rem 0.25rem; padding: 0.65rem 1rem; border-radius: 8px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em;
+      background: rgba(176, 138, 75, 0.12); border: 1px solid rgba(176, 138, 75, 0.35);
+      color: #7D5243; text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .fav-open-collection:hover { background: rgba(176, 138, 75, 0.22); border-color: rgba(176, 138, 75, 0.55); }
+
+    /* Multi-collection editing UI */
+    .collection-block {
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      border-radius: 10px;
+      padding: 0.6rem 0.65rem;
+      background: rgba(255, 251, 241, 0.4);
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .collection-block.is-active-collection {
+      border-color: rgba(176, 138, 75, 0.6);
+      background: rgba(176, 138, 75, 0.06);
+    }
+    .collection-block-head {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .collection-move-group { display: flex; flex-direction: column; gap: 0; flex-shrink: 0; }
+    .collection-active-toggle {
+      flex-shrink: 0;
+      font-size: 0.95rem;
+      line-height: 1;
+      padding: 0.15rem 0.3rem;
+      color: rgba(176, 138, 75, 0.45);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.15s ease, transform 0.15s ease;
+    }
+    .collection-active-toggle:hover { color: #B08A4B; transform: scale(1.15); }
+    .collection-active-toggle.active { color: #B08A4B; }
+    .collection-name-input {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #3A2E2B;
+      background: transparent;
+      border: none;
+      border-bottom: 1px dashed transparent;
+      padding: 0.15rem 0.1rem;
+      outline: none;
+    }
+    .collection-name-input:hover,
+    .collection-name-input:focus { border-bottom-color: rgba(176, 138, 75, 0.5); }
+    .collection-delete {
+      flex-shrink: 0; font-size: 0.75rem; color: #7A6F6C; background: transparent;
+      border: none; cursor: pointer; padding: 0.2rem 0.35rem; transition: color 0.15s ease;
+    }
+    .collection-delete:hover { color: #A94442; }
+    .collection-note-input {
+      width: 100%;
+      font-size: 0.7rem;
+      font-style: italic;
+      color: #7A6F6C;
+      background: transparent;
+      border: none;
+      border-bottom: 1px dashed transparent;
+      padding: 0.2rem 0.35rem 0.35rem;
+      outline: none;
+      margin-bottom: 0.2rem;
+    }
+    .collection-note-input:hover,
+    .collection-note-input:focus { border-bottom-color: rgba(176, 138, 75, 0.35); }
+    .collection-items { display: flex; flex-direction: column; gap: 0.1rem; }
+    .collection-add-btn {
+      width: 100%;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em;
+      padding: 0.55rem 1rem; border-radius: 8px;
+      background: rgba(176, 138, 75, 0.08); border: 1px dashed rgba(176, 138, 75, 0.4);
+      color: #7D5243; cursor: pointer; transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .collection-add-btn:hover { background: rgba(176, 138, 75, 0.16); border-color: rgba(176, 138, 75, 0.6); }
+
+    /* Tawakkul tier system — global switch (bulk-set all categories) */
+    .tier-global-switch {
+      margin-bottom: 0.25rem;
+      padding: 0.85rem 0.9rem 0.9rem;
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      border-radius: 12px;
+      background: rgba(255, 251, 241, 0.5);
+      backdrop-filter: blur(6px);
+    }
+    .tier-global-hint {
+      font-size: 10px;
+      color: #7A6F6C;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+    .tier-global-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+    }
+    .tier-global-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      padding: 0.5rem 0.35rem;
+      border-radius: 9px;
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      background: rgba(255, 251, 241, 0.6);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    }
+    .tier-global-btn:hover { border-color: rgba(176, 138, 75, 0.5); transform: translateY(-1px); }
+    .tier-global-btn.active {
+      background: rgba(176, 138, 75, 0.16);
+      border-color: #B08A4B;
+    }
+    .tier-global-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #7D5243;
+    }
+    .tier-global-desc {
+      font-size: 9px;
+      color: #7A6F6C;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    /* Tawakkul tier system — per-category chip */
+    .tier-chip-row {
+      padding: 0 0.9rem 0.6rem;
+      display: flex;
+      justify-content: center;
+    }
+    .tier-chip-group {
+      display: inline-flex;
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 251, 241, 0.6);
+    }
+    .tier-chip-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.28rem 0.65rem;
+      border: none;
+      background: transparent;
+      color: #7A6F6C;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .tier-chip-btn:not(:last-child) { border-right: 1px solid rgba(230, 220, 208, 0.9); }
+    .tier-chip-btn:hover { background: rgba(176, 138, 75, 0.1); color: #7D5243; }
+    .tier-chip-btn.active { background: #B08A4B; color: #FFFBF1; }
+    .tier-empty-hint {
+      font-size: 0.72rem; color: #7A6F6C; font-style: italic; padding: 0.75rem 1rem; text-align: center;
     }
   </style>
 </head>
-<body class="bg-[#05140b] text-emerald-50 min-h-screen flex flex-col justify-between antialiased selection:bg-emerald-500/30 relative overflow-x-hidden">
+<body class="bg-[#FFFBF1] text-[#3A2E2B] min-h-screen flex flex-col justify-between antialiased selection:bg-[#B08A4B]/30 relative overflow-x-hidden">
 
-  <div id="yt-audio-player" class="hidden"></div>
 
-  <!-- ── CENTRALIZED, APPARENT FIXED BACKGROUND NALAYN ENGINE ── -->
-  <div class="fixed inset-0 -z-10 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-    <!-- Base Nalayn state: Smaller (max-w-md/lg), perfectly centered, crisp visibility -->
-    <img 
+  <!-- ══════════════════════════════════════════════════════════════
+       FULL-BLEED BACKGROUND FLAG ENGINE
+       Black Flag covers viewport; Nūr cross-fades on category hover
+       ══════════════════════════════════════════════════════════════ -->
+  <div class="fixed inset-0 -z-10 pointer-events-none select-none overflow-hidden">
+    <img
       id="bg-base"
-      src="./Black Flag.jpeg" 
-      alt="Nalayn Shareef - Base State" 
-      class="w-full max-w-sm md:max-w-md h-auto object-contain transition-all duration-1000 ease-in-out opacity-55 saturate-[0.85]"
+      src="./black-flag.jpeg"
+      alt="Nalayn Shareef - Base State"
+      class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-55 saturate-[0.85]"
     />
-    <!-- Active Nur Nalayn state: Cross-fades to radiant form on hover interaction -->
-    <img 
+    <img
       id="bg-nur"
-      src="./Black Flag (nur).jpeg" 
-      alt="Nalayn Shareef - Filled with Nur" 
-      class="absolute w-full max-w-sm md:max-w-md h-auto object-contain transition-all duration-1000 ease-in-out opacity-0 scale-105"
+      src="./black-flag-nur.jpeg"
+      alt="Nalayn Shareef - Filled with Nur"
+      class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-0"
     />
-    <!-- Premium radial atmosphere overlay to fade edges beautifully into the dark background -->
-    <div class="absolute inset-0 bg-gradient-to-t from-[#05140b] via-[#05140b]/75 to-[#05140b]/90"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#05140b_75%)]"></div>
+    <div class="absolute inset-0 bg-[#FFFBF1]/35"></div>
   </div>
+
 
   <main class="flex-1 flex flex-col items-center justify-center p-6 min-w-0 relative z-10">
     <div class="max-w-2xl w-full text-center space-y-8 my-8">
-      
-      <!-- Top Emblem / Trigger Module -->
-      <div class="space-y-4 flex flex-col items-center">
-        <div id="emblem-trigger" 
-             onmouseenter="igniteNur()" 
-             onmouseleave="extinguishNur()"
-             class="emblem-container relative w-40 h-40 rounded-full overflow-hidden border border-emerald-900 shadow-2xl transition-all duration-500 cursor-pointer group hover:border-emerald-500/50 hover:shadow-emerald-500/10">
-          <img src="./Black Flag.jpeg" alt="Base State" class="base-flag absolute inset-0 w-full h-full object-cover object-center opacity-100 scale-100 transition-all duration-700 ease-in-out" />
-          <img src="./Black Flag (nur).jpeg" alt="Filled with Nur" class="nur-flag absolute inset-0 w-full h-full object-cover object-center opacity-0 scale-100 transition-all duration-700 ease-in-out" />
-          <div class="absolute inset-0 ring-1 ring-inset ring-emerald-400/20 rounded-full pointer-events-none group-hover:ring-emerald-400/50 transition-all duration-500"></div>
-        </div>
 
-        <div class="space-y-2 select-none">
-          <h1 id="root-title" class="text-3xl md:text-4xl font-black tracking-widest bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-400 bg-clip-text text-transparent uppercase">
-            Follow the steps
-          </h1>
-          <p id="root-subtitle" class="text-xs md:text-sm font-mono text-emerald-600 uppercase tracking-widest max-w-md mx-auto leading-relaxed">
-            Prophet Muhammad ﷺ
-          </p>
-        </div>
 
-        <div class="w-full max-w-xs mx-auto pt-2 opacity-90 transition-opacity duration-300 hover:opacity-100 select-none">
-          <img 
-            src="./verse-3-31.jpeg" 
-            alt="Surah Ali Imran Ayat 31 Screenshot" 
-            class="w-full h-auto rounded-xl border border-emerald-900/60 shadow-2xl" 
-          />
+      <!-- Title block -->
+      <div class="space-y-2 select-none pt-4">
+        <h1 id="root-title" class="text-3xl md:text-4xl font-black tracking-widest bg-gradient-to-r from-[#7D5243] via-[#B08A4B] to-[#7D5243] bg-clip-text text-transparent uppercase">
+          Follow the Steps
+        </h1>
+        <p id="root-subtitle" class="text-xs md:text-sm font-mono-app text-[#7A6F6C] uppercase tracking-widest max-w-md mx-auto leading-relaxed">
+          Prophet Muḥammad ﷺ
+        </p>
+
+
+        <!-- Decorative ✦ divider -->
+        <div class="title-divider">
+          <span class="line"></span>
+          <span class="seal">✦</span>
+          <span class="line"></span>
         </div>
       </div>
 
-      <!-- ── ACCOMMODATING ACCORDION TREE MENU (ḤIṢN AL-MUSLIM SYSTEM) ── -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           ACCORDION TREE MENU
+           ══════════════════════════════════════════════════════════ -->
       <div id="navigation-tree" class="w-full max-w-xl mx-auto text-left space-y-3 pt-4">
-        <!-- Rendered Dynamically by Engine Script below -->
+        <!-- Rendered dynamically below -->
       </div>
+
 
     </div>
   </main>
 
-  <footer class="w-full text-center text-[10px] text-emerald-800 font-mono tracking-widest uppercase pb-6 select-none relative z-10">
+
+  <footer class="w-full text-center text-[10px] text-[#7A6F6C] font-mono-app tracking-widest uppercase pb-6 select-none relative z-10">
     Compiled for ✦ the foam of the seas
   </footer>
 
+
   <script>
     const ROOT_CONFIG = {
-      title: "Follow the steps of",
-      subtitle: "Prophet Muhammad ﷺ",
-      youtubeAudioId: "8hTUDQEvqk8"
+      title: "Follow the Steps",
+      subtitle: "Prophet Muḥammad ﷺ"
     };
+
 
     // =========================================================
     // VAULT ACCORDION DATA CONFIGURATION ENGINE
+    // Each category has: { icon, category, desc, items: [...] }
+    // Icon emojis — non-living symbols only
     // =========================================================
     const VAULT_NAVIGATION_TREE = [
       {
-        category: "after solat",
-        desc: "Prophetic Dua right after solat",
+        icon: "🕌",
+        category: "Ṣalāh",
+        desc: "Prophetic du'ās before, during and after ṣalāh",
         items: [
-          { label: "1) Istighfar + Source of Peace", path: "after solat/1_Istighfar_peace.html"},
-          { label: "2a) Tahlil - When Facing Spiritual Lethargy or External Hostility", path: "after solat/2a_tahlil.html" },
-          { label: "2b) Tahlil - When Facing Financial Anxiety or Material Decisions", path: "after solat/2b_tahlil.html" },
-          { label: "Dua: Protect me from Hellfire", path: "after solat/dua-allahuma-ajirnaar.html" },
-
+           { label: "۞۞۞ Dua Iftitah", tier: "jemaah",
+            path: "render.html?file=during-solat/iftitah.md" },
+          { label: "Fajr in Salam", tier: "jemaah", path: "render.html?file=after-salah/fajr-in-salam.md" },
+          { label: "1) Istighfār - Source of Peace", tier: "jemaah", path: "render.html?file=after-salah/1_istigfar_peace.md" },
+          { type: "family", label: "Post-Ṣalāh Collection — Full Sequence", tier: "imam", path: "render_collection.html?file=after-salah/post-solat-collection.md" },
+          { label: "1a) Tahlīl - Mukhlisina-lahud-din / Sincere Devotion", tier: "jemaah", path: "render.html?file=after-salah/tahlil-mukhlisina.md" },
+          { label: "1b) Tahlīl - Laa-maani' / Divine Sovereignty", tier: "jemaah", path: "render.html?file=after-salah/tahlil-la-mania.md" },
+          { label: "2) Tahlīl - Yuhyi wa Yumitu' / Gives life Causes Death", tier: "imam", path: "render.html?file=after-salah/tahlil-fajr-maghrib-10-times.md"},
+          { label: "3) Protect me from Hellfire", tier: "wali", path: "render.html?file=after-salah/3_dua-allahuma-ajirnaar.md" },
+          { label: "4) Help me be grateful", tier: "jemaah", path: "render.html?file=after-salah/help-me-be-grateful.md" },
+          { label: "4 x Morning Adhkar", tier: "jemaah", path: "render.html?file=after-salah/4_subhana_allahi_wa_bihamdihi.md" }
+        ]
+      },
+      {
+        icon: "🤍",
+        category: "The Nur in the Heart",
+        desc: "Prophetic du'ās for deeply anchoring and alignment to the command / amr",
+        items: [
+          { label: "۞۞۞ Dua most often recited: Ya muqallibal-qulub", tier: "jemaah", path: "render.html?file=dua-general/ya-muqallibal-qulub.md" },
+          { label: "۞۞۞ He answers: In the Greatest of Names", tier: "jemaah", path: "render.html?file=dua-general/in-greatest-of-names.md" },
+          { label: "۞۞۞ Istikhārah — Guidance", tier: "jemaah", path: "render.html?file=dua-general/istikhara.md" },
+          { label: "۞ Dua Hajat", tier: "wali", path: "render.html?file=dua-general/hajat.md"},
+          { label: "۞۞۞ Āʾishah's Comprehensive Ask", tier: "imam", path: "render.html?file=dua-general/aisyah-comprehensive-ask.md" },
+          { label: "۞۞۞ Make the Quran the Spring of my Heart", tier: "imam", path: "render.html?file=quran/quran_spring_heart.md" },
+          { label: "📒 Memoriser's Dua", tier: "wali", path: "render.html?file=quran/memoriser.md" },
+          { label: "📒 Dua ḥamdan yuwāfī", tier: "wali", path: "render.html?file=dua-general/dua-hamdan-yuwafi.md" },
+          { label: "۞۞۞ Dua Sulaiman - Increase my capacity to be thankful", tier: "jemaah", path: "render.html?file=thankfulness/sulaiman.md" },
+        ]
+      },
+      {
+        icon: "🛡️",
+        category: "Shields: ☀️Morning & 🌙Evening",
+        desc: "Recite this du'ā set at the start and end of your day for protection and alignment",
+        items: [
+          { label: "1) ۞۞۞ Refuge: I Seek Refuge in the Perfect Words of Allah from Evil", tier: "jemaah", path: "render.html?file=start and end of day/1_audhubikatillah.md" },
+          { label: "2) ۞۞۞ Nothing will harm you - when you read this", tier: "jemaah", path: "render.html?file=start and end of day/2_bismillahiladhi_layadurru.md" },
+          { label: "3) ۞۞۞ Allah will suffice you in whatever concerns you of the matters of this world and the Hereafter - Ḥasbiyallāhu Lā Ilāha Illā Hu... x 7", tier: "imam", path: "render.html?file=start and end of day/3_hasbiyallahu_7.md" },
+          { label: "4) ۞  Allah appoints 70,000 Angels who say Salat upon you - when you read this", tier: "wali", path: "render.html?file=start and end of day/c_law_anzalna.md" },
+          { label: "5) ۞۞ Allah grants you Shifa'at Rasullullah - Salawat x 10", tier: "imam", path: "render.html?file=start and end of day/b_salawat_10.md"},
+          { label: "6) ۞۞۞ People of Jannah: Read with Firm Faith - Chief of Seeking Forgiveness", tier: "jemaah", path: "render.html?file=start and end of day/4_sayyidul-istighfar.md" },
+          { label: "7) ۞۞۞ Prophet never abandon these - Complete Well-Being", tier: "jemaah", path: "render.html?file=start and end of day/never-abandoned.md" },
+          { label: "8) ۞۞۞ Allah removes your worries and settles your debts", tier: "jemaah", path: "render.html?file=start and end of day/5_hammi_wal_Hazan.md" },
+          { label: "9) ۞ Allah removes your worries and settles your debts", tier: "wali", path: "render.html?file=start and end of day/5b_hammi_wal_Hazan.md" },
+          { label: "10) ۞۞۞ Obedience: Du'ā of Fāṭimah", tier: "jemaah", path: "render.html?file=start and end of day/6_ya-hayyu-ya-qayyum.md" },
+          { label: "11) ۞۞ Strengthen: Body, Hearing, (in)Sight + Protection: Self — Kāfir / Faqr", tier: "imam", path: "render.html?file=start and end of day/7_body-hearing-sight.md" },
+          { label: "12) ۞۞ Contentment: Raḍītu billāhi rabbā", tier: "jemaah", path: "render.html?file=start and end of day/8_raditdubillahirabban.md" },
+          { label: "13) ۞۞۞ 10 Tahlil", tier: "jemaah", path: "render.html?file=start and end of day/a_la_ilaha_illallah_wahdahu_la_sharikalah.md" }
         ]
       },
             {
-        category: "The Heart Shakers",
-        desc: "Prophetic Dua for deeply anchoring and alignment to the command / amr",
-        items: [
-          { label: "Dua: Oh Turner of Hearts...", path: "dua-general/dua-turner-of-hearts.html" },
-          { label: "Dua: In the Greatest of Names", path: "dua-general/dua-greatest-of-names.html" },
-          { label: "Dua: Istikhara - Guidance", path: "dua-general/dua-istikhara.html" },
-          { label: "Dua: Aisyah's Comprehensive ask", path: "dua-general/dua-comprehensive-aisyah.html" },
-          { label: "Dua Set: Habeeb Umar", path: "dua-general/dua-habeeb-umar.html"}
-        ]
-      },
-          {
-        category: "Morning/Evening shields 🛡",
-        desc: "Daily morning and evening adhkar",
-        items: [
-          { label: "Bismillahi ladhi ya Durru...", path: "/start and end of day/evoke shield against harm.html" },
-        ]
-      },
-                  {
-        category: "Grant us amal solihan (righteous work) / Destroy Laziness",
-        desc: "Prophetic invigoration evocations for daily work",
-        items: [
-          { label: "Dua - ease of work", path: "dua-work/dua-la-sahlan.html" },
-          { label: "Dua - ease of work", path: "dua-work/dua-laziness.html" },
-          { label: "Dua - Musa before facing firaun", path: "dua-work/dua-musa-before-facing-firaun.html" }
-        ]
-      },
-      {
-        category: "Dua Collections of Sacred Months",
-        desc: "Dhikr / Wird 💦🌱 pieced by mashuyuks related to the sacred months",
-        items: [
-          { label: "Dua: Best Dua what all the Prophets made during Arafah", path: "Dua Haj/dua-prophets-made-on-arafah.html" },
-          { label: "Dua: Ali and Ibn 'Umar during Arafah", path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
-          { label: "Dua Collection: Dhul Hijjah - First 10 Days", path: "Dua Haj/Amalan Haj.html" },
-          { label: "Dua Collection: Istighfar Rajab", path: "Wird/istighfar-rajab.html" },
-        ]
-      },
-      {
-        category: "Dua for Healing",
+        icon: "💧",
+        category: "'Afiyah (Well-being) + Shifa (Healing)",
         desc: "Prophetic restorative evocations",
         items: [
-          { label: "Seeking Wellness Against Physical Ailments", path: "Dua Shifa/dua-shifa.html" },
-          { label: "Full Ruqyah for face pains", path: "Dua Shifa/Ruqyah.html" }
+          { label: "Seeking Wellness Against Physical Ailments", tier: "imam", path: "shifa/dua-shifa.html" },
+          { label: "📒Doa Hamil (Pregnancy)", tier: "wali", path: "render.html?file=shifa/dua-hamil.md" },
+          {label: "Dua for righteous offspring", tier: "jemaah", path: "render.html?file=shifa/dua-righteous-offspring-2.md"},
+          { label: "Full Ruqyah for Face Pains", path: "shifa/Ruqyah.html" },
+        ]
+      },
+      {
+        icon: "🛣️",
+        category: "Shields: Travel",
+        desc: "Prophetic du'ās for protection and guidance during travel",
+        items: [
+          { label: "Du'ā — Ease of Work", tier: "jemaah", path: "render.html?file=dua-work/la-sahla.md" },
+          { label: "Du'ā — Travel", tier: "jemaah", path: "render.html?file=dua-work/dua-safar.md" }
+        ]
+      },
+      {
+        icon: "🌙",
+        category: "Ṣalawāt",
+        desc: "Send ṣalawāt upon the Prophet ﷺ",
+        items: [
+          { label: "Ṣalawāt Adnānī", tier: "wali", path: "Salawat/salawat-adnani.html" },
+          { label: "Ṣalawāt Tafrijiyyah", tier: "imam", path: "render.html?file=Salawat/salawat-tafrijiyyah.md" }
+        ]
+      },
+      {
+        icon: "📿",
+        category: "Tahlīl Collections",
+        desc: "Tahlīl collections pieced by mashāyikh",
+        items: [
+          { label: "Tahlīl al-Arwāḥ", path: "render.html?file=Wird/tahlil.html" }
+        ]
+      },
+      {
+        icon: "🌾",
+        category: "Sacred Months",
+        desc: "Dhikr / wird pieced by mashāyikh related to the sacred months",
+        items: [
+          { label: "Takbīr ʿĪd al-Aḍḥā", tier: "jemaah", path: "Dua Haj/takbir-eiduladha.html" },
+          { label: "Du'ā: The Best the Prophets Made During ʿArafah", tier: "imam", path: "Dua Haj/dua-prophets-made-on-arafah.html" },
+          { label: "Du'ā: ʿAlī and Ibn ʿUmar During ʿArafah", tier: "imam", path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
+          { label: "Du'ā Collection: Dhū al-Ḥijjah — First 10 Days", path: "Dua Haj/Amalan Haj.html" },
+          { label: "Du'ā Collection: Istighfār Rajab", path: "Wird/istighfar-rajab.html" }
+        ]
+      },
+        {
+        icon: "🛠️",
+        category: "Documentation",
+        desc: "Technical documentation for the Steps of Muhammad Card Application",
+        items: [
+          //{ label: "Authoring Guide", path: "render.html?file=AUTHOURING_GUIDE.md" },
+          { label: "Playground", path: "render.html?file=PLAYGROUND.md" },
         ]
       },
     ];
 
+
+    // =========================================================
+    // COLLECTIONS — localStorage-backed "build your own collections"
+    //   Stores an array of { id, name, note, items: [{label, path}] }.
+    //   Each collection is an ordered list of atomic dua paths (the
+    //   same shape render_collection.html's item builder takes).
+    //   Only items rendered through render.html?file=... are
+    //   favouritable — family/collection items and legacy .html
+    //   pages aren't atomic markdown, so they're excluded.
+    //   One collection is "active" at a time — that's the one the
+    //   star toggle on each dua adds to / removes from.
+    // =========================================================
+    const COLLECTIONS_KEY = 'som-collections';
+    const ACTIVE_COLLECTION_KEY = 'som-active-collection';
+    const LEGACY_FAVOURITES_KEY = 'som-favourites'; // pre-multi-collection storage
+
+    function uid() {
+      return 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+    }
+
+    function loadCollections() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(COLLECTIONS_KEY) || 'null');
+        if (Array.isArray(raw) && raw.length) return raw;
+      } catch {}
+
+      // First run after upgrading from the single-favourites version:
+      // migrate whatever was saved there into one starter collection.
+      let migratedItems = [];
+      try {
+        const legacy = JSON.parse(localStorage.getItem(LEGACY_FAVOURITES_KEY) || '[]');
+        if (Array.isArray(legacy)) migratedItems = legacy;
+      } catch {}
+
+      const initial = [{ id: uid(), name: 'My Collection', note: '', items: migratedItems }];
+      saveCollections(initial);
+      return initial;
+    }
+
+    function saveCollections(cols) {
+      localStorage.setItem(COLLECTIONS_KEY, JSON.stringify(cols));
+    }
+
+    function findCollection(cols, id) {
+      return cols.find(c => c.id === id);
+    }
+
+    function getActiveCollectionId() {
+      const cols = loadCollections();
+      let id = localStorage.getItem(ACTIVE_COLLECTION_KEY);
+      if (!cols.some(c => c.id === id)) id = cols[0].id;
+      return id;
+    }
+
+    function setActiveCollectionId(id) {
+      localStorage.setItem(ACTIVE_COLLECTION_KEY, id);
+      renderApp();
+    }
+
+    function getActiveCollectionName() {
+      const cols = loadCollections();
+      const active = findCollection(cols, getActiveCollectionId());
+      return active ? active.name : 'My Collection';
+    }
+
+    function getAtomicPath(itemPath) {
+      const marker = 'render.html?file=';
+      if (!itemPath || !itemPath.startsWith(marker)) return null;
+      return decodeURIComponent(itemPath.slice(marker.length));
+    }
+
+    function isFavourite(atomicPath) {
+      const cols = loadCollections();
+      const active = findCollection(cols, getActiveCollectionId());
+      return !!active && active.items.some(f => f.path === atomicPath);
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[c]);
+    }
+
+    function toggleFavourite(label, path) {
+      const cols = loadCollections();
+      const active = findCollection(cols, getActiveCollectionId());
+      if (!active) return;
+      const idx = active.items.findIndex(f => f.path === path);
+      if (idx === -1) active.items.push({ label, path });
+      else active.items.splice(idx, 1);
+      saveCollections(cols);
+      renderApp();
+    }
+
+    function moveFavourite(collectionId, index, direction) {
+      const cols = loadCollections();
+      const col = findCollection(cols, collectionId);
+      if (!col) return;
+      const target = direction === 'up' ? index - 1 : index + 1;
+      if (target < 0 || target >= col.items.length) return;
+      [col.items[index], col.items[target]] = [col.items[target], col.items[index]];
+      saveCollections(cols);
+      renderApp();
+    }
+
+    function removeFavourite(collectionId, index) {
+      const cols = loadCollections();
+      const col = findCollection(cols, collectionId);
+      if (!col) return;
+      col.items.splice(index, 1);
+      saveCollections(cols);
+      renderApp();
+    }
+
+    function addCollection() {
+      const cols = loadCollections();
+      const newCol = { id: uid(), name: 'New Collection', note: '', items: [] };
+      cols.push(newCol);
+      saveCollections(cols);
+      setActiveCollectionId(newCol.id); // also re-renders
+    }
+
+    function removeCollection(id) {
+      const cols = loadCollections();
+      if (cols.length <= 1) return; // always keep at least one collection
+      const idx = cols.findIndex(c => c.id === id);
+      if (idx === -1) return;
+      if (!window.confirm(`Delete "${cols[idx].name}"? This can't be undone.`)) return;
+      cols.splice(idx, 1);
+      saveCollections(cols);
+      if (!cols.some(c => c.id === localStorage.getItem(ACTIVE_COLLECTION_KEY))) {
+        localStorage.setItem(ACTIVE_COLLECTION_KEY, cols[0].id);
+      }
+      renderApp();
+    }
+
+    function moveCollection(index, direction) {
+      const cols = loadCollections();
+      const target = direction === 'up' ? index - 1 : index + 1;
+      if (target < 0 || target >= cols.length) return;
+      [cols[index], cols[target]] = [cols[target], cols[index]];
+      saveCollections(cols);
+      renderApp();
+    }
+
+    function updateCollectionField(id, field, value) {
+      const cols = loadCollections();
+      const col = findCollection(cols, id);
+      if (!col) return;
+      col[field] = value;
+      saveCollections(cols);
+    }
+
+    function renderFavouritesNode(isActive) {
+      const cols = loadCollections();
+      const activeId = getActiveCollectionId();
+
+      const collectionsHTML = cols.map((col, ci) => {
+        const rowsHTML = col.items.length
+          ? col.items.map((f, i) => `
+              <div class="fav-row">
+                <span class="fav-move-group">
+                  <button type="button" class="fav-move" data-fav-move="up" data-fav-collection="${col.id}" data-fav-index="${i}" ${i === 0 ? 'disabled' : ''} title="Move up">▲</button>
+                  <button type="button" class="fav-move" data-fav-move="down" data-fav-collection="${col.id}" data-fav-index="${i}" ${i === col.items.length - 1 ? 'disabled' : ''} title="Move down">▼</button>
+                </span>
+                <span class="text-xs font-medium text-[#3A2E2B] leading-relaxed flex-1">${escapeHtml(f.label)}</span>
+                <button type="button" class="fav-remove" data-fav-remove="${i}" data-fav-collection="${col.id}" title="Remove">✕</button>
+              </div>
+            `).join('')
+          : `<p class="fav-empty-hint">☆ Set this as your active collection (★ toggle) and tap the star next to any duʿā below to add it here.</p>`;
+
+        const openLinkHTML = col.items.length
+          ? `<a href="render_collection.html?collection=${encodeURIComponent(col.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>`
+          : '';
+
+        const isColActive = col.id === activeId;
+
+        return `
+          <div class="collection-block${isColActive ? ' is-active-collection' : ''}" data-collection-id="${col.id}">
+            <div class="collection-block-head">
+              <span class="collection-move-group">
+                <button type="button" class="fav-move" data-col-move="up" data-col-index="${ci}" ${ci === 0 ? 'disabled' : ''} title="Move collection up">▲</button>
+                <button type="button" class="fav-move" data-col-move="down" data-col-index="${ci}" ${ci === cols.length - 1 ? 'disabled' : ''} title="Move collection down">▼</button>
+              </span>
+              <button type="button" class="collection-active-toggle${isColActive ? ' active' : ''}" data-col-activate="${col.id}"
+                title="${isColActive ? 'Stars add here' : 'Set as active — stars will add here'}">${isColActive ? '★' : '☆'}</button>
+              <input type="text" class="collection-name-input" value="${escapeHtml(col.name)}" data-col-rename="${col.id}"
+                placeholder="Collection name" />
+              ${cols.length > 1 ? `<button type="button" class="collection-delete" data-col-delete="${col.id}" title="Delete collection">🗑</button>` : ''}
+            </div>
+            <input type="text" class="collection-note-input" value="${escapeHtml(col.note || '')}" data-col-note="${col.id}"
+              placeholder="Add a short note…" />
+            <div class="collection-items">
+              ${rowsHTML}
+            </div>
+            ${openLinkHTML}
+          </div>`;
+      }).join('');
+
+      return `
+        <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${isActive ? ' active' : ''}" id="node-favourites">
+          <button onclick="toggleNode('node-favourites')" class="w-full flex items-center justify-between gap-3 p-4 bg-[#FFFBF1]/10 hover:bg-[#E6DCD0]/10 active:bg-[#E6DCD0]/70 transition-colors group text-left">
+            <div class="node-icon-tile">⭐</div>
+            <div class="space-y-1 pr-2 flex-1 min-w-0">
+              <span class="font-mono-app inline-block text-xs font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-[#B08A4B]/10 text-[#7D5243] border border-[#B08A4B]/20 group-hover:text-[#A94442] transition-colors">
+                My Ijazah${cols.length ? ` (${cols.length})` : ''}
+              </span>
+              <p class="text-[11px] text-[#7A6F6C] leading-relaxed pt-1 font-sans group-hover:text-[#3A2E2B] transition-colors">
+                ⇒ Sadaqah Jariyah / Lasting Beneficial Knowledge - Build your own sets of duʿās, name them, reorder freely ⇒ Share them
+              </p>
+            </div>
+            <div class="w-6 h-6 rounded-full border border-[#E6DCD0] flex items-center justify-center text-[#B08A4B] bg-[#FFFBF1]/70 group-hover:border-[#B08A4B]/60 flex-shrink-0 transition-all">
+              <span class="chevron-icon inline-block transform origin-center">${CHEVRON_SVG}</span>
+            </div>
+          </button>
+          <div class="branch-container bg-[#FFFBF1]/00">
+            <div class="p-2 space-y-2 border-t border-[#E6DCD0]">
+              ${collectionsHTML}
+              <button type="button" class="collection-add-btn" data-col-add="1">＋ New collection</button>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    // SVG chevron — cleaner, scales perfectly, no font quirks
+    const CHEVRON_SVG = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>`;
+
+    // =========================================================
+    // ITEM TYPE TAG SYSTEM
+    //   Items with `type` get a visual pill + custom prefix icon.
+    //   Add new type entries here to extend.
+    // =========================================================
+    const ITEM_TYPE_TAGS = {
+      overview: {
+        tag: "OVERVIEW",
+        prefix: "📚",                                    // replaces ↳ arrow
+        bg: "bg-[#B08A4B]/15",
+        border: "border-[#B08A4B]/40",
+        text: "text-[#7D5243]"
+      },
+      family: {
+        tag: "FAMILY",
+        prefix: "📚",
+        bg: "bg-[#B08A4B]/15",
+        border: "border-[#B08A4B]/40",
+        text: "text-[#7D5243]"
+      },
+      wird: {
+        tag: "WIRD",
+        prefix: "📿",
+        bg: "bg-[#2C7BB0]/15",
+        border: "border-[#2C7BB0]/40",
+        text: "text-[#2C7BB0]"
+      },
+      new: {
+        tag: "NEW",
+        prefix: "✦",
+        bg: "bg-[#3C763D]/15",
+        border: "border-[#3C763D]/40",
+        text: "text-[#3C763D]"
+      }
+    };
+
+    function getItemPrefix(type) {
+      if (type && ITEM_TYPE_TAGS[type]) return ITEM_TYPE_TAGS[type].prefix;
+      return '↳';
+    }
+
+    function renderItemTag(type) {
+      if (!type || !ITEM_TYPE_TAGS[type]) return '';
+      const t = ITEM_TYPE_TAGS[type];
+      return `<span class="font-mono-app inline-block text-[9px] font-bold tracking-widest uppercase px-1.5 py-0.5 rounded mr-1.5 ${t.bg} ${t.border} ${t.text} border align-middle">${t.tag}</span>`;
+    }
+
+    // =========================================================
+    // TAWAKKUL TIER SYSTEM
+    //   Tiers are cumulative, not exclusive: Jemaah ⊂ Imam ⊂ Wali Allah.
+    //   An item's `tier` marks the level it FIRST appears at.
+    //   Items with no `tier` (e.g. large mashāyikh-compiled
+    //   collections) are exempt — always shown, at every tier.
+    //   Per-category tier is the source of truth; the global switch
+    //   is a bulk-set convenience over the per-category state.
+    // =========================================================
+    const TIER_ORDER = ["jemaah", "imam", "wali"];
+    const TIER_META = {
+      jemaah: { label: "Jemaah",     short: "Jemaah",  desc: "Everyday · quick · sahih essentials" },
+      imam:   { label: "Imam", short: "Imam",   desc: "+ fuller, hasan-graded and compound duʿās" },
+      wali:   { label: "Muhsin ⇒ Wali Allah",  short: "Muhsin ⇒ Wali",    desc: "+ every good narrated — da'if (rare) & mashāyikh wird too" }
+    };
+    const TIER_STATE_KEY = 'som-tier-state';
+
+    function loadTierState() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(TIER_STATE_KEY) || '{}');
+        return (raw && typeof raw === 'object') ? raw : {};
+      } catch {
+        return {};
+      }
+    }
+
+    function saveTierState(state) {
+      localStorage.setItem(TIER_STATE_KEY, JSON.stringify(state));
+    }
+
+    function getCategoryTier(nodeId) {
+      const state = loadTierState();
+      return TIER_ORDER.includes(state[nodeId]) ? state[nodeId] : 'wali';
+    }
+
+    function setCategoryTier(nodeId, tier) {
+      const state = loadTierState();
+      state[nodeId] = tier;
+      saveTierState(state);
+      renderApp();
+    }
+
+    function setGlobalTier(tier) {
+      const state = loadTierState();
+      VAULT_NAVIGATION_TREE.forEach((node, index) => {
+        state[`node-${index}`] = tier;
+      });
+      saveTierState(state);
+      renderApp();
+    }
+
+    function itemVisibleAtTier(item, activeTier) {
+      if (!item.tier) return true; // exempt (large collections, undated items)
+      return TIER_ORDER.indexOf(item.tier) <= TIER_ORDER.indexOf(activeTier);
+    }
+
+    function renderTierChip(nodeId, activeTier) {
+      const buttons = TIER_ORDER.map(t => `
+        <button type="button" data-tier-set="${t}" data-tier-node="${nodeId}"
+          class="tier-chip-btn${t === activeTier ? ' active' : ''}" title="${TIER_META[t].desc}">${TIER_META[t].short}</button>
+      `).join('');
+      return `<div class="tier-chip-group">${buttons}</div>`;
+    }
+
+    function renderGlobalTierSwitch() {
+      const state = loadTierState();
+      const tiers = Object.values(state);
+      const allSame = tiers.length === VAULT_NAVIGATION_TREE.length && tiers.every(t => t === tiers[0]);
+      const activeGlobal = allSame ? tiers[0] : null;
+      const buttons = TIER_ORDER.map(t => `
+        <button type="button" data-tier-global="${t}"
+          class="tier-global-btn${t === activeGlobal ? ' active' : ''}">
+          <span class="tier-global-label">${TIER_META[t].label}</span>
+          <span class="tier-global-desc">${TIER_META[t].desc}</span>
+        </button>
+      `).join('');
+      return `
+        <div class="tier-global-switch">
+          <p class="tier-global-hint">Set every category's tawakkul level at once — each stays adjustable below</p>
+          <div class="tier-global-group">${buttons}</div>
+        </div>`;
+    }
+
     // 🏗️ APPLICATION ENGINE ASSEMBLY
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('meta-title').textContent = ROOT_CONFIG.title;
-      document.getElementById('root-title').textContent = ROOT_CONFIG.title;
-      document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
-      
+    let activeNodeId = null;
+
+    function renderApp() {
       const treeTarget = document.getElementById('navigation-tree');
-      let treeHTML = '';
+      const activeColName = escapeHtml(getActiveCollectionName());
+
+      let treeHTML = renderGlobalTierSwitch();
+      treeHTML += renderFavouritesNode(activeNodeId === 'node-favourites');
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
+        const nodeId = `node-${index}`;
+        const activeTier = getCategoryTier(nodeId);
+        const visibleItems = node.items.filter(item => itemVisibleAtTier(item, activeTier));
         treeHTML += `
-          <div class="root-node border border-emerald-900/40 bg-[#071c10]/40 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-black/20" id="node-${index}">
-            
-            <button onclick="toggleNode(${index})" class="w-full flex items-center justify-between p-4 bg-[#092213]/50 hover:bg-[#0c2e1a]/70 active:bg-[#061c10] transition-colors group text-left">
-              <div class="space-y-1 pr-4">
-                <span class="text-xs font-mono font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:text-emerald-300 transition-colors">
+          <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${activeNodeId === nodeId ? ' active' : ''}" id="${nodeId}">
+
+
+            <button onclick="toggleNode('${nodeId}')" class="w-full flex items-center justify-between gap-3 p-4 bg-[#FFFBF1]/10 hover:bg-[#E6DCD0]/10 active:bg-[#E6DCD0]/70 transition-colors group text-left">
+
+
+              <!-- Icon tile (left) -->
+              <div class="node-icon-tile">${node.icon || '✦'}</div>
+
+
+              <!-- Category + description (center, takes available space) -->
+              <div class="space-y-1 pr-2 flex-1 min-w-0">
+                <span class="font-mono-app inline-block text-xs font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-[#B08A4B]/10 text-[#7D5243] border border-[#B08A4B]/20 group-hover:text-[#A94442] transition-colors">
                   ${node.category}
                 </span>
-                <p class="text-[11px] text-emerald-400/60 leading-relaxed pt-1 font-sans group-hover:text-emerald-300/60 transition-colors">
-                  -- ${node.desc}
+                <p class="text-[11px] text-[#7A6F6C] leading-relaxed pt-1 font-sans group-hover:text-[#3A2E2B] transition-colors">
+                  — ${node.desc}
                 </p>
               </div>
-              <div class="w-6 h-6 rounded-full border border-emerald-900/60 flex items-center justify-center text-[9px] text-emerald-500 bg-[#05140b] group-hover:border-emerald-500/40 flex-shrink-0 transition-all">
-                <span class="chevron-icon inline-block transform origin-center">▼</span>
+
+
+              <!-- SVG chevron (right) -->
+              <div class="w-6 h-6 rounded-full border border-[#E6DCD0] flex items-center justify-center text-[#B08A4B] bg-[#FFFBF1]/70 group-hover:border-[#B08A4B]/60 flex-shrink-0 transition-all">
+                <span class="chevron-icon inline-block transform origin-center">${CHEVRON_SVG}</span>
               </div>
             </button>
 
-            <div class="branch-container bg-[#05140b]/30">
-              <div class="p-2 space-y-0.5 border-t border-emerald-950/80">
-                ${node.items.map(item => `
-                  <a href="./${item.path}" 
-                     onmouseenter="igniteNur()" 
+            <div class="tier-chip-row">
+              ${renderTierChip(nodeId, activeTier)}
+            </div>
+
+            <div class="branch-container bg-[#FFFBF1]/00">
+              <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
+                ${visibleItems.length ? visibleItems.map(item => {
+                  const atomicPath = getAtomicPath(item.path);
+                  const starHTML = atomicPath
+                    ? `<button type="button" class="fav-star${isFavourite(atomicPath) ? ' is-fav' : ''}"
+                         data-fav-label="${escapeHtml(item.label)}" data-fav-path="${escapeHtml(atomicPath)}"
+                         title="${isFavourite(atomicPath) ? `Remove from ${activeColName}` : `Add to ${activeColName}`}">${isFavourite(atomicPath) ? '★' : '☆'}</button>`
+                    : '';
+                  return `
+                  <a href="./${item.path}"
+                     onmouseenter="igniteNur()"
                      onmouseleave="extinguishNur()"
-                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-emerald-300/80 hover:text-amber-300 hover:bg-[#092213]/60 transition-all group">
-                    <span class="text-emerald-800 group-hover:text-amber-500 font-mono select-none">↳</span>
-                    <span class="leading-relaxed">${item.label}</span>
+                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] hover:bg-[#B08A4B]/10 transition-all group">
+                    <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
+                    <span class="leading-relaxed flex-1">${renderItemTag(item.type)}${item.label}</span>
+                    ${starHTML}
                   </a>
-                `).join('')}
+                `; }).join('') : `<p class="tier-empty-hint">Nothing at this tier yet — try leveling up ↑</p>`}
               </div>
             </div>
+
 
           </div>`;
       });
 
+
       treeTarget.innerHTML = treeHTML;
-      initAudioEngine();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById('meta-title').textContent = ROOT_CONFIG.title;
+      document.getElementById('root-title').textContent = ROOT_CONFIG.title;
+      document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
+      renderApp();
     });
 
-    function toggleNode(index) {
-      const selectedNode = document.getElementById(`node-${index}`);
+    // Delegated click handling for favourite stars + collection row controls
+    // (delegated on document since the tree is fully re-rendered on every mutation)
+    document.addEventListener('click', (e) => {
+      const starBtn = e.target.closest('.fav-star');
+      if (starBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFavourite(starBtn.dataset.favLabel, starBtn.dataset.favPath);
+        return;
+      }
+      const moveBtn = e.target.closest('.fav-move[data-fav-move]');
+      if (moveBtn && !moveBtn.disabled) {
+        e.preventDefault();
+        e.stopPropagation();
+        moveFavourite(moveBtn.dataset.favCollection, parseInt(moveBtn.dataset.favIndex, 10), moveBtn.dataset.favMove);
+        return;
+      }
+      const removeBtn = e.target.closest('.fav-remove');
+      if (removeBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        removeFavourite(removeBtn.dataset.favCollection, parseInt(removeBtn.dataset.favRemove, 10));
+        return;
+      }
+      const colMoveBtn = e.target.closest('.fav-move[data-col-move]');
+      if (colMoveBtn && !colMoveBtn.disabled) {
+        e.preventDefault();
+        e.stopPropagation();
+        moveCollection(parseInt(colMoveBtn.dataset.colIndex, 10), colMoveBtn.dataset.colMove);
+        return;
+      }
+      const colActivateBtn = e.target.closest('.collection-active-toggle');
+      if (colActivateBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        setActiveCollectionId(colActivateBtn.dataset.colActivate);
+        return;
+      }
+      const colDeleteBtn = e.target.closest('.collection-delete');
+      if (colDeleteBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        removeCollection(colDeleteBtn.dataset.colDelete);
+        return;
+      }
+      const colAddBtn = e.target.closest('.collection-add-btn');
+      if (colAddBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        addCollection();
+        return;
+      }
+      const tierChipBtn = e.target.closest('.tier-chip-btn');
+      if (tierChipBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        setCategoryTier(tierChipBtn.dataset.tierNode, tierChipBtn.dataset.tierSet);
+        return;
+      }
+      const tierGlobalBtn = e.target.closest('.tier-global-btn');
+      if (tierGlobalBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        setGlobalTier(tierGlobalBtn.dataset.tierGlobal);
+        return;
+      }
+    });
+
+    // Live-save collection name/note as the user types, without a full
+    // re-render (which would drop focus and cursor position mid-keystroke).
+    document.addEventListener('input', (e) => {
+      const nameInput = e.target.closest('.collection-name-input');
+      if (nameInput) {
+        updateCollectionField(nameInput.dataset.colRename, 'name', nameInput.value);
+        return;
+      }
+      const noteInput = e.target.closest('.collection-note-input');
+      if (noteInput) {
+        updateCollectionField(noteInput.dataset.colNote, 'note', noteInput.value);
+      }
+    });
+
+    // On blur, normalize (trim / fallback name) and re-render so header
+    // counts, star titles, and the active-collection highlight catch up.
+    document.addEventListener('focusout', (e) => {
+      const nameInput = e.target.closest('.collection-name-input');
+      if (nameInput) {
+        updateCollectionField(nameInput.dataset.colRename, 'name', nameInput.value.trim() || 'Untitled Collection');
+        renderApp();
+        return;
+      }
+      const noteInput = e.target.closest('.collection-note-input');
+      if (noteInput) {
+        updateCollectionField(noteInput.dataset.colNote, 'note', noteInput.value.trim());
+        renderApp();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      if (e.target.classList.contains('collection-name-input') || e.target.classList.contains('collection-note-input')) {
+        e.preventDefault();
+        e.target.blur();
+      }
+    });
+
+    function toggleNode(id) {
+      const selectedNode = document.getElementById(id);
       const isActive = selectedNode.classList.contains('active');
-      
-      // Collapse sibling nodes cleanly on new tree category activations
+
+
       document.querySelectorAll('.root-node').forEach(node => node.classList.remove('active'));
-      
+
+
       if (!isActive) {
         selectedNode.classList.add('active');
+        activeNodeId = id;
+      } else {
+        activeNodeId = null;
       }
     }
 
-    function initAudioEngine() {
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
 
-    var player;
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('yt-audio-player', {
-        height: '0', width: '0', videoId: ROOT_CONFIG.youtubeAudioId,
-        playerVars: { 'autoplay': 0, 'controls': 0, 'loop': 1, 'playlist': ROOT_CONFIG.youtubeAudioId },
-        events: { 'onReady': () => {
-          const trigger = document.getElementById('emblem-trigger');
-          trigger.addEventListener('mouseenter', () => player.playVideo());
-          trigger.addEventListener('touchstart', () => player.playVideo());
-        }}
-      });
-    }
-
-    // Controls crisp background layer cross-fade states elegantly on interaction
+    // Background flag cross-fade — triggered by category item hover
     function igniteNur() {
       const baseFlag = document.getElementById('bg-base');
       const nurFlag = document.getElementById('bg-nur');
       if (baseFlag && nurFlag) {
         baseFlag.style.opacity = '0';
-        nurFlag.style.opacity = '0.75';
+        nurFlag.style.opacity = '0.85';
         nurFlag.style.transform = 'scale(1.03)';
       }
-      document.querySelector('.base-flag').style.opacity = '0';
-      document.querySelector('.nur-flag').style.opacity = '1';
-      if (player && typeof player.playVideo === 'function') player.playVideo();
     }
+
 
     function extinguishNur() {
       const baseFlag = document.getElementById('bg-base');
@@ -284,11 +1077,8 @@
         nurFlag.style.opacity = '0';
         nurFlag.style.transform = 'scale(1.0)';
       }
-      document.querySelector('.base-flag').style.opacity = '1';
-      document.querySelector('.nur-flag').style.opacity = '0';
     }
   </script>
 </body>
-</html>
+</html> 
 
-```

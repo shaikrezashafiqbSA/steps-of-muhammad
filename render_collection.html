@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    @font-face {
+      font-family: 'UthmanicHafs';
+      src: url('./fonts/UthmanicHafsVer18.ttf') format('truetype');
+      font-display: swap;
+    }
+
+    :root {
+      --bg-cream:        #FFFBF1;
+      --structural:      #7D5243;
+      --divider-sand:    #E6DCD0;
+      --text-espresso:   #3A2E2B;
+      --text-taupe:      #7A6F6C;
+      --accent-crimson:  #A94442;
+      --accent-olive:    #3C763D;
+      --accent-ochre:    #B08A4B;
+    }
+
+    html, body {
+      background: var(--bg-cream);
+      color: var(--text-espresso);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      letter-spacing: 0.01em;
+      scroll-behavior: smooth;
+    }
+
+    .paper-card {
+      background: var(--bg-cream);
+      box-shadow: 0 1px 2px rgba(125, 82, 67, 0.05), 0 8px 24px rgba(125, 82, 67, 0.08);
+      border: 1px solid var(--divider-sand);
+      border-radius: 8px;
+    }
+
+    /* ════════════════════════════════════════════
+       MARKDOWN BODY TYPOGRAPHY (subset of render.html)
+       ════════════════════════════════════════════ */
+    .markdown-body h1 {
+      color: var(--structural); font-size: 1.5rem; font-weight: 700;
+      letter-spacing: 0.02em; margin-bottom: 0.5rem; padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--divider-sand);
+    }
+    .markdown-body h2 {
+      color: var(--accent-crimson); font-size: 1.1rem; font-weight: 600;
+      letter-spacing: 0.03em; margin-top: 1.5rem; margin-bottom: 0.6rem;
+      padding-bottom: 0.2rem; border-bottom: 1px solid var(--divider-sand);
+    }
+    .markdown-body h3 { color: var(--structural); font-size: 0.95rem; font-weight: 600; margin-top: 1rem; margin-bottom: 0.4rem; }
+    .markdown-body p { color: var(--text-espresso); font-size: 0.88rem; line-height: 1.7; margin-bottom: 0.9rem; }
+    .markdown-body ul, .markdown-body ol { color: var(--text-espresso); font-size: 0.88rem; line-height: 1.7; margin-bottom: 0.9rem; padding-left: 1.4rem; }
+    .markdown-body ul { list-style: disc; }
+    .markdown-body ol { list-style: decimal; }
+    .markdown-body li { margin-bottom: 0.3rem; }
+    .markdown-body li strong { color: var(--accent-ochre); font-weight: 600; }
+    .markdown-body strong { color: var(--structural); font-weight: 600; }
+    .markdown-body em { color: var(--text-taupe); font-style: italic; }
+    .markdown-body hr { border: none; border-top: 1px solid var(--divider-sand); margin: 1.5rem 0; }
+    .markdown-body a { color: var(--accent-olive); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+    .markdown-body a:hover { color: var(--accent-crimson); }
+    .markdown-body blockquote {
+      border-left: 3px solid var(--accent-ochre); background: rgba(176, 138, 75, 0.06);
+      padding: 0.7rem 1rem; margin: 0.9rem 0; border-radius: 0 4px 4px 0;
+      color: var(--text-espresso); font-style: italic; font-size: 0.88rem;
+    }
+    .markdown-body code {
+      font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 0.82em;
+      background: rgba(125, 82, 67, 0.08); color: var(--structural);
+      padding: 0.1rem 0.35rem; border-radius: 3px;
+    }
+
+    /* ════════════════════════════════════════════
+       ZOOM ENGINE
+       ════════════════════════════════════════════ */
+    body[data-zoom="1"] { --zoom-arabic: 0.55; --zoom-text: 0.65; --zoom-spacing: 0.25; }
+    body[data-zoom="2"] { --zoom-arabic: 0.65; --zoom-text: 0.73; --zoom-spacing: 0.35; }
+    body[data-zoom="3"] { --zoom-arabic: 0.75; --zoom-text: 0.81; --zoom-spacing: 0.45; }
+    body[data-zoom="4"] { --zoom-arabic: 0.85; --zoom-text: 0.90; --zoom-spacing: 0.55; }
+    body[data-zoom="5"] { --zoom-arabic: 1.00; --zoom-text: 1.00; --zoom-spacing: 0.70; }
+    body { --zoom-arabic: 1; --zoom-text: 1; --zoom-spacing: 1; }
+
+    body[data-zoom] .markdown-body .ayah .w > b { font-size: calc(2.1rem * var(--zoom-arabic)); }
+    body[data-zoom][data-mode="arabic-first"] .ayah .w > b { font-size: calc(2.3rem * var(--zoom-arabic)); }
+    body[data-zoom][data-mode="arabic-only"] .ayah .w > b { font-size: calc(2.6rem * var(--zoom-arabic)); }
+    body[data-zoom][data-mode="verbal"] .ayah .w > b { font-size: calc(1.6rem * var(--zoom-arabic)); }
+    body[data-zoom] .markdown-body .ayah .w > i { font-size: calc(0.78rem * var(--zoom-text)); }
+    body[data-zoom] .markdown-body .ayah .w > u { font-size: calc(0.7rem * var(--zoom-text)); }
+    body[data-zoom][data-mode="verbal"] .ayah .w > u { font-size: calc(1rem * var(--zoom-text)); }
+    body[data-zoom] .markdown-body p, body[data-zoom] .markdown-body ul, body[data-zoom] .markdown-body ol { font-size: calc(0.88rem * var(--zoom-text)); }
+    body[data-zoom] .markdown-body blockquote { font-size: calc(0.88rem * var(--zoom-text)); }
+    body[data-zoom] .markdown-body .ayah {
+      padding: calc(1.4rem * var(--zoom-spacing)) calc(1.1rem * var(--zoom-spacing)) calc(1.1rem * var(--zoom-spacing));
+      gap: calc(0.4rem * var(--zoom-spacing)) calc(0.85rem * var(--zoom-spacing));
+      margin: calc(1.5rem * var(--zoom-spacing)) 0;
+    }
+    body[data-zoom] .markdown-body .ayah .w { min-width: calc(60px * var(--zoom-spacing)); padding: calc(0.35rem * var(--zoom-spacing)) calc(0.25rem * var(--zoom-spacing)); }
+
+    /* ════════════════════════════════════════════
+       AYAH BLOCK — Quran-app style word-grid
+       ════════════════════════════════════════════ */
+    .markdown-body .ayah {
+      direction: rtl; display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start;
+      gap: 0.4rem 0.85rem; background: rgba(230, 220, 208, 0.22); border: 1px solid var(--divider-sand);
+      border-radius: 10px; padding: 1.4rem 1.1rem 1.1rem; margin: 1.5rem 0;
+    }
+    .markdown-body .ayah .w {
+      display: inline-flex; flex-direction: column; align-items: center; justify-content: flex-start;
+      text-align: center; min-width: 60px; padding: 0.35rem 0.25rem; border-radius: 6px; transition: background 0.15s ease;
+    }
+    .markdown-body .ayah .w:hover { background: rgba(125, 82, 67, 0.06); }
+    .markdown-body .ayah .w > b {
+      font-family: 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif; font-weight: 400;
+      font-size: 2.1rem; line-height: 2.6; color: var(--text-espresso); direction: rtl; letter-spacing: 0;
+    }
+    .markdown-body .ayah .w > i {
+      font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.78rem; font-weight: 500;
+      color: var(--text-espresso); direction: ltr; margin-top: 0.15rem; line-height: 1.3; max-width: 130px;
+    }
+    .markdown-body .ayah .w > u {
+      font-family: 'Inter', sans-serif; text-decoration: none; font-style: italic; font-size: 0.7rem;
+      color: var(--accent-ochre); direction: ltr; margin-top: 0.1rem; line-height: 1.3; letter-spacing: 0.02em; max-width: 130px;
+    }
+
+    body[data-mode="arabic-first"] .ayah .w > u { display: none; }
+    body[data-mode="arabic-first"] .ayah .w > b { font-size: 2.3rem; }
+    body[data-mode="verbal"] .ayah .w > b { font-size: 1.6rem; opacity: 0.65; line-height: 2.2; }
+    body[data-mode="verbal"] .ayah .w > u {
+      font-size: 1rem; font-style: normal; font-weight: 600; color: var(--text-espresso);
+      order: -1; margin-top: 0; margin-bottom: 0.2rem;
+    }
+    body[data-mode="arabic-only"] .ayah .w > i, body[data-mode="arabic-only"] .ayah .w > u { display: none; }
+    body[data-mode="arabic-only"] .ayah .w > b { font-size: 2.6rem; line-height: 2.8; }
+    body[data-mode="arabic-only"] .ayah { padding: 1.6rem 1.2rem; gap: 0.6rem 1.2rem; }
+
+    @media (max-width: 640px) {
+      .markdown-body h1 { font-size: 1.25rem; }
+      .markdown-body h2 { font-size: 1rem; }
+      .markdown-body .ayah { padding: 1rem 0.7rem 0.8rem; gap: 0.3rem 0.5rem; }
+      .markdown-body .ayah .w { min-width: 50px; padding: 0.25rem 0.15rem; }
+      .markdown-body .ayah .w > b { font-size: 1.75rem; line-height: 2.4; }
+      body[data-mode="arabic-first"] .ayah .w > b { font-size: 1.95rem; }
+      body[data-mode="arabic-only"] .ayah .w > b { font-size: 2.2rem; line-height: 2.6; }
+      body[data-mode="verbal"] .ayah .w > b { font-size: 1.35rem; }
+      body[data-mode="verbal"] .ayah .w > u { font-size: 0.85rem; }
+      .markdown-body .ayah .w > i { font-size: 0.72rem; max-width: 95px; }
+      .markdown-body .ayah .w > u { font-size: 0.64rem; max-width: 95px; }
+    }
+
+    /* ════════════════════════════════════════════
+       COLLECTION HEADER (family meta card)
+       ════════════════════════════════════════════ */
+    .collection-header {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+      margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px dashed var(--divider-sand);
+    }
+    .collection-pill {
+      display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.02em; padding: 0.35rem 0.75rem; border-radius: 999px;
+      background: rgba(176, 138, 75, 0.12); border: 1px solid rgba(176, 138, 75, 0.3); color: var(--structural);
+    }
+
+    /* ════════════════════════════════════════════
+       COLLAPSIBLE ITEM — one dua within the collection
+       ════════════════════════════════════════════ */
+    .collection-item {
+      background: rgba(125, 82, 67, 0.03); border: 1px solid var(--divider-sand);
+      border-left: 3px solid var(--accent-ochre); border-radius: 8px;
+      padding: 0.9rem 1.1rem; margin: 1rem 0; scroll-margin-top: 1.5rem;
+      transition: background 0.18s ease;
+    }
+    .collection-item[open] { background: rgba(230, 220, 208, 0.2); }
+    .collection-item > summary {
+      cursor: pointer; display: flex; align-items: center; flex-wrap: wrap; gap: 0.6rem;
+      font-size: 0.92rem; font-weight: 600; color: var(--structural); user-select: none; list-style: none;
+    }
+    .collection-item > summary::-webkit-details-marker { display: none; }
+    .collection-item > summary::before {
+      content: '▶'; display: inline-block; font-size: 0.65rem; color: var(--accent-ochre); transition: transform 0.2s ease; flex-shrink: 0;
+    }
+    .collection-item[open] > summary::before { transform: rotate(90deg); }
+    .collection-item > .item-body { margin-top: 1rem; padding-top: 0.25rem; }
+    .collection-item > .item-body > *:first-child { margin-top: 0; }
+
+    .item-badge {
+      font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 999px;
+      color: #FFFBF1; flex-shrink: 0;
+    }
+    .item-badge-sahih     { background: #3C763D; }
+    .item-badge-hasan     { background: #2C7BB0; }
+    .item-badge-daif      { background: #B08A4B; }
+    .item-badge-mawdu     { background: #A94442; }
+    .item-badge-mutawatir { background: #2D5F2D; }
+    .item-badge-neutral   { background: var(--text-taupe); }
+
+    .item-footer {
+      margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--divider-sand);
+      font-size: 0.75rem;
+    }
+    .item-footer a { color: var(--accent-olive); text-decoration: none; }
+    .item-footer a:hover { color: var(--accent-crimson); text-decoration: underline; }
+
+    .item-loading, .item-error { font-size: 0.82rem; color: var(--text-taupe); font-style: italic; }
+    .item-error { color: var(--accent-crimson); }
+
+    /* Collapsible drawer (Arabic source etc) inside items — same as render.html */
+    .markdown-body details:not(.collection-item) {
+      background: rgba(125, 82, 67, 0.04); border: 1px solid var(--divider-sand); border-left: 3px solid var(--accent-ochre);
+      border-radius: 6px; padding: 0.85rem 1rem; margin: 1.1rem 0;
+    }
+    .markdown-body summary { cursor: pointer; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; color: var(--structural); user-select: none; list-style: none; }
+    .markdown-body summary::-webkit-details-marker { display: none; }
+    .markdown-body details:not(.collection-item) > *:not(summary) { margin-top: 0.8rem; }
+
+    /* ════════════════════════════════════════════
+       FLOATING CONTROLS (zoom + reading mode)
+       ════════════════════════════════════════════ */
+    .mode-fan { position: fixed; bottom: 1.5rem; left: 1.5rem; z-index: 100; display: flex; flex-direction: column; align-items: center; }
+    .mode-fan-trigger { font-family: 'Inter', 'UthmanicHafs', 'Amiri Quran', sans-serif; font-weight: 600; font-size: 1rem; }
+    .mode-fan-trigger.fan-open { background: rgba(125, 82, 67, 0.12); box-shadow: inset 0 1px 3px rgba(125, 82, 67, 0.2); }
+    .mode-fan-items { position: absolute; bottom: 100%; left: 0; margin-bottom: 0.65rem; display: flex; flex-direction: column-reverse; align-items: center; gap: 0.5rem; pointer-events: none; }
+    .mode-fan-item {
+      width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--divider-sand); background: var(--bg-cream);
+      box-shadow: 0 2px 8px rgba(125, 82, 67, 0.15); display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem; font-weight: 600; font-family: 'Inter', 'UthmanicHafs', 'Amiri Quran', sans-serif;
+      color: var(--text-espresso); cursor: pointer; user-select: none; padding: 0; position: relative;
+      opacity: 0; transform: translateY(15px) scale(0.6);
+      transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.15s ease, box-shadow 0.15s ease;
+    }
+    .mode-fan.fan-open .mode-fan-items { pointer-events: auto; }
+    .mode-fan.fan-open .mode-fan-item { opacity: 1; transform: translateY(0) scale(1); }
+    .mode-fan-item:hover { background: rgba(176, 138, 75, 0.15); box-shadow: 0 4px 14px rgba(125, 82, 67, 0.22); transform: translateY(0) scale(1.08); }
+    .mode-fan-item.active::after {
+      content: ''; position: absolute; bottom: -0.4rem; left: 50%; transform: translateX(-50%);
+      width: 0.35rem; height: 0.35rem; border-radius: 50%; background: var(--accent-crimson);
+    }
+    @media (max-width: 640px) {
+      .mode-fan { bottom: 1rem; left: 1rem; }
+      .mode-fan-item { width: 2.2rem; height: 2.2rem; font-size: 0.85rem; }
+      .mode-fan-items { gap: 0.4rem; margin-bottom: 0.55rem; }
+    }
+
+    /* ════════════════════════════════════════════
+       PER-ITEM FLOATING ORBS — exact "Pokémon-card" treatment
+       from the standalone render.html, scoped to each open
+       item via position:sticky (viewport-fixed corners don't
+       make sense when several cards are stacked in one scroll).
+       Folds to compact (leading icon only) once the item has
+       scrolled past the top of the viewport, same threshold
+       logic as the standalone page.
+       ════════════════════════════════════════════ */
+    .item-orb-sentinel { height: 1px; }
+    .item-orb-wrap {
+      position: sticky;
+      top: 0.75rem;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin: -0.15rem 0 1rem;
+      pointer-events: none;
+    }
+    .item-orb-wrap .orb { pointer-events: auto; }
+
+    .orb {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      box-shadow: 0 2px 8px rgba(125, 82, 67, 0.12), 0 1px 3px rgba(125, 82, 67, 0.08);
+      white-space: nowrap;
+      max-width: 100%;
+      transition: max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease, opacity 0.3s ease;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .orb .orb-label { transition: opacity 0.25s ease, max-width 0.35s ease; display: inline-block; white-space: nowrap; }
+    .item-orb-wrap.compact .orb .orb-label { opacity: 0; max-width: 0; margin-left: 0; overflow: hidden; }
+    .item-orb-wrap.compact .orb { padding: 0.4rem calc(0.4rem + 0.1rem); }
+
+    .orb-left { background: rgba(255, 251, 241, 0.95); color: var(--text-espresso); border: 1px solid var(--divider-sand); }
+    .orb-right { color: #FFFBF1; border: 1px solid transparent; background: rgba(125, 82, 67, 0.85); }
+    .orb-right-sahih     { background: #3C763D; }
+    .orb-right-hasan     { background: #2C7BB0; }
+    .orb-right-daif      { background: #B08A4B; }
+    .orb-right-mawdu     { background: #A94442; }
+    .orb-right-mutawatir { background: #2D5F2D; }
+    .orb-right-neutral   { background: rgba(255, 251, 241, 0.95); color: var(--text-espresso); border: 1px solid var(--divider-sand); }
+
+    @media (max-width: 640px) {
+      .item-orb-wrap { top: 0.5rem; }
+      .orb { font-size: 0.62rem; padding: 0.32rem 0.65rem; gap: 0.25rem; }
+    }
+
+    .float-controls { position: fixed; bottom: 1.5rem; right: 1.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.45rem; z-index: 100; }
+    .float-btn {
+      width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--divider-sand); background: var(--bg-cream);
+      box-shadow: 0 2px 8px rgba(125,82,67,0.15), 0 1px 2px rgba(125,82,67,0.06);
+      display: flex; align-items: center; justify-content: center; font-size: 0.9rem; line-height: 1;
+      cursor: pointer; transition: box-shadow 0.18s ease, transform 0.15s ease, background 0.15s ease;
+      font-family: 'Inter', sans-serif; color: var(--text-espresso); user-select: none; padding: 0;
+    }
+    .float-btn:hover:not(:disabled) { background: rgba(125,82,67,0.08); box-shadow: 0 4px 14px rgba(125,82,67,0.22); transform: scale(1.09); }
+    .float-btn:disabled { opacity: 0.28; cursor: not-allowed; transform: none; }
+    @media (max-width: 640px) {
+      .float-controls { bottom: 1rem; right: 1rem; }
+      .float-btn { width: 2.2rem; height: 2.2rem; font-size: 0.8rem; }
+    }
+
+    .top-back-link {
+      display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; font-weight: 600;
+      color: var(--text-taupe); text-decoration: none; margin-bottom: 1rem; letter-spacing: 0.02em;
+    }
+    .top-back-link:hover { color: var(--accent-crimson); }
+  </style>
+</head>
+<body data-mode="arabic-first" class="min-h-screen antialiased">
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 pt-10 pb-8">
+    <a href="./index.html" class="top-back-link">← Back to Steps of Muḥammad</a>
+
+    <article class="paper-card p-6 sm:p-10">
+      <div id="collection-header" class="collection-header" style="display:none;"></div>
+      <div id="intro-target" class="markdown-body">
+        <p class="text-xs italic" style="color: var(--text-taupe);">Loading collection...</p>
+      </div>
+      <div id="items-target"></div>
+    </article>
+  </main>
+
+  <!-- Floating bottom-left Reading Mode fan -->
+  <div class="mode-fan" id="modeFan">
+    <div class="mode-fan-items" id="modeFanItems"></div>
+    <button class="float-btn mode-fan-trigger" id="modeFanTrigger" type="button" title="Reading Mode">
+      <span id="modeFanTriggerIcon">Aa</span>
+    </button>
+  </div>
+
+  <!-- Floating bottom-right controls -->
+  <div class="float-controls" id="floatControls">
+    <button class="float-btn" id="floatZoomIn"  title="Zoom in">🔍+</button>
+    <button class="float-btn" id="floatZoomOut" title="Zoom out">🔍−</button>
+  </div>
+
+  <footer class="text-center text-[10px] font-semibold tracking-widest uppercase py-6" style="color: var(--text-taupe);">
+    Steps of Rasul · Collection View
+  </footer>
+
+  <script>
+    // ════════════════════════════════════════════
+    // Reading Mode Fan (own localStorage key — independent of render.html)
+    // ════════════════════════════════════════════
+    const READING_MODES = [
+      { key: 'arabic-first', icon: 'أ',  label: 'Arabic-first' },
+      { key: 'learner',      icon: 'Aa', label: 'Learner' },
+      { key: 'verbal',       icon: '🔊', label: 'Verbal' },
+      { key: 'arabic-only',  icon: 'ٱ',  label: 'Arabic-only' }
+    ];
+    const MODE_KEY = 'collection-reading-mode';
+    const DEFAULT_MODE = 'arabic-first';
+
+    function getCurrentMode() {
+      const saved = localStorage.getItem(MODE_KEY);
+      return READING_MODES.some(m => m.key === saved) ? saved : DEFAULT_MODE;
+    }
+    function getModeConfig(key) { return READING_MODES.find(m => m.key === key) || READING_MODES[0]; }
+    function applyMode(key) {
+      const cfg = getModeConfig(key);
+      document.body.setAttribute('data-mode', cfg.key);
+      localStorage.setItem(MODE_KEY, cfg.key);
+      const triggerIcon = document.getElementById('modeFanTriggerIcon');
+      if (triggerIcon) triggerIcon.textContent = cfg.icon;
+      const trigger = document.getElementById('modeFanTrigger');
+      if (trigger) trigger.title = `Reading Mode: ${cfg.label}`;
+      document.querySelectorAll('.mode-fan-item').forEach(b => b.classList.toggle('active', b.dataset.modeKey === cfg.key));
+    }
+    function openFan() {
+      document.getElementById('modeFan')?.classList.add('fan-open');
+      document.getElementById('modeFanTrigger')?.classList.add('fan-open');
+    }
+    function closeFan() {
+      document.getElementById('modeFan')?.classList.remove('fan-open');
+      document.getElementById('modeFanTrigger')?.classList.remove('fan-open');
+    }
+    function buildModeFan() {
+      const container = document.getElementById('modeFanItems');
+      const trigger = document.getElementById('modeFanTrigger');
+      if (!container || !trigger) return;
+      container.innerHTML = '';
+      READING_MODES.forEach(m => {
+        const btn = document.createElement('button');
+        btn.type = 'button'; btn.className = 'mode-fan-item'; btn.dataset.modeKey = m.key; btn.title = m.label; btn.textContent = m.icon;
+        btn.addEventListener('click', (e) => { e.stopPropagation(); applyMode(m.key); closeFan(); });
+        container.appendChild(btn);
+      });
+      trigger.onclick = (e) => {
+        e.stopPropagation();
+        document.getElementById('modeFan').classList.contains('fan-open') ? closeFan() : openFan();
+      };
+      document.addEventListener('click', (e) => {
+        const fan = document.getElementById('modeFan');
+        if (fan && fan.classList.contains('fan-open') && !fan.contains(e.target)) closeFan();
+      });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeFan(); });
+    }
+    buildModeFan();
+    applyMode(getCurrentMode());
+
+    // ════════════════════════════════════════════
+    // Zoom engine (own localStorage key)
+    // ════════════════════════════════════════════
+    const ZOOM_KEY = 'collection-zoom-level';
+    const ZOOM_MIN = 1, ZOOM_MAX = 5, ZOOM_DEFAULT = 3;
+    function getCurrentZoom() {
+      const raw = parseInt(localStorage.getItem(ZOOM_KEY), 10);
+      return (isNaN(raw) || raw < ZOOM_MIN || raw > ZOOM_MAX) ? ZOOM_DEFAULT : raw;
+    }
+    function applyZoom(level) {
+      const clamped = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, level));
+      document.body.setAttribute('data-zoom', clamped);
+      localStorage.setItem(ZOOM_KEY, clamped);
+      const fOut = document.getElementById('floatZoomOut'), fIn = document.getElementById('floatZoomIn');
+      if (fOut) fOut.disabled = (clamped <= ZOOM_MIN);
+      if (fIn)  fIn.disabled  = (clamped >= ZOOM_MAX);
+    }
+    applyZoom(getCurrentZoom());
+    document.getElementById('floatZoomOut')?.addEventListener('click', () => applyZoom(getCurrentZoom() - 1));
+    document.getElementById('floatZoomIn')?.addEventListener('click', () => applyZoom(getCurrentZoom() + 1));
+    document.addEventListener('keydown', (e) => {
+      if (!(e.ctrlKey || e.metaKey)) return;
+      if (e.key === '-' || e.key === '_') { e.preventDefault(); applyZoom(getCurrentZoom() - 1); }
+      else if (e.key === '=' || e.key === '+') { e.preventDefault(); applyZoom(getCurrentZoom() + 1); }
+      else if (e.key === '0') { e.preventDefault(); applyZoom(ZOOM_DEFAULT); }
+    });
+
+    // ════════════════════════════════════════════
+    // Meta-block parser (same ::meta syntax as render.html)
+    // ════════════════════════════════════════════
+    function parseMetaBlock(mdSource) {
+      const metaRe = /^::meta\s*\n([\s\S]*?)\n::\s*\n?/m;
+      const match = mdSource.match(metaRe);
+      if (!match) return { meta: null, stripped: mdSource };
+      const lines = match[1].split('\n');
+      const meta = {};
+      lines.forEach(line => {
+        const idx = line.indexOf(':');
+        if (idx === -1) return;
+        const key = line.slice(0, idx).trim().toLowerCase();
+        const val = line.slice(idx + 1).trim();
+        if (key) meta[key] = val;
+      });
+      return { meta, stripped: mdSource.replace(metaRe, '') };
+    }
+
+    function gradeBadgeClass(grade, rightOrbText) {
+      const probe = (grade || rightOrbText || '').toLowerCase();
+      if (probe.includes('sahih') || probe.includes('ṣaḥīḥ')) return 'item-badge-sahih';
+      if (probe.includes('hasan') || probe.includes('ḥasan')) return 'item-badge-hasan';
+      if (probe.includes('daif') || probe.includes('ḍaʿīf')) return 'item-badge-daif';
+      if (probe.includes('mawdu') || probe.includes('mawḍūʿ')) return 'item-badge-mawdu';
+      if (probe.includes('mutawatir') || probe.includes('mutawātir')) return 'item-badge-mutawatir';
+      return 'item-badge-neutral';
+    }
+    function gradeBadgeLabel(grade, rightOrbCompact, rightOrbText) {
+      if (grade) return grade.toUpperCase();
+      if (rightOrbCompact) return rightOrbCompact;
+      if (rightOrbText) return rightOrbText.replace(/^[\p{Extended_Pictographic}☀-➿⬀-⯿⌀-⏿️‍]+\s*/u, '');
+      return '';
+    }
+
+    // ════════════════════════════════════════════
+    // Orb rendering — copied verbatim from render.html so an
+    // item's orbs inside a collection are pixel-identical to
+    // its standalone card. Same author-controllable meta fields:
+    //   left-orb / left-orb-compact / left-orb-color / left-orb-text
+    //   right-orb / right-orb-compact / right-orb-color / right-orb-text
+    // ════════════════════════════════════════════
+    const LEADING_ICON_RE = /^([\p{Extended_Pictographic}☀-➿⬀-⯿⌀-⏿️‍]+)\s*/u;
+
+    function extractLeadingIcon(text) {
+      if (!text) return '';
+      const match = text.match(LEADING_ICON_RE);
+      return match ? match[1] : '';
+    }
+
+    function buildOrbStyle(bg, text) {
+      const parts = [];
+      if (bg)   parts.push(`background: ${bg}`);
+      if (text) parts.push(`color: ${text}`);
+      if (parts.length === 0) return '';
+      return `style="${parts.join('; ')};"`;
+    }
+
+    function renderMetaCard(meta) {
+      if (!meta) return '';
+
+      const leftFull  = meta['left-orb']  || '';
+      const rightFull = meta['right-orb'] || (meta.grade ? meta.grade.toUpperCase() : '');
+
+      if (!leftFull && !rightFull) return '';
+
+      const leftCompact  = meta['left-orb-compact']  || extractLeadingIcon(leftFull)  || leftFull;
+      const rightCompact = meta['right-orb-compact'] || extractLeadingIcon(rightFull) || rightFull;
+
+      const rightLower = rightFull.toLowerCase();
+      let rightColorClass = 'orb-right-neutral';
+      if (rightLower.includes('ṣaḥīḥ') || rightLower.includes('sahih')) rightColorClass = 'orb-right-sahih';
+      else if (rightLower.includes('ḥasan') || rightLower.includes('hasan')) rightColorClass = 'orb-right-hasan';
+      else if (rightLower.includes('ḍaʿīf') || rightLower.includes('daif')) rightColorClass = 'orb-right-daif';
+      else if (rightLower.includes('mawḍūʿ') || rightLower.includes('mawdu')) rightColorClass = 'orb-right-mawdu';
+      else if (rightLower.includes('mutawātir') || rightLower.includes('mutawatir')) rightColorClass = 'orb-right-mutawatir';
+
+      const leftStyle  = buildOrbStyle(meta['left-orb-color'],  meta['left-orb-text']);
+      const rightStyle = buildOrbStyle(meta['right-orb-color'], meta['right-orb-text']);
+
+      const leftLabel  = leftFull.replace(LEADING_ICON_RE, '');
+      const rightLabel = rightFull.replace(LEADING_ICON_RE, '');
+
+      const leftHTML = leftFull
+        ? `<span class="orb orb-left" ${leftStyle}><span class="orb-icon">${leftCompact}</span>${leftLabel ? `<span class="orb-label">${leftLabel}</span>` : ''}</span>`
+        : '<span></span>';
+
+      const rightHTML = rightFull
+        ? `<span class="orb orb-right ${rightColorClass}" ${rightStyle}><span class="orb-icon">${rightCompact}</span>${rightLabel ? `<span class="orb-label">${rightLabel}</span>` : ''}</span>`
+        : '';
+
+      return `${leftHTML}${rightHTML}`;
+    }
+
+    // ════════════════════════════════════════════
+    // Per-item compact-fold watcher — same idea as render.html's
+    // scroll watcher, but scoped per item via IntersectionObserver
+    // (each open item has its own sticky orb pair, so folding must
+    // key off that item's position, not a single global scrollY).
+    // ════════════════════════════════════════════
+    let orbObserver = null;
+    function getOrbObserver() {
+      if (!orbObserver) {
+        orbObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const wrap = entry.target._orbWrap;
+            if (!wrap) return;
+            wrap.classList.toggle('compact', !entry.isIntersecting);
+          });
+        }, { root: null, rootMargin: '-100px 0px 0px 0px', threshold: 0 });
+      }
+      return orbObserver;
+    }
+    function observeOrbFold(sentinel, wrap) {
+      sentinel._orbWrap = wrap;
+      getOrbObserver().observe(sentinel);
+    }
+
+    // ════════════════════════════════════════════
+    // Word-stack parser — [[arabic|english|translit]]
+    // (identical grammar to render.html)
+    // ════════════════════════════════════════════
+    function parseWordStacks(rootEl) {
+      const html = rootEl.innerHTML;
+      const wordRe = /(?<!\\)\[\[([^\[\]|]+)(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?\]\]/g;
+      const transformed = html.replace(wordRe, (match, ar, en, tr) => {
+        const arabic = (ar || '').trim();
+        const english = (en || '').trim();
+        const translit = (tr || '').trim();
+        let inner = `<b>${arabic}</b>`;
+        if (english) inner += `<i>${english}</i>`;
+        if (translit) inner += `<u>${translit}</u>`;
+        return `<span class="w">${inner}</span>`;
+      }).replace(/\\\[\[/g, '[[');
+      rootEl.innerHTML = transformed;
+      groupAyahs(rootEl);
+    }
+
+    function groupAyahs(rootEl) {
+      const allW = Array.from(rootEl.querySelectorAll('span.w'));
+      let i = 0;
+      while (i < allW.length) {
+        const first = allW[i];
+        if (first.closest('.ayah')) { i++; continue; }
+        const group = [first];
+        let next = first.nextSibling;
+        while (next) {
+          if (next.nodeType === Node.TEXT_NODE && next.textContent.trim() === '') { next = next.nextSibling; continue; }
+          if (next.nodeType === Node.ELEMENT_NODE && next.classList && next.classList.contains('w')) { group.push(next); next = next.nextSibling; continue; }
+          break;
+        }
+        const ayah = document.createElement('div');
+        ayah.className = 'ayah';
+        first.parentNode.insertBefore(ayah, first);
+        group.forEach(node => ayah.appendChild(node));
+        i += group.length;
+      }
+      rootEl.querySelectorAll('p > .ayah').forEach(ayah => {
+        const p = ayah.parentNode;
+        const onlyChild = Array.from(p.childNodes).every(n => n === ayah || (n.nodeType === Node.TEXT_NODE && n.textContent.trim() === ''));
+        if (onlyChild) { p.parentNode.insertBefore(ayah, p); p.remove(); }
+        else { p.parentNode.insertBefore(ayah, p.nextSibling); }
+      });
+    }
+
+    // ════════════════════════════════════════════
+    // Collection-link extraction
+    //   Finds [label](?file=path.md) links in raw markdown, in order,
+    //   dedupes by path, and rewrites the manifest body so those links
+    //   jump to the inline expanded section instead of navigating away.
+    // ════════════════════════════════════════════
+    function extractAndRewriteLinks(mdSource) {
+      const linkRe = /\[([^\]]+)\]\(\?file=([^)#]+\.md)\)/g;
+      const items = [];
+      const pathToIndex = new Map();
+      let rewritten = mdSource.replace(linkRe, (match, label, path) => {
+        const cleanPath = path.trim();
+        if (!pathToIndex.has(cleanPath)) {
+          pathToIndex.set(cleanPath, items.length);
+          items.push({ label: label.trim(), path: cleanPath });
+        }
+        const idx = pathToIndex.get(cleanPath);
+        return `[${label}](#collection-item-${idx})`;
+      });
+      return { items, rewritten };
+    }
+
+    // ════════════════════════════════════════════
+    // Build one collection item (fetch + render sub-dua)
+    // ════════════════════════════════════════════
+    async function buildCollectionItem(item, index) {
+      const details = document.createElement('details');
+      details.className = 'collection-item';
+      details.id = `collection-item-${index}`;
+      if (index === 0) details.open = true;
+
+      const summary = document.createElement('summary');
+      summary.innerHTML = `<span class="item-summary-label">${item.label}</span>`;
+      details.appendChild(summary);
+
+      const body = document.createElement('div');
+      body.className = 'item-body markdown-body';
+      body.innerHTML = `<p class="item-loading">Loading…</p>`;
+      details.appendChild(body);
+
+      try {
+        const res = await fetch(item.path);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const md = await res.text();
+        const { meta, stripped } = parseMetaBlock(md);
+
+        const badgeClass = gradeBadgeClass(meta && meta.grade, meta && meta['right-orb']);
+        const badgeLabel = gradeBadgeLabel(meta && meta.grade, meta && meta['right-orb-compact'], meta && meta['right-orb']);
+        if (badgeLabel) {
+          summary.innerHTML = `<span class="item-badge ${badgeClass}">${badgeLabel}</span><span class="item-summary-label">${item.label}</span>`;
+        }
+
+        body.innerHTML = '';
+
+        // Exact standalone-card orb pair — sticky within this item
+        // (folds to compact icons once scrolled past, same as render.html)
+        const orbHTML = renderMetaCard(meta);
+        if (orbHTML) {
+          const sentinel = document.createElement('div');
+          sentinel.className = 'item-orb-sentinel';
+          body.appendChild(sentinel);
+
+          const orbWrap = document.createElement('div');
+          orbWrap.className = 'item-orb-wrap';
+          orbWrap.innerHTML = orbHTML;
+          body.appendChild(orbWrap);
+
+          observeOrbFold(sentinel, orbWrap);
+        }
+
+        const content = document.createElement('div');
+        content.innerHTML = marked.parse(stripped);
+        parseWordStacks(content);
+        body.appendChild(content);
+
+        const footer = document.createElement('div');
+        footer.className = 'item-footer';
+        footer.innerHTML = `<a href="render.html?file=${encodeURI(item.path)}" target="_blank" rel="noopener">Open standalone ↗</a>`;
+        body.appendChild(footer);
+      } catch (err) {
+        console.error(err);
+        body.innerHTML = `<p class="item-error">⚠️ Could not load <code>${item.path}</code></p>`;
+      }
+
+      return details;
+    }
+
+    // ════════════════════════════════════════════
+    // Auto-open + scroll to a collection item when its
+    // internal anchor is clicked or the URL hash targets it
+    // ════════════════════════════════════════════
+    function wireInternalLinks(container) {
+      container.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#collection-item-"]');
+        if (!a) return;
+        const targetEl = document.querySelector(a.getAttribute('href'));
+        if (targetEl && targetEl.tagName === 'DETAILS') targetEl.open = true;
+      });
+    }
+
+    function handleInitialHash() {
+      if (!window.location.hash) return;
+      setTimeout(() => {
+        const targetEl = document.querySelector(window.location.hash);
+        if (!targetEl) return;
+        if (targetEl.tagName === 'DETAILS') targetEl.open = true;
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+
+    // ════════════════════════════════════════════
+    // Main load
+    // ════════════════════════════════════════════
+    // ════════════════════════════════════════════
+    // User-built collections ("My Collections")
+    //   ?collection=<id> skips fetching a manifest .md entirely and
+    //   instead reads the same localStorage array index.html's
+    //   star toggles + collection editor write to — a blank-slate,
+    //   user-built collection with no authored manifest file at all.
+    //   ?favorites=1 (legacy) falls back to the first saved collection.
+    // ════════════════════════════════════════════
+    const COLLECTIONS_KEY = 'som-collections';
+
+    function loadCollectionsFromStorage() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(COLLECTIONS_KEY) || '[]');
+        return Array.isArray(raw) ? raw : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[c]);
+    }
+
+    async function renderUserCollection(collectionId) {
+      const introTarget = document.getElementById('intro-target');
+      const itemsTarget = document.getElementById('items-target');
+      const headerTarget = document.getElementById('collection-header');
+
+      marked.setOptions({ gfm: true, breaks: false });
+
+      const cols = loadCollectionsFromStorage();
+      const col = collectionId ? cols.find(c => c.id === collectionId) : cols[0];
+
+      if (!col) {
+        introTarget.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Collection not found. It may have been deleted or renamed. <a href="./index.html">Back to home</a>.</p>`;
+        return;
+      }
+
+      const name = escapeHtml(col.name || 'My Collection');
+      document.title = col.name || 'My Collection';
+
+      headerTarget.innerHTML = `<span class="collection-pill">⭐ ${name}</span><span class="collection-pill">✦ Saved on this device</span>`;
+      headerTarget.style.display = 'flex';
+
+      introTarget.innerHTML = `
+        <h1>${name}</h1>
+        ${col.note ? `<p class="text-xs italic" style="color: var(--text-taupe);">${escapeHtml(col.note)}</p>` : ''}
+        <p>A sequence you've built yourself by starring duʿās — no manifest file, no authoring, just your own picks in your own order. Saved locally to this browser only. Star, rename, or reorder from the <a href="./index.html">home page</a>.</p>
+      `;
+
+      const favs = Array.isArray(col.items) ? col.items : [];
+
+      if (favs.length === 0) {
+        itemsTarget.innerHTML = `<p class="item-error" style="margin-top:1.5rem;">☆ No duʿās saved in this collection yet. Go to the <a href="./index.html">home page</a> and tap the star (☆) next to any duʿā to add it here.</p>`;
+        return;
+      }
+
+      wireInternalLinks(itemsTarget);
+
+      const built = await Promise.all(favs.map((item, i) => buildCollectionItem(item, i)));
+      built.forEach(el => itemsTarget.appendChild(el));
+
+      handleInitialHash();
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('file');
+      const collectionId = params.get('collection');
+      const isFavourites = params.get('favorites') === '1'; // legacy link, falls back to first collection
+      const introTarget = document.getElementById('intro-target');
+      const itemsTarget = document.getElementById('items-target');
+      const headerTarget = document.getElementById('collection-header');
+
+      if (collectionId || isFavourites) {
+        try {
+          await renderUserCollection(collectionId);
+        } catch (err) {
+          console.error(err);
+          introTarget.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Could not load this collection. <span style="color: var(--text-taupe); font-size: 0.85em;">${err.message || ''}</span></p>`;
+        }
+        return;
+      }
+
+      if (!file) {
+        introTarget.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ No collection specified. Append <code>?file=yourcollection.md</code> to the URL, or <code>?collection=&lt;id&gt;</code> to open one of your saved collections.</p>`;
+        return;
+      }
+
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const md = await res.text();
+
+        marked.setOptions({ gfm: true, breaks: false });
+
+        const { meta, stripped } = parseMetaBlock(md);
+        if (meta && (meta['left-orb'] || meta['right-orb'])) {
+          const pills = [];
+          if (meta['left-orb'])  pills.push(`<span class="collection-pill">${meta['left-orb']}</span>`);
+          if (meta['right-orb']) pills.push(`<span class="collection-pill">${meta['right-orb']}</span>`);
+          headerTarget.innerHTML = pills.join('');
+          headerTarget.style.display = 'flex';
+        }
+
+        const { items, rewritten } = extractAndRewriteLinks(stripped);
+
+        introTarget.innerHTML = marked.parse(rewritten);
+        parseWordStacks(introTarget);
+
+        const h1 = introTarget.querySelector('h1');
+        if (h1) document.title = h1.textContent;
+
+        wireInternalLinks(itemsTarget);
+        wireInternalLinks(introTarget);
+
+        if (items.length === 0) {
+          itemsTarget.innerHTML = `<p class="item-error" style="margin-top:1.5rem;">⚠️ No linked duʿās found in this collection. Expected links of the form <code>[label](?file=path.md)</code>.</p>`;
+          return;
+        }
+
+        // Render items in order, each independently async
+        const built = await Promise.all(items.map((item, i) => buildCollectionItem(item, i)));
+        built.forEach(el => itemsTarget.appendChild(el));
+
+        handleInitialHash();
+      } catch (err) {
+        console.error(err);
+        introTarget.innerHTML = `
+          <p style="color: var(--accent-crimson);">
+            ⚠️ <strong>Could not load collection:</strong> <code>${file}</code><br>
+            <span style="color: var(--text-taupe); font-size: 0.85em;">Check the path and that the file exists relative to this HTML.</span>
+          </p>`;
+      }
+    });
+  </script>
+</body>
+</html>

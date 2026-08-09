@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <style type="text/tailwindcss">
+    /* ════════════════════════════════════════════════
+       KFGQPC UTHMANIC HAFS — self-hosted
+       ════════════════════════════════════════════════ */
+    @font-face {
+      font-family: 'UthmanicHafs';
+      src: url('./fonts/UthmanicHafs1Ver18.ttf') format('truetype');
+      font-display: swap;
+    }
+
+    /* ════════════════════════════════════════════════
+       WARM TERRACOTTA MINIMALIST THEME
+       ════════════════════════════════════════════════ */
+    :root {
+      --bg-cream:        #FFFBF1;
+      --structural:      #7D5243;
+      --divider-sand:    #E6DCD0;
+      --text-espresso:   #3A2E2B;
+      --text-taupe:      #7A6F6C;
+      --accent-crimson:  #A94442;
+      --accent-olive:    #3C763D;
+      --accent-ochre:    #B08A4B;
+
+      --orb-font-size: 0.72rem;
+      --orb-padding-y: 0.4rem;
+      --orb-padding-x: 0.85rem;
+      --orb-radius: 999px;
+    }
+
+    html, body {
+      background: var(--bg-cream);
+      color: var(--text-espresso);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      letter-spacing: 0.01em;
+      scroll-behavior: smooth;
+    }
+
+    .paper-card {
+      background: var(--bg-cream);
+      box-shadow:
+        0 1px 2px rgba(125, 82, 67, 0.05),
+        0 8px 24px rgba(125, 82, 67, 0.08);
+      border: 1px solid var(--divider-sand);
+      border-radius: 8px;
+    }
+
+    /* ════════════════════════════════════════════════
+       MARKDOWN BODY TYPOGRAPHY
+       ════════════════════════════════════════════════ */
+    .markdown-body h1 {
+      color: var(--structural);
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--divider-sand);
+    }
+    .markdown-body h2 {
+      color: var(--accent-crimson);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--divider-sand);
+      scroll-margin-top: 1rem;
+    }
+    .markdown-body h3 {
+      color: var(--structural);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      scroll-margin-top: 1rem;
+    }
+    .markdown-body p {
+      color: var(--text-espresso);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .markdown-body ul, .markdown-body ol {
+      color: var(--text-espresso);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    .markdown-body ul { list-style: disc; }
+    .markdown-body ol { list-style: decimal; }
+    .markdown-body li { margin-bottom: 0.35rem; }
+    .markdown-body li strong { color: var(--accent-ochre); font-weight: 600; }
+    .markdown-body strong { color: var(--structural); font-weight: 600; }
+    .markdown-body em { color: var(--text-taupe); font-style: italic; }
+    .markdown-body hr {
+      border: none;
+      border-top: 1px solid var(--divider-sand);
+      margin: 2rem 0;
+    }
+    .markdown-body a {
+      color: var(--accent-olive);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+    .markdown-body a:hover { color: var(--accent-crimson); }
+
+    .markdown-body blockquote {
+      border-left: 3px solid var(--accent-ochre);
+      background: rgba(176, 138, 75, 0.06);
+      padding: 0.75rem 1rem;
+      margin: 1rem 0;
+      border-radius: 0 4px 4px 0;
+      color: var(--text-espresso);
+      font-style: italic;
+      font-size: 0.92rem;
+    }
+    .markdown-body code {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.82em;
+      background: rgba(125, 82, 67, 0.08);
+      color: var(--structural);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+    }
+
+    /* ════════════════════════════════════════════════
+       FLOATING CORNER ORBS (v4.4)
+       Sticky floating pills in top-left and top-right corners.
+       Initial view: full text (📖 Musnad Aḥmad 3712)
+       After scroll:  compact form (📖 only)
+       Author controls colors via ::meta color fields.
+       ════════════════════════════════════════════════ */
+
+    .orb-corner-wrap {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      right: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      pointer-events: none;
+      z-index: 90;
+    }
+
+    .orb-corner-wrap .orb {
+      pointer-events: auto;
+    }
+
+    .orb {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: var(--orb-font-size);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: var(--orb-padding-y) var(--orb-padding-x);
+      border-radius: var(--orb-radius);
+      box-shadow:
+        0 2px 8px rgba(125, 82, 67, 0.12),
+        0 1px 3px rgba(125, 82, 67, 0.08);
+      white-space: nowrap;
+      max-width: 100%;
+      transition:
+        max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.3s ease,
+        opacity 0.3s ease;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .orb .orb-label {
+      transition: opacity 0.25s ease, max-width 0.35s ease;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    body.orbs-compact .orb .orb-label {
+      opacity: 0;
+      max-width: 0;
+      margin-left: 0;
+      overflow: hidden;
+    }
+
+    body.orbs-compact .orb {
+      padding: var(--orb-padding-y) calc(var(--orb-padding-y) + 0.1rem);
+    }
+
+    .orb-left {
+      background: rgba(255, 251, 241, 0.92);
+      color: var(--text-espresso);
+      border: 1px solid var(--divider-sand);
+    }
+
+    .orb-right {
+      color: #FFFBF1;
+      border: 1px solid transparent;
+      background: rgba(125, 82, 67, 0.85);
+    }
+    .orb-right-sahih     { background: #3C763D; }
+    .orb-right-hasan     { background: #2C7BB0; }
+    .orb-right-daif      { background: #B08A4B; }
+    .orb-right-mawdu     { background: #A94442; }
+    .orb-right-mutawatir { background: #2D5F2D; }
+    .orb-right-neutral   {
+      background: rgba(255, 251, 241, 0.92);
+      color: var(--text-espresso);
+      border: 1px solid var(--divider-sand);
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --orb-font-size: 0.62rem;
+        --orb-padding-y: 0.32rem;
+        --orb-padding-x: 0.65rem;
+      }
+      .orb-corner-wrap {
+        top: 0.6rem;
+        left: 0.6rem;
+        right: 0.6rem;
+      }
+      .orb {
+        gap: 0.25rem;
+        box-shadow:
+          0 1px 4px rgba(125, 82, 67, 0.15),
+          0 1px 2px rgba(125, 82, 67, 0.1);
+      }
+    }
+
+    /* ════════════════════════════════════════════════
+       FOLLOW-ALONG VIDEO PANE (v4.5)
+       Normal embed by default (scrolls away like any
+       image). Reader can pin it via the 📌 button so it
+       freezes near the top of the viewport (below the
+       orbs) while they scroll the word-by-word text
+       beneath it — useful for learners, skippable for
+       those who've memorized it. Resets to unpinned on
+       every page load (no persistence).
+       ════════════════════════════════════════════════ */
+
+    .markdown-body .video-card {
+      position: relative;
+      max-width: 360px;
+      margin: 0 auto 1.25rem;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(125, 82, 67, 0.25);
+      border: 1px solid var(--divider-sand);
+      transition: max-width 0.25s ease, top 0.25s ease;
+    }
+    .markdown-body .video-card iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      display: block;
+    }
+    .markdown-body .video-card.pinned {
+      position: sticky;
+      top: 4rem;
+      z-index: 70;
+      max-width: 240px;
+    }
+
+    .video-pin-toggle {
+      position: absolute;
+      bottom: 6px;
+      right: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 999px;
+      color: #fff;
+      padding: 0.3rem 0.65rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 5;
+      backdrop-filter: blur(2px);
+      transition: background 0.15s ease;
+    }
+    .video-pin-toggle:hover { background: rgba(0, 0, 0, 0.8); }
+    .markdown-body .video-card.pinned .video-pin-toggle {
+      background: var(--accent-crimson);
+    }
+    @media (max-width: 640px) {
+      .markdown-body .video-card.pinned { top: 3.2rem; max-width: 180px; }
+    }
+
+    /* ════════════════════════════════════════════════
+       FLOATING TOC PANEL (v4.1)
+       ════════════════════════════════════════════════ */
+
+    .toc-floating-panel {
+      position: fixed;
+      bottom: 11rem;
+      right: 1.5rem;
+      top: auto;
+      left: auto;
+      max-width: 22rem;
+      width: min(22rem, calc(100vw - 3rem));
+      background: var(--bg-cream);
+      border: 1px solid var(--divider-sand);
+      border-radius: 8px;
+      box-shadow:
+        0 4px 12px rgba(125, 82, 67, 0.1),
+        0 12px 36px rgba(125, 82, 67, 0.12);
+      padding: 0.85rem 1.1rem;
+      z-index: 110;
+      max-height: 55vh;
+      overflow-y: auto;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc-list li { margin: 0; padding: 0; }
+    .toc-list a {
+      display: block;
+      padding: 0.4rem 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-espresso);
+      text-decoration: none;
+      border-radius: 4px;
+      border-left: 2px solid transparent;
+      transition: all 0.15s ease;
+    }
+    .toc-list a:hover {
+      background: rgba(125, 82, 67, 0.08);
+      border-left-color: var(--structural);
+      color: var(--structural);
+    }
+    .toc-list .toc-h2 { font-weight: 600; }
+    .toc-list .toc-h3 a {
+      padding-left: 1.5rem;
+      font-size: 0.76rem;
+      color: var(--text-taupe);
+    }
+
+    /* ════════════════════════════════════════════════
+       FLOATING BOTTOM-LEFT READING MODE FAN (v4.3)
+       ════════════════════════════════════════════════ */
+
+    .mode-fan {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mode-fan-trigger {
+      font-family: 'Inter', 'UthmanicHafs', 'Amiri Quran', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .mode-fan-trigger.fan-open {
+      background: rgba(125, 82, 67, 0.12);
+      box-shadow: inset 0 1px 3px rgba(125, 82, 67, 0.2);
+    }
+
+    .mode-fan-items {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      margin-bottom: 0.65rem;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .mode-fan-item {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid var(--divider-sand);
+      background: var(--bg-cream);
+      box-shadow: 0 2px 8px rgba(125, 82, 67, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: 'Inter', 'UthmanicHafs', 'Amiri Quran', sans-serif;
+      color: var(--text-espresso);
+      cursor: pointer;
+      user-select: none;
+      padding: 0;
+      position: relative;
+      opacity: 0;
+      transform: translateY(15px) scale(0.6);
+      transition:
+        opacity 0.22s ease,
+        transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .mode-fan.fan-open .mode-fan-items {
+      pointer-events: auto;
+    }
+    .mode-fan.fan-open .mode-fan-item {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .mode-fan.fan-open .mode-fan-item:nth-child(1) { transition-delay: 0.00s; }
+    .mode-fan.fan-open .mode-fan-item:nth-child(2) { transition-delay: 0.04s; }
+    .mode-fan.fan-open .mode-fan-item:nth-child(3) { transition-delay: 0.08s; }
+    .mode-fan.fan-open .mode-fan-item:nth-child(4) { transition-delay: 0.12s; }
+
+    .mode-fan-item:hover {
+      background: rgba(176, 138, 75, 0.15);
+      box-shadow: 0 4px 14px rgba(125, 82, 67, 0.22);
+      transform: translateY(0) scale(1.08);
+    }
+
+    .mode-fan-item.active::after {
+      content: '';
+      position: absolute;
+      bottom: -0.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--accent-crimson);
+    }
+
+    @media (max-width: 640px) {
+      .mode-fan { bottom: 1rem; left: 1rem; }
+      .mode-fan-item { width: 2.2rem; height: 2.2rem; font-size: 0.85rem; }
+      .mode-fan-items { gap: 0.4rem; margin-bottom: 0.55rem; }
+    }
+
+    /* ════════════════════════════════════════════════
+       ZOOM ENGINE (v4.2)
+       ════════════════════════════════════════════════ */
+
+    body[data-zoom="1"] { --zoom-arabic: 0.55; --zoom-text: 0.65; --zoom-spacing: 0.25; }
+    body[data-zoom="2"] { --zoom-arabic: 0.65; --zoom-text: 0.73; --zoom-spacing: 0.35; }
+    body[data-zoom="3"] { --zoom-arabic: 0.75; --zoom-text: 0.81; --zoom-spacing: 0.45; }
+    body[data-zoom="4"] { --zoom-arabic: 0.85; --zoom-text: 0.90; --zoom-spacing: 0.55; }
+    body[data-zoom="5"] { --zoom-arabic: 1.00; --zoom-text: 1.00; --zoom-spacing: 0.70; }
+
+    body { --zoom-arabic: 1; --zoom-text: 1; --zoom-spacing: 1; }
+
+    body[data-zoom] .markdown-body .ayah .w > b {
+      font-size: calc(2.1rem * var(--zoom-arabic));
+    }
+    body[data-zoom][data-mode="arabic-first"] .ayah .w > b {
+      font-size: calc(2.3rem * var(--zoom-arabic));
+    }
+    body[data-zoom][data-mode="arabic-only"] .ayah .w > b {
+      font-size: calc(2.6rem * var(--zoom-arabic));
+    }
+    body[data-zoom][data-mode="verbal"] .ayah .w > b {
+      font-size: calc(1.6rem * var(--zoom-arabic));
+    }
+
+    body[data-zoom] .markdown-body .ayah .w > i {
+      font-size: calc(0.78rem * var(--zoom-text));
+    }
+    body[data-zoom] .markdown-body .ayah .w > u {
+      font-size: calc(0.7rem * var(--zoom-text));
+    }
+    body[data-zoom][data-mode="verbal"] .ayah .w > u {
+      font-size: calc(1rem * var(--zoom-text));
+    }
+
+    body[data-zoom] .markdown-body p,
+    body[data-zoom] .markdown-body ul,
+    body[data-zoom] .markdown-body ol {
+      font-size: calc(0.9rem * var(--zoom-text));
+    }
+    body[data-zoom] .markdown-body blockquote {
+      font-size: calc(0.92rem * var(--zoom-text));
+    }
+    body[data-zoom] .markdown-body h1 {
+      font-size: calc(1.75rem * var(--zoom-text));
+    }
+    body[data-zoom] .markdown-body h2 {
+      font-size: calc(1.25rem * var(--zoom-text));
+    }
+    body[data-zoom] .markdown-body h3 {
+      font-size: calc(1rem * var(--zoom-text));
+    }
+
+    body[data-zoom] .markdown-body .ayah {
+      padding: calc(1.4rem * var(--zoom-spacing)) calc(1.1rem * var(--zoom-spacing)) calc(1.1rem * var(--zoom-spacing));
+      gap: calc(0.4rem * var(--zoom-spacing)) calc(0.85rem * var(--zoom-spacing));
+      margin: calc(1.5rem * var(--zoom-spacing)) 0;
+    }
+    body[data-zoom] .markdown-body .ayah .w {
+      min-width: calc(60px * var(--zoom-spacing));
+      padding: calc(0.35rem * var(--zoom-spacing)) calc(0.25rem * var(--zoom-spacing));
+    }
+
+    /* ════════════════════════════════════════════════
+       AYAH BLOCK — Quran-app style word-grid
+       ════════════════════════════════════════════════ */
+    .markdown-body .ayah {
+      direction: rtl;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0.4rem 0.85rem;
+      background: rgba(230, 220, 208, 0.22);
+      border: 1px solid var(--divider-sand);
+      border-radius: 10px;
+      padding: 1.4rem 1.1rem 1.1rem;
+      margin: 1.5rem 0;
+    }
+
+    .markdown-body .ayah .w {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      min-width: 60px;
+      padding: 0.35rem 0.25rem;
+      border-radius: 6px;
+      transition: background 0.15s ease;
+    }
+    .markdown-body .ayah .w:hover {
+      background: rgba(125, 82, 67, 0.06);
+    }
+
+    .markdown-body .ayah .w > b {
+      font-family: 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif;
+      font-weight: 400;
+      font-size: 2.1rem;
+      line-height: 2.6;
+      color: var(--text-espresso);
+      direction: rtl;
+      letter-spacing: 0;
+    }
+
+    .markdown-body .ayah .w > i {
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-espresso);
+      direction: ltr;
+      margin-top: 0.15rem;
+      line-height: 1.3;
+      max-width: 130px;
+    }
+
+    .markdown-body .ayah .w > u {
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      font-style: italic;
+      font-size: 0.7rem;
+      color: var(--accent-ochre);
+      direction: ltr;
+      margin-top: 0.1rem;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      max-width: 130px;
+    }
+
+    /* ════════════════════════════════════════════════
+       READING MODES
+       ════════════════════════════════════════════════ */
+    body[data-mode="arabic-first"] .ayah .w > u { display: none; }
+    body[data-mode="arabic-first"] .ayah .w > b { font-size: 2.3rem; }
+
+    body[data-mode="verbal"] .ayah .w > b {
+      font-size: 1.6rem;
+      opacity: 0.65;
+      line-height: 2.2;
+    }
+    body[data-mode="verbal"] .ayah .w > u {
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--text-espresso);
+      order: -1;
+      margin-top: 0;
+      margin-bottom: 0.2rem;
+    }
+
+    body[data-mode="arabic-only"] .ayah .w > i,
+    body[data-mode="arabic-only"] .ayah .w > u { display: none; }
+    body[data-mode="arabic-only"] .ayah .w > b {
+      font-size: 2.6rem;
+      line-height: 2.8;
+    }
+    body[data-mode="arabic-only"] .ayah {
+      padding: 1.6rem 1.2rem;
+      gap: 0.6rem 1.2rem;
+    }
+
+    /* ════════════════════════════════════════════════
+       COLLAPSIBLE DETAILS — Hadith narration drawer
+       ════════════════════════════════════════════════ */
+    .markdown-body details {
+      background: rgba(125, 82, 67, 0.04);
+      border: 1px solid var(--divider-sand);
+      border-left: 3px solid var(--accent-ochre);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      margin: 1.25rem 0;
+      transition: background 0.18s ease;
+    }
+    .markdown-body details[open] {
+      background: rgba(230, 220, 208, 0.18);
+    }
+    .markdown-body summary {
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--structural);
+      user-select: none;
+      padding: 0.15rem 0;
+      list-style: none;
+    }
+    .markdown-body summary::-webkit-details-marker { display: none; }
+    .markdown-body summary::before {
+      content: '▶';
+      display: inline-block;
+      margin-right: 0.5rem;
+      font-size: 0.65rem;
+      color: var(--accent-ochre);
+      transition: transform 0.2s ease;
+    }
+    .markdown-body details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    .markdown-body details > *:not(summary) {
+      margin-top: 0.85rem;
+    }
+    .markdown-body details .ayah {
+      background: rgba(230, 220, 208, 0.35);
+    }
+    .markdown-body details blockquote {
+      background: rgba(125, 82, 67, 0.04);
+      font-size: 0.85rem;
+    }
+
+    /* ════════════════════════════════════════════════
+       MOBILE TIGHTENING
+       ════════════════════════════════════════════════ */
+    @media (max-width: 640px) {
+      .markdown-body h1 { font-size: 1.4rem; }
+      .markdown-body h2 { font-size: 1.1rem; }
+
+      .markdown-body .ayah { padding: 1rem 0.7rem 0.8rem; gap: 0.3rem 0.5rem; }
+      .markdown-body .ayah .w { min-width: 50px; padding: 0.25rem 0.15rem; }
+      .markdown-body .ayah .w > b { font-size: 1.75rem; line-height: 2.4; }
+
+      body[data-mode="arabic-first"] .ayah .w > b { font-size: 1.95rem; }
+      body[data-mode="arabic-only"] .ayah .w > b { font-size: 2.2rem; line-height: 2.6; }
+      body[data-mode="verbal"] .ayah .w > b { font-size: 1.35rem; }
+      body[data-mode="verbal"] .ayah .w > u { font-size: 0.85rem; }
+
+      .markdown-body .ayah .w > i { font-size: 0.72rem; max-width: 95px; }
+      .markdown-body .ayah .w > u { font-size: 0.64rem; max-width: 95px; }
+    }
+
+    /* ════════════════════════════════════════════════
+       FLOATING BOTTOM-RIGHT CONTROLS
+       ════════════════════════════════════════════════ */
+    .float-controls {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      z-index: 100;
+    }
+    .float-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      border: 1px solid var(--divider-sand);
+      background: var(--bg-cream);
+      box-shadow: 0 2px 8px rgba(125,82,67,0.15), 0 1px 2px rgba(125,82,67,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: box-shadow 0.18s ease, transform 0.15s ease, background 0.15s ease;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-espresso);
+      user-select: none;
+      padding: 0;
+    }
+    .float-btn:hover:not(:disabled) {
+      background: rgba(125,82,67,0.08);
+      box-shadow: 0 4px 14px rgba(125,82,67,0.22);
+      transform: scale(1.09);
+    }
+    .float-btn:disabled {
+      opacity: 0.28;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .float-btn.toc-open {
+      background: rgba(125,82,67,0.12);
+      box-shadow: inset 0 1px 3px rgba(125,82,67,0.2);
+    }
+    @media (max-width: 640px) {
+      .float-controls { bottom: 1rem; right: 1rem; }
+      .float-btn { width: 2.2rem; height: 2.2rem; font-size: 0.8rem; }
+      .toc-floating-panel { bottom: 9.5rem; right: 1rem; }
+    }
+  </style>
+</head>
+<body data-mode="arabic-first" class="min-h-screen antialiased">
+
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 pt-16 pb-8">
+
+    <!-- Floating TOC panel (hidden by default) -->
+    <nav id="toc" class="toc-floating-panel" style="display:none;">
+      <ul class="toc-list" id="tocList"></ul>
+    </nav>
+
+    <!-- Markdown content -->
+    <article class="paper-card p-6 sm:p-10">
+      <div id="markdown-target" class="markdown-body">
+        <p class="text-xs italic" style="color: var(--text-taupe);">Loading content...</p>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ────────── Floating bottom-left Reading Mode fan ────────── -->
+  <div class="mode-fan" id="modeFan">
+    <div class="mode-fan-items" id="modeFanItems"></div>
+    <button class="float-btn mode-fan-trigger" id="modeFanTrigger" type="button" title="Reading Mode">
+      <span id="modeFanTriggerIcon">Aa</span>
+    </button>
+  </div>
+
+  <!-- ────────── Floating bottom-right controls ────────── -->
+  <div class="float-controls" id="floatControls">
+    <button class="float-btn" id="floatTocBtn" title="Table of Contents" style="display:none;">📜</button>
+    <button class="float-btn" id="floatZoomIn"  title="Zoom in">🔍+</button>
+    <button class="float-btn" id="floatZoomOut" title="Zoom out">🔍−</button>
+  </div>
+
+  <!-- ────────── Floating corner orbs (rendered by parser) ────────── -->
+  <div class="orb-corner-wrap" id="orb-corner-wrap" style="display:none;"></div>
+
+  <footer class="text-center text-[10px] font-semibold tracking-widest uppercase py-6" style="color: var(--text-taupe);">
+    Steps of Rasul · Collectible Sunnah Card
+  </footer>
+
+  <script>
+    // ════════════════════════════════════════════
+    // Reading Mode Fan v4.3
+    // 🔧 TUNE HERE: change icons, labels, or order below
+    // ════════════════════════════════════════════
+    const READING_MODES = [
+      { key: 'arabic-first', icon: 'أ',  label: 'Arabic-first' },
+      { key: 'learner',      icon: 'Aa', label: 'Learner' },
+      { key: 'verbal',       icon: '🔊', label: 'Verbal' },
+      { key: 'arabic-only',  icon: 'ٱ',  label: 'Arabic-only' }
+    ];
+
+    const MODE_KEY = 'tahlil-reading-mode';
+    const DEFAULT_MODE = 'arabic-first';
+
+    function getCurrentMode() {
+      const saved = localStorage.getItem(MODE_KEY);
+      const valid = READING_MODES.some(m => m.key === saved);
+      return valid ? saved : DEFAULT_MODE;
+    }
+
+    function getModeConfig(key) {
+      return READING_MODES.find(m => m.key === key) || READING_MODES[0];
+    }
+
+    function applyMode(key) {
+      const cfg = getModeConfig(key);
+      document.body.setAttribute('data-mode', cfg.key);
+      localStorage.setItem(MODE_KEY, cfg.key);
+
+      const triggerIcon = document.getElementById('modeFanTriggerIcon');
+      if (triggerIcon) triggerIcon.textContent = cfg.icon;
+
+      const trigger = document.getElementById('modeFanTrigger');
+      if (trigger) trigger.title = `Reading Mode: ${cfg.label}`;
+
+      document.querySelectorAll('.mode-fan-item').forEach(b => {
+        b.classList.toggle('active', b.dataset.modeKey === cfg.key);
+      });
+    }
+
+    function openFan() {
+      const fan = document.getElementById('modeFan');
+      const trigger = document.getElementById('modeFanTrigger');
+      if (fan) fan.classList.add('fan-open');
+      if (trigger) trigger.classList.add('fan-open');
+    }
+
+    function closeFan() {
+      const fan = document.getElementById('modeFan');
+      const trigger = document.getElementById('modeFanTrigger');
+      if (fan) fan.classList.remove('fan-open');
+      if (trigger) trigger.classList.remove('fan-open');
+    }
+
+    function toggleFan() {
+      const fan = document.getElementById('modeFan');
+      if (fan.classList.contains('fan-open')) closeFan();
+      else openFan();
+    }
+
+    function buildModeFan() {
+      const container = document.getElementById('modeFanItems');
+      const trigger   = document.getElementById('modeFanTrigger');
+      if (!container || !trigger) return;
+
+      container.innerHTML = '';
+      READING_MODES.forEach(m => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'mode-fan-item';
+        btn.dataset.modeKey = m.key;
+        btn.title = m.label;
+        btn.textContent = m.icon;
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          applyMode(m.key);
+          closeFan();
+        });
+        container.appendChild(btn);
+      });
+
+      trigger.onclick = (e) => {
+        e.stopPropagation();
+        toggleFan();
+      };
+
+      document.addEventListener('click', (e) => {
+        const fan = document.getElementById('modeFan');
+        if (fan && fan.classList.contains('fan-open') && !fan.contains(e.target)) {
+          closeFan();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeFan();
+      });
+    }
+
+    buildModeFan();
+    applyMode(getCurrentMode());
+
+    // ════════════════════════════════════════════
+    // Follow-along video — pin/unpin toggle
+    // Off by default on every load; reader opts in.
+    // ════════════════════════════════════════════
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.video-pin-toggle');
+      if (!btn) return;
+      const card = btn.closest('.video-card');
+      if (!card) return;
+      const pinned = card.classList.toggle('pinned');
+      btn.textContent = pinned ? '📌 Pinned' : '📌 Follow along';
+    });
+
+    // ════════════════════════════════════════════
+    // Zoom engine v4.2
+    // ════════════════════════════════════════════
+    const ZOOM_KEY = 'tahlil-zoom-level';
+    const ZOOM_MIN = 1, ZOOM_MAX = 5, ZOOM_DEFAULT = 3;
+
+    function getCurrentZoom() {
+      const raw = parseInt(localStorage.getItem(ZOOM_KEY), 10);
+      if (isNaN(raw) || raw < ZOOM_MIN || raw > ZOOM_MAX) return ZOOM_DEFAULT;
+      return raw;
+    }
+
+    function applyZoom(level) {
+      const clamped = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, level));
+      document.body.setAttribute('data-zoom', clamped);
+      localStorage.setItem(ZOOM_KEY, clamped);
+
+      const fOut = document.getElementById('floatZoomOut');
+      const fIn  = document.getElementById('floatZoomIn');
+      if (fOut) fOut.disabled = (clamped <= ZOOM_MIN);
+      if (fIn)  fIn.disabled  = (clamped >= ZOOM_MAX);
+    }
+
+    applyZoom(getCurrentZoom());
+
+    document.getElementById('floatZoomOut')?.addEventListener('click', () => {
+      applyZoom(getCurrentZoom() - 1);
+    });
+    document.getElementById('floatZoomIn')?.addEventListener('click', () => {
+      applyZoom(getCurrentZoom() + 1);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!(e.ctrlKey || e.metaKey)) return;
+      if (e.key === '-' || e.key === '_') {
+        e.preventDefault();
+        applyZoom(getCurrentZoom() - 1);
+      } else if (e.key === '=' || e.key === '+') {
+        e.preventDefault();
+        applyZoom(getCurrentZoom() + 1);
+      } else if (e.key === '0') {
+        e.preventDefault();
+        applyZoom(ZOOM_DEFAULT);
+      }
+    });
+
+    // ════════════════════════════════════════════
+    // Slugify helper (used by TOC)
+    // ════════════════════════════════════════════
+    function slugify(text) {
+      return text.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim();
+    }
+
+    // ════════════════════════════════════════════
+    // Meta-block parser
+    // ════════════════════════════════════════════
+    function parseMetaBlock(mdSource) {
+      const metaRe = /^::meta\s*\n([\s\S]*?)\n::\s*\n?/m;
+      const match = mdSource.match(metaRe);
+      if (!match) return { meta: null, stripped: mdSource };
+
+      const lines = match[1].split('\n');
+      const meta = {};
+      lines.forEach(line => {
+        const idx = line.indexOf(':');
+        if (idx === -1) return;
+        const key = line.slice(0, idx).trim().toLowerCase();
+        const val = line.slice(idx + 1).trim();
+        if (key) meta[key] = val;
+      });
+
+      const stripped = mdSource.replace(metaRe, '');
+      return { meta, stripped };
+    }
+
+    // ════════════════════════════════════════════
+    // Orb rendering v4.4
+    //   Two orbs, both sticky floating (top corners).
+    //   Full text on initial view; compact (leading emoji)
+    //   after user scrolls past threshold.
+    //
+    //   Author-controllable meta fields:
+    //     left-orb           → full display text (e.g., "📖 Musnad Aḥmad 3712")
+    //     left-orb-compact   → override for compact form (default: leading emoji auto-extracted)
+    //     left-orb-color     → background hex override (e.g., "#F5E9DC")
+    //     left-orb-text      → text color hex override (e.g., "#3A2E2B")
+    //     right-orb          → full display text (e.g., "🟢✦✦✦ Ṣaḥīḥ (Darussalam)")
+    //     right-orb-compact  → override for compact form
+    //     right-orb-color    → background hex override
+    //     right-orb-text     → text color hex override
+    // ════════════════════════════════════════════
+
+    // Regex that finds a leading emoji or symbol cluster
+    const LEADING_ICON_RE = /^([\p{Extended_Pictographic}\u2600-\u27BF\u2B00-\u2BFF\u2300-\u23FF\uFE0F\u200D]+)\s*/u;
+
+    function extractLeadingIcon(text) {
+      if (!text) return '';
+      const match = text.match(LEADING_ICON_RE);
+      return match ? match[1] : '';
+    }
+
+    function buildOrbStyle(bg, text) {
+      const parts = [];
+      if (bg)   parts.push(`background: ${bg}`);
+      if (text) parts.push(`color: ${text}`);
+      if (parts.length === 0) return '';
+      return `style="${parts.join('; ')};"`;
+    }
+
+    function renderMetaCard(meta) {
+      if (!meta) return '';
+
+      const leftFull  = meta['left-orb']  || '';
+      const rightFull = meta['right-orb'] || (meta.grade ? meta.grade.toUpperCase() : '');
+
+      if (!leftFull && !rightFull) return '';
+
+      // Compact forms — explicit override wins, else auto-extract leading icon
+      const leftCompact  = meta['left-orb-compact']  || extractLeadingIcon(leftFull)  || leftFull;
+      const rightCompact = meta['right-orb-compact'] || extractLeadingIcon(rightFull) || rightFull;
+
+      // Auto color-code right orb by detecting grade keywords in text
+      const rightLower = rightFull.toLowerCase();
+      let rightColorClass = 'orb-right-neutral';
+      if (rightLower.includes('ṣaḥīḥ') || rightLower.includes('sahih')) rightColorClass = 'orb-right-sahih';
+      else if (rightLower.includes('ḥasan') || rightLower.includes('hasan')) rightColorClass = 'orb-right-hasan';
+      else if (rightLower.includes('ḍaʿīf') || rightLower.includes('daif')) rightColorClass = 'orb-right-daif';
+      else if (rightLower.includes('mawḍūʿ') || rightLower.includes('mawdu')) rightColorClass = 'orb-right-mawdu';
+      else if (rightLower.includes('mutawātir') || rightLower.includes('mutawatir')) rightColorClass = 'orb-right-mutawatir';
+
+      // Inline style overrides if author specified colors
+      const leftStyle  = buildOrbStyle(meta['left-orb-color'],  meta['left-orb-text']);
+      const rightStyle = buildOrbStyle(meta['right-orb-color'], meta['right-orb-text']);
+
+      // Split leading icon from rest of label
+      const leftLabel  = leftFull.replace(LEADING_ICON_RE, '');
+      const rightLabel = rightFull.replace(LEADING_ICON_RE, '');
+
+      const leftHTML = leftFull
+        ? `<span class="orb orb-left" ${leftStyle}><span class="orb-icon">${leftCompact}</span>${leftLabel ? `<span class="orb-label">${leftLabel}</span>` : ''}</span>`
+        : '<span></span>';
+
+      const rightHTML = rightFull
+        ? `<span class="orb orb-right ${rightColorClass}" ${rightStyle}><span class="orb-icon">${rightCompact}</span>${rightLabel ? `<span class="orb-label">${rightLabel}</span>` : ''}</span>`
+        : '';
+
+      return `${leftHTML}${rightHTML}`;
+    }
+
+    // ════════════════════════════════════════════
+    // Orb scroll watcher — triggers compact mode
+    // when user scrolls past threshold
+    // ════════════════════════════════════════════
+    function initOrbScrollWatcher() {
+      const SCROLL_THRESHOLD = 100;
+
+      let ticking = false;
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const scrolled = window.scrollY > SCROLL_THRESHOLD;
+          document.body.classList.toggle('orbs-compact', scrolled);
+          ticking = false;
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    // ════════════════════════════════════════════
+    // Word-stack parser
+    //   [[arabic|english|translit]]  →  <span class="w"><b>...</b><i>...</i><u>...</u></span>
+    // ════════════════════════════════════════════
+    function parseWordStacks(rootEl) {
+      const html = rootEl.innerHTML;
+      const wordRe = /(?<!\\)\[\[([^\[\]|]+)(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?\]\]/g;
+
+      const transformed = html.replace(wordRe, (match, ar, en, tr) => {
+        const arabic = (ar || '').trim();
+        const english = (en || '').trim();
+        const translit = (tr || '').trim();
+        let inner = `<b>${arabic}</b>`;
+        if (english) inner += `<i>${english}</i>`;
+        if (translit) inner += `<u>${translit}</u>`;
+        return `<span class="w">${inner}</span>`;
+      })
+      .replace(/\\\[\[/g, '[[');
+
+      rootEl.innerHTML = transformed;
+      groupAyahs(rootEl);
+    }
+
+    function groupAyahs(rootEl) {
+      const allW = Array.from(rootEl.querySelectorAll('span.w'));
+      let i = 0;
+      while (i < allW.length) {
+        const first = allW[i];
+        if (first.closest('.ayah')) { i++; continue; }
+
+        const group = [first];
+        let next = first.nextSibling;
+        while (next) {
+          if (next.nodeType === Node.TEXT_NODE && next.textContent.trim() === '') {
+            next = next.nextSibling;
+            continue;
+          }
+          if (next.nodeType === Node.ELEMENT_NODE && next.classList && next.classList.contains('w')) {
+            group.push(next);
+            next = next.nextSibling;
+            continue;
+          }
+          break;
+        }
+
+        const ayah = document.createElement('div');
+        ayah.className = 'ayah';
+        first.parentNode.insertBefore(ayah, first);
+        group.forEach(node => ayah.appendChild(node));
+
+        i += group.length;
+      }
+
+      rootEl.querySelectorAll('p > .ayah').forEach(ayah => {
+        const p = ayah.parentNode;
+        const onlyChild = Array.from(p.childNodes).every(n =>
+          n === ayah || (n.nodeType === Node.TEXT_NODE && n.textContent.trim() === '')
+        );
+        if (onlyChild) {
+          p.parentNode.insertBefore(ayah, p);
+          p.remove();
+        } else {
+          p.parentNode.insertBefore(ayah, p.nextSibling);
+        }
+      });
+    }
+
+    // ════════════════════════════════════════════
+    // TOC builder v4.1
+    // ════════════════════════════════════════════
+    function buildTOC(target) {
+      const tocPanel = document.getElementById('toc');
+      const tocList = document.getElementById('tocList');
+      const floatTocBtn = document.getElementById('floatTocBtn');
+      const headings = target.querySelectorAll('h2, h3');
+
+      if (headings.length < 2) {
+        if (tocPanel) tocPanel.style.display = 'none';
+        if (floatTocBtn) floatTocBtn.style.display = 'none';
+        return;
+      }
+
+      tocList.innerHTML = '';
+      headings.forEach((h, i) => {
+        if (!h.id) h.id = slugify(h.textContent) || `section-${i}`;
+        const li = document.createElement('li');
+        li.className = h.tagName === 'H2' ? 'toc-h2' : 'toc-h3';
+        const a = document.createElement('a');
+        a.href = `#${h.id}`;
+        a.textContent = h.textContent;
+
+        a.addEventListener('click', () => {
+          const heading = document.getElementById(h.id);
+          if (heading) {
+            let node = heading.nextElementSibling;
+            while (node && !['H1', 'H2', 'H3'].includes(node.tagName)) {
+              if (node.tagName === 'DETAILS') node.open = true;
+              if (node.querySelectorAll) node.querySelectorAll('details').forEach(d => d.open = true);
+              node = node.nextElementSibling;
+            }
+            const parentDetails = heading.closest('details');
+            if (parentDetails) parentDetails.open = true;
+          }
+          closeTOC();
+        });
+
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+
+      if (floatTocBtn) floatTocBtn.style.display = 'flex';
+
+      if (floatTocBtn) {
+        floatTocBtn.onclick = (e) => {
+          e.stopPropagation();
+          if (tocPanel.style.display === 'block') closeTOC();
+          else openTOC();
+        };
+      }
+
+      document.addEventListener('click', (e) => {
+        if (tocPanel.style.display === 'block' &&
+          !tocPanel.contains(e.target) &&
+          e.target !== floatTocBtn &&
+          !(floatTocBtn && floatTocBtn.contains(e.target))) {
+          closeTOC();
+        }
+      });
+    }
+
+    function openTOC() {
+      const tocPanel = document.getElementById('toc');
+      const floatTocBtn = document.getElementById('floatTocBtn');
+      if (tocPanel) tocPanel.style.display = 'block';
+      if (floatTocBtn) floatTocBtn.classList.add('toc-open');
+    }
+
+    function closeTOC() {
+      const tocPanel = document.getElementById('toc');
+      const floatTocBtn = document.getElementById('floatTocBtn');
+      if (tocPanel) tocPanel.style.display = 'none';
+      if (floatTocBtn) floatTocBtn.classList.remove('toc-open');
+    }
+
+    // ════════════════════════════════════════════
+    // Auto-expand <details> when URL hash targets one
+    // ════════════════════════════════════════════
+    function handleHashOpen() {
+      if (!window.location.hash) return;
+      setTimeout(() => {
+        const targetEl = document.querySelector(window.location.hash);
+        if (!targetEl) return;
+        let parent = targetEl.closest('details');
+        while (parent) {
+          parent.open = true;
+          parent = parent.parentElement ? parent.parentElement.closest('details') : null;
+        }
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+
+    // ════════════════════════════════════════════
+    // Markdown fetch & render
+    // ════════════════════════════════════════════
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('file');
+      const target = document.getElementById('markdown-target');
+
+      if (!file) {
+        target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ No file specified. Append <code>?file=yourfile.md</code> to the URL.</p>`;
+        return;
+      }
+
+      try {
+        const res = await fetch(file);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const md = await res.text();
+
+        marked.setOptions({ gfm: true, breaks: false });
+        const { meta, stripped } = parseMetaBlock(md);
+        const metaCardHTML = renderMetaCard(meta);
+
+        const orbTarget = document.getElementById('orb-corner-wrap');
+        if (orbTarget && metaCardHTML) {
+          orbTarget.innerHTML = metaCardHTML;
+          orbTarget.style.display = 'flex';
+          initOrbScrollWatcher();
+        }
+
+        target.innerHTML = marked.parse(stripped);
+
+        parseWordStacks(target);
+        buildTOC(target);
+        handleHashOpen();
+
+        const h1 = target.querySelector('h1');
+        if (h1) document.title = h1.textContent;
+      } catch (err) {
+        console.error(err);
+        target.innerHTML = `
+          <p style="color: var(--accent-crimson);">
+            ⚠️ <strong>Could not load file:</strong> <code>${file}</code><br>
+            <span style="color: var(--text-taupe); font-size: 0.85em;">Check the path and that the file exists relative to this HTML.</span>
+          </p>`;
+      }
+    });
+
+    document.fonts.ready.then(() => {
+      const hasUthmanic = Array.from(document.fonts).some(f => f.family.includes('UthmanicHafs') && f.status === 'loaded');
+      if (!hasUthmanic) {
+        console.info('ℹ️  KFGQPC UthmanicHafs not found at ./fonts/UthmanicHafs1Ver18.ttf — falling back to Amiri Quran.');
+      }
+    });
+  </script>
+</body>
+</html> 
+
