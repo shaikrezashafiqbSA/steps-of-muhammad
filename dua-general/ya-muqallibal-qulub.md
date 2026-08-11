@@ -8,7 +8,7 @@ grade: Hasan
 left-orb: 📜Tirmidhi 2140
 left-orb-compact: ﷴﷺ
 right-orb: Hasan
-right-orb-compact: ۞۞۞
+right-orb-compact: ۞۞
 ::
 
 ## Yā Muqallibal-Qulūb — The Prophet's ﷺ Most Frequent Supplication for a Steadfast Heart
