@@ -1,4 +1,6 @@
-const CACHE_NAME = 'steps-of-muhammad-v2';
+// Bump this on every deploy that changes any cached file (shell files below, or dua content).
+// See PWA_NOTES.md for what this does and when you need to touch it.
+const CACHE_NAME = 'steps-of-muhammad-v3';
 
 // App shell: the minimum needed to open the app and render any dua offline immediately after install.
 // render.html/render_collection.html are the engine that fetches individual dua .md files at runtime
@@ -43,15 +45,17 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Network-first: always serve the freshest content when online (dua text does get corrected),
-// cache every successful response as we go, and fall back to cache when offline.
+// Stale-while-revalidate: serve the cached copy instantly if we have one (this is what makes
+// dua pages feel instant again), while refetching in the background to update the cache for
+// next time. A dua edited upstream shows up on the visit *after* the one that refreshed it —
+// see PWA_NOTES.md for why, and how CACHE_NAME above forces a full refresh when you need one.
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   if (request.method !== 'GET') return;
 
   event.respondWith(
-    fetch(request)
-      .then((response) => {
+    caches.match(request).then((cached) => {
+      const network = fetch(request).then((response) => {
         // Only cache real successes. Opaque responses (type 'opaque') are cross-origin no-cors
         // fetches — e.g. Google Fonts files — whose status we can't inspect, so we cache those too;
         // an actual same-origin 404 (a dead link left over from a page migration) is never cached.
@@ -60,10 +64,17 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
         }
         return response;
-      })
-      .catch(() => caches.match(request).then((cached) => {
-        if (cached) return cached;
+      }).catch(() => undefined);
+
+      if (cached) {
+        event.waitUntil(network);
+        return cached;
+      }
+
+      return network.then((response) => {
+        if (response) return response;
         if (request.mode === 'navigate') return caches.match('./index.html');
-      }))
+      });
+    })
   );
 });
