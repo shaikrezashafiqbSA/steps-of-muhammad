@@ -1,22 +1,34 @@
-const CACHE_NAME = 'steps-of-muhammad-v1';
+const CACHE_NAME = 'steps-of-muhammad-v2';
 
-// App shell: the minimum needed to open the app offline immediately after install.
-// Individual dua pages are cached on-the-fly the first time each one is visited (see fetch handler below),
-// so new pages added to the site don't require updating this list.
+// App shell: the minimum needed to open the app and render any dua offline immediately after install.
+// render.html/render_collection.html are the engine that fetches individual dua .md files at runtime
+// (see fetch handler below) — the .md/.html content itself is cached on-the-fly as each page is visited,
+// so migrating pages from standalone .html to render.html?file=x.md needs no changes here.
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.json',
   './dua-core.css',
+  './render.html',
+  './render_collection.html',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png'
 ];
 
+// Best-effort: the markdown renderer depends on this, but a hiccup fetching it shouldn't abort install.
+const CDN_SHELL = [
+  'https://cdn.jsdelivr.net/npm/marked/marked.min.js'
+];
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(APP_SHELL))
+      .then((cache) => cache.addAll(APP_SHELL).then(() => Promise.all(
+        CDN_SHELL.map((url) => fetch(url, { mode: 'cors' })
+          .then((res) => res.ok && cache.put(url, res))
+          .catch(() => {}))
+      )))
       .then(() => self.skipWaiting())
   );
 });
@@ -40,8 +52,13 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(request)
       .then((response) => {
-        const responseClone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
+        // Only cache real successes. Opaque responses (type 'opaque') are cross-origin no-cors
+        // fetches — e.g. Google Fonts files — whose status we can't inspect, so we cache those too;
+        // an actual same-origin 404 (a dead link left over from a page migration) is never cached.
+        if (response.ok || response.type === 'opaque') {
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
+        }
         return response;
       })
       .catch(() => caches.match(request).then((cached) => {
