@@ -298,6 +298,88 @@
     .tier-empty-hint {
       font-size: 0.72rem; color: #7A6F6C; font-style: italic; padding: 0.75rem 1rem; text-align: center;
     }
+
+    /* Authenticity colour coding — background tint by hadith grade */
+    .grade-sahih { background: rgba(30, 86, 49, 0.20); border-left: 3px solid #1E5631; }
+    .grade-sahih:hover { background: rgba(30, 86, 49, 0.28); }
+    .grade-hasan { background: rgba(76, 154, 42, 0.16); border-left: 3px solid #4C9A2A; }
+    .grade-hasan:hover { background: rgba(76, 154, 42, 0.24); }
+    .grade-daif { background: rgba(172, 223, 135, 0.35); border-left: 3px solid #ACDF87; }
+    .grade-daif:hover { background: rgba(172, 223, 135, 0.5); }
+    /* Ungraded / mashāyikh-compiled wird — lighter than daʿīf, no hadith grade at all */
+    .grade-wird { background: rgba(200, 230, 180, 0.20); border-left: 3px solid #C8E6B4; }
+    .grade-wird:hover { background: rgba(200, 230, 180, 0.32); }
+
+    .grade-legend {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      font-size: 9.5px;
+      color: #7A6F6C;
+      letter-spacing: 0.02em;
+      padding: 0 0.5rem 0.35rem;
+    }
+    .grade-legend .swatch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .grade-legend .dot {
+      width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0;
+    }
+
+    /* Sequence number badge — replaces numbering baked into label text */
+    .item-num-badge {
+      flex-shrink: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #B08A4B;
+      background: rgba(176, 138, 75, 0.12);
+      border: 1px solid rgba(176, 138, 75, 0.3);
+      border-radius: 5px;
+      padding: 0.1rem 0.35rem;
+      line-height: 1.4;
+      align-self: flex-start;
+    }
+
+    /* Family / section-divider row — visually separate from duʿā items */
+    .family-divider {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem 0 0.15rem;
+      padding: 0.4rem 0.6rem;
+      background: rgba(125, 82, 67, 0.07);
+      border-radius: 6px;
+      border-bottom: 1px solid rgba(176, 138, 75, 0.3);
+    }
+    .family-divider:first-child { margin-top: 0; }
+    .family-divider-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #7D5243;
+    }
+    a.family-divider {
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    a.family-divider:hover {
+      background: rgba(176, 138, 75, 0.14);
+      border-color: rgba(176, 138, 75, 0.5);
+    }
+    a.family-divider .family-divider-hint {
+      margin-left: auto;
+      font-size: 9px;
+      color: #7A6F6C;
+      font-style: italic;
+    }
   </style>
 </head>
 <body class="bg-[#FFFBF1] text-[#3A2E2B] min-h-screen flex flex-col justify-between antialiased selection:bg-[#B08A4B]/30 relative overflow-x-hidden">
@@ -310,13 +392,13 @@
   <div class="fixed inset-0 -z-10 pointer-events-none select-none overflow-hidden">
     <img
       id="bg-base"
-      src="./black-flag.jpeg"
+      src="assets/black-flag.jpeg"
       alt="Nalayn Shareef - Base State"
       class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-55 saturate-[0.85]"
     />
     <img
       id="bg-nur"
-      src="./black-flag-nur.jpeg"
+      src="assets/black-flag-nur.jpeg"
       alt="Nalayn Shareef - Filled with Nur"
       class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out opacity-0"
     />
@@ -382,17 +464,19 @@
         category: "Ṣalāh",
         desc: "Prophetic du'ās before, during and after ṣalāh",
         items: [
-           { label: "۞۞۞ Dua Iftitah", tier: "jemaah",
-            path: "render.html?file=during-solat/iftitah.md" },
-          { label: "Fajr in Salam", tier: "jemaah", path: "render.html?file=after-salah/fajr-in-salam.md" },
-          { label: "1) Istighfār - Source of Peace", tier: "jemaah", path: "render.html?file=after-salah/1_istigfar_peace.md" },
-          { type: "family", label: "Post-Ṣalāh Collection — Full Sequence", tier: "imam", path: "render_collection.html?file=after-salah/post-solat-collection.md" },
-          { label: "1a) Tahlīl - Mukhlisina-lahud-din / Sincere Devotion", tier: "jemaah", path: "render.html?file=after-salah/tahlil-mukhlisina.md" },
-          { label: "1b) Tahlīl - Laa-maani' / Divine Sovereignty", tier: "jemaah", path: "render.html?file=after-salah/tahlil-la-mania.md" },
-          { label: "2) Tahlīl - Yuhyi wa Yumitu' / Gives life Causes Death", tier: "imam", path: "render.html?file=after-salah/tahlil-fajr-maghrib-10-times.md"},
-          { label: "3) Protect me from Hellfire", tier: "wali", path: "render.html?file=after-salah/3_dua-allahuma-ajirnaar.md" },
-          { label: "4) Help me be grateful", tier: "jemaah", path: "render.html?file=after-salah/help-me-be-grateful.md" },
-          { label: "4 x Morning Adhkar", tier: "jemaah", path: "render.html?file=after-salah/4_subhana_allahi_wa_bihamdihi.md" }
+          { type: "family", label: "Pre-Ṣalāh Collection — Full Sequence", tier: "imam", path: "web/render_collection.html?file=content/salah/before/solat-collection.md" },
+          { label: "Shafaat - Dua after hearing adhan", tier: "jemaah", grade: "sahih", path: "web/render_collection.html?file=content/salah/before/after-adhan.md"},
+          { type: "family", label: "Ṣalāh Collection — Full Sequence", tier: "imam", path: "web/render_collection.html?file=content/salah/after/solat-collection.md" },
+          { label: "Al-Fatihah", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/during/al-fatihah.md" },
+          { label: "Dua Iftitah", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/during/iftitah.md" },
+          { label: "Fajr in Salam", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/fajr-in-salam.md" },
+          { type: "family", label: "Post-Ṣalāh Collection — Full Sequence", tier: "imam", path: "web/render_collection.html?file=content/salah/after/post-solat-collection.md" },
+          { num: "1", label: "Istighfār - Source of Peace", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/1_istigfar_peace.md" },
+          { num: "2a", label: "Tahlīl - Mukhlisina-lahud-din / Sincere Devotion", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/tahlil-mukhlisina.md" },
+          { num: "2b", label: "Tahlīl - Laa-maani' / Divine Sovereignty", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/tahlil-la-mania.md" },
+          { num: "2c", label: "Tahlīl - Yuhyi wa Yumitu' / Gives life Causes Death", tier: "imam", grade: "hasan", path: "web/render.html?file=content/salah/after/tahlil-fajr-maghrib-10-times.md"},
+          { num: "3", label: "Protect me from Hellfire", tier: "muhsin", grade: "daif", path: "web/render.html?file=content/salah/after/3_dua-allahuma-ajirnaar.md" },
+          { num: "4", label: "Help me be grateful", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/help-me-be-grateful.md" },
         ]
       },
       {
@@ -400,15 +484,20 @@
         category: "The Nur in the Heart",
         desc: "Prophetic du'ās for deeply anchoring and alignment to the command / amr",
         items: [
-          { label: "۞۞۞ Dua most often recited: Ya muqallibal-qulub", tier: "jemaah", path: "render.html?file=dua-general/ya-muqallibal-qulub.md" },
-          { label: "۞۞۞ He answers: In the Greatest of Names", tier: "jemaah", path: "render.html?file=dua-general/in-greatest-of-names.md" },
-          { label: "۞۞۞ Istikhārah — Guidance", tier: "jemaah", path: "render.html?file=dua-general/istikhara.md" },
-          { label: "۞ Dua Hajat", tier: "wali", path: "render.html?file=dua-general/hajat.md"},
-          { label: "۞۞۞ Āʾishah's Comprehensive Ask", tier: "imam", path: "render.html?file=dua-general/aisyah-comprehensive-ask.md" },
-          { label: "۞۞۞ Make the Quran the Spring of my Heart", tier: "imam", path: "render.html?file=quran/quran_spring_heart.md" },
-          { label: "📒 Memoriser's Dua", tier: "wali", path: "render.html?file=quran/memoriser.md" },
-          { label: "📒 Dua ḥamdan yuwāfī", tier: "wali", path: "render.html?file=dua-general/dua-hamdan-yuwafi.md" },
-          { label: "۞۞۞ Dua Sulaiman - Increase my capacity to be thankful", tier: "jemaah", path: "render.html?file=thankfulness/sulaiman.md" },
+          { label: "Dua most often recited: Ya muqallibal-qulub", tier: "jemaah", grade: "hasan", path: "web/render.html?file=content/dua/ya-muqallibal-qulub.md" },
+          { label: "He answers: In the Greatest of Names", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/in-greatest-of-names.md" },
+          { label: "Istikhārah — Guidance", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/istikhara.md" },
+          { label: "Dua Hajat", tier: "muhsin", grade: "daif", path: "web/render.html?file=content/dua/hajat.md"},
+          { label: "Āʾishah's Comprehensive Ask", tier: "imam", grade: "sahih", path: "web/render.html?file=content/dua/aisyah-comprehensive-ask.md" },
+          { label: "Dua Hamdan Yuwāfī", tier: "muhsin", path: "web/render.html?file=content/dua/dua-hamdan-yuwafi.md" },
+          { label: "Dua Sulaiman - Increase my capacity to be thankful", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/sulaiman-thankfulness.md" },
+          { label: "Du'ā — Ease of Work", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/la-sahla.md" },
+          { label: "Du'ā — Travel", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/dua-safar.md" },
+          { type: "family", label: "Quran x Heart 🤍", tier: "imam"},
+          { label: "Make the Quran the Spring of my Heart", tier: "imam", grade: "sahih", path: "web/render.html?file=content/dua/quran/quran_spring_heart.md" },
+          { label: "Dua Hifzal Mursalin", tier: "muhsin", path: "web/render.html?file=content/dua/quran/memoriser.md" },
+          { type: "family", label: "💧 Shifa", tier: "imam"},
+          { label: "Doa Hamil (Pregnancy)", tier: "muhsin", path: "web/render.html?file=content/dua/shifa/dua-hamil.md" },
         ]
       },
       {
@@ -416,39 +505,20 @@
         category: "Shields: ☀️Morning & 🌙Evening",
         desc: "Recite this du'ā set at the start and end of your day for protection and alignment",
         items: [
-          { label: "1) ۞۞۞ Refuge: I Seek Refuge in the Perfect Words of Allah from Evil", tier: "jemaah", path: "render.html?file=start and end of day/1_audhubikatillah.md" },
-          { label: "2) ۞۞۞ Nothing will harm you - when you read this", tier: "jemaah", path: "render.html?file=start and end of day/2_bismillahiladhi_layadurru.md" },
-          { label: "3) ۞۞۞ Allah will suffice you in whatever concerns you of the matters of this world and the Hereafter - Ḥasbiyallāhu Lā Ilāha Illā Hu... x 7", tier: "imam", path: "render.html?file=start and end of day/3_hasbiyallahu_7.md" },
-          { label: "4) ۞  Allah appoints 70,000 Angels who say Salat upon you - when you read this", tier: "wali", path: "render.html?file=start and end of day/c_law_anzalna.md" },
-          { label: "5) ۞۞ Allah grants you Shifa'at Rasullullah - Salawat x 10", tier: "imam", path: "render.html?file=start and end of day/b_salawat_10.md"},
-          { label: "6) ۞۞۞ People of Jannah: Read with Firm Faith - Chief of Seeking Forgiveness", tier: "jemaah", path: "render.html?file=start and end of day/4_sayyidul-istighfar.md" },
-          { label: "7) ۞۞۞ Prophet never abandon these - Complete Well-Being", tier: "jemaah", path: "render.html?file=start and end of day/never-abandoned.md" },
-          { label: "8) ۞۞۞ Allah removes your worries and settles your debts", tier: "jemaah", path: "render.html?file=start and end of day/5_hammi_wal_Hazan.md" },
-          { label: "9) ۞ Allah removes your worries and settles your debts", tier: "wali", path: "render.html?file=start and end of day/5b_hammi_wal_Hazan.md" },
-          { label: "10) ۞۞۞ Obedience: Du'ā of Fāṭimah", tier: "jemaah", path: "render.html?file=start and end of day/6_ya-hayyu-ya-qayyum.md" },
-          { label: "11) ۞۞ Strengthen: Body, Hearing, (in)Sight + Protection: Self — Kāfir / Faqr", tier: "imam", path: "render.html?file=start and end of day/7_body-hearing-sight.md" },
-          { label: "12) ۞۞ Contentment: Raḍītu billāhi rabbā", tier: "jemaah", path: "render.html?file=start and end of day/8_raditdubillahirabban.md" },
-          { label: "13) ۞۞۞ 10 Tahlil", tier: "jemaah", path: "render.html?file=start and end of day/a_la_ilaha_illallah_wahdahu_la_sharikalah.md" }
-        ]
-      },
-            {
-        icon: "💧",
-        category: "'Afiyah (Well-being) + Shifa (Healing)",
-        desc: "Prophetic restorative evocations",
-        items: [
-          { label: "Seeking Wellness Against Physical Ailments", tier: "imam", path: "shifa/dua-shifa.html" },
-          { label: "📒Doa Hamil (Pregnancy)", tier: "wali", path: "render.html?file=shifa/dua-hamil.md" },
-          {label: "Dua for righteous offspring", tier: "jemaah", path: "render.html?file=shifa/dua-righteous-offspring-2.md"},
-          { label: "Full Ruqyah for Face Pains", path: "shifa/Ruqyah.html" },
-        ]
-      },
-      {
-        icon: "🛣️",
-        category: "Shields: Travel",
-        desc: "Prophetic du'ās for protection and guidance during travel",
-        items: [
-          { label: "Du'ā — Ease of Work", tier: "jemaah", path: "render.html?file=dua-work/la-sahla.md" },
-          { label: "Du'ā — Travel", tier: "jemaah", path: "render.html?file=dua-work/dua-safar.md" }
+          { num: "1", label: "Heavier than all morning adhkar", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/0_subhana_allahi_wa_bihamdihi.md" },
+          { num: "1", label: "Refuge: I Seek Refuge in the Perfect Words of Allah from Evil", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/1_audhubikatillah.md" },
+          { num: "2", label: "Nothing will harm you - when you read this", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/2_bismillahiladhi_layadurru.md" },
+          { num: "3", label: "Allah will suffice you in whatever concerns you of the matters of this world and the Hereafter - Ḥasbiyallāhu Lā Ilāha Illā Hu... x 7", tier: "imam", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/3_hasbiyallahu_7.md" },
+          { num: "4", label: "Allah appoints 70,000 Angels who say Salat upon you - when you read this", tier: "muhsin", grade: "daif", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/c_law_anzalna.md" },
+          { num: "5", label: "Allah grants you Shifa'at Rasullullah - Salawat x 10", tier: "imam", grade: "hasan", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/b_salawat_10.md"},
+          { num: "6", label: "People of Jannah: Read with Firm Faith - Chief of Seeking Forgiveness", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/4_sayyidul-istighfar.md" },
+          { num: "7", label: "Prophet never abandon these - Complete Well-Being", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/never-abandoned.md" },
+          { num: "8", label: "Allah removes your worries and settles your debts", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/5_hammi_wal_Hazan.md" },
+          { num: "9", label: "Allah removes your worries and settles your debts", tier: "muhsin", grade: "daif", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/5b_hammi_wal_Hazan.md" },
+          { num: "10", label: "Obedience: Du'ā of Fāṭimah", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/6_ya-hayyu-ya-qayyum.md" },
+          { num: "11", label: "Strengthen: Body, Hearing, (in)Sight + Protection: Self — Kāfir / Faqr", tier: "imam", grade: "hasan", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/7_body-hearing-sight.md" },
+          { num: "12", label: "Contentment: Raḍītu billāhi rabbā", tier: "jemaah", grade: "hasan", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/8_raditdubillahirabban.md" },
+          { num: "13", label: "10 Tahlil", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/a_la_ilaha_illallah_wahdahu_la_sharikalah.md" }
         ]
       },
       {
@@ -456,8 +526,8 @@
         category: "Ṣalawāt",
         desc: "Send ṣalawāt upon the Prophet ﷺ",
         items: [
-          { label: "Ṣalawāt Adnānī", tier: "wali", path: "Salawat/salawat-adnani.html" },
-          { label: "Ṣalawāt Tafrijiyyah", tier: "imam", path: "render.html?file=Salawat/salawat-tafrijiyyah.md" }
+          { label: "Ṣalawāt Adnānī", tier: "muhsin", grade: "sahih", path: "salawat/salawat-adnani.html"},
+          { label: "Ṣalawāt Tafrijiyyah", tier: "imam", path: "web/render.html?file=content/salawat/salawat-tafrijiyyah.md"}
         ]
       },
       {
@@ -465,7 +535,7 @@
         category: "Tahlīl Collections",
         desc: "Tahlīl collections pieced by mashāyikh",
         items: [
-          { label: "Tahlīl al-Arwāḥ", path: "render.html?file=Wird/tahlil.html" }
+          { label: "Tahlīl al-Arwāḥ", path: "web/render.html?file=Wird/tahlil.html" }
         ]
       },
       {
@@ -485,8 +555,8 @@
         category: "Documentation",
         desc: "Technical documentation for the Steps of Muhammad Card Application",
         items: [
-          //{ label: "Authoring Guide", path: "render.html?file=AUTHOURING_GUIDE.md" },
-          { label: "Playground", path: "render.html?file=PLAYGROUND.md" },
+          { label: "Authoring Guide", path: "web/render.html?file=AUTHORING_GUIDE.md" },
+          //{ label: "For scholars: Dua Classification Review", path: "web/render.html?Dua_Classification_Review.md" },
         ]
       },
     ];
@@ -497,7 +567,7 @@
     //   Stores an array of { id, name, note, items: [{label, path}] }.
     //   Each collection is an ordered list of atomic dua paths (the
     //   same shape render_collection.html's item builder takes).
-    //   Only items rendered through render.html?file=... are
+    //   Only items rendered through web/render.html?file=... are
     //   favouritable — family/collection items and legacy .html
     //   pages aren't atomic markdown, so they're excluded.
     //   One collection is "active" at a time — that's the one the
@@ -557,7 +627,7 @@
     }
 
     function getAtomicPath(itemPath) {
-      const marker = 'render.html?file=';
+      const marker = 'web/render.html?file=';
       if (!itemPath || !itemPath.startsWith(marker)) return null;
       return decodeURIComponent(itemPath.slice(marker.length));
     }
@@ -663,7 +733,7 @@
           : `<p class="fav-empty-hint">☆ Set this as your active collection (★ toggle) and tap the star next to any duʿā below to add it here.</p>`;
 
         const openLinkHTML = col.items.length
-          ? `<a href="render_collection.html?collection=${encodeURIComponent(col.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>`
+          ? `<a href="web/render_collection.html?collection=${encodeURIComponent(col.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>`
           : '';
 
         const isColActive = col.id === activeId;
@@ -741,13 +811,6 @@
         border: "border-[#B08A4B]/40",
         text: "text-[#7D5243]"
       },
-      wird: {
-        tag: "WIRD",
-        prefix: "📿",
-        bg: "bg-[#2C7BB0]/15",
-        border: "border-[#2C7BB0]/40",
-        text: "text-[#2C7BB0]"
-      },
       new: {
         tag: "NEW",
         prefix: "✦",
@@ -755,6 +818,22 @@
         border: "border-[#3C763D]/40",
         text: "text-[#3C763D]"
       }
+    };
+
+    // =========================================================
+    // AUTHENTICITY COLOUR CODING
+    //   `grade` on an item ("sahih" | "hasan" | "daif") tints its
+    //   row background — darker = higher-confidence transmission.
+    //   Items that carry a `tier` but no `grade` are mashāyikh-compiled
+    //   wird with no hadith classification — tinted with the lightest
+    //   green (`grade-wird`) so "ungraded" reads as its own colour, not
+    //   a badge. Items with neither (large exempt collections, docs)
+    //   are left fully uncoloured.
+    // =========================================================
+    const GRADE_CLASSES = {
+      sahih: 'grade-sahih',
+      hasan: 'grade-hasan',
+      daif: 'grade-daif'
     };
 
     function getItemPrefix(type) {
@@ -770,18 +849,21 @@
 
     // =========================================================
     // TAWAKKUL TIER SYSTEM
-    //   Tiers are cumulative, not exclusive: Jemaah ⊂ Imam ⊂ Wali Allah.
+    //   Tiers are cumulative, not exclusive: Jemaah ⊂ Imam ⊂ Muhsin.
     //   An item's `tier` marks the level it FIRST appears at.
     //   Items with no `tier` (e.g. large mashāyikh-compiled
     //   collections) are exempt — always shown, at every tier.
     //   Per-category tier is the source of truth; the global switch
     //   is a bulk-set convenience over the per-category state.
     // =========================================================
-    const TIER_ORDER = ["jemaah", "imam", "wali"];
+    // Set true to bring back the jemaah/imam/muhsin tier switch + per-category
+    // chips. False shows every dua by default (simplest menu, no filtering).
+    const SHOW_TIER_UI = false;
+    const TIER_ORDER = ["jemaah", "imam", "muhsin"];
     const TIER_META = {
       jemaah: { label: "Jemaah",     short: "Jemaah",  desc: "Everyday · quick · sahih essentials" },
       imam:   { label: "Imam", short: "Imam",   desc: "+ fuller, hasan-graded and compound duʿās" },
-      wali:   { label: "Muhsin ⇒ Wali Allah",  short: "Muhsin ⇒ Wali",    desc: "+ every good narrated — da'if (rare) & mashāyikh wird too" }
+      muhsin:   { label: "Muhsin",  short: "Muhsin",    desc: "+ every good narrated — da'if (rare) & mashāyikh wird too" }
     };
     const TIER_STATE_KEY = 'som-tier-state';
 
@@ -800,7 +882,7 @@
 
     function getCategoryTier(nodeId) {
       const state = loadTierState();
-      return TIER_ORDER.includes(state[nodeId]) ? state[nodeId] : 'wali';
+      return TIER_ORDER.includes(state[nodeId]) ? state[nodeId] : 'muhsin';
     }
 
     function setCategoryTier(nodeId, tier) {
@@ -858,12 +940,19 @@
       const treeTarget = document.getElementById('navigation-tree');
       const activeColName = escapeHtml(getActiveCollectionName());
 
-      let treeHTML = renderGlobalTierSwitch();
+      let treeHTML = SHOW_TIER_UI ? renderGlobalTierSwitch() : '';
+      treeHTML += `
+        <div class="grade-legend">
+          <span class="swatch"><span class="dot" style="background:#1E5631"></span>Ṣaḥīḥ</span>
+          <span class="swatch"><span class="dot" style="background:#4C9A2A"></span>Ḥasan</span>
+          <span class="swatch"><span class="dot" style="background:#ACDF87"></span>Ḍaʿīf</span>
+          <span class="swatch"><span class="dot" style="background:#C8E6B4"></span>Wird / Ungraded</span>
+        </div>`;
       treeHTML += renderFavouritesNode(activeNodeId === 'node-favourites');
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
         const nodeId = `node-${index}`;
-        const activeTier = getCategoryTier(nodeId);
+        const activeTier = SHOW_TIER_UI ? getCategoryTier(nodeId) : 'muhsin';
         const visibleItems = node.items.filter(item => itemVisibleAtTier(item, activeTier));
         treeHTML += `
           <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${activeNodeId === nodeId ? ' active' : ''}" id="${nodeId}">
@@ -893,24 +982,37 @@
               </div>
             </button>
 
-            <div class="tier-chip-row">
-              ${renderTierChip(nodeId, activeTier)}
-            </div>
+            ${SHOW_TIER_UI ? `<div class="tier-chip-row">${renderTierChip(nodeId, activeTier)}</div>` : ''}
 
             <div class="branch-container bg-[#FFFBF1]/00">
               <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
                 ${visibleItems.length ? visibleItems.map(item => {
+                  if (item.type === 'family') {
+                    const headHTML = `
+                      <span>📚</span>
+                      <span class="family-divider-label">${item.label}</span>
+                      ${item.path ? '<span class="family-divider-hint">Open full sequence ↗</span>' : ''}`;
+                    return item.path
+                      ? `<a href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()" class="family-divider">${headHTML}</a>`
+                      : `<div class="family-divider">${headHTML}</div>`;
+                  }
                   const atomicPath = getAtomicPath(item.path);
                   const starHTML = atomicPath
                     ? `<button type="button" class="fav-star${isFavourite(atomicPath) ? ' is-fav' : ''}"
                          data-fav-label="${escapeHtml(item.label)}" data-fav-path="${escapeHtml(atomicPath)}"
                          title="${isFavourite(atomicPath) ? `Remove from ${activeColName}` : `Add to ${activeColName}`}">${isFavourite(atomicPath) ? '★' : '☆'}</button>`
                     : '';
+                  const gradeClass = item.grade && GRADE_CLASSES[item.grade]
+                    ? GRADE_CLASSES[item.grade]
+                    : (item.tier ? 'grade-wird' : '');
+                  const hoverBgClass = gradeClass ? '' : 'hover:bg-[#B08A4B]/10';
+                  const numHTML = item.num ? `<span class="item-num-badge">${item.num}</span>` : '';
                   return `
                   <a href="./${item.path}"
                      onmouseenter="igniteNur()"
                      onmouseleave="extinguishNur()"
-                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] hover:bg-[#B08A4B]/10 transition-all group">
+                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] ${hoverBgClass} transition-all group ${gradeClass}">
+                    ${numHTML}
                     <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
                     <span class="leading-relaxed flex-1">${renderItemTag(item.type)}${item.label}</span>
                     ${starHTML}

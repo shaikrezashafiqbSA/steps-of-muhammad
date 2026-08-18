@@ -148,21 +148,21 @@ We welcome contributions from anyone who shares the commitment to honest provena
 ## 📂 Repository Structure
 ```
 ├── index.html              ← Main library page (vault)
-├── render.html             ← Markdown rendering engine
+├── web/
+│   ├── render.html         ← Markdown rendering engine
+│   └── render_collection.html ← Collection viewer
+├── assets/
+│   ├── black-flag.jpeg     ← Background imagery
+│   └── black-flag-nur.jpeg
+├── content/                ← All authored duʿā/dhikr content
+│   ├── adhkar-as-sabah-wal-masa/ ← Morning & evening adhkār
+│   ├── dua/                ← General duʿās (with quran/ and shifa/ subfolders)
+│   ├── salah/               ← Before/during/after-prayer duʿās
+│   └── salawat/             ← Salutations upon the Prophet ﷺ
 ├── README.md               ← This file
 ├── AUTHORING_GUIDE.md      ← Technical authoring manual
-├── MIGRATION_LOG.md        ← Legacy migration tracker
-├── black-flag.jpeg         ← Background imagery
-├── black-flag-nur.jpeg
 ├── fonts/
-│   └── UthmanicHafs1Ver18.ttf
-├── quran/                  ← Qurʾānic verse files
-├── hadith/                 ← Individual ḥadīth-based duʿās
-├── dhikr/                  ← Atomic remembrances
-├── wird/                   ← Scholarly compilations
-├── folk/                   ← Folk/regional practices (honestly flagged)
-├── liturgy/                ← Ṣalāh, Hajj, ʿEid practices
-└── legacy/                 ← Old HTML pending migration
+│   └── UthmanicHafsVer18.ttf
 ```
 ---
 
