@@ -17,7 +17,7 @@
        ════════════════════════════════════════════════ */
     @font-face {
       font-family: 'UthmanicHafs';
-      src: url('./fonts/UthmanicHafs1Ver18.ttf') format('truetype');
+      src: url('../fonts/UthmanicHafsVer18.ttf') format('truetype');
       font-display: swap;
     }
 
@@ -1247,7 +1247,7 @@
       }
 
       try {
-        const res = await fetch(file);
+        const res = await fetch('../' + file);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const md = await res.text();
 
@@ -1283,7 +1283,7 @@
     document.fonts.ready.then(() => {
       const hasUthmanic = Array.from(document.fonts).some(f => f.family.includes('UthmanicHafs') && f.status === 'loaded');
       if (!hasUthmanic) {
-        console.info('ℹ️  KFGQPC UthmanicHafs not found at ./fonts/UthmanicHafs1Ver18.ttf — falling back to Amiri Quran.');
+        console.info('ℹ️  KFGQPC UthmanicHafs not found at ../fonts/UthmanicHafsVer18.ttf — falling back to Amiri Quran.');
       }
     });
   </script>

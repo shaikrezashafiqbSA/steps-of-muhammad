@@ -14,7 +14,7 @@
   <style type="text/tailwindcss">
     @font-face {
       font-family: 'UthmanicHafs';
-      src: url('./fonts/UthmanicHafsVer18.ttf') format('truetype');
+      src: url('../fonts/UthmanicHafsVer18.ttf') format('truetype');
       font-display: swap;
     }
 
@@ -656,7 +656,7 @@
       details.appendChild(body);
 
       try {
-        const res = await fetch(item.path);
+        const res = await fetch('../' + item.path);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const md = await res.text();
         const { meta, stripped } = parseMetaBlock(md);
@@ -820,7 +820,7 @@
       }
 
       try {
-        const res = await fetch(file);
+        const res = await fetch('../' + file);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const md = await res.text();
 
