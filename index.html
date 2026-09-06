@@ -6,6 +6,10 @@
   <title id="meta-title">Steps of Muhammad</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Menu tree — shared with web/render.html and web/render_collection.html
+       so a rendered card knows which list it belongs to (prev / home / next) -->
+  <script src="web/nav-data.js"></script>
+
 
   <!-- Inter (body) + JetBrains Mono (category labels) — matches render.html -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -455,114 +459,10 @@
 
     // =========================================================
     // VAULT ACCORDION DATA CONFIGURATION ENGINE
-    // Each category has: { icon, category, desc, items: [...] }
-    // Icon emojis — non-living symbols only
+    // VAULT_NAVIGATION_TREE now lives in web/nav-data.js — edit
+    // categories and duʿās there. Both this menu and the card
+    // viewers read it, so prev/next stays in step with the menu.
     // =========================================================
-    const VAULT_NAVIGATION_TREE = [
-      {
-        icon: "🕌",
-        category: "Ṣalāh",
-        desc: "Prophetic du'ās before, during and after ṣalāh",
-        items: [
-          { type: "family", label: "Pre-Ṣalāh Collection — Full Sequence", tier: "imam", path: "web/render_collection.html?file=content/salah/before/solat-collection.md" },
-          { label: "Shafaat - Dua after hearing adhan", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/before/after-adhan.md"},
-          { type: "family", label: "Ṣalāh Collection — Full Sequence", tier: "imam", path: "web/render_collection.html?file=content/salah/after/solat-collection.md" },
-          { label: "Al-Fatihah", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/during/al-fatihah.md" },
-          { label: "Dua Iftitah", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/during/iftitah.md" },
-          { label: "Fajr in Salam", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/fajr-in-salam.md" },
-          { type: "family", label: "Post-Ṣalāh Collection — Full Sequence", tier: "imam", path: "web/render_collection.html?file=content/salah/after/post-solat-collection.md" },
-          { num: "1", label: "Istighfār - Source of Peace", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/1_istigfar_peace.md" },
-          { num: "2a", label: "Tahlīl - Mukhlisina-lahud-din / Sincere Devotion", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/tahlil-mukhlisina.md" },
-          { num: "2b", label: "Tahlīl - Laa-maani' / Divine Sovereignty", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/tahlil-la-mania.md" },
-          { num: "2c", label: "Tahlīl - Yuhyi wa Yumitu' / Gives life Causes Death", tier: "imam", grade: "hasan", path: "web/render.html?file=content/salah/after/tahlil-fajr-maghrib-10-times.md"},
-          { num: "3", label: "Protect me from Hellfire", tier: "muhsin", grade: "daif", path: "web/render.html?file=content/salah/after/3_dua-allahuma-ajirnaar.md" },
-          { num: "4", label: "Help me be grateful", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/salah/after/help-me-be-grateful.md" },
-        ]
-      },
-      {
-        icon: "🤍",
-        category: "The Nur in the Heart",
-        desc: "Prophetic du'ās for deeply anchoring and alignment to the command / amr",
-        items: [
-          { label: "Dua most often recited: Ya muqallibal-qulub", tier: "jemaah", grade: "hasan", path: "web/render.html?file=content/dua/ya-muqallibal-qulub.md" },
-          { label: "He answers: In the Greatest of Names", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/in-greatest-of-names.md" },
-          { label: "Istikhārah — Guidance", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/istikhara.md" },
-          { label: "Dua Hajat", tier: "muhsin", grade: "daif", path: "web/render.html?file=content/dua/hajat.md"},
-          { label: "Āʾishah's Comprehensive Ask", tier: "imam", grade: "sahih", path: "web/render.html?file=content/dua/aisyah-comprehensive-ask.md" },
-          { label: "Dua Hamdan Yuwāfī", tier: "muhsin", path: "web/render.html?file=content/dua/dua-hamdan-yuwafi.md" },
-          { label: "Dua Sulaiman - Increase my capacity to be thankful", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/sulaiman-thankfulness.md" },
-          { label: "Du'ā — Ease of Work", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/la-sahla.md" },
-          { label: "Du'ā — Travel", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/dua/dua-safar.md" },
-          { label: "Allah will settle your debts - even the size of Mountain of Sir", tier: "imam", grade: "hasan", path: "web/render.html?file=content/dua/remove-debt-mountain.md"},
-          { type: "family", label: "Quran x Heart 🤍", tier: "imam"},
-          { label: "Make the Quran the Spring of my Heart", tier: "imam", grade: "sahih", path: "web/render.html?file=content/dua/quran/quran_spring_heart.md" },
-          { label: "Dua Hifzal Mursalin", tier: "muhsin", path: "web/render.html?file=content/dua/quran/memoriser.md" },
-          { type: "family", label: "💧 Shifa", tier: "imam"},
-          { label: "Doa Hamil (Pregnancy)", tier: "muhsin", path: "web/render.html?file=content/dua/shifa/dua-hamil.md" },
-          { label: "Recite 7 times and Allah will certainly heal the person", tier: "muhsin", path: "web/render.html?file=content/dua/shifa/yashfiyaka.md" },
-        ]
-      },
-      {
-        icon: "🛡️",
-        category: "Shields: ☀️Morning & 🌙Evening",
-        desc: "Recite this du'ā set at the start and end of your day for protection and alignment",
-        items: [
-          { num: "1", label: "Heavier than all morning adhkar", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/0_subhana_allahi_wa_bihamdihi.md" },
-          { num: "1", label: "Refuge: I Seek Refuge in the Perfect Words of Allah from Evil", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/1_audhubikatillah.md" },
-          { num: "2", label: "Nothing will harm you - when you read this", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/2_bismillahiladhi_layadurru.md" },
-          { num: "3", label: "Allah will suffice you in whatever concerns you of the matters of this world and the Hereafter - Ḥasbiyallāhu Lā Ilāha Illā Hu... x 7", tier: "imam", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/3_hasbiyallahu_7.md" },
-          { num: "4", label: "Allah appoints 70,000 Angels who say Salat upon you - when you read this", tier: "muhsin", grade: "daif", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/c_law_anzalna.md" },
-          { num: "5", label: "Allah grants you Shifa'at Rasullullah - Salawat x 10", tier: "imam", grade: "hasan", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/b_salawat_10.md"},
-          { num: "6", label: "People of Jannah: Read with Firm Faith - Chief of Seeking Forgiveness", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/4_sayyidul-istighfar.md" },
-          { num: "7", label: "Prophet never abandon these - Complete Well-Being", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/never-abandoned.md" },
-          { num: "8", label: "Allah removes your worries and settles your debts", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/5_hammi_wal_Hazan.md" },
-          { num: "9", label: "Allah removes your worries and settles your debts", tier: "muhsin", grade: "daif", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/5b_hammi_wal_Hazan.md" },
-          { num: "10", label: "Obedience: Du'ā of Fāṭimah", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/6_ya-hayyu-ya-qayyum.md" },
-          { num: "11", label: "Strengthen: Body, Hearing, (in)Sight + Protection: Self — Kāfir / Faqr", tier: "imam", grade: "hasan", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/7_body-hearing-sight.md" },
-          { num: "12", label: "Contentment: Raḍītu billāhi rabbā", tier: "jemaah", grade: "hasan", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/8_raditdubillahirabban.md" },
-          { num: "13", label: "10 Tahlil", tier: "jemaah", grade: "sahih", path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/a_la_ilaha_illallah_wahdahu_la_sharikalah.md" }
-        ]
-      },
-      {
-        icon: "🌙",
-        category: "Ṣalawāt",
-        desc: "Send ṣalawāt upon the Prophet ﷺ",
-        items: [
-          { label: "Ṣalawāt Adnānī", tier: "muhsin", path: "salawat/salawat-adnani.html"},
-          { label: "Ṣalawāt Tafrijiyyah", tier: "imam", path: "web/render.html?file=content/salawat/salawat-tafrijiyyah.md"}
-        ]
-      },
-      {
-        icon: "📿",
-        category: "Tahlīl Collections",
-        desc: "Tahlīl collections pieced by mashāyikh",
-        items: [
-          { label: "Tahlīl al-Arwāḥ", path: "web/render.html?file=Wird/tahlil.html" }
-        ]
-      },
-      {
-        icon: "🌾",
-        category: "Sacred times",
-        desc: "Dhikr / wird pieced by mashāyikh related to the sacred months/ times/ day or even memorial days",
-        items: [
-          { label: "Dua Birthday", tier: "jemaah", path: "web/render.html?file=content/dua/dua-birthday.md" },
-          { label: "Takbīr ʿĪd al-Aḍḥā", tier: "jemaah", path: "Dua Haj/takbir-eiduladha.html" },
-          { label: "Du'ā: The Best the Prophets Made During ʿArafah", tier: "imam", path: "Dua Haj/dua-prophets-made-on-arafah.html" },
-          { label: "Du'ā: ʿAlī and Ibn ʿUmar During ʿArafah", tier: "imam", path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
-          { label: "Du'ā Collection: Dhū al-Ḥijjah — First 10 Days", path: "Dua Haj/Amalan Haj.html" },
-          { label: "Du'ā Collection: Istighfār Rajab", path: "Wird/istighfar-rajab.html" }
-        ]
-      },
-        {
-        icon: "🛠️",
-        category: "Documentation",
-        desc: "Technical documentation for the Steps of Muhammad Card Application",
-        items: [
-          { label: "Authoring Guide", path: "web/render.html?file=AUTHORING_GUIDE.md" },
-          //{ label: "For scholars: Dua Classification Review", path: "web/render.html?Dua_Classification_Review.md" },
-        ]
-      },
-    ];
 
 
     // =========================================================
@@ -1032,12 +932,28 @@
       treeTarget.innerHTML = treeHTML;
     }
 
+    // A card's Home button links back as index.html#node-3, so the reader
+    // lands with the category they were reading already open and in view
+    // instead of a fully collapsed menu they have to re-navigate.
+    function openNodeFromHash() {
+      const hash = window.location.hash.slice(1);
+      if (!/^node-(\d+|favourites)$/.test(hash)) return;
+      if (!document.getElementById(hash)) return;
+      activeNodeId = hash;
+      renderApp();
+      document.getElementById(hash).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('meta-title').textContent = ROOT_CONFIG.title;
       document.getElementById('root-title').textContent = ROOT_CONFIG.title;
       document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
       renderApp();
+      openNodeFromHash();
     });
+
+    // Same page, new hash (browser Back from a card) — reopen the category.
+    window.addEventListener('hashchange', openNodeFromHash);
 
     // Delegated click handling for favourite stars + collection row controls
     // (delegated on document since the tree is fully re-rendered on every mutation)

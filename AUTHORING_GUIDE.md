@@ -787,7 +787,7 @@ Any existing W1/C1-style manifest already works — no format change required. T
 - The manifest's own `::meta` (`left-orb`/`right-orb`) becomes the collection's header pills — use it for a collection-level label (e.g. `left-orb: 📚 Collection · Post-Ṣalāh Adhkār`), not a hadith citation
 - Mark timing/optionality inline in your list item text (`*(optional)*`, `*(Fajr & Maghrib only)*`) — the parser doesn't understand structured metadata for this, it's just prose the reader sees
 
-### Wiring it into `index.html`
+### Wiring it into the menu (`web/nav-data.js`)
 
 A collection is exposed to users the same way a `family`-type item already is — just point its `path` at `render_collection.html` instead of `render.html`:
 
@@ -795,6 +795,33 @@ A collection is exposed to users the same way a `family`-type item already is �
 { type: "family", label: "Post-Ṣalāh Collection — Full Sequence",
   path: "web/render_collection.html?file=after-salah/post-solat-collection.md" }
 ```
+
+---
+
+## 🧭 Editing the Menu
+
+`web/nav-data.js` holds `VAULT_NAVIGATION_TREE` — the one list that defines every category and every duʿā in it. Three pages read it: `index.html` draws the accordion menu from it, and `web/render.html` and `web/render_collection.html` use it to work out which category the open card belongs to, so they can offer **Previous · Home · Next**.
+
+That single source is the whole trick: **array order is reading order**. Move an entry up or down and both the menu and the prev/next arrows follow it. There is no second list to keep in sync.
+
+**To add a duʿā:** author the `.md` under `content/`, then drop an entry into the category's `items` array at the position you want it read:
+
+```js
+{ label: "Du'ā — Travel", tier: "jemaah", grade: "sahih",
+  path: "web/render.html?file=content/dua/dua-safar.md" },
+```
+
+**To reorder:** cut and paste the line. Nothing else needs touching.
+
+**Things worth knowing:**
+
+- `num:` badges are literal text, not computed. Insert a duʿā between numbers 4 and 5 and you must renumber the entries yourself.
+- Entries with `type: "family"` and no `path` are section dividers. They sit in the menu but are skipped by prev/next.
+- Only `render.html` and `render_collection.html` entries join the prev/next sequence. Standalone legacy `.html` pages are deliberately excluded, since they carry no nav bar and would strand the reader.
+- Prev/next stops at the edges of a category. It does not roll over into the next one.
+- Home links back as `index.html#node-3`, where the number is the category's position in the array. Reordering whole categories reshuffles those anchors, which only matters for bookmarks somebody saved earlier.
+- Saved collections in "My Ijazah" store the `.md` path, so **renaming or moving a `.md` file breaks them**. Reordering the menu is always safe.
+- After deploying, hard-refresh once. Browsers cache `nav-data.js` and a stale copy shows the old menu.
 
 ### Testing a collection locally
 
@@ -1066,7 +1093,7 @@ The project has many legacy `.html` files from the early LLM-generated era. Thes
 6. **Add `<details>` drawer with original Arabic.** Paste the voweled Arabic sanad + matn, including compiler notes if any.
 7. **Author `## 🔤 Word-by-Word`** clause by clause: type Arabic with full tashkeel, add English gloss per word, add transliteration with diacritics. Save and view — visually verify — then move to next clause.
 8. **Cross-check.** Read the rendered page top to bottom. Does the narrative flow? Are clauses chunked naturally? Does the meta-card grade match the source? Try all 4 reading modes.
-9. **Update `index.html`.** Replace the legacy entry with the new markdown path: `{ label: "...", path: "web/render.html?file=duas/your-new-file.md" }`.
+9. **Update `web/nav-data.js`.** Replace the legacy entry with the new markdown path: `{ label: "...", path: "web/render.html?file=duas/your-new-file.md" }`.
 10. **Move the legacy file to `/legacy/`.** Keep for ~30 days in case you need to recover something, then delete.
 11. **Update `MIGRATION_LOG.md`.**
 
@@ -1167,7 +1194,7 @@ Run through this list before committing any new `.md` file.
 - [ ] No console errors in browser DevTools
 
 **Index update**
-- [ ] Entry added under correct category in `index.html`
+- [ ] Entry added under correct category in `web/nav-data.js`, at the right position in the reading order
 - [ ] Path uses `web/render.html?file=...` format
 - [ ] Link works from homepage
 

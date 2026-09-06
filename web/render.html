@@ -7,6 +7,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+  <!-- Shared menu tree — tells this card which category it belongs to,
+       and which duʿā sits before and after it -->
+  <script src="nav-data.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -690,6 +694,123 @@
     }
 
     /* ════════════════════════════════════════════════
+       CARD NAVIGATION BAR (v4.6)
+       Previous · Home · Next, built from the shared menu
+       tree in nav-data.js. Sits in the flow at the top and
+       bottom of the card so it never fights the fixed orbs
+       or the floating control clusters in the corners.
+       ════════════════════════════════════════════════ */
+    .card-nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: stretch;
+      gap: 0.5rem;
+      margin-bottom: 1.1rem;
+    }
+    .card-nav-bottom {
+      margin-bottom: 0;
+      margin-top: 1.25rem;
+    }
+    .card-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-width: 0;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid var(--divider-sand);
+      border-radius: 8px;
+      background: var(--bg-cream);
+      color: var(--text-espresso);
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+    }
+    a.card-nav-btn:hover {
+      background: rgba(176, 138, 75, 0.1);
+      border-color: rgba(176, 138, 75, 0.5);
+      transform: translateY(-1px);
+    }
+    .card-nav-btn.is-disabled {
+      border-style: dashed;
+      opacity: 0.35;
+    }
+    .card-nav-end {
+      justify-content: flex-end;
+      text-align: right;
+    }
+    .card-nav-arrow {
+      flex-shrink: 0;
+      color: var(--accent-ochre);
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+    .card-nav-text {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    .card-nav-kicker {
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.56rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-taupe);
+    }
+    .card-nav-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-nav-middle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      padding: 0 0.25rem;
+    }
+    .card-nav-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(176, 138, 75, 0.45);
+      background: rgba(176, 138, 75, 0.12);
+      color: var(--structural);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .card-nav-home:hover {
+      background: rgba(176, 138, 75, 0.25);
+      border-color: rgba(176, 138, 75, 0.7);
+    }
+    .card-nav-context {
+      max-width: 11rem;
+      font-size: 0.58rem;
+      color: var(--text-taupe);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media (max-width: 640px) {
+      .card-nav { gap: 0.35rem; }
+      .card-nav-btn { padding: 0.45rem 0.5rem; gap: 0.3rem; }
+      .card-nav-label { font-size: 0.66rem; -webkit-line-clamp: 2; }
+      .card-nav-home { padding: 0.35rem 0.7rem; font-size: 0.65rem; }
+      .card-nav-context { max-width: 7.5rem; }
+    }
+
+    /* ════════════════════════════════════════════════
        FLOATING BOTTOM-RIGHT CONTROLS
        ════════════════════════════════════════════════ */
     .float-controls {
@@ -751,12 +872,17 @@
       <ul class="toc-list" id="tocList"></ul>
     </nav>
 
+    <!-- Prev · Home · Next (filled by nav-data.js) -->
+    <nav class="card-nav" data-card-nav hidden></nav>
+
     <!-- Markdown content -->
     <article class="paper-card p-6 sm:p-10">
       <div id="markdown-target" class="markdown-body">
         <p class="text-xs italic" style="color: var(--text-taupe);">Loading content...</p>
       </div>
     </article>
+
+    <nav class="card-nav card-nav-bottom" data-card-nav hidden></nav>
 
   </main>
 
@@ -770,6 +896,7 @@
 
   <!-- ────────── Floating bottom-right controls ────────── -->
   <div class="float-controls" id="floatControls">
+    <a class="float-btn" id="floatHomeBtn" href="../index.html" title="Back to the menu" style="display:none;">🏠</a>
     <button class="float-btn" id="floatTocBtn" title="Table of Contents" style="display:none;">📜</button>
     <button class="float-btn" id="floatZoomIn"  title="Zoom in">🔍+</button>
     <button class="float-btn" id="floatZoomOut" title="Zoom out">🔍−</button>
@@ -1240,6 +1367,10 @@
       const params = new URLSearchParams(window.location.search);
       const file = params.get('file');
       const target = document.getElementById('markdown-target');
+
+      // Built first, and unconditionally — a card that failed to load is
+      // exactly when the reader most needs a way back to the menu.
+      somBuildCardNav();
 
       if (!file) {
         target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ No file specified. Append <code>?file=yourfile.md</code> to the URL.</p>`;
