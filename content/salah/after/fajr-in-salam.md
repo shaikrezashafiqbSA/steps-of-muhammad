@@ -20,7 +20,7 @@ It was narrated from Umm Salamah (رضي الله عنها) that when the Prophe
 
 ### 🔤 Evoke This — Word by Word
 
-[[اللَّهُمَّ|O Allah,|allāhumma]] [[إِنِّي|indeed I|innī]] [[أَسْتَأْجِرُكَ|ask You|asʾaluka]] [[عِلْمًا|for knowledge|ʿilman]] [[نَافِعًا|beneficial,|nāfiʿan,]]
+[[اللَّهُمَّ|O Allah,|allāhumma]] [[إِنِّي|indeed I|innī]] [[أَسْأَلُكَ|ask You|asʾaluka]] [[عِلْمًا|for knowledge|ʿilman]] [[نَافِعًا|beneficial,|nāfiʿan,]]
 
 [[وَرِزْقًا|and provision|wa-rizqan]] [[طَيِّبًا|goodly and pure,|ṭayyiban,]]
 

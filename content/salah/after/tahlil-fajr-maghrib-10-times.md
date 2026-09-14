@@ -20,9 +20,8 @@ Abū Dharr narrated that the Messenger of Allah (ﷺ) said: **“Whoever says at
 
 
 ### 🔤 Evoke This — Word by Word (x 10)
-[[عَشْرَ|ten|ʿashra]] [[مَرَّاتٍ|times,|marrātin,]]
 
-[[لَا|There is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[ٱللَّهُ|Allah|llāhu]] [[وَحْدَهُۥ|alone,|waḥdahū]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُۥ|has He,|lahū]] 
+[[ x 3]][[لَا|There is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[ٱللَّهُ|Allah|llāhu]] [[وَحْدَهُۥ|alone,|waḥdahū]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُۥ|has He,|lahū]] 
 
 [[لَهُ|to Him belongs|lahu]] [[ٱلْمُلْكُ|the sovereignty|l-mulku]] [[وَلَهُ|and to Him belongs|wa-lahu]] [[ٱلْحَمْدُ|all praise,|l-ḥamdu]]
 

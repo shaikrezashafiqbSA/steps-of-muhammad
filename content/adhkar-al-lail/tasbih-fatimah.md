@@ -21,11 +21,11 @@ He did not give her the help she asked for. He gave her something to say instead
 
 ## 🔤 Evoke This — Word by Word
 
-[[سُبْحَانَ|Glory be to|subḥāna]] [[اللَّهِ|Allah|llāhi]] — **×33**
+[[33 x]][[سُبْحَانَ|Glory be to|subḥāna]] [[اللَّهِ|Allah|llāhi]] 
 
-[[الْحَمْدُ|All praise is|al-ḥamdu]] [[لِلَّهِ|for Allah|lillāhi]] — **×33**
+[[33 x]][[الْحَمْدُ|All praise is|al-ḥamdu]] [[لِلَّهِ|for Allah|lillāhi]] 
 
-[[اللَّهُ|Allah is|allāhu]] [[أَكْبَرُ|the Greatest|akbar]] — **×34**
+[[34 x]][[اللَّهُ|Allah is|allāhu]] [[أَكْبَرُ|the Greatest|akbar]]
 
 ## 🧮 The Count
 One hundred in total. The Bukhārī wording lists **takbīr 34 first**, then tasbīḥ 33, then taḥmīd 33; other authentic narrations order it tasbīḥ · taḥmīd · takbīr. Either order is transmitted — the count is the point.

@@ -48,14 +48,18 @@ Imam al-Tirmidhi's Commentary
 ## 🔤 Word-by-Word
 
 
-[[ x 3 أَعُوذُ|I seek refuge|aʿūdhu]] [[بِاللَّهِ|with Allah|billāhi]] [[السَّمِيعِ|the All-Hearing|s-samīʿi]] [[الْعَلِيمِ|the All-Knowing|l-ʿalīm]] [[مِنَ|from|mina]] [[الشَّيْطَانِ|the Satan|sh-shayṭāni]] [[الرَّجِيمِ|the accursed|r-rajīm]]
+[[ x 3]][[ أَعُوذُ|I seek refuge|aʿūdhu]] [[بِاللَّهِ|with Allah|billāhi]] [[السَّمِيعِ|the All-Hearing|s-samīʿi]] [[الْعَلِيمِ|the All-Knowing|l-ʿalīm]] [[مِنَ|from|mina]] [[الشَّيْطَانِ|the Satan|sh-shayṭāni]] [[الرَّجِيمِ|the accursed|r-rajīm]]
 
-**Optional**
+**Wake Up the Heart - 59:21**
+
+If a solid mountain would crumble out of awe/fear of Allah's speech, how should our hearts respond? Let this verse soften your heart just as it shook the Sahabah.
 
 [[لَوْ|If|law]] [[أَنزَلْنَا|We had sent down|anzalnā]] [[هَـٰذَا|this|hādhā]] [[ٱلْقُرْءَانَ|Qur’an|l-qur'āna]] [[عَلَىٰ|upon|ʿalā]] [[جَبَلٍ|a mountain,|jabalin]] [[لَّرَأَيْتَهُۥ|you would have seen it|la-ra'aytahū]] [[خَـٰشِعًۭا|humbled|khāshiʿan]] [[مُّتَصَدِّعًۭا|splitting apart|mutasaḍḍiʿan]] [[مِّنْ|from|min]] [[خَشْيَةِ|fear of|khashyati]] [[ٱللَّهِۚ|Allah.|llāh.]] [[وَتِلْكَ|And these|wa-tilka]] [[ٱلْأَمْثَـٰلُ|examples|l-amthālu]] [[نَضْرِبُهَا|We present them|naḍribuhā]] [[لِلنَّاسِ|to humanity|li-n-nāsi]] [[لَعَلَّهُمْ|that perhaps they|laʿallahum]] [[يَتَفَكَّرُونَ|will reflect.|yatafakkarūn.]] [[﴿٢١﴾]]
 
 
-**Recite this**
+**Know your Creator - 59:22 to 59:24**
+
+Meet the Divine Names and count them
 
 [[هُوَ|He is|huwa]] [[ٱللَّهُ|Allah,|llāhu]] [[ٱلَّذِى|the One who|l-ladhī]] [[لَآ|there is no|lā]] [[إِلَـٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَۖ|Him,|huwa,]] [[عَـٰلِمُ|Knower of|ʿālimu]] [[ٱلْغَيْبِ|the unseen|l-ghaybi]] [[وَٱلشَّهَـٰدَةِۖ|and the witnessed.|wa-sh-shahādah.]] [[هُوَ|He is|huwa]] [[ٱلرَّحْمَـٰنُ|the Entirely Merciful,|r-raḥmānu]] [[ٱلرَّحِيمُ|the Especially Merciful.|r-raḥīm.]] [[﴿٢٢﴾]]
 
