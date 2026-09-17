@@ -636,11 +636,37 @@
     }
     .hr-time { font-size: 1.15rem; font-weight: 700; color: #3A2E2B; letter-spacing: 0.02em; }
     .hr-countdown { font-size: 0.62rem; color: #7A6F6C; letter-spacing: 0.06em; margin-top: 0.2rem; }
+    /* Sits under the countdown, right-aligned like the rest of hr-clock —
+       directly above the Tahajjud cell in the strip below it. */
+    .hr-bed-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.45rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(230, 220, 208, 0.95);
+      background: rgba(255, 251, 241, 0.7);
+      color: #7A6F6C;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.56rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .hr-bed-btn:hover { border-color: rgba(176, 138, 75, 0.5); color: #7D5243; }
+    .hr-bed-btn.active {
+      background: rgba(44, 42, 88, 0.9);
+      border-color: rgba(255, 224, 168, 0.6);
+      color: #FFE9B8;
+    }
 
     /* — Prayer time strip — */
     .prayer-strip {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(7, 1fr);
       gap: 1px;
       background: rgba(230, 220, 208, 0.9);
       border-top: 1px solid rgba(230, 220, 208, 0.9);
@@ -650,6 +676,10 @@
       padding: 0.5rem 0.2rem 0.55rem;
       text-align: center;
       font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      border: none;
+      width: 100%;
+      transition: background 0.15s ease;
     }
     .prayer-cell .pc-name {
       font-size: 0.55rem;
@@ -661,6 +691,70 @@
     .prayer-cell.is-next { background: rgba(176, 138, 75, 0.16); }
     .prayer-cell.is-next .pc-name { color: #7D5243; }
     .prayer-cell.is-past { opacity: 0.42; }
+    .prayer-cell:hover { background: rgba(176, 138, 75, 0.22); opacity: 1; }
+    .prayer-cell.is-selected { background: rgba(169, 68, 66, 0.16); box-shadow: inset 0 -2px 0 #A94442; }
+    .prayer-cell.is-selected .pc-name { color: #A94442; }
+
+    /* — Tahajjud cell: the night's secret treasure — a dark window
+       cut into the strip, lit by a slow-turning beam and a scatter
+       of glimmering stars rather than the flat cream of daylight. */
+    .prayer-cell.pc-tahajjud {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(120% 160% at 50% -10%, rgba(255, 214, 140, 0.30), transparent 60%),
+                  linear-gradient(165deg, #0C1030 0%, #1B2354 55%, #2E2A5E 100%);
+      isolation: isolate;
+    }
+    .prayer-cell.pc-tahajjud .pc-name {
+      position: relative; z-index: 2;
+      color: #E7D9AE;
+    }
+    .prayer-cell.pc-tahajjud .pc-time {
+      position: relative; z-index: 2;
+      color: #FFFBF1;
+      text-shadow: 0 0 6px rgba(255, 214, 140, 0.55);
+    }
+    /* Scattered glimmers, twinkling out of phase with each other. */
+    .prayer-cell.pc-tahajjud::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(1.4px 1.4px at 22% 28%, rgba(255,255,255,0.95), transparent),
+        radial-gradient(1px 1px at 72% 22%, rgba(255,255,255,0.75), transparent),
+        radial-gradient(1px 1px at 46% 68%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1.4px 1.4px at 85% 58%, rgba(255,255,255,0.85), transparent),
+        radial-gradient(1px 1px at 14% 74%, rgba(255,255,255,0.55), transparent);
+      animation: pc-glimmer 3.2s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    /* A slow beam of light sweeping across the buried treasure. */
+    .prayer-cell.pc-tahajjud::after {
+      content: '';
+      position: absolute; top: -70%; left: 20%;
+      width: 3px; height: 240%;
+      background: linear-gradient(180deg, rgba(255, 224, 168, 0.85), rgba(255, 224, 168, 0) 75%);
+      transform: rotate(18deg);
+      filter: blur(1.2px);
+      animation: pc-beam-sweep 5.5s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .prayer-cell.pc-tahajjud:hover { filter: brightness(1.18); }
+    .prayer-cell.pc-tahajjud.is-selected {
+      background: radial-gradient(120% 160% at 50% -10%, rgba(255, 214, 140, 0.5), transparent 60%),
+                  linear-gradient(165deg, #12163C 0%, #262E66 55%, #3A356E 100%);
+      box-shadow: inset 0 -2px 0 #E7C77A;
+    }
+    .prayer-cell.pc-tahajjud.is-selected .pc-name { color: #FFE9B8; }
+    @keyframes pc-glimmer {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    @keyframes pc-beam-sweep {
+      0%, 100% { left: 12%; opacity: 0.3; }
+      50% { left: 82%; opacity: 0.7; }
+    }
 
     /* ══════════════════════════════════════════════════════
        COMPENDIUM ROW — familiar name, function, citation
@@ -718,41 +812,6 @@
       border: 1px solid rgba(230, 220, 208, 0.9);
       box-shadow: 0 6px 26px rgba(125, 82, 67, 0.1);
       backdrop-filter: blur(8px);
-    }
-
-    /* — Window chips (browse any of the eleven) — */
-    .window-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin: 0 0 0.9rem;
-    }
-    .window-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.35rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(230, 220, 208, 0.95);
-      background: rgba(255, 251, 241, 0.6);
-      color: #7A6F6C;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .window-chip:hover { border-color: rgba(176, 138, 75, 0.5); color: #7D5243; }
-    .window-chip.active {
-      background: rgba(176, 138, 75, 0.2);
-      border-color: rgba(176, 138, 75, 0.6);
-      color: #7D5243;
-    }
-    .window-chip.is-now::after {
-      content: '●';
-      font-size: 0.45rem;
-      color: #A94442;
     }
 
     /* — The duʿā list for the open window — */
@@ -846,6 +905,8 @@
       color: #7A6F6C;
       text-transform: uppercase;
     }
+    .action-list .family-divider { margin-top: 0.9rem; }
+    .action-list .family-divider:first-child { margin-top: 0; }
     .action-empty {
       font-size: 0.74rem;
       color: #7A6F6C;
@@ -999,22 +1060,20 @@
           <div class="hr-clock">
             <div class="hr-time" id="hr-time">--:--</div>
             <div class="hr-countdown" id="hr-countdown"></div>
+            <button type="button" class="hr-bed-btn" id="btn-bedtime">🛏️ Going to bed</button>
           </div>
         </div>
         <div class="prayer-strip" id="prayer-strip"></div>
       </div>
 
       <div class="action-body">
-      <div class="window-chips" id="window-chips"></div>
-
       <div class="action-list-head">
         <span class="action-list-title" id="action-list-title">Now</span>
         <span class="action-list-count" id="action-list-count"></span>
       </div>
-      <div id="action-list"></div>
+      <div id="action-list" class="action-list"></div>
 
       <div class="action-tools">
-        <button type="button" class="action-tool-btn" id="btn-bedtime">🛏️ Going to bed</button>
         <button type="button" class="action-tool-btn" id="btn-loc-toggle">⚙ Location</button>
         <span class="loc-line" id="loc-line">—</span>
       </div>
@@ -1052,9 +1111,9 @@
       </div>
 
       <p class="action-caveat">
-        The clock places a duʿāʾ in the window its narration ties it to. Where a narration fixes
-        no hour — most duʿās of need — it appears under <strong>Any hour</strong> rather than being
-        assigned one. Nothing here narrows what you may ask for or when.
+        Each prayer's list holds only the duʿās its narration ties to that hour. Duʿās of need,
+        with no fixed hour, live in the Compendium instead. Nothing here narrows what you may ask
+        for or when.
       </p>
       </div>
 
@@ -1856,10 +1915,10 @@
     const VIEW_KEY = 'som-view';
     const LOC_KEY = 'som-location';
 
-    // openWindow === null means "follow the clock". Clicking a chip
-    // pins a window so the reader can read ahead; the ● marker keeps
-    // showing where the sky actually is.
-    let openWindow = null;
+    // openPrayer === null means "follow the clock" — the strip
+    // highlights whichever prayer window is live. Clicking a prayer
+    // cell (or the Tahajjud tab) pins that choice instead.
+    let openPrayer = null;
     let bedtime = false;
     let tickTimer = null;
 
@@ -1889,23 +1948,61 @@
       return out;
     }
 
-    // Items whose narration ties them to `windowId`, plus — when the
-    // clock is what selected the window — anything with no fixed hour.
-    function itemsForWindow(windowId, includeAny) {
+    // Items whose narration ties them to any of `windowIds`. Order
+    // follows the vault tree, so items sharing a category stay
+    // contiguous and can be grouped into divider sections.
+    function itemsForWindows(windowIds) {
+      const wanted = new Set(windowIds);
       const rows = [];
+      const seen = new Set();
       atomicItems().forEach(({ item, node }) => {
+        if (seen.has(item.path)) return;
         const wins = somItemWindows(item);
-        const fixed = wins.has(windowId);
-        const anyHour = wins.has('*any');
-        if (fixed || (includeAny && anyHour && wins.size === 1)) {
-          rows.push({ item, node, anchored: fixed });
+        let fixed = false;
+        wins.forEach(w => { if (wanted.has(w)) fixed = true; });
+        if (fixed) {
+          seen.add(item.path);
+          rows.push({ item, node });
         }
       });
-      rows.sort((a, b) => (b.anchored - a.anchored) ||
-        (['sahih', 'hasan', 'daif'].indexOf(a.item.grade || 'zz') -
-         ['sahih', 'hasan', 'daif'].indexOf(b.item.grade || 'zz')));
       return rows;
     }
+
+    // Folds a flat, tree-ordered row list into category groups so the
+    // action list can show the same divider-per-category structure as
+    // the Compendium, instead of one undifferentiated list.
+    function groupByCategory(rows) {
+      const groups = [];
+      rows.forEach(row => {
+        const last = groups[groups.length - 1];
+        if (last && last.node === row.node) last.rows.push(row);
+        else groups.push({ node: row.node, rows: [row] });
+      });
+      return groups;
+    }
+
+    // ── The clock's eleven windows, collapsed to the handful of
+    // taps a reader actually wants: the five/six ṣalāh, plus Tahajjud
+    // and the catch-all for duʿās with no fixed hour.
+    const PRAYER_DEFS = [
+      { key: 'fajr',    name: 'Fajr',    windows: ['day-fajr-adhan', 'day-fajr-post'] },
+      { key: 'shuruq',  name: 'Shurūq',  windows: ['day-duha'] },
+      { key: 'dhuhr',   name: 'Ẓuhr',    windows: ['day-dhuhr'] },
+      { key: 'asr',     name: 'ʿAṣr',    windows: ['day-asr-post'] },
+      { key: 'maghrib', name: 'Maghrib', windows: ['night-maghrib'] },
+      { key: 'isha',    name: 'ʿIshāʾ',  windows: ['night-isha-post'] }
+    ];
+    const TAHAJJUD_DEF = { key: 'tahajjud', name: 'Tahajjud', arabic: 'التهجد', icon: '✨', windows: ['night-2nd-third', 'night-last-third'] };
+    const PRAYER_BY_KEY = {};
+    PRAYER_DEFS.concat([TAHAJJUD_DEF]).forEach(p => { PRAYER_BY_KEY[p.key] = p; });
+
+    // Maps a live clock-window id back to the prayer tab it falls
+    // under, so the strip highlights the right cell without the
+    // reader having to pick one.
+    const WINDOW_TO_PRAYER = {};
+    PRAYER_DEFS.concat([TAHAJJUD_DEF]).forEach(p => {
+      p.windows.forEach(w => { WINDOW_TO_PRAYER[w] = p.key; });
+    });
 
     // ── Colour ramps for the sky and the ground ────────────
     function lerp(a, b, t) { return a + (b - a) * t; }
@@ -2091,7 +2188,7 @@
     }
 
     // ── Rendering ──────────────────────────────────────────
-    function renderPrayerStrip(now, schedule) {
+    function renderPrayerStrip(now, schedule, selectedKey) {
       const host = document.getElementById('prayer-strip');
       if (!host) return;
       if (!schedule || schedule.incomplete) {
@@ -2101,35 +2198,37 @@
       }
       const t = schedule.times;
       const marks = [
-        ['Fajr', t.fajr], ['Shurūq', t.sunrise], ['Ẓuhr', t.dhuhr],
-        ['ʿAṣr', t.asr], ['Maghrib', t.maghrib], ['ʿIshāʾ', t.isha]
+        ['fajr', 'Fajr', t.fajr], ['shuruq', 'Shurūq', t.sunrise], ['dhuhr', 'Ẓuhr', t.dhuhr],
+        ['asr', 'ʿAṣr', t.asr], ['maghrib', 'Maghrib', t.maghrib], ['isha', 'ʿIshāʾ', t.isha]
       ];
       // After ʿIshāʾ nothing today is still ahead, so the next prayer
       // is tomorrow's Fajr — highlight that rather than dimming all six.
-      let nextIdx = marks.findIndex(m => m[1] && m[1] > now);
+      let nextIdx = marks.findIndex(m => m[2] && m[2] > now);
       const wrapped = nextIdx === -1;
       if (wrapped) nextIdx = 0;
-      host.innerHTML = marks.map(([name, when], i) => {
-        const cls = i === nextIdx ? 'is-next' : 'is-past';
+      const prayerCellsHTML = marks.map(([key, name, when], i) => {
+        const cls = [i === nextIdx ? 'is-next' : 'is-past'];
+        if (key === selectedKey) cls.push('is-selected');
         const label = (wrapped && i === 0) ? `${name} ›` : name;
-        return `<div class="prayer-cell ${cls}">
+        return `<button type="button" class="prayer-cell ${cls.join(' ')}" data-prayer="${key}">
           <div class="pc-name">${label}</div>
           <div class="pc-time">${hhmm(when)}</div>
-        </div>`;
+        </button>`;
       }).join('');
-    }
 
-    function renderChips(currentId, companions) {
-      const host = document.getElementById('window-chips');
-      if (!host) return;
-      const shown = openWindow || currentId;
-      host.innerHTML = SC.TIME_WINDOWS.map(w => {
-        const isNow = w.id === currentId || companions.indexOf(w.id) !== -1;
-        return `<button type="button" class="window-chip${w.id === shown ? ' active' : ''}${isNow ? ' is-now' : ''}"
-          data-window="${w.id}" title="${w.blurb}">${w.icon} ${w.label}</button>`;
-      }).join('') +
-      `<button type="button" class="window-chip${shown === '*any' ? ' active' : ''}" data-window="*any"
-        title="Duʿās whose narration fixes no hour">✦ Any hour</button>`;
+      // Tahajjud has no place of its own on the sun's clock, so it
+      // sits at the end of the strip in its own night-dark cell —
+      // timed to when the night's last third actually opens.
+      const tahajjudTime = schedule.night ? schedule.night.thirdTwo : null;
+      const tahajjudCls = ['prayer-cell', 'pc-tahajjud'];
+      if (selectedKey === TAHAJJUD_DEF.key) tahajjudCls.push('is-selected');
+      const tahajjudHTML = `<button type="button" class="${tahajjudCls.join(' ')}" data-prayer="${TAHAJJUD_DEF.key}"
+        title="The last two-thirds of the night">
+        <div class="pc-name">${TAHAJJUD_DEF.icon} ${TAHAJJUD_DEF.name}</div>
+        <div class="pc-time">${hhmm(tahajjudTime)}</div>
+      </button>`;
+
+      host.innerHTML = prayerCellsHTML + tahajjudHTML;
     }
 
     function gradeClass(g) {
@@ -2139,7 +2238,34 @@
       return 'ai-grade-none';
     }
 
-    function renderList(windowId, isLive) {
+    function renderItemRow(item) {
+      return `
+        <a class="action-item" href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()">
+          <span class="ai-grade ${gradeClass(item.grade)}"></span>
+          <span class="ai-body">
+            <span class="ai-name">${escapeHtml(item.label)}</span>
+            ${item.gloss ? `<span class="ai-gloss">${escapeHtml(item.gloss)}</span>` : ''}
+            <span class="ai-meta">
+              ${item.ref ? `<span class="ai-ref">${escapeHtml(item.ref)}</span>` : ''}
+              ${item.reps ? `<span class="ai-reps">${escapeHtml(item.reps)}</span>` : ''}
+            </span>
+          </span>
+        </a>`;
+    }
+
+    // Renders one category divider (Compendium style) followed by
+    // its duʿās, so a reader can see at a glance which duʿās belong
+    // together instead of one undifferentiated list.
+    function renderGroups(rows) {
+      return groupByCategory(rows).map(({ node, rows: groupRows }) => `
+        <div class="family-divider">
+          <span>${node.icon || '📚'}</span>
+          <span class="family-divider-label">${escapeHtml(node.category)}</span>
+        </div>
+        ${groupRows.map(({ item }) => renderItemRow(item)).join('')}`).join('');
+    }
+
+    function renderList(prayerKey, isLive) {
       const listHost = document.getElementById('action-list');
       const titleHost = document.getElementById('action-list-title');
       const countHost = document.getElementById('action-list-count');
@@ -2147,17 +2273,15 @@
 
       let rows;
       let heading;
-      if (windowId === '*any') {
-        rows = atomicItems()
-          .filter(({ item }) => somItemWindows(item).has('*any'))
-          .map(({ item, node }) => ({ item, node, anchored: false }));
-        heading = 'No fixed hour';
+      if (prayerKey === '*presleep') {
+        rows = itemsForWindows(['night-presleep']);
+        heading = 'Before Sleep';
       } else {
-        rows = itemsForWindow(windowId, false);
-        const meta = SC.WINDOW_BY_ID[windowId];
-        heading = isLive ? `Now · ${meta ? meta.label : windowId}` : (meta ? meta.label : windowId);
-        if (bedtime && windowId !== 'night-presleep') {
-          itemsForWindow('night-presleep', false).forEach(r => {
+        const def = PRAYER_BY_KEY[prayerKey];
+        rows = def ? itemsForWindows(def.windows) : [];
+        heading = def ? (isLive ? `Now · ${def.name}` : def.name) : 'Now';
+        if (bedtime && prayerKey !== TAHAJJUD_DEF.key) {
+          itemsForWindows(['night-presleep']).forEach(r => {
             if (!rows.some(x => x.item.path === r.item.path)) rows.push(r);
           });
         }
@@ -2168,25 +2292,12 @@
 
       if (!rows.length) {
         listHost.innerHTML = `<p class="action-empty">
-          Nothing in the vault is tied to this window yet. The duʿās of need are always open —
-          switch to <strong>Any hour</strong>, or open the Compendium.
+          Nothing in the vault is tied to this window yet — open the Compendium to browse by theme.
         </p>`;
         return;
       }
 
-      listHost.innerHTML = rows.map(({ item, node }) => `
-        <a class="action-item" href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()">
-          <span class="ai-grade ${gradeClass(item.grade)}"></span>
-          <span class="ai-body">
-            <span class="ai-name">${escapeHtml(item.label)}</span>
-            ${item.gloss ? `<span class="ai-gloss">${escapeHtml(item.gloss)}</span>` : ''}
-            <span class="ai-meta">
-              ${item.ref ? `<span class="ai-ref">${escapeHtml(item.ref)}</span>` : ''}
-              ${item.reps ? `<span class="ai-reps">${escapeHtml(item.reps)}</span>` : ''}
-              <span class="ai-cat">${node.icon || '✦'} ${escapeHtml(node.category)}</span>
-            </span>
-          </span>
-        </a>`).join('');
+      listHost.innerHTML = renderGroups(rows);
     }
 
     function renderLocLine() {
@@ -2201,27 +2312,24 @@
       const schedule = SC.buildSchedule(now, loc.lat, loc.lng, { method: loc.method, asr: loc.asr });
       const cur = SC.currentWindow(now, schedule);
 
-      drawHorizon(now, schedule);
-      renderPrayerStrip(now, schedule);
-
-      const companions = cur ? cur.companions : [];
-      const liveId = cur ? cur.id : null;
-      renderChips(liveId, companions);
-
-      const shownId = openWindow || liveId;
-      const meta = shownId ? SC.WINDOW_BY_ID[shownId] : null;
-
+      // The horizon readout always tracks the real sky, at the clock's
+      // full granularity — only the prayer tab below is simplified.
+      const meta = cur ? cur.meta : null;
       document.getElementById('hr-icon').textContent = meta ? meta.icon : '✦';
       document.getElementById('hr-arabic').textContent = meta ? meta.arabic : '—';
-      document.getElementById('hr-label').textContent = meta
-        ? (openWindow && openWindow !== liveId ? `${meta.label} · reading ahead` : meta.label)
-        : 'Sun stays below the horizon here today';
+      document.getElementById('hr-label').textContent = meta ? meta.label : 'Sun stays below the horizon here today';
       document.getElementById('hr-blurb').textContent = meta ? meta.blurb : '';
       document.getElementById('hr-time').textContent =
         now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
       document.getElementById('hr-countdown').textContent = cur ? countdown(cur.remainingMs) : '';
 
-      if (shownId) renderList(shownId, !openWindow || openWindow === liveId);
+      drawHorizon(now, schedule);
+
+      const livePrayer = cur ? (WINDOW_TO_PRAYER[cur.id] || null) : null;
+      const shownKey = openPrayer || livePrayer;
+
+      renderPrayerStrip(now, schedule, shownKey);
+      if (shownKey) renderList(shownKey, !openPrayer || openPrayer === livePrayer);
       renderLocLine();
     }
 
@@ -2268,15 +2376,15 @@
 
       document.getElementById('btn-view-action').addEventListener('click', () => setView('action'));
       document.getElementById('btn-view-compendium').addEventListener('click', () => {
-        openWindow = null;
+        openPrayer = null;
         setView('compendium');
       });
 
-      document.getElementById('window-chips').addEventListener('click', (e) => {
-        const chip = e.target.closest('.window-chip');
-        if (!chip) return;
-        // Clicking the pinned window again releases it back to the clock.
-        openWindow = (openWindow === chip.dataset.window) ? null : chip.dataset.window;
+      // Clicking the pinned prayer again releases it back to the clock.
+      document.getElementById('prayer-strip').addEventListener('click', (e) => {
+        const cell = e.target.closest('.prayer-cell');
+        if (!cell) return;
+        openPrayer = (openPrayer === cell.dataset.prayer) ? null : cell.dataset.prayer;
         tick();
       });
 
@@ -2284,8 +2392,7 @@
       bedBtn.addEventListener('click', () => {
         bedtime = !bedtime;
         bedBtn.classList.toggle('active', bedtime);
-        if (bedtime) openWindow = 'night-presleep';
-        else openWindow = null;
+        openPrayer = bedtime ? '*presleep' : null;
         tick();
       });
 
