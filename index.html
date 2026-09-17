@@ -354,39 +354,49 @@
       align-self: flex-start;
     }
 
-    /* Family / section-divider row — visually separate from duʿā items */
+    /* Family / section-divider row — a bold folder-organiser tab,
+       cut from the same brown/gold the rest of the page is built on. */
     .family-divider {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      margin: 0.5rem 0 0.15rem;
-      padding: 0.4rem 0.6rem;
-      background: rgba(125, 82, 67, 0.07);
-      border-radius: 6px;
-      border-bottom: 1px solid rgba(176, 138, 75, 0.3);
+      margin: 0.65rem 0 0.15rem;
+      padding: 0.45rem 0.7rem;
+      background: linear-gradient(100deg, #7D5243, #96654F 65%, #B08A4B);
+      border-radius: 5px 12px 12px 5px;
+      box-shadow: 0 2px 5px rgba(125, 82, 67, 0.35);
     }
     .family-divider:first-child { margin-top: 0; }
     .family-divider-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 10.5px;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: #7D5243;
+      color: #FFFBF1;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     }
     a.family-divider {
       text-decoration: none;
       cursor: pointer;
-      transition: background 0.15s ease, border-color 0.15s ease;
+      transition: filter 0.15s ease, box-shadow 0.15s ease;
     }
     a.family-divider:hover {
-      background: rgba(176, 138, 75, 0.14);
-      border-color: rgba(176, 138, 75, 0.5);
+      filter: brightness(1.08);
+      box-shadow: 0 3px 8px rgba(125, 82, 67, 0.5);
+    }
+    /* Items nested under a family divider — shifted right and tied
+       to it with a spine, like pages tucked inside a folder tab. */
+    .family-child {
+      margin-left: 1.35rem;
+      padding-left: 0.65rem !important;
+      border-left: 2px solid rgba(125, 82, 67, 0.4);
+      border-radius: 0 0.5rem 0.5rem 0;
     }
     a.family-divider .family-divider-hint {
       margin-left: auto;
       font-size: 9px;
-      color: #7A6F6C;
+      color: rgba(255, 251, 241, 0.8);
       font-style: italic;
     }
 
@@ -1411,16 +1421,23 @@
 
             <div class="branch-container bg-[#FFFBF1]/00">
               <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
-                ${visibleItems.length ? visibleItems.map(item => {
+                ${visibleItems.length ? (() => {
+                  // Duʿās that fall under a family divider are shown
+                  // tucked under it, folder-sticker style, until the
+                  // next divider (or the end of the category) closes it.
+                  let inFamily = false;
+                  return visibleItems.map(item => {
                   if (item.type === 'family') {
+                    inFamily = true;
                     const headHTML = `
-                      <span>📚</span>
+                      <span>${item.icon || '📚'}</span>
                       <span class="family-divider-label">${item.label}</span>
                       ${item.path ? '<span class="family-divider-hint">Open full sequence ↗</span>' : ''}`;
                     return item.path
                       ? `<a href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()" class="family-divider">${headHTML}</a>`
                       : `<div class="family-divider">${headHTML}</div>`;
                   }
+                  const familyChildClass = inFamily ? 'family-child' : '';
                   const atomicPath = getAtomicPath(item.path);
                   const starHTML = atomicPath
                     ? `<button type="button" class="fav-star${isFavourite(atomicPath) ? ' is-fav' : ''}"
@@ -1447,7 +1464,7 @@
                   <a href="./${item.path}"
                      onmouseenter="igniteNur()"
                      onmouseleave="extinguishNur()"
-                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] ${hoverBgClass} transition-all group ${gradeClass}">
+                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] ${hoverBgClass} transition-all group ${gradeClass} ${familyChildClass}">
                     ${numHTML}
                     <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
                     <span class="leading-relaxed flex-1 min-w-0">
@@ -1457,7 +1474,7 @@
                     </span>
                     ${starHTML}
                   </a>
-                `; }).join('') : `<p class="tier-empty-hint">Nothing at this tier yet — try leveling up ↑</p>`}
+                `; }).join(''); })() : `<p class="tier-empty-hint">Nothing at this tier yet — try leveling up ↑</p>`}
               </div>
             </div>
 
