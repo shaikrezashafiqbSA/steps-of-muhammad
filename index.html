@@ -116,8 +116,8 @@
     .fav-star:hover { color: #B08A4B; transform: scale(1.15); }
     .fav-star.is-fav { color: #B08A4B; }
 
-    /* Favourites node — pinned "My Collection" row */
-    #node-favourites .fav-row {
+    /* Amalan panel — collection rows inside the floating sheet */
+    #amalan-panel-body .fav-row {
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -125,7 +125,7 @@
       border-radius: 8px;
       transition: background 0.15s ease;
     }
-    #node-favourites .fav-row:hover { background: rgba(176, 138, 75, 0.08); }
+    #amalan-panel-body .fav-row:hover { background: rgba(176, 138, 75, 0.08); }
     .fav-move-group { display: flex; flex-direction: column; gap: 0; flex-shrink: 0; }
     .fav-move {
       font-size: 0.6rem; line-height: 1; padding: 0.1rem 0.3rem; color: #7A6F6C;
@@ -141,14 +141,25 @@
     .fav-empty-hint {
       font-size: 0.72rem; color: #7A6F6C; font-style: italic; padding: 0.75rem 1rem; line-height: 1.6;
     }
+    .collection-actions {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0.25rem 0.25rem;
+    }
     .fav-open-collection {
       display: flex; align-items: center; justify-content: center; gap: 0.4rem;
-      margin: 0.5rem 0.25rem 0.25rem; padding: 0.65rem 1rem; border-radius: 8px;
+      flex: 1 1 auto; padding: 0.65rem 1rem; border-radius: 8px;
       font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em;
       background: rgba(176, 138, 75, 0.12); border: 1px solid rgba(176, 138, 75, 0.35);
       color: #7D5243; text-decoration: none; transition: background 0.15s ease, border-color 0.15s ease;
     }
     .fav-open-collection:hover { background: rgba(176, 138, 75, 0.22); border-color: rgba(176, 138, 75, 0.55); }
+    .fav-share-whatsapp {
+      display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+      flex: 1 1 auto; padding: 0.65rem 1rem; border-radius: 8px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em;
+      background: rgba(37, 211, 102, 0.12); border: 1px solid rgba(37, 211, 102, 0.4);
+      color: #1E8A4C; cursor: pointer; transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .fav-share-whatsapp:hover { background: rgba(37, 211, 102, 0.22); border-color: rgba(37, 211, 102, 0.6); }
 
     /* Multi-collection editing UI */
     .collection-block {
@@ -447,6 +458,115 @@
       .view-switch { top: 0.6rem; right: 0.6rem; }
       .view-switch-btn { padding: 0.4rem 0.55rem; }
       .view-switch-btn .vs-label { display: none; }
+    }
+
+    /* ══════════════════════════════════════════════════════
+       MY AMALAN — floating button + non-modal bottom sheet.
+       Lives outside the accordion so it can stay open while the
+       duʿā list underneath keeps scrolling and its stars stay
+       tappable. Bottom sheet (not a top sheet) because the FAB
+       that opens it sits bottom-right in easy thumb reach, and it
+       leaves the top of the list — where the eye lands first —
+       fully visible while browsing.
+       ══════════════════════════════════════════════════════ */
+    .amalan-fab {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 65;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1rem;
+      border: 1px solid rgba(176, 138, 75, 0.35);
+      border-radius: 999px;
+      background: linear-gradient(100deg, #7D5243, #96654F 65%, #B08A4B);
+      color: #FFFBF1;
+      box-shadow: 0 6px 20px rgba(125, 82, 67, 0.4);
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .amalan-fab:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(125, 82, 67, 0.5); }
+    .amalan-fab .amalan-fab-icon { font-size: 1.05rem; line-height: 1; }
+    .amalan-fab .amalan-fab-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .amalan-fab .amalan-fab-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      background: rgba(255, 251, 241, 0.25);
+      border-radius: 999px;
+      padding: 0.05rem 0.4rem;
+      min-width: 1.1rem;
+      text-align: center;
+    }
+    body.amalan-open .amalan-fab { display: none; }
+
+    .amalan-panel {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 66;
+      height: 50vh;
+      max-height: 620px;
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 251, 241, 0.98);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid #E6DCD0;
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -10px 30px rgba(125, 82, 67, 0.25);
+      transform: translateY(100%);
+      transition: transform 0.25s ease;
+      pointer-events: none;
+    }
+    body.amalan-open .amalan-panel {
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .amalan-panel-handle {
+      width: 36px;
+      height: 4px;
+      border-radius: 999px;
+      background: #E6DCD0;
+      margin: 0.55rem auto 0.15rem;
+      flex-shrink: 0;
+    }
+    .amalan-panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem 0.6rem;
+      border-bottom: 1px solid #E6DCD0;
+      flex-shrink: 0;
+    }
+    .amalan-panel-close {
+      width: 1.9rem;
+      height: 1.9rem;
+      border-radius: 999px;
+      border: 1px solid #E6DCD0;
+      background: #FFFBF1;
+      color: #7D5243;
+      cursor: pointer;
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+    .amalan-panel-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 0.75rem 1rem 1.25rem;
+    }
+    @media (max-width: 540px) {
+      .amalan-fab .amalan-fab-label { display: none; }
+      .amalan-fab { padding: 0.75rem; }
+      .amalan-panel { height: 55vh; border-radius: 16px 16px 0 0; }
     }
 
     /* ══════════════════════════════════════════════════════
@@ -974,6 +1094,31 @@
 
 
     </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         MY AMALAN — floating button + bottom sheet. Kept outside the
+         accordion tree so it floats over the duʿā list instead of
+         pushing it down: open the sheet, keep scrolling/starring
+         duʿās underneath, watch the collection fill up live.
+         ══════════════════════════════════════════════════════════ -->
+    <button type="button" id="amalan-fab" class="amalan-fab" onclick="toggleAmalanPanel(true)" title="Open My Amalan">
+      <span class="amalan-fab-icon">⚖️</span>
+      <span class="amalan-fab-label">My Amalan</span>
+      <span class="amalan-fab-badge" id="amalan-fab-badge"></span>
+    </button>
+
+    <div class="amalan-panel" id="amalan-panel">
+      <div class="amalan-panel-handle"></div>
+      <div class="amalan-panel-head">
+        <span class="font-mono-app inline-block text-xs font-bold tracking-widest uppercase text-[#7D5243]">
+          ⚖️ My Amalan
+        </span>
+        <button type="button" class="amalan-panel-close" onclick="toggleAmalanPanel(false)" title="Close">✕</button>
+      </div>
+      <div class="amalan-panel-body" id="amalan-panel-body">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
   </main>
 
 
@@ -1149,7 +1294,32 @@
       saveCollections(cols);
     }
 
-    function renderFavouritesNode(isActive) {
+    // Collections live in this browser's localStorage only, so a link to
+    // render_collection.html?collection=<id> means nothing on someone
+    // else's device. To actually share the amalan, we resolve every
+    // item's real page link and drop the whole list, formatted, straight
+    // into a WhatsApp message.
+    function shareCollectionToWhatsApp(id) {
+      const cols = loadCollections();
+      const col = findCollection(cols, id);
+      if (!col || !col.items.length) return;
+
+      const lines = [`*${col.name || 'My Amalan'}* ⚖️`];
+      if (col.note) lines.push(`_${col.note}_`);
+      lines.push('');
+      col.items.forEach((item, i) => {
+        // item.path is the atomic content path (e.g. content/dua/x.md) —
+        // rebuild the actual render.html link it was favourited from.
+        const link = new URL(`web/render.html?file=${encodeURIComponent(item.path)}`, window.location.href).href;
+        lines.push(`${i + 1}. ${item.label}\n${link}`);
+      });
+      lines.push('', '— shared from Follow the Steps ✦ steps of Muḥammad ﷺ');
+
+      const waUrl = `https://wa.me/?text=${encodeURIComponent(lines.join('\n'))}`;
+      window.open(waUrl, '_blank', 'noopener');
+    }
+
+    function renderAmalanPanel() {
       const cols = loadCollections();
       const activeId = getActiveCollectionId();
 
@@ -1169,6 +1339,10 @@
 
         const openLinkHTML = col.items.length
           ? `<a href="web/render_collection.html?collection=${encodeURIComponent(col.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>`
+          : '';
+
+        const shareBtnHTML = col.items.length
+          ? `<button type="button" class="fav-share-whatsapp" data-col-share="${col.id}">📤 Share to WhatsApp</button>`
           : '';
 
         const isColActive = col.id === activeId;
@@ -1191,33 +1365,38 @@
             <div class="collection-items">
               ${rowsHTML}
             </div>
-            ${openLinkHTML}
+            <div class="collection-actions">
+              ${openLinkHTML}
+              ${shareBtnHTML}
+            </div>
           </div>`;
       }).join('');
 
       return `
-        <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${isActive ? ' active' : ''}" id="node-favourites">
-          <button onclick="toggleNode('node-favourites')" class="w-full flex items-center justify-between gap-3 p-4 bg-[#FFFBF1]/10 hover:bg-[#E6DCD0]/10 active:bg-[#E6DCD0]/70 transition-colors group text-left">
-            <div class="node-icon-tile">⭐</div>
-            <div class="space-y-1 pr-2 flex-1 min-w-0">
-              <span class="font-mono-app inline-block text-xs font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-[#B08A4B]/10 text-[#7D5243] border border-[#B08A4B]/20 group-hover:text-[#A94442] transition-colors">
-                My Ijazah${cols.length ? ` (${cols.length})` : ''}
-              </span>
-              <p class="text-[11px] text-[#7A6F6C] leading-relaxed pt-1 font-sans group-hover:text-[#3A2E2B] transition-colors">
-                ⇒ Sadaqah Jariyah / Lasting Beneficial Knowledge - Build your own sets of duʿās, name them, reorder freely ⇒ Share them
-              </p>
-            </div>
-            <div class="w-6 h-6 rounded-full border border-[#E6DCD0] flex items-center justify-center text-[#B08A4B] bg-[#FFFBF1]/70 group-hover:border-[#B08A4B]/60 flex-shrink-0 transition-all">
-              <span class="chevron-icon inline-block transform origin-center">${CHEVRON_SVG}</span>
-            </div>
-          </button>
-          <div class="branch-container bg-[#FFFBF1]/00">
-            <div class="p-2 space-y-2 border-t border-[#E6DCD0]">
-              ${collectionsHTML}
-              <button type="button" class="collection-add-btn" data-col-add="1">＋ New collection</button>
-            </div>
-          </div>
-        </div>`;
+        <p class="text-[11px] text-[#7A6F6C] leading-relaxed pb-2 font-sans">
+          ⇒ Sadaqah Jariyah / Lasting Beneficial Knowledge - Build your own sets of duʿās, name them, reorder freely ⇒ Share them
+        </p>
+        ${collectionsHTML}
+        <button type="button" class="collection-add-btn" data-col-add="1">＋ New collection</button>
+      `;
+    }
+
+    // FAB badge shows how many duʿās are saved across all collections —
+    // panel body re-renders every time (cheap: it's small, and it must
+    // reflect star toggles made out in the duʿā list behind it).
+    function renderAmalanFab() {
+      const cols = loadCollections();
+      const totalItems = cols.reduce((sum, c) => sum + c.items.length, 0);
+      const badge = document.getElementById('amalan-fab-badge');
+      if (badge) badge.textContent = totalItems ? String(totalItems) : '';
+      const panelBody = document.getElementById('amalan-panel-body');
+      if (panelBody) panelBody.innerHTML = renderAmalanPanel();
+    }
+
+    function toggleAmalanPanel(forceOpen) {
+      const isOpen = document.body.classList.contains('amalan-open');
+      const open = typeof forceOpen === 'boolean' ? forceOpen : !isOpen;
+      document.body.classList.toggle('amalan-open', open);
     }
 
     // SVG chevron — cleaner, scales perfectly, no font quirks
@@ -1383,7 +1562,7 @@
           <span class="swatch"><span class="dot" style="background:#ACDF87"></span>Ḍaʿīf</span>
           <span class="swatch"><span class="dot" style="background:#C8E6B4"></span>Wird / Ungraded</span>
         </div>`;
-      treeHTML += renderFavouritesNode(activeNodeId === 'node-favourites');
+      renderAmalanFab();
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
         const nodeId = `node-${index}`;
@@ -1552,6 +1731,13 @@
         e.preventDefault();
         e.stopPropagation();
         removeCollection(colDeleteBtn.dataset.colDelete);
+        return;
+      }
+      const colShareBtn = e.target.closest('.fav-share-whatsapp');
+      if (colShareBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        shareCollectionToWhatsApp(colShareBtn.dataset.colShare);
         return;
       }
       const colAddBtn = e.target.closest('.collection-add-btn');
