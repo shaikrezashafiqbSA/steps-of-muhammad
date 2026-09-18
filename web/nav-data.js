@@ -284,11 +284,56 @@ function somRenderNavEnd(item, direction) {
     </a>`;
 }
 
+// Same ends, shaped for the floating bottom HUD on render.html — one shared
+// pill with prev · home · next. render_collection.html has no #somHudNav, so
+// this simply never runs there.
+function somRenderHudEnd(item, direction) {
+  const isPrev = direction === 'prev';
+  const arrow = isPrev ? '←' : '→';
+  const kicker = isPrev ? 'Previous' : 'Next';
+  const align = isPrev ? '' : 'hud-nav-end';
+
+  if (!item) {
+    return `<span class="hud-nav-btn is-disabled ${align}">
+        <span class="hud-nav-arrow">${arrow}</span>
+        <span class="hud-nav-text"><span class="hud-nav-kicker">${kicker}</span></span>
+      </span>`;
+  }
+
+  const label = somEscapeHtml(item.label);
+  const gloss = item.gloss
+    ? `<span class="hud-nav-gloss">${somEscapeHtml(item.gloss)}</span>` : '';
+  const text = `<span class="hud-nav-text">
+      <span class="hud-nav-kicker">${kicker}</span>
+      <span class="hud-nav-label">${label}</span>
+      ${gloss}
+    </span>`;
+
+  return `<a class="hud-nav-btn ${align}" href="../${item.path}" title="${label}">
+      ${isPrev ? `<span class="hud-nav-arrow">${arrow}</span>${text}` : `${text}<span class="hud-nav-arrow">${arrow}</span>`}
+    </a>`;
+}
+
+function somBuildHudNav(prev, next, homeHref, context) {
+  const hud = document.getElementById('somHudNav');
+  if (!hud) return;
+
+  hud.innerHTML = `
+    ${somRenderHudEnd(prev, 'prev')}
+    <a class="hud-nav-home" href="${homeHref}" title="Back to the menu">⌂</a>
+    <button type="button" class="hud-nav-toc" id="hudTocBtn" title="Table of Contents" style="display:none;">☰</button>
+    ${context ? `<span class="hud-nav-context">${context}</span>` : ''}
+    ${somRenderHudEnd(next, 'next')}`;
+  hud.hidden = false;
+}
+
 // Fills every [data-card-nav] host on the page (top and bottom of the
-// article) and wires ← / → keys to the same destinations.
+// article) plus — on pages that have one — the #somHudNav floating
+// bottom-center pill, and wires ← / → keys to the same destinations.
 function somBuildCardNav() {
   const hosts = document.querySelectorAll('[data-card-nav]');
-  if (!hosts.length) return;
+  const hasHud = !!document.getElementById('somHudNav');
+  if (!hosts.length && !hasHud) return;
 
   const params = new URLSearchParams(window.location.search);
   const file = params.get('file');
@@ -316,8 +361,16 @@ function somBuildCardNav() {
     host.hidden = false;
   });
 
-  // Home also gets a slot in the floating control stack, so it stays
-  // reachable from the middle of a long card without scrolling.
+  // render.html docks the same navigation into a fixed bottom-center HUD
+  // instead of in-flow bars; pages without #somHudNav skip this silently.
+  const hudContext = found
+    ? `${found.node.icon || '✦'} ${somEscapeHtml(found.node.category)} · ${found.index + 1} of ${found.seq.length}`
+    : '';
+  somBuildHudNav(prev, next, homeHref, hudContext);
+
+  // Pages that still carry a #floatHomeBtn in their control stack (e.g.
+  // render_collection.html) get it wired up here; render.html dropped it
+  // in favour of the ⌂ home slot inside the HUD.
   const floatHome = document.getElementById('floatHomeBtn');
   if (floatHome) {
     floatHome.href = homeHref;
