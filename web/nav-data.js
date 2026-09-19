@@ -83,7 +83,8 @@ const VAULT_NAVIGATION_TREE = [
       { label: "ʿĀʾishah's comprehensive ask — all good, known and unknown", gloss: "Asʾaluka min al-Khayri Kullih", ref: "Ibn Mājah 3846", tier: "imam", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/aisyah-comprehensive-ask.md" },
       { label: "Sulaymān's ask: increase my capacity to be thankful", gloss: "Rabbi Awziʿnī an Ashkura Niʿmatak", ref: "Qurʾān 27:19", tier: "jemaah", grade: "quran", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/sulaiman-thankfulness.md" },
       { label: "Praise that matches His blessings; compiled in the Bā ʿAlawī majālis", gloss: "Duʿāʾ al-Ḥamd — Ḥamdan Yuwāfī", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/dua-hamdan-yuwafi.md" },
-       { label: "Ṣalāt al-Ḥājah — the prayer of pressing need", gloss: "Lā Ilāha Illallāhu-l-Ḥalīmu-l-Karīm", ref: "Ibn Mājah 1384", tier: "muhsin", grade: "daif", time: ["*any"], path: "web/render.html?file=content/dua/hajat.md" },
+      { label: "Ṣalāt al-Ḥājah — the prayer of pressing need", gloss: "Lā Ilāha Illallāhu-l-Ḥalīmu-l-Karīm", ref: "Ibn Mājah 1384", tier: "muhsin", grade: "daif", time: ["*any"], path: "web/render.html?file=content/dua/hajat.md" },
+      { label: "O Allah, set right for me my religion ...", gloss: "Allahuma aṣliḥ lī dīniya ...  ", ref: "Riyāḍ aṣ-Ṣāliḥīn 1457", tier: "muhsin",grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/o-allah-set-right-for-me-my-religion.md" },
       { type: "family", label: "Qurʾān in Heart", tier: "imam" },
       { label: "Make the Qurʾān the spring of my heart, the light of my chest", gloss: "Ijʿali-l-Qurʾāna Rabīʿa Qalbī", ref: "Musnad Aḥmad 3712", tier: "imam", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/quran/quran_spring_heart.md" },
       { label: "The memoriser's duʿāʾ — clarity, retention, character", gloss: "Duʿāʾ Ḥifẓ al-Mursalīn", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/quran/memoriser.md" },
@@ -164,6 +165,7 @@ const VAULT_NAVIGATION_TREE = [
       { type: "family", label: "Left sleep", gloss: "Tahajjud", tier: "imam", time: ["*night-presleep"]},
       { label: "You woke without meaning to — say this, then ask, and you are answered", gloss: "Man Taʿārra mina-l-Layl", ref: "Bukhārī 1154", tier: "jemaah", grade: "sahih", time: ["night-2nd-third", "night-last-third"], path: "web/render.html?file=content/adhkar-al-lail/man-taarra-min-al-layl.md" },
       { label: "His ﷺ opening of tahajjud — eleven truths, then forgiveness", gloss: "Allāhumma Laka-l-Ḥamd", ref: "Bukhārī 1120", tier: "imam", grade: "sahih", time: ["night-last-third"], path: "web/render.html?file=content/adhkar-al-lail/tahajjud-lakal-hamd.md" },
+      { label: "The Three Tiers of Night Prayer: Ten, One Hundred, and One Thousand", gloss: "lam yuktab mina l-ghāfilīna / kutiba mina l-qānitīna + l-muqanṭarīna ", ref: "Sunan Abī Dāwūd 1398", tier: "imam", grade: "sahih", time: ["night-2nd-third","night-last-third"], path: "web/render.html?file=content/adhkar-al-lail/three-tiers-of-the-night-prayer.md" },
       { label: "Istikhārah — two rakʿah, then hand the decision back", gloss: "Solat Istikhara - Allāhumma Innī Astakhīruka", ref: "Bukhārī 1166", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/istikhara.md" }
     ]
   },
