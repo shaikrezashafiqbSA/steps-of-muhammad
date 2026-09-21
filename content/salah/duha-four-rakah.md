@@ -3,10 +3,10 @@ narrator: Nuʿaym ibn Hammār al-Ghaṭafānī (raḍiyallāhu ʿanhu)
 collection: Sunan Abī Dāwūd
 book: Book 5 · Voluntary Prayers (كتاب التطوع) · Chapter 12 — The Ḍuḥā Prayer
 hadith: 1289
-grade: Sahih (Al-Albani)
+grade: Sahih
 left-orb: 📜 Abū Dāwūd 1289
 left-orb-compact: ﷴﷺ📜
-right-orb: Ṣaḥīḥ — al-Albānī
+right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
@@ -15,7 +15,7 @@ right-orb-compact: ۞۞۞
 ## 📜 The Hadith
 Nuʿaym ibn Hammār (raḍiyallāhu ʿanhu) said: I heard the Messenger of Allah ﷺ say that **Allah, Mighty and Majestic, says: "Son of Adam, do not fail Me in four rakʿah at the beginning of your day — I will suffice you for the end of it."**
 
-Graded **Ṣaḥīḥ** by al-Albānī. This is a ḥadīth qudsī: the speech is attributed to Allah, conveyed through His Messenger ﷺ.
+Graded **Ṣaḥīḥ** by . This is a ḥadīth qudsī: the speech is attributed to Allah, conveyed through His Messenger ﷺ.
 
 ## ⏱️ The Ḍuḥā Window
 Opens roughly **fifteen to twenty minutes after sunrise**, once the sun has visibly cleared the horizon, and closes **just before the sun reaches its zenith** at midday. The later part of the window — when the heat begins — is *ṣalāt al-awwābīn*, but the promise in this narration is tied to *awwal nahārik*, the **beginning** of your day.

@@ -7,7 +7,7 @@ grade: hasan
 grade-comment: Ḥasan (at-Tirmidhī); declared Ṣaḥīḥ ʿalā sharṭ al-Bukhārī by al-Ḥākim
 left-orb: Riyāḍ aṣ-Ṣāliḥīn 906
 left-orb-compact: ﷴﷺ📜
-right-orb: Hasan
+right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 

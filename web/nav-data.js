@@ -145,7 +145,7 @@ const VAULT_NAVIGATION_TREE = [
     category: "Ḍuḥā & the Working Day",
     desc: "The forenoon window — provision, ease of work, and the road",
     items: [
-      { label: "Ḥadīth qudsī: give Me four, and I will suffice you for the rest of it", gloss: "Four Rakʿah at the Start of the Day", ref: "Abū Dāwūd 1289", reps: "4 rakʿah", tier: "jemaah", grade: "sahih", time: ["day-duha"], path: "web/render.html?file=content/dua/duha-four-rakah.md" },
+      { label: "Ḥadīth qudsī: give Me four, and I will suffice you for the rest of it", gloss: "Four Rakʿah at the Start of the Day", ref: "Abū Dāwūd 1289", reps: "4 rakʿah", tier: "jemaah", grade: "sahih", time: ["day-duha"], path: "web/render.html?file=content/salah/duha-four-rakah.md" },
       { label: "Nothing is easy but what You make easy — for work that has seized up", gloss: "Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahlā", ref: "Ḥiṣn 139 · Ibn Ḥibbān 974", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/la-sahla.md" },
       { label: "The travelling duʿāʾ — said as the vehicle moves off", gloss: "Duʿāʾ as-Safar", ref: "Tirmidhī 3447", tier: "jemaah", grade: "sahih", time: ["day-duha", "*any"], path: "web/render.html?file=content/dua/dua-safar.md" },
       { label: "Debt the size of Mount Ṣīr, settled — the duʿāʾ he ﷺ taught ʿAlī", gloss: "Allāhumma-kfinī bi-Ḥalālika ʿan Ḥarāmik", ref: "Tirmidhī 3563", tier: "imam", grade: "hasan", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/remove-debt-mountain.md" }
