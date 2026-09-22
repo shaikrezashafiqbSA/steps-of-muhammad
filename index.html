@@ -38,6 +38,18 @@
     html, body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
+
+    /* ── Duʿā list transparency knobs ──────────────────────
+       How much of the page's flag photograph shows through the
+       duʿā lists. Lower = more background visible, higher =
+       more solid cream. Tune these three values to taste. */
+    :root {
+      --dua-panel-opacity: 0.0;  /* the list panel behind the rows (Action view) */
+      --dua-row-opacity: 0.0;    /* each individual duʿā row (Action view) */
+      --dua-card-opacity: 0.0;   /* the Library category cards */
+      --header-opacity: 0.65;    /* the brown-to-gold category headers */
+      --family-opacity: 0.45;    /* the olive-to-gold family bars */
+    }
     .font-mono-app {
       font-family: 'JetBrains Mono', 'Consolas', monospace;
     }
@@ -384,7 +396,7 @@
       gap: 0.5rem;
       margin: 0.65rem 0 0.15rem;
       padding: 0.45rem 0.7rem;
-      background: linear-gradient(100deg, #7D5243, #96654F 65%, #B08A4B);
+      background: linear-gradient(100deg, rgba(125, 82, 67, var(--header-opacity, 0.95)), rgba(150, 101, 79, var(--header-opacity, 0.95)) 65%, rgba(176, 138, 75, var(--header-opacity, 0.95)));
       border-radius: 5px 12px 12px 5px;
       box-shadow: 0 2px 5px rgba(125, 82, 67, 0.35);
     }
@@ -426,7 +438,7 @@
        category header: a living olive-to-gold gradient, used for the
        family folder tabs in both the Library and the Action view. */
     .family-olive {
-      background: linear-gradient(100deg, #4E5D2A, #6E7A35 55%, #B08A4B);
+      background: linear-gradient(100deg, rgba(78, 93, 42, var(--family-opacity, 0.95)), rgba(110, 122, 53, var(--family-opacity, 0.95)) 55%, rgba(176, 138, 75, var(--family-opacity, 0.95)));
       box-shadow: 0 2px 5px rgba(78, 93, 42, 0.35);
     }
     a.family-olive:hover {
@@ -438,7 +450,7 @@
        Action view's category rows are cut from, so the two views read
        as one theme. Cream type and tile details sit on top of it. */
     .root-node-head {
-      background: linear-gradient(100deg, #7D5243, #96654F 65%, #B08A4B);
+      background: linear-gradient(100deg, rgba(125, 82, 67, var(--header-opacity, 0.95)), rgba(150, 101, 79, var(--header-opacity, 0.95)) 65%, rgba(176, 138, 75, var(--header-opacity, 0.95)));
       transition: filter 0.15s ease;
     }
     .root-node-head:hover { filter: brightness(1.07); }
@@ -480,6 +492,13 @@
       transition: background 0.15s ease;
     }
     .root-node-head:hover .root-node-chev { background: rgba(255, 251, 241, 0.28); }
+
+    /* Library category card — the cream scrim the duʿā rows sit on.
+       Its transparency is the --dua-card-opacity knob at the top
+       of this stylesheet. */
+    .root-node-card {
+      background: rgba(255, 251, 241, var(--dua-card-opacity, 0.55));
+    }
 
     /* ══════════════════════════════════════════════════════
        VIEW SWITCH — Compendium ⇄ Action
@@ -595,7 +614,7 @@
       padding: 0.7rem 1rem;
       border: 1px solid rgba(176, 138, 75, 0.35);
       border-radius: 999px;
-      background: linear-gradient(100deg, #7D5243, #96654F 65%, #B08A4B);
+      background: linear-gradient(100deg, rgba(125, 82, 67, var(--header-opacity, 0.95)), rgba(150, 101, 79, var(--header-opacity, 0.95)) 65%, rgba(176, 138, 75, var(--header-opacity, 0.95)));
       color: #FFFBF1;
       box-shadow: 0 6px 20px rgba(125, 82, 67, 0.4);
       cursor: pointer;
@@ -952,7 +971,7 @@
       margin-top: 0.9rem;
       padding: 0.9rem 1rem 1.1rem;
       border-radius: 16px;
-      background: rgba(255, 251, 241, 0.86);
+      background: rgba(255, 251, 241, var(--dua-panel-opacity, 0.86));
       border: 1px solid rgba(230, 220, 208, 0.9);
       box-shadow: 0 6px 26px rgba(125, 82, 67, 0.1);
       backdrop-filter: blur(8px);
@@ -983,7 +1002,7 @@
       padding: 0.7rem 0.8rem;
       border-radius: 10px;
       border: 1px solid rgba(230, 220, 208, 0.8);
-      background: rgba(255, 251, 241, 0.62);
+      background: rgba(255, 251, 241, var(--dua-row-opacity, 0.62));
       text-decoration: none;
       margin-bottom: 0.4rem;
       transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
@@ -1125,7 +1144,7 @@
       padding: 0.5rem 0.6rem;
       border: none;
       border-radius: 5px 10px 10px 5px;
-      background: linear-gradient(100deg, #4E5D2A, #6E7A35 55%, #B08A4B);
+      background: linear-gradient(100deg, rgba(78, 93, 42, var(--family-opacity, 0.95)), rgba(110, 122, 53, var(--family-opacity, 0.95)) 55%, rgba(176, 138, 75, var(--family-opacity, 0.95)));
       box-shadow: 0 2px 5px rgba(78, 93, 42, 0.3);
       color: #FFFBF1;
       font: inherit;
@@ -1949,7 +1968,7 @@
         const activeTier = SHOW_TIER_UI ? getCategoryTier(nodeId) : 'muhsin';
         const visibleItems = node.items.filter(item => itemVisibleAtTier(item, activeTier));
         treeHTML += `
-          <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${activeNodeId === nodeId ? ' active' : ''}" id="${nodeId}">
+          <div class="root-node root-node-card border border-[#E6DCD0] backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${activeNodeId === nodeId ? ' active' : ''}" id="${nodeId}">
 
 
             <button onclick="toggleNode('${nodeId}')" class="root-node-head w-full flex items-center justify-between gap-3 p-4 text-left group">
