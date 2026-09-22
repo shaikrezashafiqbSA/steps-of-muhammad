@@ -422,6 +422,65 @@
       font-style: italic;
     }
 
+    /* Families get their own colour, separate from the brown-to-gold
+       category header: a living olive-to-gold gradient, used for the
+       family folder tabs in both the Library and the Action view. */
+    .family-olive {
+      background: linear-gradient(100deg, #4E5D2A, #6E7A35 55%, #B08A4B);
+      box-shadow: 0 2px 5px rgba(78, 93, 42, 0.35);
+    }
+    a.family-olive:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 3px 8px rgba(78, 93, 42, 0.5);
+    }
+
+    /* Library category header — the same brown-to-gold gradient the
+       Action view's category rows are cut from, so the two views read
+       as one theme. Cream type and tile details sit on top of it. */
+    .root-node-head {
+      background: linear-gradient(100deg, #7D5243, #96654F 65%, #B08A4B);
+      transition: filter 0.15s ease;
+    }
+    .root-node-head:hover { filter: brightness(1.07); }
+    .root-node-head .node-icon-tile {
+      background: rgba(255, 251, 241, 0.14);
+      border-color: rgba(255, 251, 241, 0.35);
+    }
+    .root-node-head:hover .node-icon-tile {
+      background: rgba(255, 251, 241, 0.26);
+      border-color: rgba(255, 251, 241, 0.55);
+    }
+    .root-node-title {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #FFFBF1;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
+    .root-node-desc {
+      font-size: 11px;
+      line-height: 1.6;
+      padding-top: 0.25rem;
+      color: rgba(255, 251, 241, 0.78);
+    }
+    .root-node-chev {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(255, 251, 241, 0.16);
+      border: 1px solid rgba(255, 251, 241, 0.3);
+      color: #FFFBF1;
+      transition: background 0.15s ease;
+    }
+    .root-node-head:hover .root-node-chev { background: rgba(255, 251, 241, 0.28); }
+
     /* ══════════════════════════════════════════════════════
        VIEW SWITCH — Compendium ⇄ Action
        A labelled segmented control, always visible on every screen.
@@ -644,11 +703,37 @@
 
     /* — Horizon panel — */
     .horizon-card {
-      border-radius: 18px;
+      /* The card shell itself is chrome-free at the top: the sky dome
+         below is a semicircle, so the page's flag photograph shows
+         through the open corners above the arch. */
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      overflow: visible;
+      filter: drop-shadow(0 10px 40px rgba(125, 82, 67, 0.14));
+    }
+    /* The sky dome — a semicircular arch over the sky portion. The
+       vertical radius is tuned so the curve lands right on the horizon
+       line at both side edges, never touching the prayer tick labels
+       drawn just below it. It scales with the card width (percentages
+       of the box), so the arch keeps its shape on any screen. */
+    .horizon-arch {
       overflow: hidden;
+      /* Kept transparent so the page's flag photograph shows through
+         the sky. The sky's own transparency is the SKY_OPACITY knob
+         in drawHorizon's script below — tune it there. */
+      background: transparent;
       border: 1px solid rgba(230, 220, 208, 0.9);
-      box-shadow: 0 10px 40px rgba(125, 82, 67, 0.14);
-      background: #12172B;
+      border-bottom: none;
+      border-radius: 50% 50% 0 0 / 80% 80% 0 0;
+    }
+    /* The rectangular block under the dome — the readout and the
+       prayer strip — carries the card's sides, bottom and rounding. */
+    .horizon-below {
+      border: 1px solid rgba(230, 220, 208, 0.9);
+      border-top: none;
+      border-radius: 0 0 18px 18px;
+      overflow: hidden;
     }
     .horizon-svg { display: block; width: 100%; height: auto; }
 
@@ -1022,11 +1107,13 @@
     .action-category.active > .action-category-toggle .chevron-icon { transform: rotate(180deg); }
     .action-category-items { padding-top: 0.15rem; }
 
-    /* — Nested family groups: a lighter folder row inside the category,
-       echoing the Compendium's family stickers without copying the
-       full browse view. */
+    /* — Nested family groups: an olive folder row tucked under its
+       category, indented on a spine exactly like the Library's
+       folder-tab tuck, so the two levels never flush together. */
     .action-family {
-      margin: 0.55rem 0 0.25rem;
+      margin: 0.55rem 0 0.25rem 0.65rem;
+      padding-left: 0.65rem;
+      border-left: 2px solid rgba(110, 122, 53, 0.32);
     }
     .action-family-toggle {
       width: 100%;
@@ -1036,23 +1123,22 @@
       gap: 0.5rem;
       margin: 0;
       padding: 0.5rem 0.6rem;
-      border: 1px solid rgba(230, 220, 208, 0.95);
-      border-left: 3px solid rgba(176, 138, 75, 0.65);
-      border-radius: 8px;
-      background: rgba(176, 138, 75, 0.08);
-      color: #7D5243;
+      border: none;
+      border-radius: 5px 10px 10px 5px;
+      background: linear-gradient(100deg, #4E5D2A, #6E7A35 55%, #B08A4B);
+      box-shadow: 0 2px 5px rgba(78, 93, 42, 0.3);
+      color: #FFFBF1;
       font: inherit;
       text-align: left;
       cursor: pointer;
-      transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: filter 0.15s ease, box-shadow 0.15s ease;
     }
     .action-family-toggle:hover {
-      background: rgba(176, 138, 75, 0.15);
-      border-color: rgba(176, 138, 75, 0.55);
-      box-shadow: 0 2px 7px rgba(125, 82, 67, 0.14);
+      filter: brightness(1.08);
+      box-shadow: 0 3px 8px rgba(78, 93, 42, 0.45);
     }
     .action-family-toggle:focus-visible {
-      outline: 2px solid rgba(176, 138, 75, 0.7);
+      outline: 2px solid rgba(110, 122, 53, 0.7);
       outline-offset: 2px;
     }
     .action-family-icon {
@@ -1063,8 +1149,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 6px;
-      background: rgba(255, 251, 241, 0.72);
-      border: 1px solid rgba(176, 138, 75, 0.28);
+      background: rgba(255, 251, 241, 0.16);
+      border: 1px solid rgba(255, 251, 241, 0.3);
       font-size: 0.95rem;
     }
     .action-family-copy {
@@ -1080,6 +1166,8 @@
       font-weight: 700;
       letter-spacing: 0.07em;
       text-transform: uppercase;
+      color: #FFFBF1;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -1087,7 +1175,7 @@
     .action-family-gloss {
       margin-top: 0.1rem;
       font-size: 0.6rem;
-      color: #7A6F6C;
+      color: rgba(255, 251, 241, 0.75);
       font-style: italic;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1099,7 +1187,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.52rem;
       font-weight: 700;
-      color: #7A6F6C;
+      color: rgba(255, 251, 241, 0.8);
       white-space: nowrap;
     }
     .action-family-chevron {
@@ -1110,8 +1198,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      background: rgba(176, 138, 75, 0.13);
-      color: #B08A4B;
+      background: rgba(255, 251, 241, 0.16);
+      color: #FFFBF1;
     }
     .action-family > .branch-container {
       max-height: 0;
@@ -1124,7 +1212,7 @@
     .action-family-items {
       margin: 0.25rem 0 0.35rem 0.65rem;
       padding-left: 0.65rem;
-      border-left: 2px solid rgba(176, 138, 75, 0.28);
+      border-left: 2px solid rgba(110, 122, 53, 0.32);
     }
     .action-empty {
       font-size: 0.74rem;
@@ -1277,8 +1365,11 @@
     <div class="action-shell">
 
       <div class="horizon-card">
-        <svg id="horizon-svg" class="horizon-svg" viewBox="0 0 400 210"
-             preserveAspectRatio="xMidYMid meet" aria-label="Live sun and moon horizon"></svg>
+        <div class="horizon-arch">
+          <svg id="horizon-svg" class="horizon-svg" viewBox="0 0 400 210"
+               preserveAspectRatio="xMidYMid meet" aria-label="Live sun and moon horizon"></svg>
+        </div>
+        <div class="horizon-below">
         <div class="horizon-readout">
           <div class="hr-icon" id="hr-icon">✦</div>
           <div class="hr-main">
@@ -1293,6 +1384,7 @@
           </div>
         </div>
         <div class="prayer-strip" id="prayer-strip"></div>
+        </div>
       </div>
 
       <div class="action-body">
@@ -1860,7 +1952,7 @@
           <div class="root-node border border-[#E6DCD0] bg-[#FFFBF1]/50 backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${activeNodeId === nodeId ? ' active' : ''}" id="${nodeId}">
 
 
-            <button onclick="toggleNode('${nodeId}')" class="w-full flex items-center justify-between gap-3 p-4 bg-[#FFFBF1]/10 hover:bg-[#E6DCD0]/10 active:bg-[#E6DCD0]/70 transition-colors group text-left">
+            <button onclick="toggleNode('${nodeId}')" class="root-node-head w-full flex items-center justify-between gap-3 p-4 text-left group">
 
 
               <!-- Icon tile (left) -->
@@ -1869,17 +1961,17 @@
 
               <!-- Category + description (center, takes available space) -->
               <div class="space-y-1 pr-2 flex-1 min-w-0">
-                <span class="font-mono-app inline-block text-xs font-bold tracking-widest uppercase px-2.5 py-0.5 rounded bg-[#B08A4B]/10 text-[#7D5243] border border-[#B08A4B]/20 group-hover:text-[#A94442] transition-colors">
+                <span class="root-node-title">
                   ${node.category}
                 </span>
-                <p class="text-[11px] text-[#7A6F6C] leading-relaxed pt-1 font-sans group-hover:text-[#3A2E2B] transition-colors">
+                <p class="root-node-desc">
                   — ${node.desc}
                 </p>
               </div>
 
 
               <!-- SVG chevron (right) -->
-              <div class="w-6 h-6 rounded-full border border-[#E6DCD0] flex items-center justify-center text-[#B08A4B] bg-[#FFFBF1]/70 group-hover:border-[#B08A4B]/60 flex-shrink-0 transition-all">
+              <div class="root-node-chev">
                 <span class="chevron-icon inline-block transform origin-center">${CHEVRON_SVG}</span>
               </div>
             </button>
@@ -1901,8 +1993,8 @@
                       <span class="family-divider-label">${item.label}</span>
                       ${item.path ? '<span class="family-divider-hint">Open full sequence ↗</span>' : ''}`;
                     return item.path
-                      ? `<a href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()" class="family-divider">${headHTML}</a>`
-                      : `<div class="family-divider">${headHTML}</div>`;
+                      ? `<a href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()" class="family-divider family-olive">${headHTML}</a>`
+                      : `<div class="family-divider family-olive">${headHTML}</div>`;
                   }
                   const familyChildClass = inFamily ? 'family-child' : '';
                   const atomicPath = getAtomicPath(item.path);
@@ -2280,6 +2372,13 @@
       p.windows.forEach(w => { WINDOW_TO_PRAYER[w] = p.key; });
     });
 
+    // ── Sky transparency knob ──────────────────────────────
+    // How much of the page background (the flag photograph) shows
+    // through the sky dome and the ground band. 1 = fully opaque
+    // sky (background hidden), 0 = background only. Tune to taste.
+    const SKY_OPACITY = 0.75;
+    const GROUND_OPACITY = 0.82;
+
     // ── Colour ramps for the sky and the ground ────────────
     function lerp(a, b, t) { return a + (b - a) * t; }
     function hex(h) {
@@ -2439,13 +2538,13 @@
             <stop offset="100%" stop-color="${sky.bot}"/>
           </linearGradient>
         </defs>
-        <rect x="0" y="0" width="${W}" height="${H_LINE}" fill="url(#skyGrad)"/>
+        <rect x="0" y="0" width="${W}" height="${H_LINE}" fill="url(#skyGrad)" opacity="${SKY_OPACITY}"/>
         ${stars}
         ${p}
         ${nowLine}
         ${moonSvg}
         ${sunSvg}
-        <rect x="0" y="${H_LINE}" width="${W}" height="${210 - H_LINE}" fill="${ground}"/>
+        <rect x="0" y="${H_LINE}" width="${W}" height="${210 - H_LINE}" fill="${ground}" opacity="${GROUND_OPACITY}"/>
         <line x1="0" y1="${H_LINE}" x2="${W}" y2="${H_LINE}" stroke="rgba(255,251,241,0.45)" stroke-width="1"/>
         ${ticks}
       `;
