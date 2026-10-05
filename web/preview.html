@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7D5243">
+  <title>Sunnah Card Builder</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="../assets/icons/favicon-48.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #FFFBF1; --structural: #7D5243; --divider-sand: #E6DCD0;
+      --text-espresso: #3A2E2B; --text-taupe: #7A6F6C; --accent-ochre: #B08A4B;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: var(--bg-cream); color: var(--text-espresso);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+
+    header {
+      flex: none; display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
+      padding: .55rem .9rem; color: #FFFBF1;
+      background: linear-gradient(100deg, rgba(125,82,67,.95), rgba(150,101,79,.95) 65%, rgba(176,138,75,.95));
+      box-shadow: 0 2px 10px rgba(125,82,67,.3);
+    }
+    header a.back { color: #FFFBF1; text-decoration: none; font-size: 1rem; padding: .2rem .55rem;
+      border-radius: 999px; background: rgba(255,251,241,.18); }
+    header h1 { margin: 0; font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; }
+    header .sub { font-size: .65rem; opacity: .85; }
+    header .spacer { flex: 1; }
+
+    .btn {
+      font-family: 'JetBrains Mono', monospace; font-size: .62rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase; cursor: pointer;
+      padding: .4rem .75rem; border-radius: 999px;
+      border: 1px solid rgba(255,251,241,.45); background: rgba(255,251,241,.15); color: #FFFBF1;
+    }
+    .btn:hover { background: rgba(255,251,241,.28); }
+
+    main { flex: 1; min-height: 0; display: flex; }
+    .pane { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
+    .pane + .pane { border-left: 1px solid var(--divider-sand); }
+    .pane-head {
+      flex: none; display: flex; justify-content: space-between; align-items: baseline;
+      padding: .4rem .9rem; border-bottom: 1px solid var(--divider-sand);
+      font-family: 'JetBrains Mono', monospace; font-size: .6rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--structural);
+    }
+    .pane-head .note { font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--text-taupe); }
+
+    textarea {
+      flex: 1; width: 100%; resize: none; border: 0; outline: 0; padding: .9rem 1rem;
+      background: rgba(255,251,241,.6); color: var(--text-espresso);
+      font-family: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+      font-size: .78rem; line-height: 1.6; tab-size: 2;
+    }
+    textarea.over { background: rgba(176,138,75,.12); }
+    iframe { flex: 1; width: 100%; border: 0; background: var(--bg-cream); }
+
+    .tabs { display: none; }
+    @media (max-width: 760px) {
+      .tabs { flex: none; display: flex; border-bottom: 1px solid var(--divider-sand); }
+      .tabs button {
+        flex: 1; padding: .55rem; border: 0; background: transparent; cursor: pointer;
+        font-family: 'JetBrains Mono', monospace; font-size: .65rem; font-weight: 700;
+        letter-spacing: .1em; text-transform: uppercase; color: var(--text-taupe);
+        border-bottom: 2px solid transparent;
+      }
+      .tabs button.on { color: var(--structural); border-bottom-color: var(--accent-ochre); }
+      .pane { display: none; }
+      body[data-tab="edit"] .pane.edit, body[data-tab="view"] .pane.view { display: flex; }
+      .pane + .pane { border-left: 0; }
+      .pane-head, header .sub { display: none; }
+    }
+    /* ── Insert menu bar ── */
+    .menubar {
+      flex: none; display: flex; align-items: center; gap: .35rem; padding: .35rem .9rem;
+      overflow-x: auto; white-space: nowrap; scrollbar-width: none;
+      background: rgba(255,251,241,.96); border-bottom: 1px solid var(--divider-sand);
+    }
+    .menubar::-webkit-scrollbar { display: none; }
+    .menubar .lead { font-family: 'JetBrains Mono', monospace; font-size: .58rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--text-taupe); margin-right: .2rem; }
+    .mbtn {
+      font-family: 'JetBrains Mono', monospace; font-size: .64rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase; cursor: pointer; flex: none;
+      padding: .35rem .7rem; border-radius: 999px; text-decoration: none;
+      border: 1px solid var(--divider-sand); background: #fff; color: var(--structural);
+    }
+    .mbtn:hover, .mbtn.on { background: rgba(176,138,75,.18); border-color: rgba(176,138,75,.55); }
+    .menu-panel {
+      position: fixed; z-index: 50; width: 340px; max-width: calc(100vw - 16px); overflow-y: auto;
+      background: rgba(255,251,241,.99); border: 1px solid var(--divider-sand); border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(125,82,67,.25); padding: .35rem; display: none;
+    }
+    .menu-panel.open { display: block; }
+    .menu-panel .sect { font-family: 'JetBrains Mono', monospace; font-size: .56rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ochre); padding: .5rem .55rem .15rem; }
+    .menu-panel .item { display: block; width: 100%; text-align: left; border: 0; background: transparent;
+      cursor: pointer; padding: .4rem .55rem; border-radius: 8px; color: var(--text-espresso); font-family: inherit; }
+    .menu-panel .item:hover { background: rgba(176,138,75,.16); }
+    .menu-panel .item b { display: block; font-size: .78rem; font-weight: 600; }
+    .menu-panel .item small { display: block; font-size: .68rem; color: var(--text-taupe); line-height: 1.35; margin-top: .1rem; }
+    .menu-panel .chars { display: grid; grid-template-columns: repeat(auto-fill, minmax(2.4rem, 1fr)); gap: .3rem; padding: .3rem .4rem .5rem; }
+    .menu-panel .chars button { border: 1px solid var(--divider-sand); background: #fff; border-radius: 8px;
+      font-size: 1.05rem; padding: .3rem 0; cursor: pointer; color: var(--text-espresso); }
+    .menu-panel .chars button:hover { background: rgba(176,138,75,.18); }
+  </style>
+</head>
+<body data-tab="edit">
+
+  <header>
+    <a class="back" href="../index.html" title="Back to the app">←</a>
+    <h1>🪶 Sunnah Card Builder</h1>
+    <span class="sub">Paste markdown, see the card before you publish</span>
+    <span class="spacer"></span>
+    <button class="btn" id="paste" type="button">Paste</button>
+    <button class="btn" id="open" type="button">Open .md</button>
+    <button class="btn" id="sample" type="button">Sample</button>
+    <button class="btn" id="clear" type="button">Clear</button>
+    <input type="file" id="file" hidden accept=".md,.markdown,.txt,text/markdown,text/plain">
+  </header>
+
+  <nav class="menubar" id="menubar" aria-label="Insert markdown features"></nav>
+  <div class="menu-panel" id="menu-panel"></div>
+
+  <div class="tabs">
+    <button type="button" data-tab="edit" class="on">Markdown</button>
+    <button type="button" data-tab="view">Card</button>
+  </div>
+
+  <main>
+    <section class="pane edit">
+      <div class="pane-head"><span>Markdown</span><span class="note" id="count"></span></div>
+      <textarea id="editor" spellcheck="false"
+        placeholder="Paste a card here: ::meta block, # title, ## sections, [[ arabic | english | translit ]] word stacks. You can also drop a .md file."></textarea>
+    </section>
+    <section class="pane view">
+      <div class="pane-head"><span>Card preview</span><span class="note">live · same renderer as the app</span></div>
+      <iframe id="frame" src="render.html?preview=1" title="Card preview"></iframe>
+    </section>
+  </main>
+
+  <!-- Bundled example (content/dua/eating/after-eating.md) -->
+  <script type="text/plain" id="sample-md">
+::meta
+narrator: Muʿādh ibn Anas (raḍiyallāhu ʿanhu)
+collection: Riyāḍ aṣ-Ṣāliḥīn
+book: 2 · The Book About the Etiquette of Eating
+hadith: 734
+grade: hasan
+grade-comment: Ḥasan (at-Tirmidhī); narrated by Abū Dāwūd and at-Tirmidhī
+hikmah-source: textual
+hikmah-citation:
+left-orb: Riyāḍ aṣ-Ṣāliḥīn 734
+left-orb-compact: 📜
+right-orb: Hasan
+right-orb-compact: ۞۞۞
+::
+
+# Praising Allah After Eating — Forgiveness of Past Sins
+
+## 📜 The Hadith
+
+Muʿādh ibn Anas ؓ reported: The Messenger of Allah ﷺ said, "Whoever eats food and then says: *Al-ḥamdu lillāhi-lladhī aṭʿamanī hādhā, wa razaqanīhi min ghayri ḥawlin minnī wa lā quwwatin* — 'All praise is due to Allah Who has fed me this and provided it for me without any might or power on my part' — his past sins will be forgiven."
+
+<details>
+<summary>📚 Original Arabic Source </summary>
+
+**The Chain of Narrators (الإِسْنَاد)**
+
+[[ عَنْ | from | ʿan ]]
+[[ مُعَاذِ | Muʿādh | Muʿādhi ]]
+[[ بْنِ | son of | bni ]]
+[[ أَنَسٍ | Anas … | Anasin ]]
+[[ رَضِيَ | may Allah be pleased … | raḍiya ]]
+[[ اللَّهُ | … with him ؓ | llāhu ]]
+[[ عَنْهُ | ؓ | ʿanhu ]]
+[[ قَالَ | he said | qāla ]]
+[[ قَالَ | said | qāla ]]
+[[ رَسُولُ | the Messenger … | rasūlu ]]
+[[ اللَّهِ | … of Allah | llāhi ]]
+[[ صَلَّى | may Allah send blessings … ﷺ | ṣallā ]]
+[[ اللَّهُ | … Allah … | llāhu ]]
+[[ عَلَيْهِ | … upon him … | ʿalayhi ]]
+[[ وَسَلَّمَ | … and peace ﷺ | wa-sallama ]]
+
+**The Text of the Hadith (المَتْن)**
+
+[[ مَنْ | Whoever | man ]]
+[[ أَكَلَ | eats | akala ]]
+[[ طَعَامًا | food | ṭaʿāman ]]
+[[ فَقَالَ | then says | fa-qāla ]]
+[[ الْحَمْدُ | All praise | al-ḥamdu ]]
+[[ لِلَّهِ | is due to Allah | lillāhi ]]
+[[ الَّذِي | Who | alladhī ]]
+[[ أَطْعَمَنِي | has fed me | aṭʿamanī ]]
+[[ هَذَا | this | hādhā ]]
+[[ وَرَزَقَنِيهِ | and provided it for me | wa-razaqanīhi ]]
+[[ مِنْ | without | min ]]
+[[ غَيْرِ | any | ghayri ]]
+[[ حَوْلٍ | might | ḥawlin ]]
+[[ مِنِّي | on my part | minnī ]]
+[[ وَلَا | and no | wa-lā ]]
+[[ قُوَّةٍ | power | quwwatin ]]
+[[ غُفِرَ | will be forgiven | ghufira ]]
+[[ لَهُ | for him | lahu ]]
+[[ مَا | what | mā ]]
+[[ تَقَدَّمَ | preceded | taqaddama ]]
+[[ مِنْ | of | min ]]
+[[ ذَنْبِهِ | his sin | dhanbihi ]]
+
+</details>
+
+## 🔤 Word-by-Word
+
+[[ الْحَمْدُ | All praise | al-ḥamdu ]]
+[[ لِلَّهِ | is due to Allah | lillāhi ]]
+[[ الَّذِي | Who | alladhī ]]
+
+[[ أَطْعَمَنِي | has fed me | aṭʿamanī ]]
+[[ هَذَا | this | hādhā ]]
+
+[[ وَرَزَقَنِيهِ | and provided it for me | wa-razaqanīhi ]]
+
+[[ مِنْ | without | min ]]
+[[ غَيْرِ | any | ghayri ]]
+[[ حَوْلٍ | might | ḥawlin ]]
+[[ مِنِّي | on my part | minnī ]]
+[[ وَلَا | and no | wa-lā ]]
+[[ قُوَّةٍ | power | quwwatin ]]
+
+## الضَّمَان ۞ Allah's Guarantee
+
+The text attaches an explicit outcome to the act of praising Allah after eating: the one who says these words after food has his past sins forgiven.
+
+The condition:
+
+[[ مَنْ | Whoever | man ]]
+[[ أَكَلَ | eats | akala ]]
+[[ طَعَامًا | food | ṭaʿāman ]]
+[[ فَقَالَ | then says | fa-qāla ]]
+
+The result:
+
+[[ غُفِرَ | will be forgiven | ghufira ]]
+[[ لَهُ | for him | lahu ]]
+[[ مَا | what | mā ]]
+[[ تَقَدَّمَ | preceded | taqaddama ]]
+[[ مِنْ | of | min ]]
+[[ ذَنْبِهِ | his sin | dhanbihi ]]
+
+<details>
+<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+
+> **Source: Textual.** This reading follows from the wording of the text itself.
+
+The supplication is structured in two movements: an act of praise [[ الْحَمْدُ لِلَّهِ | All praise is due to Allah | al-ḥamdu lillāhi ]] followed by a confession of inability [[ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ | without any might or power on my part | min ghayri ḥawlin minnī wa-lā quwwatin ]]. The text pairs gratitude upward with humility inward — the eater names Allah as the true provider while explicitly disowning the two things people most often credit themselves with: strength (ḥawl) and capability (quwwah).
+
+The wording of the result mirrors this: the passive verb [[ غُفِرَ | it was forgiven | ghufira ]] carries no mention of the eater's effort, just as the duʿāʾ carried no mention of the eater's power. What is given without the servant's might is matched by forgiveness without the servant's earning — the structure of the reward echoes the structure of the words.
+
+</details>
+
+---
+
+*🔗 Verify on sunnah.com — Riyāḍ aṣ-Ṣāliḥīn 734: [https://sunnah.com/riyadussalihin:734](https://sunnah.com/riyadussalihin:734)*
+  </script>
+
+  <script>
+    const KEY = 'som-card-builder-draft';
+    const editor = document.getElementById('editor');
+    const frame = document.getElementById('frame');
+    let ready = false, timer = null;
+
+    // localStorage can throw (private windows, blocked site data)
+    const store = {
+      get() { try { return localStorage.getItem(KEY); } catch (e) { return null; } },
+      set(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+    };
+    const sampleMd = () => document.getElementById('sample-md').textContent.replace(/^\n/, '').replace(/\s+$/, '\n');
+
+    const caretLine = () => editor.value.slice(0, editor.selectionStart).split('\n').length;
+    let lastLine = 0;
+
+    function push() {
+      document.getElementById('count').textContent = editor.value ? editor.value.split('\n').length + ' lines' : '';
+      if (ready) frame.contentWindow.postMessage({ type: 'som-preview', md: editor.value, line: document.activeElement === editor ? caretLine() : 0 }, '*');
+    }
+
+    // Tell the preview which line the caret is on so it can highlight it.
+    function syncCaret() {
+      if (!ready || document.activeElement !== editor) return;
+      const n = caretLine();
+      if (n === lastLine) return;
+      lastLine = n;
+      frame.contentWindow.postMessage({ type: 'som-focus', line: n }, '*');
+    }
+    document.addEventListener('selectionchange', syncCaret);
+    editor.addEventListener('focus', () => { lastLine = 0; syncCaret(); });
+    function schedule() {
+      clearTimeout(timer);
+      timer = setTimeout(() => { store.set(editor.value); push(); }, 250);
+    }
+    function setText(t) { editor.value = t; store.set(t); push(); }
+
+    window.addEventListener('message', (e) => {
+      if (e.source === frame.contentWindow && e.data && e.data.type === 'som-preview-ready') { ready = true; push(); }
+    });
+
+    editor.addEventListener('input', schedule);
+    editor.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') { e.preventDefault(); document.execCommand('insertText', false, '  '); }
+    });
+
+    document.getElementById('sample').onclick = () => setText(sampleMd());
+    document.getElementById('clear').onclick = () => { if (!editor.value || confirm('Clear the editor?')) setText(''); };
+    document.getElementById('paste').onclick = async () => {
+      try { setText(await navigator.clipboard.readText()); }
+      catch (e) { editor.focus(); alert('Clipboard access was blocked. Press Ctrl+V in the editor instead.'); }
+    };
+    const file = document.getElementById('file');
+    document.getElementById('open').onclick = () => file.click();
+    file.onchange = async () => { if (file.files[0]) setText(await file.files[0].text()); file.value = ''; };
+
+    ['dragenter', 'dragover'].forEach(n => editor.addEventListener(n, e => { e.preventDefault(); editor.classList.add('over'); }));
+    ['dragleave', 'drop'].forEach(n => editor.addEventListener(n, e => { e.preventDefault(); editor.classList.remove('over'); }));
+    editor.addEventListener('drop', async (e) => { const f = e.dataTransfer.files[0]; if (f) setText(await f.text()); });
+
+    document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => {
+      document.body.dataset.tab = b.dataset.tab;
+      document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b));
+      if (b.dataset.tab === 'view') push();
+    });
+
+    // ════════════════════════════════════════════
+    // Insert menus — every feature from AUTHORING_GUIDE.md.
+    //   ⟦text⟧  marks the placeholder that is selected after insertion
+    //           (or replaced by whatever you had selected).
+    //   block   puts the snippet in its own paragraph.
+    //   top     goes at the very start of the file (meta header).
+    // ════════════════════════════════════════════
+    const META_BASIC = '::meta\nleft-orb: ⟦📖 Collection 123⟧\nright-orb: 🟢 Ṣaḥīḥ\n::\n\n';
+    const META_FULL = '::meta\nnarrator: ⟦Companion (raḍiyallāhu ʿanhu)⟧\ncollection: Canonical Collection\nbook: Book 1 · Title\nhadith: 000\ngrade: sahih\nleft-orb: 📖 Collection 000\nright-orb: 🟢✦✦✦ Ṣaḥīḥ\nverify: https://sunnah.com/\n::\n\n';
+    const META_CUSTOM = '::meta\nleft-orb: 📖 ⟦Ṣaḥīḥ al-Bukhārī 6306⟧\nleft-orb-color: #F5E9DC\nleft-orb-text: #3A2E2B\nright-orb: 🟢✦✦✦✦✦ Mutawātir (mass-transmitted)\nright-orb-color: #1B5E20\nright-orb-text: #FFFBF1\nright-orb-compact: 🟢✦✦✦✦✦\n::\n\n';
+    const SKELETON = '::meta\nnarrator: Narrator (raḍiyallāhu ʿanhu)\ncollection: Collection\nbook: Book 1 · Title\nhadith: 000\ngrade: sahih\nleft-orb: 📖 Collection 000\nright-orb: 🟢 Ṣaḥīḥ\n::\n\n# ⟦Operational Title⟧\n\n## 📜 The Hadith\n\nNarrator ؓ reported: **The Messenger of Allah ﷺ said:**\n\n> *"Translation of the duʿā."*\n\n<details>\n<summary>📚 Original Arabic Source</summary>\n\n[[ عَنْ | from | ʿan ]]\n\n</details>\n\n## 🔤 Evoke This — Word by Word\n\n[[ اَللَّهُمَّ | O Allah | Allāhumma ]]\n\n*🔗 Verify on sunnah.com — [Citation](https://sunnah.com/)*\n';
+
+    const MENUS = [
+      { label: '🪪 Meta', items: [
+        { sect: 'Header card (top of file)' },
+        { name: 'Basic header', hint: 'left-orb + right-orb pills', top: true, text: META_BASIC },
+        { name: 'Full schema', hint: 'narrator, collection, book, hadith, grade, verify…', top: true, text: META_FULL },
+        { name: 'Custom colours', hint: 'orb colour, text colour and compact overrides', top: true, text: META_CUSTOM },
+        { sect: 'Right-orb grade (auto-coloured)' },
+        { name: '🟢 Ṣaḥīḥ', hint: 'green', text: 'right-orb: 🟢 Ṣaḥīḥ' },
+        { name: '🔵 Ḥasan', hint: 'blue', text: 'right-orb: 🔵 Ḥasan' },
+        { name: '🟠 Ḍaʿīf', hint: 'amber', text: 'right-orb: 🟠 Ḍaʿīf' },
+        { name: '🔴 Mawḍūʿ', hint: 'crimson', text: 'right-orb: 🔴 Mawḍūʿ' },
+        { name: '🟢 Mutawātir', hint: 'deep green', text: 'right-orb: 🟢✦✦✦✦✦ Mutawātir' },
+        { name: '⚪ Other label', hint: 'neutral cream', text: 'right-orb: ⟦Label⟧' },
+      ]},
+      { label: '🔤 Word stack', items: [
+        { name: 'Full stack', hint: 'Arabic + English + transliteration', text: '[[ ⟦اَللَّهُمَّ⟧ | O Allah | Allāhumma ]]' },
+        { name: 'Arabic + English', hint: '2-row, no transliteration', text: '[[ ⟦سُبْحَانَ اللَّهِ⟧ | glory be to Allah ]]' },
+        { name: 'Arabic only', hint: '1-row', text: '[[ ⟦وَ الْحَمْدُ لِلَّهِ⟧ ]]' },
+        { name: 'Escaped brackets', hint: 'shows [[ literally', text: '\\[[⟦not a word stack⟧]]' },
+        { sect: 'Clause layout' },
+        { name: 'Two clauses', hint: 'a blank line starts a new ayah block', block: true,
+          text: '[[ رَبِّ | my Lord | rabbi ]]\n[[ ⟦اشْرَحْ⟧ | expand | ishraḥ ]]\n[[ لِي | for me | lī ]]\n\n[[ وَ يَسِّرْ | and ease | wa yassir ]]\n[[ لِي | for me | lī ]]' },
+      ]},
+      { label: '🧱 Structure', items: [
+        { sect: 'Whole card' },
+        { name: 'Standard card skeleton', hint: 'meta + title + hadith + drawer + word-by-word + verify', top: true, text: SKELETON },
+        { sect: 'Sections' },
+        { name: 'Title (H1)', hint: 'operational title', block: true, text: '# ⟦Operational Title⟧' },
+        { name: '📜 The Hadith', hint: 'narration + operational cue + blockquote', block: true,
+          text: '## 📜 The Hadith\n\n⟦Narrator⟧ ؓ reported: **The Messenger of Allah ﷺ said:**\n\n> *"Translation."*' },
+        { name: '🔤 Word by Word', hint: 'section for word-stacked clauses', block: true,
+          text: '## 🔤 ⟦Evoke This — Word by Word⟧\n\n[[ اَللَّهُمَّ | O Allah | Allāhumma ]]' },
+        { name: 'Section (H2)', hint: 'appears in the floating TOC', block: true, text: '## ⟦Section⟧' },
+        { name: 'Sub-section (H3)', hint: 'appears in the floating TOC', block: true, text: '### ⟦Sub-section⟧' },
+        { sect: 'Drawers' },
+        { name: 'Collapsible drawer', hint: '<details> — nest freely', block: true,
+          text: '<details>\n<summary>📚 ⟦Click to expand⟧</summary>\n\nContent…\n\n</details>' },
+        { name: 'Open drawer', hint: 'starts expanded', block: true,
+          text: '<details open>\n<summary>📚 ⟦Title⟧</summary>\n\nContent…\n\n</details>' },
+        { name: '📚 Original Arabic source', hint: 'sanad + matn drawer', block: true,
+          text: '<details>\n<summary>📚 Original Arabic Source</summary>\n\n**The Chain of Narrators (الإِسْنَاد)**\n\n[[ ⟦عَنْ⟧ | from | ʿan ]]\n\n**The Text of the Hadith (المَتْن)**\n\n[[ مَنْ | whoever | man ]]\n\n</details>' },
+        { name: '🔢 Printable counter ×33', hint: 'tick-box tracker in a drawer', block: true,
+          text: '<details>\n<summary>🔢 Printable Counter (× 33)</summary>\n\n> ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢\n> ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢\n> ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢ ▢\n> ▢ ▢ ▢\n\n</details>' },
+        { name: '🔬 Linguistic note', hint: 'root-analysis drawer', block: true,
+          text: '<details>\n<summary>🔬 Linguistic note: the root ⟦ر-ح-م⟧</summary>\n\nThe root appears **N times** in the Qurʾān:\n- *raḥmah* — mercy\n- *raḥīm* — Most Merciful\n\n</details>' },
+        { sect: 'Closing' },
+        { name: '🔗 Verify line', hint: 'italic, canonical URL', block: true,
+          text: '*🔗 Verify on sunnah.com — [⟦Bukhārī 6306⟧](https://sunnah.com/bukhari:6306)*' },
+        { name: '🌐 Related practices', hint: 'cross-reference network', block: true,
+          text: '## 🌐 Related Practices\n\n- **Often combined with:** [⟦Title⟧](?file=duas/file.md)\n- **Similar theme:** [Title](?file=duas/file.md)' },
+      ]},
+      { label: '✍️ Format', items: [
+        { name: 'Bold', hint: 'operational cue', text: '**⟦bold⟧**' },
+        { name: 'Italic', hint: 'translations, transliteration', text: '*⟦italic⟧*' },
+        { name: 'Strikethrough', text: '~~⟦text⟧~~' },
+        { name: 'Inline code', text: '`⟦code⟧`' },
+        { name: 'Blockquote translation', hint: 'italic translation of the duʿā', block: true, text: '> *"⟦Translation⟧"*' },
+        { name: 'Bullet list', hint: '2-space nesting', block: true, text: '- ⟦item⟧\n- item\n  - nested' },
+        { name: 'Numbered list', block: true, text: '1. ⟦first⟧\n2. second' },
+        { name: 'Table', hint: 'GFM table', block: true, text: '| ⟦Column⟧ | Column |\n|---|---|\n| cell | cell |' },
+        { name: 'Divider', block: true, text: '---' },
+        { sect: 'Links' },
+        { name: 'External link', hint: 'sunnah.com / quran.com', text: '[⟦label⟧](https://sunnah.com/bukhari:6306)' },
+        { name: 'Link to another card', hint: '?file=path/to/file.md', text: '[⟦label⟧](?file=path/to/file.md)' },
+        { name: 'Link to a heading', hint: '#heading-slug', text: '[⟦label⟧](#heading-slug)' },
+      ]},
+      { label: '🎬 Embeds', items: [
+        { name: 'Image', block: true, text: '<img src="../assets/⟦black-flag.jpeg⟧" alt="Description" style="max-width: 100%; border-radius: 8px;">' },
+        { name: 'YouTube', block: true, text: '<iframe width="100%" height="200" src="https://www.youtube.com/embed/⟦VIDEO_ID⟧" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' },
+        { name: 'Audio', block: true, text: '<audio controls src="⟦./path/to/audio.mp3⟧"></audio>' },
+        { name: 'Video', block: true, text: '<video controls src="⟦./path/to/video.mp4⟧"></video>' },
+        { name: '📌 Callout box', hint: 'ochre highlighted note', block: true,
+          text: '<div style="background: rgba(176, 138, 75, 0.15); border: 1px solid rgba(176, 138, 75, 0.4); border-radius: 8px; padding: 1rem; margin: 1rem 0;">\n📌 ⟦Callout text⟧\n</div>' },
+      ]},
+      { label: 'ﷺ Characters', chars: ['ﷺ','ؓ','ā','ī','ū','Ā','Ī','Ū','ḥ','ṣ','ṭ','ḍ','ẓ','Ḥ','Ṣ','Ṭ','Ḍ','Ẓ','ʿ','ʾ','ġ','ḫ','ṯ','ḏ','۞','✦','—','…','📜','🔤','📚','🔗','⚖️','🪶'] },
+    ];
+
+    const bar = document.getElementById('menubar');
+    const panel = document.getElementById('menu-panel');
+    let openIdx = -1;
+
+    bar.innerHTML = '<span class="lead">Insert</span>';
+    MENUS.forEach((m, i) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'mbtn'; b.textContent = m.label;
+      b.addEventListener('mousedown', e => e.preventDefault());   // keep the editor selection
+      b.addEventListener('click', () => toggleMenu(i, b));
+      bar.appendChild(b);
+    });
+    const guide = document.createElement('a');
+    guide.className = 'mbtn'; guide.textContent = '📖 Guide'; guide.target = '_blank'; guide.rel = 'noopener';
+    guide.href = 'render.html?file=AUTHORING_GUIDE.md';
+    bar.appendChild(guide);
+
+    function closeMenu() {
+      panel.classList.remove('open'); openIdx = -1;
+      bar.querySelectorAll('.mbtn.on').forEach(x => x.classList.remove('on'));
+    }
+    function toggleMenu(i, btn) {
+      if (openIdx === i) { closeMenu(); return; }
+      closeMenu(); openIdx = i; btn.classList.add('on');
+      const m = MENUS[i];
+      panel.innerHTML = '';
+      if (m.chars) {
+        const grid = document.createElement('div'); grid.className = 'chars';
+        m.chars.forEach(c => {
+          const x = document.createElement('button'); x.type = 'button'; x.textContent = c;
+          x.addEventListener('mousedown', e => e.preventDefault());
+          x.addEventListener('click', () => insertSnippet({ text: c }));   // stays open for repeated taps
+          grid.appendChild(x);
+        });
+        panel.appendChild(grid);
+      } else {
+        m.items.forEach(it => {
+          if (it.sect) { const h = document.createElement('div'); h.className = 'sect'; h.textContent = it.sect; panel.appendChild(h); return; }
+          const x = document.createElement('button'); x.type = 'button'; x.className = 'item';
+          x.innerHTML = '<b></b>' + (it.hint ? '<small></small>' : '');
+          x.querySelector('b').textContent = it.name;
+          if (it.hint) x.querySelector('small').textContent = it.hint;
+          x.addEventListener('mousedown', e => e.preventDefault());
+          x.addEventListener('click', () => { insertSnippet(it); closeMenu(); });
+          panel.appendChild(x);
+        });
+      }
+      const r = btn.getBoundingClientRect();
+      panel.style.top = (r.bottom + 4) + 'px';
+      panel.style.maxHeight = (window.innerHeight - r.bottom - 16) + 'px';
+      panel.classList.add('open');
+      panel.style.left = Math.max(8, Math.min(r.left, window.innerWidth - panel.offsetWidth - 8)) + 'px';
+    }
+    document.addEventListener('mousedown', e => { if (!panel.contains(e.target) && !bar.contains(e.target)) closeMenu(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    bar.addEventListener('scroll', closeMenu);
+    window.addEventListener('resize', closeMenu);
+
+    function insertSnippet(it) {
+      // On narrow screens the editor is hidden behind the Card tab.
+      if (document.body.dataset.tab !== 'edit') document.querySelector('.tabs button[data-tab="edit"]').click();
+      editor.focus();
+
+      if (it.top) {
+        const existing = editor.value.search(/^::meta\s*$/m);
+        if (existing !== -1) {            // a card has one header: jump to it instead of adding a second
+          const end = editor.value.indexOf('\n::', existing);
+          editor.setSelectionRange(existing, end === -1 ? existing : end + 3);
+          return;
+        }
+        editor.setSelectionRange(0, 0);
+      }
+
+      const start = editor.selectionStart, end = editor.selectionEnd;
+      const picked = editor.value.slice(start, end);
+      let text = it.text, selOff = -1, selLen = 0;
+
+      const first = text.match(/⟦([^⟧]*)⟧/);
+      if (first) {
+        selOff = first.index;
+        selLen = (picked || first[1]).length;
+        text = text.replace(first[0], () => picked || first[1]);
+      }
+      text = text.replace(/⟦([^⟧]*)⟧/g, '$1');
+
+      if (it.block && !it.top) {
+        const before = editor.value.slice(0, start), after = editor.value.slice(end);
+        const pre = !before ? '' : before.endsWith('\n\n') ? '' : before.endsWith('\n') ? '\n' : '\n\n';
+        const post = !after ? '\n' : after.startsWith('\n\n') ? '' : after.startsWith('\n') ? '\n' : '\n\n';
+        text = pre + text + post;
+        if (selOff >= 0) selOff += pre.length;
+      }
+
+      if (!document.execCommand('insertText', false, text)) {   // execCommand keeps undo history
+        editor.setRangeText(text, start, end, 'end');
+        editor.dispatchEvent(new Event('input'));
+      }
+      if (selOff >= 0) editor.setSelectionRange(start + selOff, start + selOff + selLen);
+      syncCaret();
+    }
+
+    const saved = store.get();
+    editor.value = saved !== null ? saved : sampleMd();
+    push();
+  </script>
+</body>
+</html>

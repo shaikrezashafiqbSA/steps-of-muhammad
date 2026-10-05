@@ -640,6 +640,32 @@
     }
     body.amalan-open .amalan-fab { display: none; }
 
+    /* Sunnah Card Builder — sits just left of My Amalan. --amalan-w is
+       kept in sync with the real button width (badge + label vary). */
+    .card-fab {
+      position: fixed;
+      right: calc(1rem + var(--amalan-w, 8.5rem) + 0.5rem);
+      bottom: 1rem;
+      z-index: 65;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 0.85rem;
+      border: 1px solid rgba(176, 138, 75, 0.35);
+      border-radius: 999px;
+      background: linear-gradient(100deg, rgba(125, 82, 67, var(--header-opacity, 0.95)), rgba(150, 101, 79, var(--header-opacity, 0.95)) 65%, rgba(176, 138, 75, var(--header-opacity, 0.95)));
+      color: #FFFBF1;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(125, 82, 67, 0.4);
+      font-family: 'JetBrains Mono', monospace;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card-fab:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(125, 82, 67, 0.5); }
+    .card-fab .card-fab-icon { font-size: 1.05rem; line-height: 1; }
+    .card-fab .card-fab-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    body.amalan-open .card-fab { display: none; }
+    @media (max-width: 540px) { .card-fab .card-fab-label { display: none; } }
+
     .amalan-panel {
       position: fixed;
       left: 0;
@@ -1500,6 +1526,11 @@
          pushing it down: open the sheet, keep scrolling/starring
          duʿās underneath, watch the collection fill up live.
          ══════════════════════════════════════════════════════════ -->
+    <a id="card-fab" class="card-fab" href="web/preview.html" title="Sunnah Card Builder — paste markdown, preview the card">
+      <span class="card-fab-icon">🪶</span>
+      <span class="card-fab-label">Sunnah Card</span>
+    </a>
+
     <button type="button" id="amalan-fab" class="amalan-fab" onclick="toggleAmalanPanel(true)" title="Open My Amalan">
       <span class="amalan-fab-icon">⚖️</span>
       <span class="amalan-fab-label">My Amalan</span>
@@ -1783,6 +1814,16 @@
     // FAB badge shows how many duʿās are saved across all collections —
     // panel body re-renders every time (cheap: it's small, and it must
     // reflect star toggles made out in the duʿā list behind it).
+    // Keep the 🪶 button flush against My Amalan whatever its width is.
+    (function syncCardFab() {
+      const fab = document.getElementById('amalan-fab');
+      if (!fab || !window.ResizeObserver) return;
+      new ResizeObserver(() => {
+        const w = fab.getBoundingClientRect().width;
+        if (w) document.documentElement.style.setProperty('--amalan-w', w + 'px');
+      }).observe(fab);
+    })();
+
     function renderAmalanFab() {
       const cols = loadCollections();
       const totalItems = cols.reduce((sum, c) => sum + c.items.length, 0);

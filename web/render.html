@@ -52,6 +52,14 @@
       scroll-behavior: smooth;
     }
 
+    /* Editor-caret highlight (preview mode only) */
+    .src-hl {
+      background: rgba(176, 138, 75, 0.22) !important;
+      box-shadow: 0 0 0 4px rgba(176, 138, 75, 0.22), 0 0 0 5px rgba(176, 138, 75, 0.55);
+      border-radius: 6px;
+      transition: background 0.15s ease, box-shadow 0.15s ease;
+    }
+
     .paper-card {
       background: var(--bg-cream);
       box-shadow:
@@ -1195,16 +1203,18 @@
     // ════════════════════════════════════════════
     function parseWordStacks(rootEl) {
       const html = rootEl.innerHTML;
-      const wordRe = /(?<!\\)\[\[([^\[\]|]+)(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?\]\]/g;
+      // Preview mode prefixes each stack with its source line number
+      // wrapped in word joiners (U+2060) so it can be traced back.
+      const wordRe = /(?<!\\)(?:⁠(\d+)⁠)?\[\[([^\[\]|]+)(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?\]\]/g;
 
-      const transformed = html.replace(wordRe, (match, ar, en, tr) => {
+      const transformed = html.replace(wordRe, (match, line, ar, en, tr) => {
         const arabic = (ar || '').trim();
         const english = (en || '').trim();
         const translit = (tr || '').trim();
         let inner = `<b>${arabic}</b>`;
         if (english) inner += `<i>${english}</i>`;
         if (translit) inner += `<u>${translit}</u>`;
-        return `<span class="w">${inner}</span>`;
+        return `<span class="w"${line ? ` data-line="${line}"` : ''}>${inner}</span>`;
       })
       .replace(/\\\[\[/g, '[[');
 
@@ -1309,6 +1319,8 @@
         };
       }
 
+      if (window._tocOutsideBound) return;
+      window._tocOutsideBound = true;
       document.addEventListener('click', (e) => {
         if (tocPanel.style.display === 'block' &&
           !tocPanel.contains(e.target) &&
@@ -1353,10 +1365,102 @@
     // ════════════════════════════════════════════
     // Markdown fetch & render
     // ════════════════════════════════════════════
+    // Shared by the file loader and the live preview (web/preview.html).
+    // Preview only: render block by block so every element carries the
+    // source line it came from (data-line) — drives the caret highlight.
+    function renderWithLines(src, offset) {
+      const tokens = marked.lexer(src);
+      const nl = (t) => (t.match(/\n/g) || []).length;
+      let line = offset + 1;
+      let out = '';
+      for (const tok of tokens) {
+        const start = line;
+        line += nl(tok.raw);
+        if (tok.type === 'space') continue;
+        const one = [tok];
+        one.links = tokens.links;
+        const html = marked.parser(one)
+          .replace(/^(\s*)<([a-zA-Z][\w-]*)/, `$1<$2 data-line="${start}"`);
+        out += html.replace(/(?<!\\)\[\[/g, (m, idx) => `⁠${start + nl(html.slice(0, idx))}⁠[[`);
+      }
+      return out;
+    }
+
+    function focusLine(line, scroll) {
+      const target = document.getElementById('markdown-target');
+      document.querySelectorAll('.src-hl').forEach(e => e.classList.remove('src-hl'));
+      if (!line) return;
+
+      let els;
+      if (line <= (window._metaLines || 0)) {
+        els = Array.from(document.querySelectorAll('#orb-corner-wrap .orb'));
+      } else {
+        const all = Array.from(target.querySelectorAll('[data-line]'));
+        let best = 0;
+        all.forEach(e => { const n = +e.dataset.line; if (n <= line && n > best) best = n; });
+        els = all.filter(e => +e.dataset.line === best)
+                 .map(e => e.tagName === 'DETAILS' ? (e.querySelector('summary') || e) : e);
+        els.forEach(e => {
+          let d = e.parentElement && e.parentElement.closest('details');
+          while (d) { d.open = true; d = d.parentElement && d.parentElement.closest('details'); }
+        });
+      }
+      els.forEach(e => e.classList.add('src-hl'));
+      if (scroll && els[0]) {
+        const r = els[0].getBoundingClientRect();
+        if (r.top < 60 || r.bottom > window.innerHeight - 90) {
+          els[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+      }
+    }
+
+    function renderCard(md, withLines) {
+      const target = document.getElementById('markdown-target');
+      marked.setOptions({ gfm: true, breaks: false });
+      const { meta, stripped } = parseMetaBlock(md);
+      const nlCount = (t) => (t.match(/\n/g) || []).length;
+      window._metaLines = nlCount(md) - nlCount(stripped);
+      const metaCardHTML = renderMetaCard(meta);
+
+      const orbTarget = document.getElementById('orb-corner-wrap');
+      if (orbTarget) {
+        orbTarget.innerHTML = metaCardHTML;
+        orbTarget.style.display = metaCardHTML ? 'flex' : 'none';
+        if (metaCardHTML && !window._orbWatcher) {
+          window._orbWatcher = true;
+          initOrbScrollWatcher();
+        }
+      }
+
+      target.innerHTML = withLines ? renderWithLines(stripped, window._metaLines) : marked.parse(stripped);
+
+      parseWordStacks(target);
+      buildTOC(target);
+
+      const h1 = target.querySelector('h1');
+      if (h1) document.title = h1.textContent;
+    }
+
     document.addEventListener('DOMContentLoaded', async () => {
       const params = new URLSearchParams(window.location.search);
       const file = params.get('file');
       const target = document.getElementById('markdown-target');
+
+      // Preview mode: web/preview.html embeds this page and posts markdown
+      // in, so the pasted card renders with exactly the live styling.
+      if (params.get('preview')) {
+        target.innerHTML = '';
+        window.addEventListener('message', (e) => {
+          if (e.data && e.data.type === 'som-focus') { focusLine(e.data.line, true); return; }
+          if (!e.data || e.data.type !== 'som-preview') return;
+          const y = window.scrollY;
+          try { renderCard(e.data.md || '', true); focusLine(e.data.line, false); }
+          catch (err) { target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ ${err.message}</p>`; }
+          window.scrollTo(0, y);
+        });
+        window.parent.postMessage({ type: 'som-preview-ready' }, '*');
+        return;
+      }
 
       // Built first, and unconditionally — a card that failed to load is
       // exactly when the reader most needs a way back to the menu.
@@ -1370,27 +1474,8 @@
       try {
         const res = await fetch('../' + file);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const md = await res.text();
-
-        marked.setOptions({ gfm: true, breaks: false });
-        const { meta, stripped } = parseMetaBlock(md);
-        const metaCardHTML = renderMetaCard(meta);
-
-        const orbTarget = document.getElementById('orb-corner-wrap');
-        if (orbTarget && metaCardHTML) {
-          orbTarget.innerHTML = metaCardHTML;
-          orbTarget.style.display = 'flex';
-          initOrbScrollWatcher();
-        }
-
-        target.innerHTML = marked.parse(stripped);
-
-        parseWordStacks(target);
-        buildTOC(target);
+        renderCard(await res.text());
         handleHashOpen();
-
-        const h1 = target.querySelector('h1');
-        if (h1) document.title = h1.textContent;
       } catch (err) {
         console.error(err);
         target.innerHTML = `

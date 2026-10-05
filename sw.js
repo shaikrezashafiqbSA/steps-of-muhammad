@@ -28,6 +28,7 @@ const PRECACHE = [
   './index.html',
   './web/render.html',
   './web/render_collection.html',
+  './web/preview.html',
   './web/nav-data.js',
   './web/sun-clock.js',
   './fonts/UthmanicHafsVer18.ttf',
