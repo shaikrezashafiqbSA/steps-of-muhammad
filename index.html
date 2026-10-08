@@ -30,7 +30,7 @@
   <!-- Inter (body) + JetBrains Mono (category labels) — matches render.html -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@500;600;700&family=Amiri:wght@700&family=Amiri+Quran&display=swap" rel="stylesheet">
 
 
   <style>
@@ -81,6 +81,27 @@
     }
     ::-webkit-scrollbar-thumb:hover { background: rgba(125, 82, 67, 0.5); }
 
+
+    /* ── Imam wordmark: Arabic dua over a brushed logotype ── */
+    @font-face {
+      font-family: 'UthmanicHafs';
+      src: url('fonts/UthmanicHafsVer18.ttf') format('truetype');
+      font-display: swap;
+    }
+    .imam-dua {
+      font-family: 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif;
+      font-size: clamp(1.5rem, 5.5vw, 2.1rem); line-height: 1.7; color: #7D5243; direction: rtl;
+    }
+    .imam-logo {
+      display: block; margin: 0.3rem auto 0.4rem; width: min(94vw, 40rem);
+    }
+    .imam-logo svg {
+      display: block; width: 100%; height: auto; overflow: visible;
+      opacity: 0.92;
+      filter: drop-shadow(0 1px 3px rgba(30, 28, 50, 0.4));
+    }
+    .imam-word { font-family: 'Amiri', 'Scheherazade New', serif; font-weight: 700; }
+    .imam-tagline { letter-spacing: 0.32em; font-weight: 700; }
 
     /* Decorative divider under title */
     .title-divider {
@@ -1493,11 +1514,25 @@
 
       <!-- Title block -->
       <div class="space-y-2 select-none pt-4">
-        <h1 id="root-title" class="text-3xl md:text-4xl font-black tracking-widest bg-gradient-to-r from-[#7D5243] via-[#B08A4B] to-[#7D5243] bg-clip-text text-transparent uppercase">
-          Follow the Steps
+        <p id="root-dua" class="imam-dua" lang="ar" dir="rtl">{{ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا | Furqān 25:74 — from the duʿāʾ of the ʿIbād ar-Raḥmān: “…and make us an imām for the God-conscious.” In other words, an example in taqwa for others. It is a supplication, asked with humility, not a title. }}</p>
+        <!-- The "I" of IMAM is the turbaned figure (with the leaf as his pauldron) cut from the bedsheet pattern,
+             assets/imam-figure.png. "MAM" is lettered to match: teal fill + pale outline, like the pattern itself. -->
+        <h1 id="root-title" class="imam-logo" aria-label="Imam">
+          <svg viewBox="0 0 880 215" role="img" aria-hidden="true">
+            <defs>
+              <!-- the I's top serif is hidden inside the turban; only the pole shows, from the face downward -->
+              <clipPath id="imamPole"><rect x="0" y="40" width="200" height="200"/></clipPath>
+            </defs>
+            <g class="imam-word" font-size="290" fill="#3E6C7E" stroke="#D3EEE9" stroke-width="4" stroke-linejoin="round" paint-order="stroke fill">
+              <text x="50" y="210" clip-path="url(#imamPole)">I</text>
+              <text x="152" y="210" textLength="708" lengthAdjust="spacing">MAM</text>
+            </g>
+            <!-- the turbaned figure sits on the pole like a hat on a stand -->
+            <image href="assets/imam-figure.png" x="14" y="6" width="117" height="140"/>
+          </svg>
         </h1>
-        <p id="root-subtitle" class="text-xs md:text-sm font-mono-app text-[#7A6F6C] uppercase tracking-widest max-w-md mx-auto leading-relaxed">
-          Prophet Muḥammad ﷺ
+        <p id="root-subtitle" class="imam-tagline text-xs md:text-sm font-mono-app text-[#7A6F6C] uppercase max-w-md mx-auto leading-relaxed">
+          Steps of Muḥammad ﷺ
         </p>
 
 
@@ -1557,10 +1592,11 @@
   </footer>
 
 
+  <script src="web/tips.js" defer></script>
   <script>
     const ROOT_CONFIG = {
-      title: "Follow the Steps",
-      subtitle: "Prophet Muḥammad ﷺ"
+      title: "Imam",
+      subtitle: "Steps of Muḥammad ﷺ"
     };
 
 
@@ -2118,9 +2154,9 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('meta-title').textContent = ROOT_CONFIG.title;
-      document.getElementById('root-title').textContent = ROOT_CONFIG.title;
+      document.getElementById('meta-title').textContent = ROOT_CONFIG.title + ' · ' + ROOT_CONFIG.subtitle;
       document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
+      somParseTips(document.getElementById('root-dua'));   // tappable ! on the Furqān dua (web/tips.js)
       renderApp();
       openNodeFromHash();
     });
