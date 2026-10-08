@@ -14,7 +14,7 @@
      cap; the app still renders offline once they are cached.
    ════════════════════════════════════════════════════════════════ */
 
-const VERSION = 'v1.0.0';
+const VERSION = 'v1.0.1';
 const SHELL_CACHE = `shell-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 const CDN_CACHE = `cdn-${VERSION}`;
@@ -32,6 +32,7 @@ const PRECACHE = [
   './web/nav-data.js',
   './web/tips.js',
   './web/sun-clock.js',
+  './web/pwa-install.js',
   './fonts/UthmanicHafsVer18.ttf',
   './assets/black-flag.jpeg',
   './assets/black-flag-nur.jpeg',
