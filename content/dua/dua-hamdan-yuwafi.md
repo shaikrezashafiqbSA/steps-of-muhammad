@@ -370,4 +370,4 @@ These are 3 lexical echoes of the Quran:
 
 This supplication is a **compiled duʿāʾ** recited in the gatherings (majālis) of the Ba ʿAlawī tradition of Ḥaḍramawt as transmitted by the scholars of the Ḥabāʾib. 
 
-- **Attribution note:** the compilation circulates in the majālis connected to Ḥabīb ʿAlī al-Ḥabashī and Ḥabīb ʿUmar bin Ḥafīẓ - it is contained in a specific published citation for this exact compiled sequence under Ḥabīb ʿUmar's name. 
+- **Attribution note:** the compilation circulates in the majālis connected to Ḥabīb ʿAlī al-Ḥabashī and Ḥabīb ʿUmar bin Ḥafīẓ - it is contained in a specific published citation for this exact compiled sequence under Ḥabīb ʿUmar's name: Al Khulasa
