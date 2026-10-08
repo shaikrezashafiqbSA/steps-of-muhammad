@@ -17,7 +17,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Menu tree — shared with web/render.html and web/render_collection.html
+  <!-- Menu tree — shared with web/render.html
        so a rendered card knows which list it belongs to (prev / home / next) -->
   <script src="web/nav-data.js"></script>
 
@@ -1631,7 +1631,7 @@
     // COLLECTIONS — localStorage-backed "build your own collections"
     //   Stores an array of { id, name, note, items: [{label, path}] }.
     //   Each collection is an ordered list of atomic dua paths (the
-    //   same shape render_collection.html's item builder takes).
+    //   same shape render.html embeds take).
     //   Only items rendered through web/render.html?file=... are
     //   favouritable — family/collection items and legacy .html
     //   pages aren't atomic markdown, so they're excluded.
@@ -1780,7 +1780,7 @@
     }
 
     // Collections live in this browser's localStorage only, so a link to
-    // render_collection.html?collection=<id> means nothing on someone
+    // render.html?collection=<id> means nothing on someone
     // else's device. To actually share the amalan, we resolve every
     // item's real page link and drop the whole list, formatted, straight
     // into a WhatsApp message.
@@ -1823,7 +1823,7 @@
           : `<p class="fav-empty-hint">☆ Set this as your active collection (★ toggle) and tap the star next to any duʿā below to add it here.</p>`;
 
         const openLinkHTML = col.items.length
-          ? `<a href="web/render_collection.html?collection=${encodeURIComponent(col.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>`
+          ? `<a href="web/render.html?collection=${encodeURIComponent(col.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>`
           : '';
 
         const shareBtnHTML = col.items.length

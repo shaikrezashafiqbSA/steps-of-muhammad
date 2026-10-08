@@ -30,7 +30,7 @@ right-orb: 🪶 Not For Recitation
 5. [UI Features Available On Every Page](#-ui-features-available-on-every-page)
 6. [Standard Markdown & Embedded HTML](#-standard-markdown--embedded-html)
 7. [Pattern Library — One Recipe per Content Type](#-pattern-library)
-8. [Collections & render_collection.html](#-collections--render_collectionhtml)
+8. [Collections & embedded cards](#-collections--embedded-cards)
 9. [Sourcing Methodology](#-sourcing-methodology)
 10. [Tashkeel & Tajwīd Standards](#-tashkeel--tajwīd-standards)
 11. [Transliteration Standards](#-transliteration-standards)
@@ -308,7 +308,7 @@ Add `open` to start expanded: `<details open>`. Nest arbitrarily deep — the sy
 
 ## 🎛️ UI Features Available On Every Page
 
-These work no matter what markdown you load — they're rendered by `render.html`/`render_collection.html` itself, not authored per-file.
+These work no matter what markdown you load — they're rendered by `render.html` itself, not authored per-file.
 
 ### 🅰️ Floating Reading Mode Fan (Bottom-Left)
 
@@ -791,83 +791,36 @@ verify:
 
 ---
 
-## 🧩 Collections & `render_collection.html`
+## 🧩 Collections & embedded cards
 
-A **collection** is a manifest file (Pattern W1/C1) rendered as one continuous, scrollable page — every linked duʿā expands inline as a collapsible card instead of navigating to a new page. This is the "read top to bottom after ṣalāh" experience: open once, scroll through the whole sequence.
+A **collection** is just a card whose body is a list of embeds. There is no separate viewer: `render.html` expands `[label](?file=path/to/card.md "embed")` into a collapsed `<details>` drawer holding the whole atomic card (word-stacks, orb badge, grade pill, "Open standalone ↗" link). Embeds are one level deep — links inside an embedded card stay plain links. The Sunnah Card Builder (`web/preview.html`) has an **🧩 Embed another card** snippet for it.
 
-### How it works
+### Authored sequences
 
-`render_collection.html` is a **separate, self-contained viewer** from `render.html`. It is never edited when `render.html` changes and vice versa — they intentionally duplicate the rendering engine (meta parsing, word-stack parsing, orb rendering, zoom, reading modes) rather than share code, so a change to one can't silently break the other.
+Write a normal card and add the `"embed"` title to each link:
 
-Given a manifest file via `?file=`, it:
-
-1. Fetches the manifest, renders its `::meta` header and intro prose exactly like `render.html` would
-2. Scans the intro markdown for every `[label](?file=path/to/atomic.md)` link, **in the order they appear**
-3. Rewrites each of those links to jump to an inline anchor (`#collection-item-N`) instead of navigating away
-4. Fetches each linked atomic file and renders it as a `<details>` card — same word-stacks, same orb badges (source pill + color-coded grade pill, folding to compact icons on scroll), same "Open standalone ↗" link back to `render.html` for the full dalīl-check view
-5. The first item opens expanded; the rest start collapsed
-
-### Authoring a collection manifest
-
-Any existing W1/C1-style manifest already works — no format change required. To get the cleanest render:
-
-- Use `[label](?file=path/to/file.md)` links exactly as in Pattern W1 — this is the *only* syntax the parser looks for
-- Links can sit inside prose, bold text, or a numbered list; the regex only cares about the `[...](?file=...md)` shape, so `**[→ Some Duʿā](?file=x.md)**` works fine
-- Keep each linked path **unique** — the parser dedupes by path, so linking the same file twice will jump to the same card both times
-- An item you want listed but haven't authored yet (still pending sourcing) should **not** be wrapped in a real `[...](?file=...)` link — write it as plain text (e.g. `6. **Āyat al-Kursī** — 🔜 *pending authoring*`). A link to a file that doesn't exist yet will render as a visible error card in that slot rather than breaking the rest of the page — harmless, but a plain-text placeholder is cleaner while a piece is still unauthored
-- The manifest's own `::meta` (`left-orb`/`right-orb`) becomes the collection's header pills — use it for a collection-level label (e.g. `left-orb: 📚 Collection · Post-Ṣalāh Adhkār`), not a hadith citation
-- Mark timing/optionality inline in your list item text (`*(optional)*`, `*(Fajr & Maghrib only)*`) — the parser doesn't understand structured metadata for this, it's just prose the reader sees
-
-### Wiring it into the menu (`web/nav-data.js`)
-
-A collection is exposed to users the same way a `family`-type item already is — just point its `path` at `render_collection.html` instead of `render.html`:
-
-```js
-{ type: "family", label: "Post-Ṣalāh Collection — Full Sequence",
-  path: "web/render_collection.html?file=after-salah/post-solat-collection.md" }
+```md
+1. [Allāhumma Antas-Salām](?file=content/salah/after/1_istigfar_peace.md "embed")
 ```
 
----
+Mark timing/optionality in prose around the embed (`*(optional)*`, `*(Fajr & Maghrib only)*`). An item not yet authored should stay plain text — a link to a missing file renders a visible error drawer in that slot.
 
-## 🧭 Editing the Menu
+### My Amalan (user-built)
 
-`web/nav-data.js` holds `VAULT_NAVIGATION_TREE` — the one list that defines every category and every duʿā in it. Three pages read it: `index.html` draws the accordion menu from it, and `web/render.html` and `web/render_collection.html` use it to work out which category the open card belongs to, so they can offer **Previous · Home · Next**.
+`index.html` stores the reader's lists in `localStorage` (`som-collections`). `web/render.html?collection=<id>` reads that list and renders it as a card of embeds, the first one open — so My Amalan and authored sequences share one code path. Lists live on the reader's device only, so the link means nothing on another device.
 
-That single source is the whole trick: **array order is reading order**. Move an entry up or down and both the menu and the prev/next arrows follow it. There is no second list to keep in sync.
+### Testing
 
-**To add a duʿā:** author the `.md` under `content/`, then drop an entry into the category's `items` array at the position you want it read:
-
-```js
-{ label: "Du'ā — Travel", tier: "jemaah", grade: "sahih",
-  path: "web/render.html?file=content/dua/dua-safar.md" },
-```
-
-**To reorder:** cut and paste the line. Nothing else needs touching.
-
-**Things worth knowing:**
-
-- `num:` badges are literal text, not computed. Insert a duʿā between numbers 4 and 5 and you must renumber the entries yourself.
-- Entries with `type: "family"` and no `path` are section dividers. They sit in the menu but are skipped by prev/next.
-- Only `render.html` and `render_collection.html` entries join the prev/next sequence. Standalone legacy `.html` pages are deliberately excluded, since they carry no nav bar and would strand the reader.
-- Prev/next stops at the edges of a category. It does not roll over into the next one.
-- Home links back as `index.html#node-3`, where the number is the category's position in the array. Reordering whole categories reshuffles those anchors, which only matters for bookmarks somebody saved earlier.
-- Saved collections in "My Ijazah" store the `.md` path, so **renaming or moving a `.md` file breaks them**. Reordering the menu is always safe.
-- After deploying, hard-refresh once. Browsers cache `nav-data.js` and a stale copy shows the old menu.
-
-### Testing a collection locally
-
-`fetch()` requires `http://`, not `file://` — opening the HTML file directly from disk will fail silently on every linked card. Serve the folder locally first:
+`fetch()` requires `http://`, not `file://`. Serve the folder locally:
 
 ```
 python -m http.server 8791
 ```
 
-Then open `http://localhost:8791/web/render_collection.html?file=your-manifest.md` and check:
+Then open `http://localhost:8791/web/render.html?file=your-card.md` and check:
 
-- [ ] Every linked card loads (no `⚠️ Could not load` error cards)
-- [ ] First item auto-expands; rest start collapsed
-- [ ] Clicking an intro link jumps to and opens the right card
-- [ ] Each card's orb pair matches its standalone `render.html?file=...` rendering exactly
+- [ ] Every embed loads (no `⚠️ Could not load` drawers)
+- [ ] Each drawer's orb badge matches its standalone rendering
 - [ ] No console errors
 
 ---

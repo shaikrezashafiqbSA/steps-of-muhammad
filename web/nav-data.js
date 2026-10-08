@@ -3,7 +3,6 @@
 //   Single source of truth for the menu tree. Loaded by:
 //     index.html                  → Compendium view + Action view
 //     web/render.html             → prev / home / next on a card
-//     web/render_collection.html  → prev / home / next on a collection
 //
 //   Because the tree lives here, a rendered card can work out
 //   which category it belongs to and which duʿā comes before
@@ -214,8 +213,8 @@ const VAULT_NAVIGATION_TREE = [
 
 // =========================================================
 // CARD NAVIGATION ENGINE
-//   Only the two viewers we control (render.html and
-//   render_collection.html) join the prev/next sequence.
+//   Only the viewer we control (render.html) joins the
+//   prev/next sequence.
 //   Standalone legacy .html pages are skipped — they carry
 //   no nav bar of their own, so paging into one would strand
 //   the reader exactly the way this engine exists to prevent.
@@ -287,8 +286,7 @@ function somRenderNavEnd(item, direction) {
 }
 
 // Same ends, shaped for the floating bottom HUD on render.html — one shared
-// pill with prev · home · next. render_collection.html has no #somHudNav, so
-// this simply never runs there.
+// pill with prev · home · next.
 function somRenderHudEnd(item, direction) {
   const isPrev = direction === 'prev';
   const arrow = isPrev ? '←' : '→';
@@ -370,8 +368,8 @@ function somBuildCardNav() {
     : '';
   somBuildHudNav(prev, next, homeHref, hudContext);
 
-  // Pages that still carry a #floatHomeBtn in their control stack (e.g.
-  // render_collection.html) get it wired up here; render.html dropped it
+  // Pages that still carry a #floatHomeBtn in their control stack (none
+  // today) get it wired up here; render.html dropped it
   // in favour of the ⌂ home slot inside the HUD.
   const floatHome = document.getElementById('floatHomeBtn');
   if (floatHome) {

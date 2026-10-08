@@ -367,6 +367,13 @@
       color: var(--structural);
     }
     .toc-list .toc-h2 { font-weight: 600; }
+    .toc-list .toc-card > a::after { content: '▸'; float: right; color: var(--text-taupe); }
+    .toc-list .toc-card.is-unfolded > a::after { content: '▾'; }
+    .toc-list .toc-card.is-unfolded > a { color: var(--structural); border-left-color: var(--structural); }
+    .toc-list .toc-sub { list-style: none; margin: 0 0 0.3rem 0.6rem; padding: 0; }
+    .toc-list .toc-sub .toc-h2 a { padding-left: 1rem; font-size: 0.78rem; font-weight: 600; }
+    .toc-list .toc-sub .toc-h3 a { padding-left: 1.7rem; }
+    .markdown-body details.embed-card { scroll-margin-top: 1rem; }
     .toc-list .toc-h3 a {
       padding-left: 1.5rem;
       font-size: 0.76rem;
@@ -1300,6 +1307,7 @@
     // TOC builder v4.1
     // ════════════════════════════════════════════
     function buildTOC(target) {
+      if (window._collectionToc) return buildCollectionTOC(target);
       const tocPanel = document.getElementById('toc');
       const tocList = document.getElementById('tocList');
       const hudTocBtn = document.getElementById('hudTocBtn');
@@ -1340,7 +1348,10 @@
       });
 
       if (hudTocBtn) hudTocBtn.style.display = 'flex';
+      wireTocButton(tocPanel, hudTocBtn);
+    }
 
+    function wireTocButton(tocPanel, hudTocBtn) {
       if (hudTocBtn) {
         hudTocBtn.onclick = (e) => {
           e.stopPropagation();
@@ -1359,6 +1370,77 @@
           closeTOC();
         }
       });
+    }
+
+    // Collection pages ("My Amalan"): the TOC lists the embedded cards.
+    // Tapping one opens + scrolls to it and unfolds that card's own h2/h3
+    // sections underneath (one card unfolded at a time).
+    function buildCollectionTOC(target) {
+      const tocPanel = document.getElementById('toc');
+      const tocList = document.getElementById('tocList');
+      const hudTocBtn = document.getElementById('hudTocBtn');
+      const cards = target.querySelectorAll('details.embed-card');
+      tocList.innerHTML = '';
+      if (cards.length < 2) {
+        if (tocPanel) tocPanel.style.display = 'none';
+        if (hudTocBtn) hudTocBtn.style.display = 'none';
+        return;
+      }
+
+      const lis = [];
+      cards.forEach((card, i) => {
+        const li = document.createElement('li');
+        li.className = 'toc-h2 toc-card';
+        const a = document.createElement('a');
+        a.href = '#';
+        a.textContent = card.dataset.label || card.dataset.path;
+        const sub = document.createElement('ul');
+        sub.className = 'toc-sub';
+        sub.hidden = true;
+        li.append(a, sub);
+        lis.push(li);
+
+        a.addEventListener('click', async (e) => {
+          e.preventDefault();
+          card.open = true;
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const wasOpen = li.classList.contains('is-unfolded');
+          lis.forEach(l => { l.classList.remove('is-unfolded'); l.querySelector('.toc-sub').hidden = true; });
+          if (wasOpen) return;
+          if (!sub.childElementCount) {
+            if (!card.querySelector('.embed-footer')) { try { await loadEmbed(card.dataset.path); } catch (_) {} }
+            card.querySelectorAll('.embed-body h2, .embed-body h3').forEach((h, j) => {
+              if (!h.id) h.id = `emb-${i}-${j}`;
+              const sli = document.createElement('li');
+              sli.className = h.tagName === 'H2' ? 'toc-h2' : 'toc-h3';
+              const sa = document.createElement('a');
+              sa.href = `#${h.id}`;
+              sa.textContent = h.textContent;
+              sa.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                card.open = true;
+                let node = h.nextElementSibling;
+                while (node && !['H1', 'H2', 'H3'].includes(node.tagName)) {
+                  if (node.tagName === 'DETAILS') node.open = true;
+                  if (node.querySelectorAll) node.querySelectorAll('details').forEach(d => d.open = true);
+                  node = node.nextElementSibling;
+                }
+                const pd = h.closest('details:not(.embed-card)');
+                if (pd) pd.open = true;
+                h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                closeTOC();
+              });
+              sli.appendChild(sa);
+              sub.appendChild(sli);
+            });
+          }
+          if (sub.childElementCount) { li.classList.add('is-unfolded'); sub.hidden = false; }
+        });
+        tocList.appendChild(li);
+      });
+
+      if (hudTocBtn) hudTocBtn.style.display = 'flex';
+      wireTocButton(tocPanel, hudTocBtn);
     }
 
     function openTOC() {
@@ -1511,6 +1593,8 @@
     function makeEmbed(path, label, line) {
       const card = document.createElement('details');
       card.className = 'embed-card';
+      card.dataset.path = path;
+      card.dataset.label = label;
       if (line) card.dataset.line = line;
       card.open = EMBED_OPEN.has(path);
       card.innerHTML = '<summary></summary><div class="embed-body"></div>';
@@ -1629,6 +1713,37 @@
       // Built first, and unconditionally — a card that failed to load is
       // exactly when the reader most needs a way back to the menu.
       somBuildCardNav();
+
+      // "My Amalan": ?collection=<id> (or legacy ?favorites=1 → first one) turns the
+      // list saved by index.html into a card of embeds — same drawers as authored cards.
+      if (params.get('collection') || params.get('favorites') === '1') {
+        try {
+          const cols = JSON.parse(localStorage.getItem('som-collections') || '[]');
+          const id = params.get('collection');
+          const col = Array.isArray(cols) ? (id ? cols.find(c => c.id === id) : cols[0]) : null;
+          if (!col) {
+            target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Collection not found on this device. It may have been deleted. <a href="../index.html">Back to home</a>.</p>`;
+            return;
+          }
+          const items = Array.isArray(col.items) ? col.items : [];
+          if (!items.length) {
+            target.innerHTML = `<p class="embed-status">☆ No duʿās saved in this collection yet. Tap the star next to any duʿā on the <a href="../index.html">home page</a> to add it.</p>`;
+            return;
+          }
+          const esc = s => String(s).replace(/([\\\[\]])/g, '\\$1');
+          const link = it => `[${esc(it.label || it.path)}](?file=${encodeURI(it.path).replace(/[()]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase())} "embed")`;
+          EMBED_OPEN.add(items[0].path);
+          window._collectionToc = true;
+          renderCard(
+            `# ${col.name || 'My Amalan'}\n\n` +
+            (col.note ? `*${col.note}*\n\n` : '') +
+            items.map(link).join('\n\n') + '\n');
+        } catch (err) {
+          console.error(err);
+          target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Could not load this collection.</p>`;
+        }
+        return;
+      }
 
       if (!file) {
         target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ No file specified. Append <code>?file=yourfile.md</code> to the URL.</p>`;

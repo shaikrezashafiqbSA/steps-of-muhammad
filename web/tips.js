@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════
-   Inline tooltips — shared by render.html and render_collection.html
+   Inline tooltips — used by render.html
    Authoring syntax:   {{ word | short explanation }}
    Works anywhere text does: paragraphs, headings, <summary> lines, lists.
    Hover (desktop) or tap/click shows the note; click again, click elsewhere

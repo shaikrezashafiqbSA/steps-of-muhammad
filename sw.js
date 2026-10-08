@@ -27,7 +27,6 @@ const PRECACHE = [
   './',
   './index.html',
   './web/render.html',
-  './web/render_collection.html',
   './web/preview.html',
   './web/nav-data.js',
   './web/tips.js',
@@ -141,7 +140,7 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin && !isCdn(request)) return; // let the browser handle the rest
 
-  // Pages (index / render / render_collection): fresh copy when online,
+  // Pages (index / render): fresh copy when online,
   // cached copy when offline.
   if (isNavigation(request)) {
     event.respondWith(networkFirst(request, SHELL_CACHE));

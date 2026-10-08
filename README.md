@@ -149,8 +149,7 @@ We welcome contributions from anyone who shares the commitment to honest provena
 ```
 ├── index.html              ← Main library page (vault)
 ├── web/
-│   ├── render.html         ← Markdown rendering engine
-│   └── render_collection.html ← Collection viewer
+│   └── render.html         ← Markdown rendering engine
 ├── assets/
 │   ├── black-flag.jpeg     ← Background imagery
 │   └── black-flag-nur.jpeg

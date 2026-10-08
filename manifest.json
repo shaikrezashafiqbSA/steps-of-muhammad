@@ -35,12 +35,12 @@
   "shortcuts": [
     {
       "name": "Morning & Evening Adhkar",
-      "url": "./web/render_collection.html?collection=adhkar-as-sabah-wal-masa",
+      "url": "./web/render.html?collection=adhkar-as-sabah-wal-masa",
       "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Night Adhkar",
-      "url": "./web/render_collection.html?collection=adhkar-al-lail",
+      "url": "./web/render.html?collection=adhkar-al-lail",
       "icons": [{ "src": "assets/icons/icon-192.png", "sizes": "192x192" }]
     }
   ]
