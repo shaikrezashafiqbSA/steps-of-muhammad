@@ -101,6 +101,18 @@
       filter: drop-shadow(0 1px 3px rgba(30, 28, 50, 0.4));
     }
     .imam-word { font-family: 'Amiri', 'Scheherazade New', serif; font-weight: 700; }
+    .imam-figure {
+      filter: saturate(1.2) contrast(1.08)
+              drop-shadow(0 0 4px rgba(255, 214, 120, 0.95))
+              drop-shadow(0 0 14px rgba(240, 180, 70, 0.8))
+              drop-shadow(0 0 34px rgba(226, 160, 40, 0.55));
+    }
+    .imam-aura { transform-origin: 140px 40px; animation: imam-aura-pulse 5s ease-in-out infinite; }
+    @keyframes imam-aura-pulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50%      { opacity: 1;   transform: scale(1.07); }
+    }
+    @media (prefers-reduced-motion: reduce) { .imam-aura { animation: none; } }
     .imam-tagline { letter-spacing: 0.32em; font-weight: 700; }
 
     /* Decorative divider under title */
@@ -1518,17 +1530,24 @@
         <!-- The "I" of IMAM is the turbaned figure (with the leaf as his pauldron) cut from the bedsheet pattern,
              assets/imam-figure.png. "MAM" is lettered to match: teal fill + pale outline, like the pattern itself. -->
         <h1 id="root-title" class="imam-logo" aria-label="Imam">
-          <svg viewBox="0 0 880 215" role="img" aria-hidden="true">
+          <svg viewBox="0 -122 990 340" role="img" aria-hidden="true">
             <defs>
-              <!-- the I's top serif is hidden inside the turban; only the pole shows, from the face downward -->
-              <clipPath id="imamPole"><rect x="0" y="40" width="200" height="200"/></clipPath>
+              <!-- the pole: only the short lower half of the I shows, rising out of the figure -->
+              <clipPath id="imamPole"><rect x="0" y="115" width="220" height="200"/></clipPath>
+              <radialGradient id="imamAura" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#FFE08A" stop-opacity="0.85"/>
+                <stop offset="0.45" stop-color="#F2B94B" stop-opacity="0.45"/>
+                <stop offset="1" stop-color="#E8A53A" stop-opacity="0"/>
+              </radialGradient>
             </defs>
+            <!-- gold aura behind the imam -->
+            <ellipse class="imam-aura" cx="140" cy="40" rx="205" ry="225" fill="url(#imamAura)"/>
             <g class="imam-word" font-size="290" fill="#3E6C7E" stroke="#D3EEE9" stroke-width="4" stroke-linejoin="round" paint-order="stroke fill">
-              <text x="50" y="210" clip-path="url(#imamPole)">I</text>
-              <text x="152" y="210" textLength="708" lengthAdjust="spacing">MAM</text>
+              <text x="150" y="210" clip-path="url(#imamPole)">I</text>
+              <text x="262" y="210" textLength="708" lengthAdjust="spacing">MAM</text>
             </g>
-            <!-- the turbaned figure sits on the pole like a hat on a stand -->
-            <image href="assets/imam-figure.png" x="14" y="6" width="117" height="140"/>
+            <!-- the turbaned imam: large, rising above the letters, glowing gold -->
+            <image class="imam-figure" href="assets/imam-figure.png" x="0" y="-112" width="268" height="320"/>
           </svg>
         </h1>
         <p id="root-subtitle" class="imam-tagline text-xs md:text-sm font-mono-app text-[#7A6F6C] uppercase max-w-md mx-auto leading-relaxed">
