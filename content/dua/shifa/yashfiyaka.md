@@ -18,7 +18,7 @@ right-orb-compact: ۞۞۞
 Ibn ʿAbbās (raḍiyallāhu ʿanhumā) reported that the Prophet (ﷺ) said: "Whoever visits a sick person whose appointed time has not yet arrived and says in his presence seven times: *Asʾalu Llāha l-ʿAẓīma Rabba l-ʿArshi l-ʿAẓīmi an yashfiyaka* (*I beseech Allah the Magnificent, Lord of the Magnificent Throne, to heal you*), Allah will certainly heal him of that illness."
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد)**
 

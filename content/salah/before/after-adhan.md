@@ -32,7 +32,7 @@ then my intercession for him will be allowed on the Day of Resurrection."
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[عَلِيُّ|ʿAlī|ʿaliyyu]] [[بْنُ|son of|bnu]] [[عَيَّاشٍ|ʿAyyāsh,|ʿayyāshin,]] [[قَالَ|who said:|qāla]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[شُعَيْبُ|Shuʿayb|shuʿaybu]] [[بْنُ|son of|bnu]] [[أَبِي|Abī|abī]] [[حَمْزَةَ|Ḥamzah,|ḥamzata,]] [[عَنْ|from|ʿan]] [[مُحَمَّدِ|Muḥammad|muḥammadi]] [[بْنِ|son of|bni]] [[الْمُنْكَدِرِ|al-Munkadir,|l-munkadiri,]] [[عَنْ|from|ʿan]] [[جَابِرِ|Jābir|jābiri]] [[بْنِ|son of|bni]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah,|llāhi,]]

@@ -51,7 +51,7 @@ And the Messenger of Allah (ﷺ) said: *"The supplications of the distressed one
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[الْعَبَّاسُ|al-ʿAbbās|l-ʿabbāsu]] [[بْنُ|son of|bnu]] [[عَبْدِ|ʿAbd|ʿabdi]] [[الْعَظِيمِ،|al-ʿAẓīm,|l-ʿaẓīmi,]] [[وَمُحَمَّدُ|and Muḥammad|wa-muḥammadu]] [[بْنُ|son of|bnu]] [[الْمُثَنَّى،|al-Muthannā,|l-muthannā,]] [[قَالَا|both said:|qālā]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[الْمَلِكِ|al-Malik|l-maliki]] [[بْنُ|son of|bnu]] [[عَمْرٍو،|ʿAmr,|ʿamrin,]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[الْجَلِيلِ|al-Jalīl|l-jalīli]] [[بْنِ|son of|bni]] [[عَطِيَّةَ،|ʿAṭiyyah,|ʿaṭiyyata,]] [[عَنْ|from|ʿan]] [[جَعْفَرِ|Jaʿfar|jaʿfari]] [[بْنِ|son of|bni]] [[مَيْمُونٍ،|Maymūn,|maymūnin,]] [[قَالَ|who said:|qāla]] [[حَدَّثَنِي|narrated to me|ḥaddathanī]] [[عَبْدُ|ʿAbdur-Raḥmān|ʿabdu]] [[الرَّحْمَنِ|the Raḥmān|r-raḥmāni]] [[بْنُ|son of|bnu]] [[أَبِي|Abī|abī]] [[بَكْرَةَ،|Bakrah,|bakrata,]] [[أَنَّهُۥ|that he|annahū]] [[قَالَ|said|qāla]] [[لِأَبِيهِ|to his father:|li-abīhi:]]

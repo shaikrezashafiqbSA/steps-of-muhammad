@@ -28,7 +28,7 @@ Graded **Ṣaḥīḥ** by al-Albānī.
 > The evening ending is transmitted both as *wa ilayka l-maṣīr* and as *wa ilayka n-nushūr* across printings of the Sunan. Either is narrated.
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[عَنِ|From|ʿani]] [[النَّبِيِّ|the Prophet|n-nabiyyi]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[أَنَّهُ|that he|annahu]] [[كَانَ|used to|kāna]] [[يَقُولُ|say|yaqūlu]] [[إِذَا|when|idhā]] [[أَصْبَحَ|morning came:|aṣbaḥa]] [[اللَّهُمَّ|O Allah,|allāhumma]] [[بِكَ|by You|bika]] [[أَصْبَحْنَا|we enter the morning,|aṣbaḥnā]] [[وَبِكَ|and by You|wa bika]] [[أَمْسَيْنَا|we enter the evening,|amsaynā]] [[وَبِكَ|and by You|wa bika]] [[نَحْيَا|we live,|naḥyā]] [[وَبِكَ|and by You|wa bika]] [[نَمُوتُ|we die,|namūtu]] [[وَإِلَيْكَ|and to You|wa ilayka]] [[النُّشُورُ|is the resurrection.|n-nushūr]]
 </details>

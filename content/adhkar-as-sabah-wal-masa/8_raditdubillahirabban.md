@@ -18,7 +18,7 @@ right-orb-compact: ۞۞
 It was narrated that Thawbān (raḍiyallāhu ʿanhu) said: The Messenger of Allah ﷺ said: "Whoever says when he reaches the evening: *'I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad ﷺ as my Prophet'* — it is a duty upon Allah to please him."
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[سَعِيدٍ|Saʿīd|saʿīdin]] [[ٱلْأَشَجُّ،|al-Ashajj,|l-ashajju,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عُقْبَةُ|ʿUqbah|ʿuqbatu]] [[بْنُ|son of|bnu]] [[خَالِدٍ،|Khālid,|khālidin,]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[سَعْدٍ،|Saʿd,|saʿdin,]] [[سَعِيدِ|Saʿīd|saʿīdi]] [[بْنِ|son of|bni]] [[ٱلْمَرْزُبَانِ|al-Marzubān,|l-marzubāni,]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[سَلَمَةَ،|Salamah,|salamata,]] [[عَنْ|from|ʿan]] [[ثَوْبَانَ،|Thawbān,|thawbāna,]] [[رَضِيَ|may pleased be|raḍiya]] [[ٱللَّهُ|Allah|llāhu]] [[عَنْهُ|with him,|ʿanhu,]] [[قَالَ|he said|qāla]] [[قَالَ|said|qāla]] [[رَسُولُ|the Messenger of|rasūlu]] [[ٱللَّهِ|Allah|llāhi]] [[صَلَّى|may Allah bless him|ṣallā]] [[ٱللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace:|wa sallama:]]

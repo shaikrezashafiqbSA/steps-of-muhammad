@@ -21,7 +21,7 @@ right-orb-compact: ۞۞
 Muʿādh ibn Anas ؓ reported: The Messenger of Allah ﷺ said, "Whoever eats food and then says: *Al-ḥamdu lillāhi-lladhī aṭʿamanī hādhā, wa razaqanīhi min ghayri ḥawlin minnī wa lā quwwatin* — 'All praise is due to Allah Who has fed me this and provided it for me without any might or power on my part' — his past sins will be forgiven."
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد)**
 

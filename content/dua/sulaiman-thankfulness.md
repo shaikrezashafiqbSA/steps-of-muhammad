@@ -17,7 +17,7 @@ right-orb-compact: ۞۞۞
 So [Solomon] smiled, amused at her speech, and said: *"My Lord, enable me to be grateful for Your favor which You have bestowed upon me and upon my parents and to do righteousness of which You approve. And admit me by Your mercy into [the ranks of] Your righteous servants."*
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Text of the Verse (النَّصّ)
 [[فَتَبَسَّمَ|So he smiled,|fa-tabassama]] [[ضَاحِكًا|amused|ḍāḥikan]] [[مِن|at|min]] [[قَوْلِهَا|her speech,|qawlihā]] [[وَقَالَ|and said:|wa-qāla]]

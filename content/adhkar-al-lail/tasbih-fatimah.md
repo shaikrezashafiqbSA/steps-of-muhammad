@@ -31,7 +31,7 @@ He did not give her the help she asked for. He gave her something to say instead
 One hundred in total. The Bukhārī wording lists **takbīr 34 first**, then tasbīḥ 33, then taḥmīd 33; other authentic narrations order it tasbīḥ · taḥmīd · takbīr. Either order is transmitted — the count is the point.
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[أَلَا|Shall not|a-lā]] [[أُعَلِّمُكُمَا|I teach you both|uʿallimukumā]] [[خَيْرًا|something better|khayran]] [[مِمَّا|than what|mimmā]] [[سَأَلْتُمَانِي|you asked me for?|saʾaltumānī]] [[إِذَا|When|idhā]] [[أَخَذْتُمَا|you both take|akhadhtumā]] [[مَضَاجِعَكُمَا|to your beds,|maḍājiʿakumā]] [[تُكَبِّرَا|say takbīr|tukabbirā]] [[أَرْبَعًا وَثَلَاثِينَ|thirty-four,|arbaʿan wa thalāthīna]] [[وَتُسَبِّحَا|and say tasbīḥ|wa tusabbiḥā]] [[ثَلَاثًا وَثَلَاثِينَ|thirty-three,|thalāthan wa thalāthīna]] [[وَتَحْمَدَا|and say taḥmīd|wa taḥmadā]] [[ثَلَاثَةً وَثَلَاثِينَ|thirty-three —|thalāthatan wa thalāthīna]] [[فَهْوَ|for that is|fa huwa]] [[خَيْرٌ|better|khayrun]] [[لَكُمَا|for you both|lakumā]] [[مِنْ|than|min]] [[خَادِمٍ|a servant.|khādimin]]
 </details>

@@ -22,7 +22,7 @@ It was narrated from ʿAbdullāh ibn ʿUmar ؓ that the Messenger of Allah ﷺ t
 Allah, Mighty and Majestic, said to them: 'Write it down as My slave said it, until he meets Me and I shall reward him for it.'"
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد)**
 

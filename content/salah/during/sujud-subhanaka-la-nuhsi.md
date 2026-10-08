@@ -20,7 +20,7 @@ right-orb-compact: ۞۞۞
 ʿĀʾishah ؓ reported: One night I missed Allah's Messenger ﷺ from the bed, and when I sought him, my hand touched the soles of his feet while he was in the state of prostration; they (his feet) were raised upright, and he was saying: *"O Allah, I seek refuge in Thy pleasure from Thy anger, and in Thy forgiveness from Thy punishment, and I seek refuge in Thee from Thee (Thy anger). I cannot reckon Thy praise. Thou art as Thou hast lauded Thyself."*
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد)**
 

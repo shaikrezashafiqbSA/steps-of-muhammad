@@ -18,7 +18,7 @@ right-orb-compact: ۞۞۞
 ʿUthmān ibn ʿAffān (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: "He who recites three times every morning and evening:
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[وَعَنْ|And from|wa-ʿan]] [[عُثْمَانَ|ʿUthmān|ʿuthmāna]] [[بْنِ|son of|bni]] [[عَفَّانَ|ʿAffān|ʿaffāna]] [[رَضِيَ|may be pleased|raḍiya]] [[اللَّهُ|Allah|llāhu]] [[عَنْهُ|with him,|ʿanhu,]] [[قَالَ|who said:|qāla:]]

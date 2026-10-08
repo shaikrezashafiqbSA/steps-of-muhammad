@@ -37,7 +37,7 @@ And when he would return to his family, he would say: *“(We are) Returning, if
 
 [[آيِبُونَ|returning|āyibūna]] [[إِنْ|if|in]] [[شَاءَ|willed|shāʾa]] [[اللَّهُ|Allah|llāhu]] [[تَائِبُونَ|repenting|tāʾibūna]] [[عَابِدُونَ|worshipping|ʿābidūna]] [[لِرَبِّنَا|to our Lord|lirabbinā]] [[حَامِدُونَ|directing praise|ḥāmidūna]]
 
-<details> <summary>📚 Original Arabic Source </summary>
+<details> <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[سُوَيْدُ|Suwayd|suwaydu]] [[بْنُ|son of|bnu]] [[نَصْرٍ|Naṣr|naṣrin]] [[أَخْبَرَنَا|informed us|akhbaranā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[اللَّهِ|Allah|llāhi]] [[بْنُ|son of|bnu]] [[الْمُبَارَكِ|al-Mubārak|l-mubāraki]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[حَمَّادُ|Ḥammād|ḥammadu]] [[بْنُ|son of|bnu]] [[سَلَمَةَ|Salamah|salamata]] [[عَنْ|from|ʿan]] [[أَبِي|Abū|abī]] [[الزُّبَيْرِ|al-Zubayr|z-zubayri]] [[عَنْ|from|ʿan]] [[عَلِيِّ|ʿAlī|ʿaliyyi]] [[بْنِ|son of|bni]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah|llāhi]] [[الْبَارِقِيِّ|al-Bāriqī|l-bāriqiyyi]] [[عَنِ|from|ʿani]] [[ابْنِ|Ibn|bni]] [[عُمَرَ|ʿUmar|ʿumara]] [[أَنَّ|that|anna]] [[النَّبِيَّ|the Prophet|n-nabiyya]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[كَانَ|used to|kāna]] [[إِذَا|when|idhā]] [[سَافَرَ|he traveled|sāfara]] [[فَرَكِبَ|and mounted|fa-rakiba]] [[رَاحِلَتَهُ|his riding camel|rāḥilatahu]] [[كَبَّرَ|he said Takbīr|kabbara]] [[ثَلَاثًا|three times|thalāthan]] [[وَيَقُولُ|and say|wa-yaqūlu]]
 

@@ -36,7 +36,7 @@ It was narrated from ʿĀʾishah (رضي الله عنها) that the Messenger o
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[بَكْرِ|Bakr|bakri]] [[بْنُ|son of|bnu]] [[أَبِي|Abِي|abī]] [[شَيْبَةَ|Shaybah,|shaybata,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَفَّانُ|ʿAffān,|ʿaffānu,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[حَمَّادُ|Ḥammād|ḥammādu]] [[بْنُ|son of|bnu]] [[سَلَمَةَ|Salamah,|salamata,]] [[أَخْبَرَنِي|informed me|akhbaranī]] [[جَبْرُ|Jabr|jabru]] [[بْنُ|son of|bnu]] [[حَبِيبٍ|Ḥabīb,|ḥabībin,]] [[عَنْ|from|ʿan]] [[أُمِّ|Umm|ummi]] [[كُلْثُومٍ|Kulthūm|kulthūmin]] [[بِنْتِ|daughter of|binti]] [[أَبِي|Abī|abī]] [[بَكْرٍ|Bakr,|bakrin,]] [[عَنْ|from|ʿan]] [[عَائشَةَ|ʿĀʾishah,|ʿāʾishata,]] [[أَنَّ|that|anna]] [[رَسُولَ|the Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may Allah bless him|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَلَمَّ|and grant peace|wa sallama]] [[عَلَّمَهَا|taught her|ʿallamahā]] [[هَذَا|this|hādhā]] [[الدُّعَاءَ|supplication:|d-duʿāʾa:]]

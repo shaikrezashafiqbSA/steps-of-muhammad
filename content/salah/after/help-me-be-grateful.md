@@ -29,7 +29,7 @@ The Messenger of Allah (ﷺ) took hold of my hand and said, "O Muʿādh! By Alla
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Narrative Context (السِّيَاق)
 [[وَعَنْ|And from|wa-ʿan]] [[مُعَاذٍ|Muʿādh|muʿādhin]] [[رَضِيَ|may be pleased|raḍiya]] [[اللَّهُ|Allah|llāhu]] [[عَنْهُ|with him|ʿanhu]] [[أَنَّ|that|anna]] [[رَسُولَ|the Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may Allah bless him|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[أَخَذَ|took|akha-dha]] [[بِيَدِهِ|by his hand|bi-yadihi]] [[وَقَالَ|and said:|wa-qāla]]

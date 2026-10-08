@@ -18,7 +18,7 @@ right-orb-compact: ۞۞۞
 Al-Agharr al-Muzanī (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: "Verily, at times a cloud/veil comes over my heart, and *I ask Allah for forgiveness a hundred times a day*."
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[وَعَنِ|And from|wa-ʿani]] [[الْأَغَرِّ|al-Agharr|l-agharr]] [[الْمُزَنِيِّ|al-Muzanī|l-muzaniyyi]] [[رَضِيَ|may be pleased|raḍiya]] [[اللَّهُ|Allah|llāhu]] [[عَنْهُ|with him,|ʿanhu,]]

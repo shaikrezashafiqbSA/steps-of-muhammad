@@ -33,7 +33,7 @@ Ibn Masʿūd (raḍiyallāhu ʿanhu) reported that **when evening came, the Mess
 — then *khayra hādhā l-yawm* (the good of this day) in place of *khayra hādhihi l-laylah*.
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[قَالَ|He said:|qāla]] [[كَانَ|Used to|kāna]] [[رَسُولُ|the Messenger of|rasūlu]] [[اللَّهِ|Allah|llāhi]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[إِذَا|when|idhā]] [[أَمْسَى|evening came|amsā]] [[قَالَ|say:|qāla]] [[أَمْسَيْنَا|We have entered the evening|amsaynā]] [[وَأَمْسَى|and has entered the evening|wa amsā]] [[الْمُلْكُ|the dominion|l-mulku]] [[لِلَّهِ|for Allah…|lillāhi]]
 </details>

@@ -357,6 +357,23 @@ All standard GitHub-Flavored Markdown works as expected: `# H1`–`###### H6` he
 <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) behind the line above }}</summary>
 ```
 
+**The Dalīl drawer (standard source block)** — every source/evidence drawer uses the same header, so a reader who asks *"what's the dalīl for this duʿāʾ?"* finds the answer in one tap. Builder: **Structure → 🔎 Dalīl drawer**.
+
+```
+<details>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Qur'an, Sūrat Hūd 11:59.** Why this verse is the source.
+
+<iframe src="https://quranwbw.com/11/59" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
+
+[Ḥadīth title](?file=content/dua/path/to/file.md "embed")
+
+</details>
+```
+
+**Qurʾān verses** are shown with the [QuranWBW](https://quranwbw.com) word-by-word viewer: `https://quranwbw.com/<surah>/<ayah>`, or a range such as `37/180-182`. Builder: **Embeds → 📖 Qurʾān verse (QuranWBW)**. Ḥadīth sources use a card embed (below).
+
 **Embedding another card** — add `"embed"` as the link title and the whole atomic card appears inline as a collapsed drawer (grade badge + title, expands to the full card, with an "Open standalone ↗" footer). Use it when a composite duʿā quotes another sunnah:
 
 ```

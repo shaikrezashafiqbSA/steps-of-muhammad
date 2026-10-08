@@ -19,7 +19,7 @@ right-orb-compact: ۞۞۞
 The poet addresses Madinah by the name the Prophet ﷺ gave it, calling out *O Ṭaybah, O medicine of the gravely ill, we have longed for you and love itself has summoned us*. He describes watching the pilgrim ship depart without him, his tears refusing to dry, and his heart carried away with those who sailed. He turns to the Kaʿbah and asks *my qiblah, the House of Allah, I wait patiently; perhaps one day I shall be your visitor*. He then names his dearest wish: *my Prophet, my most precious hope is to visit you even once in my life, to pray my prayer beside you, to remember my Lord and recite the Qurʾān*. He closes by congratulating the city itself: *glad tidings to you, O Madinah, on the arrival of the Guide; have I any shelter within your sanctuary?*
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **No Chain of Narrators (لَا إِسْنَاد)**
 This is a poetic composition of unknown authorship. No isnād exists and none should be claimed for it.

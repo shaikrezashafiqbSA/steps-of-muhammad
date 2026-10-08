@@ -57,7 +57,7 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 
 > *“Yes, it is fitting for the one who hears it to learn it.”*
 
-<details> <summary>📚 Original Arabic Source </summary>
+<details> <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[ٱللَّهِ|Allah|llāhi]] [[بْنُ|son of|bnu]] [[مُحَمَّدٍ|Muḥammad|muḥammadin]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[مُعَاوِيَةَ|Muʿāwiyah|muʿāwiyata]] [[عَنِ|from|ʿani]] [[ٱلْأَعْمَشِ|al-Aʿmash|l-aʿmashi]] [[عَنْ|from|ʿan]] [[شَقِيقٍ|Shaqīq|shaqīqin]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[ٱللَّهِ|Allah|llāhi]] [[بْنِ|son of|bni]] [[مَسْعُودٍ|Masʿūd|masʿūdin]] [[قَالَ|he said|qāla]] [[قَالَ|he said|qāla]] [[رَسُولُ|the Messenger|rasūlu]] [[ٱللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[ٱللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]]
 

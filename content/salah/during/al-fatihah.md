@@ -22,7 +22,7 @@ Abū Hurayrah (raḍiyallāhu ʿanhu) reported that the Messenger of Allah (ﷺ)
 Sufyān said: al-ʿAlāʾ ibn ʿAbd al-Raḥmān ibn Yaʿqūb narrated it to me when I visited him while he was ill in his house, and I asked him about it.
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد)**
 

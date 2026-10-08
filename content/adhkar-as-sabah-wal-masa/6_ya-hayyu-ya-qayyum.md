@@ -18,7 +18,7 @@ right-orb-compact: ۞۞۞
 Anas ibn Mālik (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said to Fāṭimah (raḍiyallāhu ʿanhā): "What prevents you from listening to what I advise you to say? Say, when you enter the morning and when you enter the evening: *'O Ever-Living, O Sustainer, by Your mercy I seek relief. Set right for me all my affairs, and do not leave me to myself even for the blink of an eye.'*"
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[أَخْبَرَنَا|Informed us|akhbaranā]] [[عَبْدُ الرَّحْمَنِ|ʿAbd al-Raḥmān|ʿabd ur-raḥmāni]] [[بْنُ|son of|bnu]] [[مُحَمَّدِ|Muḥammad|muḥammadi]] [[بْنِ|son of|bni]] [[سَلَامٍ|Salām,|salāmin,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[زَيْدُ|Zayd|zaydu]] [[بْنُ|son of|bnu]] [[الْحُبَابِ|al-Ḥubāb,|l-ḥubābi,]] [[أَخْبَرَنِي|informed me|akhbaranī]] [[عُثْمَانُ|ʿUthmān|ʿuthmānu]] [[بْنُ|son of|bnu]] [[مَوْهَبٍ|Mawhab|mawhabin]] [[الْهَاشِمِيُّ|al-Hāshimī,|l-hāshimiyyu,]] [[سَمِعْتُ|I heard|samiʿtu]] [[أَنَسَ|Anas|anasa]] [[بْنَ|son of|bna]] [[مَالِكٍ|Mālik|mālikin]] [[يَقُولُ|saying:|yaqūlu:]]

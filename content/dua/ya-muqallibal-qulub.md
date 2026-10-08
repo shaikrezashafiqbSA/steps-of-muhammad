@@ -43,7 +43,7 @@ Another highly attested authentic wording changes the core action from steadfast
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[هَنَّادٌ|Hannād,|hannādun,]] [[قَالَ|who said:|qāla]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[مُعَاوِيَةَ|Muʿāwiyah,|muʿāwiyata,]] [[عَنْ|from|ʿan]] [[الْأَعْمَشِ|al-Aʿmash,|l-aʿmashi,]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[سُفْيَانَ|Sufyān,|sufyāna,]] [[عَنْ|from|ʿan]] [[أَنَسٍ|Anas,|anasin,]] [[قَالَ|who said:|qāla]]

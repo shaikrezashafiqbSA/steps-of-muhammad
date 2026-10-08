@@ -67,7 +67,7 @@ When leading a group or reciting together, swap the singular pronouns with the p
 ---
 
 <details>
-<summary>📚 Technical Source Analysis & Scholarly References</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 This supplication is composed of two distinct historical segments seamlessly merged by classical scholars of Islamic pedagogy to form an ultimate student's formula:
 

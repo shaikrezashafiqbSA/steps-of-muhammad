@@ -19,7 +19,7 @@ right-orb-compact: ۞۞۞
 Sālim narrated that when Ibn ʿUmar ؓ intended to bid farewell to a man setting out on a journey, he would say to him: "Come close to me so that I may bid you farewell as the Messenger of Allah ﷺ used to bid us farewell." Then he would say: *"I entrust to Allah your religion, and your trusts, and the last of your deeds (Astawdiʿullāha dīnaka wa amānataka wa khawātīma ʿamalik)."*
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد)**
 

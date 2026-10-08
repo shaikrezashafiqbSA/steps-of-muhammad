@@ -18,7 +18,7 @@ Narrated Anas ibn Mālik (raḍiyallāhu 'anhu):
 The Prophet ﷺ said to Abū Ṭalḥah, "Choose one of your boy servants to serve me in my expedition to Khaybar." So, Abū Ṭalḥah took me, letting me ride behind him while I was a boy nearing the age of puberty. I used to serve Allah's Messenger ﷺ when he stopped to rest. I heard him saying repeatedly: 
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[قُتَيْبَةُ،|Qutaybah,|qutaybatu,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[يَعْقُوبُ،|Yaʿqūb,|yaʿqūbu,]] [[عَنْ|from|ʿan]] [[عَمْرٍو،|ʿAmr,|ʿamrin,]] [[عَنْ|from|ʿan]] [[أَنَسِ|Anas|anasi]] [[بْنِ|son of|bni]] [[مَالِكٍ|Mālik|mālikin]] [[رضى الله عنه|may Allah be pleased with him,|raḍiya llāhu ʿanhu,]] [[أَنَّ|that|anna]] [[النَّبِيَّ|the Prophet|n-nabiyya]] [[صَلَّى|may Allah bless him|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[قَالَ|said|qāla]] [[لأَبِي|to Abū|li-abī]] [[طَلْحَةَ|Ṭalḥah:|ṭalḥata:]]

@@ -19,7 +19,7 @@ Narrated Shaddād ibn Aws: The Prophet ﷺ said: "The most superior way of askin
 The Prophet ﷺ added: "If somebody recites it during the day with firm faith in it, and dies on the same day before the evening, he will be from the people of Paradise; and if somebody recites it at night with firm faith in it, and dies before the morning, he will be from the people of Paradise."
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[مَعْمَرٍ،|Maʿmar,|maʿmarin,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[الْوَارِثِ،|al-Wārith,|l-wārithi,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[الْحُسَيْنُ،|al-Ḥusayn,|l-ḥusaynu,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[اللَّهِ|Allāh|llāhi]] [[بْنُ|son of|bnu]] [[بُرَيْدَةَ،|Buraydah,|buraydata,]] [[عَنْ|from|ʿan]] [[بُشَيْرِ|Bushayr|bushayri]] [[بْنِ|son of|bni]] [[كَعْبٍ|Kaʿb|kaʿbin]] [[الْعَدَوِيِّ،|al-ʿAdawī,|l-ʿadawiyyi,]] [[قَالَ|he said|qāla]] [[حَدَّثَنِي|narrated to me|ḥaddathanī]] [[شَدَّادُ|Shaddād|shaddādu]] [[بْنُ|son of|bnu]] [[أَوْسٍ|Aws,|awsin,]] [[عَنِ|from|ʿani]] [[النَّبِيِّ|the Prophet|n-nabiyyi]] [[صَلَّى|may Allah bless him|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace:|wa sallama:]]

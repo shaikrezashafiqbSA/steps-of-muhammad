@@ -33,7 +33,7 @@ This is the middle-of-the-night formula. You did not plan to be awake. The hadit
 — **or any duʿāʾ you wish.** The hadith says *"or he supplicates"*: the formula opens the door, then you walk through it with your own need.
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[عَنِ|From|ʿani]] [[النَّبِيِّ|the Prophet|n-nabiyyi]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[قَالَ|he said:|qāla]] [[مَنْ|Whoever|man]] [[تَعَارَّ|stirs awake|taʿārra]] [[مِنَ|from|mina]] [[اللَّيْلِ|the night|l-layli]] [[فَقَالَ|and says…|fa qāla]] [[ثُمَّ|then|thumma]] [[قَالَ|says:|qāla]] [[اللَّهُمَّ|O Allah,|allāhumma]] [[اغْفِرْ لِي|forgive me,|ghfir lī]] [[أَوْ|or|aw]] [[دَعَا|he supplicates,|daʿā]] [[اسْتُجِيبَ|he is answered.|stujība]] [[فَإِنْ|And if|fa in]] [[تَوَضَّأَ|he performs wuḍūʾ|tawaḍḍaʾa]] [[وَصَلَّى|and prays,|wa ṣallā]] [[قُبِلَتْ|is accepted|qubilat]] [[صَلَاتُهُ|his prayer.|ṣalātuh]]
 </details>

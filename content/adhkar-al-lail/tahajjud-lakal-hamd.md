@@ -40,7 +40,7 @@ It is a declaration before it is a request. Eleven times *ḥaqq* — true, true
 > **Narrated addition** (via ʿAbd al-Karīm Abū Umayyah, in the same chain): *wa lā ḥawla wa lā quwwata illā billāh* — and there is no might nor power except by Allah.
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[سَمِعَ|Heard|samiʿa]] [[ابْنَ عَبَّاسٍ|Ibn ʿAbbās|bna ʿabbāsin]] [[قَالَ|say:|qāla]] [[كَانَ|Used to|kāna]] [[النَّبِيُّ|the Prophet|n-nabiyyu]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[إِذَا|when|idhā]] [[قَامَ|he rose|qāma]] [[مِنَ|from|mina]] [[اللَّيْلِ|the night|l-layli]] [[يَتَهَجَّدُ|to perform tahajjud|yatahajjadu]] [[قَالَ|say:|qāla]] [[اللَّهُمَّ|O Allah,|allāhumma]] [[لَكَ|for You is|laka]] [[الْحَمْدُ|the praise…|l-ḥamdu]]
 </details>

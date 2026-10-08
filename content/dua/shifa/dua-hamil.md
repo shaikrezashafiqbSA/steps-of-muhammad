@@ -204,7 +204,10 @@ left-orb-compact: 🕌
 **Tradition source:** This compilation is preserved in Malay/Indonesian *kitab kuning* and in Ḥaḍramī Yemeni midwifery manuals. The composed du'ās in Sections 1 and 2b are pious devotional supplications and are **not directly traced to canonical hadith** (Bukhārī, Muslim, the Four Sunan, etc.). The Qur'ānic verses embedded throughout — Sūrah At-Tāriq (Q. 86), Ar-Raʿd 13:8, Fāṭir 35:11, An-Naḥl 16:78 and 16:69, At-Tawbah 9:14, Yūnus 10:57, Al-Isrāʾ 17:82, Ash-Shuʿarāʾ 26:80, Fuṣṣilat 41:44, Al-Zalzalah (Q. 99), and the closing line of Section 1 (Q. 21:89) — are fully authentic revelation. The invocation *"Yā Ḥannā waladat Maryam..."* in Section 2b is a folk supplication and is theologically contested; the safer practice is to address all petitions directly to Allah. Asking specifically for a male child in Section 1 differs from the etiquette of Sūrah ash-Shūrā (42:49–50), which teaches gratitude for whatever Allah grants — reciters may omit *dhakaran* (and leave the gender to Allah's wisdom) or add *aw untha*
 
 
-<details> <summary>📚 Original Arabic Source: "Dua untuk Hamil From Ustaz Imam Nawawi" - Masjid Kampung Siglap </summary>
+<details> <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Source:** "Dua untuk Hamil From Ustaz Imam Nawawi" - Masjid Kampung Siglap
+
 Doa untuk Hamil 
 
 Setiap lepas sholat sambil memegang pusar baca do'a ini :

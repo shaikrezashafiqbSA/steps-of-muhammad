@@ -28,7 +28,7 @@ He said: "Why not, Messenger of Allah?"
 He said: "Say in the morning and evening: 
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[أَحْمَدُ|Aḥmad|aḥmadu]] [[بْنُ|son of|bnu]] [[عُبَيْدِ|ʿUbayd|ʿubaydi]] [[اللَّهِ|Allah|llāhi]] [[الْغُدَانِيُّ،|al-Ghudānī,|l-ghudāniyyu,]] [[أَخْبَرَنَا|informed us|akhbaranā]] [[غَسَّانُ|Ghassān|ghassānu]] [[بْنُ|son of|bnu]] [[عَوْفٍ،|ʿAwf,|ʿawfin,]] [[أَخْبَرَنَا|informed us|akhbaranā]] [[الْجُرَيْرِيُّ،|al-Jurayrī,|l-jurayriyyu,]] [[عَنْ|from|ʿan]] [[أَبِي|Abū|abī]] [[نَضْرَةَ،|Naḍrah,|naḍrata,]] [[عَنْ|from|ʿan]] [[أَبِي|Abū|abī]] [[سَعِيدٍ|Saʿīd|saʿīdin]] [[الْخُدْرِيِّ،|al-Khudrī,|l-khudriyyi,]] [[قَالَ|who said:|qāla]]

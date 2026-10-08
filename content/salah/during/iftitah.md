@@ -21,7 +21,7 @@ The commonly recited formulation combines two prophetic narrations. Its first se
 Its second section comes from the narration of ʿAlī ibn Abī Ṭālib (raḍiyallāhu ʿanhu), who reported that when the Messenger of Allah ﷺ stood up for prayer, he would say: "Wajjahtu wajhiya lilladhī faṭaras-samāwāti wal-arḍa ḥanīfan musliman wa mā ana minal-mushrikīn… wa ana minal-muslimīn."
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد) — Takbīr Portion (Ibn ʿUmar)
 [[عَنْ|On the authority of|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah|llāhi]] [[بْنِ|son of|bni]] [[عُمَرَ|ʿUmar|ʿumara]] [[رَضِيَ|may be pleased|raḍiya]] [[اللَّهُ|Allah|llāhu]] [[عَنْهُمَا،|with them both,|ʿanhumā,]] [[قَالَ|who said:|qāla:]]

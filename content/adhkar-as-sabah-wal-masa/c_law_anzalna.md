@@ -25,7 +25,7 @@ Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three time
 </div>
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[مَحْمُودُ|Maḥmūd|maḥmūdu]] [[بْنُ|son of|bnu]] [[غَيْلَانَ|Ghaylān,|ghaylāna,]] [[قَالَ|he said|qāla]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[أَحْمَدَ|Aḥmad|aḥmada]] [[ٱلزُّبَيْرِيُّ|al-Zubayrī,|z-zubayriyyu,]]

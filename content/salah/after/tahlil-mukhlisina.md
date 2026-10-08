@@ -36,7 +36,7 @@ Abū al-Zubayr said: "I heard ʿAbdullāh ibn al-Zubayr speaking from the minbar
 
 ---
 <details>
-<summary> 📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[أَخْبَرَنَا|informed us|akhbaranā]] [[مُحَمَّدُ|Muhammad|muḥammadu]] [[بْنُ|son of|bnu]] [[شُجَاعٍ|Shuja'|shujāʿin]] [[الْمَرُّوذِيُّ|the Marwadhi|l-marrūdhī]] [[قَالَ|he said|qāla]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[إِسْمَاعِيلُ|Isma'il|ismāʿīlu]] [[ابْنُ|son of|bnu]] [[عُلَيَّةَ|Ulayyah|ʿulayyata]] [[عَنِ|from|ʿani]] [[الْحَجَّاجِ|al-Hajjaj|l-ḥajjāji]] [[بْنِ|son of|bni]] [[أَبِي|Abi|abī]] [[عُثْمَانَ|Uthman|ʿuthmāna]] [[قَالَ|he said|qāla]] [[حَدَّثَنِي|narrated to me|ḥaddathanī]] [[أَبُو|Abu|abū]] [[الزُّبَيْرِ|az-Zubair|z-zubayri]] [[قَالَ|he said|qāla]] [[سَمِعْتُ|I heard|samiʿtu]] [[عَبْدَ|Abdullah|ʿabda]] [[اللَّهِ|of Allah|llāhi]] [[بْنَ|son of|bna]] [[الزُّبَيْرِ|az-Zubair|z-zubayri]] [[يُحَدِّثُ|speaking/narrating|yuḥaddithu]] [[عَلَىٰ|upon|ʿalā]] [[هَٰذَا|this|hādhā]] [[الْمِنْبَرِ|the pulpit/minbar|l-minbari]] [[وَهُوَ|while he|wa huwa]] [[يَقُولُ|was saying|yaqūlu]] [[كَانَ|used to be|kāna]] [[رَسُولُ|the Messenger|rasūlu]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[إِذَا|when|idhā]] [[سَلَّمَ|he finished with taslim|sallama]] [[يَقُولُ|he would say|yaqūlu]] 
 

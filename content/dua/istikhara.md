@@ -37,7 +37,7 @@ The Prophet (ﷺ) added that then the person should name (mention) his need.
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[قُتَيْبَةُ|Qutaybah,|qutaybahu,]] [[قَالَ|who said:|qāla]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[ٱلرَّحْمَٰنِ|al-Raḥmān|r-raḥmāni]] [[بْنُ|son of|bnu]] [[أَبِي|Abī|abī]] [[ٱلْمَوَالِي|al-Mawālī,|l-mawālī,]] [[عَنْ|from|ʿan]] [[مُحَمَّدِ|Muḥammad|muḥammadi]] [[بْنِ|son of|bni]] [[ٱلْمُنْكَدِرِ|al-Munkadir,|l-munkadiri,]] [[عَنْ|from|ʿan]] [[جَابِرِ|Jābir|jābiri]] [[بْنِ|son of|bni]] [[عَبْدِ|ʿAbd|ʿabdi]] [[ٱللَّهِ|Allah,|llāhi,]] [[رَضِيَ|may be pleased|raḍiya]] [[ٱللَّهُ|Allah|llāhu]] [[عَنْهُمَا|with both of them,|ʿanhumā]] [[قَالَ|who said:|qāla]]

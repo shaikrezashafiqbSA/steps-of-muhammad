@@ -43,7 +43,7 @@ In the Islamic traditions of Singapore, Malaysia, and Indonesia (predominantly f
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[دَاوُدُ|Dāwūd|dāwūdu]] [[بْنُ|son of|bnu]] [[رُشَيْدٍ|Rushayd,|rushaydin,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[الْوَلِيدُ|al-Walīd,|l-walīdu,]] [[عَنِ|from|ʿani]] [[الْأَوْزَاعِيِّ|al-Awzāʿī,|l-awzāʿiyyi,]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[عَمَّارٍ|ʿAmmār,|ʿammārin,]] [[اسْمُهُ|his name is|ismuhū]] [[شَدَّادُ|Shaddād|shaddādu]] [[بْنُ|son of|bnu]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah,|llāhi,]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[أَسْمَاءَ|Asmāʾ,|asmāʾa,]] [[عَنْ|from|ʿan]] [[ثَوْبَانَ|Thawbān,|thawbāna,]] [[قَالَ|who said:|qāla:]]

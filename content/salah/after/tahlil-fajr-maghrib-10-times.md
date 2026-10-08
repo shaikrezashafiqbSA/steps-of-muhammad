@@ -43,7 +43,7 @@ Abū Dharr narrated that the Messenger of Allah (ﷺ) said: **“Whoever says at
 
  
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[إِسْحَاقُ|Isḥāq|isḥāqu]] [[بْنُ|son of|bnu]] [[مَنْصُورٍ|Manṣūr,|manṣūrin,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَلِيُّ|ʿAlī|ʿaliyyu]] [[بْنُ|son of|bnu]] [[مَعْبَدٍ|Maʿbad|maʿbadin]] [[ٱلْمِصْرِيُّ|al-Miṣrī,|l-miṣriyyu,]]

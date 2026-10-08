@@ -28,7 +28,7 @@ It was narrated from Umm Salamah (رضي الله عنها) that when the Prophe
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[بَكْرِ|Bakr|bakri]] [[بْنُ|son of|bnu]] [[أَبِي|Abī|abī]] [[شَيْبَةَ|Shaybah,|shaybata,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[شَبَابَةُ|Shabābah,|shabābatu,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[شُعْبَةُ|Shuʿbah,|shuʿbatu,]] [[عَنْ|from|ʿan]] [[مُوسَى|Mūsā|mūsā]] [[بْنِ|son of|bni]] [[أَبِي|Abī|abī]] [[عَائِشَةَ|ʿĀʾishah,|ʿāʾishata,]] [[عَنْ|from|ʿan]] [[مَوْلًى|a freed slave|mawlan]] [[لِأُمِّ|of Umm|li-ummi]] [[سَلَمَةَ|Salamah,|salamata,]] [[عَنْ|from|ʿan]] [[أُمِّ|Umm|ummi]] [[سَلَمَةَ|Salamah,|salamata,]]

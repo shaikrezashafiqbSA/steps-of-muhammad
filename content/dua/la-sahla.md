@@ -26,7 +26,7 @@ It is recommended to recite this supplication when encountering a hardship, a di
 
 
 <details>
-<summary>📚 Original Arabic Source & Context</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Text of the Supplication (المَتْن)
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[لَا|there is no|lā]] [[سَهْلَ|ease|sahla]] [[إِلَّا|except|illā]] [[مَا|what|mā]] [[جَعَلْتَهُ|You have made|jaʿaltahū]] [[سَهْلًا|easy,|sahlan,]] [[وَأَنْتَ|and You|wa-anta]] [[تَجْعَلُ|make|tajʿalu]] [[الْحَزْنَ|the difficulty / sorrow|l-ḥazna]] [[إِذَا|when|idhā]] [[شِئْتَ|You will|shiʾta]] [[سَهْلًا|easy.|sahlan.]]

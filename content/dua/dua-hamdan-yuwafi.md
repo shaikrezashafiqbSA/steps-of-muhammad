@@ -22,7 +22,7 @@ This comprehensive duʿāʾ - often read post solat in masjids around Singapore 
 The worshipper begins with declaring that all praise is for Allah, Lord of all the worlds then sends blessings upon the Prophet ﷺ among the first and the last, entrusts to Allah his religion, soul, family and wealth, seeks His shelter from every rebellious devil, obstinate tyrant, evil eye, wrongdoing and envy, asks to be adorned with well-being and steadfastness, and seals with the Qur'anic verses of Sūrat aṣ-Ṣāffāt.
 
 <details>
-<summary>📚 Original Sources of the Composite Text </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **No single isnād.** This is a compiled duʿāʾ, not one hadith. Its recited phrases trace to the following sources:
 

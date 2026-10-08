@@ -22,7 +22,7 @@ right-orb-compact: ۞۞۞
 Abū Dāwūd ؒ noted: The name of Ibn Ḥujayrah al-Aṣghar is ʿAbdullāh ibn ʿAbd ar-Raḥmān ibn Ḥujayrah.
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد)**
 

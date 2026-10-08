@@ -20,7 +20,7 @@ right-orb-compact: ۞۞
 ʿAlī ؓ narrated that a *mukātab* (a slave working to purchase his own freedom) came to him and said: "I am unable to meet the terms of my writ of emancipation, so help me." ʿAlī ؓ said: "Shall I not teach you words that the Messenger of Allah ﷺ taught me? If you had a debt upon you the size of the mountain of Ṣīr, Allah would settle it for you. Say: *O Allah, suffice me with what You have made lawful against what You have forbidden, and enrich me by Your bounty so that I need none besides You.*"
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد)**
 

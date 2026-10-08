@@ -39,7 +39,7 @@ When al-Barāʾ repeated it back and said *"wa rasūlika"* (and Your Messenger),
 [[وَبِنَبِيِّكَ|and in Your Prophet|wa binabiyyika]] [[الَّذِي|whom|lladhī]] [[أَرْسَلْتَ|You sent.|arsalta]]
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[قَالَ|Said|qāla]] [[النَّبِيُّ|the Prophet|n-nabiyyu]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[إِذَا|When|idhā]] [[أَتَيْتَ|you come to|atayta]] [[مَضْجَعَكَ|your bed,|maḍjaʿaka]] [[فَتَوَضَّأْ|perform wuḍūʾ|fa tawaḍḍaʾ]] [[وُضُوءَكَ|your ablution|wuḍūʾaka]] [[لِلصَّلَاةِ|for the prayer,|liṣ-ṣalāti]] [[ثُمَّ|then|thumma]] [[اضْطَجِعْ|lie down|iḍṭajiʿ]] [[عَلَى|upon|ʿalā]] [[شِقِّكَ|your side|shiqqika]] [[الْأَيْمَنِ|the right,|l-aymani]] [[ثُمَّ|then|thumma]] [[قُلِ|say…|quli]] [[فَإِنْ|And if|fa in]] [[مُتَّ|you die|mutta]] [[مِنْ لَيْلَتِكَ|that night of yours,|min laylatika]] [[فَأَنْتَ|then you are|fa anta]] [[عَلَى|upon|ʿalā]] [[الْفِطْرَةِ|the fiṭrah,|l-fiṭrati]] [[وَاجْعَلْهُنَّ|and make them|wa jʿalhunna]] [[آخِرَ|the last|ākhira]] [[مَا|of what|mā]] [[تَتَكَلَّمُ بِهِ|you speak.|tatakallamu bihi]]
 </details>

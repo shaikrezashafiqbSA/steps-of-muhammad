@@ -38,7 +38,7 @@ right-orb-compact: ۞۞۞
 ---
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **The Chain of Narrators (الإِسْنَاد) — Tirmidhī 3563**
 

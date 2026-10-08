@@ -52,7 +52,7 @@ The Prophet (ﷺ) or his Companion indicated that whoever recites this seven tim
 [[مِنْ|of|min]] [[أَمْرِ|the matters of|amri]] [[الدُّنْيَا|this world|d-dunyā]] [[وَالْآخِرَةِ|and the Hereafter.|wa-l-ākhirati.]]
 
 <details>
-<summary>📚 Original Arabic Source & Context</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنِي|Narrated to me|ḥaddathanī]] [[أَحْمَدُ|Aḥmad|aḥmadu]] [[بْنُ|son of|bnu]] [[سُلَيْمَانَ|Sulaymān|sulaymāna]] [[الْجَرْمِيُّ،|al-Jarmī,|l-jarmī,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَحْمَدُ|Aḥmad|aḥmadu]] [[بْنُ|son of|bnu]] [[عَبْدِ|ʿAbd|ʿabdi]] [[الرَّزَّاقِ،|al-Razzāq,|r-razzāqi,]] [[حَدَّثَنِي|narrated to me|ḥaddathanī]] [[جَدِّي|my grandfather|jaddī]] [[عَبْدُ|ʿAbd|ʿabdu]] [[الرَّزَّاقِ|al-Razzāq|r-razzāqi]] [[بْنُ|son of|bnu]] [[مُسْلِمٍ|Muslim|muslimin]] [[الدِّمَشْقِيُّ،|al-Dimashqī,|d-dimashqī,]] [[عَنْ|from|ʿan]] [[مُدْرِكِ|Mudrik|mudriki]] [[بْنِ|son of|bni]] [[سَعْدٍ،|Saʿd,|saʿdin,]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[الدَّرْدَاءِ|al-Dardāʾ|d-dardāʾi]] [[رَضِيَ|may be pleased|raḍiya]] [[اللَّهُ|Allah|llāhu]] [[عَنْهُ،|with him,|ʿanhu,]] [[عَنِ|from|ʿani]] [[النَّبِيِّ|the Prophet|n-nabiyyi]] [[صَلَّى|may Allah bless him|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[قَالَ:|said:|qāla:]]

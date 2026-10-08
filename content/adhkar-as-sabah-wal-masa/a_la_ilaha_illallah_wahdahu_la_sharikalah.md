@@ -22,7 +22,7 @@ It was reported that the Messenger of Allah ﷺ recommended reciting ten times i
 Whoever recites this, Allah will write ten good deeds for him, forgive him ten misdeeds, grant him the reward of freeing a slave, raise him ten degrees, and protect him from Satan until evening (or until morning if recited in the evening).
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Text of the Dhikr (المَتْن)
 [[لاَ إِلَٰهَ|There is no deity|lā ilāha]] [[إِلَّا اللَّهُ|except Allah,|illā llāhu]] [[وَحْدَهُ|alone,|waḥdahū]] [[لاَ شَرِيكَ|with no partner,|lā sharīka]] [[لَهُ|for Him;|lahū;]] [[لَهُ|to Him belongs|lahu]] [[الْمُلْكُ|the dominion|l-mulku]] [[وَلَهُ|and to Him belongs|wa-lahu]] [[الْحَمْدُ|all praise,|l-ḥamdu,]] [[وَهُوَ|and He is|wa-huwa]] [[عَلَىٰ|over|ʿalā]] [[كُلِّ|every|kulli]] [[شَيْءٍ|thing|shay'in]] [[قَدِيرٌ|All-Powerful.|qadīr.]]

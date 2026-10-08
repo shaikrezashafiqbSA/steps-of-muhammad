@@ -29,7 +29,7 @@ Four rakʿah, prayed two by two. This narration stipulates nothing else: no fixe
 [[يَا|O|yā]] [[ابْنَ|son of|bna]] [[آدَمَ|Adam,|ādama]] [[لَا|do not|lā]] [[تُعْجِزْنِي|fail Me|tuʿjiznī]] [[مِنْ|in|min]] [[أَرْبَعِ|four|arbaʿi]] [[رَكَعَاتٍ|rakʿah|rakaʿātin]] [[فِي|at|fī]] [[أَوَّلِ|the beginning of|awwali]] [[نَهَارِكَ|your day —|nahārika]] [[أَكْفِكَ|I will suffice you|akfika]] [[آخِرَهُ|for its end.|ākhirah]]
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[قَالَ|He said:|qāla]] [[سَمِعْتُ|I heard|samiʿtu]] [[رَسُولَ|the Messenger of|rasūla]] [[اللَّهِ|Allah|llāhi]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[يَقُولُ|saying:|yaqūlu]] [[يَقُولُ|Says|yaqūlu]] [[اللَّهُ|Allah,|llāhu]] [[عَزَّ وَجَلَّ|Mighty and Majestic:|ʿazza wa jalla]] [[يَا ابْنَ آدَمَ|O son of Adam,|yā bna ādama]] [[لَا تُعْجِزْنِي|do not fail Me|lā tuʿjiznī]] [[مِنْ أَرْبَعِ رَكَعَاتٍ|in four rakʿah|min arbaʿi rakaʿātin]] [[فِي أَوَّلِ نَهَارِكَ|at the beginning of your day —|fī awwali nahārika]] [[أَكْفِكَ آخِرَهُ|I will suffice you for its end.|akfika ākhirah]]
 </details>

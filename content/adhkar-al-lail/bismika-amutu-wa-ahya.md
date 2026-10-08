@@ -29,7 +29,7 @@ One narration, two moments. The same tongue closes the night and opens the morni
 Say the first as the **last thing you speak** before closing your eyes. Say the second the **instant you open them** — before the phone, before the room.
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[قَبِيصَةُ|Qabīṣah,|qabīṣatu]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[سُفْيَانُ|Sufyān,|sufyānu]] [[عَنْ|from|ʿan]] [[عَبْدِ الْمَلِكِ|ʿAbd al-Malik,|ʿabdi l-maliki]] [[عَنْ|from|ʿan]] [[رِبْعِيِّ|Ribʿī|ribʿiyyi]] [[بْنِ حِرَاشٍ|ibn Ḥirāsh,|bni ḥirāshin]] [[عَنْ|from|ʿan]] [[حُذَيْفَةَ|Ḥudhayfah,|ḥudhayfata]] [[قَالَ|who said:|qāla]] [[كَانَ|Used to|kāna]] [[النَّبِيُّ|the Prophet|n-nabiyyu]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[إِذَا|when|idhā]] [[أَوَى|he retired|awā]] [[إِلَى|to|ilā]] [[فِرَاشِهِ|his bed|firāshihi]] [[قَالَ|say:|qāla]] [[بِاسْمِكَ|In Your name|bismika]] [[أَمُوتُ|I die|amūtu]] [[وَأَحْيَا|and I live.|wa aḥyā]] [[وَإِذَا|And when|wa idhā]] [[قَامَ|he rose|qāma]] [[قَالَ|he said:|qāla]] [[الْحَمْدُ|All praise|al-ḥamdu]] [[لِلَّهِ|is for Allah|lillāhi]] [[الَّذِي|who|lladhī]] [[أَحْيَانَا|gave us life|aḥyānā]] [[بَعْدَ|after|baʿda]] [[مَا|that|mā]] [[أَمَاتَنَا|He caused us to die|amātanā]] [[وَإِلَيْهِ|and to Him|wa ilayhi]] [[النُّشُورُ|is the resurrection.|n-nushūr]]
 </details>

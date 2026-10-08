@@ -17,7 +17,7 @@ right-orb-compact: ۞۞۞
 It was narrated that Ibn 'Umar said: "The Messenger of Allah ﷺ never abandoned these supplications, every morning and evening: *'O Allah, I ask You for forgiveness and well-being in this world and in the Hereafter. O Allah, I ask You for forgiveness and well-being in my religious and my worldly affairs, my family and my wealth. O Allah, conceal my faults, calm my fears, and protect me from before me, from behind me, from my right, from my left, and from above me, and I seek refuge in You from being taken unaware from beneath me.'*" Waki' (one of the narrators) said: "Meaning Al-Khasf (disgrace / being swallowed by the earth)."
 
 <details>
-<summary>📚 Original Arabic Source </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[عَلِيُّ|ʿAlī|ʿaliyyu]] [[بْنُ|son of|bnu]] [[مُحَمَّدٍ|Muḥammad|muḥammadin]] [[ٱلطَّنَافِسِيُّ|al-Ṭanāfisī,|ṭ-ṭanāfisiyyu,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[وَكِيعٌ|Wakīʿ,|wakīʿun,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عُبَادَةُ|ʿUbādah|ʿubādatu]] [[بْنُ|son of|bnu]] [[مُسْلِمٍ|Muslim,|muslimin,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[جُبَيْرُ|Jubayr|jubayru]] [[بْنُ|son of|bnu]] [[أَبِي|Abī|abī]] [[سُلَيْمَانَ|Sulaymān|sulaymāna]] [[بْنِ|son of|bni]] [[جُبَيْرِ|Jubayr|jubayri]] [[بْنِ|son of|bni]] [[مُطْعِمٍ|Muṭʿim,|muṭʿimin,]] [[قَالَ|he said|qāla]] [[سَمِعْتُ|I heard|samiʿtu]] [[ٱبْنَ|the son of|bna]] [[عُمَرَ|ʿUmar|ʿumara]] [[يَقُولُ|saying:|yaqūlu:]]

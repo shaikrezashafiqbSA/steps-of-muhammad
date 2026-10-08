@@ -33,7 +33,7 @@ He (ﷺ) said: “By the One in Whose Hand is my soul, he has asked Allah by His
 
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[جَعْفَرُ|Jaʿfar|jaʿfaru]] [[بْنُ|son of|bnu]] [[مُحَمَّدِ|Muḥammad|muḥammadi]] [[بْنِ|son of|bni]] [[عِمْرَانَ|ʿImrān|ʿimrāna]] [[ٱلثَّعْلَبِيُّ|al-Thaʿlabī|th-thaʿlabiyyu]] [[ٱلْكُوفِيُّ|al-Kūfī,|l-kūfiyyu,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[زَيْدُ|Zayd|zaydu]] [[بْنُ|son of|bnu]] [[حُبَابٍ|Ḥubāb,|ḥubābin,]] [[عَنْ|from|ʿan]] [[مَالِكِ|Mālik|māliki]] [[بْنِ|son of|bni]] [[مِغْوَلٍ|Mighwal,|mighwalin,]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[ٱللَّهِ|Allah|llāhi]] [[بْنِ|son of|bni]] [[بُرَيْدَةَ|Buraydah|buraydata]] [[ٱلْأَسْلَمِيِّ|al-Aslamī,|l-aslamiyyi,]] [[عَنْ|from|ʿan]] [[أَبِيهِ|his father,|abīhi,]] [[قَالَ|who said:|qāla]]

@@ -36,7 +36,7 @@ The Prophet ﷺ confirmed it the next day and told him who the visitor had been:
 [[وَهُوَ|And He is|wa huwa]] [[الْعَلِيُّ|the Most High,|l-ʿaliyyu]] [[الْعَظِيمُ|the Most Great.|l-ʿaẓīm]]
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[إِذَا|When|idhā]] [[أَوَيْتَ|you retire|awayta]] [[إِلَى|to|ilā]] [[فِرَاشِكَ|your bed,|firāshika]] [[فَاقْرَأْ|then recite|fa-qraʾ]] [[آيَةَ الْكُرْسِيِّ|Āyat al-Kursī|āyata l-kursiyyi]] [[لَنْ|there will not|lan]] [[يَزَالَ|cease to be|yazāla]] [[عَلَيْكَ|over you|ʿalayka]] [[مِنَ|from|mina]] [[اللَّهِ|Allah|llāhi]] [[حَافِظٌ|a guardian,|ḥāfiẓun]] [[وَلَا|and not|wa lā]] [[يَقْرَبُكَ|will come near you|yaqrabuka]] [[شَيْطَانٌ|any devil|shayṭānun]] [[حَتَّى|until|ḥattā]] [[تُصْبِحَ|you reach morning.|tuṣbiḥa]]
 

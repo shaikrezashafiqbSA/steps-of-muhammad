@@ -30,7 +30,7 @@ Warrād, the freed slave of al-Mughīra ibn Shuʿba, said: "Al-Mughīra ibn Shu�
 [[وَلَا|nor|wa lā]] [[يَنْفَعُ|avails|yanfaʿu]] [[ذَا|the one of|dhā]] [[الْجَدِّ|riches|l-jaddi]] [[مِنْكَ|with You|minka]] [[الْجَدُّ|his riches|l-jaddu]]
 
 <details>
-<summary>📚 Original Arabic Source</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 
 [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[إِسْحَاقُ|Isḥāq|isḥāqu]] [[بْنُ|son of|bnu]] [[إِبْرَاهِيمَ|Ibrāhīm|ibrāhīma]] 

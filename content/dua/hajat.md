@@ -46,7 +46,7 @@ It was narrated that ʿAbdullāh bin Abī Awfā Al-Aslamī (رضي الله عن
 >Then he should ask Allah for whatever he wants in this world and in the Hereafter, for it is decreed.’”
 
 <details>
-<summary>📚 Original Arabic Source & Scholarly Reference Details</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 The Chain of Narrators (الإِسْنَاد)
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[سُوَيْدُ|Suwayd|suwaydu]] [[بْنُ|son of|bnu]] [[سَعِيدٍ،|Saʿīd,|saʿīdin,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[عَاصِمٍ|ʿĀṣim|ʿāṣimi]] [[الْعَبَّادَانِيُّ،|al-ʿAbbādānī,|l-ʿabbādāniyyu,]] [[عَنْ|from|ʿan]] [[فَائِدِ|Fāʾid|fāʾidi]] [[بْنِ|son of|bni]] [[عَبْدِ|ʿAbdir-|ʿabdi]] [[الرَّحْمَنِ،|Raḥmān,|r-raḥmāni,]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah|llāhi]] [[بْنِ|son of|bni]] [[أَبِي|Abī|abī]] [[أَوْفَى|Awfā|awfā]] [[الأَسْلَمِيِّ،|al-Aslamī,|l-aslamiyyi,]] [[قَالَ|who said:|qāla:]]
