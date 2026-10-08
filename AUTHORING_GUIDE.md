@@ -351,6 +351,20 @@ All standard GitHub-Flavored Markdown works as expected: `# H1`–`###### H6` he
 [Deep-link into another file](?file=other.md#section-slug)
 ```
 
+**Tooltips** — `{{ word | short explanation }}` shows the word with a small superscript !. Hover (desktop) or tap/click it to read the note; click again, click elsewhere or press Esc to close. It works in paragraphs, lists, headings and `<summary>` lines (clicking it never toggles the drawer). Plain text only, no nested `{{ }}`; escape a literal pair with `\{{`.
+
+```
+<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) behind the line above }}</summary>
+```
+
+**Embedding another card** — add `"embed"` as the link title and the whole atomic card appears inline as a collapsed drawer (grade badge + title, expands to the full card, with an "Open standalone ↗" footer). Use it when a composite duʿā quotes another sunnah:
+
+```
+[Ḥamdan yuwāfī niʿamah](?file=content/dua/eating/after-eating.md "embed")
+```
+
+Put it on its own line to get a standalone drawer. Embeds are one level deep: a card embedded inside an embed shows its own embed links as ordinary links. Embedded headings never appear in the host card's TOC. (A link with `"embed"` is not picked up by collection manifests — they only read plain `?file=` links.)
+
 **Embedded HTML** is passed through unchanged, which unlocks:
 
 ```html

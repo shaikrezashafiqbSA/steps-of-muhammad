@@ -9,6 +9,7 @@
 
   <!-- Shared menu tree — drives the prev / home / next bar -->
   <script src="nav-data.js"></script>
+  <script src="tips.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -665,6 +666,7 @@
         return `<span class="w">${inner}</span>`;
       }).replace(/\\\[\[/g, '[[');
       rootEl.innerHTML = transformed;
+      somParseTips(rootEl);   // {{ word | note }} tooltips (web/tips.js)
       groupAyahs(rootEl);
     }
 

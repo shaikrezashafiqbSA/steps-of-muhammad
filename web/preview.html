@@ -302,15 +302,52 @@ The wording of the result mirrors this: the passive verb [[ غُفِرَ | it wa
       frame.contentWindow.postMessage({ type: 'som-focus', line: n }, '*');
     }
     document.addEventListener('selectionchange', syncCaret);
-    editor.addEventListener('focus', () => { lastLine = 0; syncCaret(); });
+    let fromPreview = false;
+    editor.addEventListener('focus', () => { if (fromPreview) return; lastLine = 0; syncCaret(); });
     function schedule() {
       clearTimeout(timer);
       timer = setTimeout(() => { store.set(editor.value); push(); }, 250);
     }
     function setText(t) { editor.value = t; store.set(t); push(); }
 
+    // Click in the preview → select the matching source line in the editor.
+    function gotoLine(n) {
+      const lines = editor.value.split('\n');
+      n = Math.max(1, Math.min(n, lines.length));
+      let start = 0;
+      for (let i = 0; i < n - 1; i++) start += lines[i].length + 1;
+      if (getComputedStyle(editor).display === 'none' || !editor.offsetParent) return;   // narrow screen: editor is on the other tab
+      // The preview already highlighted what was clicked; don't let the editor's
+      // focus event echo the *old* caret line back and move the highlight/scroll.
+      fromPreview = true;
+      editor.focus({ preventScroll: true });
+      editor.setSelectionRange(start, start + lines[n - 1].length);
+      lastLine = n;
+      editor.scrollTop = Math.max(0, offsetOfLine(start) - editor.clientHeight / 2);
+      setTimeout(() => { fromPreview = false; }, 0);
+    }
+
+    // Pixel offset of a character index, accounting for soft-wrapped lines
+    // (long duas wrap, so n × line-height would drift).
+    function offsetOfLine(idx) {
+      const cs = getComputedStyle(editor);
+      const m = document.createElement('div');
+      m.style.cssText = 'position:absolute;visibility:hidden;white-space:pre-wrap;overflow-wrap:break-word;top:0;left:-9999px;';
+      ['fontFamily', 'fontSize', 'lineHeight', 'letterSpacing', 'tabSize', 'paddingLeft', 'paddingRight', 'borderLeftWidth', 'borderRightWidth']
+        .forEach(p => { m.style[p] = cs[p]; });
+      m.style.width = editor.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) + 'px';
+      m.style.paddingLeft = m.style.paddingRight = '0';
+      m.textContent = editor.value.slice(0, idx) + '​';
+      document.body.appendChild(m);
+      const h = m.offsetHeight - (parseFloat(cs.lineHeight) || 0);
+      m.remove();
+      return h + parseFloat(cs.paddingTop);
+    }
+
     window.addEventListener('message', (e) => {
-      if (e.source === frame.contentWindow && e.data && e.data.type === 'som-preview-ready') { ready = true; push(); }
+      if (e.source !== frame.contentWindow || !e.data) return;
+      if (e.data.type === 'som-preview-ready') { ready = true; push(); }
+      else if (e.data.type === 'som-goto') gotoLine(e.data.line);
     });
 
     editor.addEventListener('input', schedule);
@@ -406,6 +443,7 @@ The wording of the result mirrors this: the passive verb [[ غُفِرَ | it wa
         { name: 'Italic', hint: 'translations, transliteration', text: '*⟦italic⟧*' },
         { name: 'Strikethrough', text: '~~⟦text⟧~~' },
         { name: 'Inline code', text: '`⟦code⟧`' },
+        { name: '❕ Tooltip', hint: '{{ word | note }} — tap the little ! to read the note', text: '{{ ⟦Dalīl⟧ | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}' },
         { name: 'Blockquote translation', hint: 'italic translation of the duʿā', block: true, text: '> *"⟦Translation⟧"*' },
         { name: 'Bullet list', hint: '2-space nesting', block: true, text: '- ⟦item⟧\n- item\n  - nested' },
         { name: 'Numbered list', block: true, text: '1. ⟦first⟧\n2. second' },
@@ -414,6 +452,8 @@ The wording of the result mirrors this: the passive verb [[ غُفِرَ | it wa
         { sect: 'Links' },
         { name: 'External link', hint: 'sunnah.com / quran.com', text: '[⟦label⟧](https://sunnah.com/bukhari:6306)' },
         { name: 'Link to another card', hint: '?file=path/to/file.md', text: '[⟦label⟧](?file=path/to/file.md)' },
+        { name: '🧩 Embed another card', hint: 'collapsed inline copy of the whole card (one level deep)', block: true,
+          text: '[⟦Card title⟧](?file=content/dua/path/to/file.md "embed")' },
         { name: 'Link to a heading', hint: '#heading-slug', text: '[⟦label⟧](#heading-slug)' },
       ]},
       { label: '🎬 Embeds', items: [

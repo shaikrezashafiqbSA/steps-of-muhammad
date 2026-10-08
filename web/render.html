@@ -10,6 +10,7 @@
   <!-- Shared menu tree — tells this card which category it belongs to,
        and which duʿā sits before and after it -->
   <script src="nav-data.js"></script>
+  <script src="tips.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -687,6 +688,34 @@
     }
 
     /* ════════════════════════════════════════════════
+       EMBEDDED CARD — [label](?file=x.md "embed")
+       Reuses the drawer look; the summary carries a grade badge.
+       ════════════════════════════════════════════════ */
+    .markdown-body details.embed-card { border-left-width: 4px; margin: 1.4rem 0; }
+    .markdown-body details.embed-card > summary {
+      display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.9rem;
+    }
+    .markdown-body details.embed-card > summary::before { margin-right: 0; }
+    .embed-badge {
+      font-family: 'JetBrains Mono', 'Consolas', monospace; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 999px;
+      color: #FFFBF1; background: var(--text-taupe); flex-shrink: 0;
+    }
+    .embed-badge.g-sahih     { background: #3C763D; }
+    .embed-badge.g-hasan     { background: #2C7BB0; }
+    .embed-badge.g-daif      { background: #B08A4B; }
+    .embed-badge.g-mawdu     { background: #A94442; }
+    .embed-badge.g-mutawatir { background: #2D5F2D; }
+    .embed-footer {
+      margin-top: 1rem; padding-top: 0.7rem; border-top: 1px dashed var(--divider-sand);
+      font-size: 0.74rem; color: var(--text-taupe);
+    }
+    .embed-footer a { color: var(--structural); text-decoration: none; font-weight: 600; }
+    .embed-footer a:hover { text-decoration: underline; }
+    .embed-status { font-size: 0.82rem; font-style: italic; color: var(--text-taupe); }
+    .embed-status.err { color: var(--accent-crimson, #A94442); }
+
+    /* ════════════════════════════════════════════════
        BOTTOM HUD BAR (v5.0)
        Full-width bar docked to the bottom of the viewport.
        Left/center: prev · home · TOC · context · next,
@@ -1219,6 +1248,7 @@
       .replace(/\\\[\[/g, '[[');
 
       rootEl.innerHTML = transformed;
+      somParseTips(rootEl);   // {{ word | note }} tooltips (web/tips.js)
       groupAyahs(rootEl);
     }
 
@@ -1295,8 +1325,8 @@
           if (heading) {
             let node = heading.nextElementSibling;
             while (node && !['H1', 'H2', 'H3'].includes(node.tagName)) {
-              if (node.tagName === 'DETAILS') node.open = true;
-              if (node.querySelectorAll) node.querySelectorAll('details').forEach(d => d.open = true);
+              if (node.tagName === 'DETAILS' && !node.classList.contains('embed-card')) node.open = true;
+              if (node.querySelectorAll) node.querySelectorAll('details:not(.embed-card)').forEach(d => d.open = true);
               node = node.nextElementSibling;
             }
             const parentDetails = heading.closest('details');
@@ -1386,7 +1416,7 @@
       return out;
     }
 
-    function focusLine(line, scroll) {
+    function focusLine(line, scroll, keepClosed) {
       const target = document.getElementById('markdown-target');
       document.querySelectorAll('.src-hl').forEach(e => e.classList.remove('src-hl'));
       if (!line) return;
@@ -1400,7 +1430,9 @@
         all.forEach(e => { const n = +e.dataset.line; if (n <= line && n > best) best = n; });
         els = all.filter(e => +e.dataset.line === best)
                  .map(e => e.tagName === 'DETAILS' ? (e.querySelector('summary') || e) : e);
-        els.forEach(e => {
+        // keepClosed: the reader just clicked a drawer's summary — let that click
+        // toggle it instead of force-opening it here and having it toggle shut.
+        if (!keepClosed) els.forEach(e => {
           let d = e.parentElement && e.parentElement.closest('details');
           while (d) { d.open = true; d = d.parentElement && d.parentElement.closest('details'); }
         });
@@ -1412,6 +1444,107 @@
           els[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
         }
       }
+    }
+
+    // ════════════════════════════════════════════
+    // Embedded cards:  [label](?file=path/to/card.md "embed")
+    // Renders the whole atomic card as a collapsed drawer inside this one.
+    // Capped at one level — links inside an embedded card stay plain links.
+    // ════════════════════════════════════════════
+    const EMBED_TEXT = new Map();      // path → markdown (successful loads)
+    const EMBED_PENDING = new Map();   // path → in-flight fetch
+    const EMBED_OPEN = new Set();      // paths the reader has expanded (survives preview re-renders)
+
+    function embedGradeClass(meta) {
+      const probe = ((meta.grade || meta['right-orb'] || '')).toLowerCase();
+      if (/sahih|ṣaḥīḥ/.test(probe)) return 'g-sahih';
+      if (/hasan|ḥasan/.test(probe)) return 'g-hasan';
+      if (/daif|ḍaʿīf/.test(probe)) return 'g-daif';
+      if (/mawdu|mawḍūʿ/.test(probe)) return 'g-mawdu';
+      if (/mutawatir|mutawātir/.test(probe)) return 'g-mutawatir';
+      return '';
+    }
+
+    function loadEmbed(path) {
+      if (EMBED_PENDING.has(path)) return EMBED_PENDING.get(path);
+      const p = fetch('../' + path)
+        .then(res => { if (!res.ok) throw new Error(`HTTP ${res.status}`); return res.text(); })
+        .then(md => { EMBED_TEXT.set(path, md); return md; })
+        .finally(() => EMBED_PENDING.delete(path));
+      EMBED_PENDING.set(path, p);
+      return p;
+    }
+
+    function fillEmbed(card, md, path, label) {
+      const { meta, stripped } = parseMetaBlock(md);
+      const m = meta || {};
+      const badgeText = m.grade ? m.grade.toUpperCase()
+        : (m['right-orb-compact'] || (m['right-orb'] || '').replace(LEADING_ICON_RE, ''));
+      const summary = card.querySelector('summary');
+      summary.innerHTML = '';
+      if (badgeText) {
+        const b = document.createElement('span');
+        b.className = 'embed-badge ' + embedGradeClass(m);
+        b.textContent = badgeText;
+        summary.appendChild(b);
+      }
+      const l = document.createElement('span');
+      l.textContent = label;
+      summary.appendChild(l);
+
+      const body = card.querySelector('.embed-body');
+      body.innerHTML = marked.parse(stripped);
+      parseWordStacks(body);
+
+      const foot = document.createElement('div');
+      foot.className = 'embed-footer';
+      const ref = m['left-orb'] ? document.createElement('span') : null;
+      if (ref) { ref.textContent = m['left-orb'] + ' · '; foot.appendChild(ref); }
+      const a = document.createElement('a');
+      a.href = 'render.html?file=' + encodeURI(path);
+      a.target = '_blank'; a.rel = 'noopener';
+      a.textContent = 'Open standalone ↗';
+      foot.appendChild(a);
+      body.appendChild(foot);
+    }
+
+    function makeEmbed(path, label, line) {
+      const card = document.createElement('details');
+      card.className = 'embed-card';
+      if (line) card.dataset.line = line;
+      card.open = EMBED_OPEN.has(path);
+      card.innerHTML = '<summary></summary><div class="embed-body"></div>';
+      card.querySelector('summary').textContent = label;
+      card.addEventListener('toggle', () => { card.open ? EMBED_OPEN.add(path) : EMBED_OPEN.delete(path); });
+
+      const body = card.querySelector('.embed-body');
+      if (EMBED_TEXT.has(path)) {
+        fillEmbed(card, EMBED_TEXT.get(path), path, label);   // cached: no flash while typing
+      } else {
+        body.innerHTML = '<p class="embed-status">Loading…</p>';
+        loadEmbed(path)
+          .then(md => fillEmbed(card, md, path, label))
+          .catch(() => { body.innerHTML = `<p class="embed-status err">⚠️ Could not load <code></code></p>`; body.querySelector('code').textContent = path; });
+      }
+      return card;
+    }
+
+    function expandEmbeds(root) {
+      root.querySelectorAll('a[title="embed"]').forEach(a => {
+        const m = (a.getAttribute('href') || '').match(/^\?file=([^#]+\.md)$/);
+        if (!m) return;
+        let path;
+        try { path = decodeURI(m[1]).trim(); } catch (e) { path = m[1].trim(); }
+        const label = a.textContent.trim() || path;
+
+        let block = a.closest('p, li');
+        if (!block) { block = a; while (block.parentElement && block.parentElement !== root) block = block.parentElement; }
+        const card = makeEmbed(path, label, block.dataset && block.dataset.line);
+
+        if (block.tagName === 'P' && block.textContent.trim() === a.textContent.trim()) block.replaceWith(card);
+        else if (block.tagName === 'LI') block.appendChild(card);
+        else block.after(card);
+      });
     }
 
     function renderCard(md, withLines) {
@@ -1435,6 +1568,7 @@
       target.innerHTML = withLines ? renderWithLines(stripped, window._metaLines) : marked.parse(stripped);
 
       parseWordStacks(target);
+      expandEmbeds(target);   // before the TOC so embedded headings never enter it
       buildTOC(target);
 
       const h1 = target.querySelector('h1');
@@ -1450,6 +1584,36 @@
       // in, so the pasted card renders with exactly the live styling.
       if (params.get('preview')) {
         target.innerHTML = '';
+
+        // Same HUD as a published card, minus the navigation: prev / home /
+        // next are greyed out, the TOC works against the pasted markdown.
+        const hud = document.getElementById('somHudNav');
+        hud.innerHTML = `
+          <span class="hud-nav-btn is-disabled" title="Not linked in preview"><span class="hud-nav-arrow">←</span><span class="hud-nav-text"><span class="hud-nav-kicker">Previous</span></span></span>
+          <span class="hud-nav-home is-disabled" style="opacity:.35;cursor:not-allowed;" title="Not linked in preview">⌂</span>
+          <button type="button" class="hud-nav-toc" id="hudTocBtn" title="Table of Contents" style="display:none;">☰</button>
+          <span class="hud-nav-context">Preview · navigation not linked</span>
+          <span class="hud-nav-btn hud-nav-end is-disabled" title="Not linked in preview"><span class="hud-nav-text"><span class="hud-nav-kicker">Next</span></span><span class="hud-nav-arrow">→</span></span>`;
+        hud.hidden = false;
+
+        // Click anywhere on the card → tell the editor which source line it came from.
+        document.addEventListener('click', (e) => {
+          const a = e.target.closest('a');
+          if (a && a.target !== '_blank' && !(a.getAttribute('href') || '').startsWith('#')) e.preventDefault();   // keep the preview in place
+          if (e.target.closest('#hudBar, #toc')) return;
+          let line = 0;
+          const orb = e.target.closest('#orb-corner-wrap');
+          if (orb) line = 1;
+          else {
+            const el = e.target.closest('[data-line]');
+            if (el) line = +el.dataset.line;
+          }
+          if (line) {
+            focusLine(line, false, !!e.target.closest('summary'));
+            window.parent.postMessage({ type: 'som-goto', line }, '*');
+          }
+        });
+
         window.addEventListener('message', (e) => {
           if (e.data && e.data.type === 'som-focus') { focusLine(e.data.line, true); return; }
           if (!e.data || e.data.type !== 'som-preview') return;
