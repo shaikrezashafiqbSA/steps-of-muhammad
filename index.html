@@ -505,6 +505,15 @@
       color: #FFFBF1;
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     }
+    .root-node-title-sep { opacity: 0.55; }
+    .root-node-title-ar {
+      font-family: 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif;
+      font-size: 1.15rem;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: none;
+      vertical-align: -0.12em;
+    }
     .root-node-desc {
       font-size: 11px;
       line-height: 1.6;
@@ -1703,6 +1712,11 @@
       return !!active && active.items.some(f => f.path === atomicPath);
     }
 
+    // Arabic category title (with tashkīl) shown beside the Latin one.
+    function arTitleHTML(node) {
+      return `<span class="root-node-title-ar" lang="ar" dir="rtl">${escapeHtml(node.categoryAr)}</span>`;
+    }
+
     function escapeHtml(str) {
       return String(str).replace(/[&<>"']/g, c => ({
         '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -2077,7 +2091,7 @@
               <!-- Category + description (center, takes available space) -->
               <div class="space-y-1 pr-2 flex-1 min-w-0">
                 <span class="root-node-title">
-                  ${node.category}
+                  ${node.category}${node.categoryAr ? ` <span class="root-node-title-sep">·</span> ${arTitleHTML(node)}` : ''}
                 </span>
                 <p class="root-node-desc">
                   — ${node.desc}
@@ -2790,7 +2804,7 @@
           <button type="button" class="family-divider action-category-toggle"
                   data-action-toggle="${escapeHtml(key)}" aria-expanded="${isOpen ? 'true' : 'false'}">
             <span>${escapeHtml(group.node.icon || '📚')}</span>
-            <span class="family-divider-label">${escapeHtml(group.node.category)}</span>
+            <span class="family-divider-label">${escapeHtml(group.node.category)}${group.node.categoryAr ? ` · ${arTitleHTML(group.node)}` : ''}</span>
             <span class="action-category-hint">${countLabel}</span>
             <span class="action-category-chevron" aria-hidden="true">
               <span class="chevron-icon">${CHEVRON_SVG}</span>

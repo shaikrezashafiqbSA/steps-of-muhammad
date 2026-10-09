@@ -73,8 +73,9 @@ function somItemWindows(item) {
 const VAULT_NAVIGATION_TREE = [
     {
     icon: "🤍",
-    category: "The Nūr in the Heart",
-    desc: "Anchoring the heart and aligning to the amr — no fixed hour, only need",
+    category: "Duʿā",
+    categoryAr: "الدُّعَاءُ",
+    desc: "“Call upon Me, I will respond to you” — Qurʾān 40:60",
     items: [
       { type: "family", label: "Strong Believer", icon: "💪", tier: "imam" },
       { label: "Asking through the Greatest Name — when He is asked by it, He gives", gloss: "Bi-Annī Ashhadu Annaka Anta-llāh", ref: "Tirmidhī 3475", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/in-greatest-of-names.md" },
@@ -96,6 +97,7 @@ const VAULT_NAVIGATION_TREE = [
   {
     icon: "🕌",
     category: "Ṣalāh",
+    categoryAr: "الصَّلَاةُ",
     desc: "Prophetic du'ās before, during and after ṣalāh",
     items: [
       { type: "family", label: "Before Ṣalāh", gloss: "Everything said before the takbīr, in order", tier: "imam", time: ["*salah"]},
@@ -118,6 +120,7 @@ const VAULT_NAVIGATION_TREE = [
   {
     icon: "🛡️",
     category: "Adhkār aṣ-Ṣabāḥ wal-Masāʾ",
+    categoryAr: "أَذْكَارُ الصَّبَاحِ وَالْمَسَاءِ",
     desc: "The morning and evening shield — recited after Fajr and after ʿAṣr",
     items: [
       /* { num: "1", label: "Hand the day over the instant it starts — and the night, the same way", gloss: "Allāhumma Bika Aṣbaḥnā", ref: "Abū Dāwūd 5068", tier: "jemaah", grade: "sahih", time: ["day-fajr-post", "day-asr-post"], path: "web/render.html?file=content/adhkar-as-sabah-wal-masa/bika-asbahna.md" },
@@ -142,6 +145,7 @@ const VAULT_NAVIGATION_TREE = [
   {
     icon: "🌤️",
     category: "Ḍuḥā & the Working Day",
+    categoryAr: "الضُّحَى",
     desc: "The forenoon window — provision, ease of work, and the road",
     items: [
       { label: "Ḥadīth qudsī: give Me four, and I will suffice you for the rest of it", gloss: "Four Rakʿah at the Start of the Day", ref: "Abū Dāwūd 1289", reps: "4 rakʿah", tier: "jemaah", grade: "sahih", time: ["day-duha"], path: "web/render.html?file=content/salah/duha-four-rakah.md" },
@@ -153,6 +157,7 @@ const VAULT_NAVIGATION_TREE = [
     {
     icon: "🌙",
     category: "Adhkār al-Layl",
+    categoryAr: "أَذْكَارُ اللَّيْلِ",
     desc: "The night cycle — going to bed, waking in the dark, and the last third",
     items: [
       { type: "family", label: "About to sleep", gloss: "Last things said before sleep", tier: "imam", time: ["night-presleep"]},
@@ -171,6 +176,7 @@ const VAULT_NAVIGATION_TREE = [
     {
     icon: "🌸",
     category: "Ṣalawāt",
+    categoryAr: "الصَّلَوَاتُ",
     desc: "Send ṣalawāt upon the Prophet ﷺ",
     items: [
       { label: "The Adnānī formula, from the mashāyikh", gloss: "Ṣalawāt Adnānī", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "salawat/salawat-adnani.html" },
@@ -180,6 +186,7 @@ const VAULT_NAVIGATION_TREE = [
   {
     icon: "📿",
     category: "Tahlīl Collections",
+    categoryAr: "التَّهْلِيلُ",
     desc: "Tahlīl collections pieced by mashāyikh",
     items: [
       { label: "The reciter dedicates the reward of Al-Fatihah to the Prophets, the Companions, the Caliphs to raise their ranks", gloss: "Tawassul before Al Fatihah", ref: "Compiled wird", time: ["*any"], path: "web/render.html?file=content/tahleel/al-fatihah-ilaa-ruhi.md" },
@@ -189,6 +196,7 @@ const VAULT_NAVIGATION_TREE = [
   {
     icon: "🌾",
     category: "Sacred Times",
+    categoryAr: "الْأَوْقَاتُ الْمُبَارَكَةُ",
     desc: "Wird tied to a season, a sacred month, or a day that comes once a year",
     items: [
       { label: "Said on a birthday; composite, read the verification notice first", gloss: "Duʿāʾ Mīlād — Yā Ghaniyyu Aghninā", ref: "Tirmidhī 3505 · 3563 · Qurʾān 21:87", tier: "jemaah", time: ["*any"], path: "web/render.html?file=content/dua/dua-birthday.md" },
