@@ -199,20 +199,20 @@ const VAULT_NAVIGATION_TREE = [
       { label: "The full tahlīl sequence for the departed", gloss: "Tahlīl al-Arwāḥ", ref: "Compiled wird", time: ["*any"], path: "web/render.html?file=content/tahleel/tahlil-al-arwah.md" }
     ]
   },
-  {
-    icon: "🌾",
-    category: "Sacred Times",
-    categoryAr: "الْأَوْقَاتُ الْمُبَارَكَةُ",
-    desc: "Wird tied to a season, a sacred month, or a day that comes once a year",
-    items: [
-      { label: "Said on a birthday; composite, read the verification notice first", gloss: "Duʿāʾ Mīlād — Yā Ghaniyyu Aghninā", ref: "Tirmidhī 3505 · 3563 · Qurʾān 21:87", tier: "jemaah", time: ["*any"], path: "web/render.html?file=content/dua/dua-birthday.md" },
-      { label: "The takbīr of the days of tashrīq", gloss: "Takbīr ʿĪd al-Aḍḥā", ref: "Compiled wird", tier: "jemaah", time: ["*any"], path: "Dua Haj/takbir-eiduladha.html" },
-      { label: "The best duʿāʾ the Prophets made, on the day of ʿArafah", gloss: "Khayru-d-Duʿāʾ Duʿāʾ Yawm ʿArafah", ref: "Tirmidhī 3585", tier: "imam", time: ["*any"], path: "Dua Haj/dua-prophets-made-on-arafah.html" },
-      { label: "What the two of them said standing on ʿArafah", gloss: "ʿArafah — ʿAlī and Ibn ʿUmar", ref: "Athar", tier: "imam", time: ["*any"], path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
-      { label: "The collected amal of the ten best days", gloss: "Dhū al-Ḥijjah — First Ten Days", ref: "Compiled wird", time: ["*any"], path: "Dua Haj/Amalan Haj.html" },
-      { label: "The Rajab istighfār set", gloss: "Istighfār Rajab", ref: "Compiled wird", time: ["*any"], path: "Wird/istighfar-rajab.html" }
-    ]
-  },
+  // {
+  //   icon: "🌾",
+  //   category: "Sacred Times",
+  //   categoryAr: "الْأَوْقَاتُ الْمُبَارَكَةُ",
+  //   desc: "Wird tied to a season, a sacred month, or a day that comes once a year",
+  //   items: [
+  //     { label: "Said on a birthday; composite, read the verification notice first", gloss: "Duʿāʾ Mīlād — Yā Ghaniyyu Aghninā", ref: "Tirmidhī 3505 · 3563 · Qurʾān 21:87", tier: "jemaah", time: ["*any"], path: "web/render.html?file=content/dua/dua-birthday.md" },
+  //     { label: "The takbīr of the days of tashrīq", gloss: "Takbīr ʿĪd al-Aḍḥā", ref: "Compiled wird", tier: "jemaah", time: ["*any"], path: "Dua Haj/takbir-eiduladha.html" },
+  //     { label: "The best duʿāʾ the Prophets made, on the day of ʿArafah", gloss: "Khayru-d-Duʿāʾ Duʿāʾ Yawm ʿArafah", ref: "Tirmidhī 3585", tier: "imam", time: ["*any"], path: "Dua Haj/dua-prophets-made-on-arafah.html" },
+  //     { label: "What the two of them said standing on ʿArafah", gloss: "ʿArafah — ʿAlī and Ibn ʿUmar", ref: "Athar", tier: "imam", time: ["*any"], path: "Dua Haj/dua-sahabah-made-on-arafah.html" },
+  //     { label: "The collected amal of the ten best days", gloss: "Dhū al-Ḥijjah — First Ten Days", ref: "Compiled wird", time: ["*any"], path: "Dua Haj/Amalan Haj.html" },
+  //     { label: "The Rajab istighfār set", gloss: "Istighfār Rajab", ref: "Compiled wird", time: ["*any"], path: "Wird/istighfar-rajab.html" }
+  //   ]
+  // },
   {
     icon: "🛠️",
     category: "Documentation",

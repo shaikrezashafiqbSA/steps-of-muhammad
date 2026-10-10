@@ -102,20 +102,49 @@
     }
     .imam-word { font-family: 'Amiri', 'Scheherazade New', serif; font-weight: 700; }
     .imam-figure {
+      transition: filter 1s ease-in-out;
       filter: saturate(1.0) contrast(1.15)
-             /* Bright, intense white core right against the figure */
-            drop-shadow(0 0 60px rgba(255, 255, 255, 1))
-            drop-shadow(0 0 16px rgba(255, 255, 255, 0.9))
+             /* Bright, intense gold nur core right against the figure */
+            drop-shadow(0 0 10px rgb(255, 255, 255))
+            drop-shadow(0 0 16px rgba(236, 232, 223, 0.9))
             /* Controlled dark obsidian framing further out */
-            drop-shadow(0 0 30px rgba(17, 24, 39, 0.85))
-            drop-shadow(0 0 50px rgba(0, 0, 0, 0.9));
+            drop-shadow(0 0 20px rgba(17, 24, 39, 0.85))
+            drop-shadow(0 0 10px rgba(0, 0, 0, 0.9));
+    }
+    /* Nūr ʿalā Nūr: when the nalayn background ignites (body.nur-ablaze),
+       the figure's light blasts outward to the top-left — the same
+       gold light, with no black flame, that the nalayn itself glows. */
+    body.nur-ablaze .imam-figure {
+      filter: saturate(1.1) contrast(1.1)
+            drop-shadow(-18px -22px 90px rgb(245, 245, 245))
+            drop-shadow(-8px -10px 42px rgba(250, 249, 247, 0.95))
+            drop-shadow(0 0 70px rgba(255, 217, 138, 0.8))
+            drop-shadow(10px 12px 50px rgba(255, 217, 138, 0.45));
     }
     .imam-aura { transform-origin: 140px 40px; animation: imam-aura-pulse 5s ease-in-out infinite; }
     @keyframes imam-aura-pulse {
       0%, 100% { opacity: 0.8; transform: scale(1); }
-      50%      { opacity: 1;   transform: scale(1.20); }
+      50%      { opacity: 1;   transform: scale(1.10); }
     }
-    @media (prefers-reduced-motion: reduce) { .imam-aura { animation: none; } }
+    body.nur-ablaze .imam-aura {
+      animation: imam-aura-blast 15s ease-in-out infinite;
+      filter: brightness(2);
+    }
+    /* No charcoal/obsidian stops while ablaze — the aura becomes the same
+       warm gold nur as the nalayn glow, start to edge. */
+    body.nur-ablaze stop.aura-stop-core { stop-color: #FFD98A; stop-opacity: 1; }
+    body.nur-ablaze stop.aura-stop-mid { stop-color: #FFE5AD; stop-opacity: 0.9; }
+    body.nur-ablaze stop.aura-stop-dark { stop-color: #221d13; stop-opacity: 0.4; }
+    body.nur-ablaze stop.aura-stop-edge { stop-color: #FFD98A; stop-opacity: 0; }
+    @keyframes imam-aura-blast {
+      0%, 100% { opacity: 0.85; transform: scale(1) translate(0, 0); }
+      50%      { opacity: 1;    transform: scale(1.5) translate(-30px, -34px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .imam-aura { animation: none; }
+      body.nur-ablaze .imam-aura { animation: none; }
+      body.nur-ablaze .imam-figure { transition: none; }
+    }
     .imam-tagline { letter-spacing: 0.32em; font-weight: 700; }
 
     /* Decorative divider under title */
@@ -1548,13 +1577,13 @@
               <clipPath id="imamPole"><rect x="0" y="115" width="220" height="200"/></clipPath>
               <radialGradient id="imamAura" cx="50%" cy="50%" r="50%">
                 <!-- Pure white bright center core (Purity) -->
-                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+                <stop class="aura-stop-core" offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
                 <!-- Bright silvery white transition -->
-                <stop offset="25%" stop-color="#E5E7EB" stop-opacity="0.85"/>
+                <stop class="aura-stop-mid" offset="25%" stop-color="#E5E7EB" stop-opacity="0.85"/>
                 <!-- Deep smoky charcoal mid-layer -->
-                <stop offset="60%" stop-color="#1F2937" stop-opacity="0.75"/>
+                <stop class="aura-stop-dark" offset="60%" stop-color="#1F2937" stop-opacity="0.75"/>
                 <!-- Pitch black obsidian outer aura (Purging darkness) -->
-                <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
+                <stop class="aura-stop-edge" offset="100%" stop-color="#050505" stop-opacity="0"/>
               </radialGradient>
             </defs>
             <!-- gold aura behind the imam -->
@@ -1914,6 +1943,7 @@
       const isOpen = document.body.classList.contains('amalan-open');
       const open = typeof forceOpen === 'boolean' ? forceOpen : !isOpen;
       document.body.classList.toggle('amalan-open', open);
+      updateNurFromDrawers();
     }
 
     // SVG chevron — cleaner, scales perfectly, no font quirks
@@ -2130,7 +2160,7 @@
                       <span class="family-divider-label">${item.label}</span>
                       ${item.path ? '<span class="family-divider-hint">Open full sequence ↗</span>' : ''}`;
                     return item.path
-                      ? `<a href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()" class="family-divider family-olive">${headHTML}</a>`
+                      ? `<a href="./${item.path}" class="family-divider family-olive">${headHTML}</a>`
                       : `<div class="family-divider family-olive">${headHTML}</div>`;
                   }
                   const familyChildClass = inFamily ? 'family-child' : '';
@@ -2158,8 +2188,6 @@
                     ? `<span class="item-meta">${refHTML}${repsHTML}</span>` : '';
                   return `
                   <a href="./${item.path}"
-                     onmouseenter="igniteNur()"
-                     onmouseleave="extinguishNur()"
                      class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] ${hoverBgClass} transition-all group ${gradeClass} ${familyChildClass}">
                     ${numHTML}
                     <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
@@ -2332,10 +2360,13 @@
       } else {
         activeNodeId = null;
       }
+      updateNurFromDrawers();
     }
 
 
-    // Background flag cross-fade — triggered by category item hover
+    // Background flag cross-fade — triggered by opening a drawer
+    // (compendium node, action family/category, or the amalan panel).
+    // Nūr ʿalā Nūr: the imam logo blazes alight in step with the nalayn.
     function igniteNur() {
       const baseFlag = document.getElementById('bg-base');
       const nurFlag = document.getElementById('bg-nur');
@@ -2344,6 +2375,7 @@
         nurFlag.style.opacity = '0.85';
         nurFlag.style.transform = 'scale(1.03)';
       }
+      document.body.classList.add('nur-ablaze');
     }
 
 
@@ -2355,6 +2387,15 @@
         nurFlag.style.opacity = '0';
         nurFlag.style.transform = 'scale(1.0)';
       }
+      document.body.classList.remove('nur-ablaze');
+    }
+
+    // Any drawer open (compendium node, action family/category, amalan
+    // panel) keeps the nalayn lit; closing the last one extinguishes it.
+    function updateNurFromDrawers() {
+      const anyOpen = document.body.classList.contains('amalan-open')
+        || !!document.querySelector('#action-list .action-family.active, #action-list .action-category.active, .root-node.active');
+      if (anyOpen) igniteNur(); else extinguishNur();
     }
   </script>
 
@@ -2752,7 +2793,7 @@
 
     function renderItemRow(item) {
       return `
-        <a class="action-item" href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()">
+        <a class="action-item" href="./${item.path}">
           <span class="ai-grade ${gradeClass(item.grade)}"></span>
           <span class="ai-body">
             <span class="ai-name">${escapeHtml(item.label)}</span>
@@ -2969,6 +3010,7 @@
             const btn = family.querySelector('[data-family-toggle]');
             if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
           });
+          updateNurFromDrawers();
           return;
         }
 
@@ -2983,6 +3025,7 @@
           const btn = category.querySelector('[data-action-toggle]');
           if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
+        updateNurFromDrawers();
       });
 
       const bedBtn = document.getElementById('btn-bedtime');

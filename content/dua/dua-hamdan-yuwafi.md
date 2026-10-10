@@ -5,49 +5,24 @@ book: Compiled Duʿāʾ · Recited in gatherings of dhikr & after Sūrat Yāsīn
 hadith: Composite — Muslim 486 · Ibn Mājah 3801 · Qur'an 37:180–182
 grade: Compiled duʿāʾ (mixed: ṣaḥīḥ, ḍaʿīf & Qur'anic elements — see Source & Authenticity)
 grade-comment: "Lā nuḥṣī thanāʾan ʿalayk" — Ṣaḥīḥ (Muslim 486); "kamā yanbaghī li-jalāli wajhik" — Ḍaʿīf isnād, Ibn Mājah 3801 (al-Albānī); "ḥamdan yuwāfī niʿamahu" — no established Prophetic isnād (Ibn al-Qayyim, ʿUddat aṣ-Ṣābirīn)
-left-orb: Awrād Ba ʿAlawī · Duʿāʾ al-Ḥamd
-left-orb-compact: Awrād Ba ʿAlawī
+left-orb: Duʿāʾ al-Ḥamd
+left-orb-compact: Rātib Al-‛Aṭṭās
 right-orb: Compiled Du'a
-right-orb-compact: ۞۞۞
+right-orb-compact: 🟢
 ::
 
 # دُعَاءُ الْحَمْد — The Supplication of Praise
 
 ## 📜 The Supplication
 
-This comprehensive duʿāʾ - often read post solat in masjids around Singapore - opens with the praise of Allah, followed by abundant ṣalawāt upon the Prophet ﷺ, then a series of petitions for protection, well-being, and steadfastness. 
+This comprehensive duʿāʾ - often read after solat in masjids around Singapore - opens with the praise of Allah, followed by abundant ṣalawāt upon the Prophet ﷺ, then a series of petitions for protection, well-being, and steadfastness. 
 
-**Background**: It is also recited in gatherings of dhikr and most famously after the recitation of Sūrat Yāsīn, in the tradition of the Ba ʿAlawī scholars of Ḥaḍramawt, as transmitted through the Ḥabāʾib, including Ḥabīb ʿAbdullāh bin ʿAlawī al-Ḥaddād and the chains connected to Ḥabīb ʿAlī al-Ḥabashī and Ḥabīb ʿUmar bin Ḥafīẓ.
 
-The worshipper begins with declaring that all praise is for Allah, Lord of all the worlds then sends blessings upon the Prophet ﷺ among the first and the last, entrusts to Allah his religion, soul, family and wealth, seeks His shelter from every rebellious devil, obstinate tyrant, evil eye, wrongdoing and envy, asks to be adorned with well-being and steadfastness, and seals with the Qur'anic verses of Sūrat aṣ-Ṣāffāt.
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
-**No single isnād.** This is a compiled duʿāʾ, not one hadith. Its recited phrases trace to the following sources:
+It is recited in gatherings of dhikr and most famously after the recitation *Rātib* of ‛Umar Bin ‛Abdurraḥmān *Al-‛Aṭṭās* in the tradition of the Ba ʿAlawī scholars of Ḥaḍramawt, as transmitted through Ḥabīb ʿUmar bin Ḥafīẓ in his book: [Khulasah (Ratib begins Page 308 - Dua at page 322)](https://muwasala.org/wp-content/uploads/2013/03/Al-Khulasa_Habib-Umr_29-01-2015.pdf) - widely transmitted in the Nusantara region. 
 
-**1 · Ṣaḥīḥ Muslim 486 — narrated by ʿĀʾishah (raḍiyallāhu ʿanhā):**
-[[ لَا أُحْصِي ثَنَاءً عَلَيْكَ | I cannot enumerate praise upon You | lā uḥṣī thanāʾan ʿalayk ]]
-[[ أَنْتَ كَمَا أَثْنَيْتَ عَلَى نَفْسِكَ | You are as You have praised Yourself | anta kamā athnayta ʿalā nafsik ]]
-The Prophet ﷺ said this in prostration during the night prayer. **Grade: Ṣaḥīḥ.**
 
-**2 · Sunan Ibn Mājah 3801 — narrated by ʿAbdullāh ibn ʿUmar (raḍiyallāhu ʿanhumā):**
-[[ يَا رَبِّ لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ وَلِعَظِيمِ سُلْطَانِكَ | O Lord, for You is praise as befits the majesty of Your Face and the greatness of Your dominion | yā Rabbi laka-l-ḥamdu kamā yanbaghī li-jalāli wajhika wa li-ʿaẓīmi sulṭānik ]]
-A servant of Allah said this; the two recording angels could not encompass how to record it and ascended to ask their Lord, who said: *"Write it as My slave said it, until he meets Me and I reward him for it."* **Grade: Ḍaʿīf isnād** (al-Albānī; Islamweb Fatwā 65961), though widely recited.
-
-**3 · "Ḥamdan yuwāfī niʿamahu wa yukāfiʾu mazīdah":**
-Not an established Prophetic hadith. Reported (via Abū Naṣr at-Tammār) as words taught to Ādam (ʿalayhi-s-salām), an Isrāʾīlī report, as Ibn al-Qayyim notes in *ʿUddat aṣ-Ṣābirīn*. It is nevertheless regarded in the Shāfiʿī school as among the most sublime formulas of ḥamd, which is why it features across the awrād of the Ba ʿAlawī tradition.
-
-**4 · "Nastaḥfiẓuka wa nastawdiʿuka..." (Parts 7–8):**
-Transmitted in the duʿāʾ recited after Sūrat Yāsīn in the tradition of the Ḥabāʾib, commonly attributed to Ḥabīb ʿAbdullāh bin ʿAlawī al-Ḥaddād. Its theme echoes the authentic Prophetic farewell duʿāʾ "astawdiʿu-llāha dīnaka wa amānatak..." (Abū Dāwūd, at-Tirmidhī).
-
-**5 · Qur'anic Seal — Sūrat aṣ-Ṣāffāt 37:180–182:**
-[[ سُبْحَانَ رَبِّكَ رَبِّ الْعِزَّةِ عَمَّا يَصِفُونَ | Glory be to your Lord, the Lord of Honour, above what they describe | subḥāna Rabbika Rabbi-l-ʿizzati ʿammā yaṣifūn ]]
-[[ وَسَلَامٌ عَلَى الْمُرْسَلِينَ | and peace be upon the Messengers | wa salāmun ʿala-l-mursalīn ]]
-[[ وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ | and all praise is for Allah, Lord of the worlds | wa-l-ḥamdu lillāhi Rabbi-l-ʿālamīn ]]
-**Grade: Qur'anic Scripture.**
-
-</details>
 
 ## 🔤 Word-by-Word
 
@@ -365,9 +340,3 @@ These are 3 lexical echoes of the Quran:
 </details>
 
 ---
-
-## ✅ Source & Authenticity
-
-This supplication is a **compiled duʿāʾ** recited in the gatherings (majālis) of the Ba ʿAlawī tradition of Ḥaḍramawt as transmitted by the scholars of the Ḥabāʾib. 
-
-- **Attribution note:** the compilation circulates in the majālis connected to Ḥabīb ʿAlī al-Ḥabashī and Ḥabīb ʿUmar bin Ḥafīẓ - it is contained in a specific published citation for this exact compiled sequence under Ḥabīb ʿUmar's name: Al Khulasa
