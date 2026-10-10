@@ -102,15 +102,18 @@
     }
     .imam-word { font-family: 'Amiri', 'Scheherazade New', serif; font-weight: 700; }
     .imam-figure {
-      filter: saturate(1.2) contrast(1.08)
-              drop-shadow(0 0 4px rgba(255, 214, 120, 0.95))
-              drop-shadow(0 0 14px rgba(240, 180, 70, 0.8))
-              drop-shadow(0 0 34px rgba(226, 160, 40, 0.55));
+      filter: saturate(1.0) contrast(1.15)
+             /* Bright, intense white core right against the figure */
+            drop-shadow(0 0 60px rgba(255, 255, 255, 1))
+            drop-shadow(0 0 16px rgba(255, 255, 255, 0.9))
+            /* Controlled dark obsidian framing further out */
+            drop-shadow(0 0 30px rgba(17, 24, 39, 0.85))
+            drop-shadow(0 0 50px rgba(0, 0, 0, 0.9));
     }
     .imam-aura { transform-origin: 140px 40px; animation: imam-aura-pulse 5s ease-in-out infinite; }
     @keyframes imam-aura-pulse {
       0%, 100% { opacity: 0.8; transform: scale(1); }
-      50%      { opacity: 1;   transform: scale(1.07); }
+      50%      { opacity: 1;   transform: scale(1.20); }
     }
     @media (prefers-reduced-motion: reduce) { .imam-aura { animation: none; } }
     .imam-tagline { letter-spacing: 0.32em; font-weight: 700; }
@@ -1544,19 +1547,24 @@
               <!-- the pole: only the short lower half of the I shows, rising out of the figure -->
               <clipPath id="imamPole"><rect x="0" y="115" width="220" height="200"/></clipPath>
               <radialGradient id="imamAura" cx="50%" cy="50%" r="50%">
-                <stop offset="0" stop-color="#FFE08A" stop-opacity="0.85"/>
-                <stop offset="0.45" stop-color="#F2B94B" stop-opacity="0.45"/>
-                <stop offset="1" stop-color="#E8A53A" stop-opacity="0"/>
+                <!-- Pure white bright center core (Purity) -->
+                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+                <!-- Bright silvery white transition -->
+                <stop offset="25%" stop-color="#E5E7EB" stop-opacity="0.85"/>
+                <!-- Deep smoky charcoal mid-layer -->
+                <stop offset="60%" stop-color="#1F2937" stop-opacity="0.75"/>
+                <!-- Pitch black obsidian outer aura (Purging darkness) -->
+                <stop offset="100%" stop-color="#050505" stop-opacity="0"/>
               </radialGradient>
             </defs>
             <!-- gold aura behind the imam -->
-            <ellipse class="imam-aura" cx="140" cy="40" rx="205" ry="225" fill="url(#imamAura)"/>
-            <g class="imam-word" font-size="290" fill="#3E6C7E" stroke="#D3EEE9" stroke-width="4" stroke-linejoin="round" paint-order="stroke fill">
+            <ellipse class="imam-aura" cx="190" cy="20" rx="205" ry="360" fill="url(#imamAura)"/>
+            <g class="imam-word" font-size="290" fill="#2A2D34" stroke="#D3EEE9" stroke-width="10" stroke-linejoin="round" paint-order="stroke fill">
               <text x="150" y="210" clip-path="url(#imamPole)">I</text>
               <text x="262" y="210" textLength="708" lengthAdjust="spacing">MAM</text>
             </g>
             <!-- the turbaned imam: large, rising above the letters, glowing gold -->
-            <image class="imam-figure" href="assets/imam-figure.png" x="0" y="-112" width="268" height="320"/>
+            <image class="imam-figure" href="assets/imam-figure.png" x="0" y="-125" width="268" height="320"/>
           </svg>
         </h1>
         <p id="root-subtitle" class="imam-tagline text-xs md:text-sm font-mono-app text-[#7A6F6C] uppercase max-w-md mx-auto leading-relaxed">
