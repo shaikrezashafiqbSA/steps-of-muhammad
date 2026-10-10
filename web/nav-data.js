@@ -85,9 +85,11 @@ const VAULT_NAVIGATION_TREE = [
       { type: "family", label: "Strong Believer", icon: "💪", tier: "imam" },
       { label: "Asking through the Greatest Name — when He is asked by it, He gives", gloss: "Bi-Annī Ashhadu Annaka Anta-llāh", ref: "Tirmidhī 3475", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/in-greatest-of-names.md" },
       { label: "The duʿāʾ he ﷺ said most often: hold my heart firm on Your dīn", gloss: "Yā Muqallibal-Qulūb", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/dua/ya-muqallibal-qulub.md" },
+      { label: "The duʿāʾ he ﷺ said most often: Dunya, Akhirah and protection from Punishment of Naar", gloss: "Rabbana atina fid dunya...", ref:"Surat Al Baqarah 2:201", tier: "jemaah", grade:"sahih", time:["*any"], path: "web/render.html?file=content/dua/rabbana-atina-fid-dunya.md"},
       { label: "ʿĀʾishah's comprehensive ask — all good, known and unknown", gloss: "Asʾaluka min al-Khayri Kullih", ref: "Ibn Mājah 3846", tier: "imam", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/aisyah-comprehensive-ask.md" },
       { label: "Sulaymān's ask: Increase my capacity to be thankful", gloss: "Rabbi Awziʿnī an Ashkura Niʿmatak", ref: "Qurʾān 27:19", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/sulaiman-thankfulness.md" },
       { label: "Ibrahim's ask: Make us muslim, show us our rites", gloss: "Rabbanā wajʿalnā muslimayni laka", ref: "Qurʾān 26:84-85", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/make-us-muslim-show-us-nusuk.md" },
+      { label: "Duas of the IbadurRahman", gloss: "Rabbana habla min azwajina ...", ref: "Qurʾān 25:63-77", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/ibadurrahman.md"},
       { label: "Praise that matches His blessings; compiled in the Bā ʿAlawī majālis", gloss: "Duʿāʾ al-Ḥamd — Ḥamdan Yuwāfī", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/dua-hamdan-yuwafi.md" },
       { label: "O Allah, set right for me my religion ...", gloss: "Allahuma aṣliḥ lī dīniya ...  ", ref: "Muslim 2720", tier: "muhsin",grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/o-allah-set-right-for-me-my-religion.md" },
       { type: "family", label: "Qurʾān in Heart", tier: "imam" },
@@ -107,15 +109,15 @@ const VAULT_NAVIGATION_TREE = [
     items: [
       { type: "family", label: "Before Ṣalāh", gloss: "Everything said before the takbīr, in order", tier: "imam", time: ["*salah"]},
       { label: "Ask for the Prophet's ﷺ wasīlah, the moment the adhān ends", gloss: "Rabba Hādhihi-d-Daʿwati-t-Tāmmah", ref: "Bukhārī 614", tier: "jemaah", grade: "sahih", time: ["*adhan"], path: "web/render.html?file=content/salah/before/after-adhan.md" },
-      { type: "family", label: "During Ṣalāh", gloss: "The full order of the prayer itself", tier: "imam", time: ["*salah"],  },
+      { type: "family", label: "During Ṣalāh", gloss: "The full order of the prayer itself", tier: "imam", time: ["*salah"] },
       { label: "The opening, said between the takbīr and al-Fātiḥah", gloss: "Duʿāʾ al-Iftitāḥ", ref: "Muslim 601 · 771", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/during/iftitah.md" },
       { label: "The prayer divided in two — He answers you verse by verse", gloss: "Al-Fātiḥah", ref: "Muslim 395a", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/during/al-fatihah.md" },
-      { type: "family", label: "After Ṣalāh", gloss: "The Prophet's ﷺ closing set, after every taslīm", tier: "imam", time: ["*salah"],},
+      { label: "Salaam Fajr - Useful knowledge, good provision, accepted deeds", gloss: "ʿIlman Nāfiʿan wa Rizqan Ṭayyiban ...", ref: "Ibn Mājah 925", tier: "jemaah", grade: "sahih", time: ["day-fajr-post"], path: "web/render.html?file=content/salah/during/ilmannafia_rizqantayyiba_amalanmutaqqaballan.md" },
+      { type: "family", label: "After Ṣalāh", gloss: "The Prophet's ﷺ closing set, after every taslīm", tier: "imam", time: ["*salah"]},
       { label: "The counsel he ﷺ took Muʿādh's hand to give: help me remember You", gloss: "Allāhumma Aʿinnī ʿalā Dhikrika", ref: "Riyāḍ 1422 · Abū Dāwūd 1522", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/after/help-me-be-grateful.md" },
-      { label: "Useful knowledge, good provision, accepted deeds — said in the salām of Fajr", gloss: "ʿIlman Nāfiʿan wa Rizqan Ṭayyiban", ref: "Ibn Mājah 925", tier: "jemaah", grade: "sahih", time: ["day-fajr-post"], path: "web/render.html?file=content/salah/after/fajr-in-salam.md" },
       { num: "1", label: "Three istighfār, then the declaration of peace", gloss: "Allāhumma Anta-s-Salām", ref: "Muslim 591", reps: "×3 + 1", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/after/1_istigfar_peace.md" },
-      { num: "2a", label: "Tahlīl of sincere devotion after the taslīm", gloss: "Mukhliṣīna Lahu-d-Dīn", ref: "Nasāʾī 1339", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/after/tahlil-mukhlisina.md" },
-      { num: "2b", label: "No one withholds what He gives — divine sovereignty", gloss: "Lā Māniʿa Limā Aʿṭayta", ref: "Muslim 593a", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/after/tahlil-la-mania.md" },
+      { num: "2a", label: "Tahlīl - Sincere devotion after the taslīm", gloss: "Mukhliṣīna Lahu-d-Dīn", ref: "Nasāʾī 1339", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/after/tahlil-mukhlisina.md" },
+      { num: "2b", label: "Tahlil - No one withholds what He gives", gloss: "Lā Māniʿa Limā Aʿṭayta", ref: "Muslim 593a", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/after/tahlil-la-mania.md" },
       { num: "2c", label: "Ten after Fajr and Maghrib: the reward of freeing a slave", gloss: "Yuḥyī wa Yumītu — ×10", ref: "Tirmidhī 3474", reps: "×10", tier: "imam", grade: "hasan", time: ["day-fajr-post", "night-maghrib"], path: "web/render.html?file=content/salah/after/tahlil-fajr-maghrib-10-times.md" },
       { num: "5", label: "Seven times after Fajr and Maghrib, seeking refuge from the Fire", gloss: "Allāhumma Ajirnī mina-n-Nār", ref: "Abū Dāwūd 5079", reps: "×7", tier: "muhsin", grade: "daif", time: ["day-fajr-post", "night-maghrib"], path: "web/render.html?file=content/salah/after/3_dua-allahuma-ajirnaar.md" },
       { num: "3", label: "33 · 33 · 33 and the hundredth — sins forgiven though they be the foam of the sea", gloss: "Tasbīḥ · Taḥmīd · Takbīr", ref: "Muslim 597a", reps: "×100", tier: "jemaah", grade: "sahih", time: ["*salah"], path: "web/render.html?file=content/salah/after/tasbih-33-33-34.md" },
@@ -153,10 +155,12 @@ const VAULT_NAVIGATION_TREE = [
     categoryAr: "الضُّحَى",
     desc: "The forenoon window — provision, ease of work, and the road",
     items: [
-      { label: "Ḥadīth qudsī: give Me four, and I will suffice you for the rest of it", gloss: "Four Rakʿah at the Start of the Day", ref: "Abū Dāwūd 1289", reps: "4 rakʿah", tier: "jemaah", grade: "sahih", time: ["day-duha"], path: "web/render.html?file=content/salah/duha-four-rakah.md" },
-      { label: "Nothing is easy but what You make easy — for work that has seized up", gloss: "Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahlā", ref: "Ḥiṣn 139 · Ibn Ḥibbān 974", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/la-sahla.md" },
+      { label: "Ḥadīth qudsī: Give Me four, and I will suffice you for the rest of it", gloss: "Four Rakʿah at the Start of the Day", ref: "Abū Dāwūd 1289", reps: "4 rakʿah", tier: "jemaah", grade: "sahih", time: ["day-duha"], path: "web/render.html?file=content/salah/duha-four-rakah.md" },
       { label: "The travelling duʿāʾ — said as the vehicle moves off", gloss: "Duʿāʾ as-Safar", ref: "Tirmidhī 3447", tier: "jemaah", grade: "sahih", time: ["day-duha", "*any"], path: "web/render.html?file=content/dua/dua-safar.md" },
-      { label: "Debt the size of Mount Ṣīr, settled — the duʿāʾ he ﷺ taught ʿAlī", gloss: "Allāhumma-kfinī bi-Ḥalālika ʿan Ḥarāmik", ref: "Tirmidhī 3563", tier: "imam", grade: "hasan", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/remove-debt-mountain.md" }
+      { label: "Musa's ask: Expand my chest ...", gloss: "Rabbi shrahli sadri ...", ref: "Qurʾān 20:25-28", tier: "jemaah", grade: "sahih", time: ["*any"], path:"web/render.html?file=content/dua/work/musa-rabbishrahlisadri.md"},
+      { label: "Nothing is easy but what You make easy — for work that has seized up", gloss: "Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahlā", ref: "Ḥiṣn 139 · Ibn Ḥibbān 974", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/work/allahumma-la-sahla.md" },
+      { label: "Debt the size of Mount Ṣīr, settled — the duʿāʾ he ﷺ taught ʿAlī", gloss: "Allāhumma-kfinī bi-Ḥalālika ʿan Ḥarāmik", ref: "Tirmidhī 3563", tier: "imam", grade: "hasan", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/remove-debt-mountain.md" },
+      { label: "Musa's absolute dependancy", gloss: "Rabbi inni lima anzalta ...", ref: "Qurʾān 28:24", tier: "imam", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/work/musa-rabbi-inni-lima-anzalta.md"}
     ]
   },
     {

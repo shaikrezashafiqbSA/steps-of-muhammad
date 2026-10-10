@@ -14,9 +14,7 @@ right-orb-compact: ۞۞۞
 ## Allāhumma Innī As’aluka ʿIlman Nāfiʿan — The Prophet's ﷺ Post-Dawn Supplication for Knowledge, Provision, and Acceptance
 
 ### 📜 The Hadith
-It was narrated from Umm Salamah (رضي الله عنها) that when the Prophet (ﷺ) performed the Ṣubḥ (morning prayer), the moment he said the Salām, he would say:
-> *"O Allah, I ask You for beneficial knowledge, goodly provision and acceptable deeds."*
-
+It was narrated from Umm Salamah (رضي الله عنها) that when the Prophet (ﷺ) performed the Ṣubḥ (morning prayer), the moment he said the Salām, he would say...
 
 ### 🔤 Evoke This — Word by Word
 
