@@ -82,16 +82,18 @@ const VAULT_NAVIGATION_TREE = [
       { label: "Sulaymān's repentance ... and ask for Kingdom", gloss: "Rabbighfirli ...", ref: "Sūrat Saad 38:35", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/forgiveness-sulaiman.md" },
       { label: "Forgive Us, Do Not Place Ghilla in Our Hearts", gloss: ".. wa la taj'al fi qulubina Ghilla..", ref: "Sūrat Al Hashr 59:10", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/forgive-us-do-not-place-ghilla-in-hearts.md" },      
       { label: "Forgiveness for Parents and All Believers", gloss: "Rabbighfir li-walidayhi ..", ref: "Musnad al-Shāmiyīn lil-Ṭabarānī 2118", tier: "jemaah", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/dua/forgiveness-parents-all-believers.md" },
-      { type: "family", label: "Strong Believer", icon: "💪", tier: "imam" },
+      { type: "family", label: "Comprehensive Asks", icon: "🤲", tier: "imam" },
       { label: "Asking through the Greatest Name — when He is asked by it, He gives", gloss: "Bi-Annī Ashhadu Annaka Anta-llāh", ref: "Tirmidhī 3475", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/in-greatest-of-names.md" },
-      { label: "The duʿāʾ he ﷺ said most often: hold my heart firm on Your dīn", gloss: "Yā Muqallibal-Qulūb", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/dua/ya-muqallibal-qulub.md" },
       { label: "The duʿāʾ he ﷺ said most often: Dunya, Akhirah and protection from Punishment of Naar", gloss: "Rabbana atina fid dunya...", ref:"Surat Al Baqarah 2:201", tier: "jemaah", grade:"sahih", time:["*any"], path: "web/render.html?file=content/dua/rabbana-atina-fid-dunya.md"},
       { label: "ʿĀʾishah's comprehensive ask — all good, known and unknown", gloss: "Asʾaluka min al-Khayri Kullih", ref: "Ibn Mājah 3846", tier: "imam", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/aisyah-comprehensive-ask.md" },
-      { label: "Sulaymān's ask: Increase my capacity to be thankful", gloss: "Rabbi Awziʿnī an Ashkura Niʿmatak", ref: "Qurʾān 27:19", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/sulaiman-thankfulness.md" },
-      { label: "Ibrahim's ask: Make us muslim, show us our rites", gloss: "Rabbanā wajʿalnā muslimayni laka", ref: "Qurʾān 26:84-85", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/make-us-muslim-show-us-nusuk.md" },
       { label: "Duas of the IbadurRahman", gloss: "Rabbana habla min azwajina ...", ref: "Qurʾān 25:63-77", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/ibadurrahman.md"},
-      { label: "Praise that matches His blessings; compiled in the Bā ʿAlawī majālis", gloss: "Duʿāʾ al-Ḥamd — Ḥamdan Yuwāfī", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/dua-hamdan-yuwafi.md" },
       { label: "O Allah, set right for me my religion ...", gloss: "Allahuma aṣliḥ lī dīniya ...  ", ref: "Muslim 2720", tier: "muhsin",grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/o-allah-set-right-for-me-my-religion.md" },
+      { type: "family", label: "Steadfastness of Heart & Dīn", icon: "🫀", tier: "imam" },
+      { label: "The duʿāʾ he ﷺ said most often: hold my heart firm on Your dīn", gloss: "Yā Muqallibal-Qulūb", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/dua/ya-muqallibal-qulub.md" },
+      { label: "Ibrahim's ask: Make us muslim, show us our rites", gloss: "Rabbanā wajʿalnā muslimayni laka", ref: "Qurʾān 26:84-85", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/make-us-muslim-show-us-nusuk.md" },
+      { type: "family", label: "Gratitude & Praise", icon: "🌼", tier: "imam" },
+      { label: "Sulaymān's ask: Increase my capacity to be thankful", gloss: "Rabbi Awziʿnī an Ashkura Niʿmatak", ref: "Qurʾān 27:19", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/sulaiman-thankfulness.md" },
+      { label: "Praise that matches His blessings; compiled in the Bā ʿAlawī majālis", gloss: "Duʿāʾ al-Ḥamd — Ḥamdan Yuwāfī", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/dua-hamdan-yuwafi.md" },
       { type: "family", label: "Qurʾān in Heart", tier: "imam" },
       { label: "Make the Qurʾān the spring of my heart, the light of my chest", gloss: "Ijʿali-l-Qurʾāna Rabīʿa Qalbī", ref: "Musnad Aḥmad 3712", tier: "imam", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/quran/quran_spring_heart.md" },
       { label: "The memoriser's duʿāʾ — clarity, retention, character", gloss: "Duʿāʾ Ḥifẓ al-Mursalīn", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/quran/memoriser.md" },
@@ -224,6 +226,76 @@ const VAULT_NAVIGATION_TREE = [
     items: [
       { label: "The Prophetic Clock", gloss: "The eleven time windows, the naming contract, and what Action View is reading", type: "overview", path: "web/render.html?file=TIME_CATEGORISATION.md" },
       { label: "Authoring Guide", gloss: "How a card is written, and what every meta field does", type: "overview", path: "web/render.html?file=AUTHORING_GUIDE.md" }
+    ]
+  }
+];
+
+// =========================================================
+// PRESET COLLECTIONS
+//   Curated "My Amalan" sets shipped with the site itself, so
+//   they render identically for every visitor — including one
+//   who has never saved a personal collection. Resolved by id
+//   in render.html *before* falling back to a user's own
+//   localStorage collections of the same name.
+//
+//   Read-only in the My Amalan panel: no star/rename/delete,
+//   just "Open as Collection ↗" plus a short summary + a link.
+//
+//   Shape of each preset:
+//     id        — unique slug, used in ?collection=<id>
+//     name      — title shown in the panel + rendered card
+//     summary   — ONE short line shown under the name (no more
+//                 hover-tooltip sourcing — keep this to a phrase)
+//     moreHref  — optional atomic content path (same convention
+//                 as item.path below) for a "Read the etiquette →"
+//                 link; omit if there's nothing to link to yet
+//     items     — the duʿās themselves, PLUS optional divider rows
+//                 shaped like { type: "family", label, icon } to
+//                 visually group a long list (these render as a
+//                 subheading, not a clickable row, and are skipped
+//                 entirely when building the rendered card's links)
+//
+//   To add a new preset: copy the object below, give it a new id,
+//   and list the duʿās by their atomic content path (the same path
+//   you'd see after "file=" in a normal card link, e.g.
+//   "content/dua/whatever.md" — NOT the "web/render.html?file=..."
+//   wrapper). See the walkthrough in chat for the full how-to.
+// =========================================================
+
+const PRESET_COLLECTIONS = [
+  {
+    id: "sabah-sandwich",
+    name: "Adhkār aṣ-Ṣabāḥ wal-Masāʾ — the Duʿā Sandwich",
+    // Short caption shown in the panel itself (no more hover tooltip).
+    summary: "Praise → Ṣalawāt → Istighfār → Asks → Istighfār → Salawat",
+    // "Read more" link — atomic content path, same convention as item.path.
+    // Point this at any card/overview file; currently the etiquette-of-duʿā draft.
+    moreHref: "content/adab-dua.md",
+    items: [
+      { type: "family", label: "Praise & Tahlīl", icon: "🌸" },
+      { label: "Four phrases that outweigh a whole morning of dhikr", path: "content/adhkar-as-sabah-wal-masa/0_subhana_allahi_wa_bihamdihi.md" },
+      { label: "The tahlīl of daily protection and tawḥīd", path: "content/adhkar-as-sabah-wal-masa/a_la_ilaha_illallah_wahdahu_la_sharikalah.md" },
+
+      { type: "family", label: "Ṣalawāt", icon: "🕊️" },
+      { label: "Ten upon him ﷺ morning and evening, and his intercession is yours", path: "content/adhkar-as-sabah-wal-masa/b_salawat_10.md" },
+
+      { type: "family", label: "Istighfār", icon: "🤲" },
+      { label: "The chief of seeking forgiveness — say it with certainty and you are of Jannah", path: "content/adhkar-as-sabah-wal-masa/4_sayyidul-istighfar.md" },
+
+      { type: "family", label: "The Asks", icon: "✦" },
+      { label: "Refuge in His perfect words from the evil of what He made", path: "content/adhkar-as-sabah-wal-masa/1_audhubikatillah.md" },
+      { label: "Say it three times and nothing will harm you until you say it again", path: "content/adhkar-as-sabah-wal-masa/2_bismillahiladhi_layadurru.md" },
+      { label: "Seven times, and Allah suffices you in every concern of this world and the next", path: "content/adhkar-as-sabah-wal-masa/3_hasbiyallahu_7.md" },
+      { label: "The close of al-Ḥashr — seventy thousand angels sent to pray for you", path: "content/adhkar-as-sabah-wal-masa/c_law_anzalna.md" },
+      { label: "The words he ﷺ never abandoned, morning or evening — complete well-being", path: "content/adhkar-as-sabah-wal-masa/never-abandoned.md" },
+      { label: "Duʿāʾ of Fāṭimah — entrust every affair to the Ever-Living", path: "content/adhkar-as-sabah-wal-masa/6_ya-hayyu-ya-qayyum.md" },
+      { label: "Refuge from anxiety, grief, debt and the domination of men", path: "content/adhkar-as-sabah-wal-masa/5_hammi_wal_Hazan.md" },
+      { label: "Untangle from Debts and remove anxiety", path: "content/adhkar-as-sabah-wal-masa/5b_hammi_wal_Hazan.md" },
+      { label: "Body, hearing, sight — and refuge from disbelief and destitution", path: "content/adhkar-as-sabah-wal-masa/7_body-hearing-sight.md" },
+      { label: "Contentment with Allah, Islam and the Prophet ﷺ — Jannah made binding", path: "content/adhkar-as-sabah-wal-masa/8_raditdubillahirabban.md" },
+
+      { type: "family", label: "Closing Tahlīl", icon: "🌙" },
+      { label: "Fire insurance - The tahlīl of daily protection and tawḥīd", path: "content/dua/dua-abu-darda-fire-insurance.md" }
     ]
   }
 ];

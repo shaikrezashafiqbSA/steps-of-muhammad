@@ -1718,25 +1718,35 @@
       // list saved by index.html into a card of embeds — same drawers as authored cards.
       if (params.get('collection') || params.get('favorites') === '1') {
         try {
-          const cols = JSON.parse(localStorage.getItem('som-collections') || '[]');
           const id = params.get('collection');
-          const col = Array.isArray(cols) ? (id ? cols.find(c => c.id === id) : cols[0]) : null;
+          const presets = (typeof PRESET_COLLECTIONS !== 'undefined') ? PRESET_COLLECTIONS : [];
+          const preset = id ? presets.find(c => c.id === id) : null;
+          const cols = JSON.parse(localStorage.getItem('som-collections') || '[]');
+          const col = preset || (Array.isArray(cols) ? (id ? cols.find(c => c.id === id) : cols[0]) : null);
           if (!col) {
             target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Collection not found on this device. It may have been deleted. <a href="../index.html">Back to home</a>.</p>`;
             return;
           }
           const items = Array.isArray(col.items) ? col.items : [];
-          if (!items.length) {
+          const realItems = items.filter(it => it && it.type !== 'family');
+          if (!realItems.length) {
             target.innerHTML = `<p class="embed-status">☆ No duʿās saved in this collection yet. Tap the star next to any duʿā on the <a href="../index.html">home page</a> to add it.</p>`;
             return;
           }
           const esc = s => String(s).replace(/([\\\[\]])/g, '\\$1');
-          const link = it => `[${esc(it.label || it.path)}](?file=${encodeURI(it.path).replace(/[()]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase())} "embed")`;
-          EMBED_OPEN.add(items[0].path);
+          // Family-divider rows become a subheading; real items become embeds.
+          const link = it => it.type === 'family'
+            ? `### ${it.icon ? it.icon + ' ' : ''}${esc(it.label)}`
+            : `[${esc(it.label || it.path)}](?file=${encodeURI(it.path).replace(/[()]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase())} "embed")`;
+          EMBED_OPEN.add(realItems[0].path);
           window._collectionToc = true;
+          const moreLine = col.moreHref
+            ? `[Read the etiquette →](?file=${encodeURI(col.moreHref)})\n\n`
+            : '';
           renderCard(
             `# ${col.name || 'My Amalan'}\n\n` +
-            (col.note ? `*${col.note}*\n\n` : '') +
+            (col.summary ? `*${col.summary}*\n\n` : (col.note ? `*${col.note}*\n\n` : '')) +
+            moreLine +
             items.map(link).join('\n\n') + '\n');
         } catch (err) {
           console.error(err);

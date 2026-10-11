@@ -280,6 +280,23 @@
     }
     .collection-active-toggle:hover { color: #B08A4B; transform: scale(1.15); }
     .collection-active-toggle.active { color: #B08A4B; }
+    /* Pin toggle — opts a collection/preset into the always-visible
+       "My Amalan" shortcut shelf at the top of Action View. Separate
+       from the ★ active-collection toggle (which only controls where
+       new stars get added). */
+    .collection-pin-toggle, .preset-pin-toggle {
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 0.15rem 0.3rem;
+      opacity: 0.4;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    .collection-pin-toggle:hover, .preset-pin-toggle:hover { opacity: 0.8; transform: scale(1.1); }
+    .collection-pin-toggle.active, .preset-pin-toggle.active { opacity: 1; }
     .collection-name-input {
       flex: 1;
       min-width: 0;
@@ -314,6 +331,30 @@
     .collection-note-input:hover,
     .collection-note-input:focus { border-bottom-color: rgba(176, 138, 75, 0.35); }
     .collection-items { display: flex; flex-direction: column; gap: 0.1rem; }
+    /* Preset collections — read-only, shipped with the site, so no
+       rename/delete/reorder controls; just a name, a one-line
+       summary, an optional "read more" link, and the items
+       themselves (grouped by family-divider rows). */
+    .preset-block { background: rgba(176, 138, 75, 0.05); }
+    .preset-block-head { display: flex; align-items: baseline; gap: 0.4rem; }
+    .preset-name { font-size: 0.8rem; font-weight: 700; color: #3A2E2B; }
+    .preset-summary {
+      font-size: 0.68rem; font-style: italic; color: #7A6F6C;
+      line-height: 1.4; padding: 0.2rem 0 0.15rem; margin: 0;
+    }
+    .preset-more-link {
+      font-size: 0.66rem; font-weight: 600; color: #B08A4B;
+      text-decoration: none; display: inline-block; padding: 0 0 0.35rem;
+    }
+    .preset-more-link:hover { text-decoration: underline; }
+    .preset-family-divider {
+      font-size: 0.64rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+      color: #B08A4B; padding: 0.3rem 0 0.1rem; opacity: 0.85;
+    }
+    .preset-section-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      color: #B08A4B; padding: 0.1rem 0 0.1rem;
+    }
     .collection-add-btn {
       width: 100%;
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em;
@@ -1077,6 +1118,26 @@
       backdrop-filter: blur(8px);
     }
 
+    /* — Pinned "My Amalan" shelf — always visible at the top of Action
+       View, independent of the live time window. Empty = no height. */
+    .action-pinned:empty { display: none; }
+    .action-pinned { margin-bottom: 0.9rem; }
+    .action-pinned-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin: 0 0 0.5rem;
+    }
+    .action-pinned-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7D5243;
+    }
+    .action-pinned-item { border-style: dashed; }
+
     /* — The duʿā list for the open window — */
     .action-list-head {
       display: flex;
@@ -1507,6 +1568,7 @@
       </div>
 
       <div class="action-body">
+      <div id="action-pinned" class="action-pinned"></div>
       <div class="action-list-head">
         <span class="action-list-title" id="action-list-title">Now</span>
         <span class="action-list-count" id="action-list-count"></span>
@@ -1748,6 +1810,78 @@
       return !!active && active.items.some(f => f.path === atomicPath);
     }
 
+    // =========================================================
+    // PINNED IN ACTION VIEW — simplest version of the "My Amalan in
+    // Action View" feature: no time-awareness yet, just a per-device
+    // opt-in flag so a collection/preset shows in the standing shelf
+    // at the top of Action View regardless of the live time window.
+    //   User collections -> flag lives ON the collection object itself
+    //     (col.pinned), saved via saveCollections() like everything else.
+    //   Presets -> shipped in code, so the opt-in can't live on the
+    //     object; tracked separately as a list of pinned preset ids.
+    // =========================================================
+    const PINNED_PRESETS_KEY = 'som-pinned-presets';
+
+    function loadPinnedPresetIds() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(PINNED_PRESETS_KEY) || '[]');
+        return Array.isArray(raw) ? raw : [];
+      } catch { return []; }
+    }
+
+    function togglePresetPinned(id) {
+      const ids = loadPinnedPresetIds();
+      const idx = ids.indexOf(id);
+      if (idx === -1) ids.push(id); else ids.splice(idx, 1);
+      localStorage.setItem(PINNED_PRESETS_KEY, JSON.stringify(ids));
+      renderApp();
+    }
+
+    function toggleCollectionPinned(id) {
+      const cols = loadCollections();
+      const col = findCollection(cols, id);
+      if (!col) return;
+      col.pinned = !col.pinned;
+      saveCollections(cols);
+      renderApp();
+    }
+
+    // Reads both sources above and fills the always-visible shelf at
+    // the top of Action View. Cheap enough to call on every renderApp()
+    // — it only runs when a collection/preset/pin actually changes.
+    function renderPinnedAmalan() {
+      const host = document.getElementById('action-pinned');
+      if (!host) return;
+
+      const pinnedIds = loadPinnedPresetIds();
+      const presets = (typeof PRESET_COLLECTIONS !== 'undefined') ? PRESET_COLLECTIONS : [];
+      const rows = [
+        ...presets
+          .filter(p => pinnedIds.includes(p.id))
+          .map(p => ({ id: p.id, name: p.name, count: (p.items || []).filter(it => it.type !== 'family').length })),
+        ...loadCollections()
+          .filter(c => c.pinned && c.items.length)
+          .map(c => ({ id: c.id, name: c.name, count: c.items.length }))
+      ];
+
+      if (!rows.length) { host.innerHTML = ''; return; }
+
+      host.innerHTML = `
+        <div class="action-pinned-head">
+          <span class="action-pinned-title">⚖️ My Amalan</span>
+        </div>
+        ${rows.map(r => `
+          <a class="action-item action-pinned-item" href="web/render.html?collection=${encodeURIComponent(r.id)}">
+            <span class="ai-grade ai-grade-none"></span>
+            <span class="ai-body">
+              <span class="ai-name">${escapeHtml(r.name)}</span>
+              <span class="ai-meta"><span class="ai-ref">${r.count} duʿā${r.count === 1 ? '' : 's'}</span></span>
+            </span>
+          </a>
+        `).join('')}
+      `;
+    }
+
     // Arabic category title (with tashkīl) shown beside the Latin one.
     function arTitleHTML(node) {
       return `<span class="root-node-title-ar" lang="ar" dir="rtl">${escapeHtml(node.categoryAr)}</span>`;
@@ -1854,6 +1988,56 @@
       window.open(waUrl, '_blank', 'noopener');
     }
 
+    // Shipped presets — identical for every visitor, not localStorage,
+    // so they show even on a fresh browser with no saved collections.
+    function renderPresetCollections() {
+      const presets = (typeof PRESET_COLLECTIONS !== 'undefined') ? PRESET_COLLECTIONS : [];
+      if (!presets.length) return '';
+
+      const pinnedPresetIds = loadPinnedPresetIds();
+
+      const blocksHTML = presets.map(preset => {
+        const rowsHTML = (preset.items || []).map(f => {
+          if (f.type === 'family') {
+            return `<div class="preset-family-divider">${f.icon ? escapeHtml(f.icon) + ' ' : ''}${escapeHtml(f.label)}</div>`;
+          }
+          return `
+            <div class="fav-row">
+              <span class="text-xs font-medium text-[#3A2E2B] leading-relaxed flex-1">${escapeHtml(f.label)}</span>
+            </div>
+          `;
+        }).join('');
+
+        const moreLink = preset.moreHref
+          ? `<a href="web/render.html?file=${encodeURIComponent(preset.moreHref)}" class="preset-more-link">Read the etiquette →</a>`
+          : '';
+
+        const isPinned = pinnedPresetIds.includes(preset.id);
+
+        return `
+          <div class="collection-block preset-block">
+            <div class="preset-block-head">
+              <button type="button" class="preset-pin-toggle${isPinned ? ' active' : ''}" data-preset-pin="${preset.id}"
+                title="${isPinned ? 'Remove from Action View shelf' : 'Show in Action View'}">${isPinned ? '📌' : '📍'}</button>
+              <span class="preset-name">${escapeHtml(preset.name)}</span>
+            </div>
+            ${preset.summary ? `<p class="preset-summary">${escapeHtml(preset.summary)}</p>` : ''}
+            ${moreLink}
+            <div class="collection-items">
+              ${rowsHTML}
+            </div>
+            <div class="collection-actions">
+              <a href="web/render.html?collection=${encodeURIComponent(preset.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>
+            </div>
+          </div>`;
+      }).join('');
+
+      return `
+        <p class="preset-section-label">Presets</p>
+        ${blocksHTML}
+      `;
+    }
+
     function renderAmalanPanel() {
       const cols = loadCollections();
       const activeId = getActiveCollectionId();
@@ -1891,6 +2075,8 @@
               </span>
               <button type="button" class="collection-active-toggle${isColActive ? ' active' : ''}" data-col-activate="${col.id}"
                 title="${isColActive ? 'Stars add here' : 'Set as active — stars will add here'}">${isColActive ? '★' : '☆'}</button>
+              <button type="button" class="collection-pin-toggle${col.pinned ? ' active' : ''}" data-col-pin="${col.id}"
+                title="${col.pinned ? 'Remove from Action View shelf' : 'Show in Action View'}">${col.pinned ? '📌' : '📍'}</button>
               <input type="text" class="collection-name-input" value="${escapeHtml(col.name)}" data-col-rename="${col.id}"
                 placeholder="Collection name" />
               ${cols.length > 1 ? `<button type="button" class="collection-delete" data-col-delete="${col.id}" title="Delete collection">🗑</button>` : ''}
@@ -1911,6 +2097,8 @@
         <p class="text-[11px] text-[#7A6F6C] leading-relaxed pb-2 font-sans">
           ⇒ Sadaqah Jariyah / Lasting Beneficial Knowledge - Build your own sets of duʿās, name them, reorder freely ⇒ Share them
         </p>
+        ${renderPresetCollections()}
+        <p class="preset-section-label">My Collections</p>
         ${collectionsHTML}
         <button type="button" class="collection-add-btn" data-col-add="1">＋ New collection</button>
       `;
@@ -2109,6 +2297,7 @@
           <span class="swatch"><span class="dot" style="background:#C8E6B4"></span>Wird / Ungraded</span>
         </div>`;
       renderAmalanFab();
+      renderPinnedAmalan();
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
         const nodeId = `node-${index}`;
@@ -2268,6 +2457,20 @@
         e.preventDefault();
         e.stopPropagation();
         setActiveCollectionId(colActivateBtn.dataset.colActivate);
+        return;
+      }
+      const colPinBtn = e.target.closest('.collection-pin-toggle');
+      if (colPinBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleCollectionPinned(colPinBtn.dataset.colPin);
+        return;
+      }
+      const presetPinBtn = e.target.closest('.preset-pin-toggle');
+      if (presetPinBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        togglePresetPinned(presetPinBtn.dataset.presetPin);
         return;
       }
       const colDeleteBtn = e.target.closest('.collection-delete');
