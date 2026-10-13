@@ -3,7 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document Viewer</title>
+  <title>Steps of Muhammad</title>
+
+  <!-- ═══ Social preview (static — crawlers don't run JS, so this can't
+       be per-card; it's the same branded card for every shared link) ═══ -->
+  <meta name="description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Steps of Muhammad">
+  <meta property="og:title" content="Steps of Muhammad">
+  <meta property="og:description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
+  <meta property="og:image" content="../assets/icons/icon-512.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Steps of Muhammad">
+  <meta name="twitter:description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
+  <meta name="twitter:image" content="../assets/icons/icon-512.png">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
@@ -882,6 +896,30 @@
       color: var(--accent-ochre);
     }
 
+    .share-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 5.25rem;
+      transform: translateX(-50%) translateY(6px);
+      z-index: 120;
+      background: var(--structural);
+      color: var(--bg-cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+    .share-toast.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
     @media (max-width: 640px) {
       .hud-nav-btn { padding: 0.45rem 0.6rem; gap: 0.3rem; }
       .hud-nav-kicker, .hud-nav-gloss, .hud-nav-context { display: none; }
@@ -932,8 +970,12 @@
       </div>
       <button class="hud-tool-btn" id="floatZoomOut" title="Zoom out (Ctrl −)"><span class="zoom-glyph">A</span>−</button>
       <button class="hud-tool-btn" id="floatZoomIn"  title="Zoom in (Ctrl +)"><span class="zoom-glyph">A</span>+</button>
+      <button class="hud-tool-btn" id="shareCardBtn" title="Share this card" style="display:none;">⇪ Share</button>
     </div>
   </div>
+
+  <!-- Transient confirmation after copying a share link (Web Share API unavailable) -->
+  <div id="shareToast" class="share-toast" hidden></div>
 
   <!-- ────────── Floating corner orbs (rendered by parser) ────────── -->
   <div class="orb-corner-wrap" id="orb-corner-wrap" style="display:none;"></div>
@@ -1656,8 +1698,61 @@
       buildTOC(target);
 
       const h1 = target.querySelector('h1');
-      if (h1) document.title = h1.textContent;
+      if (h1) document.title = h1.textContent + ' · Steps of Muhammad';
+      window._cardMeta = meta || null;
+      revealShareButton();
     }
+
+    // ════════════════════════════════════════════
+    // Share this card — Web Share API where available (native
+    // share sheet: WhatsApp / Messages / etc.), clipboard-copy
+    // fallback everywhere else. The URL is just the page's own
+    // ?file= link, so the receiver lands on this exact card —
+    // and pwa-install.js already shows them the install banner.
+    // ════════════════════════════════════════════
+    function revealShareButton() {
+      const btn = document.getElementById('shareCardBtn');
+      if (btn) btn.style.display = '';
+    }
+
+    function showShareToast(msg) {
+      const toast = document.getElementById('shareToast');
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.hidden = false;
+      requestAnimationFrame(() => toast.classList.add('is-visible'));
+      clearTimeout(toast._hideTimer);
+      toast._hideTimer = setTimeout(() => {
+        toast.classList.remove('is-visible');
+        setTimeout(() => { toast.hidden = true; }, 200);
+      }, 2200);
+    }
+
+    async function shareCard() {
+      const meta = window._cardMeta || {};
+      const h1 = document.querySelector('#markdown-target h1');
+      const title = (h1 ? h1.textContent : document.title).trim();
+      const source = (meta['left-orb'] || '').replace(LEADING_ICON_RE, '').trim();
+      const grade = (meta['right-orb'] || meta.grade || '').replace(LEADING_ICON_RE, '').trim();
+      const tagline = [source, grade].filter(Boolean).join(' · ');
+      const text = `${title}${tagline ? '\n' + tagline : ''}\n\nRecited word-by-word, fully sourced — on Steps of Muhammad.`;
+      const url = window.location.href;
+
+      if (navigator.share) {
+        try { await navigator.share({ title, text, url }); }
+        catch (err) { if (err && err.name !== 'AbortError') console.warn('Share failed:', err); }
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(url);
+        showShareToast('Link copied — paste it anywhere');
+      } catch (err) {
+        showShareToast(url);
+      }
+    }
+
+    document.getElementById('shareCardBtn').addEventListener('click', shareCard);
 
     document.addEventListener('DOMContentLoaded', async () => {
       const params = new URLSearchParams(window.location.search);
@@ -1718,25 +1813,35 @@
       // list saved by index.html into a card of embeds — same drawers as authored cards.
       if (params.get('collection') || params.get('favorites') === '1') {
         try {
-          const cols = JSON.parse(localStorage.getItem('som-collections') || '[]');
           const id = params.get('collection');
-          const col = Array.isArray(cols) ? (id ? cols.find(c => c.id === id) : cols[0]) : null;
+          const presets = (typeof PRESET_COLLECTIONS !== 'undefined') ? PRESET_COLLECTIONS : [];
+          const preset = id ? presets.find(c => c.id === id) : null;
+          const cols = JSON.parse(localStorage.getItem('som-collections') || '[]');
+          const col = preset || (Array.isArray(cols) ? (id ? cols.find(c => c.id === id) : cols[0]) : null);
           if (!col) {
             target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Collection not found on this device. It may have been deleted. <a href="../index.html">Back to home</a>.</p>`;
             return;
           }
           const items = Array.isArray(col.items) ? col.items : [];
-          if (!items.length) {
+          const realItems = items.filter(it => it && it.type !== 'family');
+          if (!realItems.length) {
             target.innerHTML = `<p class="embed-status">☆ No duʿās saved in this collection yet. Tap the star next to any duʿā on the <a href="../index.html">home page</a> to add it.</p>`;
             return;
           }
           const esc = s => String(s).replace(/([\\\[\]])/g, '\\$1');
-          const link = it => `[${esc(it.label || it.path)}](?file=${encodeURI(it.path).replace(/[()]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase())} "embed")`;
-          EMBED_OPEN.add(items[0].path);
+          // Family-divider rows become a subheading; real items become embeds.
+          const link = it => it.type === 'family'
+            ? `### ${it.icon ? it.icon + ' ' : ''}${esc(it.label)}`
+            : `[${esc(it.label || it.path)}](?file=${encodeURI(it.path).replace(/[()]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase())} "embed")`;
+          EMBED_OPEN.add(realItems[0].path);
           window._collectionToc = true;
+          const moreLine = col.moreHref
+            ? `[Read the etiquette →](?file=${encodeURI(col.moreHref)})\n\n`
+            : '';
           renderCard(
             `# ${col.name || 'My Amalan'}\n\n` +
-            (col.note ? `*${col.note}*\n\n` : '') +
+            (col.summary ? `*${col.summary}*\n\n` : (col.note ? `*${col.note}*\n\n` : '')) +
+            moreLine +
             items.map(link).join('\n\n') + '\n');
         } catch (err) {
           console.error(err);

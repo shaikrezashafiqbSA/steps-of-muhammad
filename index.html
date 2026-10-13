@@ -102,17 +102,49 @@
     }
     .imam-word { font-family: 'Amiri', 'Scheherazade New', serif; font-weight: 700; }
     .imam-figure {
-      filter: saturate(1.2) contrast(1.08)
-              drop-shadow(0 0 4px rgba(255, 214, 120, 0.95))
-              drop-shadow(0 0 14px rgba(240, 180, 70, 0.8))
-              drop-shadow(0 0 34px rgba(226, 160, 40, 0.55));
+      transition: filter 1s ease-in-out;
+      filter: saturate(1.0) contrast(1.15)
+             /* Bright, intense gold nur core right against the figure */
+            drop-shadow(0 0 10px rgb(255, 255, 255))
+            drop-shadow(0 0 106px rgba(236, 232, 223, 0.9))
+            /* Controlled dark obsidian framing further out */
+            drop-shadow(0 0 200px rgba(250, 205, 4, 0.85))
+            drop-shadow(0 0 100px rgba(50, 3, 3, 0.9));
+    }
+    /* Nūr ʿalā Nūr: when the nalayn background ignites (body.nur-ablaze),
+       the figure's light blasts outward to the top-left — the same
+       gold light, with no black flame, that the nalayn itself glows. */
+    body.nur-ablaze .imam-figure {
+      filter: saturate(1.1) contrast(1.1)
+            drop-shadow(-18px -22px 90px rgb(245, 245, 245))
+            drop-shadow(-8px -10px 42px rgba(250, 249, 247, 0.95))
+            drop-shadow(0 0 70px rgba(255, 217, 138, 0.8))
+            drop-shadow(10px 12px 50px rgba(255, 217, 138, 0.45));
     }
     .imam-aura { transform-origin: 140px 40px; animation: imam-aura-pulse 5s ease-in-out infinite; }
     @keyframes imam-aura-pulse {
       0%, 100% { opacity: 0.8; transform: scale(1); }
-      50%      { opacity: 1;   transform: scale(1.07); }
+      50%      { opacity: 1;   transform: scale(1.10); }
     }
-    @media (prefers-reduced-motion: reduce) { .imam-aura { animation: none; } }
+    body.nur-ablaze .imam-aura {
+      animation: imam-aura-blast 15s ease-in-out infinite;
+      filter: brightness(2);
+    }
+    /* No charcoal/obsidian stops while ablaze — the aura becomes the same
+       warm gold nur as the nalayn glow, start to edge. */
+    body.nur-ablaze stop.aura-stop-core { stop-color: #FFD98A; stop-opacity: 1; }
+    body.nur-ablaze stop.aura-stop-mid { stop-color: #FFE5AD; stop-opacity: 0.9; }
+    body.nur-ablaze stop.aura-stop-dark { stop-color: #221d13; stop-opacity: 0.4; }
+    body.nur-ablaze stop.aura-stop-edge { stop-color: #FFD98A; stop-opacity: 0; }
+    @keyframes imam-aura-blast {
+      0%, 100% { opacity: 0.85; transform: scale(1) translate(0, 0); }
+      50%      { opacity: 1;    transform: scale(1.5) translate(-30px, -34px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .imam-aura { animation: none; }
+      body.nur-ablaze .imam-aura { animation: none; }
+      body.nur-ablaze .imam-figure { transition: none; }
+    }
     .imam-tagline { letter-spacing: 0.32em; font-weight: 700; }
 
     /* Decorative divider under title */
@@ -248,6 +280,23 @@
     }
     .collection-active-toggle:hover { color: #B08A4B; transform: scale(1.15); }
     .collection-active-toggle.active { color: #B08A4B; }
+    /* Pin toggle — opts a collection/preset into the always-visible
+       "My Amalan" shortcut shelf at the top of Action View. Separate
+       from the ★ active-collection toggle (which only controls where
+       new stars get added). */
+    .collection-pin-toggle, .preset-pin-toggle {
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      line-height: 1;
+      padding: 0.15rem 0.3rem;
+      opacity: 0.4;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    .collection-pin-toggle:hover, .preset-pin-toggle:hover { opacity: 0.8; transform: scale(1.1); }
+    .collection-pin-toggle.active, .preset-pin-toggle.active { opacity: 1; }
     .collection-name-input {
       flex: 1;
       min-width: 0;
@@ -282,6 +331,30 @@
     .collection-note-input:hover,
     .collection-note-input:focus { border-bottom-color: rgba(176, 138, 75, 0.35); }
     .collection-items { display: flex; flex-direction: column; gap: 0.1rem; }
+    /* Preset collections — read-only, shipped with the site, so no
+       rename/delete/reorder controls; just a name, a one-line
+       summary, an optional "read more" link, and the items
+       themselves (grouped by family-divider rows). */
+    .preset-block { background: rgba(176, 138, 75, 0.05); }
+    .preset-block-head { display: flex; align-items: baseline; gap: 0.4rem; }
+    .preset-name { font-size: 0.8rem; font-weight: 700; color: #3A2E2B; }
+    .preset-summary {
+      font-size: 0.68rem; font-style: italic; color: #7A6F6C;
+      line-height: 1.4; padding: 0.2rem 0 0.15rem; margin: 0;
+    }
+    .preset-more-link {
+      font-size: 0.66rem; font-weight: 600; color: #B08A4B;
+      text-decoration: none; display: inline-block; padding: 0 0 0.35rem;
+    }
+    .preset-more-link:hover { text-decoration: underline; }
+    .preset-family-divider {
+      font-size: 0.64rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+      color: #B08A4B; padding: 0.3rem 0 0.1rem; opacity: 0.85;
+    }
+    .preset-section-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      color: #B08A4B; padding: 0.1rem 0 0.1rem;
+    }
     .collection-add-btn {
       width: 100%;
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em;
@@ -1019,6 +1092,26 @@
       backdrop-filter: blur(8px);
     }
 
+    /* — Pinned "My Amalan" shelf — always visible at the top of Action
+       View, independent of the live time window. Empty = no height. */
+    .action-pinned:empty { display: none; }
+    .action-pinned { margin-bottom: 0.9rem; }
+    .action-pinned-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin: 0 0 0.5rem;
+    }
+    .action-pinned-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7D5243;
+    }
+    .action-pinned-item { border-style: dashed; }
+
     /* — The duʿā list for the open window — */
     .action-list-head {
       display: flex;
@@ -1449,6 +1542,7 @@
       </div>
 
       <div class="action-body">
+      <div id="action-pinned" class="action-pinned"></div>
       <div class="action-list-head">
         <span class="action-list-title" id="action-list-title">Now</span>
         <span class="action-list-count" id="action-list-count"></span>
@@ -1494,8 +1588,7 @@
 
       <p class="action-caveat">
         Each prayer's list holds only the duʿās its narration ties to that hour. Duʿās of need,
-        with no fixed hour, live in the Compendium instead. Nothing here narrows what you may ask
-        for or when.
+        with no fixed hour, live in the Library instead. 
       </p>
       </div>
 
@@ -1518,19 +1611,24 @@
               <!-- the pole: only the short lower half of the I shows, rising out of the figure -->
               <clipPath id="imamPole"><rect x="0" y="115" width="220" height="200"/></clipPath>
               <radialGradient id="imamAura" cx="50%" cy="50%" r="50%">
-                <stop offset="0" stop-color="#FFE08A" stop-opacity="0.85"/>
-                <stop offset="0.45" stop-color="#F2B94B" stop-opacity="0.45"/>
-                <stop offset="1" stop-color="#E8A53A" stop-opacity="0"/>
+                <!-- Pure white bright center core (Purity) -->
+                <stop class="aura-stop-core" offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+                <!-- Bright silvery white transition -->
+                <stop class="aura-stop-mid" offset="25%" stop-color="#E5E7EB" stop-opacity="0.85"/>
+                <!-- Deep smoky charcoal mid-layer -->
+                <stop class="aura-stop-dark" offset="60%" stop-color="#1F2937" stop-opacity="0.75"/>
+                <!-- Pitch black obsidian outer aura (Purging darkness) -->
+                <stop class="aura-stop-edge" offset="100%" stop-color="#050505" stop-opacity="0"/>
               </radialGradient>
             </defs>
             <!-- gold aura behind the imam -->
-            <ellipse class="imam-aura" cx="140" cy="40" rx="205" ry="225" fill="url(#imamAura)"/>
-            <g class="imam-word" font-size="290" fill="#3E6C7E" stroke="#D3EEE9" stroke-width="4" stroke-linejoin="round" paint-order="stroke fill">
+            <ellipse class="imam-aura" cx="190" cy="20" rx="205" ry="360" fill="url(#imamAura)"/>
+            <g class="imam-word" font-size="290" fill="#2A2D34" stroke="#D3EEE9" stroke-width="10" stroke-linejoin="round" paint-order="stroke fill">
               <text x="150" y="210" clip-path="url(#imamPole)">I</text>
               <text x="262" y="210" textLength="708" lengthAdjust="spacing">MAM</text>
             </g>
             <!-- the turbaned imam: large, rising above the letters, glowing gold -->
-            <image class="imam-figure" href="assets/imam-figure.png" x="0" y="-112" width="268" height="320"/>
+            <image class="imam-figure" href="assets/imam-figure.png" x="0" y="-125" width="268" height="320"/>
           </svg>
         </h1>
         <p id="root-subtitle" class="imam-tagline text-xs md:text-sm font-mono-app text-[#7A6F6C] uppercase max-w-md mx-auto leading-relaxed">
@@ -1681,6 +1779,78 @@
       return !!active && active.items.some(f => f.path === atomicPath);
     }
 
+    // =========================================================
+    // PINNED IN ACTION VIEW — simplest version of the "My Amalan in
+    // Action View" feature: no time-awareness yet, just a per-device
+    // opt-in flag so a collection/preset shows in the standing shelf
+    // at the top of Action View regardless of the live time window.
+    //   User collections -> flag lives ON the collection object itself
+    //     (col.pinned), saved via saveCollections() like everything else.
+    //   Presets -> shipped in code, so the opt-in can't live on the
+    //     object; tracked separately as a list of pinned preset ids.
+    // =========================================================
+    const PINNED_PRESETS_KEY = 'som-pinned-presets';
+
+    function loadPinnedPresetIds() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(PINNED_PRESETS_KEY) || '[]');
+        return Array.isArray(raw) ? raw : [];
+      } catch { return []; }
+    }
+
+    function togglePresetPinned(id) {
+      const ids = loadPinnedPresetIds();
+      const idx = ids.indexOf(id);
+      if (idx === -1) ids.push(id); else ids.splice(idx, 1);
+      localStorage.setItem(PINNED_PRESETS_KEY, JSON.stringify(ids));
+      renderApp();
+    }
+
+    function toggleCollectionPinned(id) {
+      const cols = loadCollections();
+      const col = findCollection(cols, id);
+      if (!col) return;
+      col.pinned = !col.pinned;
+      saveCollections(cols);
+      renderApp();
+    }
+
+    // Reads both sources above and fills the always-visible shelf at
+    // the top of Action View. Cheap enough to call on every renderApp()
+    // — it only runs when a collection/preset/pin actually changes.
+    function renderPinnedAmalan() {
+      const host = document.getElementById('action-pinned');
+      if (!host) return;
+
+      const pinnedIds = loadPinnedPresetIds();
+      const presets = (typeof PRESET_COLLECTIONS !== 'undefined') ? PRESET_COLLECTIONS : [];
+      const rows = [
+        ...presets
+          .filter(p => pinnedIds.includes(p.id))
+          .map(p => ({ id: p.id, name: p.name, count: (p.items || []).filter(it => it.type !== 'family').length })),
+        ...loadCollections()
+          .filter(c => c.pinned && c.items.length)
+          .map(c => ({ id: c.id, name: c.name, count: c.items.length }))
+      ];
+
+      if (!rows.length) { host.innerHTML = ''; return; }
+
+      host.innerHTML = `
+        <div class="action-pinned-head">
+          <span class="action-pinned-title">⚖️ My Amalan</span>
+        </div>
+        ${rows.map(r => `
+          <a class="action-item action-pinned-item" href="web/render.html?collection=${encodeURIComponent(r.id)}">
+            <span class="ai-grade ai-grade-none"></span>
+            <span class="ai-body">
+              <span class="ai-name">${escapeHtml(r.name)}</span>
+              <span class="ai-meta"><span class="ai-ref">${r.count} duʿā${r.count === 1 ? '' : 's'}</span></span>
+            </span>
+          </a>
+        `).join('')}
+      `;
+    }
+
     // Arabic category title (with tashkīl) shown beside the Latin one.
     function arTitleHTML(node) {
       return `<span class="root-node-title-ar" lang="ar" dir="rtl">${escapeHtml(node.categoryAr)}</span>`;
@@ -1787,6 +1957,56 @@
       window.open(waUrl, '_blank', 'noopener');
     }
 
+    // Shipped presets — identical for every visitor, not localStorage,
+    // so they show even on a fresh browser with no saved collections.
+    function renderPresetCollections() {
+      const presets = (typeof PRESET_COLLECTIONS !== 'undefined') ? PRESET_COLLECTIONS : [];
+      if (!presets.length) return '';
+
+      const pinnedPresetIds = loadPinnedPresetIds();
+
+      const blocksHTML = presets.map(preset => {
+        const rowsHTML = (preset.items || []).map(f => {
+          if (f.type === 'family') {
+            return `<div class="preset-family-divider">${f.icon ? escapeHtml(f.icon) + ' ' : ''}${escapeHtml(f.label)}</div>`;
+          }
+          return `
+            <div class="fav-row">
+              <span class="text-xs font-medium text-[#3A2E2B] leading-relaxed flex-1">${escapeHtml(f.label)}</span>
+            </div>
+          `;
+        }).join('');
+
+        const moreLink = preset.moreHref
+          ? `<a href="web/render.html?file=${encodeURIComponent(preset.moreHref)}" class="preset-more-link">Read the etiquette →</a>`
+          : '';
+
+        const isPinned = pinnedPresetIds.includes(preset.id);
+
+        return `
+          <div class="collection-block preset-block">
+            <div class="preset-block-head">
+              <button type="button" class="preset-pin-toggle${isPinned ? ' active' : ''}" data-preset-pin="${preset.id}"
+                title="${isPinned ? 'Remove from Action View shelf' : 'Show in Action View'}">${isPinned ? '📌' : '📍'}</button>
+              <span class="preset-name">${escapeHtml(preset.name)}</span>
+            </div>
+            ${preset.summary ? `<p class="preset-summary">${escapeHtml(preset.summary)}</p>` : ''}
+            ${moreLink}
+            <div class="collection-items">
+              ${rowsHTML}
+            </div>
+            <div class="collection-actions">
+              <a href="web/render.html?collection=${encodeURIComponent(preset.id)}" class="fav-open-collection">📖 Open as Collection ↗</a>
+            </div>
+          </div>`;
+      }).join('');
+
+      return `
+        <p class="preset-section-label">Presets</p>
+        ${blocksHTML}
+      `;
+    }
+
     function renderAmalanPanel() {
       const cols = loadCollections();
       const activeId = getActiveCollectionId();
@@ -1824,6 +2044,8 @@
               </span>
               <button type="button" class="collection-active-toggle${isColActive ? ' active' : ''}" data-col-activate="${col.id}"
                 title="${isColActive ? 'Stars add here' : 'Set as active — stars will add here'}">${isColActive ? '★' : '☆'}</button>
+              <button type="button" class="collection-pin-toggle${col.pinned ? ' active' : ''}" data-col-pin="${col.id}"
+                title="${col.pinned ? 'Remove from Action View shelf' : 'Show in Action View'}">${col.pinned ? '📌' : '📍'}</button>
               <input type="text" class="collection-name-input" value="${escapeHtml(col.name)}" data-col-rename="${col.id}"
                 placeholder="Collection name" />
               ${cols.length > 1 ? `<button type="button" class="collection-delete" data-col-delete="${col.id}" title="Delete collection">🗑</button>` : ''}
@@ -1844,6 +2066,8 @@
         <p class="text-[11px] text-[#7A6F6C] leading-relaxed pb-2 font-sans">
           ⇒ Sadaqah Jariyah / Lasting Beneficial Knowledge - Build your own sets of duʿās, name them, reorder freely ⇒ Share them
         </p>
+        ${renderPresetCollections()}
+        <p class="preset-section-label">My Collections</p>
         ${collectionsHTML}
         <button type="button" class="collection-add-btn" data-col-add="1">＋ New collection</button>
       `;
@@ -1875,6 +2099,7 @@
       const isOpen = document.body.classList.contains('amalan-open');
       const open = typeof forceOpen === 'boolean' ? forceOpen : !isOpen;
       document.body.classList.toggle('amalan-open', open);
+      updateNurFromDrawers();
     }
 
     // SVG chevron — cleaner, scales perfectly, no font quirks
@@ -2041,6 +2266,7 @@
           <span class="swatch"><span class="dot" style="background:#C8E6B4"></span>Wird / Ungraded</span>
         </div>`;
       renderAmalanFab();
+      renderPinnedAmalan();
 
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
         const nodeId = `node-${index}`;
@@ -2091,7 +2317,7 @@
                       <span class="family-divider-label">${item.label}</span>
                       ${item.path ? '<span class="family-divider-hint">Open full sequence ↗</span>' : ''}`;
                     return item.path
-                      ? `<a href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()" class="family-divider family-olive">${headHTML}</a>`
+                      ? `<a href="./${item.path}" class="family-divider family-olive">${headHTML}</a>`
                       : `<div class="family-divider family-olive">${headHTML}</div>`;
                   }
                   const familyChildClass = inFamily ? 'family-child' : '';
@@ -2119,8 +2345,6 @@
                     ? `<span class="item-meta">${refHTML}${repsHTML}</span>` : '';
                   return `
                   <a href="./${item.path}"
-                     onmouseenter="igniteNur()"
-                     onmouseleave="extinguishNur()"
                      class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] ${hoverBgClass} transition-all group ${gradeClass} ${familyChildClass}">
                     ${numHTML}
                     <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
@@ -2202,6 +2426,20 @@
         e.preventDefault();
         e.stopPropagation();
         setActiveCollectionId(colActivateBtn.dataset.colActivate);
+        return;
+      }
+      const colPinBtn = e.target.closest('.collection-pin-toggle');
+      if (colPinBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleCollectionPinned(colPinBtn.dataset.colPin);
+        return;
+      }
+      const presetPinBtn = e.target.closest('.preset-pin-toggle');
+      if (presetPinBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        togglePresetPinned(presetPinBtn.dataset.presetPin);
         return;
       }
       const colDeleteBtn = e.target.closest('.collection-delete');
@@ -2293,10 +2531,13 @@
       } else {
         activeNodeId = null;
       }
+      updateNurFromDrawers();
     }
 
 
-    // Background flag cross-fade — triggered by category item hover
+    // Background flag cross-fade — triggered by opening a drawer
+    // (compendium node, action family/category, or the amalan panel).
+    // Nūr ʿalā Nūr: the imam logo blazes alight in step with the nalayn.
     function igniteNur() {
       const baseFlag = document.getElementById('bg-base');
       const nurFlag = document.getElementById('bg-nur');
@@ -2305,6 +2546,7 @@
         nurFlag.style.opacity = '0.85';
         nurFlag.style.transform = 'scale(1.03)';
       }
+      document.body.classList.add('nur-ablaze');
     }
 
 
@@ -2316,6 +2558,15 @@
         nurFlag.style.opacity = '0';
         nurFlag.style.transform = 'scale(1.0)';
       }
+      document.body.classList.remove('nur-ablaze');
+    }
+
+    // Any drawer open (compendium node, action family/category, amalan
+    // panel) keeps the nalayn lit; closing the last one extinguishes it.
+    function updateNurFromDrawers() {
+      const anyOpen = document.body.classList.contains('amalan-open')
+        || !!document.querySelector('#action-list .action-family.active, #action-list .action-category.active, .root-node.active');
+      if (anyOpen) igniteNur(); else extinguishNur();
     }
   </script>
 
@@ -2713,7 +2964,7 @@
 
     function renderItemRow(item) {
       return `
-        <a class="action-item" href="./${item.path}" onmouseenter="igniteNur()" onmouseleave="extinguishNur()">
+        <a class="action-item" href="./${item.path}">
           <span class="ai-grade ${gradeClass(item.grade)}"></span>
           <span class="ai-body">
             <span class="ai-name">${escapeHtml(item.label)}</span>
@@ -2930,6 +3181,7 @@
             const btn = family.querySelector('[data-family-toggle]');
             if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
           });
+          updateNurFromDrawers();
           return;
         }
 
@@ -2944,6 +3196,7 @@
           const btn = category.querySelector('[data-action-toggle]');
           if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
+        updateNurFromDrawers();
       });
 
       const bedBtn = document.getElementById('btn-bedtime');
