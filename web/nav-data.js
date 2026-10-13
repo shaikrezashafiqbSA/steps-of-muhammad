@@ -219,7 +219,8 @@ const VAULT_NAVIGATION_TREE = [
     desc: "Technical documentation for the Steps of Muhammad Card Application",
     items: [
       { label: "The Prophetic Clock", gloss: "The eleven time windows, the naming contract, and what Action View is reading", type: "overview", path: "web/render.html?file=TIME_CATEGORISATION.md" },
-      { label: "Authoring Guide", gloss: "How a card is written, and what every meta field does", type: "overview", path: "web/render.html?file=AUTHORING_GUIDE.md" }
+      { label: "Authoring Guide", gloss: "How a card is written, and what every meta field does", type: "overview", path: "web/render.html?file=AUTHORING_GUIDE.md" },
+      { label: "Sunnah Card Builder", gloss: "Paste markdown, preview the card", type: "overview", path: "web/preview.html" }
     ]
   }
 ];
