@@ -14,7 +14,7 @@ right-orb-compact: ۞۞۞
 ## Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahla — Supplication for Relief in Difficult Affairs
 
 ### 📜 The Supplication
-It is recommended to recite this supplication when encountering a hardship, a difficult task, or an overwhelming situation:
+"For one whose affairs have become {{ difficult / Al-Hazn (الْحَزْن) | In classical Arabic, al-hazn refers to rough, rugged, or impassable terrain (like a steep, stony mountain path) that makes travel nearly impossible. Metaphorically, it means any hard, overwhelming, or complex task or hardship in life. The Prophet ﷺ uses this metaphor to state that even the rough, unyielding paths of life become smooth and navigable when Allah wills it. }}"
 > *"O Allah, there is no ease other than what You make easy. If You please, You make sorrow/difficulty easy."*
 
 
@@ -24,9 +24,20 @@ It is recommended to recite this supplication when encountering a hardship, a di
 
 [[وَأَنْتَ|and You|wa-anta]] [[تَجْعَلُ|make|tajʿalu]] [[الْحَزْنَ|the difficulty / sorrow|l-ḥazna]] [[إِذَا|when|idhā]] [[شِئْتَ|You will|shiʾta]] [[سَهْلًا|easy.|sahlan.]]
 
+### Notes:
+
+1) Shifting Trust from Self to God:
+
+Human nature leads people to rely on their own skills, intellect, or resources when facing a obstacle. This supplication serves as a mental and spiritual reset - reminding the believer that regardless of how prepared they are, true ease comes only from Allah.
+
+2) Recognizing Divine Control over Circumstances:
+
+It acknowledges that difficulty and ease are not intrinsic properties of a situation itself; rather, Allah transforms a situation from hard to easy (or vice versa) in an instant.
 
 <details>
 <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+*🔗 Verify on sunnah.com — [Hisn al-Muslim 139](https://sunnah.com/hisn:139)*
 
 The Text of the Supplication (المَتْن)
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[لَا|there is no|lā]] [[سَهْلَ|ease|sahla]] [[إِلَّا|except|illā]] [[مَا|what|mā]] [[جَعَلْتَهُ|You have made|jaʿaltahū]] [[سَهْلًا|easy,|sahlan,]] [[وَأَنْتَ|and You|wa-anta]] [[تَجْعَلُ|make|tajʿalu]] [[الْحَزْنَ|the difficulty / sorrow|l-ḥazna]] [[إِذَا|when|idhā]] [[شِئْتَ|You will|shiʾta]] [[سَهْلًا|easy.|sahlan.]]
@@ -37,5 +48,3 @@ Scholarly Documentation
 *   **Al-Ḥāfiẓ Ibn Ḥajar al-ʿAsqalānī:** Authenticated the chain of transmission.
 *   **Sheikh ʿAbdul-Qādir al-Arnaʾūṭ:** Confirmed its authenticity in his checking of Imam al-Nawawī's *Kitāb al-Adhkār* (p. 106).
 </details>
-
-*🔗 Verify on sunnah.com — [Hisn al-Muslim 139](https://sunnah.com/hisn:139)*

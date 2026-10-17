@@ -79,34 +79,34 @@ const VAULT_NAVIGATION_TREE = [
     items: [
       //forgiveness family
       { type: "family", label: "Ya Allah, forgive me - tear out the inner darknesses before asking", icon: "🖤⛓️🤍", tier: "imam" },
-      { label: "Adam's repentance", gloss: "Rabbana Zalamna anfusana...", ref: "Qurʾān 2:37", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/forgiveness-adam.md" },
-      { label: "Sulaymān's repentance ... and ask for Kingdom", gloss: "Rabbighfirli ...", ref: "Sūrat Saad 38:35", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/forgiveness-sulaiman.md" },
-      { label: "Forgive Us, Do Not Place Ghilla in Our Hearts", gloss: ".. wa la taj'al fi qulubina Ghilla..", ref: "Sūrat Al Hashr 59:10", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/forgive-us-do-not-place-ghilla-in-hearts.md" },      
-      { label: "Forgiveness for Parents and All Believers", gloss: "Rabbighfir li-walidayhi ..", ref: "Musnad al-Shāmiyīn lil-Ṭabarānī 2118", tier: "jemaah", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/dua/forgiveness-parents-all-believers.md" },
+      { label: "Adam's repentance", gloss: "Rabbana Zalamna anfusana...", ref: "Qurʾān 2:37", tier: "jemaah", grade: "sahih", time: ["night-presleep", "night-last-third", "*any"], path: "web/render.html?file=content/dua/forgiveness-adam.md" },
+      { label: "Sulaymān's repentance ... and ask for Kingdom", gloss: "Rabbighfirli ...", ref: "Sūrat Saad 38:35", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/forgiveness-sulaiman.md" },
+      { label: "Forgive Us, Do Not Place Ghilla in Our Hearts", gloss: ".. wa la taj'al fi qulubina Ghilla..", ref: "Sūrat Al Hashr 59:10", tier: "jemaah", grade: "sahih", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/forgive-us-do-not-place-ghilla-in-hearts.md" },
+      { label: "Forgiveness for Parents and All Believers", gloss: "Rabbighfir li-walidayhi ..", ref: "Musnad al-Shāmiyīn lil-Ṭabarānī 2118", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/forgiveness-parents-all-believers.md" },
       //forgiveness family
       { type: "family", label: "Ya Allah, teach me how to ask you", icon: "🤲", tier: "imam" },
-      { label: "Asking through the Greatest Name — when He is asked by it, He gives", gloss: "Bi-Annī Ashhadu Annaka Anta-llāh", ref: "Tirmidhī 3475", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/in-greatest-of-names.md" },
-      { label: "The duʿāʾ he ﷺ said most often: Dunya, Akhirah and protection from Punishment of Naar", gloss: "Rabbana atina fid dunya...", ref:"Surat Al Baqarah 2:201", tier: "jemaah", grade:"sahih", time:["*any"], path: "web/render.html?file=content/dua/rabbana-atina-fid-dunya.md"},
-      { label: "ʿĀʾishah's comprehensive ask — all good, known and unknown", gloss: "Asʾaluka min al-Khayri Kullih", ref: "Ibn Mājah 3846", tier: "imam", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/aisyah-comprehensive-ask.md" },
-      { label: "Duas of the IbadurRahman", gloss: "Rabbana habla min azwajina ...", ref: "Qurʾān 25:63-77", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/dua-ibadurrahman.md"},
-      { label: "O Allah, set right for me my religion ...", gloss: "Allahuma aṣliḥ lī dīniya ...  ", ref: "Muslim 2720", tier: "muhsin",grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/o-allah-set-right-for-me-my-religion.md" },
+      { label: "Asking through the Greatest Name — when He is asked by it, He gives", gloss: "Bi-Annī Ashhadu Annaka Anta-llāh", ref: "Tirmidhī 3475", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*adhan", "*any"], path: "web/render.html?file=content/dua/in-greatest-of-names.md" },
+      { label: "The duʿāʾ he ﷺ said most often: Dunya, Akhirah and protection from Punishment of Naar", gloss: "Rabbana atina fid dunya...", ref:"Surat Al Baqarah 2:201", tier: "jemaah", grade:"sahih", time:["*salah", "*any"], path: "web/render.html?file=content/dua/rabbana-atina-fid-dunya.md"},
+      { label: "ʿĀʾishah's comprehensive ask — all good, known and unknown", gloss: "Asʾaluka min al-Khayri Kullih", ref: "Ibn Mājah 3846", tier: "imam", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/aisyah-comprehensive-ask.md" },
+      { label: "Duas of the IbadurRahman", gloss: "Rabbana habla min azwajina ...", ref: "Qurʾān 25:63-77", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/dua-ibadurrahman.md"},
+      { label: "O Allah, set right for me my religion ...", gloss: "Allahuma aṣliḥ lī dīniya ...  ", ref: "Muslim 2720", tier: "muhsin",grade: "sahih", time: ["day-fajr-post", "day-asr-post", "*any"], path: "web/render.html?file=content/dua/o-allah-set-right-for-me-my-religion.md" },
       // Steadfastness of heart and Din
       { type: "family", label: "Ya Allah, Make me follow you", icon: "🫀", tier: "imam" },
-      { label: "The duʿāʾ he ﷺ said most often: hold my heart firm on Your dīn", gloss: "Yā Muqallibal-Qulūb...", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/dua/ya-muqallibal-qulub.md" },
-      { label: "The ayat he ﷺ would follow up with: do not make us deviate", gloss: "Rabbana la tuzigh qulubbana...", ref: "Qurʾān 3:8", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/la-tuzigh-qulubana.md"},
-      { label: "Ibrahim's ask: Make us muslim, show us our rites", gloss: "Rabbanā wajʿalnā muslimayni laka", ref: "Qurʾān 26:84-85", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/make-us-muslim-show-us-nusuk.md" },
+      { label: "The duʿāʾ he ﷺ said most often: hold my heart firm on Your dīn", gloss: "Yā Muqallibal-Qulūb...", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/ya-muqallibal-qulub.md" },
+      { label: "The ayat he ﷺ would follow up with: do not make us deviate", gloss: "Rabbana la tuzigh qulubbana...", ref: "Qurʾān 3:8", tier: "jemaah", grade: "sahih", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/la-tuzigh-qulubana.md"},
+      { label: "Ibrahim's ask: Make us muslim, show us our rites", gloss: "Rabbanā wajʿalnā muslimayni laka", ref: "Qurʾān 26:84-85", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/make-us-muslim-show-us-nusuk.md" },
       // Gratitude
       { type: "family", label: "Gratitude & Praise", icon: "🌼", tier: "imam" },
       { label: "Sulaymān's ask: Increase my capacity to be thankful", gloss: "Rabbi Awziʿnī an Ashkura Niʿmatak", ref: "Qurʾān 27:19", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/sulaiman-thankfulness.md" },
-      { label: "Praise that matches His blessings; compiled in the Bā ʿAlawī majālis", gloss: "Duʿāʾ al-Ḥamd — Ḥamdan Yuwāfī", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/dua-hamdan-yuwafi.md" },
+      { label: "Praise that matches His blessings; compiled in the Bā ʿAlawī majālis", gloss: "Duʿāʾ al-Ḥamd — Ḥamdan Yuwāfī", ref: "Compiled wird", tier: "muhsin", time: ["day-fajr-post", "day-asr-post", "*any"], path: "web/render.html?file=content/dua/dua-hamdan-yuwafi.md" },
       // Quran in heart
       { type: "family", label: "Qurʾān in Heart", tier: "imam" },
-      { label: "Make the Qurʾān the spring of my heart, the light of my chest", gloss: "Ijʿali-l-Qurʾāna Rabīʿa Qalbī", ref: "Musnad Aḥmad 3712", tier: "imam", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/quran/quran_spring_heart.md" },
-      { label: "The memoriser's duʿāʾ — clarity, retention, character", gloss: "Duʿāʾ Ḥifẓ al-Mursalīn", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/quran/memoriser.md" },
+      { label: "Make the Qurʾān the spring of my heart, the light of my chest", gloss: "Ijʿali-l-Qurʾāna Rabīʿa Qalbī", ref: "Musnad Aḥmad 3712", tier: "imam", grade: "sahih", time: ["day-duha", "*any"], path: "web/render.html?file=content/dua/quran/quran_spring_heart.md" },
+      { label: "The memoriser's duʿāʾ — clarity, retention, character", gloss: "Duʿāʾ Ḥifẓ al-Mursalīn", ref: "Compiled wird", tier: "muhsin", time: ["day-duha", "*any"], path: "web/render.html?file=content/dua/quran/memoriser.md" },
       { type: "family", label: "Shifā / Healing", tier: "imam" },
       { label: "Seven times at a sick person's side, and Allah heals them", gloss: "Asʾalu-llāha-l-ʿAẓīm — ×7", ref: "Riyāḍ 906 · Tirmidhī 2083", reps: "×7", tier: "muhsin", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/dua/shifa/yashfiyaka.md" },
-      { label: "For pregnancy — the compiled set said after each prayer", gloss: "Duʿāʾ al-Ḥāmil", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/dua/shifa/dua-hamil.md" },
-      { label: "Zakariyyā's ask for righteous offspring, through His beautiful names", gloss: "Rabbi Hab Lī min Ladunka Dhurriyyatan Ṭayyibah", ref: "Qurʾān 3:38", tier: "muhsin", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/shifa/dua-righteous-offspring-2.md" }
+      { label: "For pregnancy — the compiled set said after each prayer", gloss: "Duʿāʾ al-Ḥāmil", ref: "Compiled wird", tier: "muhsin", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/shifa/dua-hamil.md" },
+      { label: "Zakariyyā's ask for righteous offspring, through His beautiful names", gloss: "Rabbi Hab Lī min Ladunka Dhurriyyatan Ṭayyibah", ref: "Qurʾān 3:38", tier: "muhsin", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/shifa/dua-righteous-offspring-2.md" }
     ]
   },
   {
@@ -161,13 +161,13 @@ const VAULT_NAVIGATION_TREE = [
     categoryAr: "الضُّحَى",
     desc: "The forenoon window — provision, ease of work, and the road",
     items: [
-      { label: "Ṣalāt Duha", gloss: "2/4/6/8 Rakʿah at the Start of the Day", ref: "Abū Dāwūd 1289", tier: "jemaah", grade: "sahih", time: ["day-duha"], path: "web/render.html?file=content/salah/solat-duha.md" },
-      { label: "The travelling duʿāʾ — said as the vehicle moves off", gloss: "Duʿāʾ as-Safar", ref: "Tirmidhī 3447", tier: "jemaah", grade: "sahih", time: ["day-duha", "*any"], path: "web/render.html?file=content/dua/dua-safar.md" },
-      { label: "Musa's ask: Expand my chest ...", gloss: "Rabbi shrahli sadri ...", ref: "Qurʾān 20:25-28", tier: "jemaah", grade: "sahih", time: ["*any"], path:"web/render.html?file=content/dua/work/musa-rabbishrahlisadri.md"},
-      { label: "Nothing is easy but what You make easy — for work that has seized up", gloss: "Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahlā", ref: "Ḥiṣn 139 · Ibn Ḥibbān 974", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/work/allahumma-la-sahla.md" },
-      { label: "Debt the size of Mount Ṣīr, settled — the duʿāʾ he ﷺ taught ʿAlī", gloss: "Allāhumma-kfinī bi-Ḥalālika ʿan Ḥarāmik", ref: "Tirmidhī 3563", tier: "imam", grade: "hasan", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/remove-debt-mountain.md" },
-      { label: "Musa's absolute dependancy", gloss: "Rabbi inni lima anzalta ...", ref: "Qurʾān 28:24", tier: "imam", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/work/musa-rabbi-inni-lima-anzalta.md"}
-    ]
+      { label: "When thankful for the Joints and want Flowstate - Ṣalāt Duha", gloss: "2/4 Rakʿah at the Start of the Day", ref: "Abū Dāwūd 1289", tier: "jemaah", grade: "sahih", time: ["day-duha"], path: "web/render.html?file=content/salah/solat-duha.md" },
+      { label: "When about to travel/transit...", gloss: "Duʿāʾ as-Safar", ref: "Tirmidhī 3447", tier: "jemaah", grade: "sahih", time: ["day-duha", "*any"], path: "web/render.html?file=content/dua/dua-safar.md" },
+      { label: "When facing a difficult affair...", gloss: "Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahlā", ref: "Ḥiṣn 139 · Ibn Ḥibbān 974", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/work/allahumma-la-sahla.md" },
+      { label: "When burdened by debts - ", gloss: "Allāhumma-kfinī bi-Ḥalālika ʿan Ḥarāmik", ref: "Tirmidhī 3563", tier: "imam", grade: "hasan", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/remove-debt-mountain.md" },
+      { label: "When exhausted, vulnerable and absolutely reliant - Musa's utter dependancy", gloss: "Rabbi inni lima anzalta ...", ref: "Qurʾān 28:24", tier: "imam", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/dua/work/musa-rabbi-inni-lima-anzalta.md"},
+      { label: "When about to face Firaun - Musa's ask: Expand my chest", gloss: "Rabbi shrahli sadri ...", ref: "Qurʾān 20:25-28", tier: "jemaah", grade: "sahih", time: ["*any"], path:"web/render.html?file=content/dua/work/musa-rabbishrahlisadri.md"},
+      ]
   },
     {
     icon: "🌙",
