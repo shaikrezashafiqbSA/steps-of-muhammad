@@ -42,7 +42,7 @@
     if (!edit) {
       return r.type === 'note'
         ? `<div class="action-item plan-note-row">${rowInner(r)}</div>`
-        : `<a class="action-item" href="./${esc(r.href)}">${rowInner(r)}</a>`;
+        : `<a class="action-item" href="./${esc(r.href)}${r.type === 'card' ? '&from=' + encodeURIComponent(slotId) : ''}">${rowInner(r)}</a>`;
     }
     return `
       <div class="plan-row">

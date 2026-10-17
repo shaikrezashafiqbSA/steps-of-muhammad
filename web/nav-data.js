@@ -375,7 +375,7 @@ function somRenderNavEnd(item, direction) {
       <span class="card-nav-label">${label}</span>
     </span>`;
 
-  return `<a class="card-nav-btn ${align}" href="../${item.path}" title="${label}">
+  return `<a class="card-nav-btn ${align}" href="${item.href || '../' + item.path}" title="${label}">
       ${isPrev ? `<span class="card-nav-arrow">${arrow}</span>${text}` : `${text}<span class="card-nav-arrow">${arrow}</span>`}
     </a>`;
 }
@@ -404,7 +404,7 @@ function somRenderHudEnd(item, direction) {
       ${gloss}
     </span>`;
 
-  return `<a class="hud-nav-btn ${align}" href="../${item.path}" title="${label}">
+  return `<a class="hud-nav-btn ${align}" href="${item.href || '../' + item.path}" title="${label}">
       ${isPrev ? `<span class="hud-nav-arrow">${arrow}</span>${text}` : `${text}<span class="hud-nav-arrow">${arrow}</span>`}
     </a>`;
 }
@@ -433,15 +433,27 @@ function somBuildCardNav() {
   const params = new URLSearchParams(window.location.search);
   const file = params.get('file');
   const viewer = window.location.pathname.split('/').pop() || 'render.html';
-  const found = file ? somLocateCard(viewer, file) : null;
 
-  const prev = found && found.index > 0 ? found.seq[found.index - 1] : null;
-  const next = found && found.index < found.seq.length - 1 ? found.seq[found.index + 1] : null;
+  // Opened from Action view (?from=<slot>): page through the reader's plan
+  // and go Home to that prayer's tab. Otherwise: the Library category.
+  const from = params.get('from');
+  const plan = (file && from && window.SomPlan) ? SomPlan.contextFor(from, file) : null;
+  const found = plan ? null : (file ? somLocateCard(viewer, file) : null);
 
-  const homeHref = found ? `../index.html#${found.nodeId}` : '../index.html';
-  const context = found
-    ? `<span class="card-nav-context">${found.node.icon || '✦'} ${somEscapeHtml(found.node.category)} · ${found.index + 1} of ${found.seq.length}</span>`
-    : '';
+  const prev = plan ? plan.prev : (found && found.index > 0 ? found.seq[found.index - 1] : null);
+  const next = plan ? plan.next : (found && found.index < found.seq.length - 1 ? found.seq[found.index + 1] : null);
+
+  // Slot / collection pages have no ?file=, so no card context — but a slot
+  // page still knows which prayer's tab to go Home to.
+  const slotParam = params.get('slot');
+  const slotDef = (slotParam && window.SomPlan) ? SomPlan.SLOT_DEFS[slotParam] : null;
+  const homeHref = plan ? plan.homeHref
+    : found ? `../index.html#${found.nodeId}`
+    : slotDef ? `../index.html#action/${slotDef.prayer}`
+    : '../index.html';
+  const contextText = plan ? somEscapeHtml(plan.label)
+    : found ? `${found.node.icon || '✦'} ${somEscapeHtml(found.node.category)} · ${found.index + 1} of ${found.seq.length}` : '';
+  const context = contextText ? `<span class="card-nav-context">${contextText}</span>` : '';
 
   const html = `
     ${somRenderNavEnd(prev, 'prev')}
@@ -458,10 +470,7 @@ function somBuildCardNav() {
 
   // render.html docks the same navigation into a fixed bottom-center HUD
   // instead of in-flow bars; pages without #somHudNav skip this silently.
-  const hudContext = found
-    ? `${found.node.icon || '✦'} ${somEscapeHtml(found.node.category)} · ${found.index + 1} of ${found.seq.length}`
-    : '';
-  somBuildHudNav(prev, next, homeHref, hudContext);
+  somBuildHudNav(prev, next, homeHref, contextText);
 
   // Pages that still carry a #floatHomeBtn in their control stack (none
   // today) get it wired up here; render.html dropped it
@@ -476,7 +485,7 @@ function somBuildCardNav() {
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     const el = document.activeElement;
     if (el && (el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName))) return;
-    if (e.key === 'ArrowLeft' && prev) window.location.href = '../' + prev.path;
-    if (e.key === 'ArrowRight' && next) window.location.href = '../' + next.path;
+    if (e.key === 'ArrowLeft' && prev) window.location.href = prev.href || '../' + prev.path;
+    if (e.key === 'ArrowRight' && next) window.location.href = next.href || '../' + next.path;
   });
 }

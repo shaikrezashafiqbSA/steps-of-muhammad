@@ -252,6 +252,34 @@
     return { id: 'slot:' + slotId, name: PRAYER_NAME[def.prayer] + ' · ' + def.label, summary: def.hint, items };
   }
 
+  // Prev / next for a card opened from Action view (render.html?file=…&from=<slot>).
+  // The sequence is what the reader saw on that prayer's tab: every slot in
+  // order, cards only. Hrefs are relative to web/render.html.
+  function cardHref(path, slotId) {
+    return '../web/render.html?file=' + encodeURI(path) + '&from=' + encodeURIComponent(slotId);
+  }
+  function contextFor(slotId, file) {
+    const def = SLOT_DEFS[slotId];
+    if (!def) return null;
+    const seq = [];
+    (BY_PRAYER[def.prayer] || []).forEach(d => {
+      entries(d.id).forEach(e => {
+        if (e.type !== 'card') return;
+        const r = resolve(e);
+        seq.push({ slot: d.id, slotLabel: d.label, path: e.path, label: r.label, gloss: r.gloss, href: cardHref(e.path, d.id) });
+      });
+    });
+    let i = seq.findIndex(x => x.slot === slotId && x.path === file);
+    if (i === -1) i = seq.findIndex(x => x.path === file);
+    if (i === -1) return null;
+    return {
+      prev: i > 0 ? seq[i - 1] : null,
+      next: i < seq.length - 1 ? seq[i + 1] : null,
+      label: PRAYER_NAME[def.prayer] + ' · ' + seq[i].slotLabel + ' · ' + (i + 1) + ' of ' + seq.length,
+      homeHref: '../index.html#action/' + def.prayer
+    };
+  }
+
   function shareText(slotId, baseUrl) {
     const def = SLOT_DEFS[slotId];
     const lines = ['*' + PRAYER_NAME[def.prayer] + ' · ' + def.label + '* ⚖️', ''];
@@ -273,7 +301,7 @@
     slotsFor: prayer => BY_PRAYER[prayer] || [],
     allSlots: () => PRAYER_ORDER.map(p => ({ prayer: p, name: PRAYER_NAME[p], slots: BY_PRAYER[p] || [] })),
     entries, defaultEntries, isCustom, reset, has, add, removeAt, move, write,
-    resolve, library, sets, setById, suggestionsFor, asCollection, shareText,
+    resolve, library, sets, setById, suggestionsFor, asCollection, shareText, contextFor,
     onChange: fn => listeners.push(fn),
     get version() { return version; }
   };

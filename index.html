@@ -1976,15 +1976,21 @@
     const SC = window.SomSunClock;
     if (!SC) return;
 
-    // A fresh key makes Action the launch default for existing readers too;
-    // after that, an explicit tab choice is remembered.
-    const VIEW_KEY = 'som-view-default-action';
+    // The prayer tab a reader pinned is kept for the browser session, so
+    // Back from a card lands on the same tab, not on whatever the clock says.
+    const PRAYER_KEY = 'som-action-prayer';
     const LOC_KEY = 'som-location';
 
     // openPrayer === null means "follow the clock" — the strip
     // highlights whichever prayer window is live. Clicking a prayer
     // cell (or the Tahajjud tab) pins that choice instead.
     let openPrayer = null;
+    function setOpenPrayer(key) {
+      openPrayer = key;
+      try {
+        if (key) sessionStorage.setItem(PRAYER_KEY, key); else sessionStorage.removeItem(PRAYER_KEY);
+      } catch (e) { /* private mode */ }
+    }
     let editMode = false;
     let lastListKey = null;
     let bedtime = false;
@@ -2341,7 +2347,7 @@
     }
 
     // ── View switching ─────────────────────────────────────
-    function setView(view, persist) {
+    function setView(view) {
       const isAction = view === 'action';
       const actionTab = document.getElementById('btn-view-action');
       const compendiumTab = document.getElementById('btn-view-compendium');
@@ -2350,9 +2356,6 @@
       compendiumTab.classList.toggle('active', !isAction);
       actionTab.setAttribute('aria-selected', isAction ? 'true' : 'false');
       compendiumTab.setAttribute('aria-selected', isAction ? 'false' : 'true');
-      if (persist !== false) {
-        try { localStorage.setItem(VIEW_KEY, view); } catch (e) { /* private mode */ }
-      }
       if (isAction) startTicking(); else stopTicking();
     }
 
@@ -2378,7 +2381,6 @@
 
       document.getElementById('btn-view-action').addEventListener('click', () => setView('action'));
       document.getElementById('btn-view-compendium').addEventListener('click', () => {
-        openPrayer = null;
         setView('compendium');
       });
 
@@ -2386,7 +2388,7 @@
       document.getElementById('prayer-strip').addEventListener('click', (e) => {
         const cell = e.target.closest('.prayer-cell');
         if (!cell) return;
-        openPrayer = (openPrayer === cell.dataset.prayer) ? null : cell.dataset.prayer;
+        setOpenPrayer(openPrayer === cell.dataset.prayer ? null : cell.dataset.prayer);
         tick();
       });
 
@@ -2399,7 +2401,7 @@
       bedBtn.addEventListener('click', () => {
         bedtime = !bedtime;
         bedBtn.classList.toggle('active', bedtime);
-        openPrayer = bedtime ? '*presleep' : null;
+        setOpenPrayer(bedtime ? '*presleep' : null);
         tick();
       });
 
@@ -2439,16 +2441,20 @@
         }, { timeout: 10000, maximumAge: 600000 });
       });
 
-      // Launch in Action by default. A stored choice made after this
-      // update is honoured; #node-… deep links still land in Compendium.
-      let start = 'action';
-      try {
-        const saved = localStorage.getItem(VIEW_KEY);
-        if (saved === 'compendium' || saved === 'action') start = saved;
-      } catch (e) { /* private mode */ }
-      if (window.location.hash === '#action') start = 'action';
-      if (window.location.hash === '#compendium' || /^#node-/.test(window.location.hash)) start = 'compendium';
-      setView(start, false);
+      // Action is always the launch view. Only a Library deep link
+      // (#compendium, or #node-N from a card's Home) opens the Library.
+      // #action/<prayer> (a card's Home, when it was opened from Action)
+      // reopens that prayer's tab; otherwise the tab pinned earlier in this
+      // browser session, otherwise the clock decides.
+      const hash = window.location.hash;
+      const start = (hash === '#compendium' || /^#node-/.test(hash)) ? 'compendium' : 'action';
+      const hashPrayer = (/^#action\/([a-z]+)$/.exec(hash) || [])[1];
+      let wanted = hashPrayer === 'presleep' ? '*presleep' : hashPrayer;
+      if (!wanted) {
+        try { wanted = sessionStorage.getItem(PRAYER_KEY); } catch (e) { /* private mode */ }
+      }
+      if (wanted === '*presleep' || PRAYER_BY_KEY[wanted]) setOpenPrayer(wanted);
+      setView(start);
     });
 
     // Pause the one-second repaint while the tab is hidden.
