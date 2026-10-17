@@ -805,9 +805,11 @@ Write a normal card and add the `"embed"` title to each link:
 
 Mark timing/optionality in prose around the embed (`*(optional)*`, `*(Fajr & Maghrib only)*`). An item not yet authored should stay plain text — a link to a missing file renders a visible error drawer in that slot.
 
-### My Amalan (user-built)
+### The plan (Action view)
 
-`index.html` stores the reader's lists in `localStorage` (`som-collections`). `web/render.html?collection=<id>` reads that list and renders it as a card of embeds, the first one open — so My Amalan and authored sequences share one code path. Lists live on the reader's device only, so the link means nothing on another device.
+Action view is a loadout: each part of the day is a **slot** (`fajr.after`, `dhuhr.between`, `presleep.main` …) holding an ordered list of cards, sets and notes. **You curate the default in `web/default-plan.js`** — slot ids, wildcards (`*.after` applies to every fard prayer) and entry forms are documented at the top of that file. Readers can override any slot in the app; their edits live in `localStorage` (`som-plan-v1`, per slot, copy-on-write) and a slot they never touched keeps following your file. The model is `web/plan.js`, the UI is `web/plan-ui.js`.
+
+`web/render.html?slot=<slot id>` reads a slot in order as a card of embeds, the first one open — the same code path as `?collection=<set id>` for the shipped sets in `PRESET_COLLECTIONS`. The `time` tags in `nav-data.js` no longer decide what Action view shows; they only feed the picker's "Suggested" tab.
 
 ### Testing
 

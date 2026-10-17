@@ -44,6 +44,13 @@ ask for or when.
 
 ---
 
+> **Update — Action view is now an editable plan.** The `time` tags described in this
+> document still place a duʿā on the clock, but Action view no longer lists "everything
+> tagged for this hour". It shows *slots* — before / during / after each ṣalāh and the stretch
+> until the next one — filled from `web/default-plan.js` (your curated mapping) and editable by
+> the reader. The tags now power the picker's **Suggested** tab, so a reader filling a slot
+> sees what the narration already ties to it first.
+
 ## 2 · The eleven windows
 
 Nine are **clock windows** — at any instant exactly one is current, computed from
