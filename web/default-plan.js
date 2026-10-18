@@ -100,6 +100,12 @@ const SOM_DEFAULT_PLAN = {
     'content/salah/after/3_dua-allahuma-ajirnaar.md'
   ],
   'maghrib.between': [
+    'content/adhkar-al-lail/al-baqarah-last-2.md'
+  ],
+
+    // ── ʿIshāʾ → Sleep  ────────────────────────────────────
+  'isha.between': [
+    'content/adhkar-al-lail/al-baqarah-last-2.md'
   ],
 
   // ── the night ──────────────────────────────────────────

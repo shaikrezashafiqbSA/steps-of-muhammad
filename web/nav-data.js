@@ -175,7 +175,9 @@ const VAULT_NAVIGATION_TREE = [
     categoryAr: "أَذْكَارُ اللَّيْلِ",
     desc: "The night cycle — going to bed, waking in the dark, and the last third",
     items: [
-      { type: "family", label: "About to sleep", gloss: "Last things said before sleep", tier: "imam", time: ["night-presleep"]},
+      { type: "family", label: "Adhkar of the night", gloss: "Last things said before sleep", tier: "imam", time: ["night-maghrib-post", "night-isha-post"]},
+      { label: "They Will Suffice Him - The Two Closing Verses of Surah al-Baqarah at Night", gloss: "Lā Yuʿallimuhu-llāhu-l-Qurʾāna", ref: "Bukhārī 5009", tier: "jemaah", grade: "sahih", time: ["night-maghrib-post", "night-isha-post"], path: "web/render.html?file=content/adhkar-al-lail/al-baqarah-last-2.md" },
+      { type: "family", label: "Before sleep", gloss: "The last things said before sleep", tier: "imam", time: ["night-presleep"]},
       { num: "1", label: "Breathe the three sūrahs into your palms and wipe your body, three times", gloss: "Al-Muʿawwidhāt — ×3", ref: "Bukhārī 5017", reps: "×3", tier: "jemaah", grade: "sahih", time: ["night-presleep"], path: "web/render.html?file=content/adhkar-al-lail/muawwidhat-nafth.md" },
       { num: "2", label: "A guardian appointed over you, and no devil near you until morning", gloss: "Āyat al-Kursī", ref: "Bukhārī 2311", tier: "jemaah", grade: "sahih", time: ["night-presleep"], path: "web/render.html?file=content/adhkar-al-lail/ayat-al-kursi-guard.md" },
       { num: "3", label: "He offered it to Fāṭimah instead of the servant she asked for", gloss: "Tasbīḥ Fāṭimah — 33·33·34", ref: "Bukhārī 3705", reps: "×100", tier: "jemaah", grade: "sahih", time: ["night-presleep"], path: "web/render.html?file=content/adhkar-al-lail/tasbih-fatimah.md" },
