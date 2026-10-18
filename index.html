@@ -1187,25 +1187,19 @@
     .plan-edit-btn.active { background: #7D5243; border-color: #7D5243; color: #FFFBF1; }
     .action-list-head { align-items: center; }
 
-    .plan-slot { margin-top: 1rem; }
-    .plan-slot:first-child { margin-top: 0; }
-    .plan-slot-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 0.6rem;
-      margin: 0 0 0.45rem;
-      padding-bottom: 0.3rem;
-      border-bottom: 1px solid rgba(176, 138, 75, 0.28);
-    }
-    .plan-slot-copy { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.1rem 0.5rem; min-width: 0; }
-    .plan-slot-title {
+    .plan-slot-node { margin-bottom: 0.6rem; }
+    .plan-slot-node:last-child { margin-bottom: 0; }
+    .plan-slot-count {
+      flex-shrink: 0;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.66rem;
+      font-size: 0.62rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #B08A4B;
+      min-width: 1.4rem;
+      text-align: center;
+      padding: 0.1rem 0.4rem;
+      border-radius: 999px;
+      background: rgba(255, 251, 241, 0.25);
+      color: #FFFBF1;
     }
     .plan-slot-tag {
       font-family: 'JetBrains Mono', monospace;
@@ -1214,13 +1208,25 @@
       text-transform: uppercase;
       padding: 0.08rem 0.35rem;
       border-radius: 4px;
-      background: rgba(125, 82, 67, 0.12);
-      color: #7D5243;
+      background: rgba(255, 251, 241, 0.25);
+      color: #FFFBF1;
+      vertical-align: middle;
     }
-    .plan-slot-hint { flex-basis: 100%; font-size: 0.62rem; color: #7A6F6C; line-height: 1.5; }
-    .plan-slot-actions { display: flex; gap: 0.35rem; flex-shrink: 0; }
+    /* Before / During / After inside the Ṣalāh card. Own classes on purpose:
+       .root-node.active .branch-container and .chevron-icon cascade to every
+       descendant and would hold these open and flip their chevrons. */
+    .plan-sub { margin-bottom: 0.3rem; }
+    .plan-sub-head { width: 100%; text-align: left; cursor: pointer; align-items: center; }
+    .plan-sub-head .family-divider-label { flex: 1; min-width: 0; }
+    .plan-sub-count { background: rgba(125, 82, 67, 0.14); color: #7D5243; }
+    .plan-chev { flex-shrink: 0; display: inline-flex; transition: transform 0.25s ease; color: #7D5243; }
+    .plan-sub.active > .plan-sub-head .plan-chev { transform: rotate(180deg); }
+    .plan-sub-body { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+    .plan-sub.active > .plan-sub-body { max-height: 4000px; }
+    .plan-sub-inner { padding-top: 0.15rem; }
+    .plan-slot-tools { display: flex; flex-wrap: wrap; gap: 0.35rem; padding: 0.2rem 0.2rem 0.4rem; }
     .plan-mini-btn {
-      padding: 0.22rem 0.55rem;
+      padding: 0.3rem 0.65rem;
       border-radius: 6px;
       border: 1px solid rgba(230, 220, 208, 0.95);
       background: rgba(255, 251, 241, 0.8);
@@ -1241,10 +1247,9 @@
     }
     .plan-slot-empty { font-size: 0.7rem; font-style: italic; color: #7A6F6C; margin: 0 0 0.4rem; }
 
-    .plan-row { display: flex; align-items: stretch; gap: 0.3rem; margin-bottom: 0.4rem; }
-    .plan-row .plan-static { flex: 1; min-width: 0; margin-bottom: 0; }
-    .plan-static:hover { transform: none; border-color: rgba(230, 220, 208, 0.8); background: rgba(255, 251, 241, var(--dua-row-opacity, 0.62)); }
-    .plan-note-row:hover { transform: none; }
+    .plan-row { display: flex; align-items: stretch; gap: 0.3rem; }
+    .plan-row-main { flex: 1; min-width: 0; }
+    .plan-row-main > * { display: flex; }
     .plan-move { display: flex; flex-direction: column; justify-content: center; flex-shrink: 0; }
     .plan-move-btn, .plan-remove {
       background: transparent; border: none; cursor: pointer; color: #7A6F6C;
@@ -1360,6 +1365,20 @@
     .plan-choose-row.is-added { border-color: rgba(30, 86, 49, 0.45); background: rgba(172, 223, 135, 0.18); }
     .plan-choose-label { flex: 1; font-size: 0.8rem; font-weight: 600; color: #3A2E2B; }
     .plan-choose-count { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #7A6F6C; }
+    /* Picker rows are the Library's own rows; these are the bits that differ */
+    .plan-pick-mark {
+      flex-shrink: 0; align-self: center; width: 1.9rem; height: 1.9rem; line-height: 1.8rem;
+      text-align: center; border-radius: 999px; font-size: 1rem; color: #7D5243;
+      border: 1px solid rgba(176, 138, 75, 0.4); background: rgba(255, 251, 241, 0.7);
+    }
+    .plan-pick-mark.is-added { color: #FFFBF1; background: #1E5631; border-color: #1E5631; }
+    #plan-sheet .is-added { box-shadow: inset 0 0 0 2px rgba(30, 86, 49, 0.55); }
+    .plan-suggested {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase; padding: 0.15rem 0.4rem; border-radius: 4px;
+      background: rgba(176, 138, 75, 0.18); border: 1px solid rgba(176, 138, 75, 0.45); color: #7D5243;
+    }
+    #plan-sheet .root-node { margin-bottom: 0.6rem; }
     .plan-note-form { display: flex; flex-direction: column; gap: 0.5rem; }
     .plan-note-submit {
       padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid #7D5243; background: #7D5243;
@@ -1626,6 +1645,20 @@
         border: "border-[#B08A4B]/40",
         text: "text-[#7D5243]"
       },
+      set: {
+        tag: "SET",
+        prefix: "📖",
+        bg: "bg-[#B08A4B]/15",
+        border: "border-[#B08A4B]/40",
+        text: "text-[#7D5243]"
+      },
+      note: {
+        tag: "NOTE",
+        prefix: "✎",
+        bg: "bg-[#7D5243]/10",
+        border: "border-[#7D5243]/30",
+        text: "text-[#7D5243]"
+      },
       new: {
         tag: "NEW",
         prefix: "✦",
@@ -1763,15 +1796,95 @@
           <span class="swatch"><span class="dot" style="background:#C8E6B4"></span>Wird / Ungraded</span>
         </div>`;
 
+      treeHTML += renderLibraryNodes({ idPrefix: 'node-', openId: activeNodeId });
+      treeTarget.innerHTML = treeHTML;
+    }
+
+    // One duʿā row exactly as the Library draws it: the grade tint and
+    // left border, the three names, the citation badge. Shared by the
+    // Library tree, the slot picker and Action view's slots, so a duʿā
+    // looks the same wherever it appears.
+    //   o.tag 'a' | 'div'    o.attrs  attributes string (href, data-…)
+    //   o.trail  html at the right edge     o.inFamily  indent under a family heading
+    //   o.extraClass / o.extraMeta  additions
+    function somLibraryRow(item, o) {
+      o = o || {};
+      const tag = o.tag || 'a';
+      const gradeClass = item.grade && GRADE_CLASSES[item.grade]
+        ? GRADE_CLASSES[item.grade]
+        : (item.tier ? 'grade-wird' : '');
+      const hoverBgClass = gradeClass ? '' : 'hover:bg-[#B08A4B]/10';
+      const numHTML = item.num ? `<span class="item-num-badge">${item.num}</span>` : '';
+      // Three names, three weights: the familiar sound reads
+      // first, the plain-English function under it, and the
+      // hadith citation as a checkable badge.
+      const glossHTML = item.gloss
+        ? `<span class="item-gloss">${escapeHtml(item.gloss)}</span>` : '';
+      const refHTML = item.ref
+        ? `<span class="item-ref">${escapeHtml(item.ref)}</span>` : '';
+      const repsHTML = item.reps
+        ? `<span class="item-reps">${escapeHtml(item.reps)}</span>` : '';
+      const extraMeta = o.extraMeta || '';
+      const metaHTML = (refHTML || repsHTML || extraMeta)
+        ? `<span class="item-meta">${refHTML}${repsHTML}${extraMeta}</span>` : '';
+      return `
+                  <${tag} ${o.attrs || ''}
+                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] ${hoverBgClass} transition-all group ${gradeClass} ${o.inFamily ? 'family-child' : ''} ${o.extraClass || ''}">
+                    ${numHTML}
+                    <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
+                    <span class="leading-relaxed flex-1 min-w-0">
+                      <span class="item-name">${renderItemTag(item.type)}${item.label}</span>
+                      ${glossHTML}
+                      ${metaHTML}
+                    </span>
+                    ${o.trail || ''}
+                  </${tag}>
+                `;
+    }
+
+    // The Library's accordion tree, as a function so the slot picker in
+    // Action view can show the very same tree rather than a second design.
+    //   opts.idPrefix  'node-' (Library) | 'pick-node-' (picker sheet) — keeps ids unique
+    //   opts.openId    id of the category drawn open
+    //   opts.picker    omitted for the Library. For the picker:
+    //                  { has(path), suggested: Set, match(item), openAll }
+    //                  Rows become toggles (＋ / ✓) instead of links, and
+    //                  `match` filters rows while the reader searches.
+    function renderLibraryNodes(opts) {
+      opts = opts || {};
+      const picker = opts.picker || null;
+      const prefix = opts.idPrefix || 'node-';
+      const MARKER = 'web/render.html?file=';
+      const atomicOf = item => (item.path && item.path.startsWith(MARKER))
+        ? decodeURIComponent(item.path.slice(MARKER.length)) : null;
+      let html = '';
+
       VAULT_NAVIGATION_TREE.forEach((node, index) => {
-        const nodeId = `node-${index}`;
-        const activeTier = SHOW_TIER_UI ? getCategoryTier(nodeId) : 'muhsin';
-        const visibleItems = node.items.filter(item => itemVisibleAtTier(item, activeTier));
-        treeHTML += `
-          <div class="root-node root-node-card border border-[#E6DCD0] backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${activeNodeId === nodeId ? ' active' : ''}" id="${nodeId}">
+        if (picker && node.category === 'Documentation') return;
+        const nodeId = `${prefix}${index}`;
+        const activeTier = (SHOW_TIER_UI && !picker) ? getCategoryTier(nodeId) : 'muhsin';
+        let visibleItems = node.items.filter(item => itemVisibleAtTier(item, activeTier));
+
+        if (picker) {
+          // Only cards that can be placed in a slot; a family heading stays
+          // only while at least one of its cards does.
+          const kept = [];
+          visibleItems.forEach(item => {
+            if (item.type === 'family') kept.push(item);
+            else if (atomicOf(item) && picker.match(item)) kept.push(item);
+          });
+          visibleItems = kept.filter((item, i) => item.type !== 'family' || (kept[i + 1] && kept[i + 1].type !== 'family'));
+          if (!visibleItems.length) return;
+        }
+
+        const isOpen = picker ? (picker.openAll || opts.openId === nodeId) : opts.openId === nodeId;
+        const headAttr = picker ? `data-pick-node="${nodeId}"` : `onclick="toggleNode('${nodeId}')"`;
+
+        html += `
+          <div class="root-node root-node-card border border-[#E6DCD0] backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200 shadow-lg shadow-[#7D5243]/0${isOpen ? ' active' : ''}" id="${nodeId}">
 
 
-            <button onclick="toggleNode('${nodeId}')" class="root-node-head w-full flex items-center justify-between gap-3 p-4 text-left group">
+            <button type="button" ${headAttr} class="root-node-head w-full flex items-center justify-between gap-3 p-4 text-left group">
 
 
               <!-- Icon tile (left) -->
@@ -1795,7 +1908,7 @@
               </div>
             </button>
 
-            ${SHOW_TIER_UI ? `<div class="tier-chip-row">${renderTierChip(nodeId, activeTier)}</div>` : ''}
+            ${(SHOW_TIER_UI && !picker) ? `<div class="tier-chip-row">${renderTierChip(nodeId, activeTier)}</div>` : ''}
 
             <div class="branch-container bg-[#FFFBF1]/00">
               <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">
@@ -1807,51 +1920,39 @@
                   return visibleItems.map(item => {
                   if (item.type === 'family') {
                     inFamily = true;
+                    const linked = !picker && item.path;
                     const headHTML = `
                       <span>${item.icon || '📚'}</span>
                       <span class="family-divider-label">${item.label}</span>
-                      ${item.path ? '<span class="family-divider-hint">Open full sequence ↗</span>' : ''}`;
-                    return item.path
+                      ${linked ? '<span class="family-divider-hint">Open full sequence ↗</span>' : ''}`;
+                    return linked
                       ? `<a href="./${item.path}" class="family-divider family-olive">${headHTML}</a>`
                       : `<div class="family-divider family-olive">${headHTML}</div>`;
                   }
                   const familyChildClass = inFamily ? 'family-child' : '';
-                  const MARKER = 'web/render.html?file=';
-                  const atomicPath = (item.path && item.path.startsWith(MARKER)) ? decodeURIComponent(item.path.slice(MARKER.length)) : null;
-                  const starHTML = atomicPath
-                    ? `<button type="button" class="plan-add-card"
-                         data-plan-card-label="${escapeHtml(item.label)}" data-plan-card-path="${escapeHtml(atomicPath)}"
-                         title="Place in a slot of your day" aria-label="Place in a slot of your day">＋</button>`
-                    : '';
-                  const gradeClass = item.grade && GRADE_CLASSES[item.grade]
-                    ? GRADE_CLASSES[item.grade]
-                    : (item.tier ? 'grade-wird' : '');
-                  const hoverBgClass = gradeClass ? '' : 'hover:bg-[#B08A4B]/10';
-                  const numHTML = item.num ? `<span class="item-num-badge">${item.num}</span>` : '';
-                  // Three names, three weights: the familiar sound reads
-                  // first, the plain-English function under it, and the
-                  // hadith citation as a checkable badge.
-                  const glossHTML = item.gloss
-                    ? `<span class="item-gloss">${escapeHtml(item.gloss)}</span>` : '';
-                  const refHTML = item.ref
-                    ? `<span class="item-ref">${escapeHtml(item.ref)}</span>` : '';
-                  const repsHTML = item.reps
-                    ? `<span class="item-reps">${escapeHtml(item.reps)}</span>` : '';
-                  const metaHTML = (refHTML || repsHTML)
-                    ? `<span class="item-meta">${refHTML}${repsHTML}</span>` : '';
-                  return `
-                  <a href="./${item.path}"
-                     class="flex items-start gap-3 p-3 rounded-lg text-xs font-medium text-[#3A2E2B] hover:text-[#A94442] ${hoverBgClass} transition-all group ${gradeClass} ${familyChildClass}">
-                    ${numHTML}
-                    <span class="text-[#B08A4B] group-hover:text-[#A94442] font-mono-app select-none flex-shrink-0">${getItemPrefix(item.type)}</span>
-                    <span class="leading-relaxed flex-1 min-w-0">
-                      <span class="item-name">${renderItemTag(item.type)}${item.label}</span>
-                      ${glossHTML}
-                      ${metaHTML}
-                    </span>
-                    ${starHTML}
-                  </a>
-                `; }).join(''); })() : `<p class="tier-empty-hint">Nothing at this tier yet — try leveling up ↑</p>`}
+                  const atomicPath = atomicOf(item);
+                  const added = !!(picker && picker.has(atomicPath));
+                  // Trailing control: the Library's ＋ ("place in a slot")
+                  // or, inside the picker, the ＋ / ✓ toggle for this slot.
+                  const trailHTML = picker
+                    ? `<span class="plan-pick-mark${added ? ' is-added' : ''}" aria-hidden="true">${added ? '✓' : '＋'}</span>`
+                    : (atomicPath
+                      ? `<button type="button" class="plan-add-card"
+                           data-plan-card-label="${escapeHtml(item.label)}" data-plan-card-path="${escapeHtml(atomicPath)}"
+                           title="Place in a slot of your day" aria-label="Place in a slot of your day">＋</button>`
+                      : '');
+                  return somLibraryRow(item, {
+                    tag: picker ? 'div' : 'a',
+                    attrs: picker
+                      ? `role="button" tabindex="0" data-pick-card="${escapeHtml(atomicPath)}"`
+                      : `href="./${item.path}"`,
+                    trail: trailHTML,
+                    inFamily,
+                    extraClass: (added ? 'is-added' : '') + (picker ? ' cursor-pointer' : ''),
+                    extraMeta: (picker && picker.suggested.has(atomicPath))
+                      ? '<span class="plan-suggested">✦ suggested here</span>' : ''
+                  });
+                }).join(''); })() : `<p class="tier-empty-hint">Nothing at this tier yet — try leveling up ↑</p>`}
               </div>
             </div>
 
@@ -1859,8 +1960,7 @@
           </div>`;
       });
 
-
-      treeTarget.innerHTML = treeHTML;
+      return html;
     }
 
     // A card's Home button links back as index.html#node-3, so the reader
@@ -2232,38 +2332,50 @@
         return;
       }
       const t = schedule.times;
+
+      // The Islamic day opens at Maghrib, so the strip reads from the last
+      // sunset forward: Maghrib, ʿIshāʾ, Tahajjud, Fajr, Shurūq, Ẓuhr, ʿAṣr.
+      // After today's sunset the rest of the cycle is tomorrow's; before it,
+      // the cycle began at yesterday's sunset and the rest is today's.
+      const ok = d => d && d.complete !== false && d.maghrib && d.fajr;
+      const afterMaghrib = now >= t.maghrib;
+      const rest = afterMaghrib ? (ok(schedule.nextTimes) ? schedule.nextTimes : t)
+                                : t;
+      const cycleStart = afterMaghrib ? t : (ok(schedule.prevTimes) ? schedule.prevTimes : t);
+      const nightLen = rest.fajr - cycleStart.maghrib;
+      const tahajjudTime = new Date(cycleStart.maghrib.getTime() + (2 * nightLen) / 3);
+
       const marks = [
-        ['fajr', 'Fajr', t.fajr], ['shuruq', 'Shurūq', t.sunrise], ['dhuhr', 'Ẓuhr', t.dhuhr],
-        ['asr', 'ʿAṣr', t.asr], ['maghrib', 'Maghrib', t.maghrib], ['isha', 'ʿIshāʾ', t.isha]
+        ['maghrib', 'Maghrib', cycleStart.maghrib],
+        ['isha', 'ʿIshāʾ', cycleStart.isha],
+        [TAHAJJUD_DEF.key, null, tahajjudTime],
+        ['fajr', 'Fajr', rest.fajr],
+        ['shuruq', 'Shurūq', rest.sunrise],
+        ['dhuhr', 'Ẓuhr', rest.dhuhr],
+        ['asr', 'ʿAṣr', rest.asr]
       ];
-      // After ʿIshāʾ nothing today is still ahead, so the next prayer
-      // is tomorrow's Fajr — highlight that rather than dimming all six.
+
+      // The next prayer is the first one still ahead. Once ʿAṣr has passed
+      // nothing in the cycle is, and the next is today's Maghrib: highlight
+      // the first cell and show that sunset instead of yesterday's.
       let nextIdx = marks.findIndex(m => m[2] && m[2] > now);
       const wrapped = nextIdx === -1;
-      if (wrapped) nextIdx = 0;
-      const prayerCellsHTML = marks.map(([key, name, when], i) => {
-        const cls = [i === nextIdx ? 'is-next' : 'is-past'];
+      if (wrapped) { nextIdx = 0; marks[0][2] = t.maghrib; }
+
+      host.innerHTML = marks.map(([key, name, when], i) => {
+        const isTahajjud = key === TAHAJJUD_DEF.key;
+        const cls = ['prayer-cell'];
+        if (isTahajjud) cls.push('pc-tahajjud');
+        if (i === nextIdx) cls.push('is-next');
+        else if (!(when > now) && !(wrapped && i === 0)) cls.push('is-past');
         if (key === selectedKey) cls.push('is-selected');
-        const label = (wrapped && i === 0) ? `${name} ›` : name;
-        return `<button type="button" class="prayer-cell ${cls.join(' ')}" data-prayer="${key}">
+        const label = isTahajjud ? `${TAHAJJUD_DEF.icon} ${TAHAJJUD_DEF.name}`
+          : (wrapped && i === 0 ? `${name} ›` : name);
+        return `<button type="button" class="${cls.join(' ')}" data-prayer="${key}"${isTahajjud ? ' title="The last two-thirds of the night"' : ''}>
           <div class="pc-name">${label}</div>
           <div class="pc-time">${hhmm(when)}</div>
         </button>`;
       }).join('');
-
-      // Tahajjud has no place of its own on the sun's clock, so it
-      // sits at the end of the strip in its own night-dark cell —
-      // timed to when the night's last third actually opens.
-      const tahajjudTime = schedule.night ? schedule.night.thirdTwo : null;
-      const tahajjudCls = ['prayer-cell', 'pc-tahajjud'];
-      if (selectedKey === TAHAJJUD_DEF.key) tahajjudCls.push('is-selected');
-      const tahajjudHTML = `<button type="button" class="${tahajjudCls.join(' ')}" data-prayer="${TAHAJJUD_DEF.key}"
-        title="The last two-thirds of the night">
-        <div class="pc-name">${TAHAJJUD_DEF.icon} ${TAHAJJUD_DEF.name}</div>
-        <div class="pc-time">${hhmm(tahajjudTime)}</div>
-      </button>`;
-
-      host.innerHTML = prayerCellsHTML + tahajjudHTML;
     }
 
     // The list is rebuilt only when what it shows has changed — tick()

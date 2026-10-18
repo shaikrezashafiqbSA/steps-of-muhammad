@@ -1,7 +1,7 @@
 ::meta
 narrator: ʿAbdullāh ibn ʿAmr ibn al-ʿĀṣ (raḍiyallāhu ʿanhumā)
 collection: Sunan Abī Dāwūd
-book: Book 6 · Prayer (Kitāb aṣ-Ṣalāt): Detailed Injunctions about Ramaḍān
+book: Book 6 · Detailed Injunctions about Ramadan (كتاب شهر رمضان) · Chapter: On Fixing a Part of the Qur'an for Daily Recitation
 hadith: 1398
 grade: sahih
 grade-comment: Ṣaḥīḥ (al-Albānī)
@@ -13,57 +13,47 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# The Three Tiers of Night Prayer: Ten, One Hundred, and One Thousand Verses
+# Reward of standing at night with 10, 100, and 1000 Verses
 
-## 📜 The Hadith
+Just stand with 10 ayat and you will be written as a {{ ghāfilīn| الْغَافِلِينَ: “The heedless. Root gh-f-l: inattention, being unaware not mindful of Allah  - not necessarily forgetting}}
 
-ʿAbdullāh ibn ʿAmr ibn al-ʿĀṣ ؓ reported that the Messenger of Allah ﷺ said: *"Whoever stands in night prayer reciting ten verses will not be written among the heedless; whoever stands in night prayer with one hundred verses will be written among the devoutly obedient; and whoever stands in night prayer with one thousand verses will be written among the muqantirīn — those for whom a qinṭār (a vast treasure) of reward is recorded."*
+100 ayat: {{ qānitīn| الْقَانِتِينَ: “The devoutly obedient. Root q-n-t, same as Du’a al-Qunūt: humble, standing devotion (cf. 2:238) }}
 
-Abū Dāwūd ؒ noted: The name of Ibn Ḥujayrah al-Aṣghar is ʿAbdullāh ibn ʿAbd ar-Raḥmān ibn Ḥujayrah.
+1000 ayat:  {{ muqanṭarīn| الْمُقَنْطَرِينَ: “Those given a qinṭār of reward. Root q-n-ṭ-r: a huge, heaped-up store (cf. 3:14).” }}
+
+
+## 🔤 Word-by-Word
+
+[[ مَنْ | whoever | man ]] [[ قَامَ | prays at night | qāma ]] [[ بِعَشْرِ | with 10| bi-ʿashri ]] [[ آيَاتٍ | verses | āyātin ]] [[ لَمْ | not | lam ]] [[ يُكْتَبْ | he will be recorded | yuktab ]] [[ مِنَ | among | mina ]] [[ الْغَافِلِينَ | the negligent | l-ghāfilīna ]]
+
+[[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | prays at night | qāma ]] [[ بِمِائَةِ | with a 100| bi-miʾati ]] [[ آيَةٍ | verses | āyatin ]] [[ كُتِبَ | he will be recorded | kutiba ]] [[ مِنَ | among | mina ]] [[ الْقَانِتِينَ | the obedient | l-qānitīna ]]
+
+[[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | prays at night | qāma ]] [[ بِأَلْفِ | with a 1000| bi-alfi ]] [[ آيَةٍ | verses | āyatin ]] [[ كُتِبَ | he will be recorded | kutiba ]] [[ مِنَ | among | mina ]] [[ الْمُقَنْطَرِينَ | those who receive huge rewards | l-muqanṭarīna ]]
+
+
 
 <details>
 <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
+*🔗 Verify on sunnah.com — [Sunan Abī Dāwūd 1398:](https://sunnah.com/abudawud:1398)*
+
 **The Chain of Narrators (الإِسْنَاد)**
 
-[[ حَدَّثَنَا | narrated to us | ḥaddathanā ]] [[ أَحْمَدُ | Aḥmad | Aḥmadu ]] [[ بْنُ | son of | bnu ]] [[ صَالِحٍ | Ṣāliḥ | Ṣāliḥin ]] [[ حَدَّثَنَا | narrated to us | ḥaddathanā ]] [[ ابْنُ | son of | ibnu ]] [[ وَهْبٍ | Wahb | Wahbin ]] [[ أَخْبَرَنَا | informed us | akhbaranā ]] [[ عَمْرٌو | ʿAmr | ʿAmrun ]] [[ أَنَّ | that | anna ]] [[ أَبَا | Abū | abā ]] [[ سَوِيَّةَ | … (Sawiyyah) | Sawiyyata ]] [[ حَدَّثَهُ | narrated to him | ḥaddathahu ]] [[ أَنَّهُ | that he | annahu ]] [[ سَمِعَ | heard | samiʿa ]] [[ ابْنَ | Ibn | ibna ]] [[ حُجَيْرَةَ | … (Ḥujayrah) | Ḥujayrata ]] [[ يُخْبِرُ | informing | yukhbiru ]] [[ عَنْ | from | ʿan ]] [[ عَبْدِ | ʿAbd | ʿabdi ]] [[ اللَّهِ | … Allāh (ʿAbdullāh) | llāhi ]] [[ بْنِ | son of | bni ]] [[ عَمْرِو | ʿAmr | ʿamri ]] [[ بْنِ | son of | bni ]] [[ الْعَاصِ | al-ʿĀṣ | l-ʿāṣi ]] [[ قَالَ | he said | qāla ]] [[ قَالَ | said | qāla ]] [[ رَسُولُ | the Messenger | rasūlu ]] [[ اللَّهِ | of Allah | llāhi ]] [[ صلى | may Allah send blessings | ṣallā ]] [[ الله | Allah | llāhu ]] [[ عليه | upon him | ʿalayhi ]] [[ وسلم | and peace ﷺ | wa-sallam ]]
+[[ حَدَّثَنَا | he narrated to us | ḥaddathanā ]] [[ أَحْمَدُ | Aḥmad ibn Ṣāliḥ | Aḥmadu ]] [[ بْنُ | son of | ibnu ]] [[ صَالِحٍ | … | Ṣāliḥin ]] [[ حَدَّثَنَا | he narrated to us | ḥaddathanā ]] [[ ابْنُ | Ibn Wahb | ibnu ]] [[ وَهْبٍ | … | Wahbin ]] [[ أَخْبَرَنَا | he informed us | akhbaranā ]] [[ عَمْرٌو | ʿAmr | ʿAmrun ]] [[ أَنَّ | that | anna ]] [[ أَبَا | Abū Sawiyyah | Abā ]] [[ سَوِيَّةَ | … | Sawiyyata ]] [[ حَدَّثَهُ | narrated to him | ḥaddathahu ]] [[ أَنَّهُ | that he | annahu ]] [[ سَمِعَ | heard | samiʿa ]] [[ ابْنَ | Ibn Ḥujayrah | ibna ]] [[ حُجَيْرَةَ | … | Ḥujayrata ]] [[ يُخْبِرُ | reporting | yukhbiru ]] [[ عَنْ | from | ʿan ]] [[ عَبْدِ | ʿAbdullāh ibn ʿAmr ibn al-ʿĀṣ | ʿAbdi ]] [[ اللَّهِ | … | llāhi ]] [[ بْنِ | son of | ibni ]] [[ عَمْرِو | … | ʿAmrin ]] [[ بْنِ | son of | ibni ]] [[ الْعَاصِ | … | l-ʿĀṣi ]] [[ قَالَ | he said | qāla ]] [[ قَالَ | said | qāla ]] [[ رَسُولُ | the Messenger of | rasūlu ]] [[ اللَّهِ | Allah | llāhi ]] [[ صَلَّى | may Allah send blessings | ṣallā ]] [[ اللَّهُ | … | llāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمَ | and grant him peace ﷺ | wa-sallama ]]
 
 **The Text of the Hadith (المَتْن)**
 
-[[ مَنْ | whoever | man ]] [[ قَامَ | stands (in night prayer) | qāma ]] [[ بِعَشْرِ | with ten | bi-ʿashri ]] [[ آيَاتٍ | verses | āyātin ]] [[ لَمْ | not | lam ]] [[ يُكْتَبْ | is written | yuktab ]] [[ مِنَ | among | mina ]] [[ الْغَافِلِينَ | the heedless | l-ghāfilīna ]]
+[[ مَنْ | whoever | man ]] [[ قَامَ | prays at night | qāma ]] [[ بِعَشْرِ | with ten | bi-ʿashri ]] [[ آيَاتٍ | verses | āyātin ]] [[ لَمْ | not | lam ]] [[ يُكْتَبْ | he will be recorded | yuktab ]] [[ مِنَ | among | mina ]] [[ الْغَافِلِينَ | the negligent | l-ghāfilīna ]]
 
-[[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | stands | qāma ]] [[ بِمِائَةِ | with one hundred | bi-miʾati ]] [[ آيَةٍ | verses | āyatin ]] [[ كُتِبَ | is written | kutiba ]] [[ مِنَ | among | mina ]] [[ الْقَانِتِينَ | the devoutly obedient | l-qānitīna ]]
+[[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | prays at night | qāma ]] [[ بِمِائَةِ | with a hundred | bi-miʾati ]] [[ آيَةٍ | verses | āyatin ]] [[ كُتِبَ | he will be recorded | kutiba ]] [[ مِنَ | among | mina ]] [[ الْقَانِتِينَ | the obedient | l-qānitīna ]]
 
-[[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | stands | qāma ]] [[ بِأَلْفِ | with one thousand | bi-alfi ]] [[ آيَةٍ | verses | āyatin ]] [[ كُتِبَ | is written | kutiba ]] [[ مِنَ | among | mina ]] [[ الْمُقَنْطَرِينَ | those granted a qinṭār of reward | l-muqanṭarīna ]]
+[[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | prays at night | qāma ]] [[ بِأَلْفِ | with a thousand | bi-alfi ]] [[ آيَةٍ | verses | āyatin ]] [[ كُتِبَ | he will be recorded | kutiba ]] [[ مِنَ | among | mina ]] [[ الْمُقَنْطَرِينَ | those who receive huge rewards | l-muqanṭarīna ]]
 
-**Commentary (تَعْلِيق أَبِي دَاوُد)**
+**Commentary**
 
-[[ قَالَ | said | qāla ]] [[ أَبُو | Abū | abū ]] [[ دَاوُدَ | … (Dāwūd) | dāwūda ]] [[ ابْنُ | Ibn | ibnu ]] [[ حُجَيْرَةَ | … (Ḥujayrah) | ḥujayrata ]] [[ الأَصْغَرُ | the Younger | al-aṣgharu ]] [[ عَبْدُ | ʿAbd | ʿabdu ]] [[ اللَّهِ | … Allāh (ʿAbdullāh) | llāhi ]] [[ بْنُ | son of | bnu ]] [[ عَبْدِ | ʿAbd | ʿabdi ]] [[ الرَّحْمَنِ | … ar-Raḥmān | r-raḥmāni ]] [[ بْنِ | son of | bni ]] [[ حُجَيْرَةَ | … (Ḥujayrah) | ḥujayrata ]]
+[[ قَالَ | said | qāla ]] [[ أَبُو | Abū Dāwūd | Abū ]] [[ دَاوُدَ | … | Dāwūda ]] [[ ابْنُ | Ibn Ḥujayrah | ibnu ]] [[ حُجَيْرَةَ | … | Ḥujayrata ]] [[ الْأَصْغَرُ | al-Aṣghar | l-aṣgharu ]] [[ عَبْدُ | ʿAbdullāh ibn ʿAbd ar-Raḥmān ibn Ḥujayrah | ʿAbdu ]] [[ اللَّهِ | … | llāhi ]] [[ بْنُ | son of | ibnu ]] [[ عَبْدِ | … | ʿAbdi ]] [[ الرَّحْمَنِ | … | r-Raḥmāni ]] [[ بْنِ | son of | ibni ]] [[ حُجَيْرَةَ | … | Ḥujayrata ]]
 
 </details>
 
-## 🔤 Reward of standing with 10 - 100 - 1000 ayats at night
-
-**Tier One — Freedom from Ghāfilīn (heedlessness - brainfog):**
-
-[[ مَنْ | whoever | man ]] [[ قَامَ | stands (in night prayer) | qāma ]] [[ بِعَشْرِ | with ten | bi-ʿashri ]] [[ آيَاتٍ | verses | āyātin ]]
-
-[[ لَمْ | not | lam ]] [[ يُكْتَبْ | is written | yuktab ]] [[ مِنَ | among | mina ]] [[ الْغَافِلِينَ | the heedless | l-ghāfilīna ]]
-
-**Tier Two — Written Among the Qānitīn (obedient):**
-
-[[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | stands | qāma ]] [[ بِمِائَةِ | with one hundred | bi-miʾati ]] [[ آيَةٍ | verses | āyatin ]]
-
-[[ كُتِبَ | is written | kutiba ]] [[ مِنَ | among | mina ]] [[ الْقَانِتِينَ | the devoutly obedient | l-qānitīna ]]
-
-**Tier Three — Written Among the (receivers of) a Qinṭār of Reward:**
-
-[[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | stands | qāma ]] [[ بِأَلْفِ | with one thousand | bi-alfi ]] [[ آيَةٍ | verses | āyatin ]]
-
-[[ كُتِبَ | is written | kutiba ]] [[ مِنَ | among | mina ]] [[ الْمُقَنْطَرِينَ | those granted a qinṭār of reward | l-muqanṭarīna ]]
-
-
-
-
 ---
-*🔗 Verify on sunnah.com — Sunan Abī Dāwūd 1398: [https://sunnah.com/abudawud:1398](https://sunnah.com/abudawud:1398)*
+

@@ -43,8 +43,19 @@
   const BY_PRAYER = {};   // prayerKey -> [slotDef]
   const PRAYER_NAME = {};
 
+  // Header glyph (non-living symbols only, like the Library's) and the
+  // Arabic title shown beside the Latin one.
+  const ROLE_ICON = { before: '🔔', during: '🕋', after: '📿' };
+  const PRAYER_ICON = { fajr: '🌅', shuruq: '🌤️', dhuhr: '☀️', asr: '🌇', maghrib: '🌆', isha: '🌃', tahajjud: '✨', presleep: '🛏️' };
+  const ROLE_AR = { before: 'قبل الصلاة', during: 'في الصلاة', after: 'بعد الصلاة' };
+  const PRAYER_AR = { shuruq: 'الضحى', tahajjud: 'التهجد', presleep: 'قبل النوم' };
+
   function defineSlot(prayer, role, label, hint, windows, family) {
-    const def = { id: prayer + '.' + role, prayer, role, label, hint, windows: windows || [], family: family || null };
+    const def = {
+      id: prayer + '.' + role, prayer, role, label, hint, windows: windows || [], family: family || null,
+      icon: ROLE_ICON[role] || PRAYER_ICON[prayer] || '✦',
+      ar: ROLE_AR[role] || (role === 'between' || role === 'main' ? PRAYER_AR[prayer] : '') || ''
+    };
     SLOT_DEFS[def.id] = def;
     (BY_PRAYER[prayer] = BY_PRAYER[prayer] || []).push(def);
   }
@@ -203,7 +214,8 @@
     const hit = libraryItem(e.path);
     const item = hit ? hit.item : null;
     return {
-      type: 'card', key: entryKey(e), path: e.path,
+      type: 'card', key: entryKey(e), path: e.path, item,
+      family: hit ? hit.family : null, node: hit ? hit.node : null,
       label: e.label || (item && item.label) || prettyFromPath(e.path),
       gloss: item ? item.gloss : '', ref: item ? item.ref : '', grade: item ? item.grade : '',
       reps: e.reps || (item && item.reps) || '',

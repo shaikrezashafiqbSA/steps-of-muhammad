@@ -20,64 +20,148 @@
   const GRADE_CLASS = { sahih: 'ai-grade-sahih', hasan: 'ai-grade-hasan', daif: 'ai-grade-daif' };
 
   // ── Rows ───────────────────────────────────────────────
-  function rowInner(r) {
-    const grade = r.type === 'card' ? (GRADE_CLASS[r.grade] || 'ai-grade-none') : 'ai-grade-none';
-    const meta = [];
-    if (r.type === 'card' && r.ref) meta.push(`<span class="ai-ref">${esc(r.ref)}</span>`);
-    if (r.type === 'set') meta.push(`<span class="ai-ref">SET · ${r.count} duʿā${r.count === 1 ? '' : 's'}</span>`);
-    if (r.type === 'note') meta.push(`<span class="ai-ref">NOTE</span>`);
-    if (r.reps) meta.push(`<span class="ai-reps">${esc(r.reps)}</span>`);
-    return `
-      <span class="ai-grade ${grade}"></span>
-      <span class="ai-body">
-        <span class="ai-name">${esc(r.label)}</span>
-        ${r.gloss ? `<span class="ai-gloss">${esc(r.gloss)}</span>` : ''}
-        ${meta.length ? `<span class="ai-meta">${meta.join('')}</span>` : ''}
-      </span>`;
+  // A slot is drawn the way the Library draws a category: a collapsible
+  // card, family headings inside it, and the Library's own duʿā rows
+  // (grade tint, three names, citation) — index.html → somLibraryRow.
+
+  // Which slot is open on the current tab. undefined = not chosen yet
+  // (the first filled one opens), '' = the reader closed them all.
+  let openSlot;
+
+  const SET_FALLBACK = { grade: '', tier: '' };
+
+  // The Library row for one entry, in view mode (a link) or edit mode (static).
+  function entryRow(slotId, r, inFamily, edit) {
+    let item;
+    let href = null;
+    if (r.type === 'card') {
+      item = Object.assign({ label: r.label, gloss: '', ref: '' }, r.item || {});
+      item.label = r.label;
+      if (r.reps) item.reps = r.reps;
+      item.num = undefined;     // the Library's step numbers belong to its own sequences
+      href = './' + r.href + '&from=' + encodeURIComponent(slotId);
+    } else if (r.type === 'set') {
+      item = Object.assign({}, SET_FALLBACK, { type: 'set', label: r.label, gloss: r.gloss, ref: 'SET · ' + r.count + ' duʿā' + (r.count === 1 ? '' : 's') });
+      href = './' + r.href;
+    } else {
+      item = Object.assign({}, SET_FALLBACK, { type: 'note', label: r.label, gloss: '', ref: '', reps: r.reps });
+    }
+    return global.somLibraryRow(item, {
+      tag: (edit || !href) ? 'div' : 'a',
+      attrs: (edit || !href) ? '' : `href="${esc(href)}"`,
+      inFamily
+    });
   }
 
-  function renderRow(slotId, entry, i, n, edit) {
-    const r = P.resolve(entry);
-    if (!r) return '';
-    if (!edit) {
-      return r.type === 'note'
-        ? `<div class="action-item plan-note-row">${rowInner(r)}</div>`
-        : `<a class="action-item" href="./${esc(r.href)}${r.type === 'card' ? '&from=' + encodeURIComponent(slotId) : ''}">${rowInner(r)}</a>`;
-    }
+  function familyHeading(family) {
+    return `<div class="family-divider family-olive">
+      <span>${esc(family.icon || '📚')}</span>
+      <span class="family-divider-label">${esc(family.label)}</span>
+    </div>`;
+  }
+
+  // What goes inside a slot, whichever card or sub-section it is drawn in:
+  // its tools, then its rows. Consecutive cards from the same Library
+  // family sit under one heading.
+  function slotInner(def, edit) {
+    const list = P.entries(def.id);
+    const custom = P.isCustom(def.id);
+
+    let runKey = null;
+    const rows = list.map((e, i) => {
+      const r = P.resolve(e);
+      if (!r) return '';
+      let heading = '';
+      let inFamily = false;
+      // The slot's own title already says "Before Ṣalāh" etc., so that
+      // family heading would only repeat it.
+      const fam = (r.type === 'card' && r.family && r.family.label !== def.family) ? r.family : null;
+      if (fam) {
+        const key = (r.node ? r.node.category : '') + '|' + fam.label;
+        if (key !== runKey) { heading = familyHeading(fam); runKey = key; }
+        inFamily = true;
+      } else {
+        runKey = null;
+      }
+      const row = entryRow(def.id, r, inFamily, edit);
+      if (!edit) return heading + row;
+      return heading + `
+        <div class="plan-row">
+          <span class="plan-move">
+            <button type="button" class="plan-move-btn" data-plan-move="up" data-slot="${def.id}" data-idx="${i}" ${i === 0 ? 'disabled' : ''} aria-label="Move up">▲</button>
+            <button type="button" class="plan-move-btn" data-plan-move="down" data-slot="${def.id}" data-idx="${i}" ${i === list.length - 1 ? 'disabled' : ''} aria-label="Move down">▼</button>
+          </span>
+          <div class="plan-row-main">${row}</div>
+          <button type="button" class="plan-remove" data-plan-remove data-slot="${def.id}" data-idx="${i}" aria-label="Remove">✕</button>
+        </div>`;
+    }).join('');
+
+    const tools = edit
+      ? (custom ? `<div class="plan-slot-tools"><button type="button" class="plan-mini-btn" data-plan-reset data-slot="${def.id}" title="Go back to the default for this slot">↺ Reset to default</button></div>` : '')
+      : (list.length ? `
+          <div class="plan-slot-tools">
+            <a class="plan-mini-btn" href="./web/render.html?slot=${encodeURIComponent(def.id)}" title="Read this slot in order">▶ Open in order</a>
+            <button type="button" class="plan-mini-btn" data-plan-share data-slot="${def.id}" title="Share on WhatsApp">📤 Share</button>
+          </div>` : '');
+
+    return {
+      count: list.length,
+      custom,
+      html: `${tools}${rows}
+        ${edit && !list.length ? '<p class="plan-slot-empty">Nothing here yet.</p>' : ''}
+        ${edit ? `<button type="button" class="plan-add-btn" data-plan-add data-slot="${def.id}">＋ Add to ${esc(def.label)}</button>` : ''}`
+    };
+  }
+
+  const CHEVRON = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
+
+  function titleHTML(label, ar, custom) {
+    return `${esc(label)}${ar ? ` <span class="root-node-title-sep">·</span> <span class="root-node-title-ar" lang="ar" dir="rtl">${esc(ar)}</span>` : ''}${custom ? ' <span class="plan-slot-tag">edited</span>' : ''}`;
+  }
+
+  // A top-level collapsible card, drawn like a Library category.
+  function topCard(id, icon, titleInner, hint, count, bodyHTML, isOpen) {
     return `
-      <div class="plan-row">
-        <span class="plan-move">
-          <button type="button" class="plan-move-btn" data-plan-move="up" data-slot="${slotId}" data-idx="${i}" ${i === 0 ? 'disabled' : ''} aria-label="Move up">▲</button>
-          <button type="button" class="plan-move-btn" data-plan-move="down" data-slot="${slotId}" data-idx="${i}" ${i === n - 1 ? 'disabled' : ''} aria-label="Move down">▼</button>
-        </span>
-        <div class="action-item plan-static">${rowInner(r)}</div>
-        <button type="button" class="plan-remove" data-plan-remove data-slot="${slotId}" data-idx="${i}" aria-label="Remove">✕</button>
+      <div class="root-node root-node-card plan-slot-node border border-[#E6DCD0] backdrop-blur-md rounded-xl overflow-hidden transition-all duration-200${isOpen ? ' active' : ''}"
+           id="slot-${id.replace('.', '-')}" data-slot="${id}">
+        <button type="button" data-slot-toggle="${id}" class="root-node-head w-full flex items-center justify-between gap-3 p-4 text-left group" aria-expanded="${isOpen ? 'true' : 'false'}">
+          <div class="node-icon-tile">${icon}</div>
+          <div class="space-y-1 pr-2 flex-1 min-w-0">
+            <span class="root-node-title">${titleInner}</span>
+            <p class="root-node-desc">— ${esc(hint)}</p>
+          </div>
+          <span class="plan-slot-count">${count}</span>
+          <div class="root-node-chev">
+            <span class="chevron-icon inline-block transform origin-center">${CHEVRON}</span>
+          </div>
+        </button>
+        <div class="branch-container bg-[#FFFBF1]/00">
+          <div class="p-2 space-y-0.5 border-t border-[#E6DCD0]">${bodyHTML}</div>
+        </div>
       </div>`;
   }
 
-  function renderSlot(def, edit) {
-    const list = P.entries(def.id);
-    if (!list.length && !edit) return '';
-    const custom = P.isCustom(def.id);
-    const actions = edit
-      ? (custom ? `<button type="button" class="plan-mini-btn" data-plan-reset data-slot="${def.id}" title="Go back to the default for this slot">↺ Reset</button>` : '')
-      : (list.length ? `
-          <a class="plan-mini-btn" href="./web/render.html?slot=${encodeURIComponent(def.id)}" title="Read this slot in order">▶ Open</a>
-          <button type="button" class="plan-mini-btn" data-plan-share data-slot="${def.id}" title="Share on WhatsApp">📤</button>` : '');
+  // A collapsible inside the Ṣalāh card (Before / During / After).
+  // Deliberately not .root-node / .branch-container: those rules cascade to
+  // every descendant and would force these open with their parent.
+  function subCard(def, inner, isOpen) {
     return `
-      <section class="plan-slot${edit ? ' is-edit' : ''}" data-slot="${def.id}">
-        <header class="plan-slot-head">
-          <div class="plan-slot-copy">
-            <span class="plan-slot-title">${esc(def.label)}</span>${custom ? '<span class="plan-slot-tag">edited</span>' : ''}
-            <span class="plan-slot-hint">${esc(def.hint)}</span>
-          </div>
-          <div class="plan-slot-actions">${actions}</div>
-        </header>
-        ${list.map((e, i) => renderRow(def.id, e, i, list.length, edit)).join('')}
-        ${edit && !list.length ? '<p class="plan-slot-empty">Nothing here yet.</p>' : ''}
-        ${edit ? `<button type="button" class="plan-add-btn" data-plan-add data-slot="${def.id}">＋ Add to ${esc(def.label)}</button>` : ''}
-      </section>`;
+      <div class="plan-sub${isOpen ? ' active' : ''}" data-slot="${def.id}">
+        <button type="button" data-sub-toggle="${def.id}" class="family-divider family-olive plan-sub-head" aria-expanded="${isOpen ? 'true' : 'false'}">
+          <span>${def.icon}</span>
+          <span class="family-divider-label">${titleHTML(def.label, def.ar, inner.custom)}</span>
+          <span class="plan-slot-count plan-sub-count">${inner.count}</span>
+          <span class="plan-chev">${CHEVRON}</span>
+        </button>
+        <div class="plan-sub-body">
+          <div class="plan-sub-inner space-y-0.5">${inner.html}</div>
+        </div>
+      </div>`;
   }
+
+  // Which Ṣalāh sub-section is open: undefined = not chosen yet (the first
+  // filled one opens), '' = the reader closed them all.
+  let openSub;
 
   function renderPrayer(prayerKey, opts) {
     opts = opts || {};
@@ -86,7 +170,42 @@
     let defs = P.slotsFor(key).slice();
     if (opts.withPresleep && key !== 'presleep' && key !== 'tahajjud') defs = defs.concat(P.slotsFor('presleep'));
     const count = defs.reduce((sum, d) => sum + P.entries(d.id).length, 0);
-    let html = defs.map(d => renderSlot(d, edit)).join('');
+
+    // Before / During / After fold into one Ṣalāh card; everything else
+    // (the stretch until the next prayer, tahajjud, before sleep) stays its own card.
+    const salahDefs = defs.filter(d => d.role === 'before' || d.role === 'during' || d.role === 'after');
+    const others = defs.filter(d => salahDefs.indexOf(d) === -1);
+    const tops = [];
+    if (salahDefs.length) tops.push({ id: 'salah', group: true, defs: salahDefs });
+    others.forEach(d => tops.push({ id: d.id, group: false, defs: [d] }));
+    tops.forEach(t => { t.total = t.defs.reduce((n, d) => n + P.entries(d.id).length, 0); });
+
+    // Open: the card the reader chose, else the first that has something in it.
+    const chosen = openSlot === '' || tops.some(t => t.id === openSlot);
+    const open = chosen ? openSlot : ((tops.find(t => t.total) || {}).id || '');
+
+    const subChosen = openSub === '' || salahDefs.some(d => d.id === openSub);
+    const subOpen = subChosen ? openSub : ((salahDefs.find(d => P.entries(d.id).length) || {}).id || '');
+
+    let html = tops.map(t => {
+      const isOpen = edit || t.id === open;
+      if (!t.group) {
+        const d = t.defs[0];
+        if (!t.total && !edit) return '';
+        const inner = slotInner(d, edit);
+        return topCard(d.id, d.icon, titleHTML(d.label, d.ar, inner.custom), d.hint, inner.count, inner.html, isOpen);
+      }
+      if (!t.total && !edit) return '';
+      const subs = t.defs.map(d => {
+        const inner = slotInner(d, edit);
+        if (!inner.count && !edit) return '';
+        return subCard(d, inner, edit || d.id === subOpen);
+      }).join('');
+      const anyCustom = t.defs.some(d => P.isCustom(d.id));
+      return topCard('salah', '🕌', titleHTML('Ṣalāh', 'الصَّلَاة', anyCustom),
+        'Before, during and after the prayer', t.total, subs, isOpen);
+    }).join('');
+
     if (edit) {
       html = `<p class="plan-edit-note">Editing — changes are saved on this device. Slots you leave alone keep following the default plan.</p>` + html;
     } else if (!html) {
@@ -113,7 +232,7 @@
   }
 
   // ── The sheet ──────────────────────────────────────────
-  const sheet = { mode: null, slotId: null, card: null, tab: 'suggested', q: '' };
+  const sheet = { mode: null, slotId: null, card: null, tab: 'library', q: '', openNode: null };
   let sheetEl = null;
 
   function ensureSheet() {
@@ -139,6 +258,10 @@
     document.body.appendChild(sheetEl);
 
     sheetEl.addEventListener('click', onSheetClick);
+    sheetEl.addEventListener('keydown', e => {
+      const row = e.target.closest && e.target.closest('[data-pick-card]');
+      if (row && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); row.click(); }
+    });
     sheetEl.querySelector('#plan-sheet-q').addEventListener('input', e => {
       sheet.q = e.target.value.trim().toLowerCase();
       renderSheetList();
@@ -171,10 +294,14 @@
 
   function openPicker(slotId) {
     ensureSheet();
-    Object.assign(sheet, { mode: 'pick', slotId, card: null, tab: 'suggested', q: '' });
+    Object.assign(sheet, { mode: 'pick', slotId, card: null, tab: 'library', q: '', openNode: null });
     sheetEl.querySelector('#plan-sheet-q').value = '';
-    // Nothing tagged for this slot -> start in the Library instead of an empty tab.
-    if (!P.suggestionsFor(slotId).length) sheet.tab = 'library';
+    // Start with the category that already has cards tagged for this slot open.
+    const first = P.suggestionsFor(slotId)[0];
+    if (first && typeof VAULT_NAVIGATION_TREE !== 'undefined') {
+      const idx = VAULT_NAVIGATION_TREE.indexOf(first.node);
+      if (idx !== -1) sheet.openNode = 'pick-node-' + idx;
+    }
     renderSheetChrome();
     renderSheetList();
     openSheet();
@@ -199,31 +326,15 @@
       return;
     }
     title.textContent = slotTitle(sheet.slotId);
-    const TABS = [['suggested', 'Suggested'], ['library', 'Library'], ['sets', 'Sets'], ['note', 'Note']];
+    const TABS = [['library', 'Library'], ['sets', 'Sets'], ['note', 'Note']];
     tabs.innerHTML = TABS.map(([id, label]) =>
       `<button type="button" class="plan-tab${sheet.tab === id ? ' active' : ''}" data-sheet-tab="${id}">${label}</button>`).join('');
-    search.style.display = (sheet.tab === 'suggested' || sheet.tab === 'library') ? '' : 'none';
+    search.style.display = sheet.tab === 'library' ? '' : 'none';
   }
 
-  function matches(row) {
+  function matches(item) {
     if (!sheet.q) return true;
-    const it = row.item;
-    return [it.label, it.gloss, it.ref].some(s => s && String(s).toLowerCase().includes(sheet.q));
-  }
-
-  function cardRowHTML(row) {
-    const added = P.has(sheet.slotId, { type: 'card', path: row.path });
-    const it = row.item;
-    return `
-      <button type="button" class="plan-pick-row${added ? ' is-added' : ''}" data-pick-card="${esc(row.path)}">
-        <span class="ai-grade ${GRADE_CLASS[it.grade] || 'ai-grade-none'}"></span>
-        <span class="ai-body">
-          <span class="ai-name">${esc(it.label)}</span>
-          ${it.gloss ? `<span class="ai-gloss">${esc(it.gloss)}</span>` : ''}
-          ${it.ref ? `<span class="ai-meta"><span class="ai-ref">${esc(it.ref)}</span></span>` : ''}
-        </span>
-        <span class="plan-pick-state">${added ? '✓' : '＋'}</span>
-      </button>`;
+    return [item.label, item.gloss, item.ref].some(v => v && String(v).toLowerCase().includes(sheet.q));
   }
 
   function renderSheetList() {
@@ -242,21 +353,20 @@
             <span class="plan-pick-state">${has ? '✓' : '＋'}</span>
           </button>`;
         }).join('')}`).join('');
-    } else if (sheet.tab === 'suggested') {
-      const rows = P.suggestionsFor(sheet.slotId).filter(matches);
-      html = rows.length ? rows.map(cardRowHTML).join('')
-        : `<p class="plan-sheet-empty">${sheet.q ? 'No suggestion matches that.' : 'Nothing in the vault is tagged for this slot — try the Library tab.'}</p>`;
     } else if (sheet.tab === 'library') {
-      const byCat = [];
-      P.library().filter(matches).forEach(row => {
-        let g = byCat[byCat.length - 1];
-        if (!g || g.node !== row.node) { g = { node: row.node, rows: [] }; byCat.push(g); }
-        g.rows.push(row);
-      });
-      html = byCat.length ? byCat.map(g => `
-        <p class="plan-choose-group">${esc(g.node.icon || '')} ${esc(g.node.category)}</p>
-        ${g.rows.map(cardRowHTML).join('')}`).join('')
-        : '<p class="plan-sheet-empty">No duʿā matches that.</p>';
+      // The Library's own accordion (index.html → renderLibraryNodes), so
+      // picking looks and behaves exactly like browsing.
+      const suggested = new Set(P.suggestionsFor(sheet.slotId).map(r => r.path));
+      html = global.renderLibraryNodes({
+        idPrefix: 'pick-node-',
+        openId: sheet.openNode,
+        picker: {
+          has: path => P.has(sheet.slotId, { type: 'card', path }),
+          suggested,
+          match: matches,
+          openAll: !!sheet.q
+        }
+      }) || '<p class="plan-sheet-empty">No duʿā matches that.</p>';
     } else if (sheet.tab === 'sets') {
       html = P.sets().map(s => {
         const added = P.has(sheet.slotId, { type: 'set', set: s.id });
@@ -292,6 +402,14 @@
       sheet.tab = tab.dataset.sheetTab;
       renderSheetChrome();
       renderSheetList();
+      return;
+    }
+
+    const nodeBtn = e.target.closest('[data-pick-node]');
+    if (nodeBtn) {
+      const id = nodeBtn.dataset.pickNode;
+      sheet.openNode = sheet.openNode === id ? null : id;
+      sheetEl.querySelectorAll('.root-node').forEach(n => n.classList.toggle('active', n.id === sheet.openNode));
       return;
     }
 
@@ -344,6 +462,40 @@
   // ── Clicks inside the Action list ──────────────────────
   function mount(listEl) {
     listEl.addEventListener('click', e => {
+      const editing = !!listEl.querySelector('.plan-edit-note');
+      const refreshLit = () => { if (typeof global.updateNurFromDrawers === 'function') global.updateNurFromDrawers(); };
+
+      // Before / During / After inside the Ṣalāh card.
+      const subTog = e.target.closest('[data-sub-toggle]');
+      if (subTog) {
+        const sub = subTog.closest('.plan-sub');
+        const id = sub.dataset.slot;
+        if (editing) {
+          sub.classList.toggle('active');   // edit mode: each folds on its own
+        } else {
+          openSub = (openSub === id || (openSub === undefined && sub.classList.contains('active'))) ? '' : id;
+          listEl.querySelectorAll('.plan-sub').forEach(n => n.classList.toggle('active', n.dataset.slot === openSub));
+        }
+        subTog.setAttribute('aria-expanded', sub.classList.contains('active') ? 'true' : 'false');
+        return;
+      }
+
+      // The top-level cards: the Ṣalāh card, the stretch until the next prayer, …
+      const tog = e.target.closest('[data-slot-toggle]');
+      if (tog) {
+        const id = tog.dataset.slotToggle;
+        const node = tog.closest('.plan-slot-node');
+        if (editing) {
+          node.classList.toggle('active');
+        } else {
+          openSlot = (openSlot === id || (openSlot === undefined && node.classList.contains('active'))) ? '' : id;
+          listEl.querySelectorAll('.plan-slot-node').forEach(n => n.classList.toggle('active', n.dataset.slot === openSlot));
+        }
+        tog.setAttribute('aria-expanded', node.classList.contains('active') ? 'true' : 'false');
+        refreshLit();
+        return;
+      }
+
       const mv = e.target.closest('[data-plan-move]');
       if (mv) { if (!mv.disabled) P.move(mv.dataset.slot, +mv.dataset.idx, mv.dataset.planMove); return; }
 
