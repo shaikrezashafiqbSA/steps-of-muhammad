@@ -1,8 +1,8 @@
 ::meta
 narrator: Attributed in popular circulation to Abū al-Dardāʾ (raḍiyallāhu ʿanhu) — Compiled in a wirid collection by Habib ʿUmar bin Hafiz, caretaker of Pondok Pesantren Darul Mustofa, Tarim, Hadhramaut
 book: Not confirmed (see note above)
-hadith: Not confirmed — no verified hadith number located
-grade: Not independently verifiable; a secondary source states the chain is not ṣaḥīḥ. Please verify with a qualified scholar or hadith database before relying on this for religious rulings.
+hadith: 
+grade: 
 grade-comment: Da'if (weak) per non-primary sources — verify before citing as an authenticated narration
 hikmah-source: derived
 hikmah-citation:
