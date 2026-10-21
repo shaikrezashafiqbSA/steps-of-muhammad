@@ -811,6 +811,12 @@ Action view is a loadout: each part of the day is a **slot** (`fajr.after`, `dhu
 
 `web/render.html?slot=<slot id>` reads a slot in order as a card of embeds, the first one open — the same code path as `?collection=<set id>` for the shipped sets in `PRESET_COLLECTIONS`. The `time` tags in `nav-data.js` no longer decide what Action view shows; they only feed the picker's "Suggested" tab.
 
+### The moon tooltip (Hijri date and daily tidbits)
+
+Tapping the moon on the Action view horizon opens a tooltip: the Hijri date, the phase, a one-line tidbit for the day, and a collapsible month calendar. **Everything you write by hand lives in `web/hijri-data.js`**: `SOM_HIJRI_NOTES` (a note per `'month-day'`, with a `ref`), `SOM_HIJRI_MONTH_NOTES` (a fallback line per month) and `SOM_HIJRI_MONTH_STARTS` (a correction when your authority announces a different first day than the computed one). The Islamic day turns at Maghrib, so a note about a night is keyed to the day that opens that evening.
+
+Month starts are computed in `web/hijri.js` from the moon, using the Nusantara (MABIMS) criterion — at sunset on the 29th the crescent must be at least 3 degrees up and 6.4 degrees from the sun. This is a calculation, not a sighting.
+
 ### Testing
 
 `fetch()` requires `http://`, not `file://`. Serve the folder locally:

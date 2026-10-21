@@ -162,6 +162,7 @@
   // Which Ṣalāh sub-section is open: undefined = not chosen yet (the first
   // filled one opens), '' = the reader closed them all.
   let openSub;
+  let lastPrayer = null;
 
   function renderPrayer(prayerKey, opts) {
     opts = opts || {};
@@ -180,12 +181,12 @@
     others.forEach(d => tops.push({ id: d.id, group: false, defs: [d] }));
     tops.forEach(t => { t.total = t.defs.reduce((n, d) => n + P.entries(d.id).length, 0); });
 
-    // Open: the card the reader chose, else the first that has something in it.
-    const chosen = openSlot === '' || tops.some(t => t.id === openSlot);
-    const open = chosen ? openSlot : ((tops.find(t => t.total) || {}).id || '');
-
-    const subChosen = openSub === '' || salahDefs.some(d => d.id === openSub);
-    const subOpen = subChosen ? openSub : ((salahDefs.find(d => P.entries(d.id).length) || {}).id || '');
+    // Everything starts folded, so a prayer tab reads as a high-level outline
+    // (card titles + counts). What the reader opens stays open until they
+    // switch tab; each tab starts folded again.
+    if (key !== lastPrayer) { openSlot = undefined; openSub = undefined; lastPrayer = key; }
+    const open = tops.some(t => t.id === openSlot) ? openSlot : '';
+    const subOpen = salahDefs.some(d => d.id === openSub) ? openSub : '';
 
     let html = tops.map(t => {
       const isOpen = edit || t.id === open;

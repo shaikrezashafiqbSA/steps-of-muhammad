@@ -14,7 +14,7 @@
      cap; the app still renders offline once they are cached.
    ════════════════════════════════════════════════════════════════ */
 
-const VERSION = 'v1.1.0';
+const VERSION = 'v1.2.0';
 const SHELL_CACHE = `shell-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 const CDN_CACHE = `cdn-${VERSION}`;
@@ -32,6 +32,9 @@ const PRECACHE = [
   './web/default-plan.js',
   './web/plan.js',
   './web/plan-ui.js',
+  './web/hijri-data.js',
+  './web/hijri.js',
+  './web/moon.js',
   './web/tips.js',
   './web/sun-clock.js',
   './web/pwa-install.js',

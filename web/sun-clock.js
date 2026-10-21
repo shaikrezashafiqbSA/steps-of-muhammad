@@ -141,23 +141,37 @@
     return { altitude: alt, azimuth: az, declination: decl, hourAngle: H };
   }
 
-  // Low-precision lunar position — good enough to place a moon
-  // on a horizon and to draw the right phase, not for almanac work.
+  // Low-precision lunar position (the Astronomical Almanac's short series):
+  // about 0.3° in longitude, 0.2° in latitude. Good enough to place the moon
+  // on a horizon, draw its phase and tilt, and judge the new-moon crescent
+  // against a 3° / 6.4° visibility criterion — not for almanac work.
   function moonPositionNow(date, lat, lng) {
     const jd = julianDay(date);
     const d = jd - 2451545.0;
+    const T = d / 36525;
 
-    const L = fixAngle(218.316 + 13.176396 * d);  // mean longitude
-    const M = fixAngle(134.963 + 13.064993 * d);  // mean anomaly
-    const F = fixAngle(93.272 + 13.229350 * d);   // argument of latitude
-
-    const lon = L + 6.289 * sin(M);
-    const lat_ = 5.128 * sin(F);
+    // Ecliptic longitude, latitude and horizontal parallax of the moon.
+    const lon = fixAngle(218.32 + 481267.881 * T
+      + 6.29 * sin(135.0 + 477198.87 * T)
+      - 1.27 * sin(259.3 - 413335.36 * T)
+      + 0.66 * sin(235.7 + 890534.22 * T)
+      + 0.21 * sin(269.9 + 954397.74 * T)
+      - 0.19 * sin(357.5 + 35999.05 * T)
+      - 0.11 * sin(186.5 + 966404.03 * T));
+    const lat_ = 5.13 * sin(93.3 + 483202.02 * T)
+      + 0.28 * sin(228.2 + 960400.89 * T)
+      - 0.28 * sin(318.3 + 6003.15 * T)
+      - 0.17 * sin(217.6 - 407332.21 * T);
+    const parallax = 0.9508
+      + 0.0518 * cos(135.0 + 477198.87 * T)
+      + 0.0095 * cos(259.3 - 413335.36 * T)
+      + 0.0078 * cos(235.7 + 890534.22 * T)
+      + 0.0028 * cos(269.9 + 954397.74 * T);
     const e = 23.439 - 0.00000036 * d;
 
     const RA = fixAngle(atan2(
-      sin(lon) * cos(e) - tan(lat_) * sin(e),
-      cos(lon)
+      sin(lon) * cos(lat_) * cos(e) - sin(lat_) * sin(e),
+      cos(lon) * cos(lat_)
     ));
     const decl = asin(sin(lat_) * cos(e) + cos(lat_) * sin(e) * sin(lon));
 
@@ -167,15 +181,50 @@
 
     const alt = asin(sin(lat) * sin(decl) + cos(lat) * cos(decl) * cos(H));
     const az = fixAngle(180 + atan2(sin(H), cos(H) * sin(lat) - tan(decl) * cos(lat)));
+    // The moon is close enough that standing on the surface instead of at the
+    // centre of the Earth lowers it by up to ~1°; rise/set and crescent
+    // criteria are quoted for the observer, so give that altitude too.
+    const altTopo = alt - parallax * cos(alt);
 
-    // Phase from the sun–moon elongation: 0 = new, 0.5 = full.
+    // Sun, for phase and for the tilt of the lit side.
     const sunLon = fixAngle(280.459 + 0.98564736 * d +
       1.915 * sin(fixAngle(357.529 + 0.98560028 * d)));
-    const elongation = fixAngle(lon - sunLon);
+    const sunRA = fixAngle(atan2(sin(sunLon) * cos(e), cos(sunLon)));
+    const sunDec = asin(sin(e) * sin(sunLon));
+
+    const elongation = fixAngle(lon - sunLon);   // ecliptic, 0 = new, 180 = full
     const phase = elongation / 360;              // 0…1 through the synodic month
     const illumination = (1 - cos(elongation)) / 2;
+    // True angular separation from the sun (includes the moon's latitude).
+    const separation = acos(Math.max(-1, Math.min(1, cos(lat_) * cos(elongation))));
 
-    return { altitude: alt, azimuth: az, hourAngle: H, phase, illumination, elongation };
+    // Position angle of the bright limb from celestial north (Meeus 48.5), and
+    // the parallactic angle that turns "north up" into "zenith up" for this
+    // observer. Together they say which way the lit side points in the sky.
+    const brightLimb = fixAngle(atan2(
+      cos(sunDec) * sin(sunRA - RA),
+      sin(sunDec) * cos(decl) - cos(sunDec) * sin(decl) * cos(sunRA - RA)
+    ));
+    const parallactic = atan2(sin(H), tan(lat) * cos(decl) - sin(decl) * cos(H));
+
+    return {
+      altitude: alt, altitudeTopo: altTopo, azimuth: az, hourAngle: H,
+      phase, illumination, elongation, separation,
+      brightLimb, parallactic, ecliptic: { lon, sunLon }
+    };
+  }
+
+  // Signed sun–moon ecliptic angle in (−180, 180]; crosses 0 upward at each
+  // new moon. Cheap, for root-finding the conjunction.
+  function moonElongationAt(ms) {
+    const T = (ms / 86400000 + 2440587.5 - 2451545.0) / 36525;
+    const d = T * 36525;
+    const lon = 218.32 + 481267.881 * T
+      + 6.29 * sin(135.0 + 477198.87 * T) - 1.27 * sin(259.3 - 413335.36 * T)
+      + 0.66 * sin(235.7 + 890534.22 * T) + 0.21 * sin(269.9 + 954397.74 * T)
+      - 0.19 * sin(357.5 + 35999.05 * T) - 0.11 * sin(186.5 + 966404.03 * T);
+    const sunLon = 280.459 + 0.98564736 * d + 1.915 * sin(357.529 + 0.98560028 * d);
+    return fixAngle(lon - sunLon + 180) - 180;
   }
 
   // ── The eleven windows ───────────────────────────────────
@@ -321,6 +370,7 @@
     prayerTimes,
     sunPositionNow,
     moonPositionNow,
+    moonElongationAt,
     buildSchedule,
     currentWindow,
     defaultLocation
