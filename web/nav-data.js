@@ -83,13 +83,16 @@ const VAULT_NAVIGATION_TREE = [
       { label: "Sulaymān's repentance ... and ask for Kingdom", gloss: "Rabbighfirli ...", ref: "Sūrat Saad 38:35", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/forgiveness-sulaiman.md" },
       { label: "Forgive Us, Do Not Place Ghilla in Our Hearts", gloss: ".. wa la taj'al fi qulubina Ghilla..", ref: "Sūrat Al Hashr 59:10", tier: "jemaah", grade: "sahih", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/forgive-us-do-not-place-ghilla-in-hearts.md" },
       { label: "Forgiveness for Parents and All Believers", gloss: "Rabbighfir li-walidayhi ..", ref: "Musnad al-Shāmiyīn lil-Ṭabarānī 2118", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/forgiveness-parents-all-believers.md" },
-      //forgiveness family
+      // General Dua family
       { type: "family", label: "Ya Allah, teach me how to ask you", icon: "🤲", tier: "imam" },
       { label: "Asking through the Greatest Name — when He is asked by it, He gives", gloss: "Bi-Annī Ashhadu Annaka Anta-llāh", ref: "Tirmidhī 3475", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*adhan", "*any"], path: "web/render.html?file=content/dua/in-greatest-of-names.md" },
       { label: "The duʿāʾ he ﷺ said most often: Dunya, Akhirah and protection from Punishment of Naar", gloss: "Rabbana atina fid dunya...", ref:"Surat Al Baqarah 2:201", tier: "jemaah", grade:"sahih", time:["*salah", "*any"], path: "web/render.html?file=content/dua/rabbana-atina-fid-dunya.md"},
       { label: "ʿĀʾishah's comprehensive ask — all good, known and unknown", gloss: "Asʾaluka min al-Khayri Kullih", ref: "Ibn Mājah 3846", tier: "imam", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/aisyah-comprehensive-ask.md" },
       { label: "O Allah, set right for me my religion ...", gloss: "Allahuma aṣliḥ lī dīniya ...  ", ref: "Muslim 2720", tier: "muhsin",grade: "sahih", time: ["day-fajr-post", "day-asr-post", "*any"], path: "web/render.html?file=content/dua/o-allah-set-right-for-me-my-religion.md" },
       { label: "Duas of the IbadurRahman", gloss: "Rabbana habla min azwajina ...", ref: "Qurʾān 25:63-77", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/dua-ibadurrahman.md"},
+      { label: "Dua Selamat", gloss: "Allāhumma innā nasʾaluka salāmatan fi din...", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/dua-selamat.md"},
+      
+      
       // Steadfastness of heart and Din
       { type: "family", label: "Ya Allah, Make me follow you", icon: "🫀", tier: "imam" },
       { label: "The duʿāʾ he ﷺ said most often: hold my heart firm on Your dīn", gloss: "Yā Muqallibal-Qulūb...", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/ya-muqallibal-qulub.md" },
