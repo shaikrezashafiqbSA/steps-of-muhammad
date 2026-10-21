@@ -1396,6 +1396,29 @@
     }
     .plan-toast.show { transform: translate(-50%, 0); }
 
+    /* Share the app — small, bottom right, out of the way of the content */
+    .share-app-btn {
+      position: fixed;
+      right: 0.9rem;
+      bottom: 0.9rem;
+      z-index: 55;
+      width: 2.6rem;
+      height: 2.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(176, 138, 75, 0.45);
+      background: rgba(255, 251, 241, 0.92);
+      color: #7D5243;
+      box-shadow: 0 4px 14px rgba(125, 82, 67, 0.28);
+      backdrop-filter: blur(6px);
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .share-app-btn:hover { background: #7D5243; color: #FFFBF1; transform: translateY(-1px); }
+    body.plan-sheet-open .share-app-btn { display: none; }
+
     /* ══════════════════════════════════════════════════════
        THE MOON TOOLTIP — opens when the moon on the horizon is tapped
        ══════════════════════════════════════════════════════ */
@@ -1712,12 +1735,46 @@
   </main>
 
 
+  <!-- Share the app: a small floating button, bottom right -->
+  <button type="button" id="share-app-btn" class="share-app-btn" title="Share this app" aria-label="Share this app">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"></line>
+    </svg>
+  </button>
+
   <footer class="w-full text-center text-[10px] text-[#7A6F6C] font-mono-app tracking-widest uppercase pb-6 select-none relative z-10">
     Compiled for ✦ the foam of the seas
   </footer>
 
 
   <script src="web/tips.js" defer></script>
+  <script>
+    // Share the app. The native share sheet where the browser has one
+    // (WhatsApp, Messages, …); otherwise copy the link. The link is the
+    // app's own address — no query or hash, so the receiver lands on Action
+    // view fresh rather than on whatever tab or card the sender was on.
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('share-app-btn');
+      if (!btn) return;
+      btn.addEventListener('click', async () => {
+        const url = window.location.origin + window.location.pathname.replace(/index\.html$/, '');
+        const title = 'Steps of Muḥammad ﷺ';
+        const text = 'Steps of Muḥammad ﷺ — adhkār, duʿā and ṣalāh arranged by the hour of the day, word by word and fully sourced. Free, and works offline.';
+        if (navigator.share) {
+          try { await navigator.share({ title, text, url }); }
+          catch (err) { if (err && err.name !== 'AbortError') console.warn('Share failed:', err); }
+          return;
+        }
+        try {
+          await navigator.clipboard.writeText(url);
+          SomPlanUI.toast('Link copied — paste it anywhere');
+        } catch (err) {
+          SomPlanUI.toast(url);
+        }
+      });
+    });
+  </script>
   <script src="web/plan-ui.js"></script>
   <script>
     const ROOT_CONFIG = {
