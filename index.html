@@ -1752,15 +1752,10 @@
     <div class="masthead-inner">
       <span class="skill-icon" aria-hidden="true"><span class="skill-light"></span><img src="assets/imam-figure.png" alt="" width="268" height="320"></span>
       <h1 class="masthead-title" id="masthead-title" aria-label="Be the Imam: Steps of Muḥammad ﷺ">
-        <span class="mh-name">Be the <span class="som-tip mh-word" tabindex="0" role="button"
-          data-tip="…and make us an imām for the God-conscious. From the duʿāʾ of the ʿIbād ar-Raḥmān — a supplication, asked with humility, not a title."
-          data-tip-ar="وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا" data-tip-ref="Sūrat al-Furqān 25:74">Imam</span>:</span>
-        <span class="mh-steps">Steps of <span class="som-tip mh-word" tabindex="0" role="button"
-          data-tip="There has certainly been for you in the Messenger of Allah an excellent example — for whoever hopes in Allah and the Last Day and remembers Allah often. The role model: uswatun ḥasanah."
-          data-tip-ar="لَقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ" data-tip-ref="Sūrat al-Aḥzāb 33:21">Mu<span class="mh-ha">ḥa</span>mmad</span> ﷺ</span>
+        <span class="mh-name">Be the <span class="som-tip mh-word" tabindex="0" role="button" data-tip-key="imam">Imam</span>:</span>
+        <span class="mh-steps">Steps of <span class="som-tip mh-word" tabindex="0" role="button" data-tip-key="muhammad">Mu<span class="mh-ha">ḥa</span>mmad</span> ﷺ</span>
       </h1>
-      <span class="som-tip masthead-sticker" tabindex="0" role="button"
-        data-tip="Nusantara Edition — the practices in this collection are gathered from across the Nusantara, the Malay world. Prayer times default to the JAKIM / MUIS method, and months begin by the MABIMS criterion.">
+      <span class="som-tip masthead-sticker" tabindex="0" role="button" data-tip-key="nusantara">
         <span class="mh-sticker-top">Nusantara</span><span class="mh-sticker-bot">Edition</span>
       </span>
     </div>
@@ -2296,6 +2291,14 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       document.title = APP_META.name;
+      // The masthead tooltips (Imam / Muḥammad / Nusantara) are written in web/app-meta.js.
+      document.querySelectorAll('[data-tip-key]').forEach(el => {
+        const t = (APP_META.tips || {})[el.dataset.tipKey];
+        if (!t) return;
+        el.dataset.tip = t.text || '';
+        if (t.ar) el.dataset.tipAr = t.ar;
+        if (t.ref) el.dataset.tipRef = t.ref;
+      });
       renderApp();
       openNodeFromHash();
     });
@@ -2904,6 +2907,15 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
+        // When a new version of the app takes over (an update), reload once so the
+        // page and its scripts are the same version. Not on the very first install.
+        const hadController = !!navigator.serviceWorker.controller;
+        let reloaded = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (!hadController || reloaded) return;
+          reloaded = true;
+          window.location.reload();
+        });
         navigator.serviceWorker.register('sw.js').catch((err) => {
           console.warn('SW registration failed:', err);
         });

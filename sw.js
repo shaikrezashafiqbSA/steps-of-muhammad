@@ -14,7 +14,7 @@
      cap; the app still renders offline once they are cached.
    ════════════════════════════════════════════════════════════════ */
 
-const VERSION = 'v1.3.0';
+const VERSION = 'v1.4.0';
 const SHELL_CACHE = `shell-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 const CDN_CACHE = `cdn-${VERSION}`;
@@ -53,7 +53,9 @@ const PRECACHE = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(SHELL_CACHE)
-      .then((cache) => cache.addAll(PRECACHE))
+      // cache:'reload' skips the browser's HTTP cache, so a fresh install never
+      // pre-caches a copy that is already ten minutes stale.
+      .then((cache) => Promise.all(PRECACHE.map((url) => cache.add(new Request(url, { cache: 'reload' })))))
       .then(() => self.skipWaiting())
   );
 });
@@ -112,6 +114,29 @@ async function networkFirst(request, cacheName) {
   }
 }
 
+/* The app's own code (JS / CSS / JSON / HTML): always the latest when online.
+   Stale-while-revalidate is right for markdown and images, but wrong for code —
+   it served the previous version of a script for one whole launch, so a new
+   page could run against an old script. 'no-cache' makes the browser
+   revalidate instead of trusting its own HTTP cache; offline falls back to
+   the last copy we kept. */
+async function codeNetworkFirst(request) {
+  const cache = await caches.open(SHELL_CACHE);
+  try {
+    const response = await fetch(new Request(request, { cache: 'no-cache' }));
+    if (response && response.ok) cache.put(request, response.clone());
+    return response;
+  } catch (err) {
+    const cached = await cache.match(request, { ignoreSearch: true });
+    if (cached) return cached;
+    throw err;
+  }
+}
+
+function isAppCode(request) {
+  return /\.(js|css|json|html)$/i.test(new URL(request.url).pathname);
+}
+
 async function cacheFirst(request, cacheName) {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(request, { ignoreSearch: true });
@@ -160,7 +185,13 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Content markdown, fonts, images, JS data: instant from cache, refresh behind.
+  // The app's own code: fresh whenever there is a connection.
+  if (isAppCode(request)) {
+    event.respondWith(codeNetworkFirst(request));
+    return;
+  }
+
+  // Content markdown, fonts, images: instant from cache, refresh behind.
   if (isStaticAsset(request)) {
     event.respondWith(staleWhileRevalidate(request, RUNTIME_CACHE));
   }
