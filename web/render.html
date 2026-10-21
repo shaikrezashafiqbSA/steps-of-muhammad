@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Steps of Muhammad</title>
+  <title>Be the Imam: Steps of Muḥammad ﷺ (Nusantara Edition)</title>
 
   <!-- ═══ Social preview (static — crawlers don't run JS, so this can't
        be per-card; it's the same branded card for every shared link) ═══ -->
   <meta name="description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Steps of Muhammad">
-  <meta property="og:title" content="Steps of Muhammad">
+  <meta property="og:site_name" content="Be the Imam: Steps of Muḥammad ﷺ">
+  <meta property="og:title" content="Be the Imam: Steps of Muḥammad ﷺ (Nusantara Edition)">
   <meta property="og:description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
   <meta property="og:image" content="../assets/icons/icon-512.png">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Steps of Muhammad">
+  <meta name="twitter:title" content="Be the Imam: Steps of Muḥammad ﷺ (Nusantara Edition)">
   <meta name="twitter:description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
   <meta name="twitter:image" content="../assets/icons/icon-512.png">
 
@@ -23,6 +23,7 @@
 
   <!-- Shared menu tree — tells this card which category it belongs to,
        and which duʿā sits before and after it -->
+  <script src="app-meta.js"></script>
   <script src="nav-data.js"></script>
   <script src="default-plan.js"></script>
   <script src="plan.js"></script>
@@ -960,7 +961,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Steps of Muhammad">
+  <meta name="apple-mobile-web-app-title" content="Be the Imam">
   <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="48x48" href="../assets/icons/favicon-48.png">
 </head>
@@ -1778,7 +1779,7 @@
       buildTOC(target);
 
       const h1 = target.querySelector('h1');
-      if (h1) document.title = h1.textContent + ' · Steps of Muhammad';
+      if (h1) document.title = h1.textContent + ' · ' + APP_META.short;
       window._cardMeta = meta || null;
       revealShareButton();
     }
@@ -1815,7 +1816,7 @@
       const source = (meta['left-orb'] || '').replace(LEADING_ICON_RE, '').trim();
       const grade = (meta['right-orb'] || meta.grade || '').replace(LEADING_ICON_RE, '').trim();
       const tagline = [source, grade].filter(Boolean).join(' · ');
-      const text = `${title}${tagline ? '\n' + tagline : ''}\n\nRecited word-by-word, fully sourced — on Steps of Muhammad.`;
+      const text = `${title}${tagline ? '\n' + tagline : ''}\n\nRecited word-by-word, fully sourced — on ${APP_META.name}.`;
       const url = window.location.href;
 
       if (navigator.share) {

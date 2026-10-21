@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="meta-title">Steps of Muhammad</title>
+  <title id="meta-title">Be the Imam: Steps of Muḥammad ﷺ (Nusantara Edition)</title>
 
   <!-- ═══ PWA ═══ -->
+  <script>
+    try {
+      if (sessionStorage.getItem('som-splash') ||
+          (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+        document.documentElement.classList.add('no-splash');
+      }
+    } catch (e) { /* private mode: just show it */ }
+  </script>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#7D5243">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Steps of Muhammad">
+  <meta name="apple-mobile-web-app-title" content="Be the Imam">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/favicon-48.png">
 
@@ -19,6 +27,7 @@
 
   <!-- Menu tree — shared with web/render.html
        so a rendered card knows which list it belongs to (prev / home / next) -->
+  <script src="web/app-meta.js"></script>
   <script src="web/nav-data.js"></script>
   <script src="web/default-plan.js"></script>
   <script src="web/plan.js"></script>
@@ -87,91 +96,219 @@
     ::-webkit-scrollbar-thumb:hover { background: rgba(125, 82, 67, 0.5); }
 
 
-    /* ── Imam wordmark: Arabic dua over a brushed logotype ── */
+    /* ── Fonts ── */
     @font-face {
       font-family: 'UthmanicHafs';
       src: url('fonts/UthmanicHafsVer18.ttf') format('truetype');
       font-display: swap;
     }
-    .imam-dua {
-      font-family: 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif;
-      font-size: clamp(1.5rem, 5.5vw, 2.1rem); line-height: 1.7; color: #7D5243; direction: rtl;
-    }
-    .imam-logo {
-      display: block; margin: 0.3rem auto 0.4rem; width: min(94vw, 40rem);
-    }
-    .imam-logo svg {
-      display: block; width: 100%; height: auto; overflow: visible;
-      opacity: 0.92;
-      filter: drop-shadow(0 1px 3px rgba(30, 28, 50, 0.4));
-    }
-    .imam-word { font-family: 'Amiri', 'Scheherazade New', serif; font-weight: 700; }
-    .imam-figure {
-      transition: filter 1s ease-in-out;
-      filter: saturate(1.0) contrast(1.15)
-             /* Bright, intense gold nur core right against the figure */
-            drop-shadow(0 0 10px rgb(255, 255, 255))
-            drop-shadow(0 0 106px rgba(236, 232, 223, 0.9))
-            /* Controlled dark obsidian framing further out */
-            drop-shadow(0 0 200px rgba(250, 205, 4, 0.85))
-            drop-shadow(0 0 100px rgba(50, 3, 3, 0.9));
-    }
-    /* Nūr ʿalā Nūr: when the nalayn background ignites (body.nur-ablaze),
-       the figure's light blasts outward to the top-left — the same
-       gold light, with no black flame, that the nalayn itself glows. */
-    body.nur-ablaze .imam-figure {
-      filter: saturate(1.1) contrast(1.1)
-            drop-shadow(-18px -22px 90px rgb(245, 245, 245))
-            drop-shadow(-8px -10px 42px rgba(250, 249, 247, 0.95))
-            drop-shadow(0 0 70px rgba(255, 217, 138, 0.8))
-            drop-shadow(10px 12px 50px rgba(255, 217, 138, 0.45));
-    }
-    .imam-aura { transform-origin: 140px 40px; animation: imam-aura-pulse 5s ease-in-out infinite; }
-    @keyframes imam-aura-pulse {
-      0%, 100% { opacity: 0.8; transform: scale(1); }
-      50%      { opacity: 1;   transform: scale(1.10); }
-    }
-    body.nur-ablaze .imam-aura {
-      animation: imam-aura-blast 15s ease-in-out infinite;
-      filter: brightness(2);
-    }
-    /* No charcoal/obsidian stops while ablaze — the aura becomes the same
-       warm gold nur as the nalayn glow, start to edge. */
-    body.nur-ablaze stop.aura-stop-core { stop-color: #FFD98A; stop-opacity: 1; }
-    body.nur-ablaze stop.aura-stop-mid { stop-color: #FFE5AD; stop-opacity: 0.9; }
-    body.nur-ablaze stop.aura-stop-dark { stop-color: #221d13; stop-opacity: 0.4; }
-    body.nur-ablaze stop.aura-stop-edge { stop-color: #FFD98A; stop-opacity: 0; }
-    @keyframes imam-aura-blast {
-      0%, 100% { opacity: 0.85; transform: scale(1) translate(0, 0); }
-      50%      { opacity: 1;    transform: scale(1.5) translate(-30px, -34px); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .imam-aura { animation: none; }
-      body.nur-ablaze .imam-aura { animation: none; }
-      body.nur-ablaze .imam-figure { transition: none; }
-    }
-    .imam-tagline { letter-spacing: 0.32em; font-weight: 700; }
 
-    /* Decorative divider under title */
-    .title-divider {
+    /* ══════════════════════════════════════════════════════
+       MASTHEAD — the app's name, on every view. The turbaned figure
+       from the old wordmark, small; the name set as a plate; two words
+       that open a tooltip (Imam → Furqān 25:74, Muḥammad → Aḥzāb 33:21);
+       and the Nusantara sticker.
+       ══════════════════════════════════════════════════════ */
+    .masthead {
+      width: 100%;
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 4.5rem 1rem 0;          /* clears the fixed view switch */
+    }
+    @media (max-width: 540px) { .masthead { padding-top: 4.35rem; } }
+    .masthead-inner {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.85rem;
-      margin: 1.5rem auto 0;
-      max-width: 18rem;
+      gap: 0.75rem;
+      padding: 0.5rem 0.9rem 0.5rem 0.7rem;
+      border-radius: 1rem;
     }
-    .title-divider .line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #B08A4B, transparent);
-      opacity: 0.5;
+    .masthead-inner::before {
+      content: ''; position: absolute; inset: 0; z-index: 0; border-radius: inherit;
+      background: rgba(255, 251, 241, 0.86);
+      border: 1px solid rgba(230, 220, 208, 0.95);
+      box-shadow: 0 4px 18px rgba(125, 82, 67, 0.12);
+      backdrop-filter: blur(8px);
     }
-    .title-divider .seal {
-      color: #B08A4B;
-      font-size: 0.85rem;
-      opacity: 0.7;
+    /* The turbaned figure as a skill icon — a black-metal frame with a bevel and a
+       slow glint across it, the figure itself untouched inside. No glow. */
+    .skill-icon {
+      display: block;
+      position: relative;
+      flex-shrink: 0;
+      z-index: 2;
+      width: 3.2rem;
+      height: 3.2rem;
+      padding: 4px;
+      border-radius: 0.75rem;
+      background: linear-gradient(135deg, #e3e7ee 0%, #6b707c 9%, #14151a 24%, #3a3d46 40%, #0a0a0d 55%, #2d3037 70%, #707580 88%, #dfe3ea 100%);
+      box-shadow: 0 0 0 1px #000, 0 0 0 2px rgba(190, 196, 208, 0.55), 0 3px 7px rgba(0, 0, 0, 0.6),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.85), inset 1px 0 0 rgba(255, 255, 255, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 1);
     }
+    /* the bevel: a dark groove with a thin silver lip just inside the frame */
+    .skill-icon::before {
+      content: ''; position: absolute; inset: 3px; z-index: 3; border-radius: 0.6rem; pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 1), inset 0 0 0 2px rgba(190, 196, 208, 0.5),
+                  inset 0 3px 6px rgba(0, 0, 0, 0.75);
+    }
+    /* the sheen: a diagonal band of light that slides across the metal every few seconds */
+    .skill-icon::after {
+      content: ''; position: absolute; inset: 0; z-index: 4; border-radius: inherit; pointer-events: none;
+      background: linear-gradient(115deg, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.5) 49%, rgba(255, 255, 255, 0) 60%);
+      background-size: 250% 100%;
+      background-position: 130% 0;
+      animation: skill-glint 7s ease-in-out 1.5s infinite;
+    }
+    @keyframes skill-glint {
+      0%, 62%   { background-position: 130% 0; }
+      100%      { background-position: -30% 0; }
+    }
+    /* The light: a white-hot core fading through gold to amber at the rim, with slow
+       rays turning inside it. It lives wholly inside the frame — the dark edges
+       of the bevel hold it in, and nothing spills out. */
+    .skill-light {
+      position: absolute; inset: 4px; z-index: 1; overflow: hidden; border-radius: 0.5rem;
+      background: radial-gradient(closest-side at 50% 46%, #FFFFFF 0%, #FFF7DA 24%, #FFDD7A 52%, #D9972B 80%, #7A4C10 100%);
+    }
+    .skill-light::before {
+      content: ''; position: absolute; left: 50%; top: 46%; width: 230%; height: 230%;
+      background: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.6) 0deg 5deg, rgba(255, 255, 255, 0) 5deg 20deg);
+      -webkit-mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0) 72%);
+              mask-image: radial-gradient(closest-side, #000 0%, rgba(0, 0, 0, 0) 72%);
+      transform: translate(-50%, -50%);
+      animation: skill-rays 30s linear infinite;
+    }
+    .skill-light::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(closest-side at 50% 46%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 62%);
+      animation: skill-pulse 4.5s ease-in-out infinite;
+    }
+    @keyframes skill-rays { to { transform: translate(-50%, -50%) rotate(360deg); } }
+    @keyframes skill-pulse { 0%, 100% { opacity: 0.65; } 50% { opacity: 1; } }
+    .skill-icon img {
+      position: relative; z-index: 2; display: block; width: 100%; height: 100%; object-fit: contain; padding: 1px;
+      border-radius: 0.5rem; background: none;
+      /* a hair of shade at the figure's edge so it stays crisp on the bright core (not a glow) */
+      filter: drop-shadow(0 0 0.6px rgba(8, 18, 28, 0.85)) contrast(1.06);
+    }
+    @media (prefers-reduced-motion: reduce) { .skill-icon::after { animation: none; opacity: 0; } .skill-light::before, .skill-light::after { animation: none; } }
+    .masthead-title { position: relative; z-index: 3; margin: 0; line-height: 1.15; min-width: 0; padding-right: 3.6rem; }
+    .mh-name {
+      display: block;
+      font-family: 'Amiri', 'Scheherazade New', serif;
+      font-weight: 700;
+      font-size: clamp(1.4rem, 5.2vw, 1.9rem);
+      color: #2A2D34;
+      letter-spacing: 0.005em;
+    }
+    .mh-steps {
+      display: block;
+      margin-top: 0.12rem;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.72rem, 2.6vw, 0.86rem);
+      letter-spacing: 0.05em;
+      color: #5A4A44;
+    }
+    /* the ḥā of Muḥammad, held a little stronger */
+    .mh-ha { color: #A94442; font-weight: 800; }
+    /* the two tooltip words: the "!" badge from tips.js, sized to the text */
+    .mh-word.som-tip::after { width: 0.6em; height: 0.6em; font-size: 0.4em; margin-left: 0.18em; vertical-align: 0.8em; }
+    .masthead-sticker.som-tip {
+      position: absolute;
+      top: -0.6rem;
+      right: -0.25rem;
+      transform: rotate(5deg);
+      padding: 0.22rem 0.55rem 0.26rem;
+      text-align: center;
+      line-height: 1.1;
+      border: none;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      color: #5A3A2A;
+      /* a die-cut sticker: cream stock, a gold keyline, a gloss, a lifted shadow */
+      background: linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 42%), #FBE9B5;
+      border-radius: 0.55rem;
+      outline: 1.5px solid #B08A4B;
+      outline-offset: -3px;
+      box-shadow: 0 0 0 2px #FFFBF1, 0 3px 9px rgba(58, 46, 43, 0.35);
+      transition: transform 0.15s ease;
+    }
+    .masthead-sticker.som-tip:hover { transform: rotate(2deg) scale(1.05); }
+    .masthead-sticker.som-tip::after { display: none; }
+    .mh-sticker-top { display: block; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.1em; }
+    .mh-sticker-bot { display: block; font-size: 0.46rem; font-weight: 700; letter-spacing: 0.2em; color: #8A6A3A; }
+
+    /* The Library's calm header — the big wordmark moved up into the masthead. */
+    .library-kicker {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: #7D5243;
+    }
+    .library-line { font-size: 0.82rem; line-height: 1.6; color: #5A4A44; max-width: 26rem; margin: 0.25rem auto 0; }
+
+    /* ══════════════════════════════════════════════════════
+       LOADING SCREEN — the dark nalayn lights into the nūr, with a
+       bar filling beneath, once per browser session. Skipped for
+       reduced motion, and gone the moment the page is ready.
+       ══════════════════════════════════════════════════════ */
+    .splash {
+      position: fixed; inset: 0; z-index: 1000;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #06050A; overflow: hidden;
+      transition: opacity 0.6s ease;
+    }
+    .splash.is-out { opacity: 0; pointer-events: none; }
+    .no-splash .splash { display: none; }
+    .splash-dark, .splash-nur {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    }
+    .splash-dark { filter: brightness(0.28) saturate(0.6); }
+    .splash-nur { opacity: 0; animation: splash-light 1.9s cubic-bezier(0.55, 0, 0.35, 1) 0.25s forwards; }
+    .splash-core {
+      position: relative; text-align: center; padding: 0 1.5rem;
+      opacity: 0; animation: splash-rise 1.3s ease-out 0.35s forwards;
+    }
+    .splash-core::before {
+      content: ''; position: absolute; left: 50%; top: 38%; width: 22rem; height: 22rem;
+      transform: translate(-50%, -50%) scale(0.4);
+      background: radial-gradient(closest-side, rgba(255, 224, 150, 0.55), rgba(255, 224, 150, 0) 70%);
+      animation: splash-bloom 2.1s ease-out 0.3s forwards; opacity: 0; z-index: -1;
+    }
+    .skill-icon.skill-icon-lg { width: 6.4rem; height: 6.4rem; padding: 6px; border-radius: 1.3rem; margin: 0 auto; }
+    .skill-icon-lg::before { inset: 4px; border-radius: 1rem; }
+    .skill-icon-lg img { border-radius: 0.9rem; padding: 3px; }
+    .splash-title {
+      margin: 0.9rem 0 0; font-family: 'Amiri', 'Scheherazade New', serif; font-weight: 700;
+      font-size: clamp(2rem, 8vw, 3rem); color: #FFF3D6; letter-spacing: 0.02em;
+      text-shadow: 0 0 22px rgba(255, 217, 138, 0.65);
+    }
+    .splash-sub { margin: 0.2rem 0 0; font-family: 'Inter', system-ui, sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em; color: #E9D9B4; }
+    .splash-edition {
+      display: inline-block; margin-top: 0.8rem; font-family: 'JetBrains Mono', monospace; font-size: 0.58rem;
+      font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: #D9B869;
+      border: 1px solid rgba(217, 184, 105, 0.55); border-radius: 999px; padding: 0.2rem 0.75rem;
+    }
+    .splash-bar {
+      position: absolute; left: 50%; bottom: 12%; width: min(15rem, 60vw); height: 3px; transform: translateX(-50%);
+      border-radius: 3px; background: rgba(255, 233, 176, 0.18); overflow: hidden;
+    }
+    .splash-bar span {
+      display: block; height: 100%; width: 0; background: linear-gradient(90deg, #8A6A3A, #FFE9B0);
+      box-shadow: 0 0 8px rgba(255, 224, 150, 0.8); animation: splash-fill 1.9s cubic-bezier(0.4, 0, 0.3, 1) 0.2s forwards;
+    }
+    /* The lettering is lit by the same light: pale on the dark flag, ink on the bright one. */
+    .splash-title { animation: splash-ink-title 1.9s cubic-bezier(0.55, 0, 0.35, 1) 0.25s both; }
+    .splash-sub   { animation: splash-ink-sub 1.9s cubic-bezier(0.55, 0, 0.35, 1) 0.25s both; }
+    .splash-edition { animation: splash-ink-edition 1.9s cubic-bezier(0.55, 0, 0.35, 1) 0.25s both; }
+    @keyframes splash-ink-title { from { color: #FFF3D6; text-shadow: 0 0 22px rgba(255, 217, 138, 0.65); } 45% { color: #FFF3D6; } to { color: #3A2A1A; text-shadow: 0 0 16px rgba(255, 251, 241, 0.95), 0 0 2px rgba(255, 251, 241, 0.9); } }
+    @keyframes splash-ink-sub { from { color: #E9D9B4; } 45% { color: #E9D9B4; } to { color: #4A3A2A; } }
+    @keyframes splash-ink-edition { from { color: #D9B869; border-color: rgba(217, 184, 105, 0.55); } 45% { color: #D9B869; } to { color: #6A4A22; border-color: rgba(106, 74, 34, 0.6); } }
+    @keyframes splash-light { from { opacity: 0; filter: brightness(0.6); } to { opacity: 1; filter: brightness(1.08); } }
+    @keyframes splash-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes splash-bloom { from { opacity: 0; transform: translate(-50%, -50%) scale(0.4); } to { opacity: 1; transform: translate(-50%, -50%) scale(1.15); } }
+    @keyframes splash-fill { to { width: 100%; } }
 
 
     /* Category icon tile */
@@ -529,14 +666,14 @@
       font-weight: 600;
       opacity: 0.72;
     }
-    #compendium-view { padding-top: 5.25rem; }
+    #compendium-view { padding-top: 0.9rem; }
     @media (max-width: 540px) {
       .view-switch { top: 0.5rem; width: calc(100vw - 1rem); }
       .view-switch-btn { padding: 0.42rem 0.5rem; gap: 0.35rem; }
       .vs-icon { display: none; }
       .vs-title { font-size: 0.7rem; }
       .vs-subtitle { font-size: 0.54rem; }
-      #compendium-view { padding-top: 4.65rem; }
+      #compendium-view { padding-top: 0.9rem; }
     }
 
 
@@ -551,10 +688,10 @@
       width: 100%;
       max-width: 44rem;
       margin: 0 auto;
-      padding: 5.35rem 1rem 3rem;
+      padding: 0.9rem 1rem 3rem;
     }
     @media (max-width: 540px) {
-      .action-shell { padding-top: 4.85rem; }
+      .action-shell { padding-top: 0.9rem; }
     }
 
     /* — Horizon panel — */
@@ -1416,6 +1553,10 @@
       cursor: pointer;
       transition: transform 0.15s ease, background 0.15s ease;
     }
+    @media (max-width: 540px) {
+      /* ✨ Tahajjud is the longest name in the strip — tighten it so it isn't cut off */
+      .prayer-cell.pc-tahajjud .pc-name { letter-spacing: 0.01em; font-size: 0.5rem; }
+    }
     .share-app-btn:hover { background: #7D5243; color: #FFFBF1; transform: translateY(-1px); }
     body.plan-sheet-open .share-app-btn { display: none; }
 
@@ -1544,6 +1685,19 @@
 </head>
 <body class="mode-action bg-[#FFFBF1] text-[#3A2E2B] min-h-screen flex flex-col justify-between antialiased selection:bg-[#B08A4B]/30 relative overflow-x-hidden">
 
+  <!-- Loading screen: dark nalayn → nūr (web: once per browser session) -->
+  <div id="splash" class="splash" aria-hidden="true">
+    <img class="splash-dark" src="assets/black-flag.jpeg" alt="">
+    <img class="splash-nur" src="assets/black-flag-nur.jpeg" alt="">
+    <div class="splash-core">
+      <span class="skill-icon skill-icon-lg" aria-hidden="true"><span class="skill-light"></span><img src="assets/imam-figure.png" alt=""></span>
+      <p class="splash-title">Be the Imam</p>
+      <p class="splash-sub">Steps of Mu&#7717;ammad &#65018;</p>
+      <span class="splash-edition">Nusantara Edition</span>
+    </div>
+    <div class="splash-bar"><span></span></div>
+  </div>
+
 
   <!-- ══════════════════════════════════════════════════════════════
        FULL-BLEED BACKGROUND FLAG ENGINE
@@ -1575,7 +1729,7 @@
       <span class="vs-icon" aria-hidden="true">☰</span>
       <span class="vs-copy">
         <span class="vs-title"> ۝ Library</span>
-        <span class="vs-subtitle">Learn the words</span>
+        <span class="vs-subtitle">Find the Sunnah</span>
       </span>
     </button>
     <button type="button" id="btn-view-action" class="view-switch-btn active" data-view="action"
@@ -1583,10 +1737,34 @@
       <span class="vs-icon" aria-hidden="true">◑</span>
       <span class="vs-copy">
         <span class="vs-title">⚔️ Action</span>
-        <span class="vs-subtitle">Speak the words</span>
+        <span class="vs-subtitle">Live the Sunnah</span>
       </span>
     </button>
   </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       MASTHEAD — the app's name, on both views. Tap "Imam" or
+       "Muḥammad" for the āyah behind each; the sticker says where the
+       collection comes from.
+       ══════════════════════════════════════════════════════════════ -->
+  <header class="masthead relative z-10">
+    <div class="masthead-inner">
+      <span class="skill-icon" aria-hidden="true"><span class="skill-light"></span><img src="assets/imam-figure.png" alt="" width="268" height="320"></span>
+      <h1 class="masthead-title" id="masthead-title" aria-label="Be the Imam: Steps of Muḥammad ﷺ">
+        <span class="mh-name">Be the <span class="som-tip mh-word" tabindex="0" role="button"
+          data-tip="…and make us an imām for the God-conscious. From the duʿāʾ of the ʿIbād ar-Raḥmān — a supplication, asked with humility, not a title."
+          data-tip-ar="وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا" data-tip-ref="Sūrat al-Furqān 25:74">Imam</span>:</span>
+        <span class="mh-steps">Steps of <span class="som-tip mh-word" tabindex="0" role="button"
+          data-tip="There has certainly been for you in the Messenger of Allah an excellent example — for whoever hopes in Allah and the Last Day and remembers Allah often. The role model: uswatun ḥasanah."
+          data-tip-ar="لَقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ" data-tip-ref="Sūrat al-Aḥzāb 33:21">Mu<span class="mh-ha">ḥa</span>mmad</span> ﷺ</span>
+      </h1>
+      <span class="som-tip masthead-sticker" tabindex="0" role="button"
+        data-tip="Nusantara Edition — the practices in this collection are gathered from across the Nusantara, the Malay world. Prayer times default to the JAKIM / MUIS method, and months begin by the MABIMS criterion.">
+        <span class="mh-sticker-top">Nusantara</span><span class="mh-sticker-bot">Edition</span>
+      </span>
+    </div>
+  </header>
 
 
   <!-- ══════════════════════════════════════════════════════════════
@@ -1678,48 +1856,10 @@
     <div class="max-w-2xl w-full text-center space-y-8 my-8">
 
 
-      <!-- Title block -->
-      <div class="space-y-2 select-none pt-4">
-        <p id="root-dua" class="imam-dua" lang="ar" dir="rtl">{{ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا | Furqān 25:74 — from the duʿāʾ of the ʿIbād ar-Raḥmān: “…and make us an imām for the God-conscious.” In other words, an example in taqwa for others. It is a supplication, asked with humility, not a title. }}</p>
-        <!-- The "I" of IMAM is the turbaned figure (with the leaf as his pauldron) cut from the bedsheet pattern,
-             assets/imam-figure.png. "MAM" is lettered to match: teal fill + pale outline, like the pattern itself. -->
-        <h1 id="root-title" class="imam-logo" aria-label="Imam">
-          <svg viewBox="0 -122 990 340" role="img" aria-hidden="true">
-            <defs>
-              <!-- the pole: only the short lower half of the I shows, rising out of the figure -->
-              <clipPath id="imamPole"><rect x="0" y="115" width="220" height="200"/></clipPath>
-              <radialGradient id="imamAura" cx="50%" cy="50%" r="50%">
-                <!-- Pure white bright center core (Purity) -->
-                <stop class="aura-stop-core" offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
-                <!-- Bright silvery white transition -->
-                <stop class="aura-stop-mid" offset="25%" stop-color="#E5E7EB" stop-opacity="0.85"/>
-                <!-- Deep smoky charcoal mid-layer -->
-                <stop class="aura-stop-dark" offset="60%" stop-color="#1F2937" stop-opacity="0.75"/>
-                <!-- Pitch black obsidian outer aura (Purging darkness) -->
-                <stop class="aura-stop-edge" offset="100%" stop-color="#050505" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <!-- gold aura behind the imam -->
-            <ellipse class="imam-aura" cx="190" cy="20" rx="205" ry="360" fill="url(#imamAura)"/>
-            <g class="imam-word" font-size="290" fill="#2A2D34" stroke="#D3EEE9" stroke-width="10" stroke-linejoin="round" paint-order="stroke fill">
-              <text x="150" y="210" clip-path="url(#imamPole)">I</text>
-              <text x="262" y="210" textLength="708" lengthAdjust="spacing">MAM</text>
-            </g>
-            <!-- the turbaned imam: large, rising above the letters, glowing gold -->
-            <image class="imam-figure" href="assets/imam-figure.png" x="0" y="-125" width="268" height="320"/>
-          </svg>
-        </h1>
-        <p id="root-subtitle" class="imam-tagline text-xs md:text-sm font-mono-app text-[#7A6F6C] uppercase max-w-md mx-auto leading-relaxed">
-          Steps of Muḥammad ﷺ
-        </p>
-
-
-        <!-- Decorative ✦ divider -->
-        <div class="title-divider">
-          <span class="line"></span>
-          <span class="seal">✦</span>
-          <span class="line"></span>
-        </div>
+      <!-- Header: the name lives in the masthead above -->
+      <div class="select-none">
+        <p class="library-kicker">Learn the words</p>
+        <p class="library-line">Every duʿā, word by word — with its source.</p>
       </div>
 
 
@@ -1759,8 +1899,8 @@
       if (!btn) return;
       btn.addEventListener('click', async () => {
         const url = window.location.origin + window.location.pathname.replace(/index\.html$/, '');
-        const title = 'Steps of Muḥammad ﷺ';
-        const text = 'Steps of Muḥammad ﷺ — adhkār, duʿā and ṣalāh arranged by the hour of the day, word by word and fully sourced. Free, and works offline.';
+        const title = APP_META.name;
+        const text = APP_META.name + ' — ' + APP_META.tagline;
         if (navigator.share) {
           try { await navigator.share({ title, text, url }); }
           catch (err) { if (err && err.name !== 'AbortError') console.warn('Share failed:', err); }
@@ -1777,10 +1917,6 @@
   </script>
   <script src="web/plan-ui.js"></script>
   <script>
-    const ROOT_CONFIG = {
-      title: "Imam",
-      subtitle: "Steps of Muḥammad ﷺ"
-    };
 
 
     // =========================================================
@@ -2159,9 +2295,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('meta-title').textContent = ROOT_CONFIG.title + ' · ' + ROOT_CONFIG.subtitle;
-      document.getElementById('root-subtitle').textContent = ROOT_CONFIG.subtitle;
-      somParseTips(document.getElementById('root-dua'));   // tappable ! on the Furqān dua (web/tips.js)
+      document.title = APP_META.name;
       renderApp();
       openNodeFromHash();
     });
@@ -2775,6 +2909,30 @@
         });
       });
     }
+  </script>
+
+  <script>
+    // Loading screen: the dark nalayn lights into the nūr while the page
+    // gets ready. At least MIN ms (so the light finishes), at most MAX ms,
+    // and only once per browser session.
+    (function () {
+      const el = document.getElementById('splash');
+      if (!el) return;
+      if (document.documentElement.classList.contains('no-splash')) { el.remove(); return; }
+      try { sessionStorage.setItem('som-splash', '1'); } catch (e) { /* private mode */ }
+      const MIN = 2100, MAX = 5000;
+      const started = performance.now();
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        el.classList.add('is-out');
+        setTimeout(() => el.remove(), 700);
+      };
+      const ready = () => setTimeout(finish, Math.max(0, MIN - (performance.now() - started)));
+      if (document.readyState === 'complete') ready(); else window.addEventListener('load', ready);
+      setTimeout(finish, MAX);
+    })();
   </script>
 
   <!-- PWA install helper (banner + manual-steps fallback) -->

@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   Steps of Muhammad — Service Worker
+   Be the Imam: Steps of Muḥammad ﷺ — Service Worker
    Offline-first PWA for the GitHub Pages static site.
 
    Strategies:
@@ -14,7 +14,7 @@
      cap; the app still renders offline once they are cached.
    ════════════════════════════════════════════════════════════════ */
 
-const VERSION = 'v1.2.0';
+const VERSION = 'v1.3.0';
 const SHELL_CACHE = `shell-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 const CDN_CACHE = `cdn-${VERSION}`;
@@ -28,6 +28,7 @@ const PRECACHE = [
   './index.html',
   './web/render.html',
   './web/preview.html',
+  './web/app-meta.js',
   './web/nav-data.js',
   './web/default-plan.js',
   './web/plan.js',

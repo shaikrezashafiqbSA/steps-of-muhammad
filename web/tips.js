@@ -29,6 +29,15 @@
       content: ''; position: absolute; left: var(--arrow-x, 50%); width: 10px; height: 10px; background: inherit;
       transform: translateX(-50%) rotate(45deg);
     }
+    .som-tip.no-bang::after { display: none; }
+    .som-tip-ar {
+      display: block; margin-bottom: 0.35rem; text-align: center; direction: rtl;
+      font: 400 1.25rem/1.9 'UthmanicHafs', 'Amiri Quran', 'Scheherazade New', serif; color: #FFE9B8;
+    }
+    .som-tip-ref {
+      display: block; margin-top: 0.4rem; font: 700 0.58rem/1 'JetBrains Mono', ui-monospace, monospace;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #D9B869;
+    }
     #som-tip-pop.above::before { bottom: -5px; }
     #som-tip-pop.below::before { top: -5px; }`;
 
@@ -59,7 +68,17 @@
 
   function show(el) {
     const p = ensurePop();
-    p.textContent = el.dataset.tip;
+    // Optional richer form: data-tip-ar (the Arabic, shown large) and data-tip-ref (its citation).
+    p.textContent = '';
+    if (el.dataset.tipAr) {
+      const ar = document.createElement('span'); ar.className = 'som-tip-ar'; ar.lang = 'ar'; ar.textContent = el.dataset.tipAr;
+      p.appendChild(ar);
+    }
+    p.appendChild(document.createTextNode(el.dataset.tip));
+    if (el.dataset.tipRef) {
+      const ref = document.createElement('span'); ref.className = 'som-tip-ref'; ref.textContent = el.dataset.tipRef;
+      p.appendChild(ref);
+    }
     p.style.display = 'block';
     p.style.left = '0px'; p.style.top = '0px';
     const r = el.getBoundingClientRect(), w = p.offsetWidth, h = p.offsetHeight, pad = 8;

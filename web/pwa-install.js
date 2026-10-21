@@ -41,7 +41,7 @@
   window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferred = e;
-    show('<strong>Install Steps of Muhammad</strong><br>Add it to your home screen — opens full-screen and works offline.', true);
+    show('<strong>Install Be the Imam</strong><br>Add it to your home screen — opens full-screen and works offline.', true);
   });
   window.addEventListener('appinstalled', () => { if (bar) { bar.remove(); bar = null; } });
 

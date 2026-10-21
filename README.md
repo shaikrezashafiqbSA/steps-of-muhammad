@@ -1,4 +1,6 @@
-# 🌿 Steps of Muhammad
+# 🌿 Be the Imam: Steps of Muḥammad ﷺ
+
+**Nusantara Edition**
 
 > *A provenance engine for Islamic supplications, recitations, and remembrances — built so that every word you say in prayer has a traceable home.*
 
@@ -6,7 +8,7 @@
 
 ## 🎯 What This Is
 
-**Steps of Muhammad** is a living archive of duʿā, dhikr, ḥadīth, Qurʾānic verses, and scholarly compilations — rendered word-by-word in Arabic, English, and transliteration, with every page traceable to its canonical source.
+**Be the Imam: Steps of Muḥammad ﷺ** is a living archive of duʿā, dhikr, ḥadīth, Qurʾānic verses, and scholarly compilations — rendered word-by-word in Arabic, English, and transliteration, with every page traceable to its canonical source.
 
 It is **not** another devotional app.
 
