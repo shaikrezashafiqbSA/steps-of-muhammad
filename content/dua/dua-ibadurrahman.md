@@ -17,10 +17,10 @@ right-orb-compact: ۞۞۞
 
 ## 📜 The Qur'anic Passage
 
-Allah names a people He calls His own servants, and then He tells you exactly who they are. Ten traits, two duas, one road back for anyone who has fallen, and one reward. Every ayah below is kept whole and every word carries its full marks. Tick each step as you make it yours.
+Allah names a people He calls His own servants, and then He tells you exactly who they are. 10 traits, 2 duas, 1 road back for anyone who has fallen, and 1 reward. Every ayah below is kept whole and every word carries its full marks. Tick each step as you be the ʿIbād ar-Raḥmān
 
-
-### ✅ The ʿIbād ar-Raḥmān Checklist
+<details>
+<summary> 💎 The ʿIbād ar-Raḥmān Steps 1-9 </summary>
 
 - [ ] 1 · Walk the earth with humility
 - [ ] 2 · Answer the ignorant with peace
@@ -52,7 +52,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **Humility is not a performance.** Ibn Kathīr explains that they walk with dignity and humility, not with arrogance and pride, and links it to 17:37, which forbids walking on the earth with conceit. He then draws the line the other way: it does not mean walking like a sick person making a show of humility. The Prophet ﷺ walked as if coming downhill, as if the earth were folded beneath him.
 
@@ -80,7 +80,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **Their nights are the best of nights.** Ibn Kathīr introduces this verse that way: the night is spent worshipping and obeying Allah. He gathers three parallel verses: they slept little by night and asked forgiveness before dawn (51:17-18), their sides forsake their beds (32:16), and the one obedient through the night prostrating and standing, fearing the Hereafter and hoping for his Lord's mercy (39:9).
 
@@ -122,7 +122,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **The people who fear most are the people who pray most.** This dua sits directly after those who spend the night prostrating and standing. Ibn Kathīr links them to 39:9, the worshipper of the night who [[ يَحْذَرُ | fears | yaḥdharu ]] [[ الْآخِرَةَ | the Hereafter | al-ākhirata ]] [[ وَيَرْجُو | and hopes for | wa-yarjū ]] [[ رَحْمَةَ | the mercy | raḥmata ]] [[ رَبِّهِ | of his Lord. | rabbihi ]] Their night prayer does not make them feel safe. It makes them ask.
 
@@ -150,7 +150,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **Two failures, one road between them.** Ibn Kathīr says they are not extravagant, spending more than they need, and not miserly towards their families by failing to spend enough on their needs. They follow the best and fairest way, because the best of matters are the moderate ones. He ties it to 17:29: do not let your hand be tied to your neck, nor stretch it out to its utmost reach.
 
@@ -185,7 +185,7 @@ Their punishment will be multiplied on the Day of Judgment, and they will remain
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **The three lines are the three greatest wrongs.** Ibn Kathīr records, through Imam Aḥmad, that ʿAbdullāh ibn Masʿūd ؓ asked the Prophet ﷺ which sin is most serious. The answer: appointing a rival to Allah who created you; then killing your child for fear he will eat with you; then committing adultery with your neighbour's wife. ʿAbdullāh said this verse was revealed to confirm it. Ibn Kathīr notes it was also recorded by an-Nasāʾī, al-Bukhārī and Muslim.
 
@@ -221,7 +221,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **The door is open for every sin.** Ibn Kathīr says Allah's mercy extends to all His creation, and that whoever repents, He accepts the repentance for any sin, great or small. He cites 4:110, 9:104 and 39:53. He states that the repentance of the murderer is acceptable, and points to the authentic story of the man who killed one hundred and then repented.
 
@@ -249,7 +249,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **Falsehood has a wide meaning.** Ibn Kathīr includes lies, immorality, disbelief, foul speech and false words. He reports ʿAmr ibn Qays saying it refers to gatherings of sexual immorality, and that some said it refers to false testimony.
 
@@ -277,13 +277,15 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **Hearing is not the same as being moved.** Ibn Kathīr calls this a characteristic of the believers and cites 8:2: when Allah is mentioned their hearts tremble, and when His verses are recited their faith increases. He contrasts the disbelievers, who are not affected or moved to change, and persist as if deaf and blind. He cites 9:124-125: the verses increase the believers in faith and the diseased hearts in doubt.
 
 </details>
 
----
+
+
+</details>
 
 ## Step 10 · Recite This Dua: Ask for a Family Who Are the Comfort of Your Eyes
 
@@ -293,11 +295,6 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 
 [[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ يَقُولُونَ | say, | yaqūlūna ]] [[ رَبَّنَا | Our Lord, | rabbanā ]] [[ هَبۡ | grant | hab ]] [[ لَنَا | us | lanā ]] [[ مِنۡ | from | min ]] [[ أَزۡوَٰجِنَا | our spouses | azwājinā ]] [[ وَذُرِّيَّٰتِنَا | and our offspring | wa-dhurriyyātinā ]] [[ قُرَّةَ | the comfort | qurrata ]] [[ أَعۡيُنٖ | of eyes, | aʿyunin ]] [[ وَٱجۡعَلۡنَا | and make us | wa-jʿalnā ]] [[ لِلۡمُتَّقِينَ | for the God-conscious | lil-muttaqīna ]] [[ إِمَامًا | a leader. | imāmā ]] [[۝٧٤]]
 
-**Tick when done**
-- [ ] Learn the dua by heart
-- [ ] Make it for your spouse and your children by name
-- [ ] Live as the example you are asking Allah to make you
-
 <details>
 <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
@@ -305,24 +302,29 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 
 <iframe src="https://quranwbw.com/25/74" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
 
-</details>
 
-<details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
-
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **Comfort of the eyes is faith, not appearance.** Ibn Kathīr explains the request as offspring who will obey Allah, worship Him, and associate nothing with Him. He reports Ibn ʿAbbās: offspring who strive to obey Allah and bring joy in this world and the Hereafter. The dua does not ask for a family that looks successful. It asks for a family that stands with you before Allah.
 
 **The ache behind the dua.** Ibn Kathīr records, through Imam Aḥmad, the words of al-Miqdād ibn al-Aswad ؓ, and notes the chain is ṣaḥīḥ. A man could come to know that his father, son or brother was a disbeliever, and knowing where that led, could not rest. Al-Miqdād said this is what the verse refers to. The servant who makes this dua carries his family's ākhirah as his own concern.
 
-**The servant asks to lead, not only to be saved.** On [[ وَٱجۡعَلۡنَا | and make us | wa-jʿalnā ]] [[ لِلۡمُتَّقِينَ | for the God-conscious | lil-muttaqīna ]] [[ إِمَامًا | a leader | imāmā ]], Ibn Kathīr reports Ibn ʿAbbās, al-Ḥasan, as-Suddī, Qatādah and Rabīʿ ibn Anas: leaders taken as examples in good. Others said guides who call others to goodness. Ibn Kathīr adds that they wanted their worship joined to the worship of their children, and their guidance to reach beyond themselves. He ties this to the ḥadīth in Ṣaḥīḥ Muslim from Abū Hurayrah ؓ: when a son of Adam dies his deeds cease except three, the first being [[ وَلَدٍ | a child | waladin ]] [[ صَالِحٍ | righteous | ṣāliḥin ]] [[ يَدْعُو | who prays | yadʿū ]] [[ لَهُ | for him. | lahu ]] This dua is an investment that outlives the one who makes it.
+**The servant asks to lead, not only to be saved.** 
+
+On [[ وَٱجۡعَلۡنَا | and make us | wa-jʿalnā ]] [[ لِلۡمُتَّقِينَ | for the God-conscious | lil-muttaqīna ]] [[ إِمَامًا | a leader | imāmā ]],
+
+Ibn Kathīr reports Ibn ʿAbbās, al-Ḥasan, as-Suddī, Qatādah and Rabīʿ ibn Anas: leaders taken as examples in good. Others said guides who call others to goodness. Ibn Kathīr adds that they wanted their worship joined to the worship of their children, and their guidance to reach beyond themselves. He ties this to the ḥadīth in Ṣaḥīḥ Muslim from Abū Hurayrah ؓ: when a son of Adam dies his deeds cease except three, the first being 
+
+[[ وَلَدٍ | a child | waladin ]] [[ صَالِحٍ | righteous | ṣāliḥin ]] [[ يَدْعُو | who prays | yadʿū ]] [[ لَهُ | for him. | lahu ]] 
+
+This dua is an investment that outlives the one who makes it.
 
 </details>
 
----
 
-## ✵ The Reward of ʿIbād ar-Raḥmān
+
+<details>
+<summary>✵ The Reward of ʿIbād ar-Raḥmān</summary>
 
 ## الْوَعْد ✵ Allah's Promise
 
@@ -341,7 +343,7 @@ staying there forever. What an excellent place to settle and reside! (25:76)
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
 **The reward names the price.** The Promise gives one reason: [[ بِمَا | because | bimā ]] [[ صَبَرُواْ | they were patient. | ṣabarū ]] Ibn Kathīr reads it as their patience in doing what they did, everything the passage described. Every trait of ʿIbād ar-Raḥmān costs patience.
 
@@ -376,12 +378,19 @@ Say, ˹O Prophet,˺ "You ˹all˺ would not ˹even˺ matter to my Lord were it no
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr. Verify the wording against the original before citing.
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr
 
 **Worship is the reason for the attention.** Ibn Kathīr says Allah would not care to pay attention to you if you did not worship Him, for He created mankind only to worship Him alone and glorify Him morning and evening.
 
-**What the denial leads to.** He reads [[ لِزَامَۢا | the inevitable punishment | lizāmā ]] as your denial remaining with you, leading to punishment, doom and destruction in this world and the Hereafter. Ibn Masʿūd, Ubayy ibn Kaʿb, Muḥammad ibn Kaʿb al-Quraẓī, Mujāhid, aḍ-Ḍaḥḥāk, Qatādah, as-Suddī and others took it as the day of Badr. al-Ḥasan al-Baṣrī said the Day of Resurrection. Ibn Kathīr says there is no conflict between the two.
+**What the denial leads to.** 
+
+He reads 
+
+[[ لِزَامَۢا | the inevitable punishment | lizāmā ]] 
+
+as your denial remaining with you, leading to punishment, doom and destruction in this world and the Hereafter. Ibn Masʿūd, Ubayy ibn Kaʿb, Muḥammad ibn Kaʿb al-Quraẓī, Mujāhid, aḍ-Ḍaḥḥāk, Qatādah, as-Suddī and others took it as the day of Badr. al-Ḥasan al-Baṣrī said the Day of Resurrection. Ibn Kathīr says there is no conflict between the two.
 
 </details>
 
----
+</details>
+
