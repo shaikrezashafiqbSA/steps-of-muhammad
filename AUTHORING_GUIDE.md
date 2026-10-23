@@ -331,7 +331,7 @@ Two circular buttons: `🔍+` and `🔍−`. Adjusts text size across 5 levels (
 
 ### 📜 Floating TOC (Bottom-Right)
 
-Appears when the page has ≥2 `H2`/`H3` headings — **automatically built**, no manual maintenance needed. Click a link → page scrolls and auto-expands `<details>` drawers in that section. Click outside or press `Esc` → closes.
+Appears when the page has ≥2 entries — **automatically built**, no manual maintenance needed. Entries are the `H2`/`H3` headings plus every top-level `<details>` drawer (listed by its `<summary>`, marked ▸), so the Dalīl and other collapsed sections are reachable too. Click a link → page scrolls and auto-expands the drawer (or the drawers in that heading's section). Click outside or press `Esc` → closes.
 
 ### 🔗 URL Hash Deep-Linking
 
@@ -972,6 +972,8 @@ Abū Hurayra reported: **The Messenger of Allah ﷺ used to say after every pray
 *🔗 Verify on sunnah.com — [Citation](URL)*
 ```
 The section emojis are conventions: 📜 for the hadith, 🔤 for word-by-word, 📚 for the Arabic drawer.
+
+**Newer card layout (being rolled out, first used in `content/dua/forgiveness-adam.md`)** — the title carries the identity, so the opening context/translation paragraph sits directly under the `# H1` with no heading of its own. The word-stack section is named by what the card *is*, one plain word: `## 🔤 Dua` for a duʿāʾ, `## 🔤 Sunnah` for anything that is not a duʿāʾ (a practice, a dhikr, a sunnah action). The Dalīl drawer follows. The floating TOC then lists just those two: the `Dua` (or `Sunnah`) section and the Dalīl. Older cards still use `📜 The Hadith` / `🔤 Word-by-Word` until they are migrated.
 
 **The verify line at bottom** — always italicize, always include the canonical sunnah.com or quran.com URL: `*🔗 Verify on sunnah.com — [Bukhārī 6306](https://sunnah.com/bukhari:6306)*`
 

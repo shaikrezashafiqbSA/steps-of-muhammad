@@ -396,6 +396,13 @@
       font-size: 0.76rem;
       color: var(--text-taupe);
     }
+    .toc-list .toc-drawer a {
+      padding-left: 1.5rem;
+      font-size: 0.76rem;
+      color: var(--text-taupe);
+    }
+    .toc-list .toc-in-drawer a { padding-left: 2.6rem; }
+    .toc-list .toc-drawer a::before { content: '▸'; margin-right: 0.45rem; color: var(--accent-ochre, #B08A4B); }
 
     /* ════════════════════════════════════════════════
        READING MODE FAN (v5.0)
@@ -1378,7 +1385,12 @@
       const tocPanel = document.getElementById('toc');
       const tocList = document.getElementById('tocList');
       const hudTocBtn = document.getElementById('hudTocBtn');
-      const headings = target.querySelectorAll('h2, h3');
+      // Sections are h2/h3 headings plus top-level drawers (the Dalīl, Ḥikmah,
+      // Original Arabic …), listed by their <summary> in document order.
+      // Embedded cards and drawers nested inside another drawer stay out.
+      const headings = Array.from(target.querySelectorAll('h2, h3, details')).filter(el =>
+        el.tagName !== 'DETAILS' ||
+        (!el.classList.contains('embed-card') && !el.parentElement.closest('details')));
 
       if (headings.length < 2) {
         if (tocPanel) tocPanel.style.display = 'none';
@@ -1388,16 +1400,27 @@
 
       tocList.innerHTML = '';
       headings.forEach((h, i) => {
-        if (!h.id) h.id = slugify(h.textContent) || `section-${i}`;
+        const isDrawer = h.tagName === 'DETAILS';
+        const label = (isDrawer ? h.querySelector('summary') || h : h).textContent.replace(/\s+/g, ' ').trim();
+        if (!h.id) {
+          // Repeated titles (several "Allah's Guarantee" sections) get -2, -3 …
+          const base = slugify(label) || `section-${i}`;
+          let id = base, n = 2;
+          while (document.getElementById(id)) id = `${base}-${n++}`;
+          h.id = id;
+        }
         const li = document.createElement('li');
-        li.className = h.tagName === 'H2' ? 'toc-h2' : 'toc-h3';
+        li.className = isDrawer ? 'toc-drawer' : h.tagName === 'H2' ? 'toc-h2' : 'toc-h3';
+        if (!isDrawer && h.closest('details')) li.classList.add('toc-in-drawer');   // sections written inside a drawer
         const a = document.createElement('a');
         a.href = `#${h.id}`;
-        a.textContent = h.textContent;
+        a.textContent = label;
 
         a.addEventListener('click', () => {
           const heading = document.getElementById(h.id);
-          if (heading) {
+          if (isDrawer) {
+            heading.open = true;
+          } else if (heading) {
             let node = heading.nextElementSibling;
             while (node && !['H1', 'H2', 'H3'].includes(node.tagName)) {
               if (node.tagName === 'DETAILS' && !node.classList.contains('embed-card')) node.open = true;
