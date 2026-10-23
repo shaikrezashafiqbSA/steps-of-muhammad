@@ -208,7 +208,7 @@
     const parallactic = atan2(sin(H), tan(lat) * cos(decl) - sin(decl) * cos(H));
 
     return {
-      altitude: alt, altitudeTopo: altTopo, azimuth: az, hourAngle: H,
+      altitude: alt, altitudeTopo: altTopo, azimuth: az, hourAngle: H, declination: decl,
       phase, illumination, elongation, separation,
       brightLimb, parallactic, ecliptic: { lon, sunLon }
     };

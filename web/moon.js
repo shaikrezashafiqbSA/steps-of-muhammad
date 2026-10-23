@@ -270,7 +270,13 @@
     const w = pop.offsetWidth;
     const left = Math.max(8, Math.min(cardRect.width - w - 8, mx - w / 2));
     pop.style.left = left + 'px';
-    pop.style.top = (my + 18 * k + 6) + 'px';
+    // Under the land the moon is near the bottom of the card: open above it if
+    // that fits, otherwise below as usual.
+    const h = pop.offsetHeight;
+    const aboveTop = my - 18 * k - 6 - h;
+    const above = state.spot.y > 150 && aboveTop >= -8;
+    pop.classList.toggle('is-above', above);
+    pop.style.top = (above ? aboveTop : my + 18 * k + 6) + 'px';
     pop.style.setProperty('--caret', Math.max(14, Math.min(w - 14, mx - left)) + 'px');
   }
 
