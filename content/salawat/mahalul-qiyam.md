@@ -13,10 +13,11 @@ right-orb-compact: ✦
 
 # Maḥallul Qiyām — The Standing Recital, Parts 1–5
 
-Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This card follows a recital heard at a masjid, in five parts. The original record was a rumi transliteration only; the Arabic and the word meanings below were reconstructed from it (see the Dalīl). A line shown in italics, without Arabic, could not yet be confirmed.
+Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This card follows a recital heard at a masjid, in five parts. The original record was a rumi transliteration only; the Arabic and the word meanings below were reconstructed from it (see the Dalīl). 
 
-In Part 1, after each verse:
-> *"O Prophet, peace be upon you. O Messenger, peace be upon you. O Beloved, peace be upon you. Blessings of Allah be upon you."*
+<iframe width="100%" height="200" src="https://www.youtube.com/embed/8pdWoSkbqtI?si=vA0V-5nNJx6C7PYD&amp;start=189" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 
 ## 🔤 Dua
 
@@ -29,6 +30,8 @@ In Part 1, after each verse:
 [[ x 2 ]][[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَىٰ | upon | ʿalā ]] [[ مُحَمَّدْ | Muḥammad | Muḥammad ]]
 
 [[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمْ | and grant peace | wa-sallam ]]
+
+## Part 2
 
 [[ اللَّهُ | Allah | Allāh ]]
 
