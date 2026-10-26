@@ -200,7 +200,8 @@ const VAULT_NAVIGATION_TREE = [
     categoryAr: "الصَّلَوَاتُ",
     desc: "Send ṣalawāt upon the Prophet ﷺ",
     items: [
-      { label: "The Adnānī formula, from the mashāyikh", gloss: "Ṣalawāt Adnānī", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "salawat/salawat-adnani.html" },
+      { label: "Maḥallul Qiyām — The Standing Recital", gloss: "Ṣalawāt al-Maḥallul Qiyām", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/salawat/mahalul-qiyam.md" },
+      { label: "The Adnānī formula, from the mashāyikh", gloss: "Ṣalawāt Adnānī", ref: "Compiled wird", tier: "muhsin", time: ["*any"], path: "web/render.html?file=content/salawat/salawat-adnani.md" },
       { label: "The ṣalawāt of relief, recited when a knot will not loosen", gloss: "Ṣalawāt Tafrījiyyah", ref: "Compiled wird", tier: "imam", time: ["*any"], path: "web/render.html?file=content/salawat/salawat-tafrijiyyah.md" }
     ]
   },

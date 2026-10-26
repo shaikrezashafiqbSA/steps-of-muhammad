@@ -361,7 +361,7 @@ All standard GitHub-Flavored Markdown works as expected: `# H1`–`###### H6` he
 
 ```
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>🔎 What is the {{ Dalīl | @dalil }}? </summary>
 
 **Qur'an, Sūrat Hūd 11:59.** Why this verse is the source.
 
@@ -371,6 +371,15 @@ All standard GitHub-Flavored Markdown works as expected: `# H1`–`###### H6` he
 
 </details>
 ```
+
+**The glossary (`content/kalima/`)** — *kalima* (كَلِمَة) is a single word; *kalām* is speech, so the folder of one-word entries is `kalima`. Each entry is a short markdown file named by a slug (`content/kalima/hikmah.md`, start from `_TEMPLATE.md`). Two ways to link a word to its entry — the explanation is written once and every card shares it:
+
+```
+{{ Dalīl | @dalil }}                          ← tooltip: a note that is really an entry
+[[ حَسْبِيَ | Sufficient for me is | ḥasbiya | hasb ]]   ← 4th field of a word stack
+```
+
+Tapping the word (or the `i` mark) opens the entry in a popover with an "Open entry ↗" link. Glossary links open on tap only, never on hover. A missing entry shows "No glossary entry yet" and names the file to create.
 
 **Qurʾān verses** are shown with the [QuranWBW](https://quranwbw.com) word-by-word viewer: `https://quranwbw.com/<surah>/<ayah>`, or a range such as `37/180-182`. Builder: **Embeds → 📖 Qurʾān verse (QuranWBW)**. Ḥadīth sources use a card embed (below).
 
@@ -973,7 +982,7 @@ Abū Hurayra reported: **The Messenger of Allah ﷺ used to say after every pray
 ```
 The section emojis are conventions: 📜 for the hadith, 🔤 for word-by-word, 📚 for the Arabic drawer.
 
-**Newer card layout (being rolled out, first used in `content/dua/forgiveness-adam.md`)** — the title carries the identity, so the opening context/translation paragraph sits directly under the `# H1` with no heading of its own. The word-stack section is named by what the card *is*, one plain word: `## 🔤 Dua` for a duʿāʾ, `## 🔤 Sunnah` for anything that is not a duʿāʾ (a practice, a dhikr, a sunnah action). The Dalīl drawer follows. The floating TOC then lists just those two: the `Dua` (or `Sunnah`) section and the Dalīl. Older cards still use `📜 The Hadith` / `🔤 Word-by-Word` until they are migrated.
+**Newer card layout (being rolled out, first used in `content/dua/forgiveness-adam.md`)** — the title carries the identity, so the opening context/translation paragraph sits directly under the `# H1` with no heading of its own. The word-stack section is named by what the card *is*, one plain word: `## 🔤 Dua` for a duʿāʾ, `## 🔤 Sunnah` for anything that is not a duʿāʾ (a practice, a dhikr, a sunnah action). An optional `## ۞ {{ الْحِكْمَة | @hikmah }} · Hikmah` section follows — only the benefit or wisdom the text itself states. The Dalīl drawer comes last. The floating TOC lists the `Dua` (or `Sunnah`) section, the Hikmah if present, and the Dalīl. Older cards still use `📜 The Hadith` / `🔤 Word-by-Word` until they are migrated.
 
 **The verify line at bottom** — always italicize, always include the canonical sunnah.com or quran.com URL: `*🔗 Verify on sunnah.com — [Bukhārī 6306](https://sunnah.com/bukhari:6306)*`
 
@@ -1110,7 +1119,7 @@ Pacing recommendation: 1–2 files per session. This is contemplative work, not 
 
 ## 🤖 Role of the LLM Scaffolding Prompt
 
-The project includes a system prompt (`prompt-v4.md` or similar) that can be used with an LLM to generate scaffolded drafts — **never final output**.
+The project keeps its system prompt in [`DRAFT_PROMPT.md`](DRAFT_PROMPT.md) (repo root): the finalised layout, the rules and a skeleton, for generating scaffolded drafts with an LLM — **never final output**. It also covers sources that are only a transliteration (no Arabic): see its §8.
 
 **✅ Use for scaffolding when:** you've already verified the source manually, you want to skip the mechanical extraction of meta-card fields from a sunnah.com paste, or you want a rough word-stack draft to refine (not accept as-is).
 

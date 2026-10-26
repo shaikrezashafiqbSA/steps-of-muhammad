@@ -1315,16 +1315,20 @@
       const html = rootEl.innerHTML;
       // Preview mode prefixes each stack with its source line number
       // wrapped in word joiners (U+2060) so it can be traced back.
-      const wordRe = /(?<!\\)(?:⁠(\d+)⁠)?\[\[([^\[\]|]+)(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?\]\]/g;
+      const wordRe = /(?<!\\)(?:⁠(\d+)⁠)?\[\[([^\[\]|]+)(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?(?:\|([^\[\]|]*))?\]\]/g;
 
-      const transformed = html.replace(wordRe, (match, line, ar, en, tr) => {
+      const transformed = html.replace(wordRe, (match, line, ar, en, tr, kal) => {
         const arabic = (ar || '').trim();
         const english = (en || '').trim();
         const translit = (tr || '').trim();
         let inner = `<b>${arabic}</b>`;
         if (english) inner += `<i>${english}</i>`;
         if (translit) inner += `<u>${translit}</u>`;
-        return `<span class="w"${line ? ` data-line="${line}"` : ''}>${inner}</span>`;
+        // optional 4th field: a glossary slug → tapping the word opens content/kalima/<slug>.md
+        const slug = (kal || '').trim().replace(/^@/, '').toLowerCase();
+        const kalAttrs = /^[a-z0-9-]+$/.test(slug)
+          ? ` data-kalima="${slug}" tabindex="0" role="button" aria-label="${arabic} — open glossary entry"` : '';
+        return `<span class="w"${line ? ` data-line="${line}"` : ''}${kalAttrs}>${inner}</span>`;
       })
       .replace(/\\\[\[/g, '[[');
 

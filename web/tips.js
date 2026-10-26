@@ -39,7 +39,24 @@
       letter-spacing: 0.08em; text-transform: uppercase; color: #D9B869;
     }
     #som-tip-pop.above::before { bottom: -5px; }
-    #som-tip-pop.below::before { top: -5px; }`;
+    #som-tip-pop.below::before { top: -5px; }
+
+    /* Glossary links (content/kalima): {{ word | @slug }} and the 4th field of a word stack */
+    .som-tip[data-kalima]::after { content: 'i'; font-family: Georgia, serif; font-style: italic; }
+    .w[data-kalima] { cursor: help; border-bottom: 1px dotted var(--accent-ochre, #B08A4B); }
+    .w[data-kalima]:focus-visible { outline: 2px solid var(--accent-ochre, #B08A4B); outline-offset: 2px; }
+    #som-tip-pop.rich { pointer-events: auto; max-width: min(24rem, calc(100vw - 16px)); padding: 0; text-align: left; font-weight: 400; }
+    .som-kal-scroll { max-height: 55vh; overflow-y: auto; padding: 0.85rem 1rem; }
+    .som-kal-scroll h1, .som-kal-scroll h2, .som-kal-scroll h3 { margin: 0 0 0.4rem; font-size: 1rem; line-height: 1.4; color: #FFE9B8; font-weight: 700; }
+    .som-kal-scroll p { margin: 0.4rem 0; }
+    .som-kal-scroll ul, .som-kal-scroll ol { margin: 0.4rem 0; padding-left: 1.1rem; }
+    .som-kal-scroll a { color: #D9B869; }
+    .som-kal-scroll blockquote { margin: 0.4rem 0; padding-left: 0.7rem; border-left: 2px solid #D9B869; }
+    .som-kal-status { opacity: 0.8; font-style: italic; }
+    .som-kal-foot {
+      display: block; margin-top: 0.7rem; font: 700 0.58rem/1 'JetBrains Mono', ui-monospace, monospace;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #D9B869 !important; text-decoration: none;
+    }`;
 
   const style = document.createElement('style');
   style.textContent = css;
@@ -54,7 +71,10 @@
     // Code samples (e.g. the authoring guide) must show the syntax, not run it.
     const parts = rootEl.innerHTML.split(/(<pre[\s\S]*?<\/pre>|<code[\s\S]*?<\/code>)/);
     rootEl.innerHTML = parts.map((seg, i) => i % 2 ? seg : seg.replace(TIP_RE, (m, word, note) => {
-      const text = note.replace(/<[^>]+>/g, '').replace(/"/g, '&quot;');
+      // {{ word | @slug }} → opens content/kalima/slug.md instead of a typed note
+      const k = note.trim().match(/^@([a-z0-9-]+)$/i);
+      if (k) return `<span class="som-tip" tabindex="0" role="button" aria-label="${word.replace(/<[^>]+>/g, '')} — open glossary entry" data-kalima="${k[1].toLowerCase()}">${word}</span>`;
+      const text =note.replace(/<[^>]+>/g, '').replace(/"/g, '&quot;');
       return `<span class="som-tip" tabindex="0" role="button" aria-label="${word.replace(/<[^>]+>/g, '')} — tap for explanation" data-tip="${text}">${word}</span>`;
     }).replace(/\\\{\{/g, '{{')).join('');
   };
@@ -66,8 +86,49 @@
     return pop;
   }
 
+  // ── Glossary entries: content/kalima/<slug>.md, fetched once and cached ──
+  const KAL = new Map();
+  function kalimaHTML(slug) {
+    if (!KAL.has(slug)) {
+      KAL.set(slug, fetch('../content/kalima/' + slug + '.md')
+        .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+        .then(md => window.marked ? marked.parse(md.replace(/^::meta\s*\n[\s\S]*?\n::\s*\n?/, '')) : null)
+        .catch(() => { KAL.delete(slug); return null; }));
+    }
+    return KAL.get(slug);
+  }
+
+  function place(el) {
+    const p = pop, r = el.getBoundingClientRect(), w = p.offsetWidth, h = p.offsetHeight, pad = 8;
+    const left = Math.max(pad, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - pad));
+    const above = r.top - h - 12 >= pad;
+    p.classList.toggle('above', above); p.classList.toggle('below', !above);
+    p.style.left = left + 'px';
+    p.style.top = (above ? r.top - h - 10 : r.bottom + 10) + 'px';
+    p.style.setProperty('--arrow-x', Math.max(14, Math.min(r.left + r.width / 2 - left, w - 14)) + 'px');
+  }
+
+  function showKalima(el, p) {
+    const slug = el.dataset.kalima;
+    p.classList.add('rich');
+    p.innerHTML = '<div class="som-kal-scroll"><p class="som-kal-status">Loading…</p></div>';
+    p.style.display = 'block'; p.style.left = '0px'; p.style.top = '0px';
+    place(el);
+    kalimaHTML(slug).then(html => {
+      if (current !== el) return;
+      p.innerHTML = '<div class="som-kal-scroll">' + (html ||
+        '<p class="som-kal-status">No glossary entry yet — add <code>content/kalima/' + slug + '.md</code></p>') +
+        (html ? '<a class="som-kal-foot" href="render.html?file=content/kalima/' + slug + '.md" target="_blank" rel="noopener">Open entry ↗</a>' : '') + '</div>';
+      place(el);
+    });
+  }
+
   function show(el) {
     const p = ensurePop();
+    p.classList.remove('rich');
+    if (current && current !== el) current.classList.remove('is-open');
+    current = el;
+    if (el.dataset.kalima) { showKalima(el, p); return; }
     // Optional richer form: data-tip-ar (the Arabic, shown large) and data-tip-ref (its citation).
     p.textContent = '';
     if (el.dataset.tipAr) {
@@ -98,15 +159,17 @@
     current = null; pinned = false;
   }
 
-  const tipOf = (t) => t.closest && t.closest('.som-tip');
+  const tipOf = (t) => t.closest && t.closest('.som-tip, .w[data-kalima]');
+  const hoverable = (t) => t && !t.dataset.kalima;   // glossary entries open on click/tap only
 
-  document.addEventListener('mouseover', (e) => { const t = tipOf(e.target); if (t && !pinned) show(t); });
-  document.addEventListener('mouseout', (e) => { if (tipOf(e.target) && !pinned) hide(); });
-  document.addEventListener('focusin', (e) => { const t = tipOf(e.target); if (t && !pinned) show(t); });
-  document.addEventListener('focusout', (e) => { if (tipOf(e.target) && !pinned) hide(); });
+  document.addEventListener('mouseover', (e) => { const t = tipOf(e.target); if (hoverable(t) && !pinned) show(t); });
+  document.addEventListener('mouseout', (e) => { if (hoverable(tipOf(e.target)) && !pinned) hide(); });
+  document.addEventListener('focusin', (e) => { const t = tipOf(e.target); if (hoverable(t) && !pinned) show(t); });
+  document.addEventListener('focusout', (e) => { if (hoverable(tipOf(e.target)) && !pinned) hide(); });
 
   // Click pins it (needed on touch); clicking inside a <summary> must not toggle the drawer.
   document.addEventListener('click', (e) => {
+    if (pop && pop.contains(e.target)) return;   // reading or scrolling an open glossary entry
     const t = tipOf(e.target);
     if (!t) { if (pinned) hide(); return; }
     e.preventDefault();
