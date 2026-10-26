@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="48x48" href="../assets/icons/favicon-48.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-cream: #FFFBF1; --structural: #7D5243; --divider-sand: #E6DCD0;
@@ -111,6 +111,42 @@
     .menu-panel .chars button { border: 1px solid var(--divider-sand); background: #fff; border-radius: 8px;
       font-size: 1.05rem; padding: .3rem 0; cursor: pointer; color: var(--text-espresso); }
     .menu-panel .chars button:hover { background: rgba(176,138,75,.18); }
+
+    /* ── Arabic keyboard ── */
+    .kbd-dock {
+      flex: none; max-height: 52vh; overflow-y: auto; padding: .4rem .55rem .55rem;
+      background: rgba(255,251,241,.98); border-top: 1px solid var(--divider-sand);
+    }
+    .kbd-dock[hidden] { display: none; }
+    .kbd-bar { display: flex; align-items: center; gap: .35rem; flex-wrap: wrap; margin-bottom: .4rem; }
+    .kbd-bar .spacer { flex: 1; }
+    .kbd-tab, .kbd-tog {
+      font-family: 'JetBrains Mono', monospace; font-size: .6rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase; cursor: pointer;
+      padding: .3rem .65rem; border-radius: 999px;
+      border: 1px solid var(--divider-sand); background: #fff; color: var(--structural);
+    }
+    .kbd-tab.on { background: rgba(176,138,75,.2); border-color: rgba(176,138,75,.6); }
+    .kbd-tog.on { background: var(--structural); border-color: var(--structural); color: #FFFBF1; }
+    .kbd-sec { margin: .45rem 0 .2rem; font-family: 'JetBrains Mono', monospace; font-size: .55rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--accent-ochre); }
+    .kbd-row { display: flex; flex-wrap: wrap; gap: .25rem; justify-content: center; margin-bottom: .25rem; }
+    .kbd-row.start { justify-content: flex-start; }
+    .k {
+      flex: 1 1 0; min-width: 1.75rem; max-width: 2.9rem; height: 2.35rem; padding: 0;
+      border: 1px solid var(--divider-sand); border-radius: 7px; background: #fff; color: var(--text-espresso);
+      font: 400 1.35rem/1 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', 'Segoe UI', serif;
+      direction: rtl; cursor: pointer;
+    }
+    .k:hover { background: rgba(176,138,75,.18); }
+    .k:active { transform: translateY(1px); background: rgba(176,138,75,.32); }
+    .k.mark { color: var(--structural); font-size: 1.75rem; }
+    .k.wide { flex: 2 1 0; max-width: none; }
+    .k.space { flex: 6 1 0; max-width: none; }
+    .k.txt { font: 700 .58rem/1 'JetBrains Mono', monospace; letter-spacing: .04em; direction: ltr; }
+    .kbd-note { margin-top: .35rem; font-size: .62rem; line-height: 1.4; color: var(--text-taupe); }
+    textarea.arabic-on { box-shadow: inset 3px 0 0 var(--accent-ochre); }
+    @media (max-width: 760px) { .k { min-width: 1.5rem; height: 2.2rem; font-size: 1.15rem; } }
   </style>
 </head>
 <body data-tab="edit">
@@ -140,6 +176,7 @@
       <div class="pane-head"><span>Markdown</span><span class="note" id="count"></span></div>
       <textarea id="editor" spellcheck="false"
         placeholder="Paste a card here: ::meta block, # title, ## sections, [[ arabic | english | translit ]] word stacks. You can also drop a .md file."></textarea>
+      <div class="kbd-dock" id="kbd" hidden></div>
     </section>
     <section class="pane view">
       <div class="pane-head"><span>Card preview</span><span class="note">live · same renderer as the app</span></div>
@@ -527,6 +564,194 @@ Allah will suffice them in whatever concerns them of the matters of this world a
       if (selOff >= 0) editor.setSelectionRange(start + selOff, start + selOff + selLen);
       syncCaret();
     }
+
+    // ════════════════════════════════════════════
+    // Arabic keyboard — on screen, plus an optional mapping for the physical keyboard.
+    //   Letters page : letters, hamza/alif forms, tashkeel (shadda, sukūn, tanwīn…), punctuation.
+    //   Tajweed page : waqf signs, Qurʾānic small marks, extended vowel signs, ayah signs, honorifics.
+    //   Physical mode (Ctrl+Space): the keys type the standard Arabic 101 layout; Shift gives tashkeel.
+    // Marks are written as \u escapes so no invisible character can be lost in an edit.
+    // ════════════════════════════════════════════
+    const KB_KEY = 'som-card-builder-kbd';
+    const kb = (() => { try { return JSON.parse(localStorage.getItem(KB_KEY)) || {}; } catch (e) { return {}; } })();
+    const kbSave = () => { try { localStorage.setItem(KB_KEY, JSON.stringify(kb)); } catch (e) {} };
+    const dock = document.getElementById('kbd');
+    const cp = (hex) => String.fromCodePoint(parseInt(hex, 16));
+    const plain = (s) => Array.from(s).map(c => [c]);
+    const M = (hex, title) => [cp(hex), title];   // a mark, by code point
+
+    // Names state a role only where it is certain; the rest carry the Unicode name.
+    const KB_LETTERS = [
+      plain('١٢٣٤٥٦٧٨٩٠'),
+      plain('ضصثقفغعهخحجد'),
+      plain('شسيبلاتنمكطذ'),
+      plain('ءئؤرىةوزظ'),
+      [M('0623', 'alif with hamza above'), M('0625', 'alif with hamza below'), M('0622', 'alif with maddah'), M('0671', 'alif waṣla'),
+       [cp('0644') + cp('0627'), 'lām-alif'], [cp('0644') + cp('0623'), 'lām-alif with hamza above'],
+       [cp('0644') + cp('0625'), 'lām-alif with hamza below'], [cp('0644') + cp('0622'), 'lām-alif with maddah']],
+      [M('064E', 'fatḥa'), M('064F', 'ḍamma'), M('0650', 'kasra'), M('0651', 'shadda'), M('0652', 'sukūn'),
+       M('064B', 'fatḥatān (tanwīn)'), M('064C', 'ḍammatān (tanwīn)'), M('064D', 'kasratān (tanwīn)'),
+       M('0670', 'dagger alif'), M('0653', 'maddah'), M('0654', 'hamza above'), M('0655', 'hamza below'),
+       M('0640', 'taṭwīl (kashīda)')],
+    ];
+    const KB_PUNCT = [M('060C', 'Arabic comma'), M('061B', 'Arabic semicolon'), M('061F', 'Arabic question mark'),
+                      M('00AB', 'opening quotation mark'), M('00BB', 'closing quotation mark')];
+
+    const KB_MARKS = [
+      ['Waqf signs · علامات الوقف', [
+        M('06D8', 'waqf lāzim — a stop is required'), M('06D6', 'ṣilā — continuing is preferred'),
+        M('06D7', 'qilā — stopping is preferred'), M('06DA', 'jāʾiz — stopping or continuing'),
+        M('06D9', 'lā — do not stop'), M('06DB', 'muʿānaqa — stop at one of the two marks'),
+        M('06DC', 'sakta — a brief pause without breathing')]],
+      ['Recitation marks', [
+        M('06E1', 'sukūn (Uthmānī form)'), M('06E2', 'small high mīm — iqlāb'),
+        M('06DF', 'small high rounded zero — written, not pronounced'),
+        M('06E0', 'small high rectangular zero — not pronounced when continuing'),
+        M('0670', 'dagger alif'), M('0653', 'maddah'), M('06E4', 'small high madda'),
+        M('06E5', 'small waw'), M('06E6', 'small yāʾ'), M('06E7', 'small high yāʾ'), M('06E8', 'small high nūn'),
+        M('06E3', 'small low sīn'), M('06ED', 'small low mīm'),
+        M('06EA', 'empty centre low stop'), M('06EB', 'empty centre high stop'),
+        M('06EC', 'rounded high stop with filled centre')]],
+      ['Extended vowel signs', [
+        M('0656', 'subscript alif'), M('0657', 'inverted ḍamma'), M('0658', 'noon ghunna mark'), M('0659', 'zwarakay'),
+        M('065A', 'small v above'), M('065B', 'inverted small v above'), M('065C', 'dot below'),
+        M('065D', 'reversed ḍamma'), M('065E', 'fatḥa with two dots'), M('065F', 'wavy hamza below')]],
+      ['Ayah and sections', [
+        M('FD3F', 'ornate parenthesis — opens an ayah number, as in [[﴿١٢٩﴾]]'),
+        M('FD3E', 'ornate parenthesis — closes it'),
+        M('06DD', 'end of ayah'), M('06DE', 'start of rubʿ al-ḥizb'), M('06E9', 'place of sajdah')]],
+      ['Honorifics', [
+        M('FDFA', 'ṣallallāhu ʿalayhi wa-sallam'), M('FDF4', 'Muḥammad (ligature)'), M('FDFB', 'jalla jalāluh'),
+        M('0613', 'raḍiyallāhu ʿanhu'), M('0612', 'raḥimahullāh'), M('0611', 'ʿalayhi as-salām'),
+        M('0610', 'ṣallallāhu ʿalayhi wa-sallam (small sign)')]],
+      ['Joining', [[cp('200D'), 'zero-width joiner', 'ZWJ'], [cp('200C'), 'zero-width non-joiner', 'ZWNJ']]],
+    ];
+
+    // Arabic 101 layout by physical key. Second entry = with Shift (null = leave the key alone).
+    const KB_PHYS = {
+      Backquote: ['ذ', cp('0651')], KeyQ: ['ض', cp('064E')], KeyW: ['ص', cp('064B')], KeyE: ['ث', cp('064F')],
+      KeyR: ['ق', cp('064C')], KeyT: ['ف', cp('0644') + cp('0625')], KeyY: ['غ', cp('0625')], KeyU: ['ع', null],
+      KeyI: ['ه', null], KeyO: ['خ', null], KeyP: ['ح', cp('061B')], BracketLeft: ['ج', null], BracketRight: ['د', null],
+      KeyA: ['ش', cp('0650')], KeyS: ['س', cp('064D')], KeyD: ['ي', null], KeyF: ['ب', null],
+      KeyG: ['ل', cp('0644') + cp('0623')], KeyH: ['ا', cp('0623')], KeyJ: ['ت', cp('0640')], KeyK: ['ن', cp('060C')],
+      KeyL: ['م', null], Semicolon: ['ك', null], Quote: ['ط', null],
+      KeyZ: ['ئ', null], KeyX: ['ء', cp('0652')], KeyC: ['ؤ', null], KeyV: ['ر', null],
+      KeyB: [cp('0644') + cp('0627'), cp('0644') + cp('0622')], KeyN: ['ى', cp('0622')], KeyM: ['ة', null],
+      Comma: ['و', null], Period: ['ز', null], Slash: ['ظ', cp('061F')],
+    };
+
+    function kbType(text) {
+      if (text === '\b') { editor.focus(); document.execCommand('delete'); schedule(); return; }
+      insertSnippet({ text });   // same path as the Characters menu: keeps undo, caret and preview in step
+    }
+
+    function kbKey(c, title, label, extra) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'k' + (extra ? ' ' + extra : '');
+      const isMark = /^\p{Mn}$/u.test(c);
+      if (isMark && !label) b.classList.add('mark');
+      b.textContent = label || (isMark ? cp('0640') + c : c);   // marks sit on a taṭwīl so they stay visible
+      if (label) b.classList.add('txt');
+      if (title) { b.title = title; b.setAttribute('aria-label', title); }
+      b.addEventListener('mousedown', e => e.preventDefault());   // keep the editor's selection and focus
+      b.addEventListener('click', () => kbType(c));
+      return b;
+    }
+
+    function kbRow(keys, cls) {
+      const r = document.createElement('div');
+      r.className = 'kbd-row' + (cls ? ' ' + cls : '');
+      keys.forEach(k => r.appendChild(kbKey(k[0], k[1], k[2])));
+      return r;
+    }
+
+    function kbRender() {
+      dock.innerHTML = '';
+      const bar = document.createElement('div');
+      bar.className = 'kbd-bar';
+      [['letters', 'حروف · Letters'], ['marks', 'تجويد · Tajweed & marks']].forEach(([id, label]) => {
+        const t = document.createElement('button');
+        t.type = 'button'; t.className = 'kbd-tab' + ((kb.page || 'letters') === id ? ' on' : ''); t.textContent = label;
+        t.addEventListener('mousedown', e => e.preventDefault());
+        t.addEventListener('click', () => { kb.page = id; kbSave(); kbRender(); });
+        bar.appendChild(t);
+      });
+      const sp = document.createElement('span'); sp.className = 'spacer'; bar.appendChild(sp);
+      const phys = document.createElement('button');
+      phys.type = 'button'; phys.className = 'kbd-tog' + (kb.phys ? ' on' : ''); phys.id = 'kbd-phys';
+      phys.textContent = kb.phys ? 'ع Typing Arabic' : 'A Typing Latin';
+      phys.title = 'Make your own keyboard type Arabic (standard Arabic 101 layout; Shift gives the tashkeel). Ctrl+Space switches.';
+      phys.addEventListener('mousedown', e => e.preventDefault());
+      phys.addEventListener('click', kbTogglePhys);
+      bar.appendChild(phys);
+      const x = document.createElement('button');
+      x.type = 'button'; x.className = 'kbd-tab'; x.textContent = '✕'; x.title = 'Close the keyboard';
+      x.addEventListener('mousedown', e => e.preventDefault());
+      x.addEventListener('click', () => kbShow(false));
+      bar.appendChild(x);
+      dock.appendChild(bar);
+
+      if ((kb.page || 'letters') === 'letters') {
+        KB_LETTERS.forEach(r => dock.appendChild(kbRow(r)));
+        const bottom = document.createElement('div');
+        bottom.className = 'kbd-row';
+        const stack = kbKey('[[ ⟦ ⟧ | | ]]', 'Start a word-stack [[ | | ]] — type the Arabic, then the English and the transliteration', 'STACK', 'wide');
+        const space = kbKey(' ', 'space', 'SPACE', 'space');
+        const back = kbKey('\b', 'backspace', '⌫', 'wide');
+        bottom.appendChild(stack);
+        KB_PUNCT.forEach(k => bottom.appendChild(kbKey(k[0], k[1])));
+        bottom.appendChild(space); bottom.appendChild(back);
+        dock.appendChild(bottom);
+      } else {
+        KB_MARKS.forEach(([title, keys]) => {
+          const h = document.createElement('div'); h.className = 'kbd-sec'; h.textContent = title; dock.appendChild(h);
+          dock.appendChild(kbRow(keys, 'start'));
+        });
+        const n = document.createElement('div');
+        n.className = 'kbd-note';
+        n.textContent = 'Type the letter first, then the mark: it attaches to the letter before it. Hover a key for its name; roles are stated only where they are certain.';
+        dock.appendChild(n);
+      }
+    }
+
+    function kbShow(open) {
+      kb.open = !!open; kbSave();
+      dock.hidden = !open;
+      if (open) kbRender();
+      const btn = document.getElementById('kbd-open');
+      if (btn) btn.classList.toggle('on', !!open);
+    }
+
+    function kbTogglePhys() {
+      kb.phys = !kb.phys; kbSave();
+      editor.classList.toggle('arabic-on', !!kb.phys);
+      const p = document.getElementById('kbd-phys');
+      if (p) { p.classList.toggle('on', !!kb.phys); p.textContent = kb.phys ? 'ع Typing Arabic' : 'A Typing Latin'; }
+    }
+
+    // Your own keyboard, mapped to Arabic 101 while the switch is on (Ctrl/Alt/Meta shortcuts are left alone).
+    editor.addEventListener('keydown', (e) => {
+      if (!kb.phys || e.isComposing || e.ctrlKey || e.altKey || e.metaKey) return;
+      const m = KB_PHYS[e.code];
+      if (!m) return;
+      const ch = e.shiftKey ? m[1] : m[0];
+      if (!ch) return;
+      e.preventDefault();
+      kbType(ch);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && !e.altKey && !e.metaKey && e.code === 'Space') { e.preventDefault(); kbTogglePhys(); }
+    });
+
+    const kbBtn = document.createElement('button');
+    kbBtn.type = 'button'; kbBtn.className = 'mbtn'; kbBtn.id = 'kbd-open'; kbBtn.textContent = '⌨ Arabic';
+    kbBtn.title = 'Arabic keyboard with tashkeel and tajweed marks';
+    kbBtn.addEventListener('mousedown', e => e.preventDefault());
+    kbBtn.addEventListener('click', () => kbShow(dock.hidden));
+    bar.insertBefore(kbBtn, guide);
+    editor.classList.toggle('arabic-on', !!kb.phys);
+    kbShow(!!kb.open);
 
     const saved = store.get();
     editor.value = saved !== null ? saved : sampleMd();

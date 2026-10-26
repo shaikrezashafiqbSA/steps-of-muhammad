@@ -103,7 +103,8 @@ Split the recited Arabic into word-stacks:
 5. **Count:** if the source prescribes a count, put one Arabic-only bracket before the formula, e.g. `[[ x 7 ]]`. For a Qur'anic ayah, close it with the ayah marker, e.g. `[[﴿١٢٩﴾]]`.
 6. **Sub-labels** inside this section use `#####`, never `##` or `###`, because those would enter the table of contents.
 7. **Lead-in ayah:** if the recited ayah only makes sense after the one before it (e.g. 9:129 "fa-in tawallaw fa-qul" after 9:128), you may place that preceding ayah's stacks first. Add a DRAFT NOTE saying you did.
-8. **Glossary links:** a stack may take a 4th field (`[[ ARABIC | English | Transliteration | slug ]]`) linking to `content/kalima/<slug>.md`. Add it **only** for a slug the author gave you. Never invent entries.
+8. **Repeats:** write every repeated line or block out in full each time. Readers go through the card in one pass and will not scroll back to an earlier occurrence, so never use "as above", "(repeat)", a refrain label or a marker in place of the text. A count the source states uses the `[[ x N ]]` bracket (rule 5).
+9. **Glossary links:** a stack may take a 4th field (`[[ ARABIC | English | Transliteration | slug ]]`) linking to `content/kalima/<slug>.md`. Add it **only** for a slug the author gave you. Never invent entries.
 
 ---
 
@@ -171,7 +172,7 @@ Use this when the material is a Latin transliteration typed from a recital (for 
    - **Unresolved:** the sounds do not form real Arabic. Write **no Arabic**. Give the typed transliteration unchanged as one italic line followed by ` — Arabic not yet confirmed`, for example `*Fahazaa rulyum ni ghaarrad* — Arabic not yet confirmed`. List it in a DRAFT NOTE.
 3. **Do not substitute a text you recognise.** If the lines resemble a known work, do not name the work or the author, and do not fill gaps from memory. At most, mention the resemblance in a DRAFT NOTE as something to check.
 4. **Keep it as recited.** End rhyme words in a sukūn as recited (أَحْمَدْ), keep pausal forms (نَبِيْ سَلَامْ), and keep a typed vowel even where grammar would differ (say so in a DRAFT NOTE).
-5. **Repeats.** Write a recurring refrain in full the first time. Each later time, write one bold line naming it: `**↺ Refrain** *(as above)*`. Where the source types a block twice or marks it "2X" or "×2", put `[[ x 2 ]]` at the nearest block exactly as typed, and add a DRAFT NOTE that the reading is uncertain.
+5. **Repeats: write every one out in full.** Readers go through the card in one pass and will not scroll back, so never replace a repeated line with "as above", a refrain label or a marker. A block the source types twice with no mark is written twice. Where the source marks a block "2X" or "×2", put `[[ x 2 ]]` at the nearest block exactly as typed, and add a DRAFT NOTE that the reading is uncertain.
 6. **Labels.** Part headings ("Part 1") become `##### Part 1`. A label such as "Doa:" becomes a bold line (`**Duʿāʾ**`). Spoken interjections (e.g. "(Allah Allah)") become stacks. Ignore separator lines made of `#`, `*` or `×`.
 7. **Meta.** Leave `narrator` and `hadith` blank. `collection` names the recital and says "masjid recital"; `book` gives the parts. Use `grade: unknown`, `right-orb: Living Tradition`, `right-orb-compact: ✦` and `left-orb-compact: 🕌` (as in `content/dua/shifa/dua-hamil.md`). Do not name the masjid or the reciter unless the author gave them; add a DRAFT NOTE asking for them.
 8. **Intro.** Say plainly that this is a record of a recital, that the original had only a transliteration, that the Arabic and meanings were reconstructed, and that italic lines are unconfirmed. Give an italic blockquote translation only for a short recurring refrain whose meaning is certain.
@@ -179,7 +180,7 @@ Use this when the material is a Latin transliteration typed from a recital (for 
 10. **Dalīl.** Include no Qur'an or ḥadīth block, even for a famous verse, unless the author supplied it. At the top put the two provenance flags:
     - `> 🔍 **Source pending verification:** This recital has been preserved as it was recited; its underlying text has not yet been traced to a printed source.`
     - `> 📝 **Note on the Arabic:** The Arabic text has been reconstructed from a typed Latin transliteration of a recital; tashkeel has been added per standard fuṣḥā conventions, with a final sukūn where the recital stops on the rhyme. Variations may exist in the printed text.`
-    Then `**Scholarly Documentation & Chain Reality**` with the bullets *Recorded from*, *Arabic* (reconstructed; unresolved lines marked), *Underlying text* (not yet identified), and *Repeats*.
+    Then `**Scholarly Documentation & Chain Reality**` with the bullets *Recorded from*, *Arabic* (reconstructed; unresolved lines marked), *Underlying text* (not yet identified), and *Repeats* (every repeat is written out in full).
 11. **The DRAFT NOTE comments must list:** the missing masjid or reciter, every "2X" reading, every medium-confidence line with the form that was typed, and every unresolved line.
 
 ---

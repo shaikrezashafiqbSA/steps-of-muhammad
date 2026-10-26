@@ -842,6 +842,19 @@ Then open `http://localhost:8791/web/render.html?file=your-card.md` and check:
 
 ---
 
+### The Arabic keyboard (Sunnah Card Builder)
+
+`web/preview.html` has an **⌨ Arabic** button in its Insert bar. It opens a keyboard under the editor with two pages:
+
+- **Letters:** the letters, hamza and alif forms, lām-alif, Arabic digits and punctuation, and the tashkeel row (fatḥa, ḍamma, kasra, shadda, sukūn, the three tanwīns, dagger alif, maddah, hamza above and below, taṭwīl).
+- **Tajweed & marks:** waqf signs, the Qurʾānic small marks, extended vowel signs, ayah and section signs, honorifics (ﷺ ؓ ؒ ؑ …), and the joiners ZWJ and ZWNJ.
+
+Type the letter first; a mark attaches to the letter before it. Hover a key for its name; roles are stated only where they are certain. The **STACK** key starts `[[ | | ]]` with the Arabic field selected.
+
+To type with your own keyboard, switch the toggle to **ع Typing Arabic** (or press Ctrl+Space). The keys then follow the standard Arabic 101 layout, and Shift gives the tashkeel: Q fatḥa, W fatḥatān, E ḍamma, R ḍammatān, A kasra, S kasratān, X sukūn, backtick shadda, J taṭwīl. Digits and Ctrl shortcuts are untouched. In Arabic mode the keys that carry letters (including `[`, `]`, `;`, `'`, `,` and `.`) type Arabic, so switch back to Latin for the English and transliteration fields and for `[[ ]]` and `|`, or use the STACK key.
+
+---
+
 ## 🔎 Sourcing Methodology
 
 **Primary sources (always preferred):**
