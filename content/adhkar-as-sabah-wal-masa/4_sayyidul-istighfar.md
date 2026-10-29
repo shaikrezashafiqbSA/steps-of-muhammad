@@ -12,9 +12,8 @@ right-orb-compact: ۞۞۞
 
 # Sayyid al-Istighfar — The Master Supplication for Forgiveness
 
-Narrated Shaddād ibn Aws: The Prophet ﷺ said: "The most superior way of asking for forgiveness from Allah is to say: *'O Allah, You are my Lord, there is none worthy of worship except You. You have created me, and I am Your servant, and I am faithful to Your covenant and promise as much as I can. I seek refuge in You from the evil of what I have done. I acknowledge Your blessings upon me, and I admit my sins. So forgive me, for none forgives sins except You.'*"
+The Prophet ﷺ said: "The most superior way of asking for forgiveness from Allah is to say:
 
-The Prophet ﷺ added: "If somebody recites it during the day with firm faith in it, and dies on the same day before the evening, he will be from the people of Paradise; and if somebody recites it at night with firm faith in it, and dies before the morning, he will be from the people of Paradise."
 
 ## 📜✨ Du'a
 
@@ -33,6 +32,12 @@ The Prophet ﷺ added: "If somebody recites it during the day with firm faith in
 [[وَأَبُوءُ|and I acknowledge|wa-abū'u]] [[لَكَ|to You|laka]] [[بِذَنْبِي|my sin,|bi-dhanbī]]
 
 [[فَاغْفِرْ|so forgive|fa-ghfir]] [[لِي|me,|lī]] [[فَإِنَّهُ|for indeed|fa-innahū]] [[لاَ|none|lā]] [[يَغْفِرُ|forgives|yaghfiru]] [[الذُّنُوبَ|sins|dh-dhunūba]] [[إِلاَّ|except|illā]] [[أَنْتَ|You.|anta.]]
+
+## {{ Hikmah | @hikmah }}
+
+If somebody recites it during the *day* with **firm faith** in it, and dies on the same day before the evening, *he will be from the people of Paradise*; 
+
+and if somebody recites it at *night* with **firm faith** in it, and dies before the morning, *he will be from the people of Paradise.*
 
 <details>
 <summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>

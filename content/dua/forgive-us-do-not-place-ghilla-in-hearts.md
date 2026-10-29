@@ -13,15 +13,11 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# The Du'a of Those Who Came After — Forgiveness and a Heart Free of Rancor
+# Forgiveness for Predecessors and a Heart Free of Rancor
 
 Allah establishes this duʿāʾ as the defining speech of the Tābiʿūn and every believer until the Day of Judgment—those who follow the Muhājirūn (the Makkan emigrants) and the Anṣār (the Madinan helpers) 
 
 By reciting it, we plead for the forgiveness of every brother and sister who preceded us in faith, anchoring our hearts to the entire history of the Ummah.
-
-This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=content\hadith-stories\man-from-jannah-pure-heart.md)
-
-[Man promised paradise 3 times in public](?file=content\hadith-stories\man-from-jannah-pure-heart.md "embed")
 
 
 ## 📜✨ Du'a
@@ -48,6 +44,12 @@ This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=
 [[ رَءُوفٌ | are Ever Kind | raʾūfun ]]
 [[ رَحِيمٌ | Most Merciful | raḥīmun ]]
 
+## {{ Hikmah | @hikmah }}
+
+
+This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=content\hadith-stories\man-from-jannah-pure-heart.md)
+
+[Man promised paradise 3 times in public](?file=content\hadith-stories\man-from-jannah-pure-heart.md "embed")
 
 <details>
 <summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>

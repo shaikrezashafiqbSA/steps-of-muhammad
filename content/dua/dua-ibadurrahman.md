@@ -39,7 +39,7 @@ Allah names a people He calls His own servants, and then He tells you exactly wh
 
 The ˹true˺ servants of the Most Compassionate are those who walk on the earth humbly, and when the foolish address them ˹improperly˺, they only respond with peace. (25:63)
 
-[[ وَعِبَادُ | and the servants | wa-ʿibādu ]] [[ ٱلرَّحۡمَٰنِ | of the Most Gracious | ar-raḥmāni ]] [[ ٱلَّذِينَ | are those who | alladhīna ]] [[ يَمۡشُونَ | walk | yamshūna ]] [[ عَلَى | upon | ʿalā ]] [[ ٱلۡأَرۡضِ | the earth | al-arḍi ]] [[ هَوۡنٗا | in humility, | hawnan ]] [[ وَإِذَا | and when | wa-idhā ]] [[ خَاطَبَهُمُ | address them | khāṭabahumu ]] [[ ٱلۡجَٰهِلُونَ | the ignorant, | al-jāhilūna ]] [[ قَالُواْ | they say, | qālū ]] [[ سَلَٰمٗا | "Peace." | salāmā ]] [[ ۝٦٣ ]]
+[[ وَعِبَادُ | and the servants | wa-ʿibādu ]] [[ ٱلرَّحۡمَٰنِ | of the Most Gracious | ar-raḥmāni ]] [[ ٱلَّذِينَ | are those who | alladhīna ]] [[ يَمۡشُونَ | walk | yamshūna ]] [[ عَلَى | upon | ʿalā ]] [[ ٱلۡأَرۡضِ | the earth | al-arḍi ]] [[ هَوۡنٗا | in humility, | hawnan ]] [[ وَإِذَا | and when | wa-idhā ]] [[ خَاطَبَهُمُ | address them | khāṭabahumu ]] [[ ٱلۡجَٰهِلُونَ | the ignorant, | al-jāhilūna ]] [[ قَالُواْ | they say, | qālū ]] [[ سَلَٰمٗا | "Peace." | salāmā ]] [[﴿٦٣﴾]]
 
 **Tick when done**
 - [ ] Walk with calm and dignity, never with swagger
@@ -68,7 +68,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 
 ˹They are˺ those who spend ˹a good portion of˺ the night, prostrating themselves and standing before their Lord. (25:64)
 
-[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ يَبِيتُونَ | spend the night | yabītūna ]] [[ لِرَبِّهِمۡ | for their Lord | li-rabbihim ]] [[ سُجَّدٗا | prostrating | sujjadan ]] [[ وَقِيَٰمٗا | and standing. | wa-qiyāman ]] [[۝٦٤]]
+[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ يَبِيتُونَ | spend the night | yabītūna ]] [[ لِرَبِّهِمۡ | for their Lord | li-rabbihim ]] [[ سُجَّدٗا | prostrating | sujjadan ]] [[ وَقِيَٰمٗا | and standing. | wa-qiyāman ]] [[﴿٦٤﴾]]
 
 **Tick when done**
 - [ ] Give a portion of the night to your Lord
@@ -94,13 +94,13 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 
 ˹They are˺ those who pray, *"Our Lord! Keep the punishment of Hell away from us, for its punishment is indeed unrelenting."* (25:65)
 
-[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ يَقُولُونَ | say, | yaqūlūna ]] [[ رَبَّنَا | Our Lord, | rabbanā ]] [[ ٱصۡرِفۡ | turn away | iṣrif ]] [[ عَنَّا | from us | ʿannā ]] [[ عَذَابَ | the punishment | ʿadhāba ]] [[ جَهَنَّمَۖ | of Hell. | jahannama ]] [[ إِنَّ | Indeed, | inna ]] [[ عَذَابَهَا | its punishment | ʿadhābahā ]] [[ كَانَ | is | kāna ]] [[ غَرَامًا | unrelenting. | gharāmā ]] [[۝٦٥]]
+[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ يَقُولُونَ | say, | yaqūlūna ]] [[ رَبَّنَا | Our Lord, | rabbanā ]] [[ ٱصۡرِفۡ | turn away | iṣrif ]] [[ عَنَّا | from us | ʿannā ]] [[ عَذَابَ | the punishment | ʿadhāba ]] [[ جَهَنَّمَۖ | of Hell. | jahannama ]] [[ إِنَّ | Indeed, | inna ]] [[ عَذَابَهَا | its punishment | ʿadhābahā ]] [[ كَانَ | is | kāna ]] [[ غَرَامًا | unrelenting. | gharāmā ]] [[﴿٦٥﴾]]
 
 ### Ayah 66
 
 *"It is certainly an evil place to settle and reside."* (25:66)
 
-[[ إِنَّهَا | Indeed, it | innahā ]] [[ سَآءَتۡ | is evil | sāʾat ]] [[ مُسۡتَقَرّٗا | as a place to settle | mustaqarran ]] [[ وَمُقَامٗا | and to reside. | wa-muqāmā ]] [[۝٦٦]]
+[[ إِنَّهَا | Indeed, it | innahā ]] [[ سَآءَتۡ | is evil | sāʾat ]] [[ مُسۡتَقَرّٗا | as a place to settle | mustaqarran ]] [[ وَمُقَامٗا | and to reside. | wa-muqāmā ]] [[﴿٦٦﴾]]
 
 **Tick when done**
 - [ ] Learn the dua by heart
@@ -137,7 +137,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 
 ˹They are˺ those who spend neither wastefully nor stingily, but moderately in between. (25:67)
 
-[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ إِذَآ | when | idhā ]] [[ أَنفَقُواْ | they spend | anfaqū ]] [[ لَمۡ | do not | lam ]] [[ يُسۡرِفُواْ | waste | yusrifū ]] [[ وَلَمۡ | and do not | wa-lam ]] [[ يَقۡتُرُواْ | stint, | yaqturū ]] [[ وَكَانَ | and it is | wa-kāna ]] [[ بَيۡنَ | between | bayna ]] [[ ذَٰلِكَ | that | dhālika ]] [[ قَوَامٗا | a just balance. | qawāmā ]] [[۝٦٧]]
+[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ إِذَآ | when | idhā ]] [[ أَنفَقُواْ | they spend | anfaqū ]] [[ لَمۡ | do not | lam ]] [[ يُسۡرِفُواْ | waste | yusrifū ]] [[ وَلَمۡ | and do not | wa-lam ]] [[ يَقۡتُرُواْ | stint, | yaqturū ]] [[ وَكَانَ | and it is | wa-kāna ]] [[ بَيۡنَ | between | bayna ]] [[ ذَٰلِكَ | that | dhālika ]] [[ قَوَامٗا | a just balance. | qawāmā ]] [[﴿٦٧﴾]]
 
 **Tick when done**
 - [ ] Spend on what you need, not beyond it
@@ -161,7 +161,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 
 ˹They are˺ those who do not invoke any other god besides Allah, nor take a ˹human˺ life, made sacred by Allah, except with ˹legal˺ right, nor commit fornication. And whoever does ˹any of˺ this will face the penalty. (25:68)
 
-[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ لَا | do not | lā ]] [[ يَدۡعُونَ | invoke | yadʿūna ]] [[ مَعَ | alongside | maʿa ]] [[ ٱللَّهِ | Allah | allāhi ]] [[ إِلَٰهًا | a god | ilāhan ]] [[ ءَاخَرَ | other, | ākhara ]] [[ وَلَا | and do not | wa-lā ]] [[ يَقۡتُلُونَ | kill | yaqtulūna ]] [[ ٱلنَّفۡسَ | the soul | an-nafsa ]] [[ ٱلَّتِي | which | allatī ]] [[ حَرَّمَ | forbade | ḥarrama ]] [[ ٱللَّهُ | Allah, | allāhu ]] [[ إِلَّا | except | illā ]] [[ بِٱلۡحَقِّ | by right, | bil-ḥaqqi ]] [[ وَلَا | and do not | wa-lā ]] [[ يَزۡنُونَۚ | commit zinā. | yaznūna ]] [[ وَمَن | and whoever | wa-man ]] [[ يَفۡعَلۡ | does | yafʿal ]] [[ ذَٰلِكَ | that | dhālika ]] [[ يَلۡقَ | will meet | yalqa ]] [[ أَثَامٗا | a penalty. | athāmā ]] [[۝٦٨]]
+[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ لَا | do not | lā ]] [[ يَدۡعُونَ | invoke | yadʿūna ]] [[ مَعَ | alongside | maʿa ]] [[ ٱللَّهِ | Allah | allāhi ]] [[ إِلَٰهًا | a god | ilāhan ]] [[ ءَاخَرَ | other, | ākhara ]] [[ وَلَا | and do not | wa-lā ]] [[ يَقۡتُلُونَ | kill | yaqtulūna ]] [[ ٱلنَّفۡسَ | the soul | an-nafsa ]] [[ ٱلَّتِي | which | allatī ]] [[ حَرَّمَ | forbade | ḥarrama ]] [[ ٱللَّهُ | Allah, | allāhu ]] [[ إِلَّا | except | illā ]] [[ بِٱلۡحَقِّ | by right, | bil-ḥaqqi ]] [[ وَلَا | and do not | wa-lā ]] [[ يَزۡنُونَۚ | commit zinā. | yaznūna ]] [[ وَمَن | and whoever | wa-man ]] [[ يَفۡعَلۡ | does | yafʿal ]] [[ ذَٰلِكَ | that | dhālika ]] [[ يَلۡقَ | will meet | yalqa ]] [[ أَثَامٗا | a penalty. | athāmā ]] [[﴿٦٨﴾]]
 
 **Tick when done**
 - [ ] Call on Allah alone
@@ -176,7 +176,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 
 Their punishment will be multiplied on the Day of Judgment, and they will remain in it forever, in disgrace. (25:69)
 
-[[ يُضَٰعَفۡ | will be doubled | yuḍāʿaf ]] [[ لَهُ | for him | lahu ]] [[ ٱلۡعَذَابُ | the punishment | al-ʿadhābu ]] [[ يَوۡمَ | on the Day | yawma ]] [[ ٱلۡقِيَٰمَةِ | of Resurrection | al-qiyāmati ]] [[ وَيَخۡلُدۡ | and he will abide | wa-yakhlud ]] [[ فِيهِۦ | in it | fīhi ]] [[ مُهَانًا | humiliated. | muhānā ]] [[۝٦٩]]
+[[ يُضَٰعَفۡ | will be doubled | yuḍāʿaf ]] [[ لَهُ | for him | lahu ]] [[ ٱلۡعَذَابُ | the punishment | al-ʿadhābu ]] [[ يَوۡمَ | on the Day | yawma ]] [[ ٱلۡقِيَٰمَةِ | of Resurrection | al-qiyāmati ]] [[ وَيَخۡلُدۡ | and he will abide | wa-yakhlud ]] [[ فِيهِۦ | in it | fīhi ]] [[ مُهَانًا | humiliated. | muhānā ]] [[﴿٦٩﴾]]
 
 <details>
 <summary>۞ الْحِكْمَة — Divine Wisdom</summary>
@@ -197,13 +197,13 @@ Their punishment will be multiplied on the Day of Judgment, and they will remain
 
 As for those who repent, believe, and do good deeds, they are the ones whose evil deeds Allah will change into good deeds. For Allah is All-Forgiving, Most Merciful. (25:70)
 
-[[ إِلَّا | except | illā ]] [[ مَن | one who | man ]] [[ تَابَ | repents | tāba ]] [[ وَءَامَنَ | and believes | wa-āmana ]] [[ وَعَمِلَ | and does | wa-ʿamila ]] [[ عَمَلٗا | deeds | ʿamalan ]] [[ صَٰلِحٗا | righteous, | ṣāliḥan ]] [[ فَأُوْلَٰٓئِكَ | for those | fa-ulāʾika ]] [[ يُبَدِّلُ | will replace | yubaddilu ]] [[ ٱللَّهُ | Allah | allāhu ]] [[ سَيِّـَٔاتِهِمۡ | their evil deeds | sayyiʾātihim ]] [[ حَسَنَٰتٖۗ | with good ones. | ḥasanātin ]] [[ وَكَانَ | And is | wa-kāna ]] [[ ٱللَّهُ | Allah | allāhu ]] [[ غَفُورٗا | Oft-Forgiving, | ghafūran ]] [[ رَّحِيمٗا | Most Merciful. | raḥīmā ]] [[۝٧٠]]
+[[ إِلَّا | except | illā ]] [[ مَن | one who | man ]] [[ تَابَ | repents | tāba ]] [[ وَءَامَنَ | and believes | wa-āmana ]] [[ وَعَمِلَ | and does | wa-ʿamila ]] [[ عَمَلٗا | deeds | ʿamalan ]] [[ صَٰلِحٗا | righteous, | ṣāliḥan ]] [[ فَأُوْلَٰٓئِكَ | for those | fa-ulāʾika ]] [[ يُبَدِّلُ | will replace | yubaddilu ]] [[ ٱللَّهُ | Allah | allāhu ]] [[ سَيِّـَٔاتِهِمۡ | their evil deeds | sayyiʾātihim ]] [[ حَسَنَٰتٖۗ | with good ones. | ḥasanātin ]] [[ وَكَانَ | And is | wa-kāna ]] [[ ٱللَّهُ | Allah | allāhu ]] [[ غَفُورٗا | Oft-Forgiving, | ghafūran ]] [[ رَّحِيمٗا | Most Merciful. | raḥīmā ]] [[﴿٧٠﴾]]
 
 ### Ayah 71
 
 And whoever repents and does good has truly turned to Allah properly. (25:71)
 
-[[ وَمَن | and whoever | wa-man ]] [[ تَابَ | repents | tāba ]] [[ وَعَمِلَ | and does | wa-ʿamila ]] [[ صَٰلِحٗا | righteous deeds | ṣāliḥan ]] [[ فَإِنَّهُۥ | then indeed he | fa-innahu ]] [[ يَتُوبُ | turns | yatūbu ]] [[ إِلَى | to | ilā ]] [[ ٱللَّهِ | Allah | allāhi ]] [[ مَتَابٗا | in true repentance. | matābā ]] [[۝٧١]]
+[[ وَمَن | and whoever | wa-man ]] [[ تَابَ | repents | tāba ]] [[ وَعَمِلَ | and does | wa-ʿamila ]] [[ صَٰلِحٗا | righteous deeds | ṣāliḥan ]] [[ فَإِنَّهُۥ | then indeed he | fa-innahu ]] [[ يَتُوبُ | turns | yatūbu ]] [[ إِلَى | to | ilā ]] [[ ٱللَّهِ | Allah | allāhi ]] [[ مَتَابٗا | in true repentance. | matābā ]] [[﴿٧١﴾]]
 
 **Tick when done**
 - [ ] Repent to Allah in this life, from every wrong
@@ -235,7 +235,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 
 ˹They are˺ those who do not bear false witness, and when they come across falsehood, they pass ˹it˺ by with dignity. (25:72)
 
-[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ لَا | do not | lā ]] [[ يَشۡهَدُونَ | bear witness to | yashhadūna ]] [[ ٱلزُّورَ | falsehood, | az-zūra ]] [[ وَإِذَا | and when | wa-idhā ]] [[ مَرُّواْ | they pass | marrū ]] [[ بِٱللَّغۡوِ | by vain talk, | bil-laghwi ]] [[ مَرُّواْ | they pass | marrū ]] [[ كِرَامٗا | with dignity. | kirāmā ]] [[۝٧٢]]
+[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ لَا | do not | lā ]] [[ يَشۡهَدُونَ | bear witness to | yashhadūna ]] [[ ٱلزُّورَ | falsehood, | az-zūra ]] [[ وَإِذَا | and when | wa-idhā ]] [[ مَرُّواْ | they pass | marrū ]] [[ بِٱللَّغۡوِ | by vain talk, | bil-laghwi ]] [[ مَرُّواْ | they pass | marrū ]] [[ كِرَامٗا | with dignity. | kirāmā ]] [[﴿٧٢﴾]]
 
 **Tick when done**
 - [ ] Give no false testimony
@@ -263,7 +263,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 
 ˹They are˺ those who, when reminded of the revelation of their Lord, do not turn a blind eye or a deaf ear to it. (25:73)
 
-[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ إِذَا | when | idhā ]] [[ ذُكِّرُواْ | they are reminded | dhukkirū ]] [[ بِـَٔايَٰتِ | of the verses | biʾāyāti ]] [[ رَبِّهِمۡ | of their Lord, | rabbihim ]] [[ لَمۡ | do not | lam ]] [[ يَخِرُّواْ | fall | yakhirrū ]] [[ عَلَيۡهَا | upon them | ʿalayhā ]] [[ صُمّٗا | deaf | summan ]] [[ وَعُمۡيَانٗا | and blind. | wa-ʿumyānā ]] [[۝٧٣]]
+[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ إِذَا | when | idhā ]] [[ ذُكِّرُواْ | they are reminded | dhukkirū ]] [[ بِـَٔايَٰتِ | of the verses | biʾāyāti ]] [[ رَبِّهِمۡ | of their Lord, | rabbihim ]] [[ لَمۡ | do not | lam ]] [[ يَخِرُّواْ | fall | yakhirrū ]] [[ عَلَيۡهَا | upon them | ʿalayhā ]] [[ صُمّٗا | deaf | summan ]] [[ وَعُمۡيَانٗا | and blind. | wa-ʿumyānā ]] [[﴿٧٣﴾]]
 
 **Tick when done**
 - [ ] Listen when the Qur'an is recited
@@ -287,7 +287,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 
 ˹They are˺ those who pray, *"Our Lord! Bless us with ˹pious˺ spouses and offspring who will be the joy of our hearts, and make us models for the righteous."* (25:74)
 
-[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ يَقُولُونَ | say, | yaqūlūna ]] [[ رَبَّنَا | Our Lord, | rabbanā ]] [[ هَبۡ | grant | hab ]] [[ لَنَا | us | lanā ]] [[ مِنۡ | from | min ]] [[ أَزۡوَٰجِنَا | our spouses | azwājinā ]] [[ وَذُرِّيَّٰتِنَا | and our offspring | wa-dhurriyyātinā ]] [[ قُرَّةَ | the comfort | qurrata ]] [[ أَعۡيُنٖ | of eyes, | aʿyunin ]] [[ وَٱجۡعَلۡنَا | and make us | wa-jʿalnā ]] [[ لِلۡمُتَّقِينَ | for the God-conscious | lil-muttaqīna ]] [[ إِمَامًا | a leader. | imāmā ]] [[۝٧٤]]
+[[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ يَقُولُونَ | say, | yaqūlūna ]] [[ رَبَّنَا | Our Lord, | rabbanā ]] [[ هَبۡ | grant | hab ]] [[ لَنَا | us | lanā ]] [[ مِنۡ | from | min ]] [[ أَزۡوَٰجِنَا | our spouses | azwājinā ]] [[ وَذُرِّيَّٰتِنَا | and our offspring | wa-dhurriyyātinā ]] [[ قُرَّةَ | the comfort | qurrata ]] [[ أَعۡيُنٖ | of eyes, | aʿyunin ]] [[ وَٱجۡعَلۡنَا | and make us | wa-jʿalnā ]] [[ لِلۡمُتَّقِينَ | for the God-conscious | lil-muttaqīna ]] [[ إِمَامًا | a leader. | imāmā ]] [[﴿٧٤﴾]]
 
 <details>
 <summary>{{ Hikmah | @hikmah }}: the reward of the ʿIbād ar-Raḥmān</summary>

@@ -81,7 +81,7 @@ const VAULT_NAVIGATION_TREE = [
       { type: "family", label: "Ya Allah, forgive me - tear out the inner darknesses before asking", icon: "🖤⛓️🤍", tier: "imam" },
       { label: "Adam's repentance - The First Repentance", gloss: "Rabbana Zalamna anfusana...", ref: "Qurʾān 2:37", tier: "jemaah", grade: "sahih", time: ["night-presleep", "night-last-third", "*any"], path: "web/render.html?file=content/dua/forgiveness-adam.md" },
       { label: "Sulaymān's repentance - The Unmatched Kingdom", gloss: "Rabbighfirli ...", ref: "Sūrat Saad 38:35", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/dua/forgiveness-sulaiman.md" },
-      { label: "Forgive Us, Do Not Place Ghilla in Our Hearts", gloss: ".. wa la taj'al fi qulubina Ghilla..", ref: "Sūrat Al Hashr 59:10", tier: "jemaah", grade: "sahih", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/forgive-us-do-not-place-ghilla-in-hearts.md" },
+      { label: "Forgiveness for Predecessors and a Heart Free of Rancor", gloss: ".. wa la taj'al fi qulubina Ghilla..", ref: "Sūrat Al Hashr 59:10", tier: "jemaah", grade: "sahih", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/forgive-us-do-not-place-ghilla-in-hearts.md" },
       { label: "Forgiveness for Parents and All Believers", gloss: "Rabbighfir li-walidayhi ..", ref: "Musnad al-Shāmiyīn lil-Ṭabarānī 2118", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/dua/forgiveness-parents-all-believers.md" },
       // General Dua family
       { type: "family", label: "Ya Allah, teach me how to ask you", icon: "🤲", tier: "imam" },

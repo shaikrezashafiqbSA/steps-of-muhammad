@@ -13,8 +13,8 @@ right-orb-compact: ۞۞۞
 
 # Du'a by Allah's Greatest Name - when He is asked by it, He gives
 
-He (ﷺ) said: “By the One in Whose Hand is my soul, he has asked Allah by His Greatest Name the one which -
-> if He is called upon by it, He responds, and when He is asked by it, He gives.”
+He (ﷺ) said: “By the One in Whose Hand is my soul, he has asked Allah by His Greatest Name: 
+
 
 
 
@@ -27,6 +27,10 @@ He (ﷺ) said: “By the One in Whose Hand is my soul, he has asked Allah by His
 [[الْأَحَدُ|the One,|l-aḥadu]] [[الصَّمَدُ|the Eternal Absolute,|ṣ-ṣamadu]] [[الَّذِي|who|lladhī]] [[لَمْ|not|lam]] [[يَلِدْ|He begets|yalid]] [[وَلَمْ|and not|wa-lam]] [[يُولَدْ|He was begotten,|yūlad,]]
 
 [[وَلَمْ|and not|wa-lam]] [[يَكُنْ|there is|yakun]] [[لَهُۥ|for Him|lahū]] [[كُفُوًا|any equal|kufuwan]] [[أَحَدٌ|anyone.|aḥadun]]
+
+## {{ Hikmah | @hikmah }}
+
+" - if He is *called upon* by it, He **responds**, and when He is *asked* by it, He **gives**.”
 
 <details>
 <summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>

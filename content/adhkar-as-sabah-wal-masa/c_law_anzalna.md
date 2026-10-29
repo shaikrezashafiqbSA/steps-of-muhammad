@@ -13,9 +13,8 @@ right-orb-compact: ۞
 
 # Allah appoints 70,000 Angels who say Salat upon you - when you read this: The Refuge & End of Al-Ḥashr
 
-Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three times when he gets up in the morning: *Aʿūdhu billāhi-s-Samīʿi-l-ʿAlīm min ash-shayṭāni-r-rajīm*, and then recites three āyāt from the end of Sūrat Al-Ḥashr — Allah appoints seventy thousand angels who send ṣalāt upon him until the evening. If he dies on that day, he dies a martyr. And whoever recites it in the evening holds the same status."
+Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three times when he gets up in the morning: *Aʿūdhu billāhi-s-Samīʿi-l-ʿAlīm min ash-shayṭāni-r-rajīm*, and then recites three āyāt from the end of Sūrat Al-Ḥashr: 
 
-📺 **Listen and follow along** — tap 📌 on the video to pin it while you read the word-by-word below.
 
 <div class="video-card">
 <iframe src="https://www.youtube.com/embed/ckeUnDhp-40?si=InRO8u27yP_QfRjk&amp;start=72&end=135" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -41,6 +40,14 @@ Meet the Divine Names and count them
 [[هُوَ|He is|huwa]] [[ٱللَّهُ|Allah,|llāhu]] [[ٱلَّذِى|the One who|l-ladhī]] [[لَآ|there is no|lā]] [[إِلَـٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him,|huwa,]] [[ٱلْمَلِكُ|the Sovereign,|l-maliku]] [[ٱلْقُدُّوسُ|the Most Holy,|l-quddūsu]] [[ٱالسَّلَـٰمُ|the Source of Peace,|s-salāmu]] [[ٱلْمُؤْمِنُ|the Giver of Faith,|l-mu'minu]] [[ٱلْمُهَيْمِنُ|the Overseer,|l-muhayminu]] [[ٱلْعَزِيزُ|the All-Mighty,|l-ʿazīzu]] [[ٱلْجَبَّارُ|the Compeller,|l-jabbāru]] [[ٱلْمُتَكَبِّرُۚ|the Supreme.|l-mutakabbir.]] [[سُبْحَـٰنَ|Glory be to|subḥāna]] [[ٱللَّهِ|Allah|llāhi]] [[عَمَّا|above what|ʿammā]] [[يُشْرِكُونَ|they associate with Him.|yushrikūn.]] [[﴿٢٣﴾]]
 
 [[هُوَ|He is|huwa]] [[ٱللَّهُ|Allah,|llāhu]] [[ٱلْخَـٰلِقُ|the Creator,|l-khāliqu]] [[ٱلْبَارِئُ|the Producer,|l-bāri'u]] [[ٱلْمُصَوِّرُۖ|the Fashioner;|l-muṣawwir;]] [[لَهُ|to Him belong|lahu]] [[ٱلْأَسْمَآءُ|the Names|l-asmā'u]] [[ٱلْحُسْنَىٰۚ|the Most Beautiful.|l-ḥusnā.]] [[يُسَبِّحُ|Exalts|yusabbiḥu]] [[لَهُۥ|Him|lahū]] [[مَا|whatever is|mā]] [[فِى|in|fī]] [[ٱالسَّمَـٰوَٰتِ|the heavens|s-samāwāti]] [[وَٱلْأَرْضِۖ|and the earth,|wa-l-arḍ;]] [[وَهُوَ|and He is|wa-huwa]] [[ٱلْعَزِيزُ|the All-Mighty,|l-ʿazīzu]] [[ٱلْحَكِيمُ|the All-Wise.|l-ḥakīm.]] [[﴿٢٤﴾]]
+
+## {{ Hikmah | @hikmah }}
+
+" - Allah appoints 70,000 angels who send ṣalāt upon him until the evening. 
+
+If he dies on that day, he dies a martyr. 
+
+And whoever recites it in the evening holds the same status."
 
 <details>
 <summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>

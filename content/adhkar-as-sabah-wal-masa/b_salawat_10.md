@@ -13,7 +13,7 @@ right-orb-compact: ۞۞
 
 # Intercession of the Prophet Through Daily Blessings
 
-The Messenger of Allah ﷺ said: "Whoever recites blessings upon me ten times in the morning and ten times in the evening: *\"O Allah, send peace and blessings upon our Prophet Muhammad,\"* will obtain my intercession on the Day of Resurrection."
+The Messenger of Allah ﷺ said: "Whoever recites blessings upon me ten times in the morning and ten times in the evening:
 
 ## 📜✨ Du'a
 
@@ -23,7 +23,7 @@ The Messenger of Allah ﷺ said: "Whoever recites blessings upon me ten times in
 
 ## {{ Hikmah | @hikmah }}
 
-[[عَشْرًا|ten times|ʿashran]] [[صَبَاحًا|in the morning|ṣabāḥan]] [[وَعَشْرًا|and ten times|wa-ʿashran]] [[مَسَاءً|in the evening,|masā'an,]] [[أَدْرَكَتْهُ|will attain|adrakathū]] [[شَفَاعَتِي|my intercession|shafāʿatī]] [[يَوْمَ|on the Day of|yawma]] [[الْقِيَامَةِ|Resurrection.|l-qiyāmah.]]
+" - will obtain my **intercession** on the Day of Resurrection."
 
 <details>
 <summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>

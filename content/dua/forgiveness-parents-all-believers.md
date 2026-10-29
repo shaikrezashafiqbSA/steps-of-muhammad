@@ -13,18 +13,16 @@ right-orb: Hasan
 right-orb-compact: ۞۞
 ::
 
-# The Congregational Du'a for Parents and All Believers — A Multi-Billion Ḥasanah Investment
+# Forgiveness for Parents and All Believers 
 
-The Prophet ﷺ said: ["Whoever seeks forgiveness for the believing men and the believing women, Allah will record for him one good deed for every single believing man and believing woman."](https://www.abuaminaelias.com/dailyhadithonline/2013/08/15/istighfar-for-the-believers/)
-
-Building upon this, the imams of the masājid recite the expanded congregational supplication.
+Begin your dua with forgiveness - commonly found in masjids in the region after solat.
 
 
 ## 📜✨ Du'a
 
 [[ اللَّهُمَّ | O Allah, | Allāhumma ]][[ اغْفِرْ | forgive | ighfir ]][[ لَنَا | for us | lanā ]][[ ذُنُوبَنَا | our sins, | dhunūbanā ]]
 
-[[ وَلِوَالِدِينَا | and for our parents, | wa-li-wālidaynā ]][[ وَارْحَمْهُمَا | and have mercy on them both, | war-ḥamhumā ]][[ كَمَا | just as | kamā ]][[ رَبَّيَانِي | they raised me | rabbayānī ]][[ صَغِيرًا | when I was small. | ṣaghīrā ]]
+[[ وَلِوَالِدِينَا | and for our parents, | wa-li-wālidaynā ]][[ وَارْحَمْهُمَا | and have mercy on them both, | war-ḥamhumā ]][[ كَمَا | just as | kamā ]][[ رَبَّيَانَ | they raised us | rabbayānā ]][[ صَغِيرًا | when I was small. | ṣaghīrā ]]
 
 [[ وَلِجَمِيعِ | and for all | wa-li-jamīʿi ]][[ الْمُؤْمِنِينَ | the believing men | al-muʾminīna ]][[ وَالْمُؤْمِنَاتِ | and the believing women, | wal-muʾmināti ]]
 
@@ -34,6 +32,9 @@ Building upon this, the imams of the masājid recite the expanded congregational
 
 [[ بِرَحْمَتِكَ | by Your mercy, | bi-raḥmatika ]][[ يَا | O | yā ]][[ أَرْحَمَ | Most Merciful | arḥama ]][[ الرَّاحِمِينَ | of those who show mercy. | ar-rāḥimīna ]]
 
+## {{ Hikmah | @hikmah }}
+
+The Prophet ﷺ said: ["Whoever seeks forgiveness for the believing men and the believing women, Allah will record for him one good deed for every single believing man and believing woman."](https://www.abuaminaelias.com/dailyhadithonline/2013/08/15/istighfar-for-the-believers/)
 
 <details>
 <summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>

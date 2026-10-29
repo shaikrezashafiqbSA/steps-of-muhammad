@@ -463,7 +463,8 @@ Allah will suffice them in whatever concerns them of the matters of this world a
         { name: '📖 Qurʾān verse (QuranWBW)', hint: 'word-by-word verse viewer — change 11/59 to surah/ayah, or 37/180-182 for a range', block: true,
           text: '**Qur\'an, Sūrat ⟦Hūd⟧ 11:59**\n<iframe src="https://quranwbw.com/⟦11/59⟧" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>' },
         { name: 'Image', block: true, text: '<img src="../assets/⟦black-flag.jpeg⟧" alt="Description" style="max-width: 100%; border-radius: 8px;">' },
-        { name: 'YouTube', block: true, text: '<iframe width="100%" height="200" src="https://www.youtube.com/embed/⟦VIDEO_ID⟧" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' },
+        { name: 'YouTube', hint: 'with the 📌 Follow along pin — set the start and end seconds', block: true,
+          text: followAlongSnippet('⟦VIDEO_ID⟧', 0, 60) },
         { name: 'Audio', block: true, text: '<audio controls src="⟦./path/to/audio.mp3⟧"></audio>' },
         { name: 'Video', block: true, text: '<video controls src="⟦./path/to/video.mp4⟧"></video>' },
         { name: '📌 Callout box', hint: 'ochre highlighted note', block: true,
@@ -809,8 +810,7 @@ Allah will suffice them in whatever concerns them of the matters of this world a
       if (start != null && start > 0) q.push('start=' + start);
       if (end != null && end > (start || 0)) q.push('end=' + end);
       const src = 'https://www.youtube.com/embed/' + id + (q.length ? '?' + q.join('&amp;') : '');
-      return '📺 **Listen and follow along** — tap 📌 on the video to pin it while you read below.\n\n' +
-        '<div class="video-card">\n' +
+      return '<div class="video-card">\n' +
         '<iframe src="' + src + '" title="YouTube video player" frameborder="0" ' +
         'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
         'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>\n' +
