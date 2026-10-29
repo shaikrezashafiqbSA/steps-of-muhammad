@@ -381,6 +381,8 @@ All standard GitHub-Flavored Markdown works as expected: `# H1`–`###### H6` he
 
 Tapping the word (or the `i` mark) opens the entry in a popover with an "Open entry ↗" link. Glossary links open on tap only, never on hover. A missing entry shows "No glossary entry yet" and names the file to create.
 
+The popover is a small card, not a plain note: an entry is rendered with the same renderer as a full page, in the page's own light styling at a compact size. Everything a card can do works inside an entry: word stacks (`[[ … ]]`, grouped into the Arabic grid), headings, lists, quotes, `<details>` drawers, QuranWBW and video embeds, embedded cards (`[label](?file=… "embed")`), and tooltips. Inside the popover, a glossary word opens that entry in place with a "← Back" button, and a plain `{{ word | note }}` tooltip opens its note inline under the line. The video's pin button is hidden there. An `::meta` block at the top of an entry is ignored.
+
 **Qurʾān verses** are shown with the [QuranWBW](https://quranwbw.com) word-by-word viewer: `https://quranwbw.com/<surah>/<ayah>`, or a range such as `37/180-182`. Builder: **Embeds → 📖 Qurʾān verse (QuranWBW)**. Ḥadīth sources use a card embed (below).
 
 **Embedding another card** — add `"embed"` as the link title and the whole atomic card appears inline as a collapsed drawer (grade badge + title, expands to the full card, with an "Open standalone ↗" footer). Use it when a composite duʿā quotes another sunnah:

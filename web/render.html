@@ -1781,6 +1781,15 @@
       });
     }
 
+    // Renders markdown with the card pipeline (word stacks, ayah grouping, tooltips, embeds) into a
+    // detached element. web/tips.js uses it to draw a glossary entry as a mini card in its popover.
+    window.somRenderInto = function (md, el) {
+      marked.setOptions({ gfm: true, breaks: false });
+      el.innerHTML = marked.parse(md);
+      parseWordStacks(el);
+      expandEmbeds(el);
+    };
+
     // ════════════════════════════════════════════
     // Live preview: patch, don't rebuild.
     // The builder re-renders after every pause in typing. Replacing the whole card reloaded the

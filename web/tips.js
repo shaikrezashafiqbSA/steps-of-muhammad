@@ -45,18 +45,53 @@
     .som-tip[data-kalima]::after { content: 'i'; font-family: Georgia, serif; font-style: italic; }
     .w[data-kalima] { cursor: help; border-bottom: 1px dotted var(--accent-ochre, #B08A4B); }
     .w[data-kalima]:focus-visible { outline: 2px solid var(--accent-ochre, #B08A4B); outline-offset: 2px; }
-    #som-tip-pop.rich { pointer-events: auto; max-width: min(24rem, calc(100vw - 16px)); padding: 0; text-align: left; font-weight: 400; }
-    .som-kal-scroll { max-height: 55vh; overflow-y: auto; padding: 0.85rem 1rem; }
-    .som-kal-scroll h1, .som-kal-scroll h2, .som-kal-scroll h3 { margin: 0 0 0.4rem; font-size: 1rem; line-height: 1.4; color: #FFE9B8; font-weight: 700; }
-    .som-kal-scroll p { margin: 0.4rem 0; }
-    .som-kal-scroll ul, .som-kal-scroll ol { margin: 0.4rem 0; padding-left: 1.1rem; }
-    .som-kal-scroll a { color: #D9B869; }
-    .som-kal-scroll blockquote { margin: 0.4rem 0; padding-left: 0.7rem; border-left: 2px solid #D9B869; }
-    .som-kal-status { opacity: 0.8; font-style: italic; }
+    /* A glossary entry is a small card: the same renderer as a full page (word stacks, drawers,
+       embeds, tooltips), in the page's own light styling, just compact. */
+    #som-tip-pop.rich {
+      pointer-events: auto; width: min(28rem, calc(100vw - 16px)); max-width: none; padding: 0; text-align: left;
+      background: var(--bg-cream, #FFFBF1); color: var(--text-espresso, #3A2E2B);
+      border: 1px solid var(--divider-sand, #E6DCD0); box-shadow: 0 10px 30px rgba(125, 82, 67, 0.22);
+      font-weight: 400; letter-spacing: 0.01em;
+    }
+    #som-tip-pop.rich::before { border: 1px solid var(--divider-sand, #E6DCD0); }
+    .som-kal-scroll {
+      max-height: min(60vh, 34rem); overflow-y: auto; overscroll-behavior: contain; border-radius: 10px;
+      padding: 0.8rem 0.95rem 0.7rem; background: var(--bg-cream, #FFFBF1);
+    }
+    .som-kal-status { margin: 0; color: var(--text-taupe, #7A6F6C); font-size: 0.8rem; font-style: italic; }
+    .som-kal-back {
+      display: inline-block; margin: 0 0 0.5rem; padding: 0.2rem 0.55rem; border: 1px solid var(--divider-sand, #E6DCD0);
+      border-radius: 999px; background: none; color: var(--structural, #7D5243); cursor: pointer;
+      font: 700 0.6rem/1.4 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0.06em; text-transform: uppercase;
+    }
     .som-kal-foot {
-      display: block; margin-top: 0.7rem; font: 700 0.58rem/1 'JetBrains Mono', ui-monospace, monospace;
-      letter-spacing: 0.08em; text-transform: uppercase; color: #D9B869 !important; text-decoration: none;
-    }`;
+      display: block; margin-top: 0.6rem; font: 700 0.58rem/1 'JetBrains Mono', ui-monospace, monospace;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ochre, #B08A4B); text-decoration: none;
+    }
+    .som-inline-note {
+      display: block; margin: 0.1rem 0 0.6rem; padding: 0.4rem 0.65rem; border-left: 3px solid var(--accent-ochre, #B08A4B);
+      border-radius: 0 4px 4px 0; background: rgba(176, 138, 75, 0.1); color: var(--text-espresso, #3A2E2B);
+      font: 500 0.74rem/1.5 'Inter', system-ui, sans-serif; font-style: normal;
+    }
+
+    /* Compact scale for the card inside the popover. The id in front outranks the page's zoom / reading-mode rules. */
+    #som-tip-pop .som-kal-body h1 { font-size: 1.05rem; margin: 0 0 0.5rem; padding-bottom: 0.4rem; border-bottom-width: 1px; }
+    #som-tip-pop .som-kal-body h2 { font-size: 0.9rem; margin: 0.9rem 0 0.4rem; }
+    #som-tip-pop .som-kal-body h3 { font-size: 0.82rem; margin: 0.7rem 0 0.3rem; }
+    #som-tip-pop .som-kal-body p, #som-tip-pop .som-kal-body ul, #som-tip-pop .som-kal-body ol { font-size: 0.8rem; line-height: 1.6; margin-bottom: 0.6rem; }
+    #som-tip-pop .som-kal-body blockquote { font-size: 0.78rem; padding: 0.5rem 0.7rem; margin: 0.6rem 0; }
+    #som-tip-pop .som-kal-body .ayah { padding: 0.7rem 0.6rem 0.5rem; margin: 0.7rem 0; gap: 0.25rem 0.5rem; border-radius: 8px; }
+    #som-tip-pop .som-kal-body .ayah .w { min-width: 44px; padding: 0.2rem 0.1rem; }
+    #som-tip-pop .som-kal-body .ayah .w > b { font-size: 1.55rem; line-height: 1.55; }
+    #som-tip-pop .som-kal-body .ayah .w > i { font-size: 0.66rem; max-width: 84px; }
+    #som-tip-pop .som-kal-body .ayah .w > u { font-size: 0.6rem; max-width: 84px; }
+    #som-tip-pop .som-kal-body details { padding: 0.55rem 0.7rem; margin: 0.7rem 0; }
+    #som-tip-pop .som-kal-body summary { font-size: 0.75rem; }
+    #som-tip-pop .som-kal-body iframe { width: 100%; height: min(320px, 55vh); border: 0; border-radius: 6px; }
+    #som-tip-pop .som-kal-body .video-card { margin-bottom: 0.7rem; }
+    #som-tip-pop .som-kal-body .video-card iframe { height: auto; border-radius: 0; }
+    #som-tip-pop .som-kal-body .video-pin-toggle { display: none; }   /* a popover can't pin a video */
+    #som-tip-pop .som-kal-body > :last-child { margin-bottom: 0; }`;
 
   const style = document.createElement('style');
   style.textContent = css;
@@ -80,19 +115,25 @@
   };
 
   let pop = null, current = null, pinned = false;
+  let trail = [];   // glossary slugs opened one from another inside the popover, for "← Back"
 
   function ensurePop() {
-    if (!pop) { pop = document.createElement('div'); pop.id = 'som-tip-pop'; pop.setAttribute('role', 'tooltip'); document.body.appendChild(pop); }
+    if (!pop) {
+      pop = document.createElement('div'); pop.id = 'som-tip-pop'; pop.setAttribute('role', 'tooltip'); document.body.appendChild(pop);
+      // an embed or font finishing inside a glossary entry changes its height: keep it anchored to the word
+      pop.addEventListener('load', () => { if (current && pop.classList.contains('rich')) place(current); }, true);
+    }
     return pop;
   }
 
-  // ── Glossary entries: content/kalima/<slug>.md, fetched once and cached ──
+  // ── Glossary entries: content/kalima/<slug>.md, fetched once and cached as markdown ──
+  // (rendered fresh on every open, so embeds inside an entry start clean each time)
   const KAL = new Map();
-  function kalimaHTML(slug) {
+  function kalimaMD(slug) {
     if (!KAL.has(slug)) {
       KAL.set(slug, fetch('../content/kalima/' + slug + '.md')
         .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
-        .then(md => window.marked ? marked.parse(md.replace(/^::meta\s*\n[\s\S]*?\n::\s*\n?/, '')) : null)
+        .then(md => md.replace(/^::meta\s*\n[\s\S]*?\n::\s*\n?/, ''))
         .catch(() => { KAL.delete(slug); return null; }));
     }
     return KAL.get(slug);
@@ -108,19 +149,52 @@
     p.style.setProperty('--arrow-x', Math.max(14, Math.min(r.left + r.width / 2 - left, w - 14)) + 'px');
   }
 
-  function showKalima(el, p) {
-    const slug = el.dataset.kalima;
+  // Draws the entry as a mini card: the same pipeline render.html uses for a page (somRenderInto),
+  // so word stacks, drawers, QuranWBW / video embeds, embedded cards and tooltips all work inside it.
+  function showKalima(el, p, slug) {
     p.classList.add('rich');
     p.innerHTML = '<div class="som-kal-scroll"><p class="som-kal-status">Loading…</p></div>';
     p.style.display = 'block'; p.style.left = '0px'; p.style.top = '0px';
     place(el);
-    kalimaHTML(slug).then(html => {
-      if (current !== el) return;
-      p.innerHTML = '<div class="som-kal-scroll">' + (html ||
-        '<p class="som-kal-status">No glossary entry yet — add <code>content/kalima/' + slug + '.md</code></p>') +
-        (html ? '<a class="som-kal-foot" href="render.html?file=content/kalima/' + slug + '.md" target="_blank" rel="noopener">Open entry ↗</a>' : '') + '</div>';
+    kalimaMD(slug).then(md => {
+      if (current !== el || trail[trail.length - 1] !== slug) return;   // moved on while it loaded
+      const box = document.createElement('div'); box.className = 'som-kal-scroll';
+      if (trail.length > 1) {
+        const back = document.createElement('button'); back.type = 'button'; back.className = 'som-kal-back'; back.textContent = '← Back';
+        box.appendChild(back);
+      }
+      if (md == null) {
+        box.insertAdjacentHTML('beforeend', '<p class="som-kal-status">No glossary entry yet — add <code>content/kalima/' + slug + '.md</code></p>');
+      } else {
+        const body = document.createElement('div'); body.className = 'markdown-body som-kal-body';
+        if (window.somRenderInto) somRenderInto(md, body);
+        else if (window.marked) body.innerHTML = marked.parse(md);
+        box.appendChild(body);
+        const foot = document.createElement('a'); foot.className = 'som-kal-foot'; foot.target = '_blank'; foot.rel = 'noopener';
+        foot.href = 'render.html?file=content/kalima/' + slug + '.md'; foot.textContent = 'Open entry ↗';
+        box.appendChild(foot);
+      }
+      p.textContent = ''; p.appendChild(box);
       place(el);
     });
+  }
+
+  // Clicks inside an open glossary card: "← Back", a glossary word (opens in place, with a trail),
+  // or a plain {{ word | note }} tooltip (its note opens inline; a second popover would clobber this one).
+  function clickInPopover(e) {
+    if (e.target.closest('.som-kal-back')) {
+      e.preventDefault(); trail.pop();
+      if (trail.length) showKalima(current, pop, trail[trail.length - 1]);
+      return;
+    }
+    const t = tipOf(e.target);
+    if (!t || !pop.contains(t)) return;
+    e.preventDefault();
+    if (t.dataset.kalima) { trail.push(t.dataset.kalima); showKalima(current, pop, t.dataset.kalima); return; }
+    if (t._note) { t._note.remove(); t._note = null; t.classList.remove('is-open'); return; }
+    const note = document.createElement('span'); note.className = 'som-inline-note'; note.textContent = t.dataset.tip || '';
+    (t.closest('p, li, blockquote, summary, h1, h2, h3') || t).after(note);
+    t._note = note; t.classList.add('is-open');
   }
 
   function show(el) {
@@ -128,7 +202,7 @@
     p.classList.remove('rich');
     if (current && current !== el) current.classList.remove('is-open');
     current = el;
-    if (el.dataset.kalima) { showKalima(el, p); return; }
+    if (el.dataset.kalima) { trail = [el.dataset.kalima]; showKalima(el, p, trail[0]); return; }
     // Optional richer form: data-tip-ar (the Arabic, shown large) and data-tip-ref (its citation).
     p.textContent = '';
     if (el.dataset.tipAr) {
@@ -156,11 +230,12 @@
   function hide() {
     if (pop) pop.style.display = 'none';
     if (current) current.classList.remove('is-open');
-    current = null; pinned = false;
+    current = null; pinned = false; trail = [];
   }
 
   const tipOf = (t) => t.closest && t.closest('.som-tip, .w[data-kalima]');
-  const hoverable = (t) => t && !t.dataset.kalima;   // glossary entries open on click/tap only
+  // glossary entries open on click/tap only; tips inside an open glossary card never take over the popover
+  const hoverable = (t) => t && !t.dataset.kalima && !(pop && pop.contains(t));
 
   document.addEventListener('mouseover', (e) => { const t = tipOf(e.target); if (hoverable(t) && !pinned) show(t); });
   document.addEventListener('mouseout', (e) => { if (hoverable(tipOf(e.target)) && !pinned) hide(); });
@@ -169,7 +244,7 @@
 
   // Click pins it (needed on touch); clicking inside a <summary> must not toggle the drawer.
   document.addEventListener('click', (e) => {
-    if (pop && pop.contains(e.target)) return;   // reading or scrolling an open glossary entry
+    if (pop && pop.contains(e.target)) { clickInPopover(e); return; }   // reading or scrolling an open glossary entry
     const t = tipOf(e.target);
     if (!t) { if (pinned) hide(); return; }
     e.preventDefault();
