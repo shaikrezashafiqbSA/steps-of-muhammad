@@ -1781,6 +1781,125 @@
       });
     }
 
+    // ════════════════════════════════════════════
+    // Live preview: patch, don't rebuild.
+    // The builder re-renders after every pause in typing. Replacing the whole card reloaded the
+    // follow-along video and every embed and closed the drawers the author had open. Instead the new
+    // version is built off-screen and only the blocks that changed are swapped into the live card;
+    // untouched blocks (and the iframes, open drawers and pinned video inside them) stay as they are.
+    // Used for the preview only; published pages still render in one pass.
+    // ════════════════════════════════════════════
+    const SIG_TRANSIENT = new Set(['src-hl', 'pinned', 'is-open', 'is-unfolded']);
+
+    // What a block "is", ignoring things that only change at runtime: ids added for the TOC, the
+    // open state of drawers, source line numbers, the pinned state of the video, the caret highlight.
+    function previewSig(el) {
+      return el.outerHTML
+        .replace(/ data-line="\d+"/g, '')
+        .replace(/ id="[^"]*"/g, '')
+        .replace(/ open=""/g, '')
+        .replace(/class="([^"]*)"/g, (m, c) => {
+          const k = c.split(/\s+/).filter(x => x && !SIG_TRANSIENT.has(x)).join(' ');
+          return k ? 'class="' + k + '"' : '';
+        })
+        .replace(/ +>/g, '>')
+        .replace(/📌 Pinned/g, '📌 Follow along');
+    }
+
+    const hasLooseText = (el) => Array.from(el.childNodes).some(n => n.nodeType === 3 && n.textContent.trim());
+
+    function lcsPairs(a, b) {   // longest common subsequence of two int arrays → [[i, j], …] in order
+      const n = a.length, m = b.length;
+      const dp = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
+      for (let i = n - 1; i >= 0; i--)
+        for (let j = m - 1; j >= 0; j--)
+          dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+      const out = [];
+      let i = 0, j = 0;
+      while (i < n && j < m) {
+        if (a[i] === b[j]) { out.push([i, j]); i++; j++; }
+        else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
+        else j++;
+      }
+      return out;
+    }
+
+    const lineEls = (el) => [el].concat(Array.from(el.querySelectorAll('[data-line]'))).filter(e => e.hasAttribute('data-line'));
+
+    // A kept block keeps its DOM, but its source line numbers may have moved (lines added above it).
+    function syncLines(o, n) {
+      const a = lineEls(o), b = lineEls(n);
+      if (a.length !== b.length) return false;
+      a.forEach((e, i) => e.setAttribute('data-line', b[i].getAttribute('data-line')));
+      return true;
+    }
+
+    // A block that must be replaced still inherits the reader's state: open drawers and the pinned video.
+    function carryState(o, n) {
+      const drawers = (el) => (el.tagName === 'DETAILS' ? [el] : []).concat(Array.from(el.querySelectorAll('details')));
+      const od = drawers(o), nd = drawers(n);
+      if (od.length === nd.length) od.forEach((d, i) => { if (!d.classList.contains('embed-card')) nd[i].open = d.open; });
+      const videos = (el) => (el.matches('.video-card') ? [el] : []).concat(Array.from(el.querySelectorAll('.video-card')));
+      const ov = videos(o), nv = videos(n);
+      if (ov.length === nv.length) ov.forEach((v, i) => {
+        if (v.classList.contains('pinned')) {
+          nv[i].classList.add('pinned');
+          const b = nv[i].querySelector('.video-pin-toggle');
+          if (b) b.textContent = '📌 Pinned';
+        }
+      });
+    }
+
+    // Make oldP's element children match newP's, touching as little as possible.
+    function patchChildren(oldP, newP, depth) {
+      const O = Array.from(oldP.children), N = Array.from(newP.children);
+      const ids = new Map();
+      const id = (s) => { if (!ids.has(s)) ids.set(s, ids.size); return ids.get(s); };
+      const pairs = lcsPairs(O.map(el => id(previewSig(el))), N.map(el => id(previewSig(el))));
+      let oi = 0, ni = 0;
+
+      // The stretch between two kept blocks: pair up old and new blocks by position.
+      const flush = (oEnd, nEnd, ref) => {
+        const olds = O.slice(oi, oEnd), news = N.slice(ni, nEnd);
+        const k = Math.min(olds.length, news.length);
+        for (let x = 0; x < k; x++) {
+          const o = olds[x], n = news[x];
+          if (depth < 2 && o.tagName === 'DETAILS' && n.tagName === 'DETAILS' && !hasLooseText(o) && !hasLooseText(n)) {
+            // a drawer that was edited: patch inside it, so it stays open and its embeds stay loaded
+            Array.from(n.attributes).forEach(a => {
+              if (a.name !== 'open' && a.name !== 'id' && o.getAttribute(a.name) !== a.value) o.setAttribute(a.name, a.value);
+            });
+            Array.from(o.attributes).forEach(a => {
+              if (a.name !== 'open' && a.name !== 'id' && !n.hasAttribute(a.name) && !SIG_TRANSIENT.has(a.name)) o.removeAttribute(a.name);
+            });
+            patchChildren(o, n, depth + 1);
+          } else {
+            carryState(o, n);
+            o.replaceWith(n);
+          }
+        }
+        olds.slice(k).forEach(o => o.remove());
+        news.slice(k).forEach(n => oldP.insertBefore(n, ref));
+      };
+
+      pairs.forEach(([i, j]) => {
+        flush(i, j, O[i]);
+        if (!syncLines(O[i], N[j])) { carryState(O[i], N[j]); O[i].replaceWith(N[j]); }
+        oi = i + 1; ni = j + 1;
+      });
+      flush(O.length, N.length, null);
+    }
+
+    function patchPreview(target, scratch) {
+      if (!target.children.length || hasLooseText(target) || hasLooseText(scratch)) {
+        target.innerHTML = '';
+        while (scratch.firstChild) target.appendChild(scratch.firstChild);
+        return;
+      }
+      patchChildren(target, scratch, 0);
+      Array.from(target.childNodes).forEach(n => { if (n.nodeType === 3 && !n.textContent.trim()) n.remove(); });
+    }
+
     function renderCard(md, withLines) {
       const target = document.getElementById('markdown-target');
       marked.setOptions({ gfm: true, breaks: false });
@@ -1799,10 +1918,18 @@
         }
       }
 
-      target.innerHTML = withLines ? renderWithLines(stripped, window._metaLines) : marked.parse(stripped);
-
-      parseWordStacks(target);
-      expandEmbeds(target);   // before the TOC so embedded headings never enter it
+      if (withLines) {
+        // live preview: build off-screen, then patch only what changed (videos and open drawers survive)
+        const scratch = document.createElement('div');
+        scratch.innerHTML = renderWithLines(stripped, window._metaLines);
+        parseWordStacks(scratch);
+        expandEmbeds(scratch);   // before the TOC so embedded headings never enter it
+        patchPreview(target, scratch);
+      } else {
+        target.innerHTML = marked.parse(stripped);
+        parseWordStacks(target);
+        expandEmbeds(target);   // before the TOC so embedded headings never enter it
+      }
       buildTOC(target);
 
       const h1 = target.querySelector('h1');
@@ -1909,6 +2036,14 @@
           catch (err) { target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ ${err.message}</p>`; }
           window.scrollTo(0, y);
         });
+        // Embedded players (QuranWBW, YouTube) grab keyboard focus when they load. Tell the builder, so it
+        // can hand the keyboard back to the editor, and tell it when the reader really clicks in here.
+        document.addEventListener('load', (e) => {
+          if (e.target && e.target.tagName === 'IFRAME') window.parent.postMessage({ type: 'som-iframe-loaded' }, '*');
+        }, true);
+        document.addEventListener('pointerdown', (e) => {
+          if (e.isTrusted) window.parent.postMessage({ type: 'som-preview-touched' }, '*');
+        }, true);
         window.parent.postMessage({ type: 'som-preview-ready' }, '*');
         return;
       }

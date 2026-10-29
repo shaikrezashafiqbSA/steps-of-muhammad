@@ -407,6 +407,19 @@ Put it on its own line to get a standalone drawer. Embeds are one level deep: a 
 </div>
 ```
 
+**Follow-along video (pinnable)** — a YouTube embed that scrolls with the page, with a 📌 button that pins it as a small player at the top while the reader scrolls the text below. It resets to unpinned on every page load. Put it in the intro, above the Dua section. In the Sunnah Card Builder use **Embeds → 📺 Follow-along video**: paste the YouTube link (a time in the link, such as `?t=72`, becomes the start), then give the start and end as `1:12 - 2:15`. The markup it inserts, as used in `content/adhkar-as-sabah-wal-masa/c_law_anzalna.md`:
+
+```html
+📺 **Listen and follow along** — tap 📌 on the video to pin it while you read below.
+
+<div class="video-card">
+<iframe src="https://www.youtube.com/embed/VIDEO_ID?start=72&amp;end=135" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<button class="video-pin-toggle" title="Pin video so it stays visible while you scroll">📌 Follow along</button>
+</div>
+```
+
+In the live preview, editing elsewhere does not reload the video or the QuranWBW embeds: only the blocks that changed are updated, and open drawers and the pinned state are kept. An embed reloads only when its own link changes, and if you were typing in the editor the keyboard is handed straight back to it when the embed finishes loading.
+
 **Not currently implemented:** math rendering (KaTeX/MathJax), footnotes, Mermaid diagrams, search across files, auto-generated library index from frontmatter, practice tracker, audio karaoke, Qurʾān corpus root-letter integration. These may be added in future phases based on demonstrated need.
 
 ---

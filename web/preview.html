@@ -266,6 +266,7 @@ Allah will suffice them in whatever concerns them of the matters of this world a
     const editor = document.getElementById('editor');
     const frame = document.getElementById('frame');
     let ready = false, timer = null;
+    let refocusUntil = 0;   // while now < this, a player that steals focus from the editor is sent straight back
 
     // localStorage can throw (private windows, blocked site data)
     const store = {
@@ -278,6 +279,7 @@ Allah will suffice them in whatever concerns them of the matters of this world a
     let lastLine = 0;
 
     function push() {
+      if (document.activeElement === editor) refocusUntil = Date.now() + 5000;   // the author is typing
       document.getElementById('count').textContent = editor.value ? editor.value.split('\n').length + ' lines' : '';
       if (ready) frame.contentWindow.postMessage({ type: 'som-preview', md: editor.value, line: document.activeElement === editor ? caretLine() : 0 }, '*');
     }
@@ -337,6 +339,8 @@ Allah will suffice them in whatever concerns them of the matters of this world a
       if (e.source !== frame.contentWindow || !e.data) return;
       if (e.data.type === 'som-preview-ready') { ready = true; push(); }
       else if (e.data.type === 'som-goto') gotoLine(e.data.line);
+      else if (e.data.type === 'som-iframe-loaded') { if (Date.now() < refocusUntil) { refocusUntil = Date.now() + 3000; if (document.activeElement === frame) editor.focus({ preventScroll: true }); } }
+      else if (e.data.type === 'som-preview-touched') refocusUntil = 0;   // a real click in the preview: leave focus alone
     });
 
     editor.addEventListener('input', schedule);
@@ -452,6 +456,7 @@ Allah will suffice them in whatever concerns them of the matters of this world a
         { name: 'Link to a heading', hint: '#heading-slug', text: '[⟦label⟧](#heading-slug)' },
       ]},
       { label: '🎬 Embeds', items: [
+        { name: '📺 Follow-along video (pinnable)', hint: 'paste a YouTube link, set the start and end — readers can pin it while they read below', run: insertFollowAlong },
         { name: '📖 Qurʾān verse (QuranWBW)', hint: 'word-by-word verse viewer — change 11/59 to surah/ayah, or 37/180-182 for a range', block: true,
           text: '**Qur\'an, Sūrat ⟦Hūd⟧ 11:59**\n<iframe src="https://quranwbw.com/⟦11/59⟧" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>' },
         { name: 'Image', block: true, text: '<img src="../assets/⟦black-flag.jpeg⟧" alt="Description" style="max-width: 100%; border-radius: 8px;">' },
@@ -507,7 +512,7 @@ Allah will suffice them in whatever concerns them of the matters of this world a
           x.querySelector('b').textContent = it.name;
           if (it.hint) x.querySelector('small').textContent = it.hint;
           x.addEventListener('mousedown', e => e.preventDefault());
-          x.addEventListener('click', () => { insertSnippet(it); closeMenu(); });
+          x.addEventListener('click', () => { closeMenu(); if (it.run) it.run(); else insertSnippet(it); });
           panel.appendChild(x);
         });
       }
@@ -752,6 +757,88 @@ Allah will suffice them in whatever concerns them of the matters of this world a
     bar.insertBefore(kbBtn, guide);
     editor.classList.toggle('arabic-on', !!kb.phys);
     kbShow(!!kb.open);
+
+    // ════════════════════════════════════════════
+    // Follow-along video — the pinnable YouTube card.
+    // The look and the 📌 pin button live in render.html; this builds the markup from a pasted link.
+    // ════════════════════════════════════════════
+    function ytSeconds(v) {
+      if (v == null) return null;
+      v = String(v).trim();
+      if (!v) return null;
+      if (/^\d+$/.test(v)) return +v;
+      if (v.indexOf(':') !== -1) return v.split(':').reduce((a, p) => a * 60 + (+p || 0), 0);
+      const m = v.match(/^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?$/i);   // 1m12s, 72s, 1h2m3s
+      if (!m || !(m[1] || m[2] || m[3])) return null;
+      return (+m[1] || 0) * 3600 + (+m[2] || 0) * 60 + (+m[3] || 0);
+    }
+
+    function ytClock(sec) {
+      return sec == null ? '' : Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0');
+    }
+
+    // Accepts watch?v=…, youtu.be/…, /embed/…, /shorts/…, /live/…, or a bare 11-character id.
+    // A time in the link (t= or start=) becomes the start; end= becomes the end.
+    function ytParse(input) {
+      const s = (input || '').trim();
+      if (!s) return null;
+      let id = null, params = new URLSearchParams();
+      if (/^[\w-]{11}$/.test(s)) {
+        id = s;
+      } else {
+        let u;
+        try { u = new URL(/^https?:\/\//i.test(s) ? s : 'https://' + s); } catch (e) { return null; }
+        const host = u.hostname.replace(/^(www|m)\./, '');
+        params = u.searchParams;
+        if (host === 'youtu.be') id = u.pathname.split('/')[1];
+        else if (/(^|\.)youtube(-nocookie)?\.com$/.test(host)) {
+          const fromPath = u.pathname.match(/^\/(?:embed|shorts|live|v)\/([\w-]{11})/);
+          id = params.get('v') || (fromPath ? fromPath[1] : null);
+        }
+      }
+      if (!id || !/^[\w-]{11}$/.test(id)) return null;
+      const startRaw = params.get('start') != null ? params.get('start') : params.get('t');
+      return { id, start: ytSeconds(startRaw), end: ytSeconds(params.get('end')) };
+    }
+
+    function followAlongSnippet(id, start, end) {
+      const q = [];
+      if (start != null && start > 0) q.push('start=' + start);
+      if (end != null && end > (start || 0)) q.push('end=' + end);
+      const src = 'https://www.youtube.com/embed/' + id + (q.length ? '?' + q.join('&amp;') : '');
+      return '📺 **Listen and follow along** — tap 📌 on the video to pin it while you read below.\n\n' +
+        '<div class="video-card">\n' +
+        '<iframe src="' + src + '" title="YouTube video player" frameborder="0" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+        'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>\n' +
+        '<button class="video-pin-toggle" title="Pin video so it stays visible while you scroll">📌 Follow along</button>\n' +
+        '</div>';
+    }
+
+    function insertFollowAlong() {
+      const link = window.prompt('YouTube link (watch, youtu.be or embed).\nA time in the link, such as ?t=72, becomes the start.\nLeave blank for an empty template.', '');
+      if (link === null) return;
+      if (!link.trim()) { insertSnippet({ text: followAlongSnippet('⟦VIDEO_ID⟧', null, null), block: true }); return; }
+      const y = ytParse(link);
+      if (!y) { alert('That does not look like a YouTube link or a video id.'); return; }
+      const dflt = (y.start != null || y.end != null) ? ytClock(y.start != null ? y.start : 0) + ' - ' + ytClock(y.end) : '';
+      const range = window.prompt('Play from – to, in seconds or m:ss, for example 1:12 - 2:15.\nLeave blank to play the whole video.', dflt);
+      let start = y.start, end = y.end;
+      if (range !== null) {   // cancelling keeps whatever the link had
+        const p = range.split(/\s*[-–—]\s*/);
+        start = ytSeconds(p[0]);
+        end = p.length > 1 ? ytSeconds(p[1]) : null;
+      }
+      insertSnippet({ text: followAlongSnippet(y.id, start, end), block: true });
+    }
+
+    // A player that loads in the preview (QuranWBW, YouTube) takes keyboard focus; hand it back while typing.
+    editor.addEventListener('blur', (e) => {
+      if (Date.now() < refocusUntil && e.relatedTarget === frame) setTimeout(() => editor.focus({ preventScroll: true }), 0);
+    });
+    setInterval(() => {
+      if (Date.now() < refocusUntil && document.activeElement === frame) editor.focus({ preventScroll: true });
+    }, 150);
 
     const saved = store.get();
     editor.value = saved !== null ? saved : sampleMd();
