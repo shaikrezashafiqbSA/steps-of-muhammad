@@ -384,6 +384,8 @@
       color: var(--structural);
     }
     .toc-list .toc-h2 { font-weight: 600; }
+    .toc-list .toc-title a { font-weight: 700; padding-bottom: 0.5rem; margin-bottom: 0.2rem; border-bottom: 1px solid rgba(125, 82, 67, 0.15); border-radius: 4px 4px 0 0; }
+    .toc-list .toc-title a::before { content: '↑'; margin-right: 0.45rem; color: var(--accent-ochre, #B08A4B); }
     .toc-list .toc-card > a::after { content: '▸'; float: right; color: var(--text-taupe); }
     .toc-list .toc-card.is-unfolded > a::after { content: '▾'; }
     .toc-list .toc-card.is-unfolded > a { color: var(--structural); border-left-color: var(--structural); }
@@ -696,6 +698,42 @@
     .markdown-body details blockquote {
       background: rgba(125, 82, 67, 0.04);
       font-size: 0.85rem;
+    }
+
+    /* ════════════════════════════════════════════════
+       HIKMAH — a rare-item gleam
+       The box is either a drawer whose summary carries the {{ Hikmah | @hikmah }} glossary
+       word, or a plain "## Hikmah" section (wrapped in .hikmah-box by wrapHikmahSections).
+       Warm gold edge, a slow pulsing glow, and a light sweep across the whole box.
+       ════════════════════════════════════════════════ */
+    .markdown-body details:has(> summary .som-tip[data-kalima="hikmah"]),
+    .markdown-body .hikmah-box {
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(201, 162, 74, 0.7);
+      border-left: 3px solid #b8892f;
+      border-radius: 6px;
+      background-image: linear-gradient(135deg, rgba(212, 175, 55, 0.14), rgba(255, 244, 214, 0.38) 45%, rgba(212, 175, 55, 0.12));
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3), 0 0 14px rgba(212, 175, 55, 0.25);
+      animation: hikmah-glow 3.6s ease-in-out infinite;
+    }
+    .markdown-body .hikmah-box { padding: 0.4rem 1rem 0.85rem; margin: 1.25rem 0; }
+    .markdown-body .hikmah-box > h2 { margin-top: 0.6rem; }
+    .markdown-body details:has(> summary .som-tip[data-kalima="hikmah"]) > summary { color: #6b4a12; }
+    .markdown-body details:has(> summary .som-tip[data-kalima="hikmah"])::after,
+    .markdown-body .hikmah-box::after {
+      content: ''; position: absolute; top: 0; bottom: 0; left: -60%; width: 30%;
+      background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+      transform: skewX(-18deg); pointer-events: none; z-index: 2;
+      animation: hikmah-sheen 4.4s ease-in-out infinite;
+    }
+    @keyframes hikmah-sheen { 0%, 55% { left: -60%; } 100% { left: 130%; } }
+    @keyframes hikmah-glow {
+      0%, 100% { box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3), 0 0 10px rgba(212, 175, 55, 0.18); }
+      50%      { box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.5), 0 0 22px rgba(212, 175, 55, 0.42); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .markdown-body details:has(> summary .som-tip[data-kalima="hikmah"]), .markdown-body .hikmah-box,
+      .markdown-body details:has(> summary .som-tip[data-kalima="hikmah"])::after, .markdown-body .hikmah-box::after { animation: none; }
     }
 
     /* ════════════════════════════════════════════════
@@ -1335,6 +1373,25 @@
       rootEl.innerHTML = transformed;
       somParseTips(rootEl);   // {{ word | note }} tooltips (web/tips.js)
       groupAyahs(rootEl);
+      wrapHikmahSections(rootEl);
+    }
+
+    // "## {{ Hikmah | @hikmah }}" plus what follows it (up to the next heading, drawer or rule)
+    // goes in one .hikmah-box, so the whole section can carry the gleam.
+    function wrapHikmahSections(rootEl) {
+      rootEl.querySelectorAll('h2').forEach(h => {
+        if (h.parentElement.classList.contains('hikmah-box')) return;
+        if (!h.querySelector('.som-tip[data-kalima="hikmah"]')) return;
+        const box = document.createElement('div');
+        box.className = 'hikmah-box';
+        h.parentNode.insertBefore(box, h);
+        let n = h;
+        while (n && (n === h || !/^(H1|H2|H3|DETAILS|HR)$/.test(n.tagName))) {
+          const next = n.nextElementSibling;
+          box.appendChild(n);
+          n = next;
+        }
+      });
     }
 
     function groupAyahs(rootEl) {
@@ -1396,6 +1453,7 @@
         el.tagName !== 'DETAILS' ||
         (!el.classList.contains('embed-card') && !el.parentElement.closest('details')));
 
+      // The title is not counted: a card with fewer than two sections still gets no TOC.
       if (headings.length < 2) {
         if (tocPanel) tocPanel.style.display = 'none';
         if (hudTocBtn) hudTocBtn.style.display = 'none';
@@ -1403,6 +1461,24 @@
       }
 
       tocList.innerHTML = '';
+
+      // First row: the card title (H1), a back-to-top link. Single cards only.
+      const titleEl = target.querySelector('h1');
+      if (titleEl && !titleEl.closest('details')) {
+        const tli = document.createElement('li');
+        tli.className = 'toc-title';
+        const ta = document.createElement('a');
+        ta.href = '#';
+        ta.textContent = titleEl.textContent.replace(/\s+/g, ' ').trim();
+        ta.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          closeTOC();
+        });
+        tli.appendChild(ta);
+        tocList.appendChild(tli);
+      }
+
       headings.forEach((h, i) => {
         const isDrawer = h.tagName === 'DETAILS';
         const label = (isDrawer ? h.querySelector('summary') || h : h).textContent.replace(/\s+/g, ' ').trim();

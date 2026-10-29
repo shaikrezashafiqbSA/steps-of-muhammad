@@ -12,9 +12,7 @@ right-orb: Compilation
 right-orb-compact: ۞۞۞
 ::
 
-# Dua Selamat: Safety in Religion, Death and the Reckoning
-
-## 📜 The Supplication
+# Du'a Selamat: Safety in Religion, Death and the Reckoning
 
 *O Allah, we ask You for safety in our religion, well-being in our bodies, increase in knowledge, blessing in provision, repentance before death, mercy at death and forgiveness after death. O Allah, ease for us the agonies of death, and deliverance from the Fire, and pardon at the reckoning.*
 
@@ -26,8 +24,7 @@ right-orb-compact: ۞۞۞
 
 *And may Allah send blessings upon our master Muḥammad, his family and his companions, and grant them peace. All praise belongs to Allah, Lord of the worlds.*
 
-
-## 🔤 Word-by-Word
+## 📜✨ Du'a
 
 ### Part 1: Seven petitions
 
@@ -63,7 +60,6 @@ right-orb-compact: ۞۞۞
 [[ بَعْدَ | after | baʿda ]]
 [[ الْمَوْتِ | death | l-mawti ]]
 
-
 ### Part 2: Death, the Fire, the reckoning
 
 [[ اللَّهُمَّ | O Allah | Allāhumma ]]
@@ -80,7 +76,6 @@ right-orb-compact: ۞۞۞
 [[ وَالْعَفْوَ | and pardon | wa-l-ʿafwa ]]
 [[ عِنْدَ | at | ʿinda ]]
 [[ الْحِسَابِ | the reckoning | l-ḥisābi ]]
-
 
 ### Part 3: Qur'an 3:8
 
@@ -102,14 +97,6 @@ right-orb-compact: ۞۞۞
 [[ أَنْتَ | You | anta ]]
 [[ الْوَهَّابُ | the Bestower | l-Wahhābu ]]
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-[Qur'an, Sūrat Aal i Imraan 3:8](?file=content\dua\la-tuzigh-qulubana.md  "embed")
-
-
-</details>
-
 ### Part 4: Faith in life, death and Paradise
 
 [[ اللَّهُمَّ | O Allah | Allāhumma ]]
@@ -123,19 +110,6 @@ right-orb-compact: ۞۞۞
 [[ الْجَنَّةَ | to Paradise | l-jannata ]]
 [[ مَعَ | with | maʿa ]]
 [[ الْإِيمَانِ | faith | l-īmāni ]]
-
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**Status: Hadith-inspired. Wording differs.**
-
-[Sunan Ibn Majah 1498](https://sunnah.com/ibnmajah:1498)
-
-The funeral prayer reads "man aḥyaytahu minnā fa-aḥyihi ʿalā l-Islām, wa-man tawaffaytahu minnā fa-tawaffahu ʿalā l-īmān": life on Islam, death on īmān. Ibn Mājah 1498 is graded Ḥasan (Darussalam). Riyāḍ aṣ-Ṣāliḥīn 936 quotes al-Ḥākim calling Abū Hurayrah's report ṣaḥīḥ on the condition of al-Bukhārī and Muslim.
-
-The Dua Selamat asks for life with īmān, death with īmān and Paradise with īmān. The Paradise clause: no source with this wording found. The hadith is a prayer for the deceased, so reciting it as a petition for oneself is an extension of the theme.
-
-</details>
 
 ### Part 5: Sins and parents
 
@@ -151,20 +125,6 @@ The Dua Selamat asks for life with īmān, death with īmān and Paradise with �
 [[ رَبَّيَانَا | they raised us | rabbayānā ]]
 [[ صَغِيرًا | when small | ṣaghīran ]]
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**Status: Qur'anic in part.**
-
-**Qur'an, Sūrat Al-Isra 17:24**
-<iframe src="https://quranwbw.com/17/24" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
-
-The closing clause follows Qur'an 17:24, "warḥamhumā kamā rabbayānī ṣaghīrā". The Dua Selamat changes rabbayānī, "raised me", to rabbayānā, "raised us". See [quran.com/17/24](https://quran.com/17/24).
-
-The opening clause, forgiveness for our sins and our parents: no verbatim source found. Qur'an 14:41 asks forgiveness for the parents in similar terms ([quran.com/14/41](https://quran.com/14/41)).
-
-</details>
-
 ### Part 6: The ending
 
 [[ اللَّهُمَّ | O Allah | Allāhumma ]]
@@ -178,7 +138,6 @@ The opening clause, forgiveness for our sins and our parents: no verbatim source
 [[ عَلَيْنَا | upon us | ʿalaynā ]]
 [[ بِسُوءِ | with the evil | bi-sūʾi ]]
 [[ الْخَاتِمَةِ | of the ending | l-khātimati ]]
-
 
 ### Part 7: Qur'an 2:201
 
@@ -195,13 +154,6 @@ The opening clause, forgiveness for our sins and our parents: no verbatim source
 [[ وَقِنَا | and protect us | wa-qinā ]]
 [[ عَذَابَ | from the punishment | ʿadhāba ]]
 [[ النَّارِ | of the Fire | n-nāri ]]
-
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-[Qur'an Sūrat Al Baqarah:201](?file=content\dua\rabbana-atina-fid-dunya.md "embed")
-
-</details>
 
 ### Part 8: Closing
 
@@ -221,4 +173,35 @@ The opening clause, forgiveness for our sins and our parents: no verbatim source
 [[ رَبِّ | Lord | rabbi ]]
 [[ الْعَالَمِينَ | of the worlds | l-ʿālamīna ]]
 
+<details>
+<summary>📜🔎 What is the {{ Dalīl | @dalil }}? </summary>
 
+**Part 3 · Qurʾān ✦ Sūrat Āl ʿImrān 3:8**
+
+[Qur'an, Sūrat Aal i Imraan 3:8](?file=content\dua\la-tuzigh-qulubana.md  "embed")
+
+**Part 4 · Ḥadīth ✦ Sunan Ibn Mājah 1498**
+
+**Status: Hadith-inspired. Wording differs.**
+
+[Sunan Ibn Majah 1498](https://sunnah.com/ibnmajah:1498)
+
+The funeral prayer reads "man aḥyaytahu minnā fa-aḥyihi ʿalā l-Islām, wa-man tawaffaytahu minnā fa-tawaffahu ʿalā l-īmān": life on Islam, death on īmān. Ibn Mājah 1498 is graded Ḥasan (Darussalam). Riyāḍ aṣ-Ṣāliḥīn 936 quotes al-Ḥākim calling Abū Hurayrah's report ṣaḥīḥ on the condition of al-Bukhārī and Muslim.
+
+The Dua Selamat asks for life with īmān, death with īmān and Paradise with īmān. The Paradise clause: no source with this wording found. The hadith is a prayer for the deceased, so reciting it as a petition for oneself is an extension of the theme.
+
+**Part 5 · Qurʾān ✦ Sūrat al-Isrāʾ 17:24**
+
+**Status: Qur'anic in part.**
+
+<iframe src="https://quranwbw.com/17/24" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
+
+The closing clause follows Qur'an 17:24, "warḥamhumā kamā rabbayānī ṣaghīrā". The Dua Selamat changes rabbayānī, "raised me", to rabbayānā, "raised us". See [quran.com/17/24](https://quran.com/17/24).
+
+The opening clause, forgiveness for our sins and our parents: no verbatim source found. Qur'an 14:41 asks forgiveness for the parents in similar terms ([quran.com/14/41](https://quran.com/14/41)).
+
+**Part 7 · Qurʾān ✦ Sūrat al-Baqarah 2:201**
+
+[Qur'an Sūrat Al Baqarah:201](?file=content\dua\rabbana-atina-fid-dunya.md "embed")
+
+</details>

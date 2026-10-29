@@ -3,19 +3,12 @@ left-orb: Ṣalāt al-Tafrijiyyah · Imam al-Qurtubī (d. 671 AH) · Khāzinat a
 right-orb: Maʾthūr · Widely Transmitted
 ::
 
-## Salawat - Tafrijiyyah
-<details>
-<summary>Background and who composed this salawat</summary>
+# Salawat - Tafrijiyyah
 
-This salawat is transmitted by Imam al-Qurtubī (d. 671 AH / 1273 CE)  (Salawat) and is also associated with Shaykh Ibrahim al-Tāzī al-Maghribī, a Sufi scholar from Taza, Morocco, as recorded in Khāzinat al-Asrār by Shaykh Muḥammad Ḥaqqī al-Nāzilī.  (Hajjah) Shaykh al-Qurṭubī called it "Tafrijiyyah" — meaning relief — based on the word تَنْفَرِجُ in its text. It is also known as Ṣalāt al-Nāriyyah and Ṣalāt al-Tāziyyah.  (Hajjah)This salawat is transmitted by Imam al-Qurtubī (d. 671 AH / 1273 CE)  (Salawat) and is also associated with Shaykh Ibrahim al-Tāzī al-Maghribī, a Sufi scholar from Taza, Morocco, as recorded in Khāzinat al-Asrār by Shaykh Muḥammad Ḥaqqī al-Nāzilī.  (Hajjah) Shaykh al-Qurṭubī called it "Tafrijiyyah" — meaning relief — based on the word تَنْفَرِجُ in its text. It is also known as Ṣalāt al-Nāriyyah and Ṣalāt al-Tāziyyah.  (Hajjah)
+A ṣalawāt on the Prophet ﷺ transmitted by Imam al-Qurṭubī (d. 671 AH) and also associated with Shaykh Ibrahim al-Tāzī al-Maghribī. It is called Tafrijiyyah, meaning relief, from the word تَنْفَرِجُ in its text, and is also known as Ṣalāt al-Nāriyyah and Ṣalāt al-Tāziyyah.
 
-</details>
+## 📜✨ Du'a
 
-
-
-
-
-## Salawat (Word by word)
 [[اللَّهُمَّ|O Allah|Allāhumma]] [[صَلِّ|send blessing|ṣalli]] [[صَلَاةً|a blessing|ṣalātan]] [[كَامِلَةً|perfect|kāmilatan]] [[وَسَلِّمْ|and send peace|wa sallim]] [[سَلَامًا|a peace|salāman]] [[تَامًّا|complete|tāman]]
 
 [[عَلَىٰ|upon|ʿalā]] [[سَيِّدِنَا|our master|Sayyidinā]] [[مُحَمَّدٍ|Muhammad|Muḥammadin]] [[الَّذِي|who|alladhī]] [[تَنْحَلُّ|are untied|tanḥallu]] [[بِهِ|by him|bihi]] [[الْعُقَدُ|the knots|l-ʿuqadu]] [[وَتَنْفَرِجُ|and is relieved|wa tanfariju]] [[بِهِ|by him|bihi]] [[الْكُرَبُ|the distress|l-kurabu]]
@@ -26,5 +19,17 @@ This salawat is transmitted by Imam al-Qurtubī (d. 671 AH / 1273 CE)  (Salawat)
 
 [[فِي|in|fī]] [[كُلِّ|every|kulli]] [[لَمْحَةٍ|glance|lamḥatin]] [[وَنَفَسٍ|and breath|wa nafasin]] [[بِعَدَدِ|in the number of|bi-ʿadadi]] [[كُلِّ|every|kulli]] [[مَعْلُومٍ|known thing|maʿlūmin]] [[لَكَ|to You|laka]]
 
+<details>
+<summary>📜🔎 What is the {{ Dalīl | @dalil }}? </summary>
+
+**Background and who composed this salawat**
+
+This salawat is transmitted by Imam al-Qurtubī (d. 671 AH / 1273 CE)  (Salawat) and is also associated with Shaykh Ibrahim al-Tāzī al-Maghribī, a Sufi scholar from Taza, Morocco, as recorded in Khāzinat al-Asrār by Shaykh Muḥammad Ḥaqqī al-Nāzilī.  (Hajjah) Shaykh al-Qurṭubī called it "Tafrijiyyah" — meaning relief — based on the word تَنْفَرِجُ in its text. It is also known as Ṣalāt al-Nāriyyah and Ṣalāt al-Tāziyyah.  (Hajjah)
+
 Learn more about it from: 
+
 https://salawat.com/durood-nariya/
+
+</details>
+
+<!-- DRAFT NOTE: the description under the title was written from the card's own Background text; edit freely. The Background paragraph had been pasted twice in the source; one copy is kept. -->

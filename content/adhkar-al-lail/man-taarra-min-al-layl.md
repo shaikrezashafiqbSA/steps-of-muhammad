@@ -12,12 +12,9 @@ right-orb-compact: ۞۞۞
 
 # Man Taʿārra min al-Layl — The Formula for Waking in the Dark
 
-## 📜 The Hadith
 ʿUbādah ibn aṣ-Ṣāmit (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said: **"Whoever stirs awake in the night and says [these words], then says *Allāhumma-ghfir lī* — or supplicates — he is answered. And if he performs wuḍūʾ and prays, his prayer is accepted."**
 
-This is the middle-of-the-night formula. You did not plan to be awake. The hadith turns that broken sleep into an answered duʿāʾ.
-
-## 🔤 Evoke This — Word by Word
+## 📜✨ Du'a
 
 [[لَا|There is no|lā]] [[إِلَهَ|god|ilāha]] [[إِلَّا|except|illā]] [[اللَّهُ|Allah,|llāhu]] [[وَحْدَهُ|alone,|waḥdahu]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُ|has He.|lahu]]
 
@@ -30,12 +27,19 @@ This is the middle-of-the-night formula. You did not plan to be awake. The hadit
 ### Then the ask
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[اغْفِرْ|forgive|ghfir]] [[لِي|me.|lī]]
 
+<details>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 1154**
+
+[[عَنِ|From|ʿani]] [[النَّبِيِّ|the Prophet|n-nabiyyi]] [[ صلى | may Allah bless him | ṣallā ]] [[ الله | Allah | llāhu ]] [[ عليه | upon him | ʿalayhi ]] [[ وسلم | and grant him peace ﷺ | wa-sallama ]] [[قَالَ|he said:|qāla]] [[مَنْ|Whoever|man]] [[تَعَارَّ|stirs awake|taʿārra]] [[مِنَ|from|mina]] [[اللَّيْلِ|the night|l-layli]] [[فَقَالَ|and says…|fa qāla]] [[ثُمَّ|then|thumma]] [[قَالَ|says:|qāla]] [[اللَّهُمَّ|O Allah,|allāhumma]] [[ اغْفِرْ | forgive | ghfir ]] [[ لِي | me, | lī ]] [[أَوْ|or|aw]] [[دَعَا|he supplicates,|daʿā]] [[اسْتُجِيبَ|he is answered.|stujība]] [[فَإِنْ|And if|fa in]] [[تَوَضَّأَ|he performs wuḍūʾ|tawaḍḍaʾa]] [[وَصَلَّى|and prays,|wa ṣallā]] [[قُبِلَتْ|is accepted|qubilat]] [[صَلَاتُهُ|his prayer.|ṣalātuh]]
+
+**Notes**
+
+This is the middle-of-the-night formula. You did not plan to be awake. The hadith turns that broken sleep into an answered duʿāʾ.
+
 — **or any duʿāʾ you wish.** The hadith says *"or he supplicates"*: the formula opens the door, then you walk through it with your own need.
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-[[عَنِ|From|ʿani]] [[النَّبِيِّ|the Prophet|n-nabiyyi]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[قَالَ|he said:|qāla]] [[مَنْ|Whoever|man]] [[تَعَارَّ|stirs awake|taʿārra]] [[مِنَ|from|mina]] [[اللَّيْلِ|the night|l-layli]] [[فَقَالَ|and says…|fa qāla]] [[ثُمَّ|then|thumma]] [[قَالَ|says:|qāla]] [[اللَّهُمَّ|O Allah,|allāhumma]] [[اغْفِرْ لِي|forgive me,|ghfir lī]] [[أَوْ|or|aw]] [[دَعَا|he supplicates,|daʿā]] [[اسْتُجِيبَ|he is answered.|stujība]] [[فَإِنْ|And if|fa in]] [[تَوَضَّأَ|he performs wuḍūʾ|tawaḍḍaʾa]] [[وَصَلَّى|and prays,|wa ṣallā]] [[قُبِلَتْ|is accepted|qubilat]] [[صَلَاتُهُ|his prayer.|ṣalātuh]]
-</details>
-
 *🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 1154](https://sunnah.com/bukhari:1154)*
+
+</details>

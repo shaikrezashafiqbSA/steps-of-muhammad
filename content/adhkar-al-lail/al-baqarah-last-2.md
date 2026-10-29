@@ -26,8 +26,6 @@ right-orb-compact: ۞۞۞
 
 # They Will Suffice Him - The Two Closing Verses of Surah al-Baqarah at Night
 
-## 📜 The Hadith
-
 Two verses. One night. One word: kafatāhu - _suffice_
 
 Abū Masʿūd al-Badrī ؓ reported that the Prophet ﷺ said: “Whoever recites the two verses at the end of Surah al-Baqarah at night, they will suffice him.” (Bukhārī 5009, Muslim 807)
@@ -38,46 +36,7 @@ The Prophet ﷺ did not say what they suffice for. Imam al-Nawawi recorded three
 - Sufficient against Satan
 - Sufficient against afflictions
 
-
-## 🔤 Word-by-Word
-
-[[ مَنْ | whoever | man ]] [[ قَرَأَ | recites | qaraʾa ]] [[ بِالآيَتَيْنِ | the two verses | bi-l-āyatayni ]] [[ مِنْ | from | min ]] [[ آخِرِ | the end of | ākhiri ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]][[ فِي | during | fī ]] [[ لَيْلَةٍ | a night | laylatin ]]
-
-[[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
-
-
-<details>
-
-<summary> 🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-*🔗 Verify on sunnah.com — Riyāḍ aṣ-Ṣāliḥīn 1017: [https://sunnah.com/riyadussalihin:1017](https://sunnah.com/riyadussalihin:1017)*
-
-*🔗 Verify on sunnah.com — Ṣaḥīḥ Muslim 807a: [https://sunnah.com/muslim:807a](https://sunnah.com/muslim:807a)*
-
-**The Chain of Narrators (الإِسْنَاد)**
-
-*Riyāḍ aṣ-Ṣāliḥīn 1017*
-
-[[ وَعَنْ | and from | wa-ʿan ]] [[ أَبِي | Abū Masʿūd al-Badrī | abī ]] [[ مَسْعُودٍ | … | masʿūdin ]] [[ الْبَدْرِيِّ | … | al-badriyyi ]] [[ رَضِيَ | may | raḍiya ]] [[ اللَّهُ | Allah be pleased | Allāhu ]] [[ عَنْهُ ؓ | with him | ʿanhu ]] [[ عَنِ | from | ʿani ]] [[ النَّبِيِّ | the Prophet | an-nabiyyi ]] [[ صَلَّى | may Allah's | ṣallā ]] [[ اللَّهُ | prayers be | Allāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمَ ﷺ | and peace | wa-sallam ]] [[ قَالَ | he said | qāla ]]
-
-*Ṣaḥīḥ Muslim 807a*
-
-[[ وَحَدَّثَنَا | and narrated to us | wa-ḥaddathanā ]] [[ أَحْمَدُ | Aḥmad ibn Yūnus | aḥmadu ]] [[ بْنُ | son of | ibnu ]] [[ يُونُسَ | … | yūnusa ]] [[ حَدَّثَنَا | narrated to us | ḥaddathanā ]] [[ زُهَيْرٌ | Zuhayr | zuhayrun ]] [[ حَدَّثَنَا | narrated to us | ḥaddathanā ]] [[ مَنْصُورٌ | Manṣūr | manṣūrun ]] [[ عَنْ | from | ʿan ]] [[ إِبْرَاهِيمَ | Ibrāhīm | ibrāhīma ]] [[ عَنْ | from | ʿan ]] [[ عَبْدِ | ʿAbd ar-Raḥmān ibn Yazīd | ʿabdi ]] [[ الرَّحْمَنِ | … | ar-raḥmāni ]] [[ بْنِ | son of | ibni ]] [[ يَزِيدَ | … | yazīda ]] [[ قَالَ | he said | qāla ]] [[ لَقِيتُ | I met | laqītu ]] [[ أَبَا | Abū Masʿūd | abā ]] [[ مَسْعُودٍ | … | masʿūdin ]] [[ عِنْدَ | near | ʿinda ]] [[ الْبَيْتِ | the House | al-bayti ]] [[ فَقُلْتُ | and I said | fa-qultu ]] [[ حَدِيثٌ | a hadith | ḥadīthun ]] [[ بَلَغَنِي | has reached me | balaghanī ]] [[ عَنْكَ | from you | ʿanka ]] [[ فِي | about | fī ]] [[ الآيَتَيْنِ | the two verses | al-āyatayni ]] [[ فِي | in | fī ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]] [[ فَقَالَ | and he said | fa-qāla ]] [[ نَعَمْ | yes | naʿam ]] [[ قَالَ | said | qāla ]] [[ رَسُولُ | the Messenger | rasūlu ]] [[ اللَّهِ | of Allah | Allāhi ]] [[ صَلَّى | may Allah's | ṣallā ]] [[ اللَّهُ | prayers be | Allāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمَ ﷺ | and peace | wa-sallam ]]
-
-**The Text of the Hadith (المَتْن)**
-
-*Riyāḍ aṣ-Ṣāliḥīn 1017*
-
-[[ مَنْ | whoever | man ]] [[ قَرَأَ | recites | qaraʾa ]] [[ بِالآيَتَيْنِ | the two verses | bi-l-āyatayni ]] [[ مِنْ | from | min ]] [[ آخِرِ | the end of | ākhiri ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]] [[ فِي | during | fī ]] [[ لَيْلَةٍ | a night | laylatin ]] [[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
-
-*Ṣaḥīḥ Muslim 807a*
-
-[[ الآيَتَانِ | the two verses | al-āyatāni ]] [[ مِنْ | from | min ]] [[ آخِرِ | the end of | ākhiri ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]] [[ مَنْ | whoever | man ]] [[ قَرَأَهُمَا | recites them both | qaraʾahumā ]] [[ فِي | during | fī ]] [[ لَيْلَةٍ | a night | laylatin ]] [[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
-
-</details>
-
-
-## 🔤 Recite These
+## 📜✨ Du'a
 
 ### Prelude: Al-Baqarah 2:284
 
@@ -106,8 +65,7 @@ The Prophet ﷺ did not say what they suffice for. Imam al-Nawawi recorded three
 [[ غُفۡرَانَكَ | Your forgiveness | ghufrānaka ]] [[ رَبَّنَا | our Lord | rabbanā ]]
 [[ وَإِلَيۡكَ | and to You | wa-ilayka ]] [[ ٱلۡمَصِيرُ | is the return | al-maṣīru ]] [[﴿٢٨٥﴾]]
 
-### {{ Recite this: Al-Baqarah 2:286 |**286: The Mercy.**
-Ibn Kathīr reads this as Allah's kindness, compassion and generosity toward His creation. He says it abrogated the worry that 284 caused the Companions. Allah still questions and judges, but He punishes only for what a person can guard against. Passing thoughts are not punished, and disliking an evil thought is part of faith. The good a soul earns is its reward, and the evil it earns is against it, in the acts it is responsible for. }}
+### {{ Recite this: Al-Baqarah 2:286 |**286: The Mercy.** Ibn Kathīr reads this as Allah's kindness, compassion and generosity toward His creation. He says it abrogated the worry that 284 caused the Companions. Allah still questions and judges, but He punishes only for what a person can guard against. Passing thoughts are not punished, and disliking an evil thought is part of faith. The good a soul earns is its reward, and the evil it earns is against it, in the acts it is responsible for. }}
 
 [[ لَا | does not | lā ]] [[ يُكَلِّفُ | burden | yukallifu ]] [[ ٱللَّهُ | Allah | Allāhu ]] [[ نَفۡسًا | any soul | nafsan ]] [[ إِلَّا | except | illā ]] [[ وُسۡعَهَاۚ | its capacity | wusʿahā ]]
 [[ لَهَا | for it | lahā ]] [[ مَا | what | mā ]] [[ كَسَبَتۡ | it earned | kasabat ]]
@@ -127,13 +85,22 @@ Ibn Kathīr reads this as Allah's kindness, compassion and generosity toward His
 [[ أَنتَ | You | anta ]] [[ مَوۡلَىٰنَا | are our Protector | mawlānā ]]
 [[ فَٱنصُرۡنَا | so grant us victory | fa-nṣurnā ]] [[ عَلَى | over | ʿalā ]] [[ ٱلۡقَوۡمِ | the people | al-qawmi ]] [[ ٱلۡكَٰفِرِينَ | who disbelieve | al-kāfirīna ]] [[﴿٢٨٦﴾]]
 
-<details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+## {{ Hikmah | @hikmah }}
 
-> **Source: Commentary.** Attributed to Tafsīr al-Qurʾān al-ʿAẓīm, Ibn Kathīr.
+[[ مَنْ | whoever | man ]] [[ قَرَأَ | recites | qaraʾa ]] [[ بِالآيَتَيْنِ | the two verses | bi-l-āyatayni ]] [[ مِنْ | from | min ]] [[ آخِرِ | the end of | ākhiri ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]][[ فِي | during | fī ]] [[ لَيْلَةٍ | a night | laylatin ]]
+
+[[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
+
+<details>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Qurʾān ✦ Sūrat al-Baqarah 2:284–286**
+
+<iframe src="https://quranwbw.com/2/284" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
+
+**Tafsīr ✦ Ibn Kathīr**
 
 **The weight of the verses.** Ibn Kathīr opens with the reports on their virtue. Al-Bukhārī records the hadith of Abū Masʿūd, and the rest of the six record it in similar wording. Muslim records that on the night of the Isrā, at Sidrat al-Muntahā, the Prophet ﷺ was given three things: the five prayers, the last verses of al-Baqarah, and forgiveness for every member of his Ummah who associates nothing with Allah. Muslim also records the angel's glad tidings of two lights, al-Fātiḥah and these verses, with the promise that no letter of them is recited except its benefit is granted.
-
 
 **The petitions, and the answer.** 
 Ibn Kathīr says Allah teaches His servants to ask and promises to answer. He cites Muslim: Abū Hurayrah reports Allah said "I shall", and Ibn ʿAbbās reports Allah said "I did". He applies both to each petition.
@@ -157,13 +124,32 @@ Ibn Kathīr says Allah teaches His servants to ask and promises to answer. He ci
 
 - means supporter and helper: trust is placed in Him, help is sought from Him alone, and there is no power except from Him. The victory sought is over those who rejected the religion, denied His Oneness, refused His Prophet ﷺ, and worshipped others with Him, in this life and the next. Ibn Jarīr records that when Muʿādh finished this surah, he said "Āmīn" after the last petition.
 
+---
 
-**Qur'an, Sūrat 2 - Al Baqara (The Cow) 284:286**
-<iframe src="https://quranwbw.com/2/284" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
+**Ḥadīth ✦ Riyāḍ aṣ-Ṣāliḥīn 1017**
+
+**The Chain of Narrators (الإِسْنَاد)**
+
+[[ وَعَنْ | and from | wa-ʿan ]] [[ أَبِي | Abū Masʿūd al-Badrī | abī ]] [[ مَسْعُودٍ | … | masʿūdin ]] [[ الْبَدْرِيِّ | … | al-badriyyi ]] [[ رَضِيَ | may | raḍiya ]] [[ اللَّهُ | Allah be pleased | Allāhu ]] [[ عَنْهُ ؓ | with him | ʿanhu ]] [[ عَنِ | from | ʿani ]] [[ النَّبِيِّ | the Prophet | an-nabiyyi ]] [[ صَلَّى | may Allah's | ṣallā ]] [[ اللَّهُ | prayers be | Allāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمَ ﷺ | and peace | wa-sallam ]] [[ قَالَ | he said | qāla ]]
+
+**The Text of the Hadith (المَتْن)**
+
+[[ مَنْ | whoever | man ]] [[ قَرَأَ | recites | qaraʾa ]] [[ بِالآيَتَيْنِ | the two verses | bi-l-āyatayni ]] [[ مِنْ | from | min ]] [[ آخِرِ | the end of | ākhiri ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]] [[ فِي | during | fī ]] [[ لَيْلَةٍ | a night | laylatin ]] [[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
+
+*🔗 Verify on sunnah.com — [Riyāḍ aṣ-Ṣāliḥīn 1017](https://sunnah.com/riyadussalihin:1017)*
+
+---
+
+**Ḥadīth ✦ Ṣaḥīḥ Muslim 807a**
+
+**The Chain of Narrators (الإِسْنَاد)**
+
+[[ وَحَدَّثَنَا | and narrated to us | wa-ḥaddathanā ]] [[ أَحْمَدُ | Aḥmad ibn Yūnus | aḥmadu ]] [[ بْنُ | son of | ibnu ]] [[ يُونُسَ | … | yūnusa ]] [[ حَدَّثَنَا | narrated to us | ḥaddathanā ]] [[ زُهَيْرٌ | Zuhayr | zuhayrun ]] [[ حَدَّثَنَا | narrated to us | ḥaddathanā ]] [[ مَنْصُورٌ | Manṣūr | manṣūrun ]] [[ عَنْ | from | ʿan ]] [[ إِبْرَاهِيمَ | Ibrāhīm | ibrāhīma ]] [[ عَنْ | from | ʿan ]] [[ عَبْدِ | ʿAbd ar-Raḥmān ibn Yazīd | ʿabdi ]] [[ الرَّحْمَنِ | … | ar-raḥmāni ]] [[ بْنِ | son of | ibni ]] [[ يَزِيدَ | … | yazīda ]] [[ قَالَ | he said | qāla ]] [[ لَقِيتُ | I met | laqītu ]] [[ أَبَا | Abū Masʿūd | abā ]] [[ مَسْعُودٍ | … | masʿūdin ]] [[ عِنْدَ | near | ʿinda ]] [[ الْبَيْتِ | the House | al-bayti ]] [[ فَقُلْتُ | and I said | fa-qultu ]] [[ حَدِيثٌ | a hadith | ḥadīthun ]] [[ بَلَغَنِي | has reached me | balaghanī ]] [[ عَنْكَ | from you | ʿanka ]] [[ فِي | about | fī ]] [[ الآيَتَيْنِ | the two verses | al-āyatayni ]] [[ فِي | in | fī ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]] [[ فَقَالَ | and he said | fa-qāla ]] [[ نَعَمْ | yes | naʿam ]] [[ قَالَ | said | qāla ]] [[ رَسُولُ | the Messenger | rasūlu ]] [[ اللَّهِ | of Allah | Allāhi ]] [[ صَلَّى | may Allah's | ṣallā ]] [[ اللَّهُ | prayers be | Allāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمَ ﷺ | and peace | wa-sallam ]]
+
+**The Text of the Hadith (المَتْن)**
+
+[[ الآيَتَانِ | the two verses | al-āyatāni ]] [[ مِنْ | from | min ]] [[ آخِرِ | the end of | ākhiri ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]] [[ مَنْ | whoever | man ]] [[ قَرَأَهُمَا | recites them both | qaraʾahumā ]] [[ فِي | during | fī ]] [[ لَيْلَةٍ | a night | laylatin ]] [[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
+
+*🔗 Verify on sunnah.com — [Ṣaḥīḥ Muslim 807a](https://sunnah.com/muslim:807a)*
 
 </details>
-
-
-
-
-

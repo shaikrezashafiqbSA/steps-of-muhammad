@@ -21,8 +21,7 @@ Just stand with 10 ayat and you will be written as a {{ ghāfilīn| الْغَا
 
 1000 ayat:  {{ muqanṭarīn| الْمُقَنْطَرِينَ: “Those given a qinṭār of reward. Root q-n-ṭ-r: a huge, heaped-up store (cf. 3:14).” }}
 
-
-## 🔤 Word-by-Word
+## 📜✨ Sunnah
 
 [[ مَنْ | whoever | man ]] [[ قَامَ | prays at night | qāma ]] [[ بِعَشْرِ | with 10| bi-ʿashri ]] [[ آيَاتٍ | verses | āyātin ]] [[ لَمْ | not | lam ]] [[ يُكْتَبْ | he will be recorded | yuktab ]] [[ مِنَ | among | mina ]] [[ الْغَافِلِينَ | the negligent | l-ghāfilīna ]]
 
@@ -30,12 +29,10 @@ Just stand with 10 ayat and you will be written as a {{ ghāfilīn| الْغَا
 
 [[ وَمَنْ | and whoever | wa-man ]] [[ قَامَ | prays at night | qāma ]] [[ بِأَلْفِ | with a 1000| bi-alfi ]] [[ آيَةٍ | verses | āyatin ]] [[ كُتِبَ | he will be recorded | kutiba ]] [[ مِنَ | among | mina ]] [[ الْمُقَنْطَرِينَ | those who receive huge rewards | l-muqanṭarīna ]]
 
-
-
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
-*🔗 Verify on sunnah.com — [Sunan Abī Dāwūd 1398:](https://sunnah.com/abudawud:1398)*
+**Ḥadīth ✦ Sunan Abī Dāwūd 1398**
 
 **The Chain of Narrators (الإِسْنَاد)**
 
@@ -53,7 +50,6 @@ Just stand with 10 ayat and you will be written as a {{ ghāfilīn| الْغَا
 
 [[ قَالَ | said | qāla ]] [[ أَبُو | Abū Dāwūd | Abū ]] [[ دَاوُدَ | … | Dāwūda ]] [[ ابْنُ | Ibn Ḥujayrah | ibnu ]] [[ حُجَيْرَةَ | … | Ḥujayrata ]] [[ الْأَصْغَرُ | al-Aṣghar | l-aṣgharu ]] [[ عَبْدُ | ʿAbdullāh ibn ʿAbd ar-Raḥmān ibn Ḥujayrah | ʿAbdu ]] [[ اللَّهِ | … | llāhi ]] [[ بْنُ | son of | ibnu ]] [[ عَبْدِ | … | ʿAbdi ]] [[ الرَّحْمَنِ | … | r-Raḥmāni ]] [[ بْنِ | son of | ibni ]] [[ حُجَيْرَةَ | … | Ḥujayrata ]]
 
+*🔗 Verify on sunnah.com — [Sunan Abī Dāwūd 1398](https://sunnah.com/abudawud:1398)*
+
 </details>
-
----
-

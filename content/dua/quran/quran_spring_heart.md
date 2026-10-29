@@ -10,9 +10,10 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Duʿāʾ for Anxiety and Grief — The Prophet's ﷺ Supplication for Removal of Distress
-## 📜 The Hadith
+# Du'a for Anxiety and Grief — The Prophet's ﷺ Supplication for Removal of Distress
+
 ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: 
+
 >*"No one is ever afflicted with anxiety or grief and then says:*
 
 📺 **Listen and follow along** — tap 📌 on the video to pin it while you read the word-by-word below.
@@ -22,7 +23,8 @@ right-orb-compact: ۞۞۞
 <button class="video-pin-toggle" title="Pin video so it stays visible while you scroll">📌 Follow along</button>
 </div>
 
-## 🔤 Evoke This — Word by Word
+## 📜✨ Du'a
+
 [[ٱللَّهُمَّ|O Allah|Allāhumma]] [[إِنِّي|indeed I|innī]]
 
 [[عَبْدُكَ|Your slave|ʿabduka]] [[ٱبْنُ (ٱبْنَةُ) |son of (daughter of) |bnu (bnatu) ]] [[عَبْدِكَ|Your slave|ʿabdika]] [[ٱبْنُ|son of|bnu]] [[أَمَتِكَ|Your maidservant|amatika]]
@@ -51,15 +53,26 @@ right-orb-compact: ۞۞۞
 
 [[وَذَهَابَ|and the departure|wa-dhahāba]] [[هَمِّي|of my anxiety|hammī]]
 
->*Except that Allah will remove his grief and sadness and replace it with joy."* 
-
 It was said: “O Messenger of Allah, shall we learn it?” He said:
 
 > *“Yes, it is fitting for the one who hears it to learn it.”*
 
-<details> <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+## {{ Hikmah | @hikmah }}
+
+*Except that Allah will remove his grief and sadness and replace it with joy."* 
+
+[[إِلَّا|except that|illā]] [[أَذْهَبَ|He removes|adhhaba]] [[اللَّهُ|Allah|llāhu]] [[هَمَّهُ|his anxiety|hammahu]] [[وَحُزْنَهُ|and his grief|wa-ḥuznahu]] [[وَأَبْدَلَهُ|and replaces for him|wa-abdalahu]] [[مَكَانَهُ|in its place|makānahu]] [[فَرَجًا|joy|farajan]]
+
+<details>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Ḥadīth ✦ Musnad Aḥmad 3712**
+
+**The Chain of Narrators (الإِسْنَاد)**
 
 [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[ٱللَّهِ|Allah|llāhi]] [[بْنُ|son of|bnu]] [[مُحَمَّدٍ|Muḥammad|muḥammadin]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[أَبُو|Abū|abū]] [[مُعَاوِيَةَ|Muʿāwiyah|muʿāwiyata]] [[عَنِ|from|ʿani]] [[ٱلْأَعْمَشِ|al-Aʿmash|l-aʿmashi]] [[عَنْ|from|ʿan]] [[شَقِيقٍ|Shaqīq|shaqīqin]] [[عَنْ|from|ʿan]] [[عَبْدِ|ʿAbd|ʿabdi]] [[ٱللَّهِ|Allah|llāhi]] [[بْنِ|son of|bni]] [[مَسْعُودٍ|Masʿūd|masʿūdin]] [[قَالَ|he said|qāla]] [[قَالَ|he said|qāla]] [[رَسُولُ|the Messenger|rasūlu]] [[ٱللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[ٱللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]]
+
+**The Text of the Hadith (المَتْن)**
 
 [[مَا|not|mā]] [[أَصَابَ|afflicted|aṣāba]] [[أَحَدًا|anyone|aḥadan]] [[قَطُّ|ever|qaṭṭu]] [[هَمٌّ|anxiety|hammun]] [[وَلَا|nor|wa-lā]] [[حَزَنٌ|grief|ḥazanun]] [[فَقَالَ|and says|fa-qāla]]
 
@@ -86,18 +99,19 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 [[إِلَّا|except that|illā]] [[أَذْهَبَ|He removes|adhhaba]] [[اللَّهُ|Allah|llāhu]] [[هَمَّهُ|his anxiety|hammahu]] [[وَحُزْنَهُ|and his grief|wa-ḥuznahu]] [[وَأَبْدَلَهُ|and replaces for him|wa-abdalahu]] [[مَكَانَهُ|in its place|makānahu]] [[فَرَجًا|joy|farajan]]
 
 [[فَقِيلَ|so it was said|fa-qīla]] [[يَا|O|yā]] [[رَسُولَ|Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[أَلَا|shall we not|alā]] [[نَتَعَلَّمُهَا|learn it|nataʿallamuhā]] [[فَقَالَ|and he said|fa-qāla]] [[بَلَى|yes|balā]] [[يَنْبَغِي|it is fitting|yanbaghī]] [[لِمَنْ|for the one who|liman]] [[سَمِعَهَا|hears it|samiʿahā]] [[أَنْ|that|an]] [[يَتَعَلَّمَهَا|learn it|yataʿallamahā]]
-</details>
 
 *🔗 Verify on [sunnah.com — Hisn al-Muslim 120](https://sunnah.com/hisn:120) • [dorar.net - Musnad Aḥmad 3712](https://dorar.net/hadith/sharh/116355)*
 
+</details>
+
 <details>
-<summary>📺 Why this dua? (Recommended context video) </summary>
+<summary>📺 Why this Du'a? (Recommended context video) </summary>
 
 [It will strengthen your relationship with Allah and His book →]
-
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 560px; margin: auto;">
 <iframe src="https://www.youtube.com/embed/CeA7CzM_15U?si=GqCa7R7ch4nGITFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 100%; max-width: 560px; aspect-ratio: 16 / 9; height: auto; display: block; margin: auto;"></iframe>
 
 </div>
+
 </details>

@@ -19,16 +19,14 @@ right-orb-compact: ۞۞۞
 
 2. A charity / {{ Sadaqah | Sadaqah (charity) of gratitude sounds like Saadiq; a truthful person. That's because they share the same root ص-د-ق / S-D-Q. Charity is proof of the truthfulness of your faith; when you give away your money, time, energy for the sake of Allah without expecting anything back from people, your action "proves true" the belief you claim to have in your heart}} is rightfully fitting as a way to say thank you for that blessing.
 
-
 What counts as this daily charity?
 
 Saying *SubhanAllah*, *Alhamdulillah*, *Allahu Akbar*, spreading good, or clearing evil.
 
 ... But Allah sets an exchange rate: Just 2 Rak'ahs of the Duḥā prayer weighs all that
 
+## 📜✨ Sunnah
 
-
-## 🔤 Word-by-Word
 "In the morning, charity is due on every joint bone of the body of everyone of you. 
 [[ يُصْبَحُ | It becomes ( in the) morning | yuṣbaḥu ]]
 [[ عَلَى | upon | ʿalā ]]
@@ -67,7 +65,7 @@ Saying *SubhanAllah*, *Alhamdulillah*, *Allahu Akbar*, spreading good, or cleari
 [[ مِنَ | from | mina ]]
 [[ الضُّحَى | the forenoon | d-duḥā ]]
 
-## الضَّمَان ۞ Allah's Guarantee
+## {{ Hikmah | @hikmah }}
 
 [[ وَيُجْزِئُ | And it suffices | wa-yujzi'u ]]
 [[ مِنْ | from | min ]]
@@ -77,13 +75,13 @@ Saying *SubhanAllah*, *Alhamdulillah*, *Allahu Akbar*, spreading good, or cleari
 [[ مِنَ | from | mina ]]
 [[ الضُّحَى | the forenoon | d-duḥā ]]
 
-
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
-*🔗 Verify on sunnah.com — Riyad as-Salihin 1140: [https://sunnah.com/riyadussalihin:1140*](https://sunnah.com/riyadussalihin:1140)
+**Ḥadīth ✦ Riyāḍ aṣ-Ṣāliḥīn 1140**
 
-The Chain of Narrators (الإِسْنَاد)
+**The Chain of Narrators (الإِسْنَاد)**
+
 [[ وَعَنْ | And from | wa-ʿan ]]
 [[ أَبِي | father of | abī ]]
 [[ ذَرٍّ | Dharr | dharrin ]]
@@ -98,10 +96,10 @@ The Chain of Narrators (الإِسْنَاد)
 [[ وَسَلَّمَ | and security | wa-sallama ]]
 [[ قَالَ | he said | qāla ]]
 
-The Text of the Hadith (المَتْن)
+**The Text of the Hadith (المَتْن)**
 
 As above
+
+*🔗 Verify on sunnah.com — [Riyad as-Salihin 1140](https://sunnah.com/riyadussalihin:1140)*
+
 </details>
-
----
-

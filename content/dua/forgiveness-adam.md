@@ -13,12 +13,12 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# The Duʿāʾ of Ādam and Ḥawwāʾ — The First Repentance
+# Adam's repentance - The First Repentance
 
-After they ate from the forbidden tree and their shame became manifest to them, Ādam and Ḥawwāʾ ؑ turned to Allah in the first repentance of humanity: *"Our Lord! We have wronged ourselves. If You do not forgive us and have mercy on us, we will certainly be losers."* 
+After they ate from the forbidden tree and their shame became manifest to them, Ādam and Ḥawwāʾ ؑ turned to Allah in the first repentance of humanity: 
 
 
-## 🔤 Dua
+## 📜✨ Du'a
 
 [[ رَبَّنَا | Our Lord | rabbanā ]]
 [[ ظَلَمْنَا | we have wronged | ẓalamnā ]]
@@ -38,13 +38,13 @@ After they ate from the forbidden tree and their shame became manifest to them, 
 
 
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
-**Qurʾān — Sūrat al-Aʿrāf 7:23**
+**Qurʾān ✦ Sūrat al-Aʿrāf 7:23**
 
 <iframe src="https://quranwbw.com/7/23" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
 
-**Tafsīr — Ibn Kathīr ؒ, on 7:22–23**
+**Tafsīr ✦ Ibn Kathīr ؒ, on 7:22–23**
 
 **Ubayy ibn Kaʿb** (raḍiyallāhu ʿanhu) — Ibn Kathīr ؒ holds this more correct as Ubayy's own report than as the Prophet's ﷺ:
 
@@ -61,7 +61,3 @@ After they ate from the forbidden tree and their shame became manifest to them, 
 > "Adam said, 'O Lord! What if I repented and sought forgiveness?' Allah said, 'Then I will admit you into Paradise.' As for Shayṭān, he did not ask for forgiveness, but for respite. Each one of them was given what he asked for."
 
 </details>
-
-
-
-

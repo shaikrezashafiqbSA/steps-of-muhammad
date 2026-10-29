@@ -9,14 +9,15 @@ right-orb: Sahih
 verify: https://sunnah.com/tirmidhi:3447
 ::
 
-# Travel and Return Supplication — Dua for Riding and Journeying
-## 📜 The Hadith
+# Travel and Return Supplication — Du'a for Riding and Journeying
+
 Ibn `Umar narrated that: When the Prophet ﷺ wanted to travel, when he mounted his riding camel, he would say the Takbir three times and say:
+
 *Glory is to Him Who has subjected this to us, and we were not able to do it. And, surely, to our Lord are we returning.*
 
-## 🔤 Evoke This — Word by Word
+## 📜✨ Du'a
 
-[[x 3 اللَّهُ|Allah|llāhu]] [[أَكْبَرُ|is greater|akbaru]]
+[[ x 3 ]][[اللَّهُ|Allah|llāhu]] [[أَكْبَرُ|is greater|akbaru]]
 
 [[سُبْحَانَ|glory is to Him|subḥāna]] [[الَّذِي|Who|lladhī]] [[سَخَّرَ|has subjected|sakhkhara]] [[لَنَا|to us|lanā]] [[هَذَا|this|hādhā]] [[وَمَا|and not|wa-mā]] [[كُنَّا|were we|kunnā]] [[لَهُ|to it|lahū]] [[مُقْرِنِينَ|capable|muqrinīna]]  
 
@@ -32,13 +33,14 @@ Then he would say: *“O Allah, I ask You in this journey of mine from the right
 
 [[اللَّهُمَّ|O Allah|allāhumma]] [[اصْحَبْنَا|accompany us|iṣḥabnā]] [[فِي|in|fī]] [[سَفَرِنَا|our journey|safarinā]] [[وَاخْلُفْنَا|and take care of us|wa-khlufnā]] [[فِي|in|fī]] [[أَهْلِنَا|our families|ahlinā]]
 
-
 And when he would return to his family, he would say: *“(We are) Returning, if Allah wills, repenting, worshipping, and to our Lord directing the praise.”*
 
 [[آيِبُونَ|returning|āyibūna]] [[إِنْ|if|in]] [[شَاءَ|willed|shāʾa]] [[اللَّهُ|Allah|llāhu]] [[تَائِبُونَ|repenting|tāʾibūna]] [[عَابِدُونَ|worshipping|ʿābidūna]] [[لِرَبِّنَا|to our Lord|lirabbinā]] [[حَامِدُونَ|directing praise|ḥāmidūna]]
 
-<details> <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-*🔗 Verify on sunnah.com — [Tirmidhi 3447](https://sunnah.com/tirmidhi:3447)*
+<details>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Ḥadīth ✦ Tirmidhī 3447**
 
 [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[سُوَيْدُ|Suwayd|suwaydu]] [[بْنُ|son of|bnu]] [[نَصْرٍ|Naṣr|naṣrin]] [[أَخْبَرَنَا|informed us|akhbaranā]] [[عَبْدُ|ʿAbd|ʿabdu]] [[اللَّهِ|Allah|llāhi]] [[بْنُ|son of|bnu]] [[الْمُبَارَكِ|al-Mubārak|l-mubāraki]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[حَمَّادُ|Ḥammād|ḥammadu]] [[بْنُ|son of|bnu]] [[سَلَمَةَ|Salamah|salamata]] [[عَنْ|from|ʿan]] [[أَبِي|Abū|abī]] [[الزُّبَيْرِ|al-Zubayr|z-zubayri]] [[عَنْ|from|ʿan]] [[عَلِيِّ|ʿAlī|ʿaliyyi]] [[بْنِ|son of|bni]] [[عَبْدِ|ʿAbd|ʿabdi]] [[اللَّهِ|Allah|llāhi]] [[الْبَارِقِيِّ|al-Bāriqī|l-bāriqiyyi]] [[عَنِ|from|ʿani]] [[ابْنِ|Ibn|bni]] [[عُمَرَ|ʿUmar|ʿumara]] [[أَنَّ|that|anna]] [[النَّبِيَّ|the Prophet|n-nabiyya]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[كَانَ|used to|kāna]] [[إِذَا|when|idhā]] [[سَافَرَ|he traveled|sāfara]] [[فَرَكِبَ|and mounted|fa-rakiba]] [[رَاحِلَتَهُ|his riding camel|rāḥilatahu]] [[كَبَّرَ|he said Takbīr|kabbara]] [[ثَلَاثًا|three times|thalāthan]] [[وَيَقُولُ|and say|wa-yaqūlu]]
 
@@ -58,5 +60,6 @@ And when he would return to his family, he would say: *“(We are) Returning, if
 
 [[آيِبُونَ|returning|āyibūna]] [[إِنْ|if|in]] [[شَاءَ|willed|shāʾa]] [[اللَّهُ|Allah|llāhu]] [[تَائِبُونَ|repenting|tāʾibūna]] [[عَابِدُونَ|worshipping|ʿābidūna]] [[لِرَبِّنَا|to our Lord|lirabbinā]] [[حَامِدُونَ|directing praise|ḥāmidūna]]
 
-</details>
+*🔗 Verify on sunnah.com — [Tirmidhi 3447](https://sunnah.com/tirmidhi:3447)*
 
+</details>

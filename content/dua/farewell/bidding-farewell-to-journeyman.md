@@ -14,12 +14,16 @@ right-orb-compact: ۞۞۞
 
 # The Supplication for Bidding Farewell to a Traveler
 
-## 📜 The Hadith
-
 Sālim narrated that when Ibn ʿUmar ؓ intended to bid farewell to a man setting out on a journey, he would say to him: "Come close to me so that I may bid you farewell as the Messenger of Allah ﷺ used to bid us farewell." Then he would say: *"I entrust to Allah your religion, and your trusts, and the last of your deeds (Astawdiʿullāha dīnaka wa amānataka wa khawātīma ʿamalik)."*
 
+## 📜✨ Du'a
+
+[[ أَسْتَوْدِعُ | I entrust | astawdiʿu ]] [[ اللَّهَ | to Allah | llāha ]] [[ دِينَكَ | your religion | dīnaka ]] [[ وَأَمَانَتَكَ | and your trusts | wa-amānataka ]] [[ وَخَوَاتِيمَ | and the last/conclusions | wa-khawātīma ]] [[ عَمَلِكَ | of your deeds | ʿamalika ]]
+
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Ḥadīth ✦ Jāmiʿ at-Tirmidhī 3443**
 
 **The Chain of Narrators (الإِسْنَاد)**
 
@@ -33,25 +37,6 @@ Sālim narrated that when Ibn ʿUmar ؓ intended to bid farewell to a man settin
 
 [[ قَالَ | he said | qāla ]] [[ هَذَا | this | hādhā ]] [[ حَدِيثٌ | is a hadith | ḥadīthun ]] [[ حَسَنٌ | ḥasan | ḥasanun ]] [[ صَحِيحٌ | ṣaḥīḥ | ṣaḥīḥun ]] [[ غَرِيبٌ | gharīb | gharībun ]] [[ مِنْ | from | min ]] [[ هَذَا | this | hādhā ]] [[ الْوَجْهِ | chain | al-wajhi ]] [[ مِنْ | from | min ]] [[ حَدِيثِ | the hadith of | ḥadīthi ]] [[ سَالِمِ | Sālim | Sālimi ]] [[ بْنِ | son of | ibni ]] [[ عَبْدِ | ʿAbd | ʿAbdi ]] [[ اللَّهِ | Allāh | llāhi ]]
 
-</details>
-
-## 🔤 Word-by-Word
-
-[[ أَسْتَوْدِعُ | I entrust | astawdiʿu ]] [[ اللَّهَ | to Allah | llāha ]] [[ دِينَكَ | your religion | dīnaka ]] [[ وَأَمَانَتَكَ | and your trusts | wa-amānataka ]] [[ وَخَوَاتِيمَ | and the last/conclusions | wa-khawātīma ]] [[ عَمَلِكَ | of your deeds | ʿamalika ]]
-
-<details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
-
-> **Source: Textual.** This reading follows from the wording of the text itself.
-
-The duʿāʾ entrusts three things, and their order is deliberate. First comes `[[ دِينَكَ | your religion | dīnaka ]]` — the traveler's faith, which a journey can expose to temptation and neglect. Then `[[ وَأَمَانَتَكَ | and your trusts | wa-amānataka ]]` — everything left behind in his absence: family, property, obligations, and the secrets others placed with him. Finally `[[ وَخَوَاتِيمَ | and the endings | wa-khawātīma ]]` `[[ عَمَلِكَ | of your deeds | ʿamalika ]]` — the manner in which his deeds are sealed, because a journey may be a person's last, and the final act is what the record closes upon.
-
-The verb `[[ أَسْتَوْدِعُ | I entrust | astawdiʿu ]]` comes from wadīʿah, a deposit given for safekeeping. The one bidding farewell does not claim power to protect; he places the traveler into Allah's custody, and it is established in the Sunnah that what is deposited with Allah is never lost.
-
-Ibn ʿUmar ؓ also models the etiquette: he draws the traveler near — `[[ ادْنُ | come close | udnu ]]` `[[ مِنِّي | to me | minnī ]]` — before speaking, and he names his own act as imitation: "as the Messenger of Allah ﷺ used to bid us farewell." The farewell is thus not mere courtesy but a consciously transmitted sunnah, passed hand to hand from the Prophet ﷺ to his Companions to us.
+*🔗 Verify on sunnah.com — [Jāmiʿ at-Tirmidhī 3443](https://sunnah.com/tirmidhi:3443)*
 
 </details>
-
----
-
-*🔗 Verify on sunnah.com — Jāmiʿ at-Tirmidhī 3443: [https://sunnah.com/tirmidhi:3443](https://sunnah.com/tirmidhi:3443)*

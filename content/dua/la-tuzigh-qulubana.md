@@ -28,19 +28,9 @@ right-orb-compact: ۞۞۞
 
 # The Supplication for a Steady Heart After Guidance
 
-## 📜 The Qur'anic Verse
-
 At the close of the passage on the clear (muḥkam) and ambiguous (mutashābih) verses, Allah describes those firmly grounded in knowledge, who say: *"We believe in it; all of it is from our Lord."* And then they turn to their Lord in supplication: *"Our Lord! Let not our hearts deviate (from the truth) after You have guided us, and grant us mercy from You. Truly, You are the Bestower."* The Prophet ﷺ himself would recite this verse in his own supplication, saying *"O You Who changes the hearts, make my heart firm on Your religion"* and then reciting this very Ayah.
 
-<details>
-<summary>📚 Original Arabic Source </summary>
-
-**Qur'an, Sūrat Aal i Imraan 3:8**
-<iframe src="https://quranwbw.com/3/8:9" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
-
-</details>
-
-## 🔤 Word-by-Word
+## 📜✨ Du'a
 
 [[ رَبَّنَا | Our Lord | rabbanā ]]
 [[ لَا | do not | lā ]]
@@ -61,9 +51,13 @@ At the close of the passage on the clear (muḥkam) and ambiguous (mutashābih) 
 [[ الْوَهَّابُ | the Bestower | al-Wahhāb ]]
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>📜🔎 What is the {{ Dalīl | @dalil }}? </summary>
 
-> **Source: Commentary.** Attributed to Tafsīr Ibn Kathīr. 
+**Qurʾān ✦ Sūrat Āl ʿImrān 3:8**
+
+<iframe src="https://quranwbw.com/3/8:9" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
+
+**Tafsīr ✦ Ibn Kathīr ؒ, on 3:8**
 
 The commentary explains the petition as: "Do not deviate our hearts from the guidance after You allowed them to acquire it. Do not make us like those who have wickedness in their hearts... Rather, make us remain firmly on Your straight path and true religion." The mercy requested is specified as that which firms the heart: 
 
@@ -71,7 +65,7 @@ The commentary explains the petition as: "Do not deviate our hearts from the gui
 
 "with which You make our hearts firm, and increase in our Faith and certainty." The closing attribute 
 
-[[ إِنَّكَ أَنتَ الْوَهَّابُ | Truly, You are the Bestower | innaka anta al-Wahhāb ]] 
+[[ إِنَّكَ | Truly, You | innaka ]] [[ أَنتَ | You are | anta ]] [[ الْوَهَّابُ | the Bestower | al-Wahhāb ]]
 
 grounds the request in Allah's own name — the One who gives is asked to give.
 
@@ -82,5 +76,3 @@ The excerpt also records that the Prophet ﷺ used to supplicate
 and then recite this very Ayah — a pointer to the hadith transmitted by Ibn Abī Ḥātim and Ibn Jarīr from Umm Salamah (wording as present in the source text).
 
 </details>
-
-

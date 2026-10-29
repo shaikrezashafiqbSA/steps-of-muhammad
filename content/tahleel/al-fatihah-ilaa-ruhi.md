@@ -2,13 +2,9 @@
 
 **Text type: Regional devotional dedication (tawassul), not Hadith or Qur'an. No narrator, collection, or grade applies.**
 
-## 📜 The Dedication
-
 This is a customary tawassul recited before Surah al-Fatihah in tahlil gatherings. The reciter dedicates the reward of Al-Fatihah *to the spirit of our master and beloved, Muhammad*, then extends the dedication to the Prophets, the Companions, the Rightly-Guided Caliphs, the Prophet's wives and family, and finally asks that Allah raise their ranks and let the reciter benefit from their legacy.
 
-
-## 🔤 Word-by-Word
-
+## 📜✨ Du'a
 
 [[ الْفَاتِحَةُ | The Opening (Al-Fatihah) | al-Fātiḥah ]]
 [[ إِلَى | to | ilā ]]
@@ -24,8 +20,6 @@ This is a customary tawassul recited before Surah al-Fatihah in tahlil gathering
 [[ عَلَيْهِ | upon him | ʿalayhi ]]
 [[ وَسَلَّمَ | and grant peace | wa-sallam ]]
 
-
-
 [[ ثُمَّ | then | thumma ]]
 [[ إِلَى | to | ilā ]]
 [[ أَرْوَاحِ | the spirits of | arwāḥi ]]
@@ -40,8 +34,6 @@ This is a customary tawassul recited before Surah al-Fatihah in tahlil gathering
 [[ وَصَحْبِهِمْ | and their companions | wa-ṣaḥbihim ]]
 [[ أَجْمَعِينَ | all together | ajmaʿīn ]]
 
-
-
 [[ ثُمَّ | then | thumma ]]
 [[ إِلَى | to | ilā ]]
 [[ أَرْوَاحِ | the spirits of | arwāḥi ]]
@@ -53,8 +45,6 @@ This is a customary tawassul recited before Surah al-Fatihah in tahlil gathering
 [[ وَعُمَرَ | and Umar | wa-ʿUmar ]]
 [[ وَعُثْمَانَ | and Uthman | wa-ʿUthmān ]]
 [[ وَعَلِيٍّ | and Ali | wa-ʿAlī ]]
-
-
 
 [[ وَإِلَى | and to | wa-ilā ]]
 [[ بَقِيَّةِ | the rest of | baqiyyati ]]
@@ -68,8 +58,6 @@ This is a customary tawassul recited before Surah al-Fatihah in tahlil gathering
 [[ يَوْمِ | the day | yawmi ]]
 [[ الدِّينِ | of Judgment | ad-dīn ]]
 
-
-
 [[ ثُمَّ | then | thumma ]]
 [[ إِلَى | to | ilā ]]
 [[ أَرْوَاحِ | the spirits of | arwāḥi ]]
@@ -79,8 +67,6 @@ This is a customary tawassul recited before Surah al-Fatihah in tahlil gathering
 [[ الطَّاهِرَاتِ | the pure ones | aṭ-ṭāhirāti ]]
 [[ أُمَّهَاتِ | the mothers of | ummahāti ]]
 [[ الْمُؤْمِنِينَ | the believers | al-mu'minīn ]]
-
-
 
 [[ سَيِّدَتِنَا | our lady | sayyidatinā ]]
 [[ خَدِيجَةَ | Khadijah | Khadījah ]]
@@ -94,15 +80,12 @@ This is a customary tawassul recited before Surah al-Fatihah in tahlil gathering
 [[ فَاطِمَةَ | Fatimah | Fāṭimah ]]
 [[ الزَّهْرَاءَ | the Radiant | az-Zahrā' ]]
 
-
 [[ وَوَلَدَيْهَا | and her two sons | wa-waladayhā ]]
 [[ الْحَسَنِ | al-Hasan | al-Ḥasan ]]
 [[ وَالْحُسَيْنِ | and al-Husain | wal-Ḥusayn ]]
 [[ وَذُرِّيَّتِهِ | and his descendants | wa-dhurriyyatihi ]]
 [[ مَعَ | with | maʿa ]]
 [[ الْجَمِيعِ | all of them | al-jamīʿ ]]
-
-
 
 [[ أَنَّ | that | anna ]]
 [[ اللَّهَ | Allah | Allāh ]]
@@ -119,11 +102,13 @@ This is a customary tawassul recited before Surah al-Fatihah in tahlil gathering
 [[ وَالدُّنْيَا | and this world | wad-dunyā ]]
 [[ وَالْآخِرَةِ | and the hereafter | wal-ākhirah ]]
 
+<details>
+<summary>📜🔎 What is the {{ Dalīl | @dalil }}? </summary>
 
-## 📚 Sources
+**Sources**
+
 No scholarly or textual source for this dedication. None exists as a single attributed work. This wording appears across many regional tahlil and tawassul booklets used in Indonesian and Malay Sufi practice, including materials associated with the Nahdlatul Ulama tradition. No classical scholar or named book is the origin of this specific phrasing. It functions as customary liturgical text, not a transmitted hadith or Qur'anic passage.
 
-
----
-
 *This text has no sunnah.com or quran.com reference because it is not a hadith or Qur'anic verse*
+
+</details>

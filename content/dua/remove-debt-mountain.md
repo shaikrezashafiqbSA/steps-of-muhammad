@@ -13,14 +13,45 @@ right-orb: Hasan
 right-orb-compact: ۞۞
 ::
 
-# The Duʿāʾ for Sufficiency and Freedom from Debt
-
-## 📜 The Hadith
+# The Du'a for Sufficiency and Freedom from Debt
 
 ʿAlī ؓ narrated that a *mukātab* (a slave working to purchase his own freedom) came to him and said: "I am unable to meet the terms of my writ of emancipation, so help me." ʿAlī ؓ said: "Shall I not teach you words that the Messenger of Allah ﷺ taught me? If you had a debt upon you the size of the mountain of Ṣīr, Allah would settle it for you. Say: *O Allah, suffice me with what You have made lawful against what You have forbidden, and enrich me by Your bounty so that I need none besides You.*"
 
+## 📜✨ Du'a
+
+[[ اللَّهُمَّ | O Allah, | Allāhumma ]]
+[[ اكْفِنِي | suffice me | ikfinī ]]
+[[ بِحَلَالِكَ | with Your lawful | bi-ḥalālika ]]
+[[ عَنْ | against | ʿan ]]
+[[ حَرَامِكَ | Your unlawful, | ḥarāmika ]]
+
+[[ وَأَغْنِنِي | and enrich me | wa-aghninī ]]
+[[ بِفَضْلِكَ | by Your bounty | bi-faḍlika ]]
+[[ عَمَّنْ | from all who are | ʿamman ]]
+[[ سِوَاكَ | besides You. | siwāka ]]
+
+## {{ Hikmah | @hikmah }}
+
+**Condition:**
+
+[[ لَوْ | if | law ]]
+[[ كَانَ | there were | kāna ]]
+[[ عَلَيْكَ | upon you | ʿalayka ]]
+[[ مِثْلُ | the like of | mithlu ]]
+[[ جَبَلِ | the mountain of | jabali ]]
+[[ صِيرٍ | Ṣīr | Ṣīrin ]]
+[[ دَيْنًا | in debt, | daynan ]]
+
+**Result:**
+
+[[ أَدَّاهُ | He would settle it | addāhu ]]
+[[ اللَّهُ | Allah | llāhu ]]
+[[ عَنْكَ | on your behalf. | ʿanka ]]
+
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Ḥadīth ✦ Jāmiʿ at-Tirmidhī 3563**
 
 **The Chain of Narrators (الإِسْنَاد)**
 
@@ -118,51 +149,6 @@ right-orb-compact: ۞۞
 [[ حَسَنٌ | that is ḥasan (sound) | ḥasanun ]]
 [[ غَرِيبٌ | and gharīb (singularly transmitted). | gharībun ]]
 
-</details>
-
-## 🔤 Word-by-Word
-
-[[ اللَّهُمَّ | O Allah, | Allāhumma ]]
-[[ اكْفِنِي | suffice me | ikfinī ]]
-[[ بِحَلَالِكَ | with Your lawful | bi-ḥalālika ]]
-[[ عَنْ | against | ʿan ]]
-[[ حَرَامِكَ | Your unlawful, | ḥarāmika ]]
-
-[[ وَأَغْنِنِي | and enrich me | wa-aghninī ]]
-[[ بِفَضْلِكَ | by Your bounty | bi-faḍlika ]]
-[[ عَمَّنْ | from all who are | ʿamman ]]
-[[ سِوَاكَ | besides You. | siwāka ]]
-
-## الضَّمَان ۞ Allah's Guarantee
-
-**Condition:**
-
-[[ لَوْ | if | law ]]
-[[ كَانَ | there were | kāna ]]
-[[ عَلَيْكَ | upon you | ʿalayka ]]
-[[ مِثْلُ | the like of | mithlu ]]
-[[ جَبَلِ | the mountain of | jabali ]]
-[[ صِيرٍ | Ṣīr | Ṣīrin ]]
-[[ دَيْنًا | in debt, | daynan ]]
-
-**Result:**
-
-[[ أَدَّاهُ | He would settle it | addāhu ]]
-[[ اللَّهُ | Allah | llāhu ]]
-[[ عَنْكَ | on your behalf. | ʿanka ]]
-
-<details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
-
-> **Source: Textual.** This reading follows from the wording of the text itself.
-
-The supplication asks for a change in the source of provision, not an increase in its quantity. The petitioner requests [[ اكْفِنِي | suffice me | ikfinī ]], which is sufficiency, rather than wealth. The text pairs each request with a preposition of exclusion. [[ بِحَلَالِكَ | with Your lawful | bi-ḥalālika ]] stands against [[ حَرَامِكَ | Your unlawful | ḥarāmika ]], and [[ بِفَضْلِكَ | by Your bounty | bi-faḍlika ]] stands against [[ سِوَاكَ | those besides You | siwāka ]]. Both petitions therefore ask Allah to close one channel by opening another.
-
-The context confirms this reading. The man asked ʿAlī ؓ for money. ʿAlī ؓ gave him words instead, and directed the request from the created to the Creator. The duʿāʾ contains no mention of debt, yet the guarantee attached to it addresses debt directly.
+*🔗 Verify on sunnah.com — [Jāmiʿ at-Tirmidhī 3563](https://sunnah.com/tirmidhi:3563)*
 
 </details>
-
----
-
-*🔗 Verify on sunnah.com — Jāmiʿ at-Tirmidhī 3563: [https://sunnah.com/tirmidhi:3563](https://sunnah.com/tirmidhi:3563)*
-

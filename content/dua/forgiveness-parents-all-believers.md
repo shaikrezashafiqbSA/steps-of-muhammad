@@ -13,14 +13,14 @@ right-orb: Hasan
 right-orb-compact: ۞۞
 ::
 
-# The Congregational Duʿāʾ for Parents and All Believers — A Multi-Billion Ḥasanah Investment
+# The Congregational Du'a for Parents and All Believers — A Multi-Billion Ḥasanah Investment
 
 The Prophet ﷺ said: ["Whoever seeks forgiveness for the believing men and the believing women, Allah will record for him one good deed for every single believing man and believing woman."](https://www.abuaminaelias.com/dailyhadithonline/2013/08/15/istighfar-for-the-believers/)
 
 Building upon this, the imams of the masājid recite the expanded congregational supplication.
 
 
-## 🔤 Dua
+## 📜✨ Du'a
 
 [[ اللَّهُمَّ | O Allah, | Allāhumma ]][[ اغْفِرْ | forgive | ighfir ]][[ لَنَا | for us | lanā ]][[ ذُنُوبَنَا | our sins, | dhunūbanā ]]
 
@@ -36,9 +36,9 @@ Building upon this, the imams of the masājid recite the expanded congregational
 
 
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
-**Ḥadīth — aṭ-Ṭabarānī, Musnad al-Shāmiyīn 2118**
+**Ḥadīth ✦ aṭ-Ṭabarānī, Musnad al-Shāmiyīn 2118**
 
 Narrated by ʿUbādah ibn aṣ-Ṣāmit (raḍiyallāhu ʿanhu). *Ḥasan li-ghayrihi — graded sound by later verifiers (e.g., al-Albānī in Ṣaḥīḥ al-Jāmiʿ) via supporting routes; verify the specific chain before citing academically.*
 

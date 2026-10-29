@@ -12,41 +12,38 @@ right-orb-compact: ۞۞۞
 
 # Read either Tahlils after salaam (or both) 
 
-
 [V1: Tahlil - Qadr](?file=content\salah\after\tahlil-la-mania.md "embed")
 
 [V2: Tahlil - Ikhlas](?file=content\salah\after\tahlil-mukhlisina.md "embed")
 
-## Do I read either or both?
+**Notes**
+
+**Do I read either or both?**
 
 Here is why they do not conflict, broken down logically:
 
-### 1. Different Companions Observed Different Occasions
+**1. Different Companions Observed Different Occasions**
 
 The first hadith is narrated by Al-Mughira ibn Shu'ba, while the second is narrated by Abdullah ibn al-Zubayr.
 In Islamic jurisprudence, when different companions report that the Prophet ﷺ said different words after Salah, it simply means he said both at different times, or he said them sequentially, and each companion memorised or highlighted a different part of the routine.
 
-### 2. They Share the Exact Same Core Foundation
+**2. They Share the Exact Same Core Foundation**
 
 Notice that both du'as begin with the exact same declaration of monotheism:
 "Lā ilāha illā Allāh wahdahu lā sharīka lah, lahu al-mulk wa-lahu al-hamd, wa-huwa ʿalā kulli shayʾin qadīr."
 (There is no god but Allah alone, without partner. His is the sovereignty and His is the praise, and He is over all things powerful.)
 Because they share this identical opening, they are both known as forms of Tahlil (declaring the oneness of Allah) designed to reset the believer's mindset immediately after prayer.
 
-### 3. They Focus on Two Sides of the Same Coin
+**3. They Focus on Two Sides of the Same Coin**
 
 Instead of contradicting each other, the second half of each du'as expands on a different spiritual reality:
-
 
 | Du'a Version | Key Theme | Spiritual Focus |
 | :--- | :--- | :--- |
 | **Version 1** (Al-Mughira) | Divine Decree & Provision (*Qadr*) | Reminds you that everything you receive or are denied comes only from Allah. Wealth cannot buy your way into His favor. It humbles the soul regarding worldly provisions. |
 | **Version 2** (Ibn al-Zubayr) | Sincerity & Worship (*Ikhlas*) | Focuses on ultimate loyalty. It declares that we only have strength through Allah, we only worship Him, and we remain proud of our faith even if others dislike it. |
 
-
----
-
-### How Scholars Recommend Practicing This
+**How Scholars Recommend Practicing This**
 
 Islamic scholars state that you have complete flexibility here. You are not forced to choose one over the other:
 

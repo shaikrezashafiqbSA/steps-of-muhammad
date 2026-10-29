@@ -19,11 +19,14 @@ right-orb-compact: ۞۞۞
 
 [V2: Qahrir-rijjal](?file=content/adhkar-as-sabah-wal-masa/5b-hammi-wal-hazan.md "embed")
 
-## Commentary on Linguistic Distinction
+**Notes**
+
+**Commentary on Linguistic Distinction**
+
 While they are often translated similarly into English as "being overpowered or dominated by men (other people)," Arabic scholars draw a fine linguistic distinction between the two types of subjugation:
 
 
-Deep Dive Into the Contexts
+**Deep Dive Into the Contexts**
 
 
 1. Ghalabat ar-Rijal (Defeat / Superhuman Pressure)

@@ -11,20 +11,35 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-## Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahla — Supplication for Relief in Difficult Affairs
+# Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahla — Supplication for Relief in Difficult Affairs
 
-### 📜 The Supplication
 "For one whose affairs have become {{ difficult / Al-Hazn (الْحَزْن) | In classical Arabic, al-hazn refers to rough, rugged, or impassable terrain (like a steep, stony mountain path) that makes travel nearly impossible. Metaphorically, it means any hard, overwhelming, or complex task or hardship in life. The Prophet ﷺ uses this metaphor to state that even the rough, unyielding paths of life become smooth and navigable when Allah wills it. }}"
+
 > *"O Allah, there is no ease other than what You make easy. If You please, You make sorrow/difficulty easy."*
 
-
-### 🔤 Evoke This — Word by Word
+## 📜✨ Du'a
 
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[لَا|there is no|lā]] [[سَهْلَ|ease|sahla]] [[إِلَّا|except|illā]] [[مَا|what|mā]] [[جَعَلْتَهُ|You have made|jaʿaltahū]] [[سَهْلًا|easy,|sahlan,]]
 
 [[وَأَنْتَ|and You|wa-anta]] [[تَجْعَلُ|make|tajʿalu]] [[الْحَزْنَ|the difficulty / sorrow|l-ḥazna]] [[إِذَا|when|idhā]] [[شِئْتَ|You will|shiʾta]] [[سَهْلًا|easy.|sahlan.]]
 
-### Notes:
+<details>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Ḥadīth ✦ Ḥiṣn al-Muslim 139**
+
+**The Text of the Supplication (المَتْن)**
+
+[[اللَّهُمَّ|O Allah,|allāhumma]] [[لَا|there is no|lā]] [[سَهْلَ|ease|sahla]] [[إِلَّا|except|illā]] [[مَا|what|mā]] [[جَعَلْتَهُ|You have made|jaʿaltahū]] [[سَهْلًا|easy,|sahlan,]] [[وَأَنْتَ|and You|wa-anta]] [[تَجْعَلُ|make|tajʿalu]] [[الْحَزْنَ|the difficulty / sorrow|l-ḥazna]] [[إِذَا|when|idhā]] [[شِئْتَ|You will|shiʾta]] [[سَهْلًا|easy.|sahlan.]]
+
+**Scholarly Documentation**
+
+*   **Ibn Ḥibbān:** Recorded in his *Ṣaḥīḥ* (No. 2427).
+*   **Ibn al-Sunnī:** Recorded in *ʿAmal al-Yawm wal-Laylah* (No. 351).
+*   **Al-Ḥāfiẓ Ibn Ḥajar al-ʿAsqalānī:** Authenticated the chain of transmission.
+*   **Sheikh ʿAbdul-Qādir al-Arnaʾūṭ:** Confirmed its authenticity in his checking of Imam al-Nawawī's *Kitāb al-Adhkār* (p. 106).
+
+**Notes**
 
 1) Shifting Trust from Self to God:
 
@@ -34,17 +49,6 @@ Human nature leads people to rely on their own skills, intellect, or resources w
 
 It acknowledges that difficulty and ease are not intrinsic properties of a situation itself; rather, Allah transforms a situation from hard to easy (or vice versa) in an instant.
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
 *🔗 Verify on sunnah.com — [Hisn al-Muslim 139](https://sunnah.com/hisn:139)*
 
-The Text of the Supplication (المَتْن)
-[[اللَّهُمَّ|O Allah,|allāhumma]] [[لَا|there is no|lā]] [[سَهْلَ|ease|sahla]] [[إِلَّا|except|illā]] [[مَا|what|mā]] [[جَعَلْتَهُ|You have made|jaʿaltahū]] [[سَهْلًا|easy,|sahlan,]] [[وَأَنْتَ|and You|wa-anta]] [[تَجْعَلُ|make|tajʿalu]] [[الْحَزْنَ|the difficulty / sorrow|l-ḥazna]] [[إِذَا|when|idhā]] [[شِئْتَ|You will|shiʾta]] [[سَهْلًا|easy.|sahlan.]]
-
-Scholarly Documentation
-*   **Ibn Ḥibbān:** Recorded in his *Ṣaḥīḥ* (No. 2427).
-*   **Ibn al-Sunnī:** Recorded in *ʿAmal al-Yawm wal-Laylah* (No. 351).
-*   **Al-Ḥāfiẓ Ibn Ḥajar al-ʿAsqalānī:** Authenticated the chain of transmission.
-*   **Sheikh ʿAbdul-Qādir al-Arnaʾūṭ:** Confirmed its authenticity in his checking of Imam al-Nawawī's *Kitāb al-Adhkār* (p. 106).
 </details>

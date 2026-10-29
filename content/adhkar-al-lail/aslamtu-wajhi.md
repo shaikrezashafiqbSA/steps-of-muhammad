@@ -12,17 +12,11 @@ right-orb-compact: ۞۞۞
 
 # Aslamtu Wajhī Ilayk — Die Upon the Fiṭrah
 
-## 📜 The Hadith
 al-Barāʾ ibn ʿĀzib (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said to him: **"When you come to your bed, perform wuḍūʾ as you would for prayer, then lie down on your right side, then say…"** — and after teaching the words he added: **"Then if you die that night, you die upon the fiṭrah. And make them the last thing you say."**
 
 When al-Barāʾ repeated it back and said *"wa rasūlika"* (and Your Messenger), the Prophet ﷺ corrected him: **"No — *wa nabiyyika lladhī arsalta*."** The wording is taught, not improvised.
 
-## 🕯️ The Three Preparations
-1. **Wuḍūʾ** — as though for prayer.
-2. **Right side** — lie on it.
-3. **These words** — and nothing after them.
-
-## 🔤 Evoke This — Word by Word
+## 📜✨ Du'a
 
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[أَسْلَمْتُ|I surrender|aslamtu]] [[وَجْهِي|my face|wajhī]] [[إِلَيْكَ|to You,|ilayka]]
 
@@ -39,9 +33,20 @@ When al-Barāʾ repeated it back and said *"wa rasūlika"* (and Your Messenger),
 [[وَبِنَبِيِّكَ|and in Your Prophet|wa binabiyyika]] [[الَّذِي|whom|lladhī]] [[أَرْسَلْتَ|You sent.|arsalta]]
 
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
-[[قَالَ|Said|qāla]] [[النَّبِيُّ|the Prophet|n-nabiyyu]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[إِذَا|When|idhā]] [[أَتَيْتَ|you come to|atayta]] [[مَضْجَعَكَ|your bed,|maḍjaʿaka]] [[فَتَوَضَّأْ|perform wuḍūʾ|fa tawaḍḍaʾ]] [[وُضُوءَكَ|your ablution|wuḍūʾaka]] [[لِلصَّلَاةِ|for the prayer,|liṣ-ṣalāti]] [[ثُمَّ|then|thumma]] [[اضْطَجِعْ|lie down|iḍṭajiʿ]] [[عَلَى|upon|ʿalā]] [[شِقِّكَ|your side|shiqqika]] [[الْأَيْمَنِ|the right,|l-aymani]] [[ثُمَّ|then|thumma]] [[قُلِ|say…|quli]] [[فَإِنْ|And if|fa in]] [[مُتَّ|you die|mutta]] [[مِنْ لَيْلَتِكَ|that night of yours,|min laylatika]] [[فَأَنْتَ|then you are|fa anta]] [[عَلَى|upon|ʿalā]] [[الْفِطْرَةِ|the fiṭrah,|l-fiṭrati]] [[وَاجْعَلْهُنَّ|and make them|wa jʿalhunna]] [[آخِرَ|the last|ākhira]] [[مَا|of what|mā]] [[تَتَكَلَّمُ بِهِ|you speak.|tatakallamu bihi]]
-</details>
+**Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 247**
+
+[[قَالَ|Said|qāla]] [[النَّبِيُّ|the Prophet|n-nabiyyu]] [[ صلى | may Allah bless him | ṣallā ]] [[ الله | Allah | llāhu ]] [[ عليه | upon him | ʿalayhi ]] [[ وسلم | and grant him peace ﷺ | wa-sallama ]] [[إِذَا|When|idhā]] [[أَتَيْتَ|you come to|atayta]] [[مَضْجَعَكَ|your bed,|maḍjaʿaka]] [[فَتَوَضَّأْ|perform wuḍūʾ|fa tawaḍḍaʾ]] [[وُضُوءَكَ|your ablution|wuḍūʾaka]] [[لِلصَّلَاةِ|for the prayer,|liṣ-ṣalāti]] [[ثُمَّ|then|thumma]] [[اضْطَجِعْ|lie down|iḍṭajiʿ]] [[عَلَى|upon|ʿalā]] [[شِقِّكَ|your side|shiqqika]] [[الْأَيْمَنِ|the right,|l-aymani]] [[ثُمَّ|then|thumma]] [[قُلِ|say…|quli]] [[فَإِنْ|And if|fa in]] [[مُتَّ|you die|mutta]] [[ مِنْ | from | min ]] [[ لَيْلَتِكَ | that night of yours, | laylatika ]] [[فَأَنْتَ|then you are|fa anta]] [[عَلَى|upon|ʿalā]] [[الْفِطْرَةِ|the fiṭrah,|l-fiṭrati]] [[وَاجْعَلْهُنَّ|and make them|wa jʿalhunna]] [[آخِرَ|the last|ākhira]] [[مَا|of what|mā]] [[ تَتَكَلَّمُ | you speak | tatakallamu ]] [[ بِهِ | with it. | bihi ]]
+
+**Notes**
+
+**The Three Preparations**
+
+1. **Wuḍūʾ** — as though for prayer.
+2. **Right side** — lie on it.
+3. **These words** — and nothing after them.
 
 *🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 247](https://sunnah.com/bukhari:247)*
+
+</details>

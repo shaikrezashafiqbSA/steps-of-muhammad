@@ -19,7 +19,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 
 
-## 🔤 Dua
+## 📜✨ Du'a
 
 ##### Part 1
 
@@ -308,7 +308,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 [[ اللَّهُمَّ | O Allah | Allāhumma ]] [[ صَلِّ | send blessings | ṣalli ]] [[ وَسَلِّمْ | and peace | wa-sallim ]] [[ وَبَارِكْ | and bless | wa-bārik ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَعَلَىٰ | and upon | wa-ʿalā ]] [[ آلِهِ | his family | ālihi ]]
 
 <details>
-<summary>🔎 What is the {{ Dalīl | @dalil }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | @dalil }}? </summary>
 
 > 🔍 **Source pending verification:** This recital has been preserved as it was recited; its underlying text has not yet been traced to a printed source.
 

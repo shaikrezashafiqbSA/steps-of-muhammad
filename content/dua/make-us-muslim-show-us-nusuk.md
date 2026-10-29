@@ -12,22 +12,11 @@ right-orb: Qur'an
 right-orb-compact: ۝
 ::
 
-# The Duʿāʾ of the Builders of the Kaʿbah — Submission and Repentance
-
-## 📜 The Qur'anic Verse
+# The Du'a of the Builders of the Kaʿbah — Submission and Repentance
 
 And when Ibrāhīm was raising the foundations of the House, together with Ismāʿīl, they made du'ā to make them submit, to make their descendants submit...
 
-<details>
-<summary>📚 Original Arabic Source</summary>
-
-**Qur'an, Sūrat Al Baqara 2:127-128**
-<iframe src="https://quranwbw.com/2/127-128" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
-
-</details>
-
-## 🔤 Word-by-Word
-
+## 📜✨ Du'a
 
 [[ رَبَّنَا | Our Lord, | rabbanā ]]
 [[ وَاجْعَلْنَا | and make us | wajʿalnā ]]
@@ -39,7 +28,6 @@ And when Ibrāhīm was raising the foundations of the House, together with Ismā
 [[ مُسْلِمَةً | submissive | muslimatan ]]
 [[ لَكَ | to You, | laka ]]
 
-
 [[ وَأَرِنَا | and show us | wa-arinā ]]
 [[ مَنَاسِكَنَا | our rites of worship, | manāsikanā ]]
 [[ وَتُبْ | and turn | wa-tub ]]
@@ -49,4 +37,11 @@ And when Ibrāhīm was raising the foundations of the House, together with Ismā
 [[ التَّوَّابُ | the Oft-Returning, | at-tawwābu ]]
 [[ الرَّحِيمُ | the Most Merciful. | ar-raḥīmu ]]
 
+<details>
+<summary>📜🔎 What is the {{ Dalīl | @dalil }}? </summary>
 
+**Qurʾān ✦ Sūrat al-Baqarah 2:127–128**
+
+<iframe src="https://quranwbw.com/2/127-128" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
+
+</details>

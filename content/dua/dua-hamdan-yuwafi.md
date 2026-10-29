@@ -13,18 +13,11 @@ right-orb-compact: 🟢
 
 # دُعَاءُ الْحَمْد — The Supplication of Praise
 
-## 📜 The Supplication
-
 This comprehensive duʿāʾ - often read after solat in masjids around Singapore - opens with the praise of Allah, followed by abundant ṣalawāt upon the Prophet ﷺ, then a series of petitions for protection, well-being, and steadfastness. 
-
-
-
 
 It is recited in gatherings of dhikr and most famously after the recitation *Rātib* of ‛Umar Bin ‛Abdurraḥmān *Al-‛Aṭṭās* in the tradition of the Ba ʿAlawī scholars of Ḥaḍramawt, as transmitted through Ḥabīb ʿUmar bin Ḥafīẓ in his book: [Khulasah (Ratib begins Page 308 - Dua at page 322)](https://muwasala.org/wp-content/uploads/2013/03/Al-Khulasa_Habib-Umr_29-01-2015.pdf) - widely transmitted in the Nusantara region. 
 
-
-
-## 🔤 Word-by-Word
+## 📜✨ Du'a
 
 ### Part 1 · Opening Basmala & Ḥamd
 
@@ -32,60 +25,17 @@ It is recited in gatherings of dhikr and most famously after the recitation *Rā
 
 [[ الْحَمْدُ | all praise | al-ḥamdu ]] [[ لِلهِ | is for Allah, | lillāh ]] [[ رَبِّ | Lord | Rabbi ]] [[ الْعَالَمِينَ | of the worlds. | l-ʿālamīn ]]
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**Qur'an, Sūrat al-Fātiḥah 1:1–2.** These two lines are the opening verses of the Qur'an verbatim.
-
-
-Sūrat al-Fātiḥah carries no reward clause within these two verses themselves. The promise attached to the Sūrah is stated in a separate ḥadīth qudsī (Ṣaḥīḥ Muslim 395), where Allah divides the prayer between Himself and His servant:
-
-[[ حَمِدَنِي | "My servant has praised Me." | ḥamidanī ]] [[ عَبْدِي | (lit. My servant) | ʿabdī ]]
-
-Source: [sunnah.com/muslim:395a](https://sunnah.com/muslim:395a)
-
-
-</details>
-
 ### Part 2 · Praise that Befits His Bounty
 
 [[ حَمْدًا | a praise | ḥamdan ]] [[ يُوَافِي | that fulfills | yuwāfī ]] [[ نِعَمَهُ | His favours | niʿamahu ]][[ وَ | and | wa ]] [[ يُكَافِئُ | is commensurate with | yukāfiʾu ]] [[ مَزِيدَهُ | His increase. | mazīdah ]]
-
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**No Prophetic source.** This formula has no established marfūʿ isnād. Ibn al-Qayyim, in *ʿUddat aṣ-Ṣābirīn*, records it as an Isrāʾīlī report, transmitted via Abū Naṣr at-Tammār, describing words taught to Ādam (ʿalayhi-s-salām). As-Saffārīnī cites it similarly in *Ghidhāʾ al-Albāb*.
-
-There is no authenticated Prophetic narration containing. The Shāfiʿī school nonetheless treats it as among the highest formulas of ḥamd, which explains its place in the Ba ʿAlawī awrād. Ibn al-Qayyim and Bakr Abū Zayd objected to its use.
-
-</details>
 
 ### Part 3 · Praise Befitting His Majesty
 
 [[ يَا | O | yā ]] [[ رَبَّنَا | our Lord, | Rabbanā ]] [[ لَكَ | for You | laka ]] [[ الْحَمْدُ | is all praise | l-ḥamd ]] [[ كَمَا | as | kamā ]] [[ يَنْبَغِي | is befitting | yanbaghī ]] [[ لِ | to | li- ]] [[ جَلَالِ | the majesty | jalāli ]] [[ وَجْهِكَ | of Your Face | wajhik ]] [[ وَ | and | wa ]] [[ عَظِيمِ | the greatness | ʿaẓīmi ]] [[ سُلْطَانِكَ | of Your dominion. | sulṭānik ]]
 
-
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-If you say this then Allah will reply to the angels to write it down until you face Allah and... He will reward you for it.
-
-[Sunan Ibn Mājah 3801](?file=content\sunnah\kama-yambaghi.md "embed")
-
-</details>
-
 ### Part 4 · Glory Beyond All Enumeration
 
 [[ سُبْحَانَكَ | glory be to You, | subḥānaka ]] [[ لَا | not | lā ]] [[ نُحْصِي | can we enumerate | nuḥṣī ]] [[ ثَنَاءً | praise | thanāʾan ]] [[ عَلَيْكَ | upon You; | ʿalayk ]] [[ أَنْتَ | You are | anta ]] [[ كَمَا | as | kamā ]] [[ أَثْنَيْتَ | You have praised | athnayta ]] [[ عَلَى | upon | ʿalā ]] [[ نَفْسِكَ | Yourself. | nafsik ]]
-
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-This is the last part of the dua in sujud that Āʾishah saw Messenger of Allah ﷺ made - when he was missed from bed. 
-
-[Muslim 486](?file=content/salah/during/sujud-subhanaka-la-nuhsi.md "embed")
-
-</details>
 
 ### Part 5 · Praise Until His Pleasure
 
@@ -94,13 +44,6 @@ This is the last part of the dua in sujud that Āʾishah saw Messenger of Allah 
 [[ وَ | and | wa ]] [[ لَكَ | for You | laka ]] [[ الْحَمْدُ | is praise | l-ḥamd ]] [[ إِذَا | when | idhā ]] [[ رَضِيتَ | You are pleased, | raḍīta ]]
 
 [[ وَ | and | wa ]] [[ لَكَ | for You | laka ]] [[ الْحَمْدُ | is praise | l-ḥamd ]] [[ بَعْدَ | after | baʿda ]] [[ الرَّضَى | the pleasure. | r-raḍā ]]
-
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**No verified source.**
-
-</details>
 
 ### Part 6 · Ṣalawāt upon the Prophet ﷺ
 
@@ -114,34 +57,6 @@ This is the last part of the dua in sujud that Āʾishah saw Messenger of Allah 
 
 [[ وَ | and | wa ]] [[ صَلِّ | send blessings | ṣalli ]] [[ وَ | and | wa ]] [[ سَلِّمْ | peace | sallim ]] [[ عَلَى | upon | ʿalā ]] [[ سَيِّدِنَا | our master | Sayyidinā ]] [[ مُحَمَّدٍ | Muḥammad | Muḥammad ]] [[ حَتَّى | until | ḥattā ]] [[ تَرِثَ | You inherit | taritha ]] [[ الْأَرْضَ | the earth | l-arḍ ]] [[ وَ | and | wa ]] [[ مَنْ | whoever | man ]] [[ عَلَيْهَا | is upon it, | ʿalayhā ]] [[ وَ | and | wa ]] [[ أَنْتَ | You are | anta ]] [[ خَيْرُ | the best | khayru ]] [[ الْوَارِثِينَ | of the inheritors. | l-wārithīn ]]
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**The closing two lines are Qur'anic in origin.** The ṣalawāt formulas themselves ("fi-l-awwalīn wa-l-ākhirīn") are compositions of the awrād tradition, not a quoted hadith text. The inheritance wording draws on two verses:
-
-**Qur'an, Sūrat Maryam 19:40:**
-<iframe 
-  src="https://quranwbw.com/19/40" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-
-**Qur'an, Sūrat al-Anbiyāʾ 21:89 (the duʿāʾ of Zakariyyā, ʿalayhi-s-salām):**
-<iframe 
-  src="https://quranwbw.com/21/89" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-*Note:* the duʿāʾ adapts these phrases; it does not quote either verse verbatim.
-
-</details>
-
 ### Part 7 · Entrusting All Affairs to Allah
 
 [[ اللَّهُمَّ | O Allah, | Allāhumma ]] [[ إِنَّا | indeed we | innā ]] [[ نَسْتَحْفِظُكَ | ask You to safeguard | nastaḥfiẓuk ]] [[ وَ | and | wa ]] [[ نَسْتَوْدِعُكَ | we entrust to You | nastawdiʿuk ]]
@@ -149,17 +64,6 @@ This is the last part of the dua in sujud that Āʾishah saw Messenger of Allah 
 [[ أَدْيَانَنَا | our religion, | adyānanā ]] [[ وَ | and | wa ]] [[ أَنْفُسَنَا | our souls, | anfusanā ]] [[ وَ | and | wa ]] [[ أَمْوَالَنَا | our wealth, | amwālanā ]] [[ وَ | and | wa ]] [[ أَهْلَنَا | our families, | ahlanā ]]
 
 [[ وَ | and | wa ]] [[ كُلَّ | every | kulla ]] [[ شَيْءٍ | thing | shayʾ ]] [[ أَعْطَيْتَنَا | You have given us. | aʿṭaytanā ]]
-
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**Thematic basis, not a direct quotation.** This passage belongs to the duʿāʾ recited after Sūrat Yāsīn in the tradition of the Ḥabāʾib, commonly attributed to Ḥabīb ʿAbdullāh bin ʿAlawī al-Ḥaddād. Its theme derives from the authentic Prophetic farewell supplication:
-
-[Jāmiʿ at-Tirmidhī 3443](?file=content/dua/farewell/bidding-farewell-to-journeyman.md "embed")
-
-The duʿāʾ text above is not this hadith. It expands the same idea into a congregational plural and adds wealth and family to the list of entrusted things.
-
-</details>
 
 ### Part 8 · Seeking Protection
 
@@ -173,78 +77,6 @@ The duʿāʾ text above is not this hadith. It expands the same idea into a cong
 
 [[ إِنَّكَ | Indeed You | innaka ]] [[ عَلَى | over | ʿalā ]] [[ كُلِّ | every | kulli ]] [[ شَيْءٍ | thing | shayʾ ]] [[ قَدِيرٌ | are Powerful. | Qadīr ]]
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-These are 3 lexical echoes of the Quran:
-- *innaka ʿalā kulli shayʾin Qadīr*
-- *shayṭānin marīd*
-- *jabbārin ʿanīd*
-
-
-**1) The closing formula is Qur'anic.** The petition itself is a composition of the awrād tradition and does not quote a hadith directly. The seal, *innaka ʿalā kulli shayʾin Qadīr*, is a Qur'anic phrase occurring in 2 places: Sūrat Aal i Imraan 3:26 and Sūrat At-Tahrim 66:8:
-
-**a) Qur'an, Sūrat Aal i Imraan 3:26 :**
-<iframe 
-  src="https://quranwbw.com/3/26" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-**b) Qur'an, Sūrat At-Tahrim 66:8:**
-<iframe 
-  src="https://quranwbw.com/66/8" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-2) The vocabulary *shayṭānin marīd* also appears twice in the Qur'an: Sūrat aṣ-Ṣāffāt 37:7and Sūrat al-Ḥajj 22:3, 
-
-**a) Qur'an Sūrat aṣ-Ṣāffāt 37:7**
-<iframe 
-  src="https://quranwbw.com/37/7" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-**b) Qur'an Sūrat al-Ḥajj 22:3**
-<iframe 
-  src="https://quranwbw.com/22/3" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-3) and *jabbārin ʿanīd* appears twice in Sūrat Ibrāhīm 14:15 and Sūrat Hūd 11:59:
-
-**a) Qur'an Sūrat Ibrāhīm 14:15  — Nominative Form**
-<iframe 
-  src="https://quranwbw.com/14/15" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-**b) Qur'an Sūrat Hūd 11:59 — Accusative Form**
-<iframe 
-  src="https://quranwbw.com/11/59" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-
-</details>
-
 ### Part 9 · Well-Being & Steadfastness
 
 [[ اللَّهُمَّ | O Allah, | Allāhumma ]] [[ جَمِّلْنَا | adorn us | jammilnā ]] [[ بِ | with | bi- ]] [[ الْعَافِيَةِ | well-being | l-ʿāfiyah ]] [[ وَ | and | wa ]] [[ السَّلَامَةِ | safety, | s-salāmah ]]
@@ -254,22 +86,6 @@ These are 3 lexical echoes of the Quran:
 [[ وَ | and | wa ]] [[ أَعِذْنَا | protect us | aʿidhnā ]] [[ مِنْ | from | min ]] [[ مُوجِبَاتِ | the causes | mūjibāti ]] [[ النَّدَامَةِ | of regret | n-nadāmah ]] [[ فِي | in | fi ]] [[ الْحَالِ | the present | l-ḥāl ]] [[ وَ | and | wa ]] [[ الْمَآلِ | the final outcome. | l-maʾāl ]]
 
 [[ إِنَّكَ | Indeed You | innaka ]] [[ سَمِيعُ | are the Hearer | Samīʿu ]] [[ الدُّعَاءِ | of supplication. | d-duʿāʾ ]]
-
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**The closing formula is Qur'anic**, taken from the duʿāʾ of Zakariyyā (ʿalayhi-s-salām).
-
-**Qur'an Sūrat Āl ʿImrān 3:38**
-<iframe 
-  src="https://quranwbw.com/3/38" 
-  width="100%" 
-  height="500px" 
-  title="QuranWBW Embed"
-  style="border:none;">
-</iframe>
-
-</details>
 
 ### Part 10 · Closing Ṣalawāt & Seal
 
@@ -281,15 +97,180 @@ These are 3 lexical echoes of the Quran:
 
 [[ يَا | O | yā ]] [[ أَرْحَمَ | Most Merciful | Arḥama ]] [[ الرَّاحِمِينَ | of those who show mercy. | r-Rāḥimīn ]]
 
+### Part 11 · Qur'ānic Seal
+
+[[ بِ | by | bi- ]] [[ فَضْلِ | the grace of: | faḍli ]] [[ سُبْحَانَ | Glory be to | subḥāna ]] [[ رَبِّكَ | your Lord, | Rabbika ]] [[ رَبِّ | Lord | Rabbi ]] [[ الْعِزَّةِ | of Honour, | l-ʿizzah ]] [[ عَمَّا | above what | ʿammā ]] [[ يَصِفُونَ | they describe, | yaṣifūn ]]
+
+[[ وَ | and | wa ]] [[ سَلَامٌ | peace | salāmun ]] [[ عَلَى | be upon | ʿala ]] [[ الْمُرْسَلِينَ | the Messengers, | l-mursalīn ]] [[ وَ | and | wa ]] [[ الْحَمْدُ | all praise | l-ḥamdu ]] [[ لِلَّهِ | is for Allah, | lillāhi ]] [[ رَبِّ | Lord | Rabbi ]] [[ الْعَالَمِينَ | of the worlds. | l-ʿālamīn ]]
+
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | @dalil }}? </summary>
+
+**Part 1**
+
+**Qurʾān ✦ Sūrat al-Fātiḥah 1:1–2**
+
+These two lines are the opening verses of the Qur'an verbatim.
+
+Sūrat al-Fātiḥah carries no reward clause within these two verses themselves. The promise attached to the Sūrah is stated in a separate ḥadīth qudsī (Ṣaḥīḥ Muslim 395), where Allah divides the prayer between Himself and His servant:
+
+[[ حَمِدَنِي | "My servant has praised Me." | ḥamidanī ]] [[ عَبْدِي | (lit. My servant) | ʿabdī ]]
+
+*🔗 Verify on sunnah.com — [Ṣaḥīḥ Muslim 395a](https://sunnah.com/muslim:395a)*
+
+**Part 2**
+
+**No Prophetic source.** This formula has no established marfūʿ isnād. Ibn al-Qayyim, in *ʿUddat aṣ-Ṣābirīn*, records it as an Isrāʾīlī report, transmitted via Abū Naṣr at-Tammār, describing words taught to Ādam (ʿalayhi-s-salām). As-Saffārīnī cites it similarly in *Ghidhāʾ al-Albāb*.
+
+There is no authenticated Prophetic narration containing. The Shāfiʿī school nonetheless treats it as among the highest formulas of ḥamd, which explains its place in the Ba ʿAlawī awrād. Ibn al-Qayyim and Bakr Abū Zayd objected to its use.
+
+**Part 3**
+
+If you say this then Allah will reply to the angels to write it down until you face Allah and... He will reward you for it.
+
+[Sunan Ibn Mājah 3801](?file=content\sunnah\kama-yambaghi.md "embed")
+
+**Part 4**
+
+This is the last part of the dua in sujud that Āʾishah saw Messenger of Allah ﷺ made - when he was missed from bed. 
+
+[Muslim 486](?file=content/salah/during/sujud-subhanaka-la-nuhsi.md "embed")
+
+**Part 5**
+
+**No verified source.**
+
+**Part 6**
+
+**The closing two lines are Qur'anic in origin.** The ṣalawāt formulas themselves ("fi-l-awwalīn wa-l-ākhirīn") are compositions of the awrād tradition, not a quoted hadith text. The inheritance wording draws on two verses:
+
+**Qurʾān ✦ Sūrat Maryam 19:40**
+
+<iframe 
+  src="https://quranwbw.com/19/40" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+**Qurʾān ✦ Sūrat al-Anbiyāʾ 21:89 (the duʿāʾ of Zakariyyā, ʿalayhi-s-salām)**
+
+<iframe 
+  src="https://quranwbw.com/21/89" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+*Note:* the duʿāʾ adapts these phrases; it does not quote either verse verbatim.
+
+**Part 7**
+
+**Thematic basis, not a direct quotation.** This passage belongs to the duʿāʾ recited after Sūrat Yāsīn in the tradition of the Ḥabāʾib, commonly attributed to Ḥabīb ʿAbdullāh bin ʿAlawī al-Ḥaddād. Its theme derives from the authentic Prophetic farewell supplication:
+
+[Jāmiʿ at-Tirmidhī 3443](?file=content/dua/farewell/bidding-farewell-to-journeyman.md "embed")
+
+The duʿāʾ text above is not this hadith. It expands the same idea into a congregational plural and adds wealth and family to the list of entrusted things.
+
+**Part 8**
+
+These are 3 lexical echoes of the Quran:
+- *innaka ʿalā kulli shayʾin Qadīr*
+- *shayṭānin marīd*
+- *jabbārin ʿanīd*
+
+**1) The closing formula is Qur'anic.** The petition itself is a composition of the awrād tradition and does not quote a hadith directly. The seal, *innaka ʿalā kulli shayʾin Qadīr*, is a Qur'anic phrase occurring in 2 places: Sūrat Aal i Imraan 3:26 and Sūrat At-Tahrim 66:8:
+
+**Qurʾān ✦ Sūrat Aal i Imraan 3:26**
+
+<iframe 
+  src="https://quranwbw.com/3/26" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+**Qurʾān ✦ Sūrat At-Tahrim 66:8**
+
+<iframe 
+  src="https://quranwbw.com/66/8" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+2) The vocabulary *shayṭānin marīd* also appears twice in the Qur'an: Sūrat aṣ-Ṣāffāt 37:7and Sūrat al-Ḥajj 22:3, 
+
+**Qurʾān ✦ Sūrat aṣ-Ṣāffāt 37:7**
+
+<iframe 
+  src="https://quranwbw.com/37/7" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+**Qurʾān ✦ Sūrat al-Ḥajj 22:3**
+
+<iframe 
+  src="https://quranwbw.com/22/3" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+3) and *jabbārin ʿanīd* appears twice in Sūrat Ibrāhīm 14:15 and Sūrat Hūd 11:59:
+
+**Qurʾān ✦ Sūrat Ibrāhīm 14:15 — Nominative Form**
+
+<iframe 
+  src="https://quranwbw.com/14/15" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+**Qurʾān ✦ Sūrat Hūd 11:59 — Accusative Form**
+
+<iframe 
+  src="https://quranwbw.com/11/59" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+**Part 9**
+
+**The closing formula is Qur'anic**, taken from the duʿāʾ of Zakariyyā (ʿalayhi-s-salām).
+
+**Qurʾān ✦ Sūrat Āl ʿImrān 3:38**
+
+<iframe 
+  src="https://quranwbw.com/3/38" 
+  width="100%" 
+  height="500px" 
+  title="QuranWBW Embed"
+  style="border:none;">
+</iframe>
+
+**Part 10**
 
 **The vocative closing** *Yā Arḥama-r-Rāḥimīn* appears 3 times in the Quran:
+
 - in the duʿāʾ of Ayyūb (ʿalayhi-s-salām) when he is brushed by adversity
 - in Ya'kub submitting the fate of the brother of YuṢuf (ʿalayhimaa-s-salām)
 - in YuṢuf (ʿalayhi-s-salām) forgiving his brothers
 
-**Qur'an, Sūrat al-Anbiyāʾ 21:83:**
+**Qurʾān ✦ Sūrat al-Anbiyāʾ 21:83**
+
 <iframe 
   src="https://quranwbw.com/21/83" 
   width="100%" 
@@ -298,7 +279,8 @@ These are 3 lexical echoes of the Quran:
   style="border:none;">
 </iframe>
 
-**Qur'an, Sūrat Yūsuf 12:64** 
+**Qurʾān ✦ Sūrat Yūsuf 12:64**
+
 <iframe 
   src="https://quranwbw.com/12/64" 
   width="100%" 
@@ -307,7 +289,8 @@ These are 3 lexical echoes of the Quran:
   style="border:none;">
 </iframe>
 
-**Qur'an, Sūrat Yūsuf 12:92** 
+**Qurʾān ✦ Sūrat Yūsuf 12:92**
+
 <iframe 
   src="https://quranwbw.com/12/92" 
   width="100%" 
@@ -315,18 +298,13 @@ These are 3 lexical echoes of the Quran:
   title="QuranWBW Embed"
   style="border:none;">
 </iframe>
-</details>
 
-### Part 11 · Qur'ānic Seal
+**Part 11**
 
-[[ بِ | by | bi- ]] [[ فَضْلِ | the grace of: | faḍli ]] [[ سُبْحَانَ | Glory be to | subḥāna ]] [[ رَبِّكَ | your Lord, | Rabbika ]] [[ رَبِّ | Lord | Rabbi ]] [[ الْعِزَّةِ | of Honour, | l-ʿizzah ]] [[ عَمَّا | above what | ʿammā ]] [[ يَصِفُونَ | they describe, | yaṣifūn ]]
+**Qurʾān ✦ Sūrat aṣ-Ṣāffāt 37:180–182**
 
-[[ وَ | and | wa ]] [[ سَلَامٌ | peace | salāmun ]] [[ عَلَى | be upon | ʿala ]] [[ الْمُرْسَلِينَ | the Messengers, | l-mursalīn ]] [[ وَ | and | wa ]] [[ الْحَمْدُ | all praise | l-ḥamdu ]] [[ لِلَّهِ | is for Allah, | lillāhi ]] [[ رَبِّ | Lord | Rabbi ]] [[ الْعَالَمِينَ | of the worlds. | l-ʿālamīn ]]
+Quoted verbatim as the closing three verses of the Sūrah.
 
-<details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**Qur'an, Sūrat aṣ-Ṣāffāt 37:180–182**, quoted verbatim as the closing three verses of the Sūrah.
 <iframe 
   src="https://quranwbw.com/37/180-182" 
   width="100%" 
@@ -334,9 +312,5 @@ These are 3 lexical echoes of the Quran:
   title="QuranWBW Embed"
   style="border:none;">
 </iframe>
-</details>
-
 
 </details>
-
----

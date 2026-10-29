@@ -1,4 +1,3 @@
-
 ::meta
 narrator: Abū Dharr al-Ghifārī (رضي الله عنه)
 colleciton: Jami` at-Tirmidhi
@@ -12,16 +11,15 @@ right-orb: Hasan (Good) & Gharib (Rare)
 right-orb-compact: ۞۞
 ::
 
-## Lā Ilāha Illallāh Waḥdahū Lā Sharīka Lahū — The Prophet's ﷺ Post-Fajr Duʿāʾ for Protection and Reward
+# Lā Ilāha Illallāh Waḥdahū Lā Sharīka Lahū — The Prophet's ﷺ Post-Fajr Du'a for Protection and Reward
 
-### 📜 The Hadith
 Abū Dharr narrated that the Messenger of Allah (ﷺ) said: **“Whoever says at the end of every Fajr prayer, while his feet are still folded, before speaking:**
+
 > *"None has the right to be worshipped but Allah, Alone without partner, to Him belongs all that exists, and to Him is the praise, He gives life and causes death, and He is powerful over all things"*
 
+## 📜✨ Du'a
 
-### 🔤 Evoke This — Word by Word (x 10)
-
-[[ x 3]][[لَا|There is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[ٱللَّهُ|Allah|llāhu]] [[وَحْدَهُۥ|alone,|waḥdahū]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُۥ|has He,|lahū]] 
+[[ x 10 ]][[لَا|There is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[ٱللَّهُ|Allah|llāhu]] [[وَحْدَهُۥ|alone,|waḥdahū]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُۥ|has He,|lahū]] 
 
 [[لَهُ|to Him belongs|lahu]] [[ٱلْمُلْكُ|the sovereignty|l-mulku]] [[وَلَهُ|and to Him belongs|wa-lahu]] [[ٱلْحَمْدُ|all praise,|l-ḥamdu]]
 
@@ -29,22 +27,32 @@ Abū Dharr narrated that the Messenger of Allah (ﷺ) said: **“Whoever says at
 
 [[وَهُوَ|and He|wa-huwa]] [[عَلَىٰ|over|ʿalā]] [[كُلِّ|every|kulli]] [[شَيْءٍ|thing|shayʾin]] [[قَدِيرٌ|is All-Powerful,|qadīrun]]
 
- "then ten good deeds shall be written for him, 
+## {{ Hikmah | @hikmah }}
 
- ten evil deeds shall be wiped away from him, 
+"then ten good deeds shall be written for him,
 
- ten degrees shall be raised up for him, 
+ten evil deeds shall be wiped away from him,
 
- and he shall be in security all that day from every disliked thing,
+ten degrees shall be raised up for him,
 
- and he shall be in protection from Shaitan, 
+and he shall be in security all that day from every disliked thing,
 
- and no sin will meet him or destroy him that day, except for associating partners with Allah.”
+and he shall be in protection from Shaitan,
 
- 
+and no sin will meet him or destroy him that day, except for associating partners with Allah.”
+
+[[عَشْرَ|ten|ʿashra]] [[مَرَّاتٍ|times,|marrātin,]] [[كُتِبَ|there shall be written|kutiba]] [[لَهُۥ|for him|lahū]] [[عَشْرُ|ten|ʿashru]] [[حَسَنَاتٍ|good deeds,|ḥasanātin,]] [[وَمُحِيَ|and there shall be wiped away|wa-muḥiya]] [[عَنْهُ|from him|ʿanhu]] [[عَشْرُ|ten|ʿashru]] [[سَيِّئَاتٍ|evil deeds,|sayyiʾātin,]]
+
+[[وَرُفِعَ|and there shall be raised|wa-rufiʿa]] [[لَهُۥ|for him|lahū]] [[عَشْرُ|ten|ʿashru]] [[دَرَجَاتٍ|degrees,|darajātin,]] [[وَكَانَ|and he shall be|wa-kāna]] [[يَوْمَهُۥ|all his day|yawmahū]] [[ذَٰلِكَ|that|dhālika]] [[فِي|in|fī]] [[حِرْزٍ|a security|ḥirzin]] [[مِنْ|from|min]] [[كُلِّ|every|kulli]] [[مَكْرُوهٍ|disliked thing,|makrūhin,]]
+
+[[وَحَرْسٍ|and a protection|wa-ḥarsin]] [[مِنَ|from|mina]] [[ٱلشَّيْطَانِ|Satan,|sh-shayṭāni]] [[وَلَمْ|and it is not|wa-lam]] [[يَنْبَغِ|possible|yanbaghi]] [[لِذَنْۢبٍ|for a sin|li-dhambin]] [[أَنْ|that|an]] [[يُدْرِكَهُۥ|it overtakes him|yudrikahū]] [[فِي|in|fī]] [[ذَٰلِكَ|that|dhālika]] [[ٱلْيَوْمِ|day,|l-yawmi]] [[إِلَّا|except|illā]] [[ٱلشِّرْكَ|associating partners|sh-shirka]] [[بِٱللَّهِ|with Allah.|billāhi]]
+
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
+**Ḥadīth ✦ Jāmiʿ at-Tirmidhī 3474**
+
+**The Chain of Narrators (الإِسْنَاد)**
 
 [[حَدَّثَنَا|Narrated to us|ḥaddathanā]] [[إِسْحَاقُ|Isḥāq|isḥāqu]] [[بْنُ|son of|bnu]] [[مَنْصُورٍ|Manṣūr,|manṣūrin,]] [[حَدَّثَنَا|narrated to us|ḥaddathanā]] [[عَلِيُّ|ʿAlī|ʿaliyyu]] [[بْنُ|son of|bnu]] [[مَعْبَدٍ|Maʿbad|maʿbadin]] [[ٱلْمِصْرِيُّ|al-Miṣrī,|l-miṣriyyu,]]
 
@@ -54,7 +62,8 @@ Abū Dharr narrated that the Messenger of Allah (ﷺ) said: **“Whoever says at
 
 [[أَنَّ|that|anna]] [[رَسُولَ|the Messenger|rasūla]] [[ٱللَّهِ|of Allah|llāhi]] [[صَلَّى|may Allah bless him|ṣallā]] [[ٱللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[قَالَ|said:|qāla]]
 
-The Text of the Hadith (المَتْن)
+**The Text of the Hadith (المَتْن)**
+
 [[مَنْ|Whoever|man]] [[قَالَ|says|qāla]] [[فِي|at|fī]] [[دُبُرِ|the end of|duburi]] [[صَلَاةِ|the prayer of|ṣalāti]] [[ٱلْفَجْرِ|Al-Fajr|l-fajri]] [[وَهُوَ|while he is|wa-huwa]] [[ثَانِي|folding|thānī]] [[رِجْلَيْهِ|his feet|rijlayhi]] [[قَبْلَ|before|qabla]] [[أَنْ|that|an]] [[يَتَكَلَّمَ|he speaks:|yatakallama:]]
 
 [[لَا|There is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[ٱللَّهُ|Allah|llāhu]] [[وَحْدَهُۥ|alone,|waḥdahū]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُۥ|has He,|lahū]] [[لَهُ|to Him belongs|lahu]] [[ٱلْمُلْكُ|the sovereignty|l-mulku]] [[وَلَهُ|and to Him belongs|wa-lahu]] [[ٱلْحَمْدُ|all praise,|l-ḥamdu]]
@@ -67,8 +76,10 @@ The Text of the Hadith (المَتْن)
 
 [[وَحَرْسٍ|and a protection|wa-ḥarsin]] [[مِنَ|from|mina]] [[ٱلشَّيْطَانِ|Satan,|sh-shayṭāni]] [[وَلَمْ|and it is not|wa-lam]] [[يَنْبَغِ|possible|yanbaghi]] [[لِذَنْۢبٍ|for a sin|li-dhambin]] [[أَنْ|that|an]] [[يُدْرِكَهُۥ|it overtakes him|yudrikahū]] [[فِي|in|fī]] [[ذَٰلِكَ|that|dhālika]] [[ٱلْيَوْمِ|day,|l-yawmi]] [[إِلَّا|except|illā]] [[ٱلشِّرْكَ|associating partners|sh-shirka]] [[بِٱللَّهِ|with Allah.|billāhi]]
 
-Imam al-Tirmidhi's Commentary
+**Commentary**
+
 [[قَالَ|He said:|qāla]] [[هَٰذَا|This|hādhā]] [[حَدِيثٌ|is a Hadith|ḥadīthun]] [[حَسَنٌ|good (Hasan),|ḥasanun]] [[غَرِيبٌ|rare (Gharib),|gharībun]] [[صَحِيحٌ|authentic (Sahih).|ṣaḥīḥun]]
-</details>
 
 *🔗 Verify on sunnah.com — [Tirmidhi 3474](https://sunnah.com/tirmidhi:3474)*
+
+</details>

@@ -13,7 +13,7 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# The Duʿāʾ of Those Who Came After — Forgiveness and a Heart Free of Rancor
+# The Du'a of Those Who Came After — Forgiveness and a Heart Free of Rancor
 
 Allah establishes this duʿāʾ as the defining speech of the Tābiʿūn and every believer until the Day of Judgment—those who follow the Muhājirūn (the Makkan emigrants) and the Anṣār (the Madinan helpers) 
 
@@ -24,7 +24,7 @@ This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=
 [Man promised paradise 3 times in public](?file=content\hadith-stories\man-from-jannah-pure-heart.md "embed")
 
 
-## 🔤 Dua
+## 📜✨ Du'a
 
 [[ رَبَّنَا | Our Lord | rabbanā ]]
 [[ اغْفِرْ | forgive | ighfir ]]
@@ -50,13 +50,13 @@ This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=
 
 
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
-**Qurʾān — Sūrat al-Ḥashr 59:10**
+**Qurʾān ✦ Sūrat al-Ḥashr 59:10**
 
 <iframe src="https://quranwbw.com/59/10" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
 
-**Tafsīr — Ibn Kathīr ؒ, on 59:10**
+**Tafsīr ✦ Ibn Kathīr ؒ, on 59:10**
 
 Ibn Kathīr identifies the speakers of this āyah as the third category of believers entitled to a share of the fayʾ: those who follow the Muhājirūn and Anṣār in their good works and beautiful attributes, and who invoke Allah for them in public and in secret. Their defining speech is precisely this duʿāʾ. [4, 6]
 

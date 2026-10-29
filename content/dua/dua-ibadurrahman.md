@@ -15,8 +15,6 @@ right-orb-compact: ۞۞۞
 
 # ʿIbād ar-Raḥmān: The Servants of the Most Gracious
 
-## 📜 The Qur'anic Passage
-
 Allah names a people He calls His own servants, and then He tells you exactly who they are. 10 traits, 2 duas, 1 road back for anyone who has fallen, and 1 reward. Every ayah below is kept whole and every word carries its full marks. Tick each step as you be the ʿIbād ar-Raḥmān
 
 <details>
@@ -88,12 +86,11 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 
 ---
 
-## Step 4 · Recite This Dua: Turn Hell Away
+## Step 4 · Recite This Du'a: Turn Hell Away
 
 🤲 Two ayahs, one dua. Recite them together.
 
 ### Ayah 65
-
 
 ˹They are˺ those who pray, *"Our Lord! Keep the punishment of Hell away from us, for its punishment is indeed unrelenting."* (25:65)
 
@@ -111,9 +108,9 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 - [ ] Ask with fear and with hope together
 
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
-**Qur'an, Sūrat Al-Furqān 25:65-66.**
+**Qurʾān ✦ Sūrat Al-Furqān 25:65-66**
 
 <iframe src="https://quranwbw.com/25/65" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
 
@@ -176,7 +173,6 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 *The repercussion for crossing the lines.* The condition sits in the last clause of 25:68 above, and the outcome continues in the next ayah.
 
 ### Ayah 69
-
 
 Their punishment will be multiplied on the Day of Judgment, and they will remain in it forever, in disgrace. (25:69)
 
@@ -283,11 +279,9 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 
 </details>
 
-
-
 </details>
 
-## Step 10 · Recite This Dua: Ask for a Family Who Are the Comfort of Your Eyes
+## Step 10 · Recite This Du'a: Ask for a Family Who Are the Comfort of Your Eyes
 
 ### Ayah 74
 
@@ -296,35 +290,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 [[ وَٱلَّذِينَ | and those who | wa-alladhīna ]] [[ يَقُولُونَ | say, | yaqūlūna ]] [[ رَبَّنَا | Our Lord, | rabbanā ]] [[ هَبۡ | grant | hab ]] [[ لَنَا | us | lanā ]] [[ مِنۡ | from | min ]] [[ أَزۡوَٰجِنَا | our spouses | azwājinā ]] [[ وَذُرِّيَّٰتِنَا | and our offspring | wa-dhurriyyātinā ]] [[ قُرَّةَ | the comfort | qurrata ]] [[ أَعۡيُنٖ | of eyes, | aʿyunin ]] [[ وَٱجۡعَلۡنَا | and make us | wa-jʿalnā ]] [[ لِلۡمُتَّقِينَ | for the God-conscious | lil-muttaqīna ]] [[ إِمَامًا | a leader. | imāmā ]] [[۝٧٤]]
 
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
-
-**Qur'an, Sūrat Al-Furqān 25:74.**
-
-<iframe src="https://quranwbw.com/25/74" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
-
-
-> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
-
-**Comfort of the eyes is faith, not appearance.** Ibn Kathīr explains the request as offspring who will obey Allah, worship Him, and associate nothing with Him. He reports Ibn ʿAbbās: offspring who strive to obey Allah and bring joy in this world and the Hereafter. The dua does not ask for a family that looks successful. It asks for a family that stands with you before Allah.
-
-**The ache behind the dua.** Ibn Kathīr records, through Imam Aḥmad, the words of al-Miqdād ibn al-Aswad ؓ, and notes the chain is ṣaḥīḥ. A man could come to know that his father, son or brother was a disbeliever, and knowing where that led, could not rest. Al-Miqdād said this is what the verse refers to. The servant who makes this dua carries his family's ākhirah as his own concern.
-
-**The servant asks to lead, not only to be saved.** 
-
-On [[ وَٱجۡعَلۡنَا | and make us | wa-jʿalnā ]] [[ لِلۡمُتَّقِينَ | for the God-conscious | lil-muttaqīna ]] [[ إِمَامًا | a leader | imāmā ]],
-
-Ibn Kathīr reports Ibn ʿAbbās, al-Ḥasan, as-Suddī, Qatādah and Rabīʿ ibn Anas: leaders taken as examples in good. Others said guides who call others to goodness. Ibn Kathīr adds that they wanted their worship joined to the worship of their children, and their guidance to reach beyond themselves. He ties this to the ḥadīth in Ṣaḥīḥ Muslim from Abū Hurayrah ؓ: when a son of Adam dies his deeds cease except three, the first being 
-
-[[ وَلَدٍ | a child | waladin ]] [[ صَالِحٍ | righteous | ṣāliḥin ]] [[ يَدْعُو | who prays | yadʿū ]] [[ لَهُ | for him. | lahu ]] 
-
-This dua is an investment that outlives the one who makes it.
-
-</details>
-
-
-
-<details>
-<summary>✵ The Reward of ʿIbād ar-Raḥmān</summary>
+<summary>{{ Hikmah | @hikmah }}: the reward of the ʿIbād ar-Raḥmān</summary>
 
 ## الْوَعْد ✵ Allah's Promise
 
@@ -357,7 +323,7 @@ staying there forever. What an excellent place to settle and reside! (25:76)
 
 ---
 
-## ⚠️ The Closing Reminder: Why Your Dua Matters
+## ⚠️ The Closing Reminder: Why Your Du'a Matters
 
 ### Ayah 77
 
@@ -394,3 +360,27 @@ as your denial remaining with you, leading to punishment, doom and destruction i
 
 </details>
 
+<details>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+
+**Qurʾān ✦ Sūrat Al-Furqān 25:74**
+
+<iframe src="https://quranwbw.com/25/74" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>
+
+> **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
+
+**Comfort of the eyes is faith, not appearance.** Ibn Kathīr explains the request as offspring who will obey Allah, worship Him, and associate nothing with Him. He reports Ibn ʿAbbās: offspring who strive to obey Allah and bring joy in this world and the Hereafter. The dua does not ask for a family that looks successful. It asks for a family that stands with you before Allah.
+
+**The ache behind the dua.** Ibn Kathīr records, through Imam Aḥmad, the words of al-Miqdād ibn al-Aswad ؓ, and notes the chain is ṣaḥīḥ. A man could come to know that his father, son or brother was a disbeliever, and knowing where that led, could not rest. Al-Miqdād said this is what the verse refers to. The servant who makes this dua carries his family's ākhirah as his own concern.
+
+**The servant asks to lead, not only to be saved.** 
+
+On [[ وَٱجۡعَلۡنَا | and make us | wa-jʿalnā ]] [[ لِلۡمُتَّقِينَ | for the God-conscious | lil-muttaqīna ]] [[ إِمَامًا | a leader | imāmā ]],
+
+Ibn Kathīr reports Ibn ʿAbbās, al-Ḥasan, as-Suddī, Qatādah and Rabīʿ ibn Anas: leaders taken as examples in good. Others said guides who call others to goodness. Ibn Kathīr adds that they wanted their worship joined to the worship of their children, and their guidance to reach beyond themselves. He ties this to the ḥadīth in Ṣaḥīḥ Muslim from Abū Hurayrah ؓ: when a son of Adam dies his deeds cease except three, the first being 
+
+[[ وَلَدٍ | a child | waladin ]] [[ صَالِحٍ | righteous | ṣāliḥin ]] [[ يَدْعُو | who prays | yadʿū ]] [[ لَهُ | for him. | lahu ]] 
+
+This dua is an investment that outlives the one who makes it.
+
+</details>
