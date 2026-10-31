@@ -15,7 +15,7 @@ right-orb-compact: ۞۞
 
 # Praising Allah After Eating — Forgiveness of Past Sins
 
-Muʿādh ibn Anas ؓ reported: The Messenger of Allah ﷺ said, "Whoever eats food and then says: *Al-ḥamdu lillāhi-lladhī aṭʿamanī hādhā, wa razaqanīhi min ghayri ḥawlin minnī wa lā quwwatin* — 'All praise is due to Allah Who has fed me this and provided it for me without any might or power on my part' — his past sins will be forgiven."
+Muʿādh ibn Anas ؓ reported: The Messenger of Allah ﷺ said, "Whoever eats food and then says: 'All praise is due to Allah Who has fed me this and provided it for me without any might or power on my part' - his past sins will be forgiven."
 
 ## 📜✨ Du'a
 
@@ -36,8 +36,6 @@ Muʿādh ibn Anas ؓ reported: The Messenger of Allah ﷺ said, "Whoever eats fo
 [[ قُوَّةٍ | power | quwwatin ]]
 
 ## {{ Hikmah | @hikmah }}
-
-The text attaches an explicit outcome to the act of praising Allah after eating: the one who says these words after food has his past sins forgiven.
 
 The condition:
 

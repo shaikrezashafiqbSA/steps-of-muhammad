@@ -79,20 +79,20 @@ const VAULT_NAVIGATION_TREE = [
     items: [
       //forgiveness family
       { type: "family", label: "Ya Allah, forgive me - tear out the inner darknesses before asking", icon: "🖤⛓️🤍", tier: "imam" },
-      { label: "Adam's repentance - The First Repentance", gloss: "Rabbana Zalamna anfusana...", ref: "Qurʾān 2:37", tier: "jemaah", grade: "sahih", time: ["night-presleep", "night-last-third", "*any"], path: "web/render.html?file=content/01-dua/01-forgiveness/forgiveness-adam.md" },
-      { label: "Sulaymān's repentance - The Unmatched Kingdom", gloss: "Rabbighfirli ...", ref: "Sūrat Saad 38:35", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/01-dua/01-forgiveness/forgiveness-sulaiman.md" },
-      { label: "Forgiveness for Predecessors and a Heart Free of Rancor", gloss: ".. wa la taj'al fi qulubina Ghilla..", ref: "Sūrat Al Hashr 59:10", tier: "jemaah", grade: "sahih", time: ["*salah", "*any"], path: "web/render.html?file=content/01-dua/01-forgiveness/forgive-us-do-not-place-ghilla-in-hearts.md" },
+      { label: "100 Daily Forgiveness - When a cloud comes over my heart", gloss: "Allāhumma innī astaghfiruka ...", ref: "Riyāḍ aṣ-Ṣāliḥīn 1869", reps: "daily", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/01-dua/01-forgiveness/forgiveness-100-times.md" },
+      { label: "Adam's Forgiveness - The First Repentance", gloss: "Rabbana Zalamna anfusana...", ref: "Qurʾān 2:37", tier: "jemaah", grade: "sahih", time: ["night-presleep", "night-last-third", "*any"], path: "web/render.html?file=content/01-dua/01-forgiveness/forgiveness-adam.md" },
+      { label: "Sulaymān's Forgiveness - The Unmatched Kingdom", gloss: "Rabbighfirli ...", ref: "Qurʾān 38:35", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/01-dua/01-forgiveness/forgiveness-sulaiman.md" },
+      { label: "Forgiveness for Predecessors and a Heart Free of Rancor", gloss: ".. wa la taj'al fi qulubina Ghilla..", ref: "Qurʾān 59:10", tier: "jemaah", grade: "sahih", time: ["*salah", "*any"], path: "web/render.html?file=content/01-dua/01-forgiveness/forgive-us-do-not-place-ghilla-in-hearts.md" },
       { label: "Forgiveness for Parents and All Believers", gloss: "Rabbighfir li-walidayhi ..", ref: "Musnad al-Shāmiyīn lil-Ṭabarānī 2118", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/01-dua/01-forgiveness/forgiveness-parents-all-believers.md" },
+
       // General Dua family
       { type: "family", label: "Ya Allah, teach me how to ask you", icon: "🤲", tier: "imam" },
       { label: "Dua by Allah's Greatest Name - when He is asked by it, He gives", gloss: "Bi-Annī Ashhadu Annaka Anta-llāh", ref: "Tirmidhī 3475", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*adhan", "*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/in-greatest-of-names.md" },
-      { label: "The dua he ﷺ said most often: This world, the hereafter and protection from Punishment of Naar", gloss: "Rabbana atina fid dunya...", ref:"Surat Al Baqarah 2:201", tier: "jemaah", grade:"sahih", time:["*salah", "*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/rabbana-atina-fid-dunya.md"},
+      { label: "The dua he ﷺ said most often: This world, the hereafter and protection from Punishment of Naar", gloss: "Rabbana atina fid dunya...", ref:"Qurʾān 2:201", tier: "jemaah", grade:"sahih", time:["*salah", "*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/rabbana-atina-fid-dunya.md"},
       { label: "ʿĀʾishah's comprehensive ask — all good, known and unknown", gloss: "Asʾaluka min al-Khayri Kullih", ref: "Ibn Mājah 3846", tier: "imam", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/aisyah-comprehensive-ask.md" },
       { label: "O Allah, set right for me my religion ...", gloss: "Allahuma aṣliḥ lī dīniya ...  ", ref: "Muslim 2720", tier: "muhsin",grade: "sahih", time: ["day-fajr-post", "day-asr-post", "*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/o-allah-set-right-for-me-my-religion.md" },
       { label: "Duas of the IbadurRahman", gloss: "Rabbana habla min azwajina ...", ref: "Qurʾān 25:63-77", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/dua-ibadurrahman.md"},
       { label: "Dua Selamat", gloss: "Allāhumma innā nasʾaluka salāmatan fi din...", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/dua-selamat.md"},
-      
-      
       // Steadfastness of heart and Din
       { type: "family", label: "Ya Allah, Make me follow you", icon: "🫀", tier: "imam" },
       { label: "The duʿāʾ he ﷺ said most often: hold my heart firm on Your dīn", gloss: "Yā Muqallibal-Qulūb...", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/01-dua/03-steadfastness/ya-muqallibal-qulub.md" },
@@ -102,14 +102,16 @@ const VAULT_NAVIGATION_TREE = [
       { type: "family", label: "Gratitude & Praise", icon: "🌼", tier: "imam" },
       { label: "Sulaymān's ask: Increase my capacity to be thankful", gloss: "Rabbi Awziʿnī an Ashkura Niʿmatak", ref: "Qurʾān 27:19", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/01-dua/04-gratitude/sulaiman-thankfulness.md" },
       { label: "Praise that matches His blessings; compiled in the Bā ʿAlawī majālis", gloss: "Duʿāʾ al-Ḥamd — Ḥamdan Yuwāfī", ref: "Compiled wird", tier: "muhsin", time: ["day-fajr-post", "day-asr-post", "*any"], path: "web/render.html?file=content/01-dua/04-gratitude/dua-hamdan-yuwafi.md" },
+      { label: "Eat - Grateful - Forgiveness", gloss: "Al-ḥamdu lillāhi-lladhī aṭʿamanī hādhā ...", ref: "Riyāḍ aṣ-Ṣāliḥīn 734", tier: "jemaah", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/01-dua/04-gratitude/eating-alhamdulillah-forgiveness.md"},
       // Quran in heart
       { type: "family", label: "Qurʾān in Heart", tier: "imam" },
       { label: "Make the Qurʾān the spring of my heart, the light of my chest", gloss: "Ijʿali-l-Qurʾāna Rabīʿa Qalbī", ref: "Musnad Aḥmad 3712", tier: "imam", grade: "sahih", time: ["day-duha", "*any"], path: "web/render.html?file=content/01-dua/05-quran-in-heart/quran_spring_heart.md" },
       { label: "The memoriser's duʿāʾ — clarity, retention, character", gloss: "Duʿāʾ Ḥifẓ al-Mursalīn", ref: "Compiled wird", tier: "muhsin", time: ["day-duha", "*any"], path: "web/render.html?file=content/01-dua/05-quran-in-heart/memoriser.md" },
+      // Shifa
       { type: "family", label: "Shifā / Healing", tier: "imam" },
       { label: "Seven times at a sick person's side, and Allah heals them", gloss: "Asʾalu-llāha-l-ʿAẓīm — ×7", ref: "Riyāḍ 906 · Tirmidhī 2083", reps: "×7", tier: "muhsin", grade: "hasan", time: ["*any"], path: "web/render.html?file=content/01-dua/06-shifa/yashfiyaka.md" },
       { label: "For pregnancy — the compiled set said after each prayer", gloss: "Duʿāʾ al-Ḥāmil", ref: "Compiled wird", tier: "muhsin", time: ["*salah", "*any"], path: "web/render.html?file=content/01-dua/06-shifa/dua-hamil.md" },
-      { label: "Zakariyyā's ask for righteous offspring, through His beautiful names", gloss: "Rabbi Hab Lī min Ladunka Dhurriyyatan Ṭayyibah", ref: "Qurʾān 3:38", tier: "muhsin", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/01-dua/06-shifa/dua-righteous-offspring-2.md" }
+      { label: "Seeking Refuge for Children: The Du'a of the Prophet ﷺ for Ḥasan and Ḥusayn", gloss: "Aʿūdhu bi-Kalimāti-llāhi-t-Tāmmāt", ref: "Sunan Ibn Mājah 3525", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/01-dua/06-shifa/evil-eye.md" },
     ]
   },
   {
@@ -179,13 +181,16 @@ const VAULT_NAVIGATION_TREE = [
     desc: "The night cycle — going to bed, waking in the dark, and the last third",
     items: [
       { type: "family", label: "Adhkar of the night", gloss: "Last things said before sleep", tier: "imam", time: ["night-maghrib-post", "night-isha-post"]},
+      // Night Maghrib and Isha
       { label: "They Will Suffice Him - The Two Closing Verses of Surah al-Baqarah at Night", gloss: "Lā Yuʿallimuhu-llāhu-l-Qurʾāna", ref: "Bukhārī 5009", tier: "jemaah", grade: "sahih", time: ["night-maghrib-post", "night-isha-post"], path: "web/render.html?file=content/05-adhkar-al-layl/01-night/al-baqarah-last-2.md" },
+      // Before sleep
       { type: "family", label: "Before sleep", gloss: "The last things said before sleep", tier: "imam", time: ["night-presleep"]},
       { num: "1", label: "Breathe the three sūrahs into your palms and wipe your body, three times", gloss: "Al-Muʿawwidhāt — ×3", ref: "Bukhārī 5017", reps: "×3", tier: "jemaah", grade: "sahih", time: ["night-presleep"], path: "web/render.html?file=content/05-adhkar-al-layl/02-before-sleep/muawwidhat-nafth.md" },
       { num: "2", label: "A guardian appointed over you, and no devil near you until morning", gloss: "Āyat al-Kursī", ref: "Bukhārī 2311", tier: "jemaah", grade: "sahih", time: ["night-presleep"], path: "web/render.html?file=content/05-adhkar-al-layl/02-before-sleep/ayat-al-kursi-guard.md" },
       { num: "3", label: "He offered it to Fāṭimah instead of the servant she asked for", gloss: "Tasbīḥ Fāṭimah — 33·33·34", ref: "Bukhārī 3705", reps: "×100", tier: "jemaah", grade: "sahih", time: ["night-presleep"], path: "web/render.html?file=content/05-adhkar-al-layl/02-before-sleep/tasbih-fatimah.md" },
       { num: "4", label: "Wuḍūʾ, right side, these words — and if you die that night you die on the fiṭrah", gloss: "Allāhumma Aslamtu Wajhī Ilayk", ref: "Bukhārī 247", tier: "jemaah", grade: "sahih", time: ["night-presleep"], path: "web/render.html?file=content/05-adhkar-al-layl/02-before-sleep/aslamtu-wajhi.md" },
       { num: "5", label: "The last words of the day, and the first of the next on waking", gloss: "Bismika Amūtu wa Aḥyā", ref: "Bukhārī 6312", tier: "jemaah", grade: "sahih", time: ["night-presleep", "day-fajr-adhan"], path: "web/render.html?file=content/05-adhkar-al-layl/02-before-sleep/bismika-amutu-wa-ahya.md" },
+      // Left sleep
       { type: "family", label: "Left sleep", gloss: "Tahajjud", tier: "imam", time: ["night-2nd-third", "night-last-third"]},
       { label: "You woke without meaning to — say this, then ask, and you are answered", gloss: "Man Taʿārra mina-l-Layl", ref: "Bukhārī 1154", tier: "jemaah", grade: "sahih", time: ["night-2nd-third", "night-last-third"], path: "web/render.html?file=content/05-adhkar-al-layl/03-left-sleep/man-taarra-min-al-layl.md" },
       { label: "His ﷺ opening of tahajjud — eleven truths, then forgiveness", gloss: "Allāhumma Laka-l-Ḥamd", ref: "Bukhārī 1120", tier: "imam", grade: "sahih", time: ["night-last-third"], path: "web/render.html?file=content/05-adhkar-al-layl/03-left-sleep/tahajjud-lakal-hamd.md" },
