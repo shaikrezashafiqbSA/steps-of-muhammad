@@ -15,7 +15,7 @@ right-orb-compact: ۞۞۞
 
 ::
 
-# Subḥāna Allāhi wa biḥamdihī — Four Phrases Heavier Than a Morning's Dhikr
+# Four Phrases Heavier Than a Morning's Dhikr - Subḥāna Allāhi wa biḥamdihī
 
 Juwayriyah bint al-Ḥārith (raḍiyallāhu ʿanhā), the Mother of the Believers, reported: "The Prophet ﷺ came out from my apartment in the morning while I was busy performing the dawn prayer. He came back in the forenoon and found me sitting there. The Prophet ﷺ asked, 'Are you still in the same position as I left you?' I replied in the affirmative. **Thereupon the Prophet ﷺ said: 'I recited four phrases three times after I had left you. If these are to be weighed against all you have recited since morning, these will be heavier. They are'** 
 

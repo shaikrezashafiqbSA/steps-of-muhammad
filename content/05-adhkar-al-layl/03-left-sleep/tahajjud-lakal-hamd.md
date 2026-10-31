@@ -10,7 +10,7 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# Allāhumma Laka-l-Ḥamd — The Prophet's ﷺ Opening of the Last Third
+# The Prophet's ﷺ Opening of Tahajjud - Eleven truths, then forgiveness
 
 Ibn ʿAbbās (raḍiyallāhu ʿanhumā) reported: **When the Prophet ﷺ rose in the night for tahajjud, he would say…**
 

@@ -11,7 +11,7 @@ right-orb: Hasan
 right-orb-compact: ۞۞
 ::
 
-# Allāhumma ʿĀfinī Fī Badanī — Supplications for Vital Well-being, Protection, and Relief from Distress
+# Body, Hearing, Sight - Refuge from disbelief and destitution
 
 ʿAbd al-Raḥmān ibn Abī Bakrah said to his father: *"O my father! I hear you supplicating every morning: 'O Allah, grant me well-being in my body; O Allah, grant me well-being in my hearing; O Allah, grant me well-being in my sight. There is no deity except You' — repeating it three times in the morning and three times in the evening."*
 

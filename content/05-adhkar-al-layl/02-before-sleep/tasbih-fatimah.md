@@ -10,7 +10,7 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# Tasbīḥ Fāṭimah — Better For You Both Than a Servant
+# Tasbīḥ Fāṭimah - Better for you both than a servant
 
 ʿAlī (raḍiyallāhu ʿanhu) reported that Fāṭimah (ʿalayhā s-salām) complained of the blisters the hand-mill left on her hands, and went to ask the Prophet ﷺ for a servant from the captives that had come. She did not find him; she told ʿĀʾishah. When he came he sat between them on their bed, so close that ʿAlī said, *"I found the coolness of his feet on my chest,"* and said:
 

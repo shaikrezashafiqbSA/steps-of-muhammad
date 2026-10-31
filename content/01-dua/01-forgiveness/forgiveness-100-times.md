@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Forgiveness x 100 - When a cloud comes over my heart 
+# 100 Daily Forgiveness - When a cloud comes over my heart
 
 Al-Agharr al-Muzanī (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: "Verily, at times a cloud/veil comes over my heart, and *I ask Allah for forgiveness a hundred times a day*."
 

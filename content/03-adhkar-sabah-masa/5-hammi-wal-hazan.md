@@ -10,7 +10,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Seeking Refuge from Anxiety, Grief, and Debt
+# Refuge from Anxiety, Grief and Debt - And the domination of men
 
 2 versions of a similiar duas for 
 

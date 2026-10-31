@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Allāhumma Innī As'aluka minal-Khayri Kullihi — The Comprehensive Supplication Taught to ʿĀʾishah
+# ʿĀʾishah's Comprehensive Ask - All good, known and unknown
 
 It was narrated from ʿĀʾishah (رضي الله عنها) that the Messenger of Allah (ﷺ) taught her this supplication:
 > *"O Allah, I ask You for all that is good, in this world and in the Hereafter, what I know and what I do not know. O Allah, I seek refuge with You from all evil, in this world and in the Hereafter, what I know and what I do not know. O Allah, I ask You for the good that Your slave and Prophet has asked You for, and I seek refuge with You from the evil from which Your slave and Prophet sought refuge. O Allah, I ask You for Paradise and for that which brings one closer to it, in word and deed, and I seek refuge in You from Hell and from that which brings one closer to it, in word and deed. And I ask You to make every decree that You decree concerning me good."*

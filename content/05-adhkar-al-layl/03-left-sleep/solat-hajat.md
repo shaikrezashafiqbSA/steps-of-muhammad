@@ -11,7 +11,7 @@ right-orb: Da'if (Darussalam)
 right-orb-compact: ۞
 ::
 
-# Lā Ilāha Illallāhul-Ḥalīmul-Karīm — The Supplication for the Prayer of Need (Salat al-Hajah)
+# Ṣalāt al-Ḥājah - The prayer of pressing need
 
 It was narrated that ʿAbdullāh bin Abī Awfā Al-Aslamī (رضي الله عنه) said:
 “The Messenger of Allah (ﷺ) came out to us and said: ‘Whoever has some need from Allah or from any of His creation, let him perform ablution and pray two Rakʿah, then let him say:

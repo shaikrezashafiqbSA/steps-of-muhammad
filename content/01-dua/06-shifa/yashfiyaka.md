@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# The Sevenfold Supplication for the Sick
+# Healing for the Sick - Seven times at their side, and Allah heals them
 
 Ibn ʿAbbās (raḍiyallāhu ʿanhumā) reported that the Prophet (ﷺ) said: "Whoever visits a sick person whose appointed time has not yet arrived and says in his presence seven times: *Asʾalu Llāha l-ʿAẓīma Rabba l-ʿArshi l-ʿAẓīmi an yashfiyaka* (*I beseech Allah the Magnificent, Lord of the Magnificent Throne, to heal you*), Allah will certainly heal him of that illness."
 

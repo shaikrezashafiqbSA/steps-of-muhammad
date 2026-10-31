@@ -10,7 +10,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Sayyid al-Istighfar — The Master Supplication for Forgiveness
+# The Chief of Seeking Forgiveness - Say it with certainty and you are of Jannah
 
 The Prophet ﷺ said: "The most superior way of asking for forgiveness from Allah is to say:
 

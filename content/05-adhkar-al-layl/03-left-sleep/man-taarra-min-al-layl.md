@@ -10,7 +10,7 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# Man Taʿārra min al-Layl — The Formula for Waking in the Dark
+# Waking in the Dark - Say this, then ask, and you are answered
 
 ʿUbādah ibn aṣ-Ṣāmit (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said: **"Whoever stirs awake in the night and says [these words], then says *Allāhumma-ghfir lī* — or supplicates — he is answered. And if he performs wuḍūʾ and prays, his prayer is accepted."**
 

@@ -13,7 +13,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Reward of standing at night with 10, 100, and 1000 Verses
+# The Three Tiers of Night Prayer - Ten, One Hundred, and One Thousand
 
 Just stand with 10 ayat and you will be written as a {{ ghāfilīn| الْغَافِلِينَ: “The heedless. Root gh-f-l: inattention, being unaware not mindful of Allah  - not necessarily forgetting}}
 

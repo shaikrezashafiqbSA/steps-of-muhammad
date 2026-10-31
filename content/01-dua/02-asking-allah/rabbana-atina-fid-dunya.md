@@ -13,7 +13,7 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# The Du'a Allah Praised: Good in Both Worlds and protection from punishment of the Fire
+# Good in This World and the Next - The dua he ﷺ said most often
 
 Do not ask for this world alone. For you will receive none in the real world ...
 

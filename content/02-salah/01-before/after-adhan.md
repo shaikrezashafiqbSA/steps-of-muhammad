@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Allāhumma Rabba Hādhihi-D-Daʿwatit-Tāmmah — The Supplication Recited After the Call to Prayer (Al-Adhān)
+# After the Adhān - Ask for the Prophet's ﷺ wasīlah
 
 Narrated Jābir bin ʿAbdullāh (رضي الله عنه):
 Allah's Messenger (ﷺ) said, "Whoever after listening to the Adhan says:

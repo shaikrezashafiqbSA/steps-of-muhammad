@@ -11,7 +11,7 @@ right-orb: Sahih (Darussalam)
 right-orb-compact: ۞۞۞
 ::
 
-# Allāhumma Innī As’aluka ʿIlman Nāfiʿan — The Prophet's ﷺ Post-Dawn Supplication for Knowledge, Provision, and Acceptance
+# Salaam of Fajr - Useful knowledge, good provision, accepted deeds
 
 It was narrated from Umm Salamah (رضي الله عنها) that when the Prophet (ﷺ) performed the Ṣubḥ (morning prayer), the moment he said the Salām, he would say...
 

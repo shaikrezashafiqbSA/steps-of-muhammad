@@ -10,7 +10,7 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# Āyat al-Kursī at Night — A Guard Until Morning
+# Āyat al-Kursī at Night - A guardian over you, and no devil near until morning
 
 Abū Hurayrah (raḍiyallāhu ʿanhu) was deputed by the Messenger of Allah ﷺ to guard the zakāt al-fiṭr of Ramaḍān. Three nights running a thief came and stole handfuls of it; three times Abū Hurayrah caught him and three times he let him go out of pity. On the third night the thief bought his freedom with a teaching:
 

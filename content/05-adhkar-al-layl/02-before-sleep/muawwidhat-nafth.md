@@ -10,7 +10,7 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# Al-Muʿawwidhāt — The Nightly Sealing of the Body
+# Al-Muʿawwidhāt Before Sleep - Breathe into your palms and wipe your body, three times
 
 ʿĀʾishah (raḍiyallāhu ʿanhā) reported: **Whenever the Prophet ﷺ went to his bed each night, he would cup his two hands together, breathe into them, and recite into them *Qul huwa llāhu aḥad*, *Qul aʿūdhu bi rabbi l-falaq*, and *Qul aʿūdhu bi rabbi n-nās*. Then he would wipe with them whatever he could of his body, beginning with his head, his face, and the front of his body. He did that three times.**
 

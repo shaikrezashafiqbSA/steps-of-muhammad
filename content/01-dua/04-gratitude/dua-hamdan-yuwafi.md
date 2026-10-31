@@ -11,7 +11,7 @@ right-orb: Compiled Du'a
 right-orb-compact: 🟢
 ::
 
-# دُعَاءُ الْحَمْد — The Supplication of Praise
+# Praise That Matches His Blessings - Compiled in the Bā ʿAlawī majālis
 
 This comprehensive duʿāʾ - often read after solat in masjids around Singapore - opens with the praise of Allah, followed by abundant ṣalawāt upon the Prophet ﷺ, then a series of petitions for protection, well-being, and steadfastness. 
 

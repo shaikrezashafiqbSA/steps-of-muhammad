@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# 7 x Hasbiyallah — Allah will suffice them in whatever concerns them of the matters of this world and the Hereafter
+# Ḥasbiyallāh Seven Times - Allah suffices you in every concern of this world and the next
 
 Recite what Allah told the one deeply concerned for us: **7 x** during the morning (after Fajr) and during the evening (after ʿAsr or Maghrib):
 > *"Allah is sufficient for me. There is none worthy of worship but Him. I have placed my trust in Him, and He is Lord of the Majestic Throne."*

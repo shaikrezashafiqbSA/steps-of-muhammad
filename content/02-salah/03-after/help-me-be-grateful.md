@@ -11,7 +11,7 @@ right-orb: Riyad as-Salihin
 right-orb-compact: ۞۞۞
 ::
 
-# Allāhumma Aʿinnī ʿAlā Dhikrika — The Prophet's ﷺ Advice to Muʿādh for Post-Prayer Devotion
+# Never Miss at the End of Ṣalāh - Ya Allah, help me remember You
 
 Muʿādh ibn Jabal (رضي الله عنه) reported:
 The Messenger of Allah (ﷺ) took hold of my hand and said, "O Muʿādh! By Allah I love you, so I advise you to never forget to recite after every prayer:

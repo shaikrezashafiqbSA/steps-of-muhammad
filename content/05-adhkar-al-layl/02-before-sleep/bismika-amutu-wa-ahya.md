@@ -10,7 +10,7 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# Bismika Amūtu wa Aḥyā — The Last Words of the Day and the First of the Next
+# Bismika Amūtu wa Aḥyā - The last words of the day, and the first of the next
 
 Ḥudhayfah (raḍiyallāhu ʿanhu) reported: **When the Prophet ﷺ went to his bed he would say, "In Your name I die and I live," and when he got up he would say, "All praise is for Allah who gave us life after He caused us to die, and to Him is the resurrection."**
 

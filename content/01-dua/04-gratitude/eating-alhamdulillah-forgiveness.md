@@ -13,7 +13,7 @@ right-orb: Hasan
 right-orb-compact: ۞۞
 ::
 
-# Praising Allah After Eating — Forgiveness of Past Sins
+# Praise After Eating - Past sins forgiven
 
 Muʿādh ibn Anas ؓ reported: The Messenger of Allah ﷺ said, "Whoever eats food and then says: 'All praise is due to Allah Who has fed me this and provided it for me without any might or power on my part' - his past sins will be forgiven."
 

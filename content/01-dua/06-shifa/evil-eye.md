@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Seeking Refuge for Children: The Du'a of the Prophet ﷺ for Ḥasan and Ḥusayn
+# Seeking Refuge for Children - The Prophet's ﷺ dua for Ḥasan and Ḥusayn
 
 Ibn ʿAbbās ؓ narrated that the Prophet ﷺ used to **seek refuge for Ḥasan and Ḥusayn**, saying:
 

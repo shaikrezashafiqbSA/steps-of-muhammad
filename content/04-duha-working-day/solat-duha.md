@@ -10,7 +10,7 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# What is the Duha prayer offered in the morning?
+# Ṣalāt Duha - When thankful for the joints and want flowstate
 
 ## ⏱️ The Ḍuḥā Window
 Opens: **15 to 20 minutes after sunrise/ shuruq** - once the sun has visibly cleared the horizon. 

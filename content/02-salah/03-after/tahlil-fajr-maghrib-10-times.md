@@ -11,7 +11,7 @@ right-orb: Hasan (Good) & Gharib (Rare)
 right-orb-compact: ۞۞
 ::
 
-# Lā Ilāha Illallāh Waḥdahū Lā Sharīka Lahū — The Prophet's ﷺ Post-Fajr Du'a for Protection and Reward
+# Ten Tahlīls After Fajr and Maghrib - The reward of freeing a slave
 
 Abū Dharr narrated that the Messenger of Allah (ﷺ) said: **“Whoever says at the end of every Fajr prayer, while his feet are still folded, before speaking:**
 

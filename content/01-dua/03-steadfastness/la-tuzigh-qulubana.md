@@ -26,7 +26,7 @@ right-orb-compact: ۞۞۞
 
 ::
 
-# The Supplication for a Steady Heart After Guidance
+# Do Not Let Our Hearts Deviate - The ayah he ﷺ would follow up with
 
 At the close of the passage on the clear (muḥkam) and ambiguous (mutashābih) verses, Allah describes those firmly grounded in knowledge, who say: *"We believe in it; all of it is from our Lord."* And then they turn to their Lord in supplication: *"Our Lord! Let not our hearts deviate (from the truth) after You have guided us, and grant us mercy from You. Truly, You are the Bestower."* The Prophet ﷺ himself would recite this verse in his own supplication, saying *"O You Who changes the hearts, make my heart firm on Your religion"* and then reciting this very Ayah.
 

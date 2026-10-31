@@ -11,7 +11,7 @@ right-orb: Hasan
 right-orb-compact: ۞۞
 ::
 
-# Intercession of the Prophet Through Daily Blessings
+# Ten Ṣalawāt Upon the Prophet ﷺ - His intercession is yours
 
 The Messenger of Allah ﷺ said: "Whoever recites blessings upon me ten times in the morning and ten times in the evening:
 

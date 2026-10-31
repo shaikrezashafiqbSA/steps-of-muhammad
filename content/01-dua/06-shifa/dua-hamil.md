@@ -6,7 +6,7 @@ left-orb-compact: 🕌
 ::
 
 
-# Dua Hamil - Pregnancy 
+# Dua for Pregnancy - The compiled set said after each prayer
 
 > **How to use:** A traditional compilation of supplications recited by Muslim women during pregnancy and childbirth. It contains three distinct prayers: a daily du'ā after every prayer, a du'ā with Sūrah At-Tāriq from the seventh month onward, and a du'ā with Qur'ānic healing verses for difficult labor.
 

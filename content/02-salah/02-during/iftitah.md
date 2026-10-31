@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Du'a al-Iftitāḥ — The Opening Supplication of Prayer
+# Duʿāʾ al-Iftitāḥ - Said between the takbīr and al-Fātiḥah
 
 This supplication is recited silently after the opening Takbīr (Takbīrat al-Iḥrām), before Sūrah al-Fātiḥah, in the first rakʿah of prayer. In the Shāfiʿī school of jurisprudence, it is a recommended Sunnah (Sunnah Hayʾah).
 

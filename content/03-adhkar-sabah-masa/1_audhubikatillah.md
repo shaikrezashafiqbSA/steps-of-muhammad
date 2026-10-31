@@ -10,7 +10,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Protection Upon Arrival & In The Evening
+# Refuge in His Perfect Words - From the evil of what He made
 
 Khawlah bint Ḥakīm al-Sulamiyyah reported: "I heard Allah's Messenger ﷺ saying: 'When any one of you stays at a place, he should say: *\"I seek refuge in the Perfect Words of Allah from the evil of what He created.\"* Nothing would then do him any harm until he moves from that place.'" 
 

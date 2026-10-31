@@ -10,7 +10,7 @@ right-orb: Da'if (Al-Albani)
 right-orb-compact: ۞
 ::
 
-# Protection from the Fire — Morning and Evening Supplication
+# Seven Times After Fajr and Maghrib - Refuge from the Fire
 
 Al-Ḥārith ibn Muslim al-Tamīmī quoted his father Muslim ibn al-Ḥārith al-Tamīmī as saying that the **Messenger of Allah ﷺ told him secretly: 'When you finish the sunset prayer, say:'**
 

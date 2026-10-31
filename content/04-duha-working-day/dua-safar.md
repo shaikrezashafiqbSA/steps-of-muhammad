@@ -9,7 +9,7 @@ right-orb: Sahih
 verify: https://sunnah.com/tirmidhi:3447
 ::
 
-# Travel and Return Supplication — Du'a for Riding and Journeying
+# Travel and Return - When about to travel or transit
 
 Ibn `Umar narrated that: When the Prophet ﷺ wanted to travel, when he mounted his riding camel, he would say the Takbir three times and say:
 

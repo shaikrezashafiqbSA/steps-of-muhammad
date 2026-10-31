@@ -13,7 +13,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# The Supplication for Rectification of Religion, World, and Hereafter
+# Rectification of Religion, World and Hereafter - O Allah, set right for me my religion
 
 Abū Hurayrah ؓ reported: The Messenger of Allah ﷺ used to say: *"O Allah, set right for me my religion, which is the safeguard of my affairs; set right for me my world, in which is my livelihood; set right for me my Hereafter, to which is my return; and make life an increase for me in every good, and make death a relief for me from every evil."*
 

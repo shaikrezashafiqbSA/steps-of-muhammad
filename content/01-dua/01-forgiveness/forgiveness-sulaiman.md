@@ -12,7 +12,7 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# Sulaymān's repentance - The Unmatched Kingdom
+# Sulaymān's Forgiveness - The Unmatched Kingdom
 
 After Allah tested Sulaymān ؑ with a body (jasad) on his throne and he turned back to Allah in repentance..
 

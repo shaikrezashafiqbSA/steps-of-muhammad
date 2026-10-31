@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Allāhumma Lā Sahla Illā Mā Jaʿaltahu Sahla — Supplication for Relief in Difficult Affairs
+# Making the Difficult Easy - When facing a difficult affair
 
 "For one whose affairs have become {{ difficult / Al-Hazn (الْحَزْن) | In classical Arabic, al-hazn refers to rough, rugged, or impassable terrain (like a steep, stony mountain path) that makes travel nearly impossible. Metaphorically, it means any hard, overwhelming, or complex task or hardship in life. The Prophet ﷺ uses this metaphor to state that even the rough, unyielding paths of life become smooth and navigable when Allah wills it. }}"
 

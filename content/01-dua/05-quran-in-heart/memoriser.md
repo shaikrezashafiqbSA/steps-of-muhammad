@@ -10,7 +10,7 @@ right-orb: Scholastic Athar
 right-orb-compact: ۞
 ::
 
-# Doa Mudah Penghafal — The Memorizer’s Supplication for Cognitive Clarity, Knowledge, and Character
+# The Memoriser's Dua - Clarity, retention, character
 
 A scholastic supplication for students and memorisers of the Qur'an, transmitted as an *ijazah* through Al-Habib Prof. Dr. K.H. Said Agil Husin Al Munawwar. In madrasahs in Singapore and the region it is customarily recited three times after Solat Asar, asking first for the understanding of the Prophets, the retention of the Messengers and the inspiration of the angels brought near, then to be enriched with knowledge, adorned with forbearance, honoured with piety and beautified with well-being.
 

@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# The Prayer Divided in Two: Allah's Response to Every Verse of al-Fātiḥah
+# Al-Fātiḥah - He answers you verse by verse
 
 Abū Hurayrah (raḍiyallāhu ʿanhu) reported that the Messenger of Allah (ﷺ) said: *"Whoever performs a prayer in which he does not recite Umm al-Qurʾān, it is deficient"* — he said this three times — *"incomplete."* It was said to Abū Hurayrah: "We are sometimes behind the Imām." He said: *"Recite it to yourself,"* for he had heard the Messenger of Allah (ﷺ) say that Allah the Exalted said:
 

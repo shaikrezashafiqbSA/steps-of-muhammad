@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Comprehensive Protection Against All Harm
+# Comprehensive Protection Against All Harm - Say it three times and nothing will harm you
 
 ʿUthmān ibn ʿAffān (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: "He who recites three times every morning and evening:
 

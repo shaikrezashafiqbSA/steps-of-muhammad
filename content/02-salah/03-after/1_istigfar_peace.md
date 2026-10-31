@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Allāhumma Antas-Salām — The Post-Prayer Seeking of Forgiveness and Declaration of Peace
+# Turning Away from Ṣalāh - Three istighfār and peace
 
 Thawbān (رضي الله عنه) reported: 
 When the Messenger of Allah (ﷺ) finished his prayer, he begged forgiveness three times and said: 

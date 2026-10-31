@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Ṣalāt al-Istikhārah: Remove decision anxiety
+# Ṣalāt Istikhārah - Two rakʿah, then hand the decision back
 
 >"If any one of you intends a matter, he should offer a two rakʿah prayer other than the compulsory ones, and then say..."
 

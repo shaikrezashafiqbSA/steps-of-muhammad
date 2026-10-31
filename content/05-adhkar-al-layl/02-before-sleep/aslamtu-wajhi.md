@@ -10,7 +10,7 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# Aslamtu Wajhī Ilayk — Die Upon the Fiṭrah
+# Entrusting Myself to Allah - Wuḍūʾ, right side, and you die on the fiṭrah
 
 al-Barāʾ ibn ʿĀzib (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said to him: **"When you come to your bed, perform wuḍūʾ as you would for prayer, then lie down on your right side, then say…"** — and after teaching the words he added: **"Then if you die that night, you die upon the fiṭrah. And make them the last thing you say."**
 

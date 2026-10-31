@@ -10,7 +10,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Daily Protection & Complete Well-Being
+# The Words He ﷺ Never Abandoned - Complete well-being, morning and evening
 
 It was narrated that Ibn 'Umar said: "The Messenger of Allah ﷺ never abandoned these supplications, every morning and evening: *'O Allah, I ask You for forgiveness and well-being in this world and in the Hereafter. O Allah, I ask You for forgiveness and well-being in my religious and my worldly affairs, my family and my wealth. O Allah, conceal my faults, calm my fears, and protect me from before me, from behind me, from my right, from my left, and from above me, and I seek refuge in You from being taken unaware from beneath me.'*" Waki' (one of the narrators) said: "Meaning Al-Khasf (disgrace / being swallowed by the earth)."
 

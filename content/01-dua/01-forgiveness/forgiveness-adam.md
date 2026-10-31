@@ -13,7 +13,7 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# Adam's repentance - The First Repentance
+# Adam's Forgiveness - The First Repentance
 
 After they ate from the forbidden tree and their shame became manifest to them, Ādam and Ḥawwāʾ ؑ turned to Allah in the first repentance of humanity: 
 

@@ -11,7 +11,7 @@ right-orb: Hasan
 right-orb-compact: ۞۞
 ::
 
-# Contentment with Allah, Islam, and the Prophet
+# Contentment with Allah, Islam and the Prophet ﷺ - Jannah made binding
 
 It was narrated that Thawbān (raḍiyallāhu ʿanhu) said: The Messenger of Allah ﷺ said: "Whoever says when he reaches the evening: *'I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad ﷺ as my Prophet'* — it is a duty upon Allah to please him."
 

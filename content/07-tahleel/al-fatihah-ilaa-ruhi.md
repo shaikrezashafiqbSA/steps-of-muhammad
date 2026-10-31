@@ -1,4 +1,4 @@
-# Tawassul: Dedication of Al-Fatihah to the Prophet and Predecessors
+# Tawassul Before Al-Fātiḥah - Dedicating its reward to the Prophets, the Companions and the Caliphs
 
 **Text type: Regional devotional dedication (tawassul), not Hadith or Qur'an. No narrator, collection, or grade applies.**
 

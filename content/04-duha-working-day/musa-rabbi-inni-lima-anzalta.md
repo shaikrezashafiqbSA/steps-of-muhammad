@@ -26,7 +26,7 @@ right-orb-compact: ۞۞۞
 
 ::
 
-# The Supplication of Mūsā at Madyan
+# Mūsā's Utter Dependence - When exhausted, vulnerable and absolutely reliant
 
 Exhausted, homeless, and fleeing for his life from the tyrants of Egypt, Mūsā ؑ arrived in the land of Madyan with absolutely nothing. Yet, after selflessly spending his last ounces of strength to water the flocks for two stranger women, he did not complain or demand a reward. 
 

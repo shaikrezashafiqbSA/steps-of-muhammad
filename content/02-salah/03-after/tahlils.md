@@ -10,7 +10,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Read either Tahlils after salaam (or both) 
+# Tahlīls After Ṣalāh - Read either, or both
 
 [V1: Tahlil - Qadr](?file=content/02-salah/03-after/tahlil-la-mania.md "embed")
 

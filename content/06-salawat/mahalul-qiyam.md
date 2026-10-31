@@ -11,7 +11,7 @@ right-orb: Living Tradition
 right-orb-compact: ✦
 ::
 
-# Maḥallul Qiyām — The Standing Recital, Parts 1–5
+# Maḥallul Qiyām - The standing recital
 
 Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This card follows a recital heard at a masjid, in five parts. The original record was a rumi transliteration only; the Arabic and the word meanings below were reconstructed from it (see the Dalīl). 
 

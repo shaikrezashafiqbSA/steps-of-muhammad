@@ -3,7 +3,7 @@ left-orb: Ṣalāt al-Tafrijiyyah · Imam al-Qurtubī (d. 671 AH) · Khāzinat a
 right-orb: Maʾthūr · Widely Transmitted
 ::
 
-# Salawat - Tafrijiyyah
+# Ṣalawāt Tafrījiyyah - Relief when a knot will not loosen
 
 A ṣalawāt on the Prophet ﷺ transmitted by Imam al-Qurṭubī (d. 671 AH) and also associated with Shaykh Ibrahim al-Tāzī al-Maghribī. It is called Tafrijiyyah, meaning relief, from the word تَنْفَرِجُ in its text, and is also known as Ṣalāt al-Nāriyyah and Ṣalāt al-Tāziyyah.
 

@@ -11,7 +11,7 @@ right-orb: Da'if
 right-orb-compact: ۞
 ::
 
-# Allah appoints 70,000 Angels who say Salat upon you - when you read this: The Refuge & End of Al-Ḥashr
+# The Close of al-Ḥashr - Seventy thousand angels sent to pray for you
 
 Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three times when he gets up in the morning: *Aʿūdhu billāhi-s-Samīʿi-l-ʿAlīm min ash-shayṭāni-r-rajīm*, and then recites three āyāt from the end of Sūrat Al-Ḥashr: 
 

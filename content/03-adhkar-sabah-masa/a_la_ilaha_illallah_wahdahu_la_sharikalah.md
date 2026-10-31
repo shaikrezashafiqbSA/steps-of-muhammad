@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Declaration of Tawḥīd and Daily Protection
+# Daily Protection and Tawḥīd - The tahlīl said ten times
 
 It was reported that the Messenger of Allah ﷺ recommended reciting ten times in the morning and evening (or at least one time to ward off laziness):
 

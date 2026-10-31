@@ -10,7 +10,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Du'a for Anxiety and Grief — The Prophet's ﷺ Supplication for Removal of Distress
+# The Qurʾān, Spring of My Heart - Light of my chest, relief from grief
 
 ʿAbdullāh ibn Masʿūd (raḍiyallāhu ʿanhu) reported that the Messenger of Allah ﷺ said: 
 

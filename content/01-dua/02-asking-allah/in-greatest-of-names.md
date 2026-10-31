@@ -11,7 +11,7 @@ right-orb: Sahih (Darussalam)
 right-orb-compact: ۞۞۞
 ::
 
-# Du'a by Allah's Greatest Name - when He is asked by it, He gives
+# Allah's Greatest Name - When He is asked by it, He gives
 
 He (ﷺ) said: “By the One in Whose Hand is my soul, he has asked Allah by His Greatest Name: 
 

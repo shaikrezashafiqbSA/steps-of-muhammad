@@ -12,7 +12,7 @@ right-orb: Qur'an
 right-orb-compact: ۝
 ::
 
-# The Du'a of the Builders of the Kaʿbah — Submission and Repentance
+# Ibrahim's Submission - Make us muslim, show us our rites
 
 And when Ibrāhīm was raising the foundations of the House, together with Ismāʿīl, they made du'ā to make them submit, to make their descendants submit...
 

@@ -11,7 +11,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Entrusting All Affairs to the Ever-Living
+# Duʿāʾ of Fāṭimah - Entrust every affair to the Ever-Living
 
 Anas ibn Mālik (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said to Fāṭimah (raḍiyallāhu ʿanhā): "What prevents you from listening to what I advise you to say? Say, when you enter the morning and when you enter the evening: *'O Ever-Living, O Sustainer, by Your mercy I seek relief. Set right for me all my affairs, and do not leave me to myself even for the blink of an eye.'*"
 

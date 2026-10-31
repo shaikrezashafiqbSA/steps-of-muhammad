@@ -12,7 +12,7 @@ right-orb: Compilation
 right-orb-compact: ۞۞۞
 ::
 
-# Du'a Selamat: Safety in Religion, Death and the Reckoning
+# Dua Selamat - Safety in religion, death and the reckoning
 
 *O Allah, we ask You for safety in our religion, well-being in our bodies, increase in knowledge, blessing in provision, repentance before death, mercy at death and forgiveness after death. O Allah, ease for us the agonies of death, and deliverance from the Fire, and pardon at the reckoning.*
 

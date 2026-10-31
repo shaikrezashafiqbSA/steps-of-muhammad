@@ -11,7 +11,7 @@ right-orb: Hasan
 right-orb-compact: ۞۞
 ::
 
-# Yā Muqallibal-Qulūb — The Prophet's ﷺ Most Frequent Supplication for a Steadfast Heart
+# A Heart Held Firm on His Dīn - The dua he ﷺ said most often
 
 Anas ibn Mālik (رضي الله عنه) reported:
 "The Messenger of Allah (ﷺ) would often say: 

@@ -13,7 +13,7 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# ʿIbād ar-Raḥmān: The Servants of the Most Gracious
+# Duas of the Servants of the Most Gracious - ʿIbād ar-Raḥmān
 
 Allah names a people He calls His own servants, and then He tells you exactly who they are. 10 traits, 2 duas, 1 road back for anyone who has fallen, and 1 reward. Every ayah below is kept whole and every word carries its full marks. Tick each step as you be the ʿIbād ar-Raḥmān
 

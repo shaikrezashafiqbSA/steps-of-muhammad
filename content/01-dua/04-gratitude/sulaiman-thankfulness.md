@@ -10,7 +10,7 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# The Supplication of Gratitude and Righteousness (Du'a of Sulaymān)
+# Sulaymān's Gratitude - Increase my capacity to be thankful
 
 So [Solomon] smiled, amused at her speech, and said: *"My Lord, enable me to be grateful for Your favor which You have bestowed upon me and upon my parents and to do righteousness of which You approve. And admit me by Your mercy into [the ranks of] Your righteous servants."*
 

@@ -12,7 +12,7 @@ right-orb: Unconfirmed
 right-orb-compact: ۞۞۞
 ::
 
-# The Du'a of Abu al-Darda' — Trust in Allah's Decree
+# Abu al-Dardāʾ's Fire Insurance - Trust in Allah's decree
 
 This is a du'ā' of tawḥīd, submission to divine decree, and seeking refuge. It opens with an affirmation of Lordship and trust: *"O Allah, You are my Lord. There is no deity worthy of worship except You. In You I place my trust, and You are the Lord of the Mighty Throne."* It then affirms Allah's absolute will: *"Whatever Allah wills happens, and whatever He does not will does not happen. There is no power and no strength except through Allah, the Most High, the Magnificent."* It affirms His power and encompassing knowledge: *"I know that Allah has power over all things, and that Allah encompasses all things in knowledge."* It closes with a plea for refuge: *"O Allah, I seek refuge in You from the evil of myself and from the evil of every living creature whose forelock You hold. Indeed, my Lord is upon a straight path."*
 

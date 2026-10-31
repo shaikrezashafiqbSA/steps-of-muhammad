@@ -13,7 +13,7 @@ right-orb: Qur'an
 right-orb-compact: ۞۞۞
 ::
 
-# The Du'a of Expansion — Rabbish-raḥlī Ṣadrī 
+# Mūsā's Expansion - When about to face Firʿawn: expand my chest
 
 When asked to face Firaun, Mūsā ؑ asked for the chest to be opened first, because he was being sent to "the mightiest king on the face of the earth" — courage and capacity precede eloquence. He asked only for the knot to be *loosened enough to be understood*, not removed entirely: "the Prophets do not ask for any more than what is required."
 
