@@ -388,7 +388,7 @@ The popover is a small card, not a plain note: an entry is rendered with the sam
 **Embedding another card** — add `"embed"` as the link title and the whole atomic card appears inline as a collapsed drawer (grade badge + title, expands to the full card, with an "Open standalone ↗" footer). Use it when a composite duʿā quotes another sunnah:
 
 ```
-[Ḥamdan yuwāfī niʿamah](?file=content/dua/eating/after-eating.md "embed")
+[Ḥamdan yuwāfī niʿamah](?file=content/_unlisted/after-eating.md "embed")
 ```
 
 Put it on its own line to get a standalone drawer. Embeds are one level deep: a card embedded inside an embed shows its own embed links as ordinary links. Embedded headings never appear in the host card's TOC. (A link with `"embed"` is not picked up by collection manifests — they only read plain `?file=` links.)
@@ -409,7 +409,7 @@ Put it on its own line to get a standalone drawer. Embeds are one level deep: a 
 </div>
 ```
 
-**Follow-along video (pinnable)** — a YouTube embed that scrolls with the page, with a 📌 button that pins it as a small player at the top while the reader scrolls the text below. It resets to unpinned on every page load. Put it in the intro, above the Du'a section. In the Sunnah Card Builder use **Embeds → 📺 Follow-along video**: paste the YouTube link (a time in the link, such as `?t=72`, becomes the start), then give the start and end as `1:12 - 2:15`. The markup it inserts, as used in `content/adhkar-as-sabah-wal-masa/c_law_anzalna.md`:
+**Follow-along video (pinnable)** — a YouTube embed that scrolls with the page, with a 📌 button that pins it as a small player at the top while the reader scrolls the text below. It resets to unpinned on every page load. Put it in the intro, above the Du'a section. In the Sunnah Card Builder use **Embeds → 📺 Follow-along video**: paste the YouTube link (a time in the link, such as `?t=72`, becomes the start), then give the start and end as `1:12 - 2:15`. The markup it inserts, as used in `content/03-adhkar-sabah-masa/c_law_anzalna.md`:
 
 ```html
 📺 **Listen and follow along** — tap 📌 on the video to pin it while you read below.
@@ -778,7 +778,7 @@ Same structure as W2 (inline drawers) but with critical additions:
   > ⚠️ **Note on authenticity:** The phrase "Yā Ḥannā waladat Maryam..." is a folk supplication popular in Yemeni traditions but is not from authentic ḥadīth. Direct address to deceased persons for assistance is contested by reputable scholars; the safer practice is to address all petitions to Allah alone, omitting this line.
 - **Clear ritual sectioning** — folk compilations often have detailed ritual steps (when, how, count, posture) — use `## Section N · [Title]` headers
 
-See the project's `dua/shifa/dua-hamil.md` for a fully-worked example.
+See the project's `content/01-dua/06-shifa/dua-hamil.md` for a fully-worked example.
 
 ### Pattern C1 — Compendium of Compendiums
 
@@ -824,7 +824,7 @@ A **collection** is just a card whose body is a list of embeds. There is no sepa
 Write a normal card and add the `"embed"` title to each link:
 
 ```md
-1. [Allāhumma Antas-Salām](?file=content/salah/after/1_istigfar_peace.md "embed")
+1. [Allāhumma Antas-Salām](?file=content/02-salah/03-after/1_istigfar_peace.md "embed")
 ```
 
 Mark timing/optionality in prose around the embed (`*(optional)*`, `*(Fajr & Maghrib only)*`). An item not yet authored should stay plain text — a link to a missing file renders a visible error drawer in that slot.
@@ -1010,7 +1010,7 @@ Abū Hurayra reported: **The Messenger of Allah ﷺ used to say after every pray
 ```
 The section emojis are conventions: 📜 for the hadith, 🔤 for word-by-word, 📚 for the Arabic drawer.
 
-**Newer card layout (being rolled out, first used in `content/dua/forgiveness-adam.md`)** — the title carries the identity, so the opening context/translation paragraph sits directly under the `# H1` with no heading of its own. The word-stack section is named by what the card *is*, one plain word: `## 📜✨ Du'a` for a duʿāʾ, `## 📜✨ Sunnah` for anything that is not a duʿāʾ (a practice, a dhikr, a sunnah action). An optional `## {{ Hikmah | @hikmah }}` section follows — only the benefit or wisdom the text itself states. The Dalīl drawer (summary `📜🔎 What is the {{ Dalīl | … }}? `) comes last: Qurʾān embed, Tafsīr, then each Ḥadīth block (chain, matn, verify line last), with labels written `**Qurʾān ✦ …**`, `**Tafsīr ✦ …**`, `**Ḥadīth ✦ …**` and `---` between the groups. Sub-labels inside Du'a (`### 🔃Variation: …`, `### Part 1`) use `###` and show in the TOC. The full, current rules are in the "Decisions / SOP" section of `DRAFT_PROMPT.md`; the model cards are `content/dua/rabbana-atina-fid-dunya.md` and `content/dua/o-allah-set-right-for-me-my-religion.md`. The floating TOC reads: title (back to top) / `Du'a` (or `Sunnah`) / Hikmah if present / Dalīl. The Hikmah always sits between Du'a and Dalīl, and its box carries a soft gold gleam (pulsing glow plus a light sweep) added by the page; write only `## {{ Hikmah | @hikmah }}` and its text. Older cards still use `📜 The Hadith` / `🔤 Word-by-Word` until they are migrated.
+**Newer card layout (being rolled out, first used in `content/01-dua/01-forgiveness/forgiveness-adam.md`)** — the title carries the identity, so the opening context/translation paragraph sits directly under the `# H1` with no heading of its own. The word-stack section is named by what the card *is*, one plain word: `## 📜✨ Du'a` for a duʿāʾ, `## 📜✨ Sunnah` for anything that is not a duʿāʾ (a practice, a dhikr, a sunnah action). An optional `## {{ Hikmah | @hikmah }}` section follows — only the benefit or wisdom the text itself states. The Dalīl drawer (summary `📜🔎 What is the {{ Dalīl | … }}? `) comes last: Qurʾān embed, Tafsīr, then each Ḥadīth block (chain, matn, verify line last), with labels written `**Qurʾān ✦ …**`, `**Tafsīr ✦ …**`, `**Ḥadīth ✦ …**` and `---` between the groups. Sub-labels inside Du'a (`### 🔃Variation: …`, `### Part 1`) use `###` and show in the TOC. The full, current rules are in the "Decisions / SOP" section of `DRAFT_PROMPT.md`; the model cards are `content/01-dua/02-asking-allah/rabbana-atina-fid-dunya.md` and `content/01-dua/02-asking-allah/o-allah-set-right-for-me-my-religion.md`. The floating TOC reads: title (back to top) / `Du'a` (or `Sunnah`) / Hikmah if present / Dalīl. The Hikmah always sits between Du'a and Dalīl, and its box carries a soft gold gleam (pulsing glow plus a light sweep) added by the page; write only `## {{ Hikmah | @hikmah }}` and its text. Older cards still use `📜 The Hadith` / `🔤 Word-by-Word` until they are migrated.
 
 **The verify line at bottom** — always italicize, always include the canonical sunnah.com or quran.com URL: `*🔗 Verify on sunnah.com — [Bukhārī 6306](https://sunnah.com/bukhari:6306)*`
 

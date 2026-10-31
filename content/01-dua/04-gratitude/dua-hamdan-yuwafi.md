@@ -128,13 +128,13 @@ There is no authenticated Prophetic narration containing. The Shāfiʿī school 
 
 If you say this then Allah will reply to the angels to write it down until you face Allah and... He will reward you for it.
 
-[Sunan Ibn Mājah 3801](?file=content\sunnah\kama-yambaghi.md "embed")
+[Sunan Ibn Mājah 3801](?file=content/01-dua/04-gratitude/kama-yambaghi.md "embed")
 
 **Part 4**
 
 This is the last part of the dua in sujud that Āʾishah saw Messenger of Allah ﷺ made - when he was missed from bed. 
 
-[Muslim 486](?file=content/salah/during/sujud-subhanaka-la-nuhsi.md "embed")
+[Muslim 486](?file=content/02-salah/02-during/sujud-subhanaka-la-nuhsi.md "embed")
 
 **Part 5**
 
@@ -170,7 +170,7 @@ This is the last part of the dua in sujud that Āʾishah saw Messenger of Allah 
 
 **Thematic basis, not a direct quotation.** This passage belongs to the duʿāʾ recited after Sūrat Yāsīn in the tradition of the Ḥabāʾib, commonly attributed to Ḥabīb ʿAbdullāh bin ʿAlawī al-Ḥaddād. Its theme derives from the authentic Prophetic farewell supplication:
 
-[Jāmiʿ at-Tirmidhī 3443](?file=content/dua/farewell/bidding-farewell-to-journeyman.md "embed")
+[Jāmiʿ at-Tirmidhī 3443](?file=content/01-dua/04-gratitude/bidding-farewell-to-journeyman.md "embed")
 
 The duʿāʾ text above is not this hadith. It expands the same idea into a congregational plural and adds wealth and family to the list of entrusted things.
 

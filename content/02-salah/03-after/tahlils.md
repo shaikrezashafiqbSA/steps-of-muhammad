@@ -12,9 +12,9 @@ right-orb-compact: ۞۞۞
 
 # Read either Tahlils after salaam (or both) 
 
-[V1: Tahlil - Qadr](?file=content\salah\after\tahlil-la-mania.md "embed")
+[V1: Tahlil - Qadr](?file=content/02-salah/03-after/tahlil-la-mania.md "embed")
 
-[V2: Tahlil - Ikhlas](?file=content\salah\after\tahlil-mukhlisina.md "embed")
+[V2: Tahlil - Ikhlas](?file=content/02-salah/03-after/tahlil-mukhlisina.md "embed")
 
 **Notes**
 

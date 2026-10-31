@@ -47,9 +47,9 @@ By reciting it, we plead for the forgiveness of every brother and sister who pre
 ## {{ Hikmah | @hikmah }}
 
 
-This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=content\hadith-stories\man-from-jannah-pure-heart.md)
+This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=content/01-dua/01-forgiveness/man-from-jannah-pure-heart.md)
 
-[Man promised paradise 3 times in public](?file=content\hadith-stories\man-from-jannah-pure-heart.md "embed")
+[Man promised paradise 3 times in public](?file=content/01-dua/01-forgiveness/man-from-jannah-pure-heart.md "embed")
 
 <details>
 <summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>

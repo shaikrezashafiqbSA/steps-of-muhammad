@@ -1,6 +1,6 @@
 # 🤖 Draft Prompt — Source → Card
 
-The instruction for an LLM that turns a raw ḥadīth, duʿāʾ, Qurʾānic verse or practice into a **first draft** of a card. It describes the finalised layout, modelled on `content/adhkar-as-sabah-wal-masa/3_hasbiyallahu_7.md`.
+The instruction for an LLM that turns a raw ḥadīth, duʿāʾ, Qurʾānic verse or practice into a **first draft** of a card. It describes the finalised layout, modelled on `content/03-adhkar-sabah-masa/3_hasbiyallahu_7.md`.
 
 **How to use**
 
@@ -177,7 +177,7 @@ Use this when the material is a Latin transliteration typed from a recital (for 
 4. **Keep it as recited.** End rhyme words in a sukūn as recited (أَحْمَدْ), keep pausal forms (نَبِيْ سَلَامْ), and keep a typed vowel even where grammar would differ (say so in a DRAFT NOTE).
 5. **Repeats: write every one out in full.** Readers go through the card in one pass and will not scroll back, so never replace a repeated line with "as above", a refrain label or a marker. A block the source types twice with no mark is written twice. Where the source marks a block "2X" or "×2", put `[[ x 2 ]]` at the nearest block exactly as typed, and add a DRAFT NOTE that the reading is uncertain.
 6. **Labels.** Part headings ("Part 1") become `### Part 1`. A label such as "Doa:" becomes a bold line (`**Duʿāʾ**`). Spoken interjections (e.g. "(Allah Allah)") become stacks. Ignore separator lines made of `#`, `*` or `×`.
-7. **Meta.** Leave `narrator` and `hadith` blank. `collection` names the recital and says "masjid recital"; `book` gives the parts. Use `grade: unknown`, `right-orb: Living Tradition`, `right-orb-compact: ✦` and `left-orb-compact: 🕌` (as in `content/dua/shifa/dua-hamil.md`). Do not name the masjid or the reciter unless the author gave them; add a DRAFT NOTE asking for them.
+7. **Meta.** Leave `narrator` and `hadith` blank. `collection` names the recital and says "masjid recital"; `book` gives the parts. Use `grade: unknown`, `right-orb: Living Tradition`, `right-orb-compact: ✦` and `left-orb-compact: 🕌` (as in `content/01-dua/06-shifa/dua-hamil.md`). Do not name the masjid or the reciter unless the author gave them; add a DRAFT NOTE asking for them.
 8. **Intro.** Say plainly that this is a record of a recital, that the original had only a transliteration, that the Arabic and meanings were reconstructed, and that italic lines are unconfirmed. Give an italic blockquote translation only for a short recurring refrain whose meaning is certain.
 9. **No Hikmah**, unless the text itself states a reward.
 10. **Dalīl.** Include no Qur'an or ḥadīth block, even for a famous verse, unless the author supplied it. At the top put the two provenance flags:
@@ -278,7 +278,7 @@ Delete any block of the skeleton that the source does not support.
 
 ## Decisions / SOP (migration of existing cards)
 
-Rules settled while migrating `content/**` to the Du'a/Sunnah layout. Apply them to later cards; ask again only when a card is genuinely different. The model cards are `content/dua/rabbana-atina-fid-dunya.md` and `content/dua/o-allah-set-right-for-me-my-religion.md`, which the author edited and confirmed on 2026-10-29. Where this list and the older sections of this file disagree, this list wins.
+Rules settled while migrating `content/**` to the Du'a/Sunnah layout. Apply them to later cards; ask again only when a card is genuinely different. The model cards are `content/01-dua/02-asking-allah/rabbana-atina-fid-dunya.md` and `content/01-dua/02-asking-allah/o-allah-set-right-for-me-my-religion.md`, which the author edited and confirmed on 2026-10-29. Where this list and the older sections of this file disagree, this list wins.
 
 **Layout and wording**
 

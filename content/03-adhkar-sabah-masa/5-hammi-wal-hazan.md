@@ -15,9 +15,9 @@ right-orb-compact: ۞۞۞
 2 versions of a similiar duas for 
 
 
-[V1: Ghalabatir-rijjal](?file=content/adhkar-as-sabah-wal-masa/5a-hammi-wal-hazan.md "embed")
+[V1: Ghalabatir-rijjal](?file=content/03-adhkar-sabah-masa/5a-hammi-wal-hazan.md "embed")
 
-[V2: Qahrir-rijjal](?file=content/adhkar-as-sabah-wal-masa/5b-hammi-wal-hazan.md "embed")
+[V2: Qahrir-rijjal](?file=content/03-adhkar-sabah-masa/5b-hammi-wal-hazan.md "embed")
 
 **Notes**
 

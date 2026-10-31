@@ -178,7 +178,7 @@ right-orb-compact: ۞۞۞
 
 **Part 3 · Qurʾān ✦ Sūrat Āl ʿImrān 3:8**
 
-[Qur'an, Sūrat Aal i Imraan 3:8](?file=content\dua\la-tuzigh-qulubana.md  "embed")
+[Qur'an, Sūrat Aal i Imraan 3:8](?file=content/01-dua/03-steadfastness/la-tuzigh-qulubana.md  "embed")
 
 **Part 4 · Ḥadīth ✦ Sunan Ibn Mājah 1498**
 
@@ -202,6 +202,6 @@ The opening clause, forgiveness for our sins and our parents: no verbatim source
 
 **Part 7 · Qurʾān ✦ Sūrat al-Baqarah 2:201**
 
-[Qur'an Sūrat Al Baqarah:201](?file=content\dua\rabbana-atina-fid-dunya.md "embed")
+[Qur'an Sūrat Al Baqarah:201](?file=content/01-dua/02-asking-allah/rabbana-atina-fid-dunya.md "embed")
 
 </details>

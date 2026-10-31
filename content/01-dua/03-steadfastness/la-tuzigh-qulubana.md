@@ -71,7 +71,7 @@ grounds the request in Allah's own name — the One who gives is asked to give.
 
 The excerpt also records that the Prophet ﷺ used to supplicate 
 
-[Ya Muqalibal Qulub](?file=content\dua\ya-muqallibal-qulub.md "embed")
+[Ya Muqalibal Qulub](?file=content/01-dua/03-steadfastness/ya-muqallibal-qulub.md "embed")
 
 and then recite this very Ayah — a pointer to the hadith transmitted by Ibn Abī Ḥātim and Ibn Jarīr from Umm Salamah (wording as present in the source text).
 

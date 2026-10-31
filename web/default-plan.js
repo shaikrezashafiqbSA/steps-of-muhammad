@@ -37,96 +37,96 @@ const SOM_DEFAULT_PLAN = {
 
   // ── around every fard prayer ───────────────────────────
   '*.before': [
-    'content/salah/before/after-adhan.md'
+    'content/02-salah/01-before/after-adhan.md'
   ],
   '*.during': [
-    'content/salah/during/iftitah.md',
-    'content/salah/during/al-fatihah.md'
+    'content/02-salah/02-during/iftitah.md',
+    'content/02-salah/02-during/al-fatihah.md'
   ],
   '*.after': [
-    'content/salah/after/help-me-be-grateful.md',
-    'content/salah/after/1_istigfar_peace.md',
-    'content/salah/after/tahlils.md',
-    'content/salah/after/tasbih-33-33-34.md'
+    'content/02-salah/03-after/help-me-be-grateful.md',
+    'content/02-salah/03-after/1_istigfar_peace.md',
+    'content/02-salah/03-after/tahlils.md',
+    'content/02-salah/03-after/tasbih-33-33-34.md'
   ],
 
   // ── Fajr → Shurūq ──────────────────────────────────────
   'fajr.before': [
   ],
   'fajr.during': [
-    'content/salah/during/ilmannafia_rizqantayyiba_amalanmutaqqaballan.md'
+    'content/02-salah/02-during/ilmannafia_rizqantayyiba_amalanmutaqqaballan.md'
   ],
   'fajr.after': [
-    'content/salah/after/tahlil-fajr-maghrib-10-times.md',
-    'content/salah/after/3_dua-allahuma-ajirnaar.md'
+    'content/02-salah/03-after/tahlil-fajr-maghrib-10-times.md',
+    'content/02-salah/03-after/3_dua-allahuma-ajirnaar.md'
   ],
   'fajr.between': [
     { set: 'sabah-sandwich' },
-    'content/dua/in-greatest-of-names.md',
-    'content/dua/forgiveness-adam.md',
-    'content/dua/aisyah-comprehensive-ask.md',
-    'content/dua/quran/quran_spring_heart.md',
-    'content/dua/forgiveness-sulaiman.md',
+    'content/01-dua/02-asking-allah/in-greatest-of-names.md',
+    'content/01-dua/01-forgiveness/forgiveness-adam.md',
+    'content/01-dua/02-asking-allah/aisyah-comprehensive-ask.md',
+    'content/01-dua/05-quran-in-heart/quran_spring_heart.md',
+    'content/01-dua/01-forgiveness/forgiveness-sulaiman.md',
   ],
 
   // ── Shurūq → Ẓuhr: Ḍuḥā and the working day ────────────
   'shuruq.between': [
-    'content/salah/solat-duha.md',
-    'content/dua/dua-safar.md',
-    'content/dua/work/musa-rabbishrahlisadri.md',
-    'content/dua/work/musa-rabbi-inni-lima-anzalta.md',
-    'content/dua/work/allahumma-la-sahla.md',
-    'content/dua/remove-debt-mountain.md',
-    'content/dua/sulaiman-thankfulness.md',
+    'content/04-duha-working-day/solat-duha.md',
+    'content/04-duha-working-day/dua-safar.md',
+    'content/04-duha-working-day/musa-rabbishrahlisadri.md',
+    'content/04-duha-working-day/musa-rabbi-inni-lima-anzalta.md',
+    'content/04-duha-working-day/allahumma-la-sahla.md',
+    'content/04-duha-working-day/remove-debt-mountain.md',
+    'content/01-dua/04-gratitude/sulaiman-thankfulness.md',
   ],
 
   // ── Ẓuhr → ʿAṣr ────────────────────────────────────────
   'dhuhr.between': [
-    'content/dua/work/allahumma-la-sahla.md',
-    'content/dua/work/musa-rabbi-inni-lima-anzalta.md',
-    'content/dua/remove-debt-mountain.md',
-    'content/dua/sulaiman-thankfulness.md'
+    'content/04-duha-working-day/allahumma-la-sahla.md',
+    'content/04-duha-working-day/musa-rabbi-inni-lima-anzalta.md',
+    'content/04-duha-working-day/remove-debt-mountain.md',
+    'content/01-dua/04-gratitude/sulaiman-thankfulness.md'
   ],
 
   // ── ʿAṣr → Maghrib: the evening adhkār ─────────────────
   'asr.between': [
     { set: 'sabah-sandwich' },
-    'content/dua/quran/memoriser.md'
+    'content/01-dua/05-quran-in-heart/memoriser.md'
   ],
 
   // ── Maghrib → ʿIshāʾ ────────────────────────────────────
   'maghrib.after': [
-    'content/salah/after/tahlil-fajr-maghrib-10-times.md',
-    'content/salah/after/3_dua-allahuma-ajirnaar.md'
+    'content/02-salah/03-after/tahlil-fajr-maghrib-10-times.md',
+    'content/02-salah/03-after/3_dua-allahuma-ajirnaar.md'
   ],
   'maghrib.between': [
-    'content/adhkar-al-lail/al-baqarah-last-2.md'
+    'content/05-adhkar-al-layl/01-night/al-baqarah-last-2.md'
   ],
 
     // ── ʿIshāʾ → Sleep  ────────────────────────────────────
   'isha.between': [
-    'content/adhkar-al-lail/al-baqarah-last-2.md'
+    'content/05-adhkar-al-layl/01-night/al-baqarah-last-2.md'
   ],
 
   // ── the night ──────────────────────────────────────────
   'tahajjud.main': [
-    'content/adhkar-al-lail/man-taarra-min-al-layl.md',
-    'content/adhkar-al-lail/tahajjud-lakal-hamd.md',
-    'content/adhkar-al-lail/three-tiers-of-the-night-prayer.md',
-    'content/dua/in-greatest-of-names.md',
-    'content/dua/forgiveness-adam.md',
-    'content/dua/forgiveness-sulaiman.md',
-    'content/dua/aisyah-comprehensive-ask.md',
-    'content/dua/dua-ibadurrahman.md',
-    'content/dua/make-us-muslim-show-us-nusuk.md',
-    'content/salah/solat-hajat.md',
-    'content/salah/solat-istikhara.md'
+    'content/05-adhkar-al-layl/03-left-sleep/man-taarra-min-al-layl.md',
+    'content/05-adhkar-al-layl/03-left-sleep/tahajjud-lakal-hamd.md',
+    'content/05-adhkar-al-layl/03-left-sleep/three-tiers-of-the-night-prayer.md',
+    'content/01-dua/02-asking-allah/in-greatest-of-names.md',
+    'content/01-dua/01-forgiveness/forgiveness-adam.md',
+    'content/01-dua/01-forgiveness/forgiveness-sulaiman.md',
+    'content/01-dua/02-asking-allah/aisyah-comprehensive-ask.md',
+    'content/01-dua/02-asking-allah/dua-ibadurrahman.md',
+    'content/01-dua/03-steadfastness/make-us-muslim-show-us-nusuk.md',
+    'content/05-adhkar-al-layl/03-left-sleep/solat-hajat.md',
+    'content/05-adhkar-al-layl/03-left-sleep/solat-istikhara.md'
   ],
   'presleep.main': [
-    'content/adhkar-al-lail/muawwidhat-nafth.md',
-    'content/adhkar-al-lail/ayat-al-kursi-guard.md',
-    'content/adhkar-al-lail/tasbih-fatimah.md',
-    'content/adhkar-al-lail/aslamtu-wajhi.md',
-    'content/adhkar-al-lail/bismika-amutu-wa-ahya.md',
+    'content/05-adhkar-al-layl/02-before-sleep/muawwidhat-nafth.md',
+    'content/05-adhkar-al-layl/02-before-sleep/ayat-al-kursi-guard.md',
+    'content/05-adhkar-al-layl/02-before-sleep/tasbih-fatimah.md',
+    'content/05-adhkar-al-layl/02-before-sleep/aslamtu-wajhi.md',
+    'content/05-adhkar-al-layl/02-before-sleep/bismika-amutu-wa-ahya.md',
   ]
 };
