@@ -398,46 +398,49 @@ function somRenderNavEnd(item, direction) {
     </a>`;
 }
 
-// Same ends, shaped for the floating bottom HUD on render.html — one shared
-// pill with prev · home · next.
+// Labels read "Name - what it is for"; the bottom HUD has room for the name only.
+function somShortLabel(label) {
+  return String(label).split(' - ')[0].trim();
+}
+
+// Same ends, shaped for the title strip above the HUD's tool row on
+// render.html: a "Back" half and a "Next" half, each with the short name.
 function somRenderHudEnd(item, direction) {
   const isPrev = direction === 'prev';
   const arrow = isPrev ? '←' : '→';
-  const kicker = isPrev ? 'Previous' : 'Next';
+  const kicker = isPrev ? 'Back' : 'Next';
   const align = isPrev ? '' : 'hud-nav-end';
 
   if (!item) {
     return `<span class="hud-nav-btn is-disabled ${align}">
-        <span class="hud-nav-arrow">${arrow}</span>
+        ${isPrev ? `<span class="hud-nav-arrow">${arrow}</span>` : ''}
         <span class="hud-nav-text"><span class="hud-nav-kicker">${kicker}</span></span>
+        ${isPrev ? '' : `<span class="hud-nav-arrow">${arrow}</span>`}
       </span>`;
   }
 
-  const label = somEscapeHtml(item.label);
-  const gloss = item.gloss
-    ? `<span class="hud-nav-gloss">${somEscapeHtml(item.gloss)}</span>` : '';
   const text = `<span class="hud-nav-text">
       <span class="hud-nav-kicker">${kicker}</span>
-      <span class="hud-nav-label">${label}</span>
-      ${gloss}
+      <span class="hud-nav-label">${somEscapeHtml(somShortLabel(item.label))}</span>
     </span>`;
 
-  return `<a class="hud-nav-btn ${align}" href="${item.href || '../' + item.path}" title="${label}">
+  return `<a class="hud-nav-btn ${align}" href="${item.href || '../' + item.path}" title="${somEscapeHtml(item.label)}">
       ${isPrev ? `<span class="hud-nav-arrow">${arrow}</span>${text}` : `${text}<span class="hud-nav-arrow">${arrow}</span>`}
     </a>`;
 }
 
-function somBuildHudNav(prev, next, homeHref, context) {
+// Fills the title strip and points the Home slot (both live in render.html's
+// HUD markup). With no neighbours at all — collection and slot pages — the
+// strip stays hidden and only the tool row shows.
+function somBuildHudNav(prev, next, homeHref) {
+  const home = document.getElementById('hudHome');
+  if (home) home.href = homeHref;
+
   const hud = document.getElementById('somHudNav');
   if (!hud) return;
 
-  hud.innerHTML = `
-    ${somRenderHudEnd(prev, 'prev')}
-    <a class="hud-nav-home" href="${homeHref}" title="Back to the menu">⌂</a>
-    <button type="button" class="hud-nav-toc" id="hudTocBtn" title="Table of Contents" style="display:none;">☰</button>
-    ${context ? `<span class="hud-nav-context">${context}</span>` : ''}
-    ${somRenderHudEnd(next, 'next')}`;
-  hud.hidden = false;
+  hud.innerHTML = `${somRenderHudEnd(prev, 'prev')}${somRenderHudEnd(next, 'next')}`;
+  hud.hidden = !(prev || next);
 }
 
 // Fills every [data-card-nav] host on the page (top and bottom of the
@@ -488,7 +491,7 @@ function somBuildCardNav() {
 
   // render.html docks the same navigation into a fixed bottom-center HUD
   // instead of in-flow bars; pages without #somHudNav skip this silently.
-  somBuildHudNav(prev, next, homeHref, contextText);
+  somBuildHudNav(prev, next, homeHref);
 
   // Pages that still carry a #floatHomeBtn in their control stack (none
   // today) get it wired up here; render.html dropped it
