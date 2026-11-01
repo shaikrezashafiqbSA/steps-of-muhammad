@@ -13,7 +13,7 @@ right-orb-compact: ✦
 
 # Maḥallul Qiyām - The standing recital
 
-Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This card follows a recital heard at a masjid, in five parts. The original record was a rumi transliteration only; the Arabic and the word meanings below were reconstructed from it (see the Dalīl). 
+Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This card follows a recital heard at a masjid, in five parts. The original record was a rumi transliteration only; the Arabic and the word meanings below were reconstructed from it (see the Dalīl).
 
 <iframe width="100%" height="200" src="https://www.youtube.com/embed/8pdWoSkbqtI?si=vA0V-5nNJx6C7PYD&amp;start=189" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -21,18 +21,17 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 ## 📜✨ Du'a
 
-##### Part 1
+### Salawat
 
 [[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَىٰ | upon | ʿalā ]] [[ مُحَمَّدْ | Muḥammad | Muḥammad ]]
 
 [[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمْ | and grant peace | wa-sallam ]]
 
-[[ x 2 ]][[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَىٰ | upon | ʿalā ]] [[ مُحَمَّدْ | Muḥammad | Muḥammad ]]
+[[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَىٰ | upon | ʿalā ]] [[ مُحَمَّدْ | Muḥammad | Muḥammad ]]
 
 [[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمْ | and grant peace | wa-sallam ]]
 
-## Part 2
-
+### Qiyam 
 [[ اللَّهُ | Allah | Allāh ]]
 
 [[ يَا | O | yā ]] [[ نَبِيْ | Prophet | nabī ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
@@ -43,6 +42,8 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ صَلَوَاتُ | blessings of | ṣalawātu ]] [[ اللَّهِ | Allah | llāhi ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
 
+
+### Part 1
 [[ أَشْرَقَ | shone | ashraqa ]] [[ الْكَوْنُ | the universe | l-kawnu ]] [[ ابْتِهَاجًا | with joy | ibtihājan ]]
 
 [[ بِوُجُودِ | through the presence of | bi-wujūdi ]] [[ الْمُصْطَفَى | the Chosen One | l-Muṣṭafā ]] [[ أَحْمَدْ | Aḥmad | Aḥmad ]]
@@ -51,23 +52,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ وَسُرُورٌ | and joy | wa-surūrun ]] [[ قَدْ | that | qad ]] [[ تَجَدَّدْ | is renewed | tajaddad ]]
 
-[[ اللَّهُ | Allah | Allāh ]]
-
-[[ يَا | O | yā ]] [[ نَبِيْ | Prophet | nabī ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
-
-[[ يَا | O | yā ]] [[ رَسُولْ | Messenger | rasūl ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
-
-[[ يَا | O | yā ]] [[ حَبِيبْ | Beloved | ḥabīb ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
-
-[[ صَلَوَاتُ | blessings of | ṣalawātu ]] [[ اللَّهِ | Allah | llāhi ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
-
-[[ فَاطْرَبُوا | so rejoice | fa-ṭrabū ]] [[ يَا | O | yā ]] [[ أَهْلَ | people of | ahla ]] [[ الْمَعَانِي | meanings | l-maʿānī ]]
-
-*Fahazaa rulyum ni ghaarrad* — Arabic not yet confirmed
-
-[[ وَاسْتَضِيئُوا | and seek light | wa-staḍīʾū ]] [[ بِجَمَالٍ | in beauty | bi-jamālin ]]
-
-[[ فَقَدِ | for indeed | fa-qadi ]] [[ الْحُسْنُ | beauty | l-ḥusnu ]] [[ تَفَرَّدْ | has become unique | tafarrad ]]
+### Qiyam 
 
 [[ اللَّهُ | Allah | Allāh ]]
 
@@ -78,6 +63,30 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 [[ يَا | O | yā ]] [[ حَبِيبْ | Beloved | ḥabīb ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
 
 [[ صَلَوَاتُ | blessings of | ṣalawātu ]] [[ اللَّهِ | Allah | llāhi ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
+
+### Part 2
+
+[[ فَتْحُ | victory | fatḥu ]] [[ رَبٍّ | of a Lord | rabbin ]] [[ يَا | O | yā ]] [[ هَلَ | people of | hala ]] [[ الْمَثَانِي | the Mathānī | l-mathānī ]]
+
+[[ فَهَذَا | so this | fa-hādhā ]] [[ رُلْيُمْنِ | joy of | rulyumni ]] [[ غُرَرْرْ | bright faces | ghurarr ]]
+
+[[ وَاسْتَدْلِعُو | and they seek light | wa-stadliʿū ]] [[ بِجَمَالٍ | with beauty | bi-jamālin ]]
+
+[[ فَاقَ | surpassed | fāqa ]] [[ فِي | in | fī ]] [[ الْحُسْنِ | beauty | l-ḥusni ]] [[ تَفَرُّدْ | unique | tafarrud ]]
+
+### Qiyam 
+
+[[ اللَّهُ | Allah | Allāh ]]
+
+[[ يَا | O | yā ]] [[ نَبِيْ | Prophet | nabī ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
+
+[[ يَا | O | yā ]] [[ رَسُولْ | Messenger | rasūl ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
+
+[[ يَا | O | yā ]] [[ حَبِيبْ | Beloved | ḥabīb ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
+
+[[ صَلَوَاتُ | blessings of | ṣalawātu ]] [[ اللَّهِ | Allah | llāhi ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
+
+### Part 3
 
 [[ وَلَنَا | and for us | wa-lanā ]] [[ الْبُشْرَى | the glad tidings | l-bushrā ]] [[ بِسَعْدٍ | of good fortune | bi-saʿdin ]]
 
@@ -87,6 +96,8 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ جَمَعَ | gathered | jamaʿa ]] [[ الْفَخْرَ | the glory | l-fakhra ]] [[ مُؤَبَّدْ | everlasting | muʾabbad ]]
 
+### Qiyam 
+
 [[ اللَّهُ | Allah | Allāh ]]
 
 [[ يَا | O | yā ]] [[ نَبِيْ | Prophet | nabī ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
@@ -96,6 +107,8 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 [[ يَا | O | yā ]] [[ حَبِيبْ | Beloved | ḥabīb ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
 
 [[ صَلَوَاتُ | blessings of | ṣalawātu ]] [[ اللَّهِ | Allah | llāhi ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
+
+### Part 4
 
 [[ فَلِرَبِّي | so to my Lord | fa-li-Rabbī ]] [[ كُلُّ | all | kullu ]] [[ حَمْدٍ | praise | ḥamdin ]]
 
@@ -105,6 +118,8 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ الْمُصْطَفَى | the Chosen One | l-Muṣṭafā ]] [[ الْهَادِي | the Guide | l-hādī ]] [[ مُحَمَّدْ | Muḥammad | Muḥammad ]]
 
+### Qiyam 
+
 [[ اللَّهُ | Allah | Allāh ]]
 
 [[ يَا | O | yā ]] [[ نَبِيْ | Prophet | nabī ]] [[ سَلَامْ | peace | salām ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
@@ -115,7 +130,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ صَلَوَاتُ | blessings of | ṣalawātu ]] [[ اللَّهِ | Allah | llāhi ]] [[ عَلَيْكَ | upon you | ʿalayka ]]
 
-##### Part 2
+### Marhaban
 
 [[ مَرْحَبًا | welcome | marḥaban ]] [[ مَرْحَبًا | welcome | marḥaban ]] [[ يَا | O | yā ]] [[ نُورَ | light of | nūra ]] [[ عَيْنِي | my eye | ʿaynī ]]
 
@@ -149,7 +164,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ مَرْحَبًا | welcome | marḥaban ]] [[ مَرْحَبًا | welcome | marḥaban ]] [[ جَدَّ | grandfather of | jadda ]] [[ الْحُسَيْنِي | al-Ḥusayn | l-Ḥusaynī ]]
 
-##### Part 3
+### Part 3
 
 [[ مَرْحَبًا | welcome | marḥaban ]] [[ يَا | O | yā ]] [[ مَرْحَبًا | welcome | marḥaban ]]
 
@@ -203,7 +218,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ مَا | as long as | mā ]] [[ دَعَا | calls | daʿā ]] [[ لِلَّهِ | to Allah | lillāhi ]] [[ دَاعْ | a caller | dāʿ ]]
 
-**Duʿāʾ**
+**Du'a**
 
 [[ وَبِكَ | and through you | wa-bika ]] [[ الرَّحْمَنَ | the Most Merciful | r-Raḥmāna ]] [[ نَسْأَلْ | we ask | nasʾal ]]
 
@@ -243,7 +258,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ x 2 ]][[ مَرْحَبًا | welcome | marḥaban ]]
 
-##### Part 4
+### Part 4
 
 [[ رَبِّ | O my Lord | rabbi ]] [[ اغْفِرْ | forgive | ighfir ]] [[ لِي | me | lī ]] [[ ذُنُوبِي | my sins | dhunūbī ]]
 
@@ -283,7 +298,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ x 2 ]][[ يَا | O | yā ]] [[ اللَّهُ | Allah | Allāh ]]
 
-##### Part 5
+### Part 5
 
 [[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَىٰ | upon | ʿalā ]] [[ مُحَمَّدْ | Muḥammad | Muḥammad ]]
 
@@ -321,13 +336,27 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 - **Underlying text:** not yet identified. To be compared with the masjid's printed mawlid book.
 - **Repeats:** every repeat is written out in full, so the card can be read straight through without scrolling back. The recital's "×2" markers are shown as written.
 
+---
+
+**Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 6360**
+
+> Narrated Abu Humaid As-Saidi: The people said, "O Allah's Messenger ﷺ! How may we send Salat on you?" He said, "Say: Allahumma Salli 'ala- Muhammadin wa azwajihi wa dhurriyyatihi kama sal-laita 'ala ʿAli Ibrahim; wa barik 'ala Muhammadin wa azwajihi wa dhurriyyatihi kamabarakta 'ala ʿAli Ibrahim innaka hamidun majid"
+
+**Scholarly Documentation & Chain Reality**
+
+- **Classification note:** Graded Sahih, as supplied with the text.
+
+*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 6360](https://sunnah.com/bukhari:6360)*
+
 </details>
 
 <!-- DRAFT NOTE: masjid name and reciter were not given. The narrator and hadith fields are blank and the left-orb names no masjid. Fill them in, for example "Maḥallul Qiyām · Masjid ...". -->
 <!-- DRAFT NOTE: left-orb-compact is the masjid icon, following dua-hamil.md, instead of the default for hadith cards. right-orb-compact is a neutral mark because the pips scale is for graded texts. -->
 <!-- DRAFT NOTE: the Arabic follows the sounds typed. Rhyme words end in a sukūn, as recited, and the opening lines keep the pausal forms: nabī, rasūl, ḥabīb, salām. Typed vowels kept even though grammar differs: "Nuurul" is written nūru l-ʿayni, and "Husainii" is written l-Ḥusaynī to rhyme with ʿaynī. One case goes the other way: "Rahmaanu" is written r-Raḥmāna (accusative) for sense, although -u was typed. -->
 <!-- DRAFT NOTE: every repeat is written out in full on purpose, so that readers can read straight through. "2X" markers: Part 1 has the opening ṣalawāt typed twice and the second marked 2X; Part 3, Part 4 and Part 5 mark some lines "-2×". These are shown as x 2 at the nearest block. Blocks typed twice with no mark are written twice. The reading may differ from the actual recital. Please check. -->
-<!-- DRAFT NOTE: compared line by line with a second Arabic reconstruction supplied by the author. That text says it was reconstructed from the same transliteration, so it is not an independent printed source. It agrees on every clear line. Its readings were adopted only where they fit the typed sounds and the rhyme: l-Ḥusaynī, fa-qadi l-ḥusnu tafarrad, and hāṭilin. Elsewhere its readings were not adopted (for example yanqaṭiʿ breaks the rhyme in -ad; "ḥāʾizun tīnā" and "jamala" do not match the typed sounds). -->
-<!-- DRAFT NOTE: lines reconstructed with MEDIUM confidence, to check against the printed text: Part 1 "Fa-ṭrabū yā ahla l-maʿānī"; "wa-staḍīʾū bi-jamālin" (typed jamaali, tanwīn added to complete the phrase); "fa-qadi l-ḥusnu tafarrad" (typed "Faqafil 'h'uusni tafarrad"); "mustamirrin laysa yanfad" (typed "yanfa'a", read as yanfad to fit the rhyme); "jamaʿa l-fakhra muʾabbad" (typed "faghral"); "Fa-li-Rabbī kullu ḥamdin" (typed "Faali Robbii"); "jalla an yaḥṣurahu l-ʿadd". Part 3 "malādhun" (typed malaa'z'un); "tarā mā qad dahā min hawlin afzaʿ" (typed taraamaa read as tarā mā); "Fa-lahā anta fa-tasjud"; "wa-aʿṭinā bihi kulla maṭmaʿ". Part 4 "bi-ḥayā hāṭilin yahmaʿ" (typed "Bi 'h'ayaa ha'th' 'th'ooli yahma'k"). -->
+<!-- DRAFT NOTE: compared line by line with a second Arabic reconstruction supplied by the author. That text says it was reconstructed from the same transliteration, so it is not an independent printed source. It agrees on every clear line. Its readings were adopted only where they fit the typed sounds and the rhyme: l-Ḥusaynī and hāṭilin. Elsewhere its readings were not adopted (for example yanqaṭiʿ breaks the rhyme in -ad; "ḥāʾizun tīnā" and "jamala" do not match the typed sounds). -->
+<!-- DRAFT NOTE: lines reconstructed with MEDIUM confidence, to check against the printed text: Part 1 "Fa-ṭrabū yā ahla l-maʿānī"; "wa-staḍīʾū bi-jamālin" (typed jamaali, tanwīn added to complete the phrase); "fāqa fī l-ḥusni tafarrad" (typed "Faqafil 'h'uusni tafarrad"; changed from fa-qadi l-ḥusnu, because "faqa fil" is closer to the typed sounds, and a later supplied reading also has fāqa fī l-ḥusni); "mustamirrin laysa yanfad" (typed "yanfa'a", read as yanfad to fit the rhyme); "jamaʿa l-fakhra muʾabbad" (typed "faghral"); "Fa-li-Rabbī kullu ḥamdin" (typed "Faali Robbii"); "jalla an yaḥṣurahu l-ʿadd". Part 3 "malādhun" (typed malaa'z'un); "tarā mā qad dahā min hawlin afzaʿ" (typed taraamaa read as tarā mā); "Fa-lahā anta fa-tasjud"; "wa-aʿṭinā bihi kulla maṭmaʿ". Part 4 "bi-ḥayā hāṭilin yahmaʿ" (typed "Bi 'h'ayaa ha'th' 'th'ooli yahma'k"). -->
 <!-- DRAFT NOTE: lines left WITHOUT Arabic because the sounds did not resolve: Part 1 "Fahazaa rulyum ni ghaarrad" (the opening sounds like fa-hādhā; the supplied reading "fa-hādhā l-jūdu mughrad" does not match the typed sounds); Part 5 "A'h'mada'th' 'th'ura wa aalih" and "Wasohaaba Massanaa 'S'ha'k" (the supplied readings do not match the typed consonants). These need the printed text. -->
+<!-- DRAFT NOTE: compared with a third supplied text (Arabic, transliteration and meanings). Not adopted, because they do not fit the typed sounds or are not clean Arabic: "fathu rabbin yā hala l-mathānī" and "fa-hādhā rulyumni ghorrod" (Part 1); "wastadliʿū"; "idh habānā" (the card keeps "idh abāna": please check which was recited); "al-muʿabbad" (the card keeps muʾabbad); "yuḥṣarahu" (not grammatical with the suffix). Its closing lines ("man raʾā wajhaka yasʿad" to "ṣallā llāhu ʿalayhi wa-sallam") and its reading "ashrafa r-rusli Muḥammad" are not in the typed record, so they were not added; check against the recital. Its closing paragraph on how to recite is commentary and was left out. -->
+<!-- DRAFT NOTE: the Ṣaḥīḥ al-Bukhārī 6360 text was supplied with the source (English only, graded Sahih). It is placed in the Dalīl as the source for sending ṣalawāt. The Arabic isnād and matn were not supplied, so there are no stacks; add them from sunnah.com, or remove the block if it was not meant for this card. Supplied typos kept: "kamabarakta", "sal-laita". A closing quotation mark was added. -->
 <!-- DRAFT NOTE: translations of the recurring phrases (marḥaban, yā nūra ʿaynī, ṭalaʿa l-badru) are plain word meanings only. The pieces look like well-known mawlid and nashīd texts, but that could not be verified from the transliteration, so no work or author is named. -->
