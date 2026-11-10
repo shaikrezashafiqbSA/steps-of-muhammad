@@ -93,6 +93,8 @@ const VAULT_NAVIGATION_TREE = [
       { label: "Rectification of Religion, World and Hereafter - O Allah, set right for me my religion", gloss: "Allahuma aṣliḥ lī dīniya ...  ", ref: "Muslim 2720", tier: "muhsin",grade: "sahih", time: ["day-fajr-post", "day-asr-post", "*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/o-allah-set-right-for-me-my-religion.md" },
       { label: "Duas of the Servants of the Most Gracious - ʿIbād ar-Raḥmān", gloss: "Rabbana habla min azwajina ...", ref: "Qurʾān 25:63-77", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/dua-ibadurrahman.md"},
       { label: "Dua Selamat - Safety in religion, death and the reckoning", gloss: "Allāhumma innā nasʾaluka salāmatan fi din...", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/01-dua/02-asking-allah/dua-selamat.md"},
+      { label: "Dua Tolak Balak - Calamity Averted Before it Descends", gloss: "Allāhumma ya kafiya'a bala' ...", ref: "", tier: "jemaah", time: ["*any"], path: "web/render.html?file=content/dua/dua-tolak-balak.md" },
+
       // Steadfastness of heart and Din
       { type: "family", label: "Ya Allah, Make me follow you", icon: "🫀", tier: "imam" },
       { label: "A Heart Held Firm on His Dīn - The dua he ﷺ said most often", gloss: "Yā Muqallibal-Qulūb...", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/01-dua/03-steadfastness/ya-muqallibal-qulub.md" },
