@@ -100,6 +100,7 @@ const VAULT_NAVIGATION_TREE = [
       { label: "A Heart Held Firm on His Dīn - The dua he ﷺ said most often", gloss: "Yā Muqallibal-Qulūb...", ref: "Tirmidhī 2140", tier: "jemaah", grade: "hasan", time: ["*salah", "*any"], path: "web/render.html?file=content/01-dua/03-steadfastness/ya-muqallibal-qulub.md" },
       { label: "Do Not Let Our Hearts Deviate - The ayah he ﷺ would follow up with", gloss: "Rabbana la tuzigh qulubbana...", ref: "Qurʾān 3:8", tier: "jemaah", grade: "sahih", time: ["*salah", "*any"], path: "web/render.html?file=content/01-dua/03-steadfastness/la-tuzigh-qulubana.md"},
       { label: "Ibrahim's Submission - Make us muslim, show us our rites", gloss: "Rabbanā wajʿalnā muslimayni laka", ref: "Qurʾān 26:84-85", tier: "jemaah", grade: "sahih", time: ["night-last-third", "*any"], path: "web/render.html?file=content/01-dua/03-steadfastness/make-us-muslim-show-us-nusuk.md" },
+      { label: "Dua Nur", gloss: "Allāhummaj'al fī qalbī nūran", ref: "Bukhari 6316", tier: "jemaah", grade: "sahih", time: ["*any"], path: "web/render.html?file=content/dua/dua-nur.md" },
       // Gratitude
       { type: "family", label: "Gratitude & Praise", icon: "🌼", tier: "imam" },
       { label: "Sulaymān's Gratitude - Increase my capacity to be thankful", gloss: "Rabbi Awziʿnī an Ashkura Niʿmatak", ref: "Qurʾān 27:19", tier: "jemaah", grade: "sahih", time: ["day-duha", "day-dhuhr", "*any"], path: "web/render.html?file=content/01-dua/04-gratitude/sulaiman-thankfulness.md" },
