@@ -21,10 +21,13 @@ Its second section comes from the narration of ʿAlī ibn Abī Ṭālib (raḍiy
 
 ## 📜✨ Du'a
 
+### Part 1
+
 [[اللَّهُ|Allah|llāhu]] [[أَكْبَرُ|is Most Great|akbaru]] [[كَبِيرًا|in His greatness,|kabīran]] [[وَالْحَمْدُ|and abundant praise|wa-l-ḥamdu]] [[لِلَّهِ|be to Allah|lillāhi]] [[كَثِيرًا|abundantly,|kathīran]]
 
 [[وَسُبْحَانَ|and glory be to|wa-subḥāna]] [[اللَّهِ|Allah|llāhi]] [[بُكْرَةً|morning|bukratan]] [[وَأَصِيلًا|and evening.|wa-aṣīlā.]]
 
+### Part 2 (Optional)
 [[وَجَّهْتُ|I have turned|wajjahtu]] [[وَجْهِيَ|my face|wajhiya]] [[لِلَّذِي|to the One Who|lilladhī]] [[فَطَرَ|originated|faṭara]] [[السَّمَاوَاتِ|the heavens|s-samāwāti]] [[وَالْأَرْضَ|and the earth,|wa-l-arḍa]]
 
 [[حَنِيفًا|inclining to truth,|ḥanīfan]] [[مُسْلِمًا|in submission,|musliman]] [[وَمَا|and not|wa-mā]] [[أَنَا|am I|anā]] [[مِنَ|among|mina]] [[الْمُشْرِكِينَ|the polytheists.|l-mushrikīn.]]
