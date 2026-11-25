@@ -219,6 +219,7 @@ const VAULT_NAVIGATION_TREE = [
     desc: "Tahlīl collections pieced by mashāyikh",
     items: [
       { label: "Tawassul Before Al-Fātiḥah - Dedicating its reward to the Prophets, the Companions and the Caliphs", gloss: "Tawassul before Al Fatihah", ref: "Compiled wird", time: ["*any"], path: "web/render.html?file=content/07-tahleel/al-fatihah-ilaa-ruhi.md" },
+      { label: "Dua Arwah by Haji Sajeed", gloss: "Dua Arwah", ref: "Compiled wird", time: ["*any"], path: "web/render.html?file=content/07-tahleel/dua-arwah-papa.md" },
     ]
   },
   // {
