@@ -31,6 +31,7 @@
   <script src="web/nav-data.js"></script>
   <script src="web/default-plan.js"></script>
   <script src="web/plan.js"></script>
+  <script src="web/qalb-data.js"></script>
 
   <!-- Solar geometry + the eleven prophetic time windows.
        Everything Action View needs is computed locally from
@@ -1687,6 +1688,204 @@
     .moon-cal-day.is-today { background: #7D5243; }
     .moon-cal-day.is-today .moon-cal-n, .moon-cal-day.is-today .moon-cal-g { color: #FFFBF1; }
     .moon-cal-day.is-picked { box-shadow: inset 0 0 0 2px #A94442; }
+
+    /* ══════════════════════════════════════════════════════
+       QALB MONITOR — the قَلْب button in the open top-right corner
+       of the horizon card (outside the dome), the blurred wheel of
+       heart states, and the line board of duʿās. web/qalb-ui.js.
+       The overlay lives on <body>, not inside .horizon-card: that
+       card carries a filter, which would trap a fixed child.
+       ══════════════════════════════════════════════════════ */
+    .qalb-btn {
+      position: absolute; top: 0.1rem; right: 0.1rem; z-index: 30;
+      width: 3rem; height: 3rem; padding: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      border-radius: 999px; border: 1px solid rgba(176, 138, 75, 0.65);
+      background: rgba(255, 251, 241, 0.95); color: #7D5243;
+      box-shadow: 0 4px 14px rgba(125, 82, 67, 0.28);
+      cursor: pointer; transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .qalb-btn::after {
+      content: ''; position: absolute; inset: -4px; border-radius: inherit; pointer-events: none;
+      border: 1px solid rgba(176, 138, 75, 0.55); animation: qalb-beat 2.8s ease-out infinite;
+    }
+    @keyframes qalb-beat { 0% { transform: scale(0.92); opacity: 0.7; } 70%, 100% { transform: scale(1.3); opacity: 0; } }
+    .qalb-btn:hover { transform: translateY(-1px); background: #FFFBF1; }
+    .qalb-btn:focus-visible { outline: 2px solid rgba(176, 138, 75, 0.8); outline-offset: 3px; }
+    .qalb-btn-ar { font-family: 'Amiri', serif; font-weight: 700; font-size: 1.02rem; line-height: 1; margin-top: 0.15rem; }
+    .qalb-btn-lbl {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.44rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #7A6F6C; margin-top: 0.12rem;
+    }
+    body.qalb-open .share-app-btn { display: none; }
+    body.qalb-open { overflow: hidden; }
+
+    .qalb {
+      position: fixed; inset: 0; z-index: 75;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(58, 46, 43, 0.26);
+      -webkit-backdrop-filter: blur(10px) saturate(0.85);
+              backdrop-filter: blur(10px) saturate(0.85);
+      opacity: 0; visibility: hidden; transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+    }
+    .qalb.open { opacity: 1; visibility: visible; transition: opacity 0.25s ease; }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .qalb { background: rgba(255, 251, 241, 0.92); }
+    }
+    .qalb-stage {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem;
+      padding: 4rem 1rem 2rem;
+    }
+    .qalb-title, .qalb-hint {
+      max-width: 22rem; text-align: center;
+      padding: 0.4rem 0.8rem; border-radius: 999px;
+      background: rgba(255, 251, 241, 0.9); border: 1px solid rgba(230, 220, 208, 0.95);
+    }
+    .qalb-title {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #7D5243;
+    }
+    .qalb-hint { font-size: 0.68rem; color: #7A6F6C; border-radius: 12px; }
+
+    .qalb-ring { position: relative; width: min(90vw, 25rem, 62vh); aspect-ratio: 1; flex-shrink: 0; }
+    .qalb-ring::before {
+      content: ''; position: absolute; inset: 9%; border-radius: 50%;
+      border: 1px dashed rgba(255, 251, 241, 0.85);
+      box-shadow: 0 0 0 1px rgba(176, 138, 75, 0.25), inset 0 0 40px rgba(255, 224, 150, 0.25);
+    }
+    .qalb-core {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 30%; aspect-ratio: 1; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.1rem;
+      background: radial-gradient(closest-side at 50% 42%, #FFFFFF, #FFF5DA 60%, #F3DFAE);
+      border: 1px solid rgba(176, 138, 75, 0.7); color: #7D5243; cursor: pointer;
+      box-shadow: 0 0 30px rgba(255, 214, 140, 0.55);
+    }
+    .qalb-core-ar { font-family: 'Amiri', serif; font-weight: 700; font-size: clamp(1.3rem, 6vw, 1.75rem); line-height: 1.2; }
+    .qalb-core-sub {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #7A6F6C;
+    }
+    .qalb-petal {
+      position: absolute; left: 50%; top: 50%;
+      width: min(4.2rem, 16.5vw); aspect-ratio: 1; padding: 0 0.1rem;
+      transform: translate(-50%, -50%) rotate(var(--a)) translate(0) rotate(calc(-1 * var(--a))) scale(0.3);
+      opacity: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      border-radius: 50%; border: 1px solid rgba(230, 220, 208, 0.95);
+      background: rgba(255, 251, 241, 0.97); color: #3A2E2B; cursor: pointer;
+      box-shadow: 0 4px 14px rgba(58, 46, 43, 0.22);
+      transition: transform 0.38s cubic-bezier(.2, .8, .2, 1), opacity 0.25s ease, border-color 0.15s ease;
+    }
+    .qalb.open .qalb-petal {
+      transform: translate(-50%, -50%) rotate(var(--a)) translate(var(--r, 9rem)) rotate(calc(-1 * var(--a)));
+      opacity: 1;
+    }
+    .qalb-petal:hover { border-color: rgba(176, 138, 75, 0.8); }
+    .qalb-petal:focus-visible { outline: 2px solid #B08A4B; outline-offset: 2px; }
+    .qalb-petal-ar { font-family: 'Amiri', serif; font-weight: 700; font-size: clamp(0.78rem, 3.3vw, 0.95rem); line-height: 1.25; color: #7D5243; }
+    .qalb-petal-lbl {
+      font-family: 'JetBrains Mono', monospace; font-size: clamp(0.44rem, 1.9vw, 0.54rem); font-weight: 700;
+      letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1;
+    }
+    .qalb-petal.has-gap::after {
+      content: ''; position: absolute; top: 12%; right: 12%; width: 6px; height: 6px; border-radius: 50%;
+      background: #C9852E; box-shadow: 0 0 0 2px rgba(255, 251, 241, 0.97);
+    }
+
+    /* The line board — a bottom sheet, same build as the plan sheet */
+    .qalb-board {
+      position: absolute; left: 50%; bottom: 0; z-index: 2;
+      width: 100%; max-width: 44rem; height: 86vh; max-height: 760px;
+      display: flex; flex-direction: column;
+      background: rgba(255, 251, 241, 0.99);
+      border-top: 1px solid #E6DCD0; border-radius: 18px 18px 0 0;
+      box-shadow: 0 -10px 30px rgba(125, 82, 67, 0.25);
+      transform: translate(-50%, 104%); transition: transform 0.28s cubic-bezier(.2, .8, .2, 1);
+    }
+    .qalb.board-open .qalb-board { transform: translate(-50%, 0); }
+    .qalb.board-open .qalb-stage { opacity: 0.35; pointer-events: none; transition: opacity 0.2s ease; }
+    .qalb-board-bar { display: flex; align-items: center; justify-content: space-between; padding: 0.25rem 1rem 0.5rem; flex-shrink: 0; }
+    .qalb-back {
+      background: transparent; border: none; cursor: pointer; padding: 0.35rem 0;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: #7D5243;
+    }
+    .qalb-board-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 0 1rem calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+
+    .qalb-dx { padding: 0.2rem 0 0.9rem; border-bottom: 1px solid rgba(230, 220, 208, 0.95); }
+    .qalb-dx-name { display: flex; align-items: baseline; gap: 0.55rem; font-size: 1.05rem; font-weight: 700; color: #3A2E2B; }
+    .qalb-dx-word { font-family: 'Amiri', serif; font-size: 1.25rem; color: #B08A4B; }
+    .qalb-dx-ar {
+      font-family: 'Amiri Quran', 'Amiri', serif; font-size: 1.45rem; line-height: 2.1;
+      color: #3A2E2B; text-align: right; margin: 0.5rem 0 0.15rem;
+    }
+    .qalb-dx-en { font-size: 0.8rem; color: #3A2E2B; line-height: 1.55; margin: 0; }
+    .qalb-dx-ref {
+      margin-top: 0.35rem; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.04em; color: #7A6F6C;
+    }
+    .qalb-dx-ref a { color: #7D5243; }
+    .qalb-turn {
+      margin-top: 0.75rem; padding: 0.45rem 0.75rem 0.55rem; border-radius: 10px;
+      background: rgba(30, 86, 49, 0.08); border-left: 3px solid #1E5631;
+    }
+    .qalb-turn-ar { font-family: 'Amiri Quran', 'Amiri', serif; font-size: 1.2rem; line-height: 2; text-align: right; color: #1E5631; margin: 0; }
+    .qalb-turn-en { font-size: 0.74rem; color: #1E5631; margin: 0; line-height: 1.5; }
+    .qalb-turn-ref { font-family: 'JetBrains Mono', monospace; font-size: 0.56rem; font-weight: 700; opacity: 0.8; white-space: nowrap; }
+
+    .qalb-lines-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin: 0.95rem 0 0.45rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #B08A4B;
+    }
+    .qalb-all { color: #7D5243; text-decoration: none; font-size: 0.64rem; }
+    .qalb-all:hover { color: #A94442; }
+    .qalb-lines { display: flex; flex-direction: column; gap: 0.4rem; }
+    .qalb-line {
+      display: flex; align-items: stretch; gap: 0;
+      border-radius: 12px; border: 1px solid rgba(230, 220, 208, 0.9); background: rgba(255, 251, 241, 0.9);
+      overflow: hidden; transition: border-color 0.15s ease;
+    }
+    .qalb-line:hover { border-color: rgba(176, 138, 75, 0.6); }
+    .qalb-line-main {
+      flex: 1; min-width: 0; display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.6rem 0.4rem 0.6rem 0.7rem; text-decoration: none; color: inherit;
+    }
+    .qalb-line-main:focus-visible, .qalb-add:focus-visible, .qalb-back:focus-visible, .qalb-all:focus-visible { outline: 2px solid #B08A4B; outline-offset: -2px; }
+    .qalb-av {
+      flex-shrink: 0; width: 2.2rem; height: 2.2rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 700; color: #FFFBF1;
+    }
+    .qalb-av-sahih { background: #1E5631; }
+    .qalb-av-hasan { background: #4C9A2A; }
+    .qalb-av-daif { background: #ACDF87; color: #1E5631; }
+    .qalb-av-none { background: #B08A4B; }
+    .qalb-av-gap { background: transparent; border: 1px dashed #C9852E; color: #C9852E; }
+    .qalb-line-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+    .qalb-line-title { font-size: 0.82rem; font-weight: 700; color: #3A2E2B; line-height: 1.3; }
+    .qalb-line-sub { font-size: 0.64rem; color: #7A6F6C; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .qalb-call {
+      flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: #1E5631; color: #FFFBF1; font-size: 0.7rem; padding-left: 0.1rem;
+    }
+    .qalb-add {
+      flex-shrink: 0; width: 2.6rem; border: none; border-left: 1px solid rgba(230, 220, 208, 0.9);
+      background: rgba(176, 138, 75, 0.08); color: #7D5243; font-size: 1rem; cursor: pointer;
+    }
+    .qalb-add:hover { background: rgba(176, 138, 75, 0.22); }
+    .qalb-line.is-gap { border-style: dashed; background: transparent; }
+    .qalb-line.is-gap .qalb-line-title { color: #7A6F6C; }
+    .qalb-care { margin: 1rem 0 0; font-size: 0.7rem; line-height: 1.6; color: #7A6F6C; font-style: italic; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .qalb-btn::after { animation: none; }
+      .qalb, .qalb-petal, .qalb-board { transition: none; }
+    }
   </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="85d3d3cd-19ba-4195-aaa9-1407d18fef4c"></script>
 </head>
@@ -1777,6 +1976,12 @@
     <div class="action-shell">
 
       <div class="horizon-card">
+        <!-- Qalb Monitor: start from how the heart is, not from the hour (web/qalb-ui.js) -->
+        <button type="button" class="qalb-btn" id="btn-qalb" aria-haspopup="dialog" aria-expanded="false"
+                aria-controls="qalb" title="What is your heart carrying?">
+          <span class="qalb-btn-ar" aria-hidden="true">قَلْب</span>
+          <span class="qalb-btn-lbl">Qalb</span>
+        </button>
         <div class="horizon-arch">
           <svg id="horizon-svg" class="horizon-svg" viewBox="0 0 400 210"
                preserveAspectRatio="xMidYMid meet" aria-label="Live sun and moon horizon"></svg>
@@ -1918,6 +2123,7 @@
     });
   </script>
   <script src="web/plan-ui.js"></script>
+  <script src="web/qalb-ui.js"></script>
   <script>
 
 

@@ -27,6 +27,7 @@
   <script src="nav-data.js"></script>
   <script src="default-plan.js"></script>
   <script src="plan.js"></script>
+  <script src="qalb-data.js"></script>
   <script src="tips.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2220,15 +2221,19 @@
       somBuildCardNav();
 
       // ?collection=<set id>  — a shipped set;  ?slot=<prayer.role> — one slot of the reader's plan
-      // (web/plan.js). Either becomes a card of embeds, same drawers as authored cards.
-      if (params.get('collection') || params.get('slot') || params.get('favorites') === '1') {
+      // (web/plan.js);  ?qalb=<state id> — one heart state's duʿās (web/qalb-data.js).
+      // Each becomes a card of embeds, same drawers as authored cards.
+      if (params.get('collection') || params.get('slot') || params.get('qalb') || params.get('favorites') === '1') {
         try {
           const id = params.get('collection');
           const presets = (typeof PRESET_COLLECTIONS !== 'undefined') ? PRESET_COLLECTIONS : [];
           const preset = id ? presets.find(c => c.id === id) : null;
           const cols = JSON.parse(localStorage.getItem('som-collections') || '[]');
           const slotId = params.get('slot');
-          const col = slotId
+          const qalbId = params.get('qalb');
+          const col = qalbId
+            ? (window.SomQalb ? SomQalb.asCollection(qalbId) : null)
+            : slotId
             ? (window.SomPlan ? SomPlan.asCollection(slotId) : null)
             : (preset || (Array.isArray(cols) ? (id ? cols.find(c => c.id === id) : cols[0]) : null));
           if (!col) {

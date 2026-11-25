@@ -271,6 +271,8 @@
     return '../web/render.html?file=' + encodeURI(path) + '&from=' + encodeURIComponent(slotId);
   }
   function contextFor(slotId, file) {
+    // Opened from a heart state on the Qalb wheel (web/qalb-data.js).
+    if (/^qalb:/.test(slotId)) return global.SomQalb ? global.SomQalb.contextFor(slotId.slice(5), file) : null;
     const def = SLOT_DEFS[slotId];
     if (!def) return null;
     const seq = [];
