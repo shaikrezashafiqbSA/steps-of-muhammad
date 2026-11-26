@@ -14,7 +14,7 @@
      cap; the app still renders offline once they are cached.
    ════════════════════════════════════════════════════════════════ */
 
-const VERSION = 'v1.6.0';
+const VERSION = 'v1.6.1';
 const SHELL_CACHE = `shell-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 const CDN_CACHE = `cdn-${VERSION}`;
@@ -151,10 +151,15 @@ async function cacheFirst(request, cacheName) {
   return response;
 }
 
-/* Stale-while-revalidate: serve cache instantly, update in background. */
-async function staleWhileRevalidate(request, cacheName) {
+/* Stale-while-revalidate: serve cache instantly, update in background.
+   `exact` matches the full URL, query included. CDN files need it: every
+   Google Fonts stylesheet shares the path /css2 and differs only in its
+   ?family=… query, so ignoring the query handed one page another page's
+   font stylesheet (a card could render in the wrong typeface until the
+   reader refreshed). */
+async function staleWhileRevalidate(request, cacheName, exact) {
   const cache = await caches.open(cacheName);
-  const cached = await cache.match(request, { ignoreSearch: true });
+  const cached = await cache.match(request, { ignoreSearch: !exact });
   const fetched = fetch(request)
     .then((response) => {
       if (response && (response.ok || response.type === 'opaque')) {
@@ -183,7 +188,7 @@ self.addEventListener('fetch', (event) => {
 
   // CDN libraries & fonts: cache once, reuse forever (until a new VERSION).
   if (isCdn(request)) {
-    event.respondWith(staleWhileRevalidate(request, CDN_CACHE));
+    event.respondWith(staleWhileRevalidate(request, CDN_CACHE, true));
     return;
   }
 
