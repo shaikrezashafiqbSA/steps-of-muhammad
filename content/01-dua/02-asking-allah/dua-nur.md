@@ -18,6 +18,11 @@ Ibn ʿAbbās ؓ spent a night at the house of Maymūnah. **The Prophet ﷺ woke 
 Afterwards he lay down and slept until Bilāl informed him of the Fajr prayer, and he prayed without renewing wuḍūʾ. **He used to say in his invocation:**
 > *"O Allah, place light in my heart, light in my sight, light in my hearing, light on my right, light on my left, light above me, light below me, light in front of me, light behind me, and make for me light."*
 
+<div class="video-card">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Xz8c8CdbYso?si=jWL2gk57XKb8EoPr&amp;start=1470" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<button class="video-pin-toggle" title="Pin video so it stays visible while you scroll">📌 Follow along</button>
+</div>
+
 ## 📜✨ Du'a
 
 [[ اللَّهُمَّ | O Allah | Allāhumma ]] [[ اجْعَلْ | place | ijʿal ]] [[ فِي | in | fī ]] [[ قَلْبِي | my heart | qalbī ]] [[ نُورًا | light | nūran ]]

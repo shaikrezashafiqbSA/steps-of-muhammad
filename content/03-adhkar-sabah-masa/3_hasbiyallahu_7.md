@@ -19,24 +19,27 @@ Recite what Allah told the one deeply concerned for us: **7 x** during the morni
 
 ## 📜✨ Du'a
 
-[[لَقَدْ|Certainly|laqad]] [[جَآءَكُمْ|there has come to you|jāʾakum]] [[رَسُولٌ|a Messenger|rasūlun]] [[مِّنْ|from|min]] [[أَنفُسِكُمْ|among yourselves.|anfusikum.]] 
+[[ لَقَدۡ | Certainly | laqad ]] [[ جَآءَكُمۡ | (has) come to you | jāʾakum ]] [[ رَسُولٞ | a Messenger | rasūlun ]] [[ مِّنۡ | from | min ]] [[ أَنفُسِكُمۡ | yourselves | anfusikum ]]
 
-[[عَزِيزٌ|Grievous / heavy|ʿazīzun]] [[عَلَيْهِ|upon him|ʿalayhi]] [[مَا|is what|mā]] [[عَنِتُّمْ|you suffer;|ʿanittum;]]
+[[ عَزِيزٌ | Grievous | ʿazīzun ]] [[ عَلَيۡهِ | to him | ʿalayhi ]] [[ مَا | (is) what | mā ]] [[ عَنِتُّمۡ | you suffer | ʿanittum ]]
 
-[[حَرِيصٌ|concerned / deeply anxious|ḥarīṣun]] [[عَلَيْكُم|over you,|ʿalaykum,]] [[بِٱلْمُؤْمِنِينَ|to the believers|bi-l-muʾminīna]] [[رَءُوفٌ|kind|raʾūfun]] [[رَّحِيمٌ|and merciful.|raḥīmun.]] [[﴿١٢٨﴾]]
+[[ حَرِيصٌ | (he is) concerned | ḥarīṣun ]] [[ عَلَيۡكُم | over you | ʿalaykum ]] [[ بِٱلۡمُؤۡمِنِينَ | to the believers | bil-muʾminīna ]] [[ رَءُوفٞ | (he is) kind | raʾūfun ]] [[ رَّحِيمٞ | (and) merciful | raḥīmun ]] [[﴿١٢٨﴾]]
+
 
 
 [[فَإِن|But if|fa-in]] [[تَوَلَّوْا|they turn away,|tawallaw]] [[فَقُلْ|say (O Muhammad):|fa-qul]]
 
 ### The Core Dhikr Formula (x7)
 
-[[ x 7]][[ حَسْبِيَ|Sufficient for me is|ḥasbiya|hasb]] [[اللَّهُ|Allah,|llāhu,]]
+[[ x 7]][[ حَسْبِيَ|Sufficient for me is|ḥasbiya]] [[اللَّهُ|Allah,|llāhu,]]
 
-[[لَا|there is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him,|huwa,]]
+[[ لَآ | (There is) no | lā ]] [[ إِلَٰهَ | god | ilāha ]] [[ إِلَّا | except | illā ]] [[ هُوَۖ | Him | huwa ]]
 
-[[عَلَيْهِ|upon Him|ʿalayhi]] [[تَوَكَّلْتُ|I have placed my trust,|tawakkaltu,]]
+[[ عَلَيۡهِ | On Him | ʿalayhi ]] [[ تَوَكَّلۡتُۖ | I put my trust | tawakkaltu ]]
 
 [[وَهُوَ|and He|wa-huwa]] [[رَبُّ|is the Lord of|rabbu]] [[الْعَرْشِ|the Throne|l-ʿarshi]] [[الْعَظِيمِ|the Majestic.|l-ʿaẓīmi.]] [[﴿١٢٩﴾]]
+
+
 
 ## {{ Hikmah | @hikmah }} 
 
