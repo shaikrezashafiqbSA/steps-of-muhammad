@@ -2,6 +2,7 @@
   const ua = navigator.userAgent;
   const standalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
   if (standalone) return;
+  if (window.parent !== window) return; // a card inside the card sheet: the page behind owns this
 
   const KEY = 'pwa-install-dismissed';
   try { if (Date.now() - Number(localStorage.getItem(KEY) || 0) < 7 * 864e5) return; } catch (e) {}

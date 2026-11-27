@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8765"],
       "port": 8765
+    },
+    {
+      "name": "card-lab",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8777", "--bind", "0.0.0.0", "--directory", "C:\\Users\\shaik\\AppData\\Local\\Temp\\claude\\ae32dd843cf369f3\\9da280d2-21e0-4978-a0b0-4161390e0c67\\scratchpad\\lab"],
+      "port": 8777
     }
   ]
 }

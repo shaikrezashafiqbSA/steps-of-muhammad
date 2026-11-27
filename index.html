@@ -1890,6 +1890,74 @@
       .qalb-btn::after { animation: none; }
       .qalb, .qalb-petal, .qalb-board { transition: none; }
     }
+
+    /* ══════════════════════════════════════════════════════
+       CARD SHEET — a card opens over the page it was opened from
+       (web/card-sheet.js). The iframe holds the real card page.
+       Above the Qalb wheel (75) and the plan sheet (80).
+       ══════════════════════════════════════════════════════ */
+    .card-sheet { position: fixed; inset: 0; z-index: 88; visibility: hidden; transition: visibility 0s linear 0.3s; }
+    .card-sheet.open { visibility: visible; transition: none; }
+    .card-sheet-scrim {
+      position: absolute; inset: 0; background: rgba(58, 46, 43, 0.28);
+      -webkit-backdrop-filter: blur(10px) saturate(0.85);
+              backdrop-filter: blur(10px) saturate(0.85);
+      opacity: 0; transition: opacity 0.25s ease;
+    }
+    .card-sheet.open .card-sheet-scrim { opacity: 1; }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .card-sheet-scrim { background: rgba(255, 251, 241, 0.92); }
+    }
+    .card-sheet-panel {
+      position: absolute; left: 50%; bottom: 0;
+      width: 100%; max-width: 48rem; height: 92vh; height: 92dvh;
+      display: flex; flex-direction: column; overflow: hidden;
+      background: #FFFBF1; border-radius: 18px 18px 0 0;
+      box-shadow: 0 -12px 36px rgba(58, 46, 43, 0.35);
+      transform: translate(-50%, 104%); transition: transform 0.3s cubic-bezier(.2, .8, .2, 1);
+    }
+    .card-sheet.open .card-sheet-panel { transform: translate(-50%, 0); }
+    .card-sheet-grip {
+      position: relative; flex-shrink: 0; display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.75rem 0.6rem 0.45rem 0.95rem; border-bottom: 1px solid #E6DCD0;
+      background: #FFFBF1; touch-action: none; cursor: grab;
+    }
+    .card-sheet-grip::before {
+      content: ''; position: absolute; left: 50%; top: 6px; width: 40px; height: 4px; margin-left: -20px;
+      border-radius: 999px; background: #E6DCD0;
+    }
+    .card-sheet-title {
+      flex: 1; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase; color: #7D5243;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .card-sheet-x {
+      flex-shrink: 0; width: 2.1rem; height: 2.1rem; border-radius: 999px; border: 1px solid #E6DCD0;
+      background: #FFFBF1; color: #7D5243; font-size: 0.9rem; cursor: pointer;
+    }
+    .card-sheet-x:hover { border-color: rgba(176, 138, 75, 0.7); }
+    .card-sheet-x:focus-visible { outline: 2px solid #B08A4B; outline-offset: 2px; }
+    .card-sheet-body { position: relative; flex: 1; min-height: 0; }
+    .card-sheet-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #FFFBF1; }
+    .card-sheet-loading {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #B08A4B; background: #FFFBF1;
+    }
+    .card-sheet-loading[hidden] { display: none; }
+    body.card-sheet-open { overflow: hidden; }
+    body.card-sheet-open .share-app-btn { display: none; }
+
+    /* LAST READ — the arrow on the row of the card read last (the rule
+       itself is written by web/card-sheet.js, keyed on the card's path) */
+    @keyframes som-last-read-nudge {
+      0%, 100% { transform: translateY(-50%) translateX(0); }
+      50% { transform: translateY(-50%) translateX(3px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .card-sheet-panel, .card-sheet-scrim { transition: none; }
+      #compendium-view a::before, #action-view a::before, #qalb a::before { animation: none !important; }
+    }
   </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="85d3d3cd-19ba-4195-aaa9-1407d18fef4c"></script>
 </head>
@@ -2128,6 +2196,8 @@
   </script>
   <script src="web/plan-ui.js"></script>
   <script src="web/qalb-ui.js"></script>
+  <!-- Cards open in a pop-up sheet over this page (web/card-sheet.js) -->
+  <script src="web/card-sheet.js"></script>
   <script>
 
 

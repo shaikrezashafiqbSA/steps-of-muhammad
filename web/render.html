@@ -2139,7 +2139,10 @@
       const grade = (meta['right-orb'] || meta.grade || '').replace(LEADING_ICON_RE, '').trim();
       const tagline = [source, grade].filter(Boolean).join(' · ');
       const text = `${title}${tagline ? '\n' + tagline : ''}\n\nRecited word-by-word, fully sourced — on ${APP_META.name}.`;
-      const url = window.location.href;
+      // Inside the card sheet the address carries ?sheet=1: share the plain card.
+      const shareUrl = new URL(window.location.href);
+      shareUrl.searchParams.delete('sheet');
+      const url = shareUrl.href;
 
       if (navigator.share) {
         try { await navigator.share({ title, text, url }); }

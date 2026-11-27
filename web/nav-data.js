@@ -508,11 +508,44 @@ function somBuildCardNav() {
     floatHome.style.display = 'flex';
   }
 
+  // LAST READ: the page this card was opened from marks its row
+  // (web/card-sheet.js). `from` says which list: Library, a plan slot, a heart state.
+  if (file) {
+    try { sessionStorage.setItem('som-last-read', JSON.stringify({ file, from: from || '' })); } catch (err) { /* private mode */ }
+  }
+
+  // SHEET MODE: this card is inside the pop-up sheet on the page the reader
+  // came from (?sheet=1, in an iframe — web/card-sheet.js). Home closes the
+  // sheet; Back / Next and links to other cards swap the card in place with
+  // location.replace, so the sheet adds no history entries of its own and
+  // the phone's Back closes it.
+  const inSheet = params.get('sheet') === '1' && window.parent !== window;
+  const sheetGo = (href) => {
+    const url = new URL(href, window.location.href);
+    url.searchParams.delete('sheet');
+    // Tell the page behind which card is showing, so a reload reopens it.
+    try { window.parent.postMessage({ type: 'som-sheet-go', href: 'web/render.html' + url.search }, window.location.origin); } catch (err) { /* fine */ }
+    url.searchParams.set('sheet', '1');
+    window.location.replace(url.href);
+  };
+  const sheetClose = () => window.parent.postMessage({ type: 'som-sheet-close' }, window.location.origin);
+  if (inSheet) {
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href]');
+      if (!a || a.target === '_blank' || e.defaultPrevented) return;
+      if (a.id === 'hudHome' || a.classList.contains('card-nav-home')) { e.preventDefault(); sheetClose(); return; }
+      const raw = a.getAttribute('href') || '';
+      if (/render\.html\?|^\?(file|collection|slot|qalb)=/.test(raw)) { e.preventDefault(); sheetGo(raw); }
+    }, true);
+  }
+
   document.addEventListener('keydown', (e) => {
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     const el = document.activeElement;
     if (el && (el.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(el.tagName))) return;
-    if (e.key === 'ArrowLeft' && prev) window.location.href = prev.href || '../' + prev.path;
-    if (e.key === 'ArrowRight' && next) window.location.href = next.href || '../' + next.path;
+    const goTo = inSheet ? sheetGo : (href) => { window.location.href = href; };
+    if (e.key === 'ArrowLeft' && prev) goTo(prev.href || '../' + prev.path);
+    if (e.key === 'ArrowRight' && next) goTo(next.href || '../' + next.path);
+    if (e.key === 'Escape' && inSheet) sheetClose();
   });
 }
