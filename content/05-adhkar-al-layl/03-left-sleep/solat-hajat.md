@@ -47,7 +47,7 @@ It was narrated that ʿAbdullāh bin Abī Awfā Al-Aslamī (رضي الله عن
 >Then he should ask Allah for whatever he wants in this world and in the Hereafter, for it is decreed.’”
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Sunan Ibn Mājah 1384**
 
@@ -67,9 +67,9 @@ It was narrated that ʿAbdullāh bin Abī Awfā Al-Aslamī (رضي الله عن
 
 **Scholarly Context on the Grading**
 
-*   **Why it is graded Da'if (Weak):** The primary weakness in this chain of transmission is the narrator **Fā'id ibn ʿAbdir-Raḥmān** (Abū al-Warqā'). Hadith critics—including Imam Aḥmad, al-Nasā'ī, and Ibn Ḥajar al-ʿAsqalānī—severely criticized him, with many classifying his narrations as abandoned (*Matrūk*).
+*   **Why it is graded Da'if (Weak):** The primary weakness in this chain of transmission is the narrator **Fā'id ibn ʿAbdir-Raḥmān** (Abū al-Warqā'). Hadith critics〜including Imam Aḥmad, al-Nasā'ī, and Ibn Ḥajar al-ʿAsqalānī〜severely criticized him, with many classifying his narrations as abandoned (*Matrūk*).
 *   **Practical Jurisprudence:** Even though this explicit text and format contain structural narrative weakness, the foundational concept of *Salat al-Hajah* (turning to Allah through physical prayer and deep supplication during times of trial or need) is authentic and widely validated by broad, verified principles across all standard Sunni legal schools.
 
-*🔗 Verify on sunnah.com — [Ibn Majah 1384](https://sunnah.com/ibnmajah:1384)*
+*🔗 Verify on sunnah.com 〜 [Ibn Majah 1384](https://sunnah.com/ibnmajah:1384)*
 
 </details>

@@ -24,7 +24,7 @@ It was narrated from Umm Salamah (رضي الله عنها) that when the Prophe
 [[وَعَمَلًا|and deeds|wa-ʿamalan]] [[مُتَقَبَّلًا|acceptable.|mutaqabbalan.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Sunan Ibn Mājah 925**
 
@@ -38,6 +38,6 @@ It was narrated from Umm Salamah (رضي الله عنها) that when the Prophe
 
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[إِنِّي|indeed I|innī]] [[أَسْأَلُكَ|ask You|asʾaluka]] [[عِلْمًا|for knowledge|ʿilman]] [[نَافِعًا|beneficial,|nāfiʿan,]] [[وَرِزْقًا|and provision|wa-rizqan]] [[طَيِّبًا|goodly and pure,|ṭayyiban,]] [[وَعَمَلًا|and deeds|wa-ʿamalan]] [[مُتَقَبَّلًا|acceptable.|mutaqabbalan.]]
 
-*🔗 Verify on sunnah.com — [Ibn Majah 925](https://sunnah.com/ibnmajah:925)*
+*🔗 Verify on sunnah.com 〜 [Ibn Majah 925](https://sunnah.com/ibnmajah:925)*
 
 </details>

@@ -1,6 +1,6 @@
 ::meta
 
-narrator: — (Qur'anic supplication of those firmly grounded in knowledge)
+narrator: 〜 (Qur'anic supplication of those firmly grounded in knowledge)
 
 collection: Qur'an
 
@@ -67,12 +67,12 @@ The commentary explains the petition as: "Do not deviate our hearts from the gui
 
 [[ إِنَّكَ | Truly, You | innaka ]] [[ أَنتَ | You are | anta ]] [[ الْوَهَّابُ | the Bestower | al-Wahhāb ]]
 
-grounds the request in Allah's own name — the One who gives is asked to give.
+grounds the request in Allah's own name 〜 the One who gives is asked to give.
 
 The excerpt also records that the Prophet ﷺ used to supplicate 
 
 [Ya Muqalibal Qulub](?file=content/01-dua/03-steadfastness/ya-muqallibal-qulub.md "embed")
 
-and then recite this very Ayah — a pointer to the hadith transmitted by Ibn Abī Ḥātim and Ibn Jarīr from Umm Salamah (wording as present in the source text).
+and then recite this very Ayah 〜 a pointer to the hadith transmitted by Ibn Abī Ḥātim and Ibn Jarīr from Umm Salamah (wording as present in the source text).
 
 </details>

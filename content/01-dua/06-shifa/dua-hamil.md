@@ -16,7 +16,7 @@ left-orb-compact: 🕌
 
 **Instruction:** After every obligatory prayer, while gently placing the hand on the navel, recite this du'ā.
 
-> **Full meaning:** *O Allah, if You have created a being in this womb of mine, then form it as a male, and shape it in a beautiful, complete form. Make him a righteous man — knowledgeable, wise, obedient to the Lord of Allah Most High, to His Messenger ﷺ, and to his parents. Make him among those granted lawful, pure, blessed, abundant provision. Protect him from the two disgraces — poverty and debt. Keep him safe from the calamities of this world and the next, and from their trials. O Allah, do not make him among the people of harm, and guide us to the straight path — the path of those You have favored, not of those who incurred Your anger nor of those who went astray. Āmīn, by Your mercy, O Most Merciful of the merciful. All praise is for Allah, Lord of the worlds. My Lord, do not leave me alone, for You are the best of inheritors.*
+> **Full meaning:** *O Allah, if You have created a being in this womb of mine, then form it as a male, and shape it in a beautiful, complete form. Make him a righteous man 〜 knowledgeable, wise, obedient to the Lord of Allah Most High, to His Messenger ﷺ, and to his parents. Make him among those granted lawful, pure, blessed, abundant provision. Protect him from the two disgraces 〜 poverty and debt. Keep him safe from the calamities of this world and the next, and from their trials. O Allah, do not make him among the people of harm, and guide us to the straight path 〜 the path of those You have favored, not of those who incurred Your anger nor of those who went astray. Āmīn, by Your mercy, O Most Merciful of the merciful. All praise is for Allah, Lord of the worlds. My Lord, do not leave me alone, for You are the best of inheritors.*
 
 [[اَللَّهُمَّ|O Allah|Allāhumma]] [[إِنْ كُنْتَ|if You have|in kunta]] [[خَلَقْتَ|created|khalaqta]] [[خَلْقًا|a being|khalqan]] [[فِي|in|fī]] [[بَطْنِي|my womb|baṭnī]] [[هَذَا|this|hādhā]] [[فَكَوِّنْهُ|then form it|fa-kawwinhu]] [[ذَكَرًا|a male|dhakaran]] [[(أُنْثَى)|(female)|unthā]]
 
@@ -51,7 +51,7 @@ left-orb-compact: 🕌
 
 ### 2a · [Sūrah At-Tāriq, Verses 1–7](https://quran.com/86/1-7)
 
-> **Full meaning:** *In the name of Allah, the Most Gracious, the Most Merciful. By the sky and the night-comer — and what will make you know what the night-comer is? It is the piercing star. There is no soul but has a protector over it. So let man observe from what he was created — he was created from a gushing fluid, emerging from between the backbone and the ribs.*
+> **Full meaning:** *In the name of Allah, the Most Gracious, the Most Merciful. By the sky and the night-comer 〜 and what will make you know what the night-comer is? It is the piercing star. There is no soul but has a protector over it. So let man observe from what he was created 〜 he was created from a gushing fluid, emerging from between the backbone and the ribs.*
 
 [[بِسْمِ|in the name of|bismi]] [[اللَّهِ|Allah|llāhi]] [[الرَّحْمَٰنِ|the Most Gracious|r-raḥmāni]] [[الرَّحِيمِ|the Most Merciful|r-raḥīm]] 
 
@@ -75,7 +75,7 @@ left-orb-compact: 🕌
 
 **Instruction:** After reaching the verse *"emerging from between the backbone and the ribs"*, place both hands at the lower back and sweep them gently from the back across the belly toward the pelvis. Recite this du'ā **seven times**, then complete the remainder of Sūrah At-Tāriq.
 
-> **Full meaning:** *O Allah, bring forth this child from my womb through my birth-canal at the time of my delivery — safely and happily, in this world and the next. O Ḥannā who gave birth to Maryam, and Maryam who gave birth to ʿĪsā — come out, O newborn, by the power of the King who is worshipped. O Allah, accept my supplication just as You accepted the supplication of our master and intercessor Muḥammad ﷺ, by Your mercy, O Most Merciful of the merciful. All praise is for Allah, Lord of the worlds. O Allah, be gentle in easing every difficulty, and I ask You for ease and well-being in this world and the next.*
+> **Full meaning:** *O Allah, bring forth this child from my womb through my birth-canal at the time of my delivery 〜 safely and happily, in this world and the next. O Ḥannā who gave birth to Maryam, and Maryam who gave birth to ʿĪsā 〜 come out, O newborn, by the power of the King who is worshipped. O Allah, accept my supplication just as You accepted the supplication of our master and intercessor Muḥammad ﷺ, by Your mercy, O Most Merciful of the merciful. All praise is for Allah, Lord of the worlds. O Allah, be gentle in easing every difficulty, and I ask You for ease and well-being in this world and the next.*
 
 [[اَللَّهُمَّ|O Allah|Allāhumma]] [[اخْرُجْ|bring forth|ukhruj]] [[هَذَا|this|hādhā]] [[الْمَوْلُودَ|newborn|l-mawlūd]] [[فِي|in|fī]] [[بَطْنِي|my womb|baṭnī]] [[مِنْ|from|min]] [[فَرْجِي|my birth-canal|farjī]] [[فِي|at|fī]] [[وَقْتِ|the time of|waqti]] [[وِلَادَتِي|my delivery|wilādatī]] [[سَالِماً|safely|sāliman]] [[وَسَعِيداً|and happily|wa saʿīdan]] [[فِي|in|fi]] [[الدُّنْيَا|this world|d-dunyā]] [[وَالآخِرَةِ|and the next|wa-l-ākhirah]] 
 
@@ -136,7 +136,7 @@ left-orb-compact: 🕌
 
 ### 3c · Verse on Birth from the Womb [An-Naḥl 16:78](https://quran.com/16/78)
 
-> **Full meaning:** *And Allah brought you out from the wombs of your mothers, knowing nothing, and made for you hearing, sight, and hearts — that perhaps you would be grateful.*
+> **Full meaning:** *And Allah brought you out from the wombs of your mothers, knowing nothing, and made for you hearing, sight, and hearts 〜 that perhaps you would be grateful.*
 
 [[وَاللَّهُ|and Allah|wa-llāhu]] [[أَخْرَجَكُمْ|brought you out|akhrajakum]] [[مِنْ|from|min]] [[بُطُونِ|the wombs of|buṭūni]] [[أُمَّهَاتِكُمْ|your mothers|ummahātikum]] [[لَا تَعْلَمُونَ|knowing not|lā taʿlamūna]] [[شَيْئًا|anything|shayʾan]] [[وَجَعَلَ|and made|wa jaʿala]] [[لَكُمُ|for you|lakumu]] [[السَّمْعَ|the hearing|s-samʿa]] [[وَالْأَبْصَارَ|and the sight|wa-l-abṣāra]] [[وَالْأَفْئِدَةَ|and the hearts|wa-l-afʾidah]] [[لَعَلَّكُمْ|that perhaps you|laʿallakum]] [[تَشْكُرُونَ|would be grateful|tashkurūn]]
 
@@ -148,36 +148,36 @@ left-orb-compact: 🕌
 
 > **Full meaning of all six:** *"...and He will heal the breasts of a believing people." (At-Tawbah 9:14) · "...and a healing for what is in the breasts, and guidance and mercy for the believers." (Yūnus 10:57) · "There comes from their bellies a drink of varying colors, in which there is healing for people." (An-Naḥl 16:69) · "And We send down of the Qur'ān that which is a healing and a mercy for the believers." (Al-Isrāʾ 17:82) · "And when I am ill, it is He who cures me." (Ash-Shuʿarāʾ 26:80) · "Say: It is, for those who believe, a guidance and a healing." (Fuṣṣilat 41:44)*
 
-**Verse 4 — [At-Tawbah 9:14](https://quran.com/9/14)**
+**Verse 4 〜 [At-Tawbah 9:14](https://quran.com/9/14)**
 
 [[وَيَشْفِ|and He will heal|wa yashfi]] [[صُدُورَ|the breasts of|ṣudūra]] [[قَوْمٍ|a people|qawmin]] [[مُؤْمِنِينَ|believing|muʾminīn]]
 
-**Verse 5 — [Yūnus 10:57](https://quran.com/10/57)**
+**Verse 5 〜 [Yūnus 10:57](https://quran.com/10/57)**
 [[وَشِفَاءٌ|and a healing|wa shifāʾun]] [[لِمَا|for what|li-mā]] [[فِي|is in|fī]] [[الصُّدُورِ|the breasts|ṣ-ṣudūri]] [[وَهُدًى|and a guidance|wa hudan]] [[وَرَحْمَةٌ|and a mercy|wa raḥmatun]] [[لِلْمُؤْمِنِينَ|for the believers|li-l-muʾminīn]]
 
-**Verse 6 — [An-Naḥl 16:69](https://quran.com/16/69)**
+**Verse 6 〜 [An-Naḥl 16:69](https://quran.com/16/69)**
 
 [[يَخْرُجُ|there comes|yakhruju]] [[مِنْ|from|min]] [[بُطُونِهَا|their bellies|buṭūnihā]] [[شَرَابٌ|a drink|sharābun]] [[مُخْتَلِفٌ|of varying|mukhtalifun]] [[أَلْوَانُهُ|its colors|alwānuhu]] [[فِيهِ|in it|fīhi]] [[شِفَاءٌ|is healing|shifāʾun]] [[لِلنَّاسِ|for the people|li-n-nās]]
 
-**Verse 7 — [Al-Isrāʾ 17:82](https://quran.com/17/82)**
+**Verse 7 〜 [Al-Isrāʾ 17:82](https://quran.com/17/82)**
 
 [[وَنُنَزِّلُ|and We send down|wa nunazzilu]] [[مِنَ|of|mina]] [[الْقُرْآنِ|the Qur'ān|l-qurʾāni]] [[مَا|that which|mā]] [[هُوَ|is|huwa]] [[شِفَاءٌ|a healing|shifāʾun]] [[وَرَحْمَةٌ|and a mercy|wa raḥmatun]] [[لِلْمُؤْمِنِينَ|for the believers|li-l-muʾminīn]]
 
-**Verse 8 — [Ash-Shuʿarāʾ 26:80](https://quran.com/26/80)**
+**Verse 8 〜 [Ash-Shuʿarāʾ 26:80](https://quran.com/26/80)**
 
 [[وَإِذَا|and when|wa idhā]] [[مَرِضْتُ|I am ill|mariḍtu]] [[فَهُوَ|it is He who|fa-huwa]] [[يَشْفِينِ|cures me|yashfīn]]
 
-**Verse 9 — [Fuṣṣilat 41:44](https://quran.com/41/44)**
+**Verse 9 〜 [Fuṣṣilat 41:44](https://quran.com/41/44)**
 
 [[قُلْ|say|qul]] [[هُوَ|it is|huwa]] [[لِلَّذِينَ|for those who|li-lladhīna]] [[آمَنُوا|believe|āmanū]] [[هُدًى|a guidance|hudan]] [[وَشِفَاءٌ|and a healing|wa shifāʾ]]
 
 ---
 
-### 3e · [Sūrah Al-Zalzalah](https://quran.com/99)  — The Closing Recitation
+### 3e · [Sūrah Al-Zalzalah](https://quran.com/99)  〜 The Closing Recitation
 
-> **Full meaning:** *When the earth is shaken with its [final] earthquake, and the earth discharges its burdens, and man says, "What is with it?" — That Day it will report its news, because your Lord has commanded it. That Day people will depart separated to be shown the results of their deeds. So whoever does an atom's weight of good will see it, and whoever does an atom's weight of evil will see it.*
+> **Full meaning:** *When the earth is shaken with its [final] earthquake, and the earth discharges its burdens, and man says, "What is with it?" 〜 That Day it will report its news, because your Lord has commanded it. That Day people will depart separated to be shown the results of their deeds. So whoever does an atom's weight of good will see it, and whoever does an atom's weight of evil will see it.*
 
-> 💡 **Why this surah:** Al-Zalzalah speaks of the earth "discharging its burdens" (*akhrajati-l-arḍu athqālahā*) — the practitioner draws a symbolic parallel to the womb releasing its precious burden in delivery.
+> 💡 **Why this surah:** Al-Zalzalah speaks of the earth "discharging its burdens" (*akhrajati-l-arḍu athqālahā*) 〜 the practitioner draws a symbolic parallel to the womb releasing its precious burden in delivery.
 
 [[إِذَا|when|idhā]] [[زُلْزِلَتِ|is shaken|zulzilati]] [[الْأَرْضُ|the earth|l-arḍu]] [[زِلْزَالَهَا|with its earthquake|zilzālahā]] 
 
@@ -201,10 +201,10 @@ left-orb-compact: 🕌
 
 **Reading instruction:**  Complete Sūrah At-Tāriq (verses 8–17) after the safe-delivery du'ā. For Section 3, recite all the healing verses and Sūrah Al-Zalzalah over a vessel of water, then have the laboring woman drink from it and wipe some onto her belly.
 
-**Tradition source:** This compilation is preserved in Malay/Indonesian *kitab kuning* and in Ḥaḍramī Yemeni midwifery manuals. The composed du'ās in Sections 1 and 2b are pious devotional supplications and are **not directly traced to canonical hadith** (Bukhārī, Muslim, the Four Sunan, etc.). The Qur'ānic verses embedded throughout — Sūrah At-Tāriq (Q. 86), Ar-Raʿd 13:8, Fāṭir 35:11, An-Naḥl 16:78 and 16:69, At-Tawbah 9:14, Yūnus 10:57, Al-Isrāʾ 17:82, Ash-Shuʿarāʾ 26:80, Fuṣṣilat 41:44, Al-Zalzalah (Q. 99), and the closing line of Section 1 (Q. 21:89) — are fully authentic revelation. The invocation *"Yā Ḥannā waladat Maryam..."* in Section 2b is a folk supplication and is theologically contested; the safer practice is to address all petitions directly to Allah. Asking specifically for a male child in Section 1 differs from the etiquette of Sūrah ash-Shūrā (42:49–50), which teaches gratitude for whatever Allah grants — reciters may omit *dhakaran* (and leave the gender to Allah's wisdom) or add *aw untha*
+**Tradition source:** This compilation is preserved in Malay/Indonesian *kitab kuning* and in Ḥaḍramī Yemeni midwifery manuals. The composed du'ās in Sections 1 and 2b are pious devotional supplications and are **not directly traced to canonical hadith** (Bukhārī, Muslim, the Four Sunan, etc.). The Qur'ānic verses embedded throughout 〜 Sūrah At-Tāriq (Q. 86), Ar-Raʿd 13:8, Fāṭir 35:11, An-Naḥl 16:78 and 16:69, At-Tawbah 9:14, Yūnus 10:57, Al-Isrāʾ 17:82, Ash-Shuʿarāʾ 26:80, Fuṣṣilat 41:44, Al-Zalzalah (Q. 99), and the closing line of Section 1 (Q. 21:89) 〜 are fully authentic revelation. The invocation *"Yā Ḥannā waladat Maryam..."* in Section 2b is a folk supplication and is theologically contested; the safer practice is to address all petitions directly to Allah. Asking specifically for a male child in Section 1 differs from the etiquette of Sūrah ash-Shūrā (42:49–50), which teaches gratitude for whatever Allah grants 〜 reciters may omit *dhakaran* (and leave the gender to Allah's wisdom) or add *aw untha*
 
 
-<details> <summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<details> <summary>🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Source:** "Dua untuk Hamil From Ustaz Imam Nawawi" - Masjid Kampung Siglap
 

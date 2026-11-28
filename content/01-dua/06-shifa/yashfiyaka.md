@@ -40,7 +40,7 @@ Ibn ʿAbbās (raḍiyallāhu ʿanhumā) reported that the Prophet (ﷺ) said: "W
 [[ مِنْ | from | min ]] [[ ذَلِكَ | that | dhālika ]] [[ الْمَرَضِ | illness. | l-maraḍi ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Riyāḍ aṣ-Ṣāliḥīn 906**
 
@@ -79,6 +79,6 @@ Ibn ʿAbbās (raḍiyallāhu ʿanhumā) reported that the Prophet (ﷺ) said: "W
 
 [[ حَدِيثٌ | a ḥadīth | ḥadīthun ]] [[ صَحِيحٌ | ṣaḥīḥ | ṣaḥīḥun ]] [[ عَلَى | according to | ʿalā ]] [[ شَرْطِ | the criteria of | sharṭi ]] [[ الْبُخَارِيِّ | al-Bukhārī. | l-Bukhāriyyi ]]
 
-*🔗 Verify on sunnah.com — [Riyāḍ aṣ-Ṣāliḥīn 906](https://sunnah.com/riyadussalihin:906)*
+*🔗 Verify on sunnah.com 〜 [Riyāḍ aṣ-Ṣāliḥīn 906](https://sunnah.com/riyadussalihin:906)*
 
 </details>

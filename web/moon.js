@@ -1,9 +1,9 @@
 // =========================================================
-// MOON — a realistic moon, and the tooltip that opens when you tap it.
+// MOON 〜 a realistic moon, and the tooltip that opens when you tap it.
 //
 //   SomMoon.svg({ cx, cy, r, moon, id })   the moon as SVG, with its real
 //                                          phase and its real tilt for this
-//                                          observer — hold the phone up to
+//                                          observer 〜 hold the phone up to
 //                                          the sky and the lit side matches.
 //   SomMoon.attach({ svg, card, getState }) wires the tap-to-open tooltip.
 //   SomMoon.setMoonSpot(x, y)              where the moon is on the horizon
@@ -23,7 +23,7 @@
   // ── The face ─────────────────────────────────────────────
   // Drawn in unit coordinates (the disc has radius 1, lunar north up, the
   // near side as the naked eye sees it): the dark seas, and a few bright
-  // craters. Soft on purpose — it should read as the moon, not a map.
+  // craters. Soft on purpose 〜 it should read as the moon, not a map.
   const MARIA = [
     // cx, cy, rx, ry, rotation°
     [-0.26, -0.44, 0.30, 0.21, -15],   // Imbrium
@@ -111,7 +111,7 @@
   // ── The tooltip ──────────────────────────────────────────
   // The "!" at the moon's shoulder, like a quest marker over an NPC. It is
   // always there: bright and bobbing while today's tidbit is unread, greyed
-  // once the reader has opened it, and bright again at the next Maghrib —
+  // once the reader has opened it, and bright again at the next Maghrib 〜
   // when the Hijri day turns over. It is an HTML overlay, not part of the
   // SVG, because the SVG is rebuilt every second and would restart the bobbing.
   const SEEN_KEY = 'som-moon-seen-day';
@@ -229,7 +229,7 @@
         <span class="moon-pop-chev">${state.calOpen ? '▾' : '▸'}</span> Month
       </button>
       <div class="moon-cal"${state.calOpen ? '' : ' hidden'}>${state.calOpen ? calendarHTML(today) : ''}</div>
-      ${state.calOpen ? `<p class="moon-pop-fine">Months start by the MABIMS crescent criterion (3° · 6.4°) — your authority’s announcement may differ by a day.</p>` : ''}`;
+      ${state.calOpen ? `<p class="moon-pop-fine">Months start by the MABIMS crescent criterion (3° · 6.4°). Your authority’s announcement may differ by a day.</p>` : ''}`;
     state.key = [today.year, today.month, today.day, state.offset, state.calOpen, state.picked && state.picked.d, Math.floor(now.getTime() / 60000)].join('|');
     place();
   }

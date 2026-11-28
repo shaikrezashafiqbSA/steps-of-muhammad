@@ -29,7 +29,7 @@ It was narrated that Ibn 'Umar said: "The Messenger of Allah ﷺ never abandoned
 [[وَأَعُوذُ|and I seek refuge|wa-aʿūdhu]] [[بِكَ|in You|bika]] [[أَنْ|that|an]] [[أُغْتَالَ|I be taken unaware|ughtāla]] [[مِنْ|from|min]] [[تَحْتِي|beneath me.|taḥtī.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Sunan Ibn Mājah 3871**
 
@@ -51,6 +51,6 @@ It was narrated that Ibn 'Umar said: "The Messenger of Allah ﷺ never abandoned
 
 [[قَالَ|Said|qāla]] [[وَكِيعٌ|Wakīʿ:|wakīʿun:]] [[يَعْنِي|meaning|yaʿnī]] [[ٱلْخَسْفَ|the swallowing up (by the earth).|l-khasfa.]]
 
-*🔗 Verify on sunnah.com — [Sunan Ibn Mājah 3871](https://sunnah.com/ibnmajah:3871)*
+*🔗 Verify on sunnah.com 〜 [Sunan Ibn Mājah 3871](https://sunnah.com/ibnmajah:3871)*
 
 </details>

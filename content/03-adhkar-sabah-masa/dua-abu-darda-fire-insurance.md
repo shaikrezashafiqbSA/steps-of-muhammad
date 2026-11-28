@@ -1,12 +1,12 @@
 ::meta
-narrator: Attributed in popular circulation to Abū al-Dardāʾ (raḍiyallāhu ʿanhu) — Compiled in a wirid collection by Habib ʿUmar bin Hafiz, caretaker of Pondok Pesantren Darul Mustofa, Tarim, Hadhramaut
+narrator: Attributed in popular circulation to Abū al-Dardāʾ (raḍiyallāhu ʿanhu) 〜 Compiled in a wirid collection by Habib ʿUmar bin Hafiz, caretaker of Pondok Pesantren Darul Mustofa, Tarim, Hadhramaut
 book: Not confirmed (see note above)
 hadith: 
 grade: 
-grade-comment: Da'if (weak) per non-primary sources — verify before citing as an authenticated narration
+grade-comment: Da'if (weak) per non-primary sources 〜 verify before citing as an authenticated narration
 hikmah-source: derived
 hikmah-citation:
-left-orb: Duʿāʾ Abū al-Dardāʾ / Wird — Habib ʿUmar bin Hafiz (per user, unverified)
+left-orb: Duʿāʾ Abū al-Dardāʾ / Wird 〜 Habib ʿUmar bin Hafiz (per user, unverified)
 left-orb-compact: ﷴﷺ📜
 right-orb: Unconfirmed
 right-orb-compact: ۞۞۞
@@ -27,7 +27,7 @@ This is a du'ā' of tawḥīd, submission to divine decree, and seeking refuge. 
 [[ اللَّهُمَّ | O Allah | Allāhumma ]] [[ إِنِّي | indeed I | innī ]] [[ أَعُوذُ | seek refuge | aʿūdhu ]] [[ بِكَ | in You | bika ]] [[ مِنْ | from | min ]] [[ شَرِّ | the evil | sharri ]] [[ نَفْسِي | of myself | nafsī ]] [[ وَمِنْ | and from | wa-min ]] [[ شَرِّ | the evil | sharri ]] [[ كُلِّ | of every | kulli ]] [[ دَابَّةٍ | creature | dābbatin ]] [[ أَنْتَ | You | anta ]] [[ آخِذٌ | hold | ākhidhun ]] [[ بِنَاصِيَتِهَا | its forelock | bi-nāṣiyatihā ]] [[ إِنَّ | indeed | inna ]] [[ رَبِّي | my Lord | Rabbī ]] [[ عَلَى | is upon | ʿalā ]] [[ صِرَاطٍ | a path | ṣirāṭin ]] [[ مُسْتَقِيمٍ | straight | mustaqīmin ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **No isnād (chain of narrators)**
 

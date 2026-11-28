@@ -1,7 +1,7 @@
 ::meta
 narrator: Nuʿaym ibn Hammār al-Ghaṭafānī (raḍiyallāhu ʿanhu)
 collection: Sunan Abī Dāwūd
-book: Book 5 · Voluntary Prayers (كتاب التطوع) · Chapter 12 — The Ḍuḥā Prayer
+book: Book 5 · Voluntary Prayers (كتاب التطوع) · Chapter 12 〜 The Ḍuḥā Prayer
 hadith: 1289
 grade: Sahih
 left-orb: 📜 Abū Dāwūd 1289

@@ -38,7 +38,7 @@ And when he would return to his family, he would say: *“(We are) Returning, if
 [[آيِبُونَ|returning|āyibūna]] [[إِنْ|if|in]] [[شَاءَ|willed|shāʾa]] [[اللَّهُ|Allah|llāhu]] [[تَائِبُونَ|repenting|tāʾibūna]] [[عَابِدُونَ|worshipping|ʿābidūna]] [[لِرَبِّنَا|to our Lord|lirabbinā]] [[حَامِدُونَ|directing praise|ḥāmidūna]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Tirmidhī 3447**
 
@@ -60,6 +60,6 @@ And when he would return to his family, he would say: *“(We are) Returning, if
 
 [[آيِبُونَ|returning|āyibūna]] [[إِنْ|if|in]] [[شَاءَ|willed|shāʾa]] [[اللَّهُ|Allah|llāhu]] [[تَائِبُونَ|repenting|tāʾibūna]] [[عَابِدُونَ|worshipping|ʿābidūna]] [[لِرَبِّنَا|to our Lord|lirabbinā]] [[حَامِدُونَ|directing praise|ḥāmidūna]]
 
-*🔗 Verify on sunnah.com — [Tirmidhi 3447](https://sunnah.com/tirmidhi:3447)*
+*🔗 Verify on sunnah.com 〜 [Tirmidhi 3447](https://sunnah.com/tirmidhi:3447)*
 
 </details>

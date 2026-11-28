@@ -1,5 +1,5 @@
 // =========================================================
-// QALB MONITOR UI — the قَلْب button on the horizon card, the
+// QALB MONITOR UI 〜 the قَلْب button on the horizon card, the
 //   blurred wheel of heart states, and the line board of duʿās
 //   for the state the reader picks.
 //   Loaded by index.html after plan-ui.js. Data: web/qalb-data.js.
@@ -8,7 +8,7 @@
 //   that state's board (a card's Home button uses this when the
 //   card was opened from the board).
 //
-//   HISTORY — each layer is one step of the browser's history, so
+//   HISTORY 〜 each layer is one step of the browser's history, so
 //   the phone's Back button peels them off in order:
 //     card → board → wheel → Action view
 //   Opening the wheel pushes #qalb, opening a state pushes

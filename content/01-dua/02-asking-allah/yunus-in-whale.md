@@ -67,7 +67,7 @@ No Muslim man supplicates with it for anything, ever, except Allah responds to h
 - **Grade:** Ṣaḥīḥ (Darussalam).
 - **Note by at-Tirmidhī:** More than one narrator reported this ḥadīth from Yūnus ibn Abī Isḥāq, from Ibrāhīm ibn Muḥammad ibn Saʿd, from Saʿd, without mentioning "from his father". Others reported it with "from his father". Yūnus ibn Abī Isḥāq sometimes mentioned "from his father" in this ḥadīth and sometimes did not.
 
-*🔗 Verify on sunnah.com — [Jāmiʿ at-Tirmidhī 3505](https://sunnah.com/tirmidhi:3505)*
+*🔗 Verify on sunnah.com 〜 [Jāmiʿ at-Tirmidhī 3505](https://sunnah.com/tirmidhi:3505)*
 
 
 

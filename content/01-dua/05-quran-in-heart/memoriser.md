@@ -37,13 +37,13 @@ A scholastic supplication for students and memorisers of the Qur'an, transmitted
 [[بِرَحْمَتِكَ|By Your mercy,|bi-rahmatika]] [[يَا|O|yā]] [[أَرْحَمَ|Most Merciful of|arḥama]] [[الرَّاحِمِينَ|those who show mercy.|r-rāḥimīn.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 This supplication is composed of two distinct historical segments seamlessly merged by classical scholars of Islamic pedagogy to form an ultimate student's formula:
 
 **Analysis of Part 1 (Fahman-Nabiyyin...)**
 
-*   **Source Status:** This specific phrasing is categorized as a **Du'a Ma'thur/Mashhur**—a supplication popularized by the early righteous generations (*Salaf al-Salih*) and Sufi masters rather than a direct prophetic text.
+*   **Source Status:** This specific phrasing is categorized as a **Du'a Ma'thur/Mashhur**〜a supplication popularized by the early righteous generations (*Salaf al-Salih*) and Sufi masters rather than a direct prophetic text.
 *   **Literature Presence:** It is highly visible in standard classical curricula regarding the etiquette of seeking knowledge (*Adab al-Ta'allum*). You will find versions of it routinely referenced in commentaries of Islamic learning manuals used across Islamic institutions globally.
 
 **Analysis of Part 2 (Allahumma Aghnini bil-'Ilmi...)**
@@ -60,11 +60,11 @@ This beautiful compilation is classically transmitted as an *ijazah* (scholarly 
 
 *Note on Text Adjustments:* To help your reading, we have corrected a few common phonetic spelling variations found in raw regional texts (e.g., converting "ifzol" to the correct Arabic *hifẓ*, "takhrimni" to *akrimnī*, and "jamiilni" to *jammilnī*).
 
-**👤 1. Singular Form (Perseorangan — Recited 3x)**
+**👤 1. Singular Form (Perseorangan 〜 Recited 3x)**
 
 > *"O Allah! I ask You for the understanding of the Prophets, the retention of the Messengers, and the intuitive inspiration of the angels brought near [to You]. O Allah! Enrich me with knowledge, adorn me with forbearance, honor me with piety, and beautify me with well-being. By Your mercy, O Most Merciful of those who show mercy."*
 
-**👥 2. Plural Form (Jema'ah — Recited 3x)**
+**👥 2. Plural Form (Jema'ah 〜 Recited 3x)**
 
 > *"O Allah! We ask You for the understanding of the Prophets, the retention of the Messengers, and the intuitive inspiration of the angels brought near [to You]. O Allah! Enrich us with knowledge, adorn us with forbearance, honor us with piety, and beautify us with well-being. By Your mercy, O Most Merciful of those who show mercy."*
 

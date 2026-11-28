@@ -4,7 +4,7 @@ collection: Qur'an
 book: Sūrah al-Aʿrāf (7) · Juzʾ 8
 hadith: Āyah 23
 grade: Quranic Scripture
-grade-comment: —
+grade-comment: 〜
 hikmah-source: commentary
 hikmah-citation: Tafsīr al-Qurʾān al-ʿAẓīm, Ibn Kathīr
 left-orb: Qur'an 7:23
@@ -38,7 +38,7 @@ After they ate from the forbidden tree and their shame became manifest to them, 
 
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Qurʾān ✦ Sūrat al-Aʿrāf 7:23**
 
@@ -46,17 +46,17 @@ After they ate from the forbidden tree and their shame became manifest to them, 
 
 **Tafsīr ✦ Ibn Kathīr ؒ, on 7:22–23**
 
-**Ubayy ibn Kaʿb** (raḍiyallāhu ʿanhu) — Ibn Kathīr ؒ holds this more correct as Ubayy's own report than as the Prophet's ﷺ:
+**Ubayy ibn Kaʿb** (raḍiyallāhu ʿanhu) 〜 Ibn Kathīr ؒ holds this more correct as Ubayy's own report than as the Prophet's ﷺ:
 
 > "Adam was a tall man, about the height of a palm tree... When he committed the error, his private part appeared to him... So his Lord called him, 'O Adam! Do you run away from Me?' He said, 'O Lord! I felt ashamed before You.'"
 
-**aḍ-Ḍaḥḥāk** ؒ — linking this āyah to Sūrat al-Baqarah 2:37:
+**aḍ-Ḍaḥḥāk** ؒ 〜 linking this āyah to Sūrat al-Baqarah 2:37:
 
 > "These are the words that Adam received from his Lord."
 
 [[ فَتَلَقَّىٰ | then he received | fatalaqqā ]] [[ آدَمُ | Ādam | Ādamu ]] [[ مِنْ | from | min ]] [[ رَبِّهِ | his Lord | rabbihī ]] [[ كَلِمَاتٍ | words | kalimātin ]]
 
-**Qatādah** ؒ — through ʿAbd ar-Razzāq:
+**Qatādah** ؒ 〜 through ʿAbd ar-Razzāq:
 
 > "Adam said, 'O Lord! What if I repented and sought forgiveness?' Allah said, 'Then I will admit you into Paradise.' As for Shayṭān, he did not ask for forgiveness, but for respite. Each one of them was given what he asked for."
 

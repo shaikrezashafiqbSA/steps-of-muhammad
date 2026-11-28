@@ -1,5 +1,5 @@
 // =========================================================
-// PLAN UI — draws the slots in Action view, runs edit mode,
+// PLAN UI 〜 draws the slots in Action view, runs edit mode,
 // and owns the bottom sheet used to fill a slot.
 //   Needs plan.js. Used by index.html only.
 //
@@ -22,7 +22,7 @@
   // ── Rows ───────────────────────────────────────────────
   // A slot is drawn the way the Library draws a category: a collapsible
   // card, family headings inside it, and the Library's own duʿā rows
-  // (grade tint, three names, citation) — index.html → somLibraryRow.
+  // (grade tint, three names, citation) 〜 index.html → somLibraryRow.
 
   // Which slot is open on the current tab. undefined = not chosen yet
   // (the first filled one opens), '' = the reader closed them all.
@@ -128,7 +128,7 @@
           <div class="node-icon-tile">${icon}</div>
           <div class="space-y-1 pr-2 flex-1 min-w-0">
             <span class="root-node-title">${titleInner}</span>
-            <p class="root-node-desc">— ${esc(hint)}</p>
+            <p class="root-node-desc">${esc(hint)}</p>
           </div>
           <span class="plan-slot-count">${count}</span>
           <div class="root-node-chev">
@@ -208,9 +208,9 @@
     }).join('');
 
     if (edit) {
-      html = `<p class="plan-edit-note">Editing — changes are saved on this device. Slots you leave alone keep following the default plan.</p>` + html;
+      html = `<p class="plan-edit-note">Editing. Changes are saved on this device. Slots you leave alone keep following the default plan.</p>` + html;
     } else if (!html) {
-      html = `<p class="action-empty">Nothing is placed in this hour yet — tap <strong>✎ Edit</strong> to build it, or browse the Library.</p>`;
+      html = `<p class="action-empty">Nothing is placed in this hour yet. Tap <strong>✎ Edit</strong> to build it, or browse the Library.</p>`;
     }
     return { html, count };
   }
@@ -385,9 +385,9 @@
     } else if (sheet.tab === 'note') {
       html = `
         <form class="plan-note-form" id="plan-note-form">
-          <p class="plan-sheet-sub">For dhikr or an act with no card — “Ṣalawāt”, “2 rakʿah sunnah”, “Istighfār”.</p>
+          <p class="plan-sheet-sub">For dhikr or an act with no card, like “Ṣalawāt”, “2 rakʿah sunnah”, “Istighfār”.</p>
           <input type="text" id="plan-note-text" placeholder="What to do" maxlength="120" required>
-          <input type="text" id="plan-note-reps" placeholder="Count (optional) — e.g. ×100" maxlength="24">
+          <input type="text" id="plan-note-reps" placeholder="Count (optional), e.g. ×100" maxlength="24">
           <button type="submit" class="plan-note-submit">＋ Add note</button>
         </form>`;
     }

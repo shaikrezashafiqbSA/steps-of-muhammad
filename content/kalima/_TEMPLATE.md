@@ -1,8 +1,8 @@
-# Word — كَلِمَة
+# Word 〜 كَلِمَة
 
 **Root:** ر-ح-م
 
-**Meaning:** one plain line — this is what the popover shows first.
+**Meaning:** one plain line 〜 this is what the popover shows first.
 
 **Etymology:** your research.
 

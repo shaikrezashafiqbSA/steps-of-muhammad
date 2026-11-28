@@ -24,7 +24,7 @@ Al-Agharr al-Muzanī (raḍiyallāhu ʿanhu) reported that the Messenger of Alla
 [[ فِي | in | fī ]] [[ الْيَوْمِ | the day | l-yawmi ]] [[ مِائَةَ | a hundred | mi'ata ]] [[ مَرَّةٍ | times. | marratin ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Riyāḍ aṣ-Ṣāliḥīn 1869**
 
@@ -42,6 +42,6 @@ Al-Agharr al-Muzanī (raḍiyallāhu ʿanhu) reported that the Messenger of Alla
 
 [[رَوَاهُ|Narrated it|rawāhu]] [[مُسْلِمٌ.|Muslim.|muslimun.]]
 
-*🔗 Verify on sunnah.com — [Riyad as-Salihin 1869](https://sunnah.com/riyadussalihin:1869)*
+*🔗 Verify on sunnah.com 〜 [Riyad as-Salihin 1869](https://sunnah.com/riyadussalihin:1869)*
 
 </details>

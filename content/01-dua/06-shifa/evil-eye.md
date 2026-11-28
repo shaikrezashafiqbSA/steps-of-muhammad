@@ -67,4 +67,4 @@ He then said: *"Thus Ibrāhīm ؑ used to seek refuge with Allah for Ismāʿīl 
 - **Sunan Ibn Mājah:** Recorded in Book 31 (Chapters on Medicine), Chapter 36: what the Prophet ﷺ recited to seek refuge for others and what was recited for him (No. 3525). In-book reference: Book 31, Hadith 90.
 - **Grading:** Ṣaḥīḥ (Darussalam).
 
-*🔗 Verify on sunnah.com — [Sunan Ibn Majah 3525](https://sunnah.com/ibnmajah:3525)*
+*🔗 Verify on sunnah.com 〜 [Sunan Ibn Majah 3525](https://sunnah.com/ibnmajah:3525)*

@@ -13,11 +13,11 @@ right-orb-compact: ۞۞
 
 # Body, Hearing, Sight - Refuge from disbelief and destitution
 
-ʿAbd al-Raḥmān ibn Abī Bakrah said to his father: *"O my father! I hear you supplicating every morning: 'O Allah, grant me well-being in my body; O Allah, grant me well-being in my hearing; O Allah, grant me well-being in my sight. There is no deity except You' — repeating it three times in the morning and three times in the evening."*
+ʿAbd al-Raḥmān ibn Abī Bakrah said to his father: *"O my father! I hear you supplicating every morning: 'O Allah, grant me well-being in my body; O Allah, grant me well-being in my hearing; O Allah, grant me well-being in my sight. There is no deity except You' 〜 repeating it three times in the morning and three times in the evening."*
 
 His father replied: *"I heard the Messenger of Allah (ﷺ) supplicating with these words, and I love to follow his practice."*
 
-The transmitter ʿAbbās adds that his version also has: *"And you say: 'O Allah, I seek refuge in You from disbelief and poverty; O Allah, I seek refuge in You from the punishment of the grave. There is no deity except You' — three times in the morning and three times in the evening."*
+The transmitter ʿAbbās adds that his version also has: *"And you say: 'O Allah, I seek refuge in You from disbelief and poverty; O Allah, I seek refuge in You from the punishment of the grave. There is no deity except You' 〜 three times in the morning and three times in the evening."*
 
 And the Messenger of Allah (ﷺ) said: *"The supplications of the distressed one are: 'O Allah, Your mercy is what I hope for, so do not leave me to myself for the blink of an eye; set right for me all my affairs. There is no deity except You.'"* Some transmitters related more than others.
 
@@ -52,7 +52,7 @@ And the Messenger of Allah (ﷺ) said: *"The supplications of the distressed one
 [[لَا|There is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[أَنْتَ|You.|anta.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Sunan Abī Dāwūd 5090**
 
@@ -72,6 +72,6 @@ And the Messenger of Allah (ﷺ) said: *"The supplications of the distressed one
 
 [[قَالَ|He said:|qāla:]] [[وَقَالَ|And said|wa-qāla]] [[رَسُولُ|the Messenger|rasūlu]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may Allah bless him|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace:|wa sallama:]] ‏"‏ [[دَعَوَاتُ|The supplications of|daʿawātu]] [[الْمَكْرُوبِ|the distressed are:|l-makrūbi:]] [[اللَّهُمَّ|O Allah,|allāhumma]] [[رَحْمَتَكَ|Your mercy|raḥmataka]] [[أَرْجُو|I hope for,|arjū,]] [[فَلَا|so do not|fa-lā]] [[تَكِلْنِي|entrust me|takilnī]] [[إِلَىٰ|to|ilā]] [[نَفْسِي|myself|nafsī]] [[طَرْفَةَ|for a blink of|ṭarfata]] [[عَيْنٍ|an eye,|ʿaynin,]] [[وَأَصْلِحْ|and rectify|wa-aṣliḥ]] [[لِي|for me|lī]] [[شَأْنِي|my affairs|shaʾnī]] [[كُلَّهُۥ|all of them,|kullahū,]] [[لَا|there is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[أَنْتَ|You."|anta.]] ‏"‏ [[وَبَعْضُهُمْ|And some of them|wa-baʿḍuhum]] [[يَزِيدُ|added|yazīdu]] [[عَلَىٰ|over|ʿalā]] [[صَاحِبِهِۦ.|his companion.|ṣāḥibihī.]]
 
-*🔗 Verify on sunnah.com — [Abi Dawud 5090](https://sunnah.com/abudawud:5090)*
+*🔗 Verify on sunnah.com 〜 [Abi Dawud 5090](https://sunnah.com/abudawud:5090)*
 
 </details>

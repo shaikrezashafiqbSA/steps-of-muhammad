@@ -2,9 +2,9 @@
 narrator: Transmitted in the majālis of the Ḥabāʾib of Ḥaḍramawt (Ba ʿAlawī tradition); core phrases from ʿĀʾishah & ʿAbdullāh ibn ʿUmar (raḍiyallāhu ʿanhumā)
 collection: Awrād of the Ba ʿAlawī Tradition (with phrases from Ṣaḥīḥ Muslim, Sunan Ibn Mājah & the Qur'an)
 book: Compiled Duʿāʾ · Recited in gatherings of dhikr & after Sūrat Yāsīn
-hadith: Composite — Muslim 486 · Ibn Mājah 3801 · Qur'an 37:180–182
-grade: Compiled duʿāʾ (mixed: ṣaḥīḥ, ḍaʿīf & Qur'anic elements — see Source & Authenticity)
-grade-comment: "Lā nuḥṣī thanāʾan ʿalayk" — Ṣaḥīḥ (Muslim 486); "kamā yanbaghī li-jalāli wajhik" — Ḍaʿīf isnād, Ibn Mājah 3801 (al-Albānī); "ḥamdan yuwāfī niʿamahu" — no established Prophetic isnād (Ibn al-Qayyim, ʿUddat aṣ-Ṣābirīn)
+hadith: Composite 〜 Muslim 486 · Ibn Mājah 3801 · Qur'an 37:180–182
+grade: Compiled duʿāʾ (mixed: ṣaḥīḥ, ḍaʿīf & Qur'anic elements 〜 see Source & Authenticity)
+grade-comment: "Lā nuḥṣī thanāʾan ʿalayk" 〜 Ṣaḥīḥ (Muslim 486); "kamā yanbaghī li-jalāli wajhik" 〜 Ḍaʿīf isnād, Ibn Mājah 3801 (al-Albānī); "ḥamdan yuwāfī niʿamahu" 〜 no established Prophetic isnād (Ibn al-Qayyim, ʿUddat aṣ-Ṣābirīn)
 left-orb: Duʿāʾ al-Ḥamd
 left-orb-compact: Rātib Al-‛Aṭṭās
 right-orb: Compiled Du'a
@@ -116,7 +116,7 @@ Sūrat al-Fātiḥah carries no reward clause within these two verses themselves
 
 [[ حَمِدَنِي | "My servant has praised Me." | ḥamidanī ]] [[ عَبْدِي | (lit. My servant) | ʿabdī ]]
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ Muslim 395a](https://sunnah.com/muslim:395a)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ Muslim 395a](https://sunnah.com/muslim:395a)*
 
 **Part 2**
 
@@ -227,7 +227,7 @@ These are 3 lexical echoes of the Quran:
 
 3) and *jabbārin ʿanīd* appears twice in Sūrat Ibrāhīm 14:15 and Sūrat Hūd 11:59:
 
-**Qurʾān ✦ Sūrat Ibrāhīm 14:15 — Nominative Form**
+**Qurʾān ✦ Sūrat Ibrāhīm 14:15 〜 Nominative Form**
 
 <iframe 
   src="https://quranwbw.com/14/15" 
@@ -237,7 +237,7 @@ These are 3 lexical echoes of the Quran:
   style="border:none;">
 </iframe>
 
-**Qurʾān ✦ Sūrat Hūd 11:59 — Accusative Form**
+**Qurʾān ✦ Sūrat Hūd 11:59 〜 Accusative Form**
 
 <iframe 
   src="https://quranwbw.com/11/59" 

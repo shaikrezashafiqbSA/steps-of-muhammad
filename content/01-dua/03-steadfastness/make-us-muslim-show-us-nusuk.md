@@ -1,5 +1,5 @@
 ::meta
-narrator: — (direct divine speech; spoken in-verse by Ibrāhīm and Ismāʿīl ؑ)
+narrator: 〜 (direct divine speech; spoken in-verse by Ibrāhīm and Ismāʿīl ؑ)
 collection: Qur'an
 book: Sūrah al-Baqarah (2) · Juzʾ 1–2
 hadith: Āyāt 127–128

@@ -40,7 +40,7 @@ If somebody recites it during the *day* with **firm faith** in it, and dies on t
 and if somebody recites it at *night* with **firm faith** in it, and dies before the morning, *he will be from the people of Paradise.*
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 6306**
 
@@ -58,6 +58,6 @@ and if somebody recites it at *night* with **firm faith** in it, and dies before
 
 [[قَالَ:|He said:|qāla:]] [[وَمَنْ|And whoever|wa-man]] [[قَالَهَا|says it|qālahā]] [[مِنَ|during|mina]] [[النَّهَارِ|the day|n-nahāri]] [[مُوقِنًا|with firm faith|mūqinan]] [[بِهَا،|in it,|bihā,]] [[فَمَاتَ|and dies|fa-māta]] [[مِنْ|on|min]] [[يَوْمِهِ|that day of his|yawmihī]] [[قَبْلَ|before|qabla]] [[أَنْ|that|an]] [[يُمْسِيَ،|he reaches evening,|yumsiya,]] [[فَهُوَ|then he is|fa-huwa]] [[مِنْ|from|min]] [[أَهْلِ|the people of|ahli]] [[الْجَنَّةِۖ|Paradise;|l-jannati;]] [[وَمَنْ|and whoever|wa-man]] [[قَالَهَا|says it|qālahā]] [[مِنَ|during|mina]] [[اللَّيْلِ|the night|l-layli]] [[وَهْوَ|while he is|wa-huwa]] [[مُوقِنٌ|firmly believing|mūqinun]] [[بِهَا،|in it,|bihā,]] [[فَمَاتَ|and dies|fa-māta]] [[قَبْلَ|before|qabla]] [[أَنْ|that|an]] [[يُصْبِحَ،|he reaches morning,|yuṣbiḥa,]] [[فَهُوَ|then he is|fa-huwa]] [[مِنْ|from|min]] [[أَهْلِ|the people of|ahli]] [[الْجَنَّةِ.|Paradise.|l-jannati.]]
 
-*🔗 Verify on sunnah.com — [Sahih al-Bukhari 6306](https://sunnah.com/bukhari:6306)*
+*🔗 Verify on sunnah.com 〜 [Sahih al-Bukhari 6306](https://sunnah.com/bukhari:6306)*
 
 </details>

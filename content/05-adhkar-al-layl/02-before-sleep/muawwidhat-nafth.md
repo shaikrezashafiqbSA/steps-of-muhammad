@@ -26,7 +26,7 @@ right-orb-compact: ۞۞۞
 [[قُلْ|Say:|qul]] [[أَعُوذُ|I seek refuge|aʿūdhu]] [[بِرَبِّ|in the Lord of|bi rabbi]] [[النَّاسِ|mankind,|n-nās]] [[مَلِكِ|the King of|maliki]] [[النَّاسِ|mankind,|n-nās]] [[إِلَهِ|the God of|ilāhi]] [[النَّاسِ|mankind,|n-nās]] [[مِنْ|from|min]] [[شَرِّ|the evil of|sharri]] [[الْوَسْوَاسِ|the whisperer|l-waswāsi]] [[الْخَنَّاسِ|who withdraws,|l-khannās]] [[الَّذِي|who|alladhī]] [[يُوَسْوِسُ|whispers|yuwaswisu]] [[فِي|into|fī]] [[صُدُورِ|the breasts of|ṣudūri]] [[النَّاسِ|mankind,|n-nās]] [[مِنَ|from among|mina]] [[الْجِنَّةِ|the jinn|l-jinnati]] [[وَالنَّاسِ|and mankind.|wa-n-nās]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 5017**
 
@@ -37,11 +37,11 @@ right-orb-compact: ۞۞۞
 **The Action, In Order**
 
 1. Cup both palms together.
-2. Breathe lightly into them (*nafth* — breath with almost no spit).
+2. Breathe lightly into them (*nafth* 〜 breath with almost no spit).
 3. Recite **al-Ikhlāṣ**, **al-Falaq**, **an-Nās** into the palms.
-4. Wipe over as much of the body as you can reach — **head first**, then face, then the front of the body.
+4. Wipe over as much of the body as you can reach 〜 **head first**, then face, then the front of the body.
 5. **Repeat the whole thing three times.**
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 5017](https://sunnah.com/bukhari:5017)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ al-Bukhārī 5017](https://sunnah.com/bukhari:5017)*
 
 </details>

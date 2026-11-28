@@ -26,7 +26,7 @@ Anas ibn Mālik (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said to F�
 [[ وَلَا | and do not | wa-lā ]] [[ تَكِلْنِي | entrust me | takilnī ]] [[ إِلَى | to | ilā ]] [[ نَفْسِي | myself | nafsī ]] [[ طَرْفَةَ | for a blink of | ṭarfata ]] [[ عَيْنٍ | an eye. | ʿaynin ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Sunan al-Kubrā 10330 · Al-Mustadrak 2000 · Ḥiṣn al-Muslim 88**
 
@@ -42,11 +42,11 @@ Anas ibn Mālik (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said to F�
 
 **Virtue & Significance**
 
-*This narration attaches no explicit reward or promised outcome. Its weight comes from the framing: the Prophet ﷺ personally urged his own daughter Fāṭimah (raḍiyallāhu ʿanhā) to keep this du'a morning and evening — a mark of how much he valued it.*
+*This narration attaches no explicit reward or promised outcome. Its weight comes from the framing: the Prophet ﷺ personally urged his own daughter Fāṭimah (raḍiyallāhu ʿanhā) to keep this du'a morning and evening 〜 a mark of how much he valued it.*
 
 [[ مَا | What | mā ]] [[ يَمْنَعُكِ | prevents you | yamnaʿuki ]] [[ أَنْ | that | an ]] [[ تَسْمَعِي | you listen to | tasmaʿī ]] [[ مَا | What | mā ]] [[ أُوصِيكِ | I advise you | ūṣīki ]] [[ بِهِ | with it? | bihī ]]
 [[ تَقُولِي | you say | taqūlī ]] [[ إِذَا | when | idhā ]] [[ أَصْبَحْتِ | you enter the morning | aṣbaḥti ]] [[ وَإِذَا | and when | wa-idhā ]] [[ أَمْسَيْتِ | you enter the evening | amsayti ]]
 
-*🔗 Verify on sunnah.com — Ḥiṣn al-Muslim 88: [sunnah.com/hisn:88](https://sunnah.com/hisn:88) | Nasai Kubra:10330 [hadithunlocked.com/nasai-kubra:10330](https://hadithunlocked.com/nasai-kubra:10330)*
+*🔗 Verify on sunnah.com 〜 Ḥiṣn al-Muslim 88: [sunnah.com/hisn:88](https://sunnah.com/hisn:88) | Nasai Kubra:10330 [hadithunlocked.com/nasai-kubra:10330](https://hadithunlocked.com/nasai-kubra:10330)*
 
 </details>

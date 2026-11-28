@@ -49,7 +49,7 @@ right-orb-compact: ۞۞
 [[ عَنْكَ | on your behalf. | ʿanka ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Jāmiʿ at-Tirmidhī 3563**
 
@@ -149,6 +149,6 @@ right-orb-compact: ۞۞
 [[ حَسَنٌ | that is ḥasan (sound) | ḥasanun ]]
 [[ غَرِيبٌ | and gharīb (singularly transmitted). | gharībun ]]
 
-*🔗 Verify on sunnah.com — [Jāmiʿ at-Tirmidhī 3563](https://sunnah.com/tirmidhi:3563)*
+*🔗 Verify on sunnah.com 〜 [Jāmiʿ at-Tirmidhī 3563](https://sunnah.com/tirmidhi:3563)*
 
 </details>

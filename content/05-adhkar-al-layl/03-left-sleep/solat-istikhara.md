@@ -35,21 +35,21 @@ right-orb-compact: ۞۞۞
 
 *(Name the need / hajat / حَاجَتَهُ here)*
 
-[[خَيْرٌ|is good|khayrun]] [[لِي|for me|lī]] [[فِي|in|fī]] [[دِينِي|my religion,|dīnī]] [[وَمَعَاشِي|my livelihood,|wa-maʿāshī]] [[وَعَاقِبَةِ|and the outcome of|wa-ʿāqibati]] [[أَمْرِي|my affairs—|amrī]]
+[[خَيْرٌ|is good|khayrun]] [[لِي|for me|lī]] [[فِي|in|fī]] [[دِينِي|my religion,|dīnī]] [[وَمَعَاشِي|my livelihood,|wa-maʿāshī]] [[وَعَاقِبَةِ|and the outcome of|wa-ʿāqibati]] [[أَمْرِي|my affairs〜|amrī]]
 
 *or*
 
-[[عَاجِلِ|my immediate|ʿājili]] [[أَمْرِي|affairs|amrī]] [[وَآجِلِهِ|and its future ones)—|wa-ājilihi]]
+[[عَاجِلِ|my immediate|ʿājili]] [[أَمْرِي|affairs|amrī]] [[وَآجِلِهِ|and its future ones)〜|wa-ājilihi]]
 
 ### 3) Surrender - {{ Wakaltuka | In Arabic, "Wakaltuka" (وَكَّلْتُكَ) translates directly to "I have appointed you as my agent" or "I have entrusted my affairs to you." It comes from the Arabic root w-k-l (وَكَلَ), which means to entrust, commission, or rely upon someone. This is the same root used for Tawakkul (complete trust and reliance on God) and Al-Wakil (The Trustee/Disposer of Affairs, one of the names of God) }}
 [[فَاقْدُرْهُ|Then decree it|fa-qdurhu]] [[لِي|for me,|lī]] [[وَيَسِّرْهُ|and make it easy|wa-yassirhu]] [[لِي|for me,|lī]] [[ثُمَّ|then|thumma]] [[بَارِكْ|bless|bārik]] [[لِي|me|lī]] [[فِيهِ|in it.|fīhi]]
 
 ### 4) Declaring the need could be bad
-[[وَإِنْ|And if|wa-in]] [[كُنْتَ|You|kunta]] [[تَعْلَمُ|know|taʿlamu]] [[أَنَّ|that|anna]] [[هَذَا|this|hādhā]] [[الأَمْرَ|matter|al-amr]] [[شَرٌّ|is bad|sharrun]] [[لِي|for me|lī]] [[فِي|in|fī]] [[دِينِي|my religion,|dīnī]] [[وَمَعَاشِي|my livelihood,|wa-maʿāshī]] [[وَعَاقِبَةِ|and the outcome of|wa-ʿāqibati]] [[أَمْرِي|my affairs—|amrī]]
+[[وَإِنْ|And if|wa-in]] [[كُنْتَ|You|kunta]] [[تَعْلَمُ|know|taʿlamu]] [[أَنَّ|that|anna]] [[هَذَا|this|hādhā]] [[الأَمْرَ|matter|al-amr]] [[شَرٌّ|is bad|sharrun]] [[لِي|for me|lī]] [[فِي|in|fī]] [[دِينِي|my religion,|dīnī]] [[وَمَعَاشِي|my livelihood,|wa-maʿāshī]] [[وَعَاقِبَةِ|and the outcome of|wa-ʿāqibati]] [[أَمْرِي|my affairs〜|amrī]]
 
 *or*
 
-[[فِي|in|fī]] [[عَاجِلِ|my immediate|ʿājili]] [[أَمْرِي|affairs|amrī]] [[وَآجِلِهِ|and its future ones)—|wa-ājilihi]]
+[[فِي|in|fī]] [[عَاجِلِ|my immediate|ʿājili]] [[أَمْرِي|affairs|amrī]] [[وَآجِلِهِ|and its future ones)〜|wa-ājilihi]]
 
 ### 5) Surrender - {{ Wakaltuka | In Arabic, "Wakaltuka" (وَكَّلْتُكَ) translates directly to "I have appointed you as my agent" or "I have entrusted my affairs to you." It comes from the Arabic root w-k-l (وَكَلَ), which means to entrust, commission, or rely upon someone. This is the same root used for Tawakkul (complete trust and reliance on God) and Al-Wakil (The Trustee/Disposer of Affairs, one of the names of God) }}
 [[فَاصْرِفْهُ|Then turn it away|fa-ṣrifhu]] [[عَنِّي|from me|ʿannī]] 
@@ -61,14 +61,14 @@ right-orb-compact: ۞۞۞
 [[ثُمَّ|then|thumma]] [[أَرْضِنِي|make me content|arḍinī]] [[بِهِ|with it.|bihī]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 1166**
 
 Narrated Jābir ibn ʿAbdillāh (رضي الله عنهما):
 The Prophet (ﷺ) used to teach us the way of doing Istikhārah (seeking guidance from Allah) in all matters as he taught us the Sūrahs of the Qur'an. He said, "If anyone of you thinks of doing any job he should offer a two rakʿat prayer other than the compulsory ones and say (after the prayer):
 
-> *"O Allah! I ask guidance from Your knowledge, And Power from Your Might and I ask for Your great blessings. You are capable and I am not. You know and I do not and You know the unseen. O Allah! If You know that this job is good for my religion and my subsistence and in my Hereafter—(or said: If it is better for my present and later needs)—Then You ordain it for me and make it easy for me to get, And then bless me in it, and if You know that this job is harmful to me In my religion and subsistence and in the Hereafter—(or said: If it is worse for my present and later needs)—Then keep it away from me and let me be away from it. And ordain for me whatever is good for me, And make me satisfied with it)."*
+> *"O Allah! I ask guidance from Your knowledge, And Power from Your Might and I ask for Your great blessings. You are capable and I am not. You know and I do not and You know the unseen. O Allah! If You know that this job is good for my religion and my subsistence and in my Hereafter〜(or said: If it is better for my present and later needs)〜Then You ordain it for me and make it easy for me to get, And then bless me in it, and if You know that this job is harmful to me In my religion and subsistence and in the Hereafter〜(or said: If it is worse for my present and later needs)〜Then keep it away from me and let me be away from it. And ordain for me whatever is good for me, And make me satisfied with it)."*
 
 The Prophet (ﷺ) added that then the person should name (mention) his need.
 
@@ -92,6 +92,6 @@ The Prophet (ﷺ) added that then the person should name (mention) his need.
 
 As above
 
-*🔗 Verify on sunnah.com — [Bukhari 1166](https://sunnah.com/bukhari:1166)*
+*🔗 Verify on sunnah.com 〜 [Bukhari 1166](https://sunnah.com/bukhari:1166)*
 
 </details>

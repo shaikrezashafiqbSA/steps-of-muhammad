@@ -40,7 +40,7 @@ He said: "Say in the morning and evening:
 [[فَفَعَلْتُ|So I did|fa-faʿaltu]] [[ذَلِكَ|that,|dhālika,]] [[فَأَذْهَبَ|and Allah removed|fa-adhhaba]] [[اللَّهُ|Allah|llāhu]] [[عَزَّ|Mighty|ʿazza]] [[وَجَلَّ|and Majestic|wa-jalla]] [[هَمِّي|my worry|hammī]] [[وَقَضَى|and settled|wa-qaḍā]] [[عَنِّي|for me|ʿannī]] [[دَيْنِي|my debt.|daynī.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Sunan Abī Dāwūd 1555**
 
@@ -56,6 +56,6 @@ He said: "Say in the morning and evening:
 
 [[قَالَ|He said:|qāla]] [[فَفَعَلْتُ|So I did|fa-faʿaltu]] [[ذَلِكَ|that,|dhālika,]] [[فَأَذْهَبَ|and Allah removed|fa-adhhaba]] [[اللَّهُ|Allah|llāhu]] [[عَزَّ|Mighty|ʿazza]] [[وَجَلَّ|and Majestic|wa-jalla]] [[هَمِّي|my worry|hammī]] [[وَقَضَى|and settled|wa-qaḍā]] [[عَنِّي|for me|ʿannī]] [[دَيْنِي|my debt.|daynī.]]
 
-*🔗 Verify on sunnah.com — [Sunan Abī Dāwūd 1555](https://sunnah.com/abudawud:1555)*
+*🔗 Verify on sunnah.com 〜 [Sunan Abī Dāwūd 1555](https://sunnah.com/abudawud:1555)*
 
 </details>

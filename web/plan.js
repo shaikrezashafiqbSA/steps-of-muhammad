@@ -1,5 +1,5 @@
 // =========================================================
-// PLAN MODEL — the editable loadout behind Action view.
+// PLAN MODEL 〜 the editable loadout behind Action view.
 //   Loaded by index.html (Action view + Library "＋") and by
 //   web/render.html (to read a slot as a sequence of cards).
 //   Needs nav-data.js and default-plan.js loaded first.
@@ -8,7 +8,7 @@
 //   A slot holds an ordered list of entries:
 //     { type:'card', path, reps? }   one duʿā card
 //     { type:'set',  set }           a whole PRESET_COLLECTIONS set
-//     { type:'note', note, reps? }   free text — dhikr or an act
+//     { type:'note', note, reps? }   free text 〜 dhikr or an act
 //
 //   What a reader sees = their own list for that slot if they
 //   have edited it, otherwise the curated default. Edits are
@@ -25,7 +25,7 @@
   // `windows` are the clock-window ids (sun-clock.js) a card's `time`
   // tag is matched against to offer it as a "Suggested" pick.
   const FARD = [
-    { key: 'fajr',    name: 'Fajr',    windows: ['day-fajr-adhan', 'day-fajr-post'], until: 'Until Shurūq',   untilHint: 'The morning adhkār window — after the sunnah, until the sun rises.' },
+    { key: 'fajr',    name: 'Fajr',    windows: ['day-fajr-adhan', 'day-fajr-post'], until: 'Until Shurūq',   untilHint: 'The morning adhkār window, after the sunnah until the sun rises.' },
     { key: 'dhuhr',   name: 'Ẓuhr',    windows: ['day-dhuhr'],                       until: 'Until ʿAṣr',     untilHint: 'The long afternoon.' },
     { key: 'asr',     name: 'ʿAṣr',    windows: ['day-asr-post'],                    until: 'Until Maghrib',  untilHint: 'The evening adhkār window.' },
     { key: 'maghrib', name: 'Maghrib', windows: ['night-maghrib'],                   until: 'Until ʿIshāʾ',   untilHint: 'The day handed over.' },
@@ -118,10 +118,18 @@
       seen.add(entryKey(e));
       out.push(e);
     };
+    const own = SOM_DEFAULT_PLAN[slotId] || [];
     if (def.role === 'before' || def.role === 'during' || def.role === 'after') {
-      (SOM_DEFAULT_PLAN['*.' + def.role] || []).forEach(push);
+      // Wildcard entries go first 〜 except any the slot lists itself,
+      // which take the position the slot gives them. So a slot can
+      // re-order the shared entries simply by listing them.
+      const ownKeys = new Set(own.map(normalise).filter(Boolean).map(entryKey));
+      (SOM_DEFAULT_PLAN['*.' + def.role] || []).forEach(raw => {
+        const e = normalise(raw);
+        if (e && !ownKeys.has(entryKey(e))) push(raw);
+      });
     }
-    (SOM_DEFAULT_PLAN[slotId] || []).forEach(push);
+    own.forEach(push);
     return out;
   }
 
@@ -234,7 +242,7 @@
     const salahRole = def.role === 'before' || def.role === 'during' || def.role === 'after';
     const scored = [];
     library().forEach(row => {
-      // Only windows the item names itself — the *salah / *adhan wildcards
+      // Only windows the item names itself 〜 the *salah / *adhan wildcards
       // would otherwise make every such card a suggestion for every slot.
       const explicit = (row.item.time || []).filter(t => t.charAt(0) !== '*');
       let score = 0;
@@ -306,7 +314,7 @@
       if (r.type === 'note') lines.push(n + '. ' + r.label + reps);
       else lines.push(n + '. ' + r.label + reps + '\n' + new URL(r.href, baseUrl).href);
     });
-    lines.push('', '— shared from Follow the Steps ✦ steps of Muḥammad ﷺ');
+    lines.push('', 'Shared from Follow the Steps ✦ steps of Muḥammad ﷺ');
     return lines.join('\n');
   }
 

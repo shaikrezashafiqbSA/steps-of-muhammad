@@ -252,11 +252,11 @@ This is the closing du'a recited at the end of a tahlil gathering compiled by Ha
 - **Differs:** The ḥadīth reads "yā rabbi" and "li-ʿaẓīmi sulṭānika".
 - **Grade:** Ḍaʿīf per al-Albānī and Darussalam. Zubair ʿAlī Zaʾī: isnād ḥasan.
 
-*🔗 Verify on sunnah.com — [Sunan Ibn Mājah 3801](https://sunnah.com/ibnmajah:3801)*
+*🔗 Verify on sunnah.com 〜 [Sunan Ibn Mājah 3801](https://sunnah.com/ibnmajah:3801)*
 
 **Athar ✦ Ādam ؑ, via Abū Naṣr at-Tammār**
 
-*Pointer only: the wording is not verified — a place to consult, not a quotation.*
+*Pointer only: the wording is not verified 〜 a place to consult, not a quotation.*
 
 - **Cited in:** al-Nawawī, al-Adhkār (p. 208, Dār al-Minhāj edition), and discussed by Ibn al-Qayyim, ʿUddat aṣ-Ṣābirīn (p. 117), as given on HadithAnswers.
 - **What it says:** A report from Abū Naṣr at-Tammār, from Muḥammad ibn an-Naḍr al-Ḥārithī, that Ādam asked for a comprehensive praise and was told to say "al-ḥamdu li-llāhi rabbi l-ʿālamīna, ḥamdan yuwāfī niʿamahu wa-yukāfiʾu mazīdah" three times in the morning and three times in the evening.
@@ -266,7 +266,7 @@ This is the closing du'a recited at the end of a tahlil gathering compiled by Ha
 
 **Note ✦ Ṣalāt Tunjīnā**
 
-*Pointer only: the wording is not verified — a place to consult, not a quotation.*
+*Pointer only: the wording is not verified 〜 a place to consult, not a quotation.*
 
 - **IslamQA, no. 128801 (Arabic):** Discusses this ṣalawāt formula. The benefit attached to it comes from a dream account, and dreams do not establish rulings or the virtue of a wording. [Read on IslamQA](https://islamqa.info/ar/answers/128801).
 
@@ -302,11 +302,11 @@ This is the closing du'a recited at the end of a tahlil gathering compiled by Ha
 - **Parallels:** Jāmiʿ at-Tirmidhī 3493, Sunan Abī Dāwūd 879, Muwaṭṭaʾ Mālik (sunnah.com Book 15, Ḥadīth 33).
 - **Differs:** The ḥadīth is in the first person singular and has no "Subḥānaka".
 
-*🔗 Verify on sunnah.com — [Sahih Muslim 486](https://sunnah.com/muslim:486)*
+*🔗 Verify on sunnah.com 〜 [Sahih Muslim 486](https://sunnah.com/muslim:486)*
 
 **Note ✦ Falaka l-ḥamdu ḥattā tarḍā**
 
-*Pointer only: the wording is not verified — a place to consult, not a quotation.*
+*Pointer only: the wording is not verified 〜 a place to consult, not a quotation.*
 
 - **al-Nawawī, al-Adhkār (chapter on praising Allah):** Notes that some add "falaka l-ḥamdu ḥattā tarḍā" at the end of the Ādam formula. [Text seen on kalemtayeb.com](https://kalemtayeb.com/azkar/sub/2475).
 - **Ibn Abī ad-Dunyā, Kitāb ash-Shukr:** A longer praise du'a containing "lakal-ḥamdu ḥattā tarḍā, wa-lakal-ḥamdu idhā raḍīta" appears in a scanned copy, and is quoted with a footnote in an IslamHouse compilation on the wording of ḥamd. [IslamHouse document](https://d1.islamhouse.com/data/ar/ih_books/single-03/ar-sighat-alhamd.doc).
@@ -324,19 +324,19 @@ This is the closing du'a recited at the end of a tahlil gathering compiled by Ha
 
 **Note ✦ Order of the tahlil (NU Online)**
 
-*Pointer only: the wording is not verified — a place to consult, not a quotation.*
+*Pointer only: the wording is not verified 〜 a place to consult, not a quotation.*
 
 - **NU Online, "Susunan Bacaan Tahlil, Doa Arwah Lengkap, dan Terjemahannya" (4 November 2016):** States that its order of the tahlil is quoted in full from the Majmūʿ Syarīf. [Read on NU Online](https://nu.or.id/syariah/susunan-bacaan-tahlil-doa-arwah-lengkap-dan-terjemahannya-drr3t).
 
 **Note ✦ Gifting the reward (Dār al-Iftāʾ al-Miṣriyyah, as reported)**
 
-*Pointer only: the wording is not verified — a place to consult, not a quotation.*
+*Pointer only: the wording is not verified 〜 a place to consult, not a quotation.*
 
 - **Sada Elbalad, reporting Dār al-Iftāʾ:** The reward of reciting reaches the deceased through a short formula asking Allah to make the like of the reward of the recitation for the named person. [Read on Sada Elbalad](https://www.elbalad.news/3345269).
 
 **Note ✦ Īṣāl ath-thawāb (juristic discussion)**
 
-*Pointer only: the wording is not verified — a place to consult, not a quotation.*
+*Pointer only: the wording is not verified 〜 a place to consult, not a quotation.*
 
 - **Al-Risalah (UIN Alauddin Makassar, 2025):** Compares the Muhammadiyah and Nahdlatul Ulama positions on gifting the reward of worship to the deceased. [Read the article](https://journal.uin-alauddin.ac.id/index.php/al_risalah/article/download/55225/22692/182879).
 
@@ -353,7 +353,7 @@ This is the closing du'a recited at the end of a tahlil gathering compiled by Ha
 - **Recorded:** Chapters on the Day of Judgement and ar-Riqāq, narrated by Abū Saʿīd al-Khudrī ؓ. Contains the statement that the grave is either a garden from the gardens of Paradise or a pit from the pits of the Fire.
 - **Grade:** At-Tirmidhī: gharīb. Darussalam: ḍaʿīf. Al-Albānī and Aḥmad Shākir: very ḍaʿīf. Zubair ʿAlī Zaʾī: isnād ḍaʿīf. HadithAnswers notes that parts of the ḥadīth are supported by other narrations.
 
-*🔗 Verify on sunnah.com — [Jami` at-Tirmidhi 2460](https://sunnah.com/tirmidhi:2460)*
+*🔗 Verify on sunnah.com 〜 [Jami` at-Tirmidhi 2460](https://sunnah.com/tirmidhi:2460)*
 
 ---
 
@@ -367,7 +367,7 @@ This is the closing du'a recited at the end of a tahlil gathering compiled by Ha
 - **Parallels:** Sunan an-Nasāʾī 62 and 1983, Sunan Ibn Mājah 1500 (ṣaḥīḥ per Darussalam), Jāmiʿ at-Tirmidhī 1025 (shorter).
 - **Differs:** The ḥadīth says "mina l-khaṭāyā"; the recital reads "mina dh-dhunūbi wa-l-khaṭāyā". The ḥadīth is for one deceased person (singular), the recital for several.
 
-*🔗 Verify on sunnah.com — [Sahih Muslim 963](https://sunnah.com/muslim:963a)*
+*🔗 Verify on sunnah.com 〜 [Sahih Muslim 963](https://sunnah.com/muslim:963a)*
 
 ---
 
@@ -383,7 +383,7 @@ This is the closing du'a recited at the end of a tahlil gathering compiled by Ha
 - **Differs:** "Yā ḥannān" is not in the reported wording.
 - **Grade:** Ṣaḥīḥ per al-Albānī. Ṣaḥīḥ per Shuʿayb al-Arnaʾūṭ.
 
-*🔗 Verify on sunnah.com — [Sunan Abi Dawud 1495](https://sunnah.com/abudawud:1495)*
+*🔗 Verify on sunnah.com 〜 [Sunan Abi Dawud 1495](https://sunnah.com/abudawud:1495)*
 
 ---
 
@@ -428,9 +428,9 @@ This is the closing du'a recited at the end of a tahlil gathering compiled by Ha
 - **Differs:** The last clause varies between reports ("tuḍillanā" / "taftinnā").
 - **Grade:** Abū Dāwūd 3201: ṣaḥīḥ per al-Albānī.
 
-*🔗 Verify on sunnah.com — [Sunan Abi Dawud 3201](https://sunnah.com/abudawud:3201)*
+*🔗 Verify on sunnah.com 〜 [Sunan Abi Dawud 3201](https://sunnah.com/abudawud:3201)*
 
-*🔗 Verify on hadithprophet.com — [Musnad Ahmad 24425](https://hadithprophet.com/hadith-27878.html)*
+*🔗 Verify on hadithprophet.com 〜 [Musnad Ahmad 24425](https://hadithprophet.com/hadith-27878.html)*
 
 </details>
 

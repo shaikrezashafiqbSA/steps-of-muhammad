@@ -1,5 +1,5 @@
 // =========================================================
-// QALB MONITOR — the states of the heart, and the duʿās for each.
+// QALB MONITOR 〜 the states of the heart, and the duʿās for each.
 //   Loaded by index.html (the قَلْب wheel on Action view) and by
 //   web/render.html (?qalb=<id> reads a state as one page, and a
 //   card opened from a state pages through that state's list).
@@ -181,7 +181,7 @@ const SOM_QALB_STATES = [
     cards: [
       'content/01-dua/03-steadfastness/ya-muqallibal-qulub.md',
       'content/01-dua/03-steadfastness/la-tuzigh-qulubana.md',
-      'content/dua/dua-nur.md'
+      'content/05-adhkar-al-layl/03-left-sleep/dua-nur.md'
     ]
   },
   {

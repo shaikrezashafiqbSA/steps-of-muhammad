@@ -48,7 +48,7 @@ and no sin will meet him or destroy him that day, except for associating partner
 [[وَحَرْسٍ|and a protection|wa-ḥarsin]] [[مِنَ|from|mina]] [[ٱلشَّيْطَانِ|Satan,|sh-shayṭāni]] [[وَلَمْ|and it is not|wa-lam]] [[يَنْبَغِ|possible|yanbaghi]] [[لِذَنْۢبٍ|for a sin|li-dhambin]] [[أَنْ|that|an]] [[يُدْرِكَهُۥ|it overtakes him|yudrikahū]] [[فِي|in|fī]] [[ذَٰلِكَ|that|dhālika]] [[ٱلْيَوْمِ|day,|l-yawmi]] [[إِلَّا|except|illā]] [[ٱلشِّرْكَ|associating partners|sh-shirka]] [[بِٱللَّهِ|with Allah.|billāhi]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Jāmiʿ at-Tirmidhī 3474**
 
@@ -80,6 +80,6 @@ and no sin will meet him or destroy him that day, except for associating partner
 
 [[قَالَ|He said:|qāla]] [[هَٰذَا|This|hādhā]] [[حَدِيثٌ|is a Hadith|ḥadīthun]] [[حَسَنٌ|good (Hasan),|ḥasanun]] [[غَرِيبٌ|rare (Gharib),|gharībun]] [[صَحِيحٌ|authentic (Sahih).|ṣaḥīḥun]]
 
-*🔗 Verify on sunnah.com — [Tirmidhi 3474](https://sunnah.com/tirmidhi:3474)*
+*🔗 Verify on sunnah.com 〜 [Tirmidhi 3474](https://sunnah.com/tirmidhi:3474)*
 
 </details>

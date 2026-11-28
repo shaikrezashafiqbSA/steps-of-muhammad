@@ -21,7 +21,7 @@ Sālim narrated that when Ibn ʿUmar ؓ intended to bid farewell to a man settin
 [[ أَسْتَوْدِعُ | I entrust | astawdiʿu ]] [[ اللَّهَ | to Allah | llāha ]] [[ دِينَكَ | your religion | dīnaka ]] [[ وَأَمَانَتَكَ | and your trusts | wa-amānataka ]] [[ وَخَوَاتِيمَ | and the last/conclusions | wa-khawātīma ]] [[ عَمَلِكَ | of your deeds | ʿamalika ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Jāmiʿ at-Tirmidhī 3443**
 
@@ -37,6 +37,6 @@ Sālim narrated that when Ibn ʿUmar ؓ intended to bid farewell to a man settin
 
 [[ قَالَ | he said | qāla ]] [[ هَذَا | this | hādhā ]] [[ حَدِيثٌ | is a hadith | ḥadīthun ]] [[ حَسَنٌ | ḥasan | ḥasanun ]] [[ صَحِيحٌ | ṣaḥīḥ | ṣaḥīḥun ]] [[ غَرِيبٌ | gharīb | gharībun ]] [[ مِنْ | from | min ]] [[ هَذَا | this | hādhā ]] [[ الْوَجْهِ | chain | al-wajhi ]] [[ مِنْ | from | min ]] [[ حَدِيثِ | the hadith of | ḥadīthi ]] [[ سَالِمِ | Sālim | Sālimi ]] [[ بْنِ | son of | ibni ]] [[ عَبْدِ | ʿAbd | ʿAbdi ]] [[ اللَّهِ | Allāh | llāhi ]]
 
-*🔗 Verify on sunnah.com — [Jāmiʿ at-Tirmidhī 3443](https://sunnah.com/tirmidhi:3443)*
+*🔗 Verify on sunnah.com 〜 [Jāmiʿ at-Tirmidhī 3443](https://sunnah.com/tirmidhi:3443)*
 
 </details>

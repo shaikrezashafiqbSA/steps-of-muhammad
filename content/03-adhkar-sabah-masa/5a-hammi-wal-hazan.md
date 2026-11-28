@@ -29,7 +29,7 @@ The Prophet ﷺ said to Abū Ṭalḥah, "Choose one of your boy servants to ser
 [[ وَضَلَعِ | and being overpowered by | wa-ḍalaʿi ]] [[ الدَّيْنِ | debt, | d-dayni ]] [[ وَغَلَبَةِ | and being overcome by | wa-ghalabati ]] [[ الرِّجَالِ | men. | r-rijāli ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 2893**
 
@@ -49,6 +49,6 @@ The Prophet ﷺ said to Abū Ṭalḥah, "Choose one of your boy servants to ser
 
 [[ فَكُنْتُ | and I used to | fa-kuntu ]] [[ أَسْمَعُهُ | hear him | asmaʿuhū ]] [[كَثِيرًا|frequently / repeatedly|kathīran]] [[يَقُولُ|saying...|yaqūlu]]
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 2893](https://sunnah.com/bukhari:2893) · [Sunan Abī Dāwūd 1555](https://sunnah.com/abudawud:1555)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ al-Bukhārī 2893](https://sunnah.com/bukhari:2893) · [Sunan Abī Dāwūd 1555](https://sunnah.com/abudawud:1555)*
 
 </details>

@@ -31,7 +31,7 @@ Abū al-Zubayr said: "I heard ʿAbdullāh ibn al-Zubayr speaking from the minbar
 [[لَا|There is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[ٱللَّهُ|Allah,|llāh]] [[مُخْلِصِينَ|being sincere|mukhliṣīna]] [[لَهُ|to Him|lahu]] [[ٱلدِّينَ|in devotion,|d-dīna]] [[وَلَوْ|even if|wa-law]] [[كَرِهَ|dislike it|kariha]] [[ٱلْكَـٰفِرُونَ|the disbelievers.|l-kāfirūn]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Sunan an-Nasāʾī 1339**
 
@@ -49,6 +49,6 @@ Abū al-Zubayr said: "I heard ʿAbdullāh ibn al-Zubayr speaking from the minbar
 
 [[لَا|There is no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[ٱللَّهُ|Allah,|llāh]] [[مُخْلِصِينَ|being sincere|mukhliṣīna]] [[لَهُ|to Him|lahu]] [[ٱلدِّينَ|in devotion,|d-dīna]] [[وَلَوْ|even if|wa-law]] [[كَرِهَ|dislike it|kariha]] [[ٱلْكَـٰفِرُونَ|the disbelievers.|l-kāfirūn]]
 
-*🔗 Verify on sunnah.com — [Nasāʾī 1339](https://sunnah.com/nasai/13/161)*
+*🔗 Verify on sunnah.com 〜 [Nasāʾī 1339](https://sunnah.com/nasai/13/161)*
 
 </details>

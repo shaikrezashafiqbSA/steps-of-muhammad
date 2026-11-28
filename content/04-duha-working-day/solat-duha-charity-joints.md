@@ -76,7 +76,7 @@ Saying *SubhanAllah*, *Alhamdulillah*, *Allahu Akbar*, spreading good, or cleari
 [[ الضُّحَى | the forenoon | d-duḥā ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Riyāḍ aṣ-Ṣāliḥīn 1140**
 
@@ -100,6 +100,6 @@ Saying *SubhanAllah*, *Alhamdulillah*, *Allahu Akbar*, spreading good, or cleari
 
 As above
 
-*🔗 Verify on sunnah.com — [Riyad as-Salihin 1140](https://sunnah.com/riyadussalihin:1140)*
+*🔗 Verify on sunnah.com 〜 [Riyad as-Salihin 1140](https://sunnah.com/riyadussalihin:1140)*
 
 </details>

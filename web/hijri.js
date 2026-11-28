@@ -1,11 +1,11 @@
 // =========================================================
-// HIJRI — which day of which Islamic month it is, worked out from
+// HIJRI 〜 which day of which Islamic month it is, worked out from
 // the moon itself rather than a printed table.
 //
 //   • The Islamic day begins at Maghrib, so the day number turns over at
 //     sunset, not midnight.
 //   • A month begins on the first evening, after the new moon, on which the
-//     crescent would meet the Nusantara (MABIMS) criterion — what JAKIM,
+//     crescent would meet the Nusantara (MABIMS) criterion 〜 what JAKIM,
 //     MUIS and the other MABIMS members use:
 //         altitude ≥ 3°  and  elongation ≥ 6.4°  at sunset.
 //     That is a calculation, not a sighting. When your authority announces
@@ -31,7 +31,7 @@
     'Rajab', 'Shaʿbān', 'Ramaḍān', 'Shawwāl', 'Dhū al-Qaʿdah', 'Dhū al-Ḥijjah'
   ];
 
-  // ── Tabular (civil) Islamic calendar — for numbering only ─────────────
+  // ── Tabular (civil) Islamic calendar 〜 for numbering only ─────────────
   const ISLAMIC_EPOCH = 1948439.5;
   const islamicToJD = (y, m, d) => d + Math.ceil(29.5 * (m - 1)) + (y - 1) * 354 + Math.floor((3 + 11 * y) / 30) + ISLAMIC_EPOCH - 1;
   function jdToIslamic(jd) {

@@ -11,7 +11,7 @@ right-orb: Sahih Muslim
 right-orb-compact: ۞۞۞
 ::
 
-# Lā Māniʿa Limā Aʿṭayta — The Prophet's ﷺ Post-Salām Du'a of Divine Sovereignty
+# Lā Māniʿa Limā Aʿṭayta 〜 The Prophet's ﷺ Post-Salām Du'a of Divine Sovereignty
 
 Warrād, the freed slave of al-Mughīra ibn Shuʿba, said: "Al-Mughīra ibn Shuʿba wrote to Muʿāwiya [reporting that] **when the Messenger of Allah ﷺ finished the prayer and said the salutation, he would say:"** 
 
@@ -30,7 +30,7 @@ Warrād, the freed slave of al-Mughīra ibn Shuʿba, said: "Al-Mughīra ibn Shu�
 [[وَلَا|nor|wa lā]] [[يَنْفَعُ|avails|yanfaʿu]] [[ذَا|the one of|dhā]] [[الْجَدِّ|riches|l-jaddi]] [[مِنْكَ|with You|minka]] [[الْجَدُّ|his riches|l-jaddu]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ Muslim 593a**
 
@@ -38,6 +38,6 @@ Warrād, the freed slave of al-Mughīra ibn Shuʿba, said: "Al-Mughīra ibn Shu�
 
 [[أَخْبَرَنَا|informed us|akhbaranā]] [[جَرِيرٌ|Jarīr|jarīrun]] [[عَنْ|from|ʿan]] [[مَنْصُورٍ|Manṣūr|manṣūrin]] [[عَنِ|from|ʿani]] [[الْمُسَيَّبِ|al-Musayyab|l-musayyabi]] [[بْنِ|son of|bni]] [[رَافِعٍ|Rāfiʿ|rāfiʿin]] [[عَنْ|from|ʿan]] [[وَرَّادٍ|Warrād|warrādin]] [[مَوْلَى|freed slave of|mawlā]] [[الْمُغِيرَةِ|al-Mughīra|l-mughīrati]] [[بْنِ|son of|bni]] [[شُعْبَةَ|Shuʿba|shuʿbata]] [[قَالَ|he said|qāla]] [[كَتَبَ|wrote|kataba]] [[الْمُغِيرَةُ|al-Mughīra|l-mughīratu]] [[بْنُ|son of|bnu]] [[شُعْبَةَ|Shuʿba|shuʿbata]] [[إِلَى|to|ilā]] [[مُعَاوِيَةَ|Muʿāwiya|muʿāwiyata]] [[أَنَّ|that|anna]] [[رَسُولَ|the Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[صَلَّى|may bless|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[كَانَ|used to|kāna]] [[إِذَا|when|idhā]] [[فَرَغَ|he finished|faragha]] [[مِنَ|from|mina]] [[الصَّلَاةِ|the prayer|ṣ-ṣalāti]] [[وَسَلَّمَ|and said the salutation|wa sallama]] [[قَالَ|he would say|qāla]]
 
-*🔗 Verify on sunnah.com — [Muslim 593a](https://sunnah.com/muslim:593a)*
+*🔗 Verify on sunnah.com 〜 [Muslim 593a](https://sunnah.com/muslim:593a)*
 
 </details>

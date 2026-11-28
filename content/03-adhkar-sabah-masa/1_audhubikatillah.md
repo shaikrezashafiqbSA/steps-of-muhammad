@@ -29,7 +29,7 @@ Abū Hurayrah reported that a person came to Allah's Messenger ﷺ and said: "O 
 [[ أَمَا | Ah | amā ]] [[ لَوْ | if | law ]] [[ قُلْتَ | you had said | qulta ]] [[ حِينَ | when | ḥīna ]] [[ أَمْسَيْتَ | you reached evening, | amsayta ]] [[ لَمْ | it would not | lam ]] [[ تَضُرُّكَ | have harmed you. | taḍurruk ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ Muslim 2708b · 2709a**
 
@@ -51,6 +51,6 @@ Abū Hurayrah reported that a person came to Allah's Messenger ﷺ and said: "O 
 
 [[جَاءَ|Came|jāʾa]] [[رَجُلٌ|a man|rajulun]] [[إِلَى|to|ilā]] [[النَّبِيِّ|the Prophet|n-nabiyyi]] [[صَلَّى|may Allah bless him|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace|wa sallama]] [[فَقَالَ|and said:|fa-qāla:]] [[يَا|O|yā]] [[رَسُولَ|Messenger of|rasūla]] [[اللَّهِ|Allah,|llāhi,]] [[مَا|what|mā]] [[لَقِيتُ|I suffered|laqītu]] [[مِنْ|from|min]] [[عَقْرَبٍ|a scorpion|ʿaqrabin]] [[لَدَغَتْنِي|that stung me|ladaghatnī]] [[الْبَارِحَةَ|last night.|l-bāriḥah.]] [[قَالَ|He said:|qāla:]] [[أَمَا|Ah!|amā]] [[لَوْ|if|law]] [[قُلْتَ|you had said|qulta]] [[حِينَ|when|ḥīna]] [[أَمْسَيْتَ|you reached evening:|amsayta:]] [[أَعُوذُ|I seek refuge|aʿūdhu]] [[بِكَلِمَاتِ|in the words of|bi-kalimāti]] [[اللَّهِ|Allah|llāhi]] [[التَّامَّاتِ|the Perfect|t-tāmmāti]] [[مِنْ|from|min]] [[شَرِّ|the evil of|sharri]] [[مَا|what|mā]] [[خَلَقَ|He created,|khalaq,]] [[لَمْ|it would not|lam]] [[تَضُرُّكَ|have harmed you.|taḍurruk.]]
 
-*🔗 Verify on sunnah.com — [Sahih Muslim 2708b](https://sunnah.com/muslim:2708b)*
+*🔗 Verify on sunnah.com 〜 [Sahih Muslim 2708b](https://sunnah.com/muslim:2708b)*
 
 </details>

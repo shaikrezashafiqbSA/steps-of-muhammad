@@ -92,7 +92,7 @@ The Prophet ﷺ did not say what they suffice for. Imam al-Nawawi recorded three
 [[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Qurʾān ✦ Sūrat al-Baqarah 2:284–286**
 
@@ -136,7 +136,7 @@ Ibn Kathīr says Allah teaches His servants to ask and promises to answer. He ci
 
 [[ مَنْ | whoever | man ]] [[ قَرَأَ | recites | qaraʾa ]] [[ بِالآيَتَيْنِ | the two verses | bi-l-āyatayni ]] [[ مِنْ | from | min ]] [[ آخِرِ | the end of | ākhiri ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]] [[ فِي | during | fī ]] [[ لَيْلَةٍ | a night | laylatin ]] [[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
 
-*🔗 Verify on sunnah.com — [Riyāḍ aṣ-Ṣāliḥīn 1017](https://sunnah.com/riyadussalihin:1017)*
+*🔗 Verify on sunnah.com 〜 [Riyāḍ aṣ-Ṣāliḥīn 1017](https://sunnah.com/riyadussalihin:1017)*
 
 ---
 
@@ -150,6 +150,6 @@ Ibn Kathīr says Allah teaches His servants to ask and promises to answer. He ci
 
 [[ الآيَتَانِ | the two verses | al-āyatāni ]] [[ مِنْ | from | min ]] [[ آخِرِ | the end of | ākhiri ]] [[ سُورَةِ | Surah | sūrati ]] [[ الْبَقَرَةِ | al-Baqarah | al-baqarati ]] [[ مَنْ | whoever | man ]] [[ قَرَأَهُمَا | recites them both | qaraʾahumā ]] [[ فِي | during | fī ]] [[ لَيْلَةٍ | a night | laylatin ]] [[ كَفَتَاهُ | they will suffice him | kafatāhu ]]
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ Muslim 807a](https://sunnah.com/muslim:807a)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ Muslim 807a](https://sunnah.com/muslim:807a)*
 
 </details>

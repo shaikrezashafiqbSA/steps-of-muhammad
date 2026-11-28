@@ -5,23 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Be the Imam: Steps of Muḥammad ﷺ (Nusantara Edition)</title>
 
-  <!-- ═══ Social preview (static — crawlers don't run JS, so this can't
+  <!-- ═══ Social preview (static 〜 crawlers don't run JS, so this can't
        be per-card; it's the same branded card for every shared link) ═══ -->
-  <meta name="description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
+  <meta name="description" content="Duʿā, dhikr and ṣalāh, recited word-by-word with full sourcing. Works offline.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Be the Imam: Steps of Muḥammad ﷺ">
   <meta property="og:title" content="Be the Imam: Steps of Muḥammad ﷺ (Nusantara Edition)">
-  <meta property="og:description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
+  <meta property="og:description" content="Duʿā, dhikr and ṣalāh, recited word-by-word with full sourcing. Works offline.">
   <meta property="og:image" content="../assets/icons/icon-512.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Be the Imam: Steps of Muḥammad ﷺ (Nusantara Edition)">
-  <meta name="twitter:description" content="Duʿā, dhikr and ṣalāh — recited word-by-word with full sourcing. Works offline.">
+  <meta name="twitter:description" content="Duʿā, dhikr and ṣalāh, recited word-by-word with full sourcing. Works offline.">
   <meta name="twitter:image" content="../assets/icons/icon-512.png">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="85d3d3cd-19ba-4195-aaa9-1407d18fef4c"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-  <!-- Shared menu tree — tells this card which category it belongs to,
+  <!-- Shared menu tree 〜 tells this card which category it belongs to,
        and which duʿā sits before and after it -->
   <script src="app-meta.js"></script>
   <script src="nav-data.js"></script>
@@ -36,7 +36,7 @@
 
   <style type="text/tailwindcss">
     /* ════════════════════════════════════════════════
-       KFGQPC UTHMANIC HAFS — self-hosted
+       KFGQPC UTHMANIC HAFS 〜 self-hosted
        ════════════════════════════════════════════════ */
     @font-face {
       font-family: 'UthmanicHafs';
@@ -281,7 +281,7 @@
        image). Reader can pin it via the 📌 button so it
        freezes near the top of the viewport (below the
        orbs) while they scroll the word-by-word text
-       beneath it — useful for learners, skippable for
+       beneath it 〜 useful for learners, skippable for
        those who've memorized it. Resets to unpinned on
        every page load (no persistence).
        ════════════════════════════════════════════════ */
@@ -555,7 +555,7 @@
     }
 
     /* ════════════════════════════════════════════════
-       AYAH BLOCK — Quran-app style word-grid
+       AYAH BLOCK 〜 Quran-app style word-grid
        ════════════════════════════════════════════════ */
     .markdown-body .ayah {
       direction: rtl;
@@ -654,7 +654,7 @@
     }
 
     /* ════════════════════════════════════════════════
-       COLLAPSIBLE DETAILS — Hadith narration drawer
+       COLLAPSIBLE DETAILS 〜 Hadith narration drawer
        ════════════════════════════════════════════════ */
     .markdown-body details {
       background: rgba(125, 82, 67, 0.04);
@@ -702,7 +702,7 @@
     }
 
     /* ════════════════════════════════════════════════
-       HIKMAH — a rare-item gleam
+       HIKMAH 〜 a rare-item gleam
        The box is either a drawer whose summary carries the {{ Hikmah | @hikmah }} glossary
        word, or a plain "## Hikmah" section (wrapped in .hikmah-box by wrapHikmahSections).
        Warm gold edge, a slow pulsing glow, and a light sweep across the whole box.
@@ -758,7 +758,7 @@
     }
 
     /* ════════════════════════════════════════════════
-       EMBEDDED CARD — [label](?file=x.md "embed")
+       EMBEDDED CARD 〜 [label](?file=x.md "embed")
        Reuses the drawer look; the summary carries a grade badge.
        ════════════════════════════════════════════════ */
     .markdown-body details.embed-card { border-left-width: 4px; margin: 1.4rem 0; }
@@ -789,10 +789,10 @@
        BOTTOM HUD BAR (v5.1)
        Full-width bar docked to the bottom of the viewport,
        two tiers inside a centred column:
-         1. title strip — Back / Next with the short card name,
+         1. title strip 〜 Back / Next with the short card name,
             built from the shared menu tree in nav-data.js;
             tucks away while scrolling down, returns on scroll up
-         2. tool row — icon over caption: Home · Contents ·
+         2. tool row 〜 icon over caption: Home · Contents ·
             Rumi · Size · Share
        The page gets extra bottom padding so the bar never
        covers the closing content or footer.
@@ -1110,7 +1110,7 @@
   <script>
     // ════════════════════════════════════════════
     // Reading Mode Fan v5.1
-    // 🔧 TUNE HERE: change labels or order below — `label` is the
+    // 🔧 TUNE HERE: change labels or order below 〜 `label` is the
     // readable text shown on the fan pills; `rumi` marks the modes that
     // show transliteration (what the HUD's Rumi slot toggles)
     // ════════════════════════════════════════════
@@ -1224,7 +1224,7 @@
     applyMode(getCurrentMode());
 
     // ════════════════════════════════════════════
-    // Follow-along video — pin/unpin toggle
+    // Follow-along video 〜 pin/unpin toggle
     // Off by default on every load; reader opts in.
     // ════════════════════════════════════════════
     document.addEventListener('click', (e) => {
@@ -1374,7 +1374,7 @@
 
       if (!leftFull && !rightFull) return '';
 
-      // Compact forms — explicit override wins, else auto-extract leading icon
+      // Compact forms 〜 explicit override wins, else auto-extract leading icon
       const leftCompact  = meta['left-orb-compact']  || extractLeadingIcon(leftFull)  || leftFull;
       const rightCompact = meta['right-orb-compact'] || extractLeadingIcon(rightFull) || rightFull;
 
@@ -1407,7 +1407,7 @@
     }
 
     // ════════════════════════════════════════════
-    // Orb scroll watcher — triggers compact mode
+    // Orb scroll watcher 〜 triggers compact mode
     // when user scrolls past threshold
     // ════════════════════════════════════════════
     function initOrbScrollWatcher() {
@@ -1448,7 +1448,7 @@
         // optional 4th field: a glossary slug → tapping the word opens content/kalima/<slug>.md
         const slug = (kal || '').trim().replace(/^@/, '').toLowerCase();
         const kalAttrs = /^[a-z0-9-]+$/.test(slug)
-          ? ` data-kalima="${slug}" tabindex="0" role="button" aria-label="${arabic} — open glossary entry"` : '';
+          ? ` data-kalima="${slug}" tabindex="0" role="button" aria-label="${arabic}: open glossary entry"` : '';
         return `<span class="w"${line ? ` data-line="${line}"` : ''}${kalAttrs}>${inner}</span>`;
       })
       .replace(/\\\[\[/g, '[[');
@@ -1788,7 +1788,7 @@
     // ════════════════════════════════════════════
     // Shared by the file loader and the live preview (web/preview.html).
     // Preview only: render block by block so every element carries the
-    // source line it came from (data-line) — drives the caret highlight.
+    // source line it came from (data-line) 〜 drives the caret highlight.
     function renderWithLines(src, offset) {
       const tokens = marked.lexer(src);
       const nl = (t) => (t.match(/\n/g) || []).length;
@@ -1821,7 +1821,7 @@
         all.forEach(e => { const n = +e.dataset.line; if (n <= line && n > best) best = n; });
         els = all.filter(e => +e.dataset.line === best)
                  .map(e => e.tagName === 'DETAILS' ? (e.querySelector('summary') || e) : e);
-        // keepClosed: the reader just clicked a drawer's summary — let that click
+        // keepClosed: the reader just clicked a drawer's summary 〜 let that click
         // toggle it instead of force-opening it here and having it toggle shut.
         if (!keepClosed) els.forEach(e => {
           let d = e.parentElement && e.parentElement.closest('details');
@@ -1840,7 +1840,7 @@
     // ════════════════════════════════════════════
     // Embedded cards:  [label](?file=path/to/card.md "embed")
     // Renders the whole atomic card as a collapsed drawer inside this one.
-    // Capped at one level — links inside an embedded card stay plain links.
+    // Capped at one level 〜 links inside an embedded card stay plain links.
     // ════════════════════════════════════════════
     const EMBED_TEXT = new Map();      // path → markdown (successful loads)
     const EMBED_PENDING = new Map();   // path → in-flight fetch
@@ -2107,10 +2107,10 @@
     }
 
     // ════════════════════════════════════════════
-    // Share this card — Web Share API where available (native
+    // Share this card 〜 Web Share API where available (native
     // share sheet: WhatsApp / Messages / etc.), clipboard-copy
     // fallback everywhere else. The URL is just the page's own
-    // ?file= link, so the receiver lands on this exact card —
+    // ?file= link, so the receiver lands on this exact card 〜
     // and pwa-install.js already shows them the install banner.
     // ════════════════════════════════════════════
     function revealShareButton() {
@@ -2138,7 +2138,7 @@
       const source = (meta['left-orb'] || '').replace(LEADING_ICON_RE, '').trim();
       const grade = (meta['right-orb'] || meta.grade || '').replace(LEADING_ICON_RE, '').trim();
       const tagline = [source, grade].filter(Boolean).join(' · ');
-      const text = `${title}${tagline ? '\n' + tagline : ''}\n\nRecited word-by-word, fully sourced — on ${APP_META.name}.`;
+      const text = `${title}${tagline ? '\n' + tagline : ''}\n\nRecited word-by-word, fully sourced, on ${APP_META.name}.`;
       // Inside the card sheet the address carries ?sheet=1: share the plain card.
       const shareUrl = new URL(window.location.href);
       shareUrl.searchParams.delete('sheet');
@@ -2152,7 +2152,7 @@
 
       try {
         await navigator.clipboard.writeText(url);
-        showShareToast('Link copied — paste it anywhere');
+        showShareToast('Link copied. Paste it anywhere');
       } catch (err) {
         showShareToast(url);
       }
@@ -2219,12 +2219,12 @@
         return;
       }
 
-      // Built first, and unconditionally — a card that failed to load is
+      // Built first, and unconditionally 〜 a card that failed to load is
       // exactly when the reader most needs a way back to the menu.
       somBuildCardNav();
 
-      // ?collection=<set id>  — a shipped set;  ?slot=<prayer.role> — one slot of the reader's plan
-      // (web/plan.js);  ?qalb=<state id> — one heart state's duʿās (web/qalb-data.js).
+      // ?collection=<set id>  〜 a shipped set;  ?slot=<prayer.role> 〜 one slot of the reader's plan
+      // (web/plan.js);  ?qalb=<state id> 〜 one heart state's duʿās (web/qalb-data.js).
       // Each becomes a card of embeds, same drawers as authored cards.
       if (params.get('collection') || params.get('slot') || params.get('qalb') || params.get('favorites') === '1') {
         try {
@@ -2243,7 +2243,10 @@
             target.innerHTML = `<p style="color: var(--accent-crimson);">⚠️ Collection not found. <a href="../index.html">Back to home</a>.</p>`;
             return;
           }
-          const items = Array.isArray(col.items) ? col.items : [];
+          // Set items take bare content paths; tolerate a pasted
+          // "web/render.html?file=" wrapper rather than fetching this page.
+          const items = (Array.isArray(col.items) ? col.items : []).map(it =>
+            it && it.path ? Object.assign({}, it, { path: it.path.replace(/^(\.\.\/)?(web\/)?render\.html\?file=/, '') }) : it);
           const realItems = items.filter(it => it && it.type !== 'family');
           if (!realItems.length) {
             target.innerHTML = `<p class="embed-status">Nothing in here yet. Open <a href="../index.html">Action view</a> and tap <strong>✎ Edit</strong> to fill this slot.</p>`;
@@ -2254,7 +2257,7 @@
           const link = it => it.type === 'family'
             ? `### ${it.icon ? it.icon + ' ' : ''}${esc(it.label)}`
             : `[${esc(it.label || it.path)}](?file=${encodeURI(it.path).replace(/[()]/g, c => '%' + c.charCodeAt(0).toString(16).toUpperCase())} "embed")`;
-          // A set is read top to bottom — unfold every card so it scrolls like one page.
+          // A set is read top to bottom 〜 unfold every card so it scrolls like one page.
           realItems.forEach(it => EMBED_OPEN.add(it.path));
           window._collectionToc = true;
           const moreLine = col.moreHref
@@ -2296,12 +2299,12 @@
     document.fonts.ready.then(() => {
       const hasUthmanic = Array.from(document.fonts).some(f => f.family.includes('UthmanicHafs') && f.status === 'loaded');
       if (!hasUthmanic) {
-        console.info('ℹ️  KFGQPC UthmanicHafs not found at ../fonts/UthmanicHafsVer18.ttf — falling back to Amiri Quran.');
+        console.info('ℹ️  KFGQPC UthmanicHafs not found at ../fonts/UthmanicHafsVer18.ttf 〜 falling back to Amiri Quran.');
       }
     });
   </script>
 
-  <!-- ═══ PWA service worker — offline support ═══ -->
+  <!-- ═══ PWA service worker 〜 offline support ═══ -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {

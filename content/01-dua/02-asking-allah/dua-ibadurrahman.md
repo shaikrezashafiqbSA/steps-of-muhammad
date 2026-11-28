@@ -48,7 +48,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 - [ ] Forgive, overlook, and say only good words
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -76,7 +76,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 - [ ] Prostrate in prayer
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -108,7 +108,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 - [ ] Ask with fear and with hope together
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Qurʾān ✦ Sūrat Al-Furqān 25:65-66**
 
@@ -117,7 +117,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 </details>
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -145,7 +145,7 @@ The ˹true˺ servants of the Most Compassionate are those who walk on the earth 
 - [ ] Choose the middle path in every purchase
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -179,7 +179,7 @@ Their punishment will be multiplied on the Day of Judgment, and they will remain
 [[ يُضَٰعَفۡ | will be doubled | yuḍāʿaf ]] [[ لَهُ | for him | lahu ]] [[ ٱلۡعَذَابُ | the punishment | al-ʿadhābu ]] [[ يَوۡمَ | on the Day | yawma ]] [[ ٱلۡقِيَٰمَةِ | of Resurrection | al-qiyāmati ]] [[ وَيَخۡلُدۡ | and he will abide | wa-yakhlud ]] [[ فِيهِۦ | in it | fīhi ]] [[ مُهَانًا | humiliated. | muhānā ]] [[﴿٦٩﴾]]
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -215,7 +215,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 *The reward for the one who returns.* Allah replaces their evil deeds with good ones (25:70), and the one who repents and does good has turned to Allah in true repentance (25:71).
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -243,7 +243,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 - [ ] Pass vain talk by, and let it leave no mark on you
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -271,7 +271,7 @@ And whoever repents and does good has truly turned to Allah properly. (25:71)
 - [ ] Let the verses grow your faith
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -307,7 +307,7 @@ staying there forever. What an excellent place to settle and reside! (25:76)
 [[ خَٰلِدِينَ | Abiding forever | khālidīna ]] [[ فِيهَاۚ | therein. | fīhā ]] [[ حَسُنَتۡ | Excellent it is | ḥasunat ]] [[ مُسۡتَقَرّٗا | as a settlement | mustaqarran ]] [[ وَمُقَامٗا | and residence. | wa-muqāmā ]] [[۝٧٦]]
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr.
 
@@ -342,7 +342,7 @@ Say, ˹O Prophet,˺ "You ˹all˺ would not ˹even˺ matter to my Lord were it no
 *Addressed to the deniers.* The second half of 25:77 states the consequence of denial: the punishment will be inevitable.
 
 <details>
-<summary>۞ الْحِكْمَة — Divine Wisdom</summary>
+<summary>۞ الْحِكْمَة 〜 Divine Wisdom</summary>
 
 > **Source: Commentary.** Attributed to Tafsīr al-Qur'ān al-ʿAẓīm, Ibn Kathīr
 
@@ -361,7 +361,7 @@ as your denial remaining with you, leading to punishment, doom and destruction i
 </details>
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Qurʾān ✦ Sūrat Al-Furqān 25:74**
 

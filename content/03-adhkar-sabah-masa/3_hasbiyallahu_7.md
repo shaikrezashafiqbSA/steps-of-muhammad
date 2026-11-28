@@ -74,6 +74,6 @@ Allah will suffice them in whatever concerns them of the matters of this world a
 *   **Ibn al-Sunnī:** Recorded in *ʿAmal al-Yawm wal-Laylah* (No. 71).
 *   **Hadith Classification Note:** While often printed as *Marfūʿ* (directly from the Prophet ﷺ), the most authentic paths for this specific narration trace back to the Companion Abū al-Dardāʾ (رضي الله عنه) as a *Mawqūf* statement. However, scholars note that since a reward involving the unseen and the Hereafter cannot be micro-reasoned or invented, it carries the legal weight of coming directly from the Prophet ﷺ (*Lahū ḥukm al-rafʿ*).
 
-*🔗 Verify on sunnah.com — [Hisn al-Muslim 83](https://sunnah.com/hisn:83)*
+*🔗 Verify on sunnah.com 〜 [Hisn al-Muslim 83](https://sunnah.com/hisn:83)*
 
 </details>

@@ -4,9 +4,9 @@ collection: Ṣaḥīḥ Muslim
 book: Book 48 · The Book Pertaining to the Remembrance of Allah, Supplication, Repentance and Seeking Forgiveness
 hadith: 2720
 grade: Sahih
-grade-comment: —
+grade-comment: 〜
 hikmah-source: textual
-hikmah-citation: —
+hikmah-citation: 〜
 left-orb: Ṣaḥīḥ Muslim 2720
 left-orb-compact: ﷺ📜
 right-orb: Sahih
@@ -32,7 +32,7 @@ Abū Hurayrah ؓ reported: The Messenger of Allah ﷺ used to say: *"O Allah, se
 [[ وَاجْعَلِ | and make | wajʿali ]] [[ الْمَوْتَ | death | al-mawta ]] [[ رَاحَةً | a relief | rāḥatan ]] [[ لِي | for me | lī ]] [[ مِنْ | from | min ]] [[ كُلِّ | every | kulli ]] [[ شَرٍّ | evil. | sharrin ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ Muslim 2720**
 
@@ -43,7 +43,7 @@ Abū Hurayrah ؓ reported: The Messenger of Allah ﷺ used to say: *"O Allah, se
 
 **The Text of the Hadith (المَتْن)**
 
-[[ قَالَ | He said | qāla ]] [[ كَانَ | used to | kāna ]] [[ رَسُولُ | Messenger | rasūl ]] [[ اللَّهِ | of Allāh | Allāh ]] [[ صَلَّى | may Allāh | ṣallā ]] [[ اللَّهُ | send blessings | Allāh ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمَ | and grant him peace | wa-sallam ]] [[ يَقُولُ | would say | yaqūl ]] [[ ‟ | ‟ | — ]]
+[[ قَالَ | He said | qāla ]] [[ كَانَ | used to | kāna ]] [[ رَسُولُ | Messenger | rasūl ]] [[ اللَّهِ | of Allāh | Allāh ]] [[ صَلَّى | may Allāh | ṣallā ]] [[ اللَّهُ | send blessings | Allāh ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمَ | and grant him peace | wa-sallam ]] [[ يَقُولُ | would say | yaqūl ]] [[ ‟ | ‟ | 〜 ]]
 
 [[ اللَّهُمَّ | O Allah | Allāhumma ]] [[ أَصْلِحْ | set right | aṣliḥ ]] [[ لِي | for me | lī ]] [[ دِينِيَ | my religion | dīniya ]] [[ الَّذِي | which | alladhī ]] [[ هُوَ | it is | huwa ]] [[ عِصْمَةُ | the safeguard | ʿiṣmatu ]] [[ أَمْرِي | of my affairs | amrī ]]
 
@@ -53,9 +53,9 @@ Abū Hurayrah ؓ reported: The Messenger of Allah ﷺ used to say: *"O Allah, se
 
 [[ وَاجْعَلِ | and make | wajʿal ]] [[ الْحَيَاةَ | life | al-ḥayāta ]] [[ زِيَادَةً | an increase | ziyādatan ]] [[ لِي | for me | lī ]] [[ فِي | in | fī ]] [[ كُلِّ | every | kulli ]] [[ خَيْرٍ | good | khayrin ]]
 
-[[ وَاجْعَلِ | and make | wajʿal ]] [[ الْمَوْتَ | death | al-mawta ]] [[ رَاحَةً | a relief | rāḥatan ]] [[ لِي | for me | lī ]] [[ مِنْ | from | min ]] [[ كُلِّ | every | kulli ]] [[ شَرٍّ | evil | sharrin ]] [[ ‟ | ‟ | — ]]
+[[ وَاجْعَلِ | and make | wajʿal ]] [[ الْمَوْتَ | death | al-mawta ]] [[ رَاحَةً | a relief | rāḥatan ]] [[ لِي | for me | lī ]] [[ مِنْ | from | min ]] [[ كُلِّ | every | kulli ]] [[ شَرٍّ | evil | sharrin ]] [[ ‟ | ‟ | 〜 ]]
 
-*🔗 Verify on sunnah.com —  [Sahih Muslim 2720](https://sunnah.com/muslim:2720)*
+*🔗 Verify on sunnah.com 〜  [Sahih Muslim 2720](https://sunnah.com/muslim:2720)*
 
 
 </details>

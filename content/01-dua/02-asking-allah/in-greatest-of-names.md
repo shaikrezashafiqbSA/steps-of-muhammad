@@ -33,7 +33,7 @@ He (ﷺ) said: “By the One in Whose Hand is my soul, he has asked Allah by His
 " - if He is *called upon* by it, He **responds**, and when He is *asked* by it, He **gives**.”
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Tirmidhī 3475**
 
@@ -55,6 +55,6 @@ He (ﷺ) said: “By the One in Whose Hand is my soul, he has asked Allah by His
 
 [[قَالَ|Said|qāla]] [[أَبُو|Abū|abū]] [[عِيسَىٰ|ʿĪsā:|ʿīsā:]] [[هَٰذَا|This|hādhā]] [[حَدِيثٌ|is a Hadith|ḥadīthun]] [[حَسَنٌ|good (Hasan),|ḥasanun]] [[غَرِيبٌ|rare (Gharib).|gharībun]] [[وَرَوَىٰ|And narrated|wa-rawā]] [[شَرِيكٌ|Sharīk|sharīkun]] [[هَٰذَا|this|hādhā]] [[ٱلْحَدِيثَ|Hadith|l-ḥadītha]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[إِسْحَاقَ|Isḥāq|isḥāqa]] [[عَنِ|from|ʿani]] [[ابْنِ|the son of|bni]] [[بُرَيْدَةَ|Buraydah|buraydata]] [[عَنْ|from|ʿan]] [[أَبِيهِ|his father,|abīhi]] [[وَإِنَّمَا|and only|wa-innamā]] [[أَخَذَهُۥ|took it|akhadhahū]] [[أَبُو|Abū|abū]] [[إِسْحَاقَ|Isḥāq|isḥāqa]] [[ٱلْهَمْدَانِيُّ|al-Hamdānī|l-hamdāniyyu]] [[عَنْ|from|ʿan]] [[مَالِكِ|Mālik|māliki]] [[بْنِ|son of|bni]] [[مِغْوَلٍ|Mighwal|mighwalin]] [[وَإِنَّمَا|and he only|wa-innamā]] [[دَلَّسَهُۥ|concealed its source.|dallasahū.]] [[وَرَوَىٰ|And narrated|wa-rawā]] [[شَرِيكٌ|Sharīk|sharīkun]] [[هَٰذَا|this|hādhā]] [[ٱلْحَدِيثَ|Hadith|l-ḥadītha]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[إِسْحَاقَ|Isḥāq.|isḥāqa.]]
 
-*🔗 Verify on sunnah.com — [Tirmidhi 3475](https://sunnah.com/tirmidhi:3475)*
+*🔗 Verify on sunnah.com 〜 [Tirmidhi 3475](https://sunnah.com/tirmidhi:3475)*
 
 </details>

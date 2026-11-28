@@ -1,7 +1,7 @@
 ::meta
 narrator: Nuʿaym ibn Hammār al-Ghaṭafānī (raḍiyallāhu ʿanhu)
 collection: Sunan Abī Dāwūd
-book: Book 5 · Voluntary Prayers (كتاب التطوع) · Chapter 12 — The Ḍuḥā Prayer
+book: Book 5 · Voluntary Prayers (كتاب التطوع) · Chapter 12 〜 The Ḍuḥā Prayer
 hadith: 1289
 grade: Sahih
 left-orb: 📜 Abū Dāwūd 1289
@@ -20,10 +20,10 @@ Just 4 rak'ah.
 
 [[يَقُولُ|Says|yaqūlu]] [[اللَّهُ|Allah,|llāhu]] [[ عَزَّ | Mighty | ʿazza ]] [[ وَجَلَّ | and Majestic: | wa-jalla ]]
 
-[[يَا|O|yā]] [[ابْنَ|son of|bna]] [[آدَمَ|Adam,|ādama]] [[لَا|do not|lā]] [[تُعْجِزْنِي|fail Me|tuʿjiznī]] [[مِنْ|in|min]] [[أَرْبَعِ|four|arbaʿi]] [[رَكَعَاتٍ|rakʿah|rakaʿātin]] [[فِي|at|fī]] [[أَوَّلِ|the beginning of|awwali]] [[نَهَارِكَ|your day —|nahārika]] [[أَكْفِكَ|I will suffice you|akfika]] [[آخِرَهُ|for its end.|ākhirah]]
+[[يَا|O|yā]] [[ابْنَ|son of|bna]] [[آدَمَ|Adam,|ādama]] [[لَا|do not|lā]] [[تُعْجِزْنِي|fail Me|tuʿjiznī]] [[مِنْ|in|min]] [[أَرْبَعِ|four|arbaʿi]] [[رَكَعَاتٍ|rakʿah|rakaʿātin]] [[فِي|at|fī]] [[أَوَّلِ|the beginning of|awwali]] [[نَهَارِكَ|your day 〜|nahārika]] [[أَكْفِكَ|I will suffice you|akfika]] [[آخِرَهُ|for its end.|ākhirah]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Sunan Abī Dāwūd 1289**
 
@@ -47,6 +47,6 @@ Just 4 rak'ah.
 
 As Above
 
-*🔗 Verify on sunnah.com — [Sunan Abī Dāwūd 1289](https://sunnah.com/abudawud:1289)*
+*🔗 Verify on sunnah.com 〜 [Sunan Abī Dāwūd 1289](https://sunnah.com/abudawud:1289)*
 
 </details>

@@ -10,12 +10,12 @@ right-orb: Ṣaḥīḥ
 right-orb-compact: ۞۞۞
 ::
 
-# Amsaynā wa Amsā-l-Mulku Lillāh — Handing the Night Over at Maghrib
+# Amsaynā wa Amsā-l-Mulku Lillāh 〜 Handing the Night Over at Maghrib
 
 ## 📜 The Hadith
-Ibn Masʿūd (raḍiyallāhu ʿanhu) reported that **when evening came, the Messenger of Allah ﷺ would say…** — and the morning form of the same words replaces *amsaynā* (we have entered evening) with *aṣbaḥnā* (we have entered morning), and *hādhihi l-laylah* (this night) with *hādhā l-yawm* (this day).
+Ibn Masʿūd (raḍiyallāhu ʿanhu) reported that **when evening came, the Messenger of Allah ﷺ would say…** 〜 and the morning form of the same words replaces *amsaynā* (we have entered evening) with *aṣbaḥnā* (we have entered morning), and *hādhihi l-laylah* (this night) with *hādhā l-yawm* (this day).
 
-## 🔤 Evoke This — Word by Word · Evening
+## 🔤 Evoke This 〜 Word by Word · Evening
 
 [[أَمْسَيْنَا|We have entered the evening|amsaynā]] [[وَأَمْسَى|and there has entered the evening|wa amsā]] [[الْمُلْكُ|the dominion|l-mulku]] [[لِلَّهِ|belonging to Allah,|lillāhi]] [[وَالْحَمْدُ|and all praise is|wa-l-ḥamdu]] [[لِلَّهِ|for Allah.|lillāhi]]
 
@@ -30,12 +30,12 @@ Ibn Masʿūd (raḍiyallāhu ʿanhu) reported that **when evening came, the Mess
 ## ☀️ Morning Form
 [[أَصْبَحْنَا|We have entered the morning|aṣbaḥnā]] [[وَأَصْبَحَ|and there has entered the morning|wa aṣbaḥa]] [[الْمُلْكُ|the dominion|l-mulku]] [[لِلَّهِ|belonging to Allah…|lillāhi]]
 
-— then *khayra hādhā l-yawm* (the good of this day) in place of *khayra hādhihi l-laylah*.
+〜 then *khayra hādhā l-yawm* (the good of this day) in place of *khayra hādhihi l-laylah*.
 
 <details>
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 [[قَالَ|He said:|qāla]] [[كَانَ|Used to|kāna]] [[رَسُولُ|the Messenger of|rasūlu]] [[اللَّهِ|Allah|llāhi]] [[صلى الله عليه وسلم|ﷺ|ṣallā llāhu ʿalayhi wa sallam]] [[إِذَا|when|idhā]] [[أَمْسَى|evening came|amsā]] [[قَالَ|say:|qāla]] [[أَمْسَيْنَا|We have entered the evening|amsaynā]] [[وَأَمْسَى|and has entered the evening|wa amsā]] [[الْمُلْكُ|the dominion|l-mulku]] [[لِلَّهِ|for Allah…|lillāhi]]
 </details>
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ Muslim 2723a](https://sunnah.com/muslim:2723a)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ Muslim 2723a](https://sunnah.com/muslim:2723a)*

@@ -2,22 +2,22 @@
 
 **Nusantara Edition**
 
-> *A provenance engine for Islamic supplications, recitations, and remembrances — built so that every word you say in prayer has a traceable home.*
+> *A provenance engine for Islamic supplications, recitations, and remembrances 〜 built so that every word you say in prayer has a traceable home.*
 
 ---
 
 ## 🎯 What This Is
 
-**Be the Imam: Steps of Muḥammad ﷺ** is a living archive of duʿā, dhikr, ḥadīth, Qurʾānic verses, and scholarly compilations — rendered word-by-word in Arabic, English, and transliteration, with every page traceable to its canonical source.
+**Be the Imam: Steps of Muḥammad ﷺ** is a living archive of duʿā, dhikr, ḥadīth, Qurʾānic verses, and scholarly compilations 〜 rendered word-by-word in Arabic, English, and transliteration, with every page traceable to its canonical source.
 
 It is **not** another devotional app.
 
-It is a **tafakkur tool** — a place where you can:
+It is a **tafakkur tool** 〜 a place where you can:
 
 - 📖 Recite a duʿā with the Arabic, English, and transliteration visible together
 - 🔍 See exactly which ḥadīth collection it comes from, and what grade scholars have given it
 - 📚 Read the original Arabic chain of transmission (isnād) if you want to verify
-- 🪞 Understand the meaning of every word — not just the gist
+- 🪞 Understand the meaning of every word 〜 not just the gist
 - ⚖️ Know honestly when a practice is widely transmitted but theologically contested
 
 ---
@@ -26,7 +26,7 @@ It is a **tafakkur tool** — a place where you can:
 
 In Southeast Asia (and much of the Muslim world), we inherit many practices through forefathers, mashāyikh, ḥabīb-figures, and folk transmission. Some of these are firmly rooted in the Sunnah of the Prophet ﷺ. Others are scholarly compilations of authentic material. Others are folk practices of uncertain or contested origin.
 
-The problem is not that these practices exist. The problem is that **most of us cannot tell which is which** — and so we recite without knowing what we are saying, where it came from, or whether the Prophet ﷺ would recognize it as his sunnah.
+The problem is not that these practices exist. The problem is that **most of us cannot tell which is which** 〜 and so we recite without knowing what we are saying, where it came from, or whether the Prophet ﷺ would recognize it as his sunnah.
 
 This project exists to answer one question for every word you recite:
 
@@ -34,17 +34,17 @@ This project exists to answer one question for every word you recite:
 
 It is built on three commitments:
 
-1. **Honest provenance** — every page shows its source and grade. No dressed-up folk material posing as authentic ḥadīth.
-2. **Word-by-word access** — every Arabic word is paired with its English meaning, so understanding doesn't require fluency.
-3. **Scholarly humility** — we present the chain of transmission and the scholarly grading. We don't paper over weakness. We don't elevate fabrications. We trust users with the truth.
+1. **Honest provenance** 〜 every page shows its source and grade. No dressed-up folk material posing as authentic ḥadīth.
+2. **Word-by-word access** 〜 every Arabic word is paired with its English meaning, so understanding doesn't require fluency.
+3. **Scholarly humility** 〜 we present the chain of transmission and the scholarly grading. We don't paper over weakness. We don't elevate fabrications. We trust users with the truth.
 
 ---
 
-## 🧭 Methodology — Provenance, Then Authorship
+## 🧭 Methodology 〜 Provenance, Then Authorship
 
 Every file in this archive goes through two phases:
 
-### Phase 1 — Sourcing (the provenance work)
+### Phase 1 〜 Sourcing (the provenance work)
 
 Before authoring anything, we verify:
 - The canonical source (sunnah.com, quran.com, recognized ḥadīth databases)
@@ -55,7 +55,7 @@ Before authoring anything, we verify:
 
 This is the most important work in the project. It is what makes the archive trustworthy.
 
-### Phase 2 — Authoring (the translation work)
+### Phase 2 〜 Authoring (the translation work)
 
 Once sourced, we render the content into the project's word-stack markdown format. This involves:
 - Word-by-word Arabic segmentation
@@ -96,15 +96,15 @@ We do not preach. We present. The reader carries their own accountability.
 
 Visit the main page (`index.html`). You'll see categories like:
 
-- 📿 **Tahlīl Collections** — compilations recited as remembrance gatherings
-- 🕌 **After Ṣalāh** — prophetic duʿās for after every prayer
-- 💎 **Heart Shakers** — duʿās for anchoring and alignment
-- 🛡️ **Morning & Evening Shields** — daily adhkār
-- ⚙️ **Path of Work** — duʿās for daily occupational life
-- 🌙 **Ṣalawāt** — sending peace and blessings upon the Prophet ﷺ
-- 💧 **Duʿā for Healing** — restorative supplications
-- 🌾 **Sacred Months** — practices specific to Rajab, Shaʿbān, Ramaḍān, Dhū al-Ḥijjah
-- 🧪 **In Review** — recently added content pending validation
+- 📿 **Tahlīl Collections** 〜 compilations recited as remembrance gatherings
+- 🕌 **After Ṣalāh** 〜 prophetic duʿās for after every prayer
+- 💎 **Heart Shakers** 〜 duʿās for anchoring and alignment
+- 🛡️ **Morning & Evening Shields** 〜 daily adhkār
+- ⚙️ **Path of Work** 〜 duʿās for daily occupational life
+- 🌙 **Ṣalawāt** 〜 sending peace and blessings upon the Prophet ﷺ
+- 💧 **Duʿā for Healing** 〜 restorative supplications
+- 🌾 **Sacred Months** 〜 practices specific to Rajab, Shaʿbān, Ramaḍān, Dhū al-Ḥijjah
+- 🧪 **In Review** 〜 recently added content pending validation
 
 Click any category to expand its items. Click any item to open its dedicated page.
 
@@ -112,11 +112,11 @@ Click any category to expand its items. Click any item to open its dedicated pag
 
 Every page has the same structure:
 
-1. **Pokémon-card header** at the top — shows narrator, source, grade (color-coded badge)
-2. **English narration** — the canonical translation as published
-3. **Original Arabic source dropdown** (collapsed) — for scholarly verification
-4. **Word-by-word section** — the main recitation content
-5. **Verify link** at the bottom — direct to canonical source
+1. **Pokémon-card header** at the top 〜 shows narrator, source, grade (color-coded badge)
+2. **English narration** 〜 the canonical translation as published
+3. **Original Arabic source dropdown** (collapsed) 〜 for scholarly verification
+4. **Word-by-word section** 〜 the main recitation content
+5. **Verify link** at the bottom 〜 direct to canonical source
 
 ### Reading Modes
 
@@ -137,7 +137,7 @@ Your mode preference is saved across sessions.
 
 If you want to add content, fix translations, improve transliterations, or migrate legacy material:
 
-1. Read [`AUTHORING_GUIDE.md`](AUTHORING_GUIDE.md) — the complete technical guide
+1. Read [`AUTHORING_GUIDE.md`](docs/AUTHORING_GUIDE.md) 〜 the complete technical guide
 2. Pick a content type and complexity level you're comfortable with
 3. Follow the source-then-author workflow
 4. Run the quality checklist before committing
@@ -148,34 +148,57 @@ We welcome contributions from anyone who shares the commitment to honest provena
 ---
 
 ## 📂 Repository Structure
+
 ```
-├── index.html              ← Main library page (vault)
-├── web/
-│   └── render.html         ← Markdown rendering engine
-├── assets/
-│   ├── black-flag.jpeg     ← Background imagery
-│   └── black-flag-nur.jpeg
-├── content/                ← All authored duʿā/dhikr content
-│   ├── adhkar-as-sabah-wal-masa/ ← Morning & evening adhkār
-│   ├── dua/                ← General duʿās (with quran/ and shifa/ subfolders)
-│   ├── salah/               ← Before/during/after-prayer duʿās
-│   └── salawat/             ← Salutations upon the Prophet ﷺ
-├── README.md               ← This file
-├── AUTHORING_GUIDE.md      ← Technical authoring manual
-├── fonts/
-│   └── UthmanicHafsVer18.ttf
+├── index.html            ← The app: Action view, Library, Qalb
+├── manifest.json, sw.js  ← PWA install + offline cache
+├── web/                  ← Scripts and pages the app loads
+│   ├── render.html       ← Renders one card (any .md file)
+│   ├── preview.html      ← Card builder: paste markdown, preview it
+│   ├── nav-data.js       ← Library menu (the list of cards)
+│   ├── default-plan.js   ← Default Action-view plan, hour by hour
+│   ├── qalb-data.js      ← Qalb view groupings
+│   ├── sun-clock.js      ← Prayer times from the sun's position
+│   └── …                 ← Hijri calendar, moon, tips, plan editor
+├── content/              ← Every card, one .md file each
+│   ├── 01-dua/ … 07-tahleel/   ← Grouped by section
+│   ├── kalima/           ← Glossary entries (tap-a-word notes)
+│   └── _unlisted/        ← Cards no screen links to yet
+├── docs/                 ← Guides for authors (see below)
+├── tools/                ← Maintenance scripts
+├── assets/, fonts/       ← Images, icons, Uthmani font
+└── README.md
 ```
+
+### 📚 Docs
+
+| File | What it is for |
+|---|---|
+| [docs/AUTHORING_GUIDE.md](docs/AUTHORING_GUIDE.md) | The full reference for writing a card: format, features, sourcing, checks. Also opens in the app under Documentation. |
+| [docs/DRAFT_PROMPT.md](docs/DRAFT_PROMPT.md) | The LLM prompt that turns a raw source into a first-draft card for you to verify. |
+| [docs/TIME_CATEGORISATION.md](docs/TIME_CATEGORISATION.md) | The Prophetic Clock: the eleven time windows and where each duʿā sits. Also opens in the app. |
+| [docs/CHANGE_PLAYBOOK.md](docs/CHANGE_PLAYBOOK.md) | Rollout plan for masjid pilots (draft). |
+| [docs/CONTENT_TALLY.md](docs/CONTENT_TALLY.md) | How many cards exist and which screens use them. Regenerate with `node tools/tally.js --write`. |
+| [docs/_TEMPLATE.md](docs/_TEMPLATE.md) | An older blank card. The current layout is the skeleton in DRAFT_PROMPT.md §9. |
+
+### 🧰 Tools
+
+| Command | What it does |
+|---|---|
+| `node tools/tally.js --write` | Counts the cards, finds ones no screen links to and links that point nowhere, and rewrites docs/CONTENT_TALLY.md. |
+| `python tools/make_icons.py` | Rebuilds the app icons in assets/icons/. |
+
 ---
 
 ## 🌌 The Long Vision
 
-This project is in **Phase 1** — building a foundational library of well-authored, honestly-sourced content.
+This project is in **Phase 1** 〜 building a foundational library of well-authored, honestly-sourced content.
 
 Future phases may include:
 
 - **Phase 2:** Library index with filters (by source, grade, context, theme)
 - **Phase 3:** Cross-linking between related practices
-- **Phase 4:** Qurʾān corpus integration — click any Arabic word to see all its Qurʾānic occurrences and root analysis
+- **Phase 4:** Qurʾān corpus integration 〜 click any Arabic word to see all its Qurʾānic occurrences and root analysis
 - **Phase 5:** Audio recitation with synchronized word highlighting
 - **Phase 6:** Multi-language UI (Indonesian, Malay, Urdu, Turkish)
 
@@ -187,101 +210,18 @@ We are not in a rush. The foundation is what matters.
 
 This project is offered freely for the benefit of any Muslim seeking to understand and verify what they recite. Content authored here may be freely reused, copied, taught, and shared.
 
-If this work benefits you, please make duʿā for the contributors — past, present, and future.
+If this work benefits you, please make duʿā for the contributors 〜 past, present, and future.
 
-> *"And whoever does an atom's weight of good will see it."* — Qurʾān 99:7
+> *"And whoever does an atom's weight of good will see it."* 〜 Qurʾān 99:7
 
 ---
 
 ## 🌿 Final Word
 
-The Prophet ﷺ said: *"The best of you are those who learn the Qurʾān and teach it."* — Bukhārī 5027.
+The Prophet ﷺ said: *"The best of you are those who learn the Qurʾān and teach it."* 〜 Bukhārī 5027.
 
-By extension, the work of preserving the words of the Prophet ﷺ — his duʿās, his teachings, his sunnah — in a form that lets the next generation engage word-by-word with the Arabic is itself an act of *ṣadaqah jāriyah* (ongoing charity).
+By extension, the work of preserving the words of the Prophet ﷺ 〜 his duʿās, his teachings, his sunnah 〜 in a form that lets the next generation engage word-by-word with the Arabic is itself an act of *ṣadaqah jāriyah* (ongoing charity).
 
 May Allah accept this work. May He correct what we have erred in. May He preserve us upon what is sound and turn us away from what is false.
 
 **Compiled for ✦ the foam of the seas.**
-
-
-## 🗂️ Suggested Repository Folder Structure
-
-To support the universe of content, reorganize your workspace configuration as follows over time. 
-
-> 💡 **Migration Note:** Execute this reorganization gradually as you migrate your assets, rather than attempting to shift all files at once to prevent broken internal links.
-
-```text
-├── README.md
-├── AUTHORING_GUIDE.md
-├── MIGRATION_LOG.md
-├── index.html
-├── render.html
-├── black-flag.jpeg
-├── black-flag-nur.jpeg
-├── fonts/
-│
-├── quran/                     ← Atomic Qurʾānic verses
-│   ├── fatihah.md
-│   ├── ayat-al-kursi.md
-│   ├── ikhlas.md
-│   ├── falaq.md
-│   ├── nas.md
-│   ├── three-quls.md
-│   ├── baqarah-end.md
-│   └── hashr-end.md
-│
-├── hadith/                    ← Single-hadith duʿās
-│   ├── sayyid-istighfar.md
-│   ├── refuge-perfect-words.md
-│   ├── hasbiyallah.md
-│   └── turner-of-hearts.md
-│
-├── dhikr/                     ← Atomic remembrances
-│   ├── subhanallah.md
-│   ├── alhamdulillah.md
-│   ├── allahu-akbar.md
-│   └── tahlil-closing.md
-│
-├── wird/                      ← Scholarly compilations
-│   ├── ratib-haddad.md        ← manifest
-│   ├── wird-al-latif.md       ← manifest
-│   ├── dalail-khayrat.md      ← manifest
-│   └── tahlil-arwah.md
-│
-├── folk/                      ← Folk regional practices (flagged)
-│   ├── dua-hamil.md
-│   └── dua-awal-akhir-hijra.md
-│
-├── liturgy/                   ← Ṣalāh, Hajj, ʿEid practices
-│   ├── after-salah-sequence.md
-│   ├── arafah-duas.md
-│   └── takbir-eid.md
-│
-├── compendium/                ← Multi-source compendia (manifests)
-│   └── hisn-morning.md
-│
-└── legacy/                    ← Old HTML pending migration / archived
-    └── (existing .html files moved here as migrated)
-```
-## Migration strategy for folder reorganization:
-Don't rush this. Migrate files one at a time, placing them in the new folder structure as you go.
-Update index.html paths as files move.
-Keep legacy folder until you're confident migration is complete (~3 months).
-Eventually delete the legacy folder in a single commit titled "Migration complete — archived legacy HTML."
-
-## 🎯 What To Do Next — Your First Authoring Session
-Skim AUTHORING_GUIDE.md to understand structure (15 min)
-Open MIGRATION_LOG.md and pick ONE file to migrate first
-Recommended first migration: start and end of day/4_sayyidul-istighfar.html — it's a Pattern H1 (most common type, well-documented source, single duʿā). This will calibrate your time and process.
-Work through all 11 steps in the migration workflow
-Update the log when done
-Take a break. Make duʿā. Reflect on what you learned.
-
-## 🌿 Landmark 1 — Established
-This is now the foundation. Three documents (README.md, AUTHORING_GUIDE.md, MIGRATION_LOG.md), one folder structure plan, one calibration migration target.
-You have everything you need to begin the work.
-May Allah grant you sincerity, accuracy, patience, and acceptance.
-
-
-
-

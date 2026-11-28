@@ -50,7 +50,7 @@ If he dies on that day, he dies a martyr.
 And whoever recites it in the evening holds the same status."
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Jāmiʿ at-Tirmidhī 2922**
 
@@ -74,6 +74,6 @@ And whoever recites it in the evening holds the same status."
 
 [[قَالَ|Said|qāla]] [[أَبُو|Abū|abū]] [[عِيسَىٰ|ʿĪsā:|ʿīsā:]] [[هَٰذَا|This|hādhā]] [[حَدِيثٌ|is a Hadith|ḥadīthun]] [[غَرِيبٌ|strange/rare,|gharībun]] [[لَا|we do not|lā]] [[نَعْرِفُهُ|know it|naʿrifuhū]] [[إِلَّا|except|illā]] [[مِنْ|from|min]] [[هَٰذَا|this|hādhā]] [[ٱلْوَجْهِ|chain.|l-wajhi.]]
 
-*🔗 Verify on sunnah.com — [Tirmidhi 2922](https://sunnah.com/tirmidhi:2922)*
+*🔗 Verify on sunnah.com 〜 [Tirmidhi 2922](https://sunnah.com/tirmidhi:2922)*
 
 </details>

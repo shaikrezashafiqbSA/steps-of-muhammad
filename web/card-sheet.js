@@ -1,5 +1,5 @@
 // =========================================================
-// CARD SHEET — a card opens in a pop-up sheet over the page the
+// CARD SHEET 〜 a card opens in a pop-up sheet over the page the
 //   reader came from (Library, Action list, Qalb board), instead of
 //   replacing it. The page stays behind, blurred, and is where the
 //   reader lands when the card closes: tap the blur, drag the top bar
@@ -11,7 +11,7 @@
 //   (web/nav-data.js) turns Home into "close" and swaps Back / Next in
 //   place, so the sheet adds exactly one history entry.
 //
-//   LAST READ — every card records itself in sessionStorage
+//   LAST READ 〜 every card records itself in sessionStorage
 //   (som-last-read, written by web/nav-data.js). When the reader is back
 //   on this page, the row for that card, in the list it was opened from,
 //   gets a gold marker, and is scrolled into view when a sheet closes.

@@ -1,7 +1,7 @@
 ::meta
 narrator: Ḥudhayfah ibn al-Yamān (raḍiyallāhu ʿanhu)
 collection: Ṣaḥīḥ al-Bukhārī
-book: Book 80 · Invocations (كتاب الدعوات) · Chapter 7 — What to say on going to bed
+book: Book 80 · Invocations (كتاب الدعوات) · Chapter 7 〜 What to say on going to bed
 hadith: 6312
 grade: sahih
 left-orb: 📜 Bukhārī 6312
@@ -23,7 +23,7 @@ right-orb-compact: ۞۞۞
 [[الْحَمْدُ|All praise|al-ḥamdu]] [[لِلَّهِ|is for Allah|lillāhi]] [[الَّذِي|who|lladhī]] [[أَحْيَانَا|gave us life|aḥyānā]] [[بَعْدَ|after|baʿda]] [[مَا|that which|mā]] [[أَمَاتَنَا|He caused us to die|amātanā]] [[وَإِلَيْهِ|and to Him|wa ilayhi]] [[النُّشُورُ|is the resurrection|n-nushūr]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 6312**
 
@@ -31,12 +31,12 @@ right-orb-compact: ۞۞۞
 
 **Notes**
 
-One narration, two moments. The same tongue closes the night and opens the morning — sleep is rehearsed as a small death, and waking as a small resurrection.
+One narration, two moments. The same tongue closes the night and opens the morning 〜 sleep is rehearsed as a small death, and waking as a small resurrection.
 
 **When**
 
-Say the first as the **last thing you speak** before closing your eyes. Say the second the **instant you open them** — before the phone, before the room.
+Say the first as the **last thing you speak** before closing your eyes. Say the second the **instant you open them** 〜 before the phone, before the room.
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 6312](https://sunnah.com/bukhari:6312)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ al-Bukhārī 6312](https://sunnah.com/bukhari:6312)*
 
 </details>

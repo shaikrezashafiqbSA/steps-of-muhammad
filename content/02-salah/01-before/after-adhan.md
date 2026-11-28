@@ -31,7 +31,7 @@ then my intercession for him will be allowed on the Day of Resurrection."
 [[وَابْعَثْهُ|and resurrect him to|wa-bʿathhu]] [[مَقَامًا|a station|maqāman]] [[مَحْمُودًا|praiseworthy|maḥmūdan]] [[الَّذِي|which|alladhī]] [[وَعَدْتَهُ|You have promised him.|waʿadtahū.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 614**
 
@@ -49,6 +49,6 @@ then my intercession for him will be allowed on the Day of Resurrection."
 
 [[حَلَّتْ|will be deserved|ḥallat]] [[لَهُ|for him|lahū]] [[شَفَاعَتِي|my intercession|shafāʿatī]] [[يَوْمَ|on the Day of|yawma]] [[الْقِيَامَةِ|Resurrection."|l-qiyāmati.]] ‏"‏
 
-*🔗 Verify on sunnah.com — [Bukhari 614](https://sunnah.com/bukhari:614)*
+*🔗 Verify on sunnah.com 〜 [Bukhari 614](https://sunnah.com/bukhari:614)*
 
 </details>

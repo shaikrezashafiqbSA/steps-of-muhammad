@@ -28,7 +28,7 @@ right-orb-compact: ۞۞۞
 [[ثَلاَثَ|three|thalātha]] [[مَرَّاتٍ|times,|marrātin,]] [[إِلاَّ|except that|illā]] [[لَمْ|not|lam]] [[يَضُرَّهُ|will harm him|yaḍurrahū]] [[شَيْءٌ|anything.|shay'.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Riyāḍ aṣ-Ṣāliḥīn 1457**
 
@@ -50,6 +50,6 @@ right-orb-compact: ۞۞۞
 
 [[رَوَاهُ|Narrated it|rawāhu]] [[ أَبُو | Abū | abū ]] [[ دَاوُدَ | Dāwūd | dāwūda ]] [[وَالتِّرْمِذِيُّ|and at-Tirmidhī,|wa-t-tirmidhiyyu,]] [[وَقَالَ|and he said:|wa-qāla:]] [[حَدِيثٌ|A Hadith|ḥadīthun]] [[حَسَنٌ|Hasan|ḥasanun]] [[صَحِيحٌ|Sahih.|ṣaḥīḥun.]]
 
-*🔗 Verify on sunnah.com — [Riyad as-Salihin 1457](https://sunnah.com/riyadussalihin:1457)*
+*🔗 Verify on sunnah.com 〜 [Riyad as-Salihin 1457](https://sunnah.com/riyadussalihin:1457)*
 
 </details>

@@ -1,10 +1,10 @@
 ::meta
 narrator: ʿĀʾishah (raḍiyallāhu ʿanhā)
 collection: Ṣaḥīḥ Muslim
-book: Book 4 · Kitāb aṣ-Ṣalāh (The Book of Prayers) — Chapter 42: What Is To Be Said While Bowing And Prostrating
+book: Book 4 · Kitāb aṣ-Ṣalāh (The Book of Prayers) 〜 Chapter 42: What Is To Be Said While Bowing And Prostrating
 hadith: 486 (in-book 252; USC-MSA 986)
 grade: sahih
-grade-comment: Ṣaḥīḥ — narrated by Muslim in his Ṣaḥīḥ
+grade-comment: Ṣaḥīḥ 〜 narrated by Muslim in his Ṣaḥīḥ
 hikmah-source: textual
 hikmah-citation: 
 left-orb: Ṣaḥīḥ Muslim 486
@@ -13,7 +13,7 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# Seeking Refuge in Allah's Pleasure from His Anger — The Prophet's ﷺ Sajdah Supplication
+# Seeking Refuge in Allah's Pleasure from His Anger 〜 The Prophet's ﷺ Sajdah Supplication
 
 ʿĀʾishah ؓ reported: One night I missed Allah's Messenger ﷺ from the bed, and when I sought him, my hand touched the soles of his feet while he was in the state of prostration; they (his feet) were raised upright, and he was saying: *"O Allah, I seek refuge in Thy pleasure from Thy anger, and in Thy forgiveness from Thy punishment, and I seek refuge in Thee from Thee (Thy anger). I cannot reckon Thy praise. Thou art as Thou hast lauded Thyself."*
 
@@ -46,7 +46,7 @@ right-orb-compact: ۞۞۞
 [[ نَفْسِكَ | Yourself | nafsika ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ Muslim 486**
 
@@ -128,6 +128,6 @@ right-orb-compact: ۞۞۞
 [[ عَلَى | upon | ʿalā ]]
 [[ نَفْسِكَ | Yourself | nafsika ]]
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ Muslim 486](https://sunnah.com/muslim:486)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ Muslim 486](https://sunnah.com/muslim:486)*
 
 </details>

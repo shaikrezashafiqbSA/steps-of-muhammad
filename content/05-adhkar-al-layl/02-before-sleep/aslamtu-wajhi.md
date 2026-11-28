@@ -1,7 +1,7 @@
 ::meta
 narrator: al-Barāʾ ibn ʿĀzib (raḍiyallāhu ʿanhu)
 collection: Ṣaḥīḥ al-Bukhārī
-book: Book 4 · Ablutions (كتاب الوضوء) · Chapter 75 — The superiority of one who sleeps in wuḍūʾ
+book: Book 4 · Ablutions (كتاب الوضوء) · Chapter 75 〜 The superiority of one who sleeps in wuḍūʾ
 hadith: 247
 grade: sahih
 left-orb: 📜 Bukhārī 247
@@ -12,9 +12,9 @@ right-orb-compact: ۞۞۞
 
 # Entrusting Myself to Allah - Wuḍūʾ, right side, and you die on the fiṭrah
 
-al-Barāʾ ibn ʿĀzib (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said to him: **"When you come to your bed, perform wuḍūʾ as you would for prayer, then lie down on your right side, then say…"** — and after teaching the words he added: **"Then if you die that night, you die upon the fiṭrah. And make them the last thing you say."**
+al-Barāʾ ibn ʿĀzib (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said to him: **"When you come to your bed, perform wuḍūʾ as you would for prayer, then lie down on your right side, then say…"** 〜 and after teaching the words he added: **"Then if you die that night, you die upon the fiṭrah. And make them the last thing you say."**
 
-When al-Barāʾ repeated it back and said *"wa rasūlika"* (and Your Messenger), the Prophet ﷺ corrected him: **"No — *wa nabiyyika lladhī arsalta*."** The wording is taught, not improvised.
+When al-Barāʾ repeated it back and said *"wa rasūlika"* (and Your Messenger), the Prophet ﷺ corrected him: **"No 〜 *wa nabiyyika lladhī arsalta*."** The wording is taught, not improvised.
 
 ## 📜✨ Du'a
 
@@ -33,7 +33,7 @@ When al-Barāʾ repeated it back and said *"wa rasūlika"* (and Your Messenger),
 [[وَبِنَبِيِّكَ|and in Your Prophet|wa binabiyyika]] [[الَّذِي|whom|lladhī]] [[أَرْسَلْتَ|You sent.|arsalta]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 247**
 
@@ -43,10 +43,10 @@ When al-Barāʾ repeated it back and said *"wa rasūlika"* (and Your Messenger),
 
 **The Three Preparations**
 
-1. **Wuḍūʾ** — as though for prayer.
-2. **Right side** — lie on it.
-3. **These words** — and nothing after them.
+1. **Wuḍūʾ** 〜 as though for prayer.
+2. **Right side** 〜 lie on it.
+3. **These words** 〜 and nothing after them.
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 247](https://sunnah.com/bukhari:247)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ al-Bukhārī 247](https://sunnah.com/bukhari:247)*
 
 </details>

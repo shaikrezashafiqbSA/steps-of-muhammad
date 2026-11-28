@@ -139,7 +139,7 @@ Kurayb said he had forgotten seven other words. A man from the offspring of al-�
 - **Ṣaḥīḥ al-Bukhārī:** Chapter: The invocation by one who wakes up at night. In-book reference: Book 80, Hadith 13.
 - **USC-MSA web (English) reference:** Vol. 8, Book 75, Hadith 328 (deprecated numbering scheme).
 
-*🔗 Verify on sunnah.com — [Sahih al-Bukhari 6316](https://sunnah.com/bukhari:6316)*
+*🔗 Verify on sunnah.com 〜 [Sahih al-Bukhari 6316](https://sunnah.com/bukhari:6316)*
 
 </details>
 

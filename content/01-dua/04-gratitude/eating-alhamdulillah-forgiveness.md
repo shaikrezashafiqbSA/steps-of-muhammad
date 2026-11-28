@@ -54,7 +54,7 @@ The result:
 [[ ذَنْبِهِ | his sin | dhanbihi ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Riyāḍ aṣ-Ṣāliḥīn 734**
 
@@ -101,6 +101,6 @@ The result:
 [[ مِنْ | of | min ]]
 [[ ذَنْبِهِ | his sin | dhanbihi ]]
 
-*🔗 Verify on sunnah.com — [Riyāḍ aṣ-Ṣāliḥīn 734](https://sunnah.com/riyadussalihin:734)*
+*🔗 Verify on sunnah.com 〜 [Riyāḍ aṣ-Ṣāliḥīn 734](https://sunnah.com/riyadussalihin:734)*
 
 </details>

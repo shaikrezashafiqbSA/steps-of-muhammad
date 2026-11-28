@@ -4,7 +4,7 @@ collection: Musnad Aḥmad ibn Ḥanbal
 book: Musnad al-Anṣār · Narrations of Anas ibn Mālik
 hadith: 12697
 grade: sahih
-grade-comment: Ṣaḥīḥ — chain narrated by ʿAbd ar-Razzāq from Maʿmar from az-Zuhrī
+grade-comment: Ṣaḥīḥ 〜 chain narrated by ʿAbd ar-Razzāq from Maʿmar from az-Zuhrī
 hikmah-source: textual
 hikmah-citation:
 left-orb: Musnad Aḥmad 12697
@@ -13,9 +13,9 @@ right-orb: Sahih
 right-orb-compact: ۞۞۞
 ::
 
-# The Man from the People of Paradise — A Heart Free of Malice
+# The Man from the People of Paradise 〜 A Heart Free of Malice
 
-A man was promised Paradise three times in public. A companion moved in with him to find the secret — and found no extraordinary worship at all. 
+A man was promised Paradise three times in public. A companion moved in with him to find the secret 〜 and found no extraordinary worship at all. 
 
 Just ordinary deeds, good speech, and a heart that held no malice and no envy toward any Muslim.
 
@@ -350,6 +350,6 @@ Just ordinary deeds, good speech, and a heart that held no malice and no envy to
 
 The lesson the story leaves on the table: the body can be watched, but Paradise was hiding in the heart the whole time.
 
-*🔗 Verify on hadithweb — [Musnad Aḥmad 12697](https://hadithweb.com/ahmad:12697)*
+*🔗 Verify on hadithweb 〜 [Musnad Aḥmad 12697](https://hadithweb.com/ahmad:12697)*
 
 </details>

@@ -29,7 +29,7 @@ After Allah tested Sulaymān ؑ with a body (jasad) on his throne and he turned 
 
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Qurʾān ✦ Sūrat Ṣād 38:34–40** (the duʿāʾ is 38:35)
 
@@ -47,8 +47,8 @@ After Allah tested Sulaymān ؑ with a body (jasad) on his throne and he turned 
 
 **Tafsīr ✦ pointer to Ibn Kathīr ؒ, aṭ-Ṭabarī and al-Qurṭubī, on 38:34–40**
 
-*Pointer only: the wording below is not verified against the original — a place to consult, not a quotation.*
+*Pointer only: the wording below is not verified against the original 〜 a place to consult, not a quotation.*
 
-The tafsīr tradition on this passage (found in Ibn Kathīr, at-Ṭabarī, and al-Qurṭubī at this āyah) explains that Sulaymān's request came after the test of the body placed on his throne, when he turned back to Allah. The commentators note that he asked for a kingdom *not befitting anyone after him* — some explain he asked this so that the unparalleled dominion would serve as a clear sign of his prophethood, unique to him and not transferable to a later pretender.
+The tafsīr tradition on this passage (found in Ibn Kathīr, at-Ṭabarī, and al-Qurṭubī at this āyah) explains that Sulaymān's request came after the test of the body placed on his throne, when he turned back to Allah. The commentators note that he asked for a kingdom *not befitting anyone after him* 〜 some explain he asked this so that the unparalleled dominion would serve as a clear sign of his prophethood, unique to him and not transferable to a later pretender.
 
 </details>

@@ -13,7 +13,7 @@ right-orb-compact: ۞۞
 
 # Contentment with Allah, Islam and the Prophet ﷺ - Jannah made binding
 
-It was narrated that Thawbān (raḍiyallāhu ʿanhu) said: The Messenger of Allah ﷺ said: "Whoever says when he reaches the evening: *'I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad ﷺ as my Prophet'* — it is a duty upon Allah to please him."
+It was narrated that Thawbān (raḍiyallāhu ʿanhu) said: The Messenger of Allah ﷺ said: "Whoever says when he reaches the evening: *'I am pleased with Allah as my Lord, with Islam as my religion, and with Muhammad ﷺ as my Prophet'* 〜 it is a duty upon Allah to please him."
 
 ## 📜✨ Du'a
 
@@ -24,7 +24,7 @@ It was narrated that Thawbān (raḍiyallāhu ʿanhu) said: The Messenger of All
 [[وَبِمُحَمَّدٍ|and with Muhammad (ﷺ)|wa-bi-muḥammadin]] [[نَبِيًّا|as (my) Prophet.|nabiyyan.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Jāmiʿ at-Tirmidhī 3389**
 
@@ -40,6 +40,6 @@ It was narrated that Thawbān (raḍiyallāhu ʿanhu) said: The Messenger of All
 
 [[قَالَ|Said|qāla]] [[أَبُو|Abū|abū]] [[عِيسَىٰ:|ʿĪsā:|ʿīsā:]] [[هَٰذَا|This|hādhā]] [[حَدِيثٌ|is a Hadith|ḥadīthun]] [[حَسَنٌ|Hasan (fair)|ḥasanun]] [[غَرِيبٌ|Gharib (rare)|gharībun]] [[مِنْ|from|min]] [[هَٰذَا|this|hādhā]] [[ٱلْوَجْهِ|route.|l-wajhi.]]
 
-*🔗 Verify on sunnah.com — [Jāmiʿ at-Tirmidhī 3389](https://sunnah.com/tirmidhi:3389)*
+*🔗 Verify on sunnah.com 〜 [Jāmiʿ at-Tirmidhī 3389](https://sunnah.com/tirmidhi:3389)*
 
 </details>

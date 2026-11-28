@@ -45,7 +45,7 @@ Another highly attested authentic wording changes the core action from steadfast
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[مُصَرِّفَ|Director of|muṣarrifa]] [[الْقُلُوبِ|the hearts,|l-qulūbi,]] [[صَرِّفْ|direct|ṣarrif]] [[قُلُوبَنَا|our hearts|qulūbanā]] [[عَلَىٰ|towards|ʿalā]] [[طَاعَتِكَ|Your obedience.|ṭāʿatika.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Tirmidhī 2140**
 
@@ -65,6 +65,6 @@ Another highly attested authentic wording changes the core action from steadfast
 
 [[وَهَكَٰذَا|And likewise|wa-hakādhā]] [[رَوَىٰ|narrated|rawā]] [[غَيْرُ|other than|ghayru]] [[وَاحِدٍ|one|wāḥidin]] [[عَنِ|from|ʿani]] [[الْأَعْمَشِ|al-Aʿmash|l-aʿmashi]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[سُفْيَانَ|Sufyān|sufyāna]] [[عَنْ|from|ʿan]] [[أَنَسٍ|Anas.|anasin.]] [[وَرَوَىٰ|And narrated|wa-rawā]] [[بَعْضُهُمْ|some of them|baʿḍuhum]] [[عَنِ|from|ʿani]] [[الْأَعْمَشِ|al-Aʿmash|l-aʿmashi]] [[عَنْ|from|ʿan]] [[أَبِي|Abī|abī]] [[سُفْيَانَ|Sufyān|sufyāna]] [[عَنْ|from|ʿan]] [[جَابِرٍ|Jābir|jābirin]] [[عَنِ|from|ʿani]] [[النَّبِيِّ|the Prophet|n-nabiyyi]] [[صَلَّى|may Allah bless him|ṣallā]] [[اللَّهُ|Allah|llāhu]] [[عَلَيْهِ|upon him|ʿalayhi]] [[وَسَلَّمَ|and grant peace.|wa sallama.]] [[وَحَدِيثُ|And the Hadith of|wa-ḥadīthu]] [[أَبِي|Abī|abī]] [[سُفْيَانَ|Sufyān|sufyāna]] [[عَنْ|from|ʿan]] [[أَنَسٍ|Anas|anasin]] [[أَصَحُّ|is more authentic.|aṣaḥḥu.]]
 
-*🔗 Verify on sunnah.com — [Tirmidhi 2140](https://sunnah.com/tirmidhi:2140)*
+*🔗 Verify on sunnah.com 〜 [Tirmidhi 2140](https://sunnah.com/tirmidhi:2140)*
 
 </details>

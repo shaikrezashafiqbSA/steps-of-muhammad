@@ -14,7 +14,7 @@ right-orb-compact: ۞۞۞
 
 Abū Hurayrah (raḍiyallāhu ʿanhu) was deputed by the Messenger of Allah ﷺ to guard the zakāt al-fiṭr of Ramaḍān. Three nights running a thief came and stole handfuls of it; three times Abū Hurayrah caught him and three times he let him go out of pity. On the third night the thief bought his freedom with a teaching:
 
-**"When you go to your bed, recite Āyat al-Kursī — *Allāhu lā ilāha illā huwa l-ḥayyu l-qayyūm* — to the end of the verse. Allah will appoint over you a guardian from Him, and no devil will come near you until morning."**
+**"When you go to your bed, recite Āyat al-Kursī 〜 *Allāhu lā ilāha illā huwa l-ḥayyu l-qayyūm* 〜 to the end of the verse. Allah will appoint over you a guardian from Him, and no devil will come near you until morning."**
 
 The Prophet ﷺ confirmed it the next day and told him who the visitor had been: **"He told you the truth, though he is a great liar. That was a devil."**
 
@@ -22,7 +22,7 @@ The Prophet ﷺ confirmed it the next day and told him who the visitor had been:
 
 ### Qurʾān 2:255
 
-[[اللَّهُ|Allah —|allāhu]] [[لَا|there is no|lā]] [[إِلَٰهَ|god|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him,|huwa]] [[الْحَيُّ|the Ever-Living,|l-ḥayyu]] [[الْقَيُّومُ|the Sustainer of all.|l-qayyūm]]
+[[اللَّهُ|Allah 〜|allāhu]] [[لَا|there is no|lā]] [[إِلَٰهَ|god|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him,|huwa]] [[الْحَيُّ|the Ever-Living,|l-ḥayyu]] [[الْقَيُّومُ|the Sustainer of all.|l-qayyūm]]
 
 [[لَا|Neither|lā]] [[تَأْخُذُهُ|overtakes Him|taʾkhudhuhu]] [[سِنَةٌ|drowsiness|sinatun]] [[وَلَا|nor|wa lā]] [[نَوْمٌ|sleep.|nawm]]
 
@@ -37,7 +37,7 @@ The Prophet ﷺ confirmed it the next day and told him who the visitor had been:
 [[وَهُوَ|And He is|wa huwa]] [[الْعَلِيُّ|the Most High,|l-ʿaliyyu]] [[الْعَظِيمُ|the Most Great.|l-ʿaẓīm]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 2311**
 
@@ -45,6 +45,6 @@ The Prophet ﷺ confirmed it the next day and told him who the visitor had been:
 
 [[صَدَقَكَ|He told you the truth|ṣadaqaka]] [[وَهُوَ|though he is|wa huwa]] [[كَذُوبٌ|a great liar.|kadhūb]] [[ذَاكَ|That was|dhāka]] [[شَيْطَانٌ|a devil.|shayṭānun]]
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 2311](https://sunnah.com/bukhari:2311)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ al-Bukhārī 2311](https://sunnah.com/bukhari:2311)*
 
 </details>

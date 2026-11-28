@@ -4,7 +4,7 @@ collection: Al-Muʿjam al-Kabīr
 book: Musnad ʿUbādah ibn aṣ-Ṣāmit
 hadith: Musnad al-Shāmiyīn lil-Ṭabarānī 2118 
 grade: hasan
-grade-comment: Ḥasan li-ghayrihi — graded sound by later verifiers (e.g., al-Albānī in Ṣaḥīḥ al-Jāmiʿ) via supporting routes; verify the specific chain before citing academically.
+grade-comment: Ḥasan li-ghayrihi 〜 graded sound by later verifiers (e.g., al-Albānī in Ṣaḥīḥ al-Jāmiʿ) via supporting routes; verify the specific chain before citing academically.
 hikmah-source: textual
 hikmah-citation:
 left-orb: Al-Muʿjam al-Kabīr (aṭ-Ṭabarānī)
@@ -37,11 +37,11 @@ Begin your dua with forgiveness - commonly found in masjids in the region after 
 The Prophet ﷺ said: ["Whoever seeks forgiveness for the believing men and the believing women, Allah will record for him one good deed for every single believing man and believing woman."](https://www.abuaminaelias.com/dailyhadithonline/2013/08/15/istighfar-for-the-believers/)
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ aṭ-Ṭabarānī, Musnad al-Shāmiyīn 2118**
 
-Narrated by ʿUbādah ibn aṣ-Ṣāmit (raḍiyallāhu ʿanhu). *Ḥasan li-ghayrihi — graded sound by later verifiers (e.g., al-Albānī in Ṣaḥīḥ al-Jāmiʿ) via supporting routes; verify the specific chain before citing academically.*
+Narrated by ʿUbādah ibn aṣ-Ṣāmit (raḍiyallāhu ʿanhu). *Ḥasan li-ghayrihi 〜 graded sound by later verifiers (e.g., al-Albānī in Ṣaḥīḥ al-Jāmiʿ) via supporting routes; verify the specific chain before citing academically.*
 
 [[ مَنِ | Whoever | mani ]][[ اسْتَغْفَرَ | seeks forgiveness | istaghfara ]][[ لِلْمُؤْمِنِينَ | for the believing men | lil-muʾminīna ]][[ وَالْمُؤْمِنَاتِ | and the believing women, | wal-muʾmināti ]]
 

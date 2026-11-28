@@ -43,7 +43,7 @@ In the Islamic traditions of Singapore, Malaysia, and Indonesia (predominantly f
 [[تَبَارَكْتَ|Blessed are You,|tabārakta]] [[رَبَّنَا|our Lord,|rabbanā]] [[وَتَعَالَيْتَ|and Exalted,|wa-taʿālayta,]] [[يَا|O|yā]] [[ذَا|Possessor of|dhā]] [[الْجَلَالِ|Majesty|l-jalāli]] [[وَالْإِكْرَامِ|and Honor.|wa-l-ikrāmi.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ Muslim 591**
 
@@ -61,6 +61,6 @@ In the Islamic traditions of Singapore, Malaysia, and Indonesia (predominantly f
 
 [[قَالَ|Said|qāla]] [[الْوَلِيدُ|al-Walīd:|l-walīdu:]] [[فَقُلْتُ|So I said|fa-qultu]] [[لِلْأَوْزَاعِيِّ|to al-Awzāʿī:|li-l-awzāʿiyyi:]] [[كَيْفَ|How|kayfa]] [[الِاسْتِغْفَارُ|is the seeking of forgiveness?|l-istighfāru?]] [[قَالَ|He said:|qāla:]] [[تَقُولُ|You say:|taqūlu:]] [[أَسْتَغْفِرُ|I seek forgiveness from|astaghfiru]] [[اللَّهَ|Allah,|llāha,]] [[أَسْتَغْفِرُ|I seek forgiveness from|astaghfiru]] [[اللَّهَ|Allah.|llāha.]]
 
-*🔗 Verify on sunnah.com — [Muslim 591](https://sunnah.com/muslim:591)*
+*🔗 Verify on sunnah.com 〜 [Muslim 591](https://sunnah.com/muslim:591)*
 
 </details>

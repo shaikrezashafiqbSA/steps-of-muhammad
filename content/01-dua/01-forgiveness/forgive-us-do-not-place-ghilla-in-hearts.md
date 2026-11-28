@@ -4,7 +4,7 @@ collection: Qur'an
 book: Sūrah al-Ḥashr (59) · al-Madanī · Juzʾ 28
 hadith: Āyah 10
 grade: Quranic Scripture
-grade-comment: —
+grade-comment: 〜
 hikmah-source: commentary
 hikmah-citation: Tafsīr Ibn Kathīr, at 59:10
 left-orb: Qur'an 59:10
@@ -15,7 +15,7 @@ right-orb-compact: ۞۞۞
 
 # Forgiveness for Predecessors and a Heart Free of Rancor
 
-Allah establishes this duʿāʾ as the defining speech of the Tābiʿūn and every believer until the Day of Judgment—those who follow the Muhājirūn (the Makkan emigrants) and the Anṣār (the Madinan helpers) 
+Allah establishes this duʿāʾ as the defining speech of the Tābiʿūn and every believer until the Day of Judgment〜those who follow the Muhājirūn (the Makkan emigrants) and the Anṣār (the Madinan helpers) 
 
 By reciting it, we plead for the forgiveness of every brother and sister who preceded us in faith, anchoring our hearts to the entire history of the Ummah.
 
@@ -52,7 +52,7 @@ This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=
 [Man promised paradise 3 times in public](?file=content/01-dua/01-forgiveness/man-from-jannah-pure-heart.md "embed")
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Qurʾān ✦ Sūrat al-Ḥashr 59:10**
 
@@ -62,10 +62,10 @@ This dua is applied by the man of paradise in [Hadith Musnad Ahmad 12697](?file=
 
 Ibn Kathīr identifies the speakers of this āyah as the third category of believers entitled to a share of the fayʾ: those who follow the Muhājirūn and Anṣār in their good works and beautiful attributes, and who invoke Allah for them in public and in secret. Their defining speech is precisely this duʿāʾ. [4, 6]
 
-He explains that *ghillan* (rancor) denotes rage or envy — the believer asks not merely for personal forgiveness but for a heart purified of bitterness toward all who believe. [5]
+He explains that *ghillan* (rancor) denotes rage or envy 〜 the believer asks not merely for personal forgiveness but for a heart purified of bitterness toward all who believe. [5]
 
-Ibn Kathīr further reports that Imām Mālik ؒ used this āyah to rule that the Rāfiḍah who curse the Companions ؓ have no share in the fayʾ wealth, since they lack the very quality Allah praises here. And Ibn Abī Ḥātim records from ʿĀʾishah ؓ regarding those who revile the Companions: "They were commanded to seek forgiveness for them, but instead they cursed them" — she then recited this āyah. [1]
+Ibn Kathīr further reports that Imām Mālik ؒ used this āyah to rule that the Rāfiḍah who curse the Companions ؓ have no share in the fayʾ wealth, since they lack the very quality Allah praises here. And Ibn Abī Ḥātim records from ʿĀʾishah ؓ regarding those who revile the Companions: "They were commanded to seek forgiveness for them, but instead they cursed them" 〜 she then recited this āyah. [1]
 
-This āyah parallels 9:100 — "And the foremost of the Muhājirūn and the Anṣār and those who followed them with excellence — Allah is pleased with them and they are pleased with Him".
+This āyah parallels 9:100 〜 "And the foremost of the Muhājirūn and the Anṣār and those who followed them with excellence 〜 Allah is pleased with them and they are pleased with Him".
 
 </details>

@@ -81,11 +81,11 @@ Recite **[N] times** [when / after which prayer / on which occasion].
 
 <!-- List your references here -->
 
-- *[Book Title]* — Author Name
+- *[Book Title]* 〜 Author Name
 - [URL or citation]
 
 <!-- ═══════════════════════════════════════════════════
-     COLLAPSIBLE DRAWER (optional — for chain of 
+     COLLAPSIBLE DRAWER (optional 〜 for chain of 
      narration, alternate wordings, or extended notes)
      Syntax: standard HTML <details>/<summary> tags,
      which marked.js passes through unchanged.

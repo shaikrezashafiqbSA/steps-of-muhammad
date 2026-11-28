@@ -24,7 +24,7 @@ right-orb-compact: ۞۞۞
 [[وَأَنْتَ|and You|wa-anta]] [[تَجْعَلُ|make|tajʿalu]] [[الْحَزْنَ|the difficulty / sorrow|l-ḥazna]] [[إِذَا|when|idhā]] [[شِئْتَ|You will|shiʾta]] [[سَهْلًا|easy.|sahlan.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ḥiṣn al-Muslim 139**
 
@@ -49,6 +49,6 @@ Human nature leads people to rely on their own skills, intellect, or resources w
 
 It acknowledges that difficulty and ease are not intrinsic properties of a situation itself; rather, Allah transforms a situation from hard to easy (or vice versa) in an instant.
 
-*🔗 Verify on sunnah.com — [Hisn al-Muslim 139](https://sunnah.com/hisn:139)*
+*🔗 Verify on sunnah.com 〜 [Hisn al-Muslim 139](https://sunnah.com/hisn:139)*
 
 </details>

@@ -25,7 +25,7 @@ So [Solomon] smiled, amused at her speech, and said: *"My Lord, enable me to be 
 [[وَأَدْخِلْنِي|and admit me|wa-adkhilnī]] [[بِرَحْمَتِكَ|by Your mercy|bi-raḥmatika]] [[فِي|among|fī]] [[عِبَادِكَ|Your servants|ʿibādika]] [[الصَّالِحِينَ|the righteous.|ṣ-ṣāliḥīn.]] [[﴿١٩﴾]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Qurʾān ✦ Sūrat an-Naml 27:19**
 
@@ -39,6 +39,6 @@ So [Solomon] smiled, amused at her speech, and said: *"My Lord, enable me to be 
 
 [[وَأَدْخِلْنِي|and admit me|wa-adkhilnī]] [[بِرَحْمَتِكَ|by Your mercy|bi-raḥmatika]] [[فِي|into|fī]] [[عِبَادِكَ|Your servants|ʿibādika]] [[الصَّالِحِينَ|the righteous.|ṣ-ṣāliḥīn.]] [[﴿١٩﴾]]
 
-*🔗 Verify on quran.com — [Surah An-Naml 27:19](https://quran.com/27/19)*
+*🔗 Verify on quran.com 〜 [Surah An-Naml 27:19](https://quran.com/27/19)*
 
 </details>

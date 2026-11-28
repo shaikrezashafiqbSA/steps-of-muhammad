@@ -51,4 +51,4 @@ Islamic scholars state that you have complete flexibility here. You are not forc
 
 • You can alternate: You can say Version 1 after Dhuhr, and Version 2 after Asr, reviving both prophetic traditions.
 
-They are essentially two verses of the same beautiful song of praise—both perfectly aligned in theology and practice.
+They are essentially two verses of the same beautiful song of praise〜both perfectly aligned in theology and practice.

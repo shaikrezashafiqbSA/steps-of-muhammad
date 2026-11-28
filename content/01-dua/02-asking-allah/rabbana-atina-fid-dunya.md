@@ -87,7 +87,7 @@ The believers who came after them said this dua. Ibn Kathīr says the criticism 
 
 [[ فَإِذَا | and when | fa-idhā ]] [[ أَرَادَ | he wanted | arāda ]] [[ أَنْ | to | an ]] [[ يَدْعُوَ | supplicate | yadʿuwa ]] [[ بِدُعَاءٍ | with a different supplication | bi-duʿāʾin ]] [[ دَعَا | he supplicated | daʿā ]] [[ بِهَا | with it | bihā ]] [[ فِيهِ | within it. | fīhi ]]
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ Muslim 2690a](https://sunnah.com/muslim:2690a)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ Muslim 2690a](https://sunnah.com/muslim:2690a)*
 
 ---
 
@@ -115,9 +115,9 @@ The believers who came after them said this dua. Ibn Kathīr says the criticism 
 
 [[ رَبَّنَا | Our Lord, | rabbanā ]] [[ آتِنَا | give us | ātinā ]] [[ فِي | in | fī ]] [[ الدُّنْيَا | the world | ad-dunyā ]] [[ حَسَنَةً | good, | ḥasanatan ]] [[ وَفِي | and in | wa-fī ]] [[ الْآخِرَةِ | the Hereafter | al-ākhirati ]] [[ حَسَنَةً | good, | ḥasanatan ]] [[ وَقِنَا | and protect us from | wa-qinā ]] [[ عَذَابَ | the punishment | ʿadhāba ]] [[ النَّارِ | of the Fire. | an-nāri ]]
 
-*🔗 Verify on sunnah.com — [Sunan Abī Dāwūd 1892](https://sunnah.com/abudawud:1892)*
+*🔗 Verify on sunnah.com 〜 [Sunan Abī Dāwūd 1892](https://sunnah.com/abudawud:1892)*
 
-*🔗 Verify on sunnah.com — [Riyāḍ aṣ-Ṣāliḥīn 1467](https://sunnah.com/riyadussalihin:1467)*
+*🔗 Verify on sunnah.com 〜 [Riyāḍ aṣ-Ṣāliḥīn 1467](https://sunnah.com/riyadussalihin:1467)*
 
 
 </details>

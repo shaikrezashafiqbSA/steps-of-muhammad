@@ -1,7 +1,7 @@
 ::meta
 narrator: ʿAbdullāh ibn ʿAbbās (raḍiyallāhu ʿanhumā)
 collection: Ṣaḥīḥ al-Bukhārī
-book: Book 19 · Prayer at Night — Tahajjud (كتاب التهجد) · Chapter 1
+book: Book 19 · Prayer at Night 〜 Tahajjud (كتاب التهجد) · Chapter 1
 hadith: 1120
 grade: sahih
 left-orb: 📜 Bukhārī 1120
@@ -34,10 +34,10 @@ Ibn ʿAbbās (raḍiyallāhu ʿanhumā) reported: **When the Prophet ﷺ rose in
 
 [[أَنْتَ|You are|anta]] [[الْمُقَدِّمُ|the One who brings forward|l-muqaddimu]] [[وَأَنْتَ|and You are|wa anta]] [[الْمُؤَخِّرُ|the One who puts back.|l-muʾakhkhiru]] [[لَا|There is no|lā]] [[إِلَهَ|god|ilāha]] [[إِلَّا|except|illā]] [[أَنْتَ|You.|anta]]
 
-> **Narrated addition** (via ʿAbd al-Karīm Abū Umayyah, in the same chain): *wa lā ḥawla wa lā quwwata illā billāh* — and there is no might nor power except by Allah.
+> **Narrated addition** (via ʿAbd al-Karīm Abū Umayyah, in the same chain): *wa lā ḥawla wa lā quwwata illā billāh* 〜 and there is no might nor power except by Allah.
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 1120**
 
@@ -45,8 +45,8 @@ Ibn ʿAbbās (raḍiyallāhu ʿanhumā) reported: **When the Prophet ﷺ rose in
 
 **Notes**
 
-It is a declaration before it is a request. Eleven times *ḥaqq* — true, true, true — the world is re-anchored, and only then comes *faghfir lī*.
+It is a declaration before it is a request. Eleven times *ḥaqq* 〜 true, true, true 〜 the world is re-anchored, and only then comes *faghfir lī*.
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 1120](https://sunnah.com/bukhari:1120)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ al-Bukhārī 1120](https://sunnah.com/bukhari:1120)*
 
 </details>

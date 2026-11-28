@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════
-   Inline tooltips — used by render.html
+   Inline tooltips 〜 used by render.html
    Authoring syntax:   {{ word | short explanation }}
    Works anywhere text does: paragraphs, headings, <summary> lines, lists.
    Hover (desktop) or tap/click shows the note; click again, click elsewhere
@@ -108,9 +108,9 @@
     rootEl.innerHTML = parts.map((seg, i) => i % 2 ? seg : seg.replace(TIP_RE, (m, word, note) => {
       // {{ word | @slug }} → opens content/kalima/slug.md instead of a typed note
       const k = note.trim().match(/^@([a-z0-9-]+)$/i);
-      if (k) return `<span class="som-tip" tabindex="0" role="button" aria-label="${word.replace(/<[^>]+>/g, '')} — open glossary entry" data-kalima="${k[1].toLowerCase()}">${word}</span>`;
+      if (k) return `<span class="som-tip" tabindex="0" role="button" aria-label="${word.replace(/<[^>]+>/g, '')}: open glossary entry" data-kalima="${k[1].toLowerCase()}">${word}</span>`;
       const text =note.replace(/<[^>]+>/g, '').replace(/"/g, '&quot;');
-      return `<span class="som-tip" tabindex="0" role="button" aria-label="${word.replace(/<[^>]+>/g, '')} — tap for explanation" data-tip="${text}">${word}</span>`;
+      return `<span class="som-tip" tabindex="0" role="button" aria-label="${word.replace(/<[^>]+>/g, '')}: tap for explanation" data-tip="${text}">${word}</span>`;
     }).replace(/\\\{\{/g, '{{')).join('');
   };
 
@@ -164,7 +164,7 @@
         box.appendChild(back);
       }
       if (md == null) {
-        box.insertAdjacentHTML('beforeend', '<p class="som-kal-status">No glossary entry yet — add <code>content/kalima/' + slug + '.md</code></p>');
+        box.insertAdjacentHTML('beforeend', '<p class="som-kal-status">No glossary entry yet. Add <code>content/kalima/' + slug + '.md</code></p>');
       } else {
         const body = document.createElement('div'); body.className = 'markdown-body som-kal-body';
         if (window.somRenderInto) somRenderInto(md, body);

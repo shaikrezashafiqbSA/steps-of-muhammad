@@ -16,7 +16,7 @@ right-orb-compact: ۞۞۞
 
 >*"No one is ever afflicted with anxiety or grief and then says:*
 
-📺 **Listen and follow along** — tap 📌 on the video to pin it while you read the word-by-word below.
+📺 **Listen and follow along** 〜 tap 📌 on the video to pin it while you read the word-by-word below.
 
 <div class="video-card">
 <iframe src="https://www.youtube.com/embed/mZ0UK5hh8gs?si=of-EdmV1cWXCSMyd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -64,7 +64,7 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 [[إِلَّا|except that|illā]] [[أَذْهَبَ|He removes|adhhaba]] [[اللَّهُ|Allah|llāhu]] [[هَمَّهُ|his anxiety|hammahu]] [[وَحُزْنَهُ|and his grief|wa-ḥuznahu]] [[وَأَبْدَلَهُ|and replaces for him|wa-abdalahu]] [[مَكَانَهُ|in its place|makānahu]] [[فَرَجًا|joy|farajan]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Musnad Aḥmad 3712**
 
@@ -100,7 +100,7 @@ It was said: “O Messenger of Allah, shall we learn it?” He said:
 
 [[فَقِيلَ|so it was said|fa-qīla]] [[يَا|O|yā]] [[رَسُولَ|Messenger|rasūla]] [[اللَّهِ|of Allah|llāhi]] [[أَلَا|shall we not|alā]] [[نَتَعَلَّمُهَا|learn it|nataʿallamuhā]] [[فَقَالَ|and he said|fa-qāla]] [[بَلَى|yes|balā]] [[يَنْبَغِي|it is fitting|yanbaghī]] [[لِمَنْ|for the one who|liman]] [[سَمِعَهَا|hears it|samiʿahā]] [[أَنْ|that|an]] [[يَتَعَلَّمَهَا|learn it|yataʿallamahā]]
 
-*🔗 Verify on [sunnah.com — Hisn al-Muslim 120](https://sunnah.com/hisn:120) • [dorar.net - Musnad Aḥmad 3712](https://dorar.net/hadith/sharh/116355)*
+*🔗 Verify on [sunnah.com 〜 Hisn al-Muslim 120](https://sunnah.com/hisn:120) • [dorar.net - Musnad Aḥmad 3712](https://dorar.net/hadith/sharh/116355)*
 
 </details>
 

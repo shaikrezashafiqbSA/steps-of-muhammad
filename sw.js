@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   Be the Imam: Steps of Muḥammad ﷺ — Service Worker
+   Be the Imam: Steps of Muḥammad ﷺ 〜 Service Worker
    Offline-first PWA for the GitHub Pages static site.
 
    Strategies:
@@ -14,7 +14,7 @@
      cap; the app still renders offline once they are cached.
    ════════════════════════════════════════════════════════════════ */
 
-const VERSION = 'v1.7.0';
+const VERSION = 'v1.8.1';
 const SHELL_CACHE = `shell-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 const CDN_CACHE = `cdn-${VERSION}`;
@@ -118,7 +118,7 @@ async function networkFirst(request, cacheName) {
 }
 
 /* The app's own code (JS / CSS / JSON / HTML): always the latest when online.
-   Stale-while-revalidate is right for markdown and images, but wrong for code —
+   Stale-while-revalidate is right for markdown and images, but wrong for code 〜
    it served the previous version of a script for one whole launch, so a new
    page could run against an old script. 'no-cache' makes the browser
    revalidate instead of trusting its own HTTP cache; offline falls back to

@@ -26,7 +26,7 @@ The Messenger of Allah ﷺ said: "Whoever recites blessings upon me ten times in
 " - will obtain my **intercession** on the Day of Resurrection."
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ḥiṣn al-Muslim 98**
 
@@ -38,6 +38,6 @@ The Messenger of Allah ﷺ said: "Whoever recites blessings upon me ten times in
 
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[صَلِّ|send blessings|ṣalli]] [[وَسَلِّمْ|and peace|wa-sallim]] [[عَلَى|upon|ʿalā]] [[نَبِيِّنَا|our Prophet|nabiyyinā]] [[مُحَمَّدٍ|Muhammad.|muḥammad.]]
 
-*🔗 Verify on sunnah.com — [Hisn al-Muslim 98](https://sunnah.com/hisn:98)*
+*🔗 Verify on sunnah.com 〜 [Hisn al-Muslim 98](https://sunnah.com/hisn:98)*
 
 </details>

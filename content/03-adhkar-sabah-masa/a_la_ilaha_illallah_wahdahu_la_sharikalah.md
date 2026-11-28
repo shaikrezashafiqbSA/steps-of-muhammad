@@ -36,7 +36,7 @@ Whoever recites this, Allah will write ten good deeds for him, forgive him ten m
 [[وَكُنَّ|and they will be|wa-kunna]] [[لَهُ|for him|lahū]] [[حِرْزًا|a protection|ḥirzan]] [[مِنَ|from|mina]] [[الشَّيْطَانِ|Satan|sh-shayṭān]] [[حَتَّى|until|ḥattā]] [[يُمْسِيَ|evening.|yumsiya.]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ḥiṣn al-Muslim 92**
 
@@ -48,6 +48,6 @@ Whoever recites this, Allah will write ten good deeds for him, forgive him ten m
 
 [[عَشْرَ|Ten|ʿashra]] [[مَرَّاتٍ|times|marrātin]] [[أَوْ|or|aw]] [[مَرَّةً|one|marratan]] [[وَاحِدَةً|single time|wāḥidatan]] [[عِنْدَ|upon/during|ʿinda]] [[الْكَسَلِ|laziness.|l-kasal.]]
 
-*🔗 Verify on sunnah.com — [Hisn al-Muslim 92](https://sunnah.com/hisn:92)*
+*🔗 Verify on sunnah.com 〜 [Hisn al-Muslim 92](https://sunnah.com/hisn:92)*
 
 </details>

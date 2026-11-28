@@ -1,4 +1,4 @@
-# Change Management Playbook — *Be the Imam: Steps of Muḥammad ﷺ*
+# Change Management Playbook 〜 *Be the Imam: Steps of Muḥammad ﷺ*
 
 **Status:** Draft v0.1 · 22 Oct 2026 · for discussion, not yet validated with any masjid or ustaz.
 
@@ -30,7 +30,7 @@ right stance: put it in the first slide of every pitch.
 | **Imam / ustaz** | Lead worship credibly; answer "is this authentic?" | A citeable source and grade for every duʿā, ready for post-ṣalāh and khutbah use | Being seen to endorse something doctrinally risky; being replaced by an app | Ask for review, not endorsement. Make them the *validator* of the content they use. |
 | **Masjid committee (AJK / jawatankuasa)** | Keep the masjid active, relevant to youth, low-effort to run | A ready programme, a QR code on the notice board, no new infrastructure | Cost, extra admin, controversy | Free, no accounts, no hosting. One-page pilot proposal. |
 | **Madrasah / Qurʾān class teachers** | Teach recitation with meaning | Word-by-word Arabic + gloss + transliteration; four reading modes | Another tool to learn | A 15-min teacher kit; classroom projector mode (§6). |
-| **Working professionals (25–45)** | Fit worship around a packed day | The prophetic clock: "it is now — here is what he ﷺ said at this hour" | Another app they won't open | Tie to an existing anchor (after ṣalāh), not to "open the app". |
+| **Working professionals (25–45)** | Fit worship around a packed day | The prophetic clock: "it is now 〜 here is what he ﷺ said at this hour" | Another app they won't open | Tie to an existing anchor (after ṣalāh), not to "open the app". |
 | **Youth / students** | Understand, not just imitate | Provenance, word meanings, honest grading | Boredom, lecturing | Learner mode; challenge format; no sermon tone. |
 | **Reverts (muallaf) and Arabic learners** | Pray and make duʿā with confidence | Transliteration + meaning, offline | Embarrassment at not knowing | Beginner starter plan; a class built around it. |
 | **Elderly / parents** | Keep their routine; pass it on | Large Arabic-only mode; same duʿās they already say | Small text, English-only UI | Be the *grandchild-helps-grandparent* tool; Bahasa UI (§6). |
@@ -121,7 +121,7 @@ Pick two for the pilot, not all. Each is small and runs without new infrastructu
 *These come from reading the code and docs, not from user testing. Treat them as hypotheses and confirm by
 watching real users in Phase 0. Check each against the live UI before building, since some may already exist.*
 
-### P0 — needed before a masjid pilot
+### P0 〜 needed before a masjid pilot
 | Gap | Why it matters | Notes |
 |---|---|---|
 | **Language (Bahasa Indonesia / Malay)** | The README lists multi-language UI as Phase 6. For a Nusantara congregation it is probably the single largest barrier, especially for older members. | Translate UI strings first; translations of cards can follow gradually. |
@@ -130,7 +130,7 @@ watching real users in Phase 0. Check each against the live UI before building, 
 | **"Report an error" + reviewer attribution** | Trust is the product. Visible reviewer names and a correction path matter more than any new feature. | Reuse the existing "In Review" category. |
 | **Pilot analytics events** | Without them you cannot tell adoption from curiosity. | See §7. |
 
-### P1 — makes it sticky
+### P1 〜 makes it sticky
 | Gap | Why it matters |
 |---|---|
 | **Congregation / projector mode** | Full-screen large Arabic, advance through a slot's sequence with one tap. Lets the imam run post-ṣalāh dhikr from the app. Likely the highest-value feature for masjid adoption. |
@@ -139,7 +139,7 @@ watching real users in Phase 0. Check each against the live UI before building, 
 | **Tap counter with haptics + screen wake lock** | Cards already carry `reps`. A counter that keeps the screen awake makes tasbīḥ hands-free. |
 | **Large-type / elder mode** | Arabic-only mode exists. Verify the type size, tap targets and contrast for older users. |
 
-### P2 — later
+### P2 〜 later
 | Gap | Why it matters |
 |---|---|
 | **Audio with word highlighting** (README Phase 5) | The biggest unlock for those who cannot read Arabic, and for correct pronunciation. Needs a reciter and a rights decision. |

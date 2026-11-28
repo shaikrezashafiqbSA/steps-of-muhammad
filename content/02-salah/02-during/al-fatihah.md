@@ -13,9 +13,9 @@ right-orb-compact: ۞۞۞
 
 # Al-Fātiḥah - He answers you verse by verse
 
-Abū Hurayrah (raḍiyallāhu ʿanhu) reported that the Messenger of Allah (ﷺ) said: *"Whoever performs a prayer in which he does not recite Umm al-Qurʾān, it is deficient"* — he said this three times — *"incomplete."* It was said to Abū Hurayrah: "We are sometimes behind the Imām." He said: *"Recite it to yourself,"* for he had heard the Messenger of Allah (ﷺ) say that Allah the Exalted said:
+Abū Hurayrah (raḍiyallāhu ʿanhu) reported that the Messenger of Allah (ﷺ) said: *"Whoever performs a prayer in which he does not recite Umm al-Qurʾān, it is deficient"* 〜 he said this three times 〜 *"incomplete."* It was said to Abū Hurayrah: "We are sometimes behind the Imām." He said: *"Recite it to yourself,"* for he had heard the Messenger of Allah (ﷺ) say that Allah the Exalted said:
 
-*"I have divided the prayer between Myself and My servant into two halves, and My servant shall have what he asks for. When the servant says: 'All praise is due to Allah, Lord of the worlds,' Allah the Most High says: 'My servant has praised Me.' When he says: 'The Most Compassionate, the Most Merciful,' Allah says: 'My servant has extolled Me.' When he says: 'Master of the Day of Recompense,' He says: 'My servant has glorified Me'* — and on one occasion He said: *'My servant has entrusted his affairs to Me.' When he says: 'You alone we worship, and You alone we ask for help,' He says: 'This is between Me and My servant, and My servant shall have what he asks for.' And when he says: 'Guide us to the straight path, the path of those upon whom You have bestowed favour, not of those who have earned Your anger, nor of those who are astray,' He says: 'This is for My servant, and My servant shall have what he asks for.'"*
+*"I have divided the prayer between Myself and My servant into two halves, and My servant shall have what he asks for. When the servant says: 'All praise is due to Allah, Lord of the worlds,' Allah the Most High says: 'My servant has praised Me.' When he says: 'The Most Compassionate, the Most Merciful,' Allah says: 'My servant has extolled Me.' When he says: 'Master of the Day of Recompense,' He says: 'My servant has glorified Me'* 〜 and on one occasion He said: *'My servant has entrusted his affairs to Me.' When he says: 'You alone we worship, and You alone we ask for help,' He says: 'This is between Me and My servant, and My servant shall have what he asks for.' And when he says: 'Guide us to the straight path, the path of those upon whom You have bestowed favour, not of those who have earned Your anger, nor of those who are astray,' He says: 'This is for My servant, and My servant shall have what he asks for.'"*
 
 Sufyān said: al-ʿAlāʾ ibn ʿAbd al-Raḥmān ibn Yaʿqūb narrated it to me when I visited him while he was ill in his house, and I asked him about it.
 
@@ -115,7 +115,7 @@ Sufyān said: al-ʿAlāʾ ibn ʿAbd al-Raḥmān ibn Yaʿqūb narrated it to me 
 [[ سَأَلَ | he has asked. | saʾal ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ Muslim 395a**
 
@@ -153,7 +153,7 @@ Sufyān said: al-ʿAlāʾ ibn ʿAbd al-Raḥmān ibn Yaʿqūb narrated it to me 
 [[ الْقُرْآنِ | the Qurʾān, | l-qurʾāni ]]
 [[ فَهْيَ | then it is | fa-hiya ]]
 [[ خِدَاجٌ | deficient | khidājun ]]
-[[ ثَلاَثًا | — three times — | thalāthan ]]
+[[ ثَلاَثًا | 〜 three times 〜 | thalāthan ]]
 [[ غَيْرُ | not | ghayru ]]
 [[ تَمَامٍ | complete. | tamāmin ]]
 
@@ -212,6 +212,6 @@ Sufyān said: al-ʿAlāʾ ibn ʿAbd al-Raḥmān ibn Yaʿqūb narrated it to me 
 [[ غَيْرُ | not | ghayru ]]
 [[ تَمَامٍ | complete. | tamāmin ]]
 
-*🔗 Verify on sunnah.com — [Sahih Muslim 395a](https://sunnah.com/muslim:395a)*
+*🔗 Verify on sunnah.com 〜 [Sahih Muslim 395a](https://sunnah.com/muslim:395a)*
 
 </details>

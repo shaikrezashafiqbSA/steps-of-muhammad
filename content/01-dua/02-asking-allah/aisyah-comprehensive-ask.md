@@ -33,7 +33,7 @@ It was narrated from ʿĀʾishah (رضي الله عنها) that the Messenger o
 [[وَأَسْأَلُكَ|And I ask You|wa-asʾaluka]] [[أَنْ|that|an]] [[تَجْعَلَ|You make|tajʿala]] [[كُلَّ|every|kulla]] [[قَضَاءٍ|decree|qaḍāʾin]] [[قَضَيْتَهُ|You have decreed|qaḍaytahū]] [[لِي|for me|lī]] [[خَيْرًا|good|khayran]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ibn Mājah 3846**
 
@@ -49,6 +49,6 @@ It was narrated from ʿĀʾishah (رضي الله عنها) that the Messenger o
 
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[إِنِّي|indeed I|innī]] [[أَسْأَلُكَ|ask You for|asʾaluka]] [[الْجَنَّةَ|Paradise|l-jannata]] [[وَمَا|and what|wa-mā]] [[قَرَّبَ|brings close|qarraba]] [[إِلَيْهَا|to it|ilayhā]] [[مِنْ|of|min]] [[قَوْلٍ|word|qawlin]] [[أَوْ|or|aw]] [[عَمَلٍ|deed|ʿamalin]] [[وَأَعُوذُ|and I seek refuge|wa-aʿūdhu]] [[بِكَ|in You|bika]] [[مِنَ|from|mina]] [[النَّارِ|the Fire|n-nāri]] [[وَمَا|and what|wa-mā]] [[قَرَّبَ|brings close|qarraba]] [[إِلَيْهَا|to it|ilayhā]] [[مِنْ|of|min]] [[قَوْلٍ|word|qawlin]] [[أَوْ|or|aw]] [[عَمَلٍ|deed|ʿamalin]] [[وَأَسْأَلُكَ|and I ask You|wa-asʾaluka]] [[أَنْ|that|an]] [[تَجْعَلَ|You make|tajʿala]] [[كُلَّ|every|kulla]] [[قَضَاءٍ|decree|qaḍāʾin]] [[قَضَيْتَهُ|You have decreed|qaḍaytahū]] [[لِي|for me|lī]] [[خَيْرًا|good.|khayran]]
 
-*🔗 Verify on sunnah.com — [Ibn Majah 3846](https://sunnah.com/ibnmajah:3846)*
+*🔗 Verify on sunnah.com 〜 [Ibn Majah 3846](https://sunnah.com/ibnmajah:3846)*
 
 </details>

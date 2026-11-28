@@ -1,7 +1,7 @@
 ::meta
 narrator: ʿUbādah ibn aṣ-Ṣāmit (raḍiyallāhu ʿanhu)
 collection: Ṣaḥīḥ al-Bukhārī
-book: Book 19 · Prayer at Night — Tahajjud (كتاب التهجد) · Chapter 21
+book: Book 19 · Prayer at Night 〜 Tahajjud (كتاب التهجد) · Chapter 21
 hadith: 1154
 grade: sahih
 left-orb: 📜 Bukhārī 1154
@@ -12,7 +12,7 @@ right-orb-compact: ۞۞۞
 
 # Waking in the Dark - Say this, then ask, and you are answered
 
-ʿUbādah ibn aṣ-Ṣāmit (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said: **"Whoever stirs awake in the night and says [these words], then says *Allāhumma-ghfir lī* — or supplicates — he is answered. And if he performs wuḍūʾ and prays, his prayer is accepted."**
+ʿUbādah ibn aṣ-Ṣāmit (raḍiyallāhu ʿanhu) reported that the Prophet ﷺ said: **"Whoever stirs awake in the night and says [these words], then says *Allāhumma-ghfir lī* 〜 or supplicates 〜 he is answered. And if he performs wuḍūʾ and prays, his prayer is accepted."**
 
 ## 📜✨ Du'a
 
@@ -28,7 +28,7 @@ right-orb-compact: ۞۞۞
 [[اللَّهُمَّ|O Allah,|allāhumma]] [[اغْفِرْ|forgive|ghfir]] [[لِي|me.|lī]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Ṣaḥīḥ al-Bukhārī 1154**
 
@@ -38,8 +38,8 @@ right-orb-compact: ۞۞۞
 
 This is the middle-of-the-night formula. You did not plan to be awake. The hadith turns that broken sleep into an answered duʿāʾ.
 
-— **or any duʿāʾ you wish.** The hadith says *"or he supplicates"*: the formula opens the door, then you walk through it with your own need.
+〜 **or any duʿāʾ you wish.** The hadith says *"or he supplicates"*: the formula opens the door, then you walk through it with your own need.
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 1154](https://sunnah.com/bukhari:1154)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ al-Bukhārī 1154](https://sunnah.com/bukhari:1154)*
 
 </details>

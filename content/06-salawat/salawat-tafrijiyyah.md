@@ -24,7 +24,7 @@ A ṣalawāt on the Prophet ﷺ transmitted by Imam al-Qurṭubī (d. 671 AH) an
 
 **Background and who composed this salawat**
 
-This salawat is transmitted by Imam al-Qurtubī (d. 671 AH / 1273 CE)  (Salawat) and is also associated with Shaykh Ibrahim al-Tāzī al-Maghribī, a Sufi scholar from Taza, Morocco, as recorded in Khāzinat al-Asrār by Shaykh Muḥammad Ḥaqqī al-Nāzilī.  (Hajjah) Shaykh al-Qurṭubī called it "Tafrijiyyah" — meaning relief — based on the word تَنْفَرِجُ in its text. It is also known as Ṣalāt al-Nāriyyah and Ṣalāt al-Tāziyyah.  (Hajjah)
+This salawat is transmitted by Imam al-Qurtubī (d. 671 AH / 1273 CE)  (Salawat) and is also associated with Shaykh Ibrahim al-Tāzī al-Maghribī, a Sufi scholar from Taza, Morocco, as recorded in Khāzinat al-Asrār by Shaykh Muḥammad Ḥaqqī al-Nāzilī.  (Hajjah) Shaykh al-Qurṭubī called it "Tafrijiyyah" 〜 meaning relief 〜 based on the word تَنْفَرِجُ in its text. It is also known as Ṣalāt al-Nāriyyah and Ṣalāt al-Tāziyyah.  (Hajjah)
 
 Learn more about it from: 
 

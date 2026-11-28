@@ -15,14 +15,14 @@ right-orb-compact: ۞۞۞
 
 # Mūsā's Expansion - When about to face Firʿawn: expand my chest
 
-When asked to face Firaun, Mūsā ؑ asked for the chest to be opened first, because he was being sent to "the mightiest king on the face of the earth" — courage and capacity precede eloquence. He asked only for the knot to be *loosened enough to be understood*, not removed entirely: "the Prophets do not ask for any more than what is required."
+When asked to face Firaun, Mūsā ؑ asked for the chest to be opened first, because he was being sent to "the mightiest king on the face of the earth" 〜 courage and capacity precede eloquence. He asked only for the knot to be *loosened enough to be understood*, not removed entirely: "the Prophets do not ask for any more than what is required."
 
 ## 📜✨ Du'a
 
 [[ رَبِّ | my Lord | rabbi ]] [[ اشْرَحْ | open | ish-raḥ ]] [[ لِي | for me | lī ]] [[ صَدْرِي | my chest | ṣadrī ]] [[ وَيَسِّرْ | and ease | wa-yassir ]] [[ لِي | for me | lī ]] [[ أَمْرِي | my task | amrī ]] [[ وَاحْلُلْ | and loosen | wa-ḥlul ]] [[ عُقْدَةً | the knot | ʿuqdatam ]] [[ مِنْ | from | min ]] [[ لِسَانِي | my tongue | lisānī ]] [[ يَفْقَهُوا | they understand | yafqahū ]] [[ قَوْلِي | my speech | qawlī ]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Qurʾān ✦ Sūrat Ṭā-Hā 20:25**
 

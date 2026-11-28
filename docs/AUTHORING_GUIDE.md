@@ -1,5 +1,5 @@
 ::meta
-narrator: This is a template — not a real prophetic narration
+narrator: This is a template 〜 not a real prophetic narration
 collection: Steps of Muhammad Project
 book: render.html v4.3 Feature Reference
 hadith: GUIDE-001
@@ -9,15 +9,15 @@ right-orb: 🪶 Not For Recitation
 ::
 
 # 📖 Authoring Guide
-## Steps of Muhammad — Reference for Contributors
+## Steps of Muhammad 〜 Reference for Contributors
 
 > This is the single reference for anyone authoring or migrating content into the project. It covers the markdown format, every rendering feature (with live demos, since this file is itself viewed through `render.html`), building patterns for every content type, sourcing methodology, transliteration standards, and quality control.
 
-> **⚠️ Note:** Some of the examples below (word-stacks, meta-blocks) render live on this page for demonstration. They are not real prophetic narrations — do not recite the placeholder text.
+> **⚠️ Note:** Some of the examples below (word-stacks, meta-blocks) render live on this page for demonstration. They are not real prophetic narrations 〜 do not recite the placeholder text.
 
 **Read time:** ~30 minutes the first time. Reference material thereafter.
 
-**Prerequisite:** Read [`README.md`](README.md) first to understand the vision.
+**Prerequisite:** Read [`README.md`](../README.md) first to understand the vision.
 
 ---
 
@@ -25,11 +25,11 @@ right-orb: 🪶 Not For Recitation
 
 1. [Quick-Start Template](#-quick-start-template)
 2. [The Two-Phase Workflow](#-the-two-phase-workflow)
-3. [The Content Universe — A 3D Map](#-the-content-universe--a-3d-map)
+3. [The Content Universe 〜 A 3D Map](#-the-content-universe--a-3d-map)
 4. [The Three Building Blocks](#-the-three-building-blocks)
 5. [UI Features Available On Every Page](#-ui-features-available-on-every-page)
 6. [Standard Markdown & Embedded HTML](#-standard-markdown--embedded-html)
-7. [Pattern Library — One Recipe per Content Type](#-pattern-library)
+7. [Pattern Library 〜 One Recipe per Content Type](#-pattern-library)
 8. [Collections & embedded cards](#-collections--embedded-cards)
 9. [Sourcing Methodology](#-sourcing-methodology)
 10. [Tashkeel & Tajwīd Standards](#-tashkeel--tajwīd-standards)
@@ -45,7 +45,7 @@ right-orb: 🪶 Not For Recitation
 
 ## 🚀 Quick-Start Template
 
-Copy this skeleton into a new `.md` file and fill in the brackets. It covers the three building blocks (meta-card, word-stacks, collapsible drawer) that every atomic file needs — see [The Three Building Blocks](#-the-three-building-blocks) below for what each piece does, and the [Pattern Library](#-pattern-library) for recipes tailored to specific content types.
+Copy this skeleton into a new `.md` file and fill in the brackets. It covers the three building blocks (meta-card, word-stacks, collapsible drawer) that every atomic file needs 〜 see [The Three Building Blocks](#-the-three-building-blocks) below for what each piece does, and the [Pattern Library](#-pattern-library) for recipes tailored to specific content types.
 
 ```
 ::meta
@@ -90,7 +90,7 @@ Recite **[N] times** [when / after which prayer / on which occasion].
 
 ## Sources
 
-- *[Book Title]* — Author Name
+- *[Book Title]* 〜 Author Name
 - [URL or citation]
 
 <details>
@@ -109,21 +109,21 @@ Paste the full isnād or alternate narration here.
 
 Every authoring task splits into **two distinct phases**. Treat them as separate disciplines.
 
-### Phase 1 — Sourcing (Provenance Work)
+### Phase 1 〜 Sourcing (Provenance Work)
 
 Before writing a single word-stack, verify:
 
-- **Canonical source** — sunnah.com URL, quran.com URL, or a recognized scholarly compilation reference
-- **Grading** — Ṣaḥīḥ / Ḥasan / Ḍaʿīf / Mawḍūʿ / Mutawātir, as graded by recognized authorities (Darussalam, al-Albānī, Shuʿayb al-Arnaʾūṭ, etc.)
-- **Original Arabic** — pull the voweled Arabic from the canonical source
-- **English translation** — pull the canonical English translation as published
-- **Referenced verses** — if the ḥadīth mentions Qurʾānic verses without quoting them, identify the exact verse numbers
-- **Scholarly notes** — any compiler comments (e.g., al-Tirmidhī's gharīb notes)
-- **Contestation status** — does any reputable scholar flag this practice?
+- **Canonical source** 〜 sunnah.com URL, quran.com URL, or a recognized scholarly compilation reference
+- **Grading** 〜 Ṣaḥīḥ / Ḥasan / Ḍaʿīf / Mawḍūʿ / Mutawātir, as graded by recognized authorities (Darussalam, al-Albānī, Shuʿayb al-Arnaʾūṭ, etc.)
+- **Original Arabic** 〜 pull the voweled Arabic from the canonical source
+- **English translation** 〜 pull the canonical English translation as published
+- **Referenced verses** 〜 if the ḥadīth mentions Qurʾānic verses without quoting them, identify the exact verse numbers
+- **Scholarly notes** 〜 any compiler comments (e.g., al-Tirmidhī's gharīb notes)
+- **Contestation status** 〜 does any reputable scholar flag this practice?
 
 **This phase is the source-of-truth work.** It is what makes the archive trustworthy.
 
-### Phase 2 — Authoring (Translation Work)
+### Phase 2 〜 Authoring (Translation Work)
 
 Once sourced, render into markdown:
 
@@ -140,35 +140,35 @@ Once sourced, render into markdown:
 
 ---
 
-## 🌌 The Content Universe — A 3D Map
+## 🌌 The Content Universe 〜 A 3D Map
 
 Every piece of Islamic content sits at a coordinate in three dimensions. Knowing where your content sits tells you which pattern to use.
 
-### Axis 1 — Atomicity (how compound is it?)
+### Axis 1 〜 Atomicity (how compound is it?)
 
-- **Atomic** — one verse, one short dhikr, one duʿā sentence
-- **Composite** — full duʿā with multiple sentences, one Qurʾānic sūrah
-- **Compound** — wird drawing from 5–20 sources
-- **Encyclopedic** — compendium of compendiums (Ḥiṣn al-Muslim style)
+- **Atomic** 〜 one verse, one short dhikr, one duʿā sentence
+- **Composite** 〜 full duʿā with multiple sentences, one Qurʾānic sūrah
+- **Compound** 〜 wird drawing from 5–20 sources
+- **Encyclopedic** 〜 compendium of compendiums (Ḥiṣn al-Muslim style)
 
-### Axis 2 — Provenance (how clear is the source?)
+### Axis 2 〜 Provenance (how clear is the source?)
 
-- **Mutawātir** — mass-transmitted certainty (most Qurʾān, a few ḥadīths)
-- **Authenticated** — clear chain, recognized grading (canonical ḥadīth collections)
-- **Scholarly compilation** — known compiler, partial sourcing (al-Nawawī's al-Adhkār)
-- **Folk transmission** — generational, unclear original chain
-- **Contested** — known to be problematic by reputable scholars
+- **Mutawātir** 〜 mass-transmitted certainty (most Qurʾān, a few ḥadīths)
+- **Authenticated** 〜 clear chain, recognized grading (canonical ḥadīth collections)
+- **Scholarly compilation** 〜 known compiler, partial sourcing (al-Nawawī's al-Adhkār)
+- **Folk transmission** 〜 generational, unclear original chain
+- **Contested** 〜 known to be problematic by reputable scholars
 
-### Axis 3 — Use-Case (when/why is it recited?)
+### Axis 3 〜 Use-Case (when/why is it recited?)
 
-- **Daily** — five-times-a-day adhkār
-- **Weekly** — Friday-specific
-- **Calendar** — Ramaḍān, Dhū al-Ḥijjah, etc.
-- **Occasional** — travel, illness, calamity, joy
-- **Lifecycle** — birth, marriage, death
-- **Liturgical** — embedded in ṣalāh/janāzah/eid/hajj
+- **Daily** 〜 five-times-a-day adhkār
+- **Weekly** 〜 Friday-specific
+- **Calendar** 〜 Ramaḍān, Dhū al-Ḥijjah, etc.
+- **Occasional** 〜 travel, illness, calamity, joy
+- **Lifecycle** 〜 birth, marriage, death
+- **Liturgical** 〜 embedded in ṣalāh/janāzah/eid/hajj
 
-### Examples — Reading the Map
+### Examples 〜 Reading the Map
 
 | Content | Atomicity | Provenance | Use-case | Pattern |
 |---|---|---|---|---|
@@ -187,7 +187,7 @@ Every piece of Islamic content sits at a coordinate in three dimensions. Knowing
 
 The entire system reduces to three primitives. Master these and you can compose anything.
 
-### Block 1 — The Meta-Card (`::meta`)
+### Block 1 〜 The Meta-Card (`::meta`)
 
 A front-matter block at the top of every file that becomes the Pokémon-style header card with grade badge.
 
@@ -220,18 +220,18 @@ verify: https://sunnah.com/...
 
 | Field | What it does | Visible? |
 |---|---|---|
-| `narrator` | Stored as `data-narrator` attr on orb-bar | Hidden — future search |
-| `collection` | Stored as `data-collection` attr — also used as fallback if `left-orb` missing | Hidden by default |
-| `book` | Stored as `data-book` attr | Hidden — future search |
-| `hadith` | Stored as `data-hadith` attr | Hidden — future search |
-| `grade` | Stored as `data-grade` attr — must be one of the 6 keywords above | Hidden — future filter/search |
+| `narrator` | Stored as `data-narrator` attr on orb-bar | Hidden 〜 future search |
+| `collection` | Stored as `data-collection` attr 〜 also used as fallback if `left-orb` missing | Hidden by default |
+| `book` | Stored as `data-book` attr | Hidden 〜 future search |
+| `hadith` | Stored as `data-hadith` attr | Hidden 〜 future search |
+| `grade` | Stored as `data-grade` attr 〜 must be one of the 6 keywords above | Hidden 〜 future filter/search |
 | `left-orb` | **Renders as left pill at top of page** | ✅ Visible |
 | `right-orb` | **Renders as right pill at top of page** | ✅ Visible |
-| `verify` | Stored as `data-verify` attr | Hidden — semantic data only |
+| `verify` | Stored as `data-verify` attr | Hidden 〜 semantic data only |
 
 **Auto behavior:** on load the pill shows full text; after scroll it compacts, auto-extracting the leading emoji (e.g. 📖 and 🟢).
 
-**Right-orb color auto-detection** — if `right-orb` contains one of these keywords, it auto-colors (no CSS edit needed):
+**Right-orb color auto-detection** 〜 if `right-orb` contains one of these keywords, it auto-colors (no CSS edit needed):
 
 | Keyword in `right-orb:` text | Pill color |
 |---|---|
@@ -242,7 +242,7 @@ verify: https://sunnah.com/...
 | `mutawatir` or `mutawātir` | 🟢 Deep green |
 | (none match) | ⚪ Neutral cream |
 
-**Advanced overrides** — custom colors, explicit compact form, and rank-pips, for when the defaults don't fit:
+**Advanced overrides** 〜 custom colors, explicit compact form, and rank-pips, for when the defaults don't fit:
 
 ```
 ::meta
@@ -260,7 +260,7 @@ Use `*-compact` fields when the leading emoji doesn't auto-extract correctly, or
 
 **All fields optional except `grade`.** Omit fields that don't apply by leaving them blank or removing the line entirely.
 
-### Block 2 — The Word-Stack (`[[...]]`)
+### Block 2 〜 The Word-Stack (`[[...]]`)
 
 The atomic recitation unit. Inline pipe-delimited, renders Arabic + English gloss + transliteration together as one visual unit.
 
@@ -269,13 +269,13 @@ The atomic recitation unit. Inline pipe-delimited, renders Arabic + English glos
 | `[[اَللَّهُمَّ\|O Allah\|Allāhumma]]` | Full 3-row stack | [[اَللَّهُمَّ\|O Allah\|Allāhumma]] |
 | `[[سُبْحَانَ اللَّهِ\|glory be to Allah]]` | 2-row stack (no translit) | [[سُبْحَانَ اللَّهِ\|glory be to Allah]] |
 | `[[وَ الْحَمْدُ لِلَّهِ]]` | 1-row (Arabic only) | [[وَ الْحَمْدُ لِلَّهِ]] |
-| `\[[literal]]` | Escape — renders bracket literally | \[[not a word stack]] |
+| `\[[literal]]` | Escape 〜 renders bracket literally | \[[not a word stack]] |
 
 **Grouping rules:**
 - Consecutive stacks separated by spaces → **one `.ayah` block**
 - Blank line between stacks → **new `.ayah` block**
 
-This is how you control clause boundaries visually — e.g. one clause per line:
+This is how you control clause boundaries visually 〜 e.g. one clause per line:
 
 ```
 [[رَبِّ|my Lord|rabbi]] [[اشْرَحْ|expand|ishraḥ]] [[لِي|for me|lī]] [[صَدْرِي|my chest|ṣadrī]]
@@ -284,31 +284,31 @@ This is how you control clause boundaries visually — e.g. one clause per line:
 ```
 
 **Tips for authoring word-stacks:**
-- **One word per stack** — don't put phrases inside a single stack (breaks reading flow)
-- **Glosses are lowercase** — except for proper nouns (Allah, Muhammad)
-- **Transliterations use academic diacritics** — ā ī ū · ḥ ṣ ṭ ḍ ẓ · ʿ · ʾ
-- **Tashkeel is mandatory** — every Arabic letter that takes a vowel must show its harakah
+- **One word per stack** 〜 don't put phrases inside a single stack (breaks reading flow)
+- **Glosses are lowercase** 〜 except for proper nouns (Allah, Muhammad)
+- **Transliterations use academic diacritics** 〜 ā ī ū · ḥ ṣ ṭ ḍ ẓ · ʿ · ʾ
+- **Tashkeel is mandatory** 〜 every Arabic letter that takes a vowel must show its harakah
 
-### Block 3 — The Collapsible Drawer (`<details>`)
+### Block 3 〜 The Collapsible Drawer (`<details>`)
 
-For supplementary content — scholarly context, original Arabic source, deeper dives.
+For supplementary content 〜 scholarly context, original Arabic source, deeper dives.
 
 ```html
 <details>
 <summary>📚 Click to expand</summary>
 
-Any markdown content here — paragraphs, lists, word-stacks, nested details.
+Any markdown content here 〜 paragraphs, lists, word-stacks, nested details.
 
 </details>
 ```
 
-Add `open` to start expanded: `<details open>`. Nest arbitrarily deep — the system handles it.
+Add `open` to start expanded: `<details open>`. Nest arbitrarily deep 〜 the system handles it.
 
 ---
 
 ## 🎛️ UI Features Available On Every Page
 
-These work no matter what markdown you load — they're rendered by `render.html` itself, not authored per-file.
+These work no matter what markdown you load 〜 they're rendered by `render.html` itself, not authored per-file.
 
 ### 🅰️ Floating Reading Mode Fan (Bottom-Left)
 
@@ -321,7 +321,7 @@ A circular button that fans up into 4 reading modes. Your last-chosen mode is re
 | **🔊** | Verbal | Faded | Visible | Prominent + above Arabic |
 | **ٱ** | Arabic-only | Largest | Hidden | Hidden |
 
-Test your authored content in all four modes — word-stacks display differently in each.
+Test your authored content in all four modes 〜 word-stacks display differently in each.
 
 ### 🔍 Floating Zoom (Bottom-Right)
 
@@ -331,11 +331,11 @@ Two circular buttons: `🔍+` and `🔍−`. Adjusts text size across 5 levels (
 
 ### 📜 Floating TOC (Bottom-Right)
 
-Appears when the page has ≥2 entries — **automatically built**, no manual maintenance needed. On a single card the first row is the card title (the `# H1`), which scrolls back to the top; then come the `H2`/`H3` headings and every top-level `<details>` drawer (listed by its `<summary>`, marked ▸), so the Dalīl and other collapsed sections are reachable too. The title row does not count towards the "≥2 entries" rule, and collection pages do not get it. Click a link → page scrolls and auto-expands the drawer (or the drawers in that heading's section). Click outside or press `Esc` → closes.
+Appears when the page has ≥2 entries 〜 **automatically built**, no manual maintenance needed. On a single card the first row is the card title (the `# H1`), which scrolls back to the top; then come the `H2`/`H3` headings and every top-level `<details>` drawer (listed by its `<summary>`, marked ▸), so the Dalīl and other collapsed sections are reachable too. The title row does not count towards the "≥2 entries" rule, and collection pages do not get it. Click a link → page scrolls and auto-expands the drawer (or the drawers in that heading's section). Click outside or press `Esc` → closes.
 
 ### 🔗 URL Hash Deep-Linking
 
-Any heading can be linked directly via URL hash, e.g. `web/render.html?file=AUTHORING_GUIDE.md#the-three-building-blocks`. The page auto-scrolls AND auto-expands any `<details>` ancestor of the target — so you can share deep-links even into collapsed drawers.
+Any heading can be linked directly via URL hash, e.g. `web/render.html?file=docs/AUTHORING_GUIDE.md#the-three-building-blocks`. The page auto-scrolls AND auto-expands any `<details>` ancestor of the target 〜 so you can share deep-links even into collapsed drawers.
 
 ---
 
@@ -351,13 +351,13 @@ All standard GitHub-Flavored Markdown works as expected: `# H1`–`###### H6` he
 [Deep-link into another file](?file=other.md#section-slug)
 ```
 
-**Tooltips** — `{{ word | short explanation }}` shows the word with a small superscript !. Hover (desktop) or tap/click it to read the note; click again, click elsewhere or press Esc to close. It works in paragraphs, lists, headings and `<summary>` lines (clicking it never toggles the drawer). Plain text only, no nested `{{ }}`; escape a literal pair with `\{{`.
+**Tooltips** 〜 `{{ word | short explanation }}` shows the word with a small superscript !. Hover (desktop) or tap/click it to read the note; click again, click elsewhere or press Esc to close. It works in paragraphs, lists, headings and `<summary>` lines (clicking it never toggles the drawer). Plain text only, no nested `{{ }}`; escape a literal pair with `\{{`.
 
 ```
-<summary>🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) behind the line above }}</summary>
+<summary>🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) behind the line above }}</summary>
 ```
 
-**The Dalīl drawer (standard source block)** — every source/evidence drawer uses the same header, so a reader who asks *"what's the dalīl for this duʿāʾ?"* finds the answer in one tap. Builder: **Structure → 🔎 Dalīl drawer**.
+**The Dalīl drawer (standard source block)** 〜 every source/evidence drawer uses the same header, so a reader who asks *"what's the dalīl for this duʿāʾ?"* finds the answer in one tap. Builder: **Structure → 🔎 Dalīl drawer**.
 
 ```
 <details>
@@ -372,7 +372,7 @@ All standard GitHub-Flavored Markdown works as expected: `# H1`–`###### H6` he
 </details>
 ```
 
-**The glossary (`content/kalima/`)** — *kalima* (كَلِمَة) is a single word; *kalām* is speech, so the folder of one-word entries is `kalima`. Each entry is a short markdown file named by a slug (`content/kalima/hikmah.md`, start from `_TEMPLATE.md`). Two ways to link a word to its entry — the explanation is written once and every card shares it:
+**The glossary (`content/kalima/`)** 〜 *kalima* (كَلِمَة) is a single word; *kalām* is speech, so the folder of one-word entries is `kalima`. Each entry is a short markdown file named by a slug (`content/kalima/hikmah.md`, start from `_TEMPLATE.md`). Two ways to link a word to its entry 〜 the explanation is written once and every card shares it:
 
 ```
 {{ Dalīl | @dalil }}                          ← tooltip: a note that is really an entry
@@ -385,13 +385,13 @@ The popover is a small card, not a plain note: an entry is rendered with the sam
 
 **Qurʾān verses** are shown with the [QuranWBW](https://quranwbw.com) word-by-word viewer: `https://quranwbw.com/<surah>/<ayah>`, or a range such as `37/180-182`. Builder: **Embeds → 📖 Qurʾān verse (QuranWBW)**. Ḥadīth sources use a card embed (below).
 
-**Embedding another card** — add `"embed"` as the link title and the whole atomic card appears inline as a collapsed drawer (grade badge + title, expands to the full card, with an "Open standalone ↗" footer). Use it when a composite duʿā quotes another sunnah:
+**Embedding another card** 〜 add `"embed"` as the link title and the whole atomic card appears inline as a collapsed drawer (grade badge + title, expands to the full card, with an "Open standalone ↗" footer). Use it when a composite duʿā quotes another sunnah:
 
 ```
 [Ḥamdan yuwāfī niʿamah](?file=content/_unlisted/after-eating.md "embed")
 ```
 
-Put it on its own line to get a standalone drawer. Embeds are one level deep: a card embedded inside an embed shows its own embed links as ordinary links. Embedded headings never appear in the host card's TOC. (A link with `"embed"` is not picked up by collection manifests — they only read plain `?file=` links.)
+Put it on its own line to get a standalone drawer. Embeds are one level deep: a card embedded inside an embed shows its own embed links as ordinary links. Embedded headings never appear in the host card's TOC. (A link with `"embed"` is not picked up by collection manifests 〜 they only read plain `?file=` links.)
 
 **Embedded HTML** is passed through unchanged, which unlocks:
 
@@ -409,10 +409,10 @@ Put it on its own line to get a standalone drawer. Embeds are one level deep: a 
 </div>
 ```
 
-**Follow-along video (pinnable)** — a YouTube embed that scrolls with the page, with a 📌 button that pins it as a small player at the top while the reader scrolls the text below. It resets to unpinned on every page load. Put it in the intro, above the Du'a section. In the Sunnah Card Builder use **Embeds → 📺 Follow-along video**: paste the YouTube link (a time in the link, such as `?t=72`, becomes the start), then give the start and end as `1:12 - 2:15`. The markup it inserts, as used in `content/03-adhkar-sabah-masa/c_law_anzalna.md`:
+**Follow-along video (pinnable)** 〜 a YouTube embed that scrolls with the page, with a 📌 button that pins it as a small player at the top while the reader scrolls the text below. It resets to unpinned on every page load. Put it in the intro, above the Du'a section. In the Sunnah Card Builder use **Embeds → 📺 Follow-along video**: paste the YouTube link (a time in the link, such as `?t=72`, becomes the start), then give the start and end as `1:12 - 2:15`. The markup it inserts, as used in `content/03-adhkar-sabah-masa/c_law_anzalna.md`:
 
 ```html
-📺 **Listen and follow along** — tap 📌 on the video to pin it while you read below.
+📺 **Listen and follow along** 〜 tap 📌 on the video to pin it while you read below.
 
 <div class="video-card">
 <iframe src="https://www.youtube.com/embed/VIDEO_ID?start=72&amp;end=135" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -430,7 +430,7 @@ In the live preview, editing elsewhere does not reload the video or the QuranWBW
 
 One recipe for each content type. Find the pattern matching your content, copy the skeleton, fill in the details.
 
-### Pattern Q1 — Atomic Qurʾānic Verse
+### Pattern Q1 〜 Atomic Qurʾānic Verse
 
 Use for: Standalone ayahs (Āyat al-Kursī, last 3 of Ḥashr, Ikhlāṣ, etc.)
 
@@ -448,7 +448,7 @@ verify: https://quran.com/2/255
 
 ## 📖 The Verse
 
-The Throne Verse — described by the Prophet ﷺ as the greatest verse in the Qurʾān (Muslim 810).
+The Throne Verse 〜 described by the Prophet ﷺ as the greatest verse in the Qurʾān (Muslim 810).
 
 ## 🔤 Word-by-Word
 
@@ -460,12 +460,12 @@ The Throne Verse — described by the Prophet ﷺ as the greatest verse in the Q
 
 ---
 
-*🔗 Verify on quran.com — [Q. 2:255](https://quran.com/2/255)*
+*🔗 Verify on quran.com 〜 [Q. 2:255](https://quran.com/2/255)*
 ```
 
 Tips: always use `grade: mutawatir` for Qurʾān · for `collection`, write "The Qurʾān" · break clauses at canonical waqf (pause) marks · use corpus.quran.com for word-by-word reference.
 
-### Pattern Q2 — Full Sūrah
+### Pattern Q2 〜 Full Sūrah
 
 Use for: Complete chapters (Fātiḥah, Yāsīn, Mulk, etc.)
 
@@ -485,7 +485,7 @@ Same as Q1 but the word-by-word section breaks each verse into its own clause-pa
 
 For sūrahs over ~80 word-units, consider splitting into multiple files (e.g., Yāsīn first half / second half) and linking from a manifest page.
 
-### Pattern D1 — Atomic Dhikr
+### Pattern D1 〜 Atomic Dhikr
 
 Use for: Short remembrances (1–5 words) recited in counts.
 
@@ -502,7 +502,7 @@ verify: https://sunnah.com/muslim:1410
 
 > **Practice:** Recite **33 times** after every obligatory ṣalāh, alongside Al-Ḥamdu Lillāh (33×) and Allāhu Akbar (34×), concluding with the tahlīl formula × 1.
 >
-> **Reward:** "Whoever recites these after every prayer — his sins are forgiven even if they were like the foam of the sea." — Muslim 1410.
+> **Reward:** "Whoever recites these after every prayer 〜 his sins are forgiven even if they were like the foam of the sea." 〜 Muslim 1410.
 
 ## 🔤 The Dhikr
 
@@ -510,12 +510,12 @@ verify: https://sunnah.com/muslim:1410
 
 ---
 
-*🔗 Verify — [Muslim 1410](https://sunnah.com/muslim:1410)*
+*🔗 Verify 〜 [Muslim 1410](https://sunnah.com/muslim:1410)*
 ```
 
 Tips: always document count and timing in the practice blockquote · document the reward if there's an authentic ḥadīth mentioning it · for 1–3 word dhikr, no need for multiple sections.
 
-### Pattern H1 — Single Ḥadīth Duʿā
+### Pattern H1 〜 Single Ḥadīth Duʿā
 
 Use for: A specific duʿā attached to a specific ḥadīth narration (e.g., Sayyid al-Istighfār).
 
@@ -529,11 +529,11 @@ grade: sahih
 verify: https://sunnah.com/bukhari:6306
 ::
 
-# Sayyid al-Istighfār — The Master of Seeking Forgiveness
+# Sayyid al-Istighfār 〜 The Master of Seeking Forgiveness
 
 ## 📜 The Hadith
 
-The Prophet ﷺ said: "The most superior way of asking for forgiveness from Allah is to say: [the duʿā]. Whoever utters it during the day with firm faith in it and dies on the same day before evening — he will be from the people of Paradise. Whoever utters it during the night with firm faith in it and dies before morning — he will be from the people of Paradise."
+The Prophet ﷺ said: "The most superior way of asking for forgiveness from Allah is to say: [the duʿā]. Whoever utters it during the day with firm faith in it and dies on the same day before evening 〜 he will be from the people of Paradise. Whoever utters it during the night with firm faith in it and dies before morning 〜 he will be from the people of Paradise."
 
 <details>
 <summary>📚 Original Arabic Source (chain · matn · compiler note)</summary>
@@ -560,10 +560,10 @@ The Prophet ﷺ said: "The most superior way of asking for forgiveness from Alla
 
 ---
 
-*🔗 Verify on sunnah.com — [Bukhārī 6306](https://sunnah.com/bukhari:6306)*
+*🔗 Verify on sunnah.com 〜 [Bukhārī 6306](https://sunnah.com/bukhari:6306)*
 ```
 
-### Pattern H2 — Ḥadīth Referencing Qurʾān
+### Pattern H2 〜 Ḥadīth Referencing Qurʾān
 
 Use for: Ḥadīths that say "...and he recited [some verses]..." without quoting them. The archivist must source the referenced verses and insert them inline.
 
@@ -581,7 +581,7 @@ verify: https://sunnah.com/tirmidhi:2922
 
 ## 📜 The Hadith
 
-Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three times when he rises in the morning: *Aʿūdhu billāhi-s-Samīʿi-l-ʿAlīm min ash-shayṭāni-r-rajīm*, and then recites three āyāt from the end of Sūrat Al-Ḥashr — Allah appoints seventy thousand angels who send ṣalāt upon him until the evening. If he dies on that day, he dies a martyr. And whoever recites it in the evening holds the same status."
+Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three times when he rises in the morning: *Aʿūdhu billāhi-s-Samīʿi-l-ʿAlīm min ash-shayṭāni-r-rajīm*, and then recites three āyāt from the end of Sūrat Al-Ḥashr 〜 Allah appoints seventy thousand angels who send ṣalāt upon him until the evening. If he dies on that day, he dies a martyr. And whoever recites it in the evening holds the same status."
 
 <details>
 <summary>📚 Original Arabic Source (chain · matn · compiler note)</summary>
@@ -598,7 +598,7 @@ Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three time
 
 [[وَقَرَأَ|and he recites|wa qaraʾa]] [[ثَلَاثَ|three|thalātha]] [[آيَاتٍ|āyāt|āyātin]] [[مِنْ|from|min]] [[آخِرِ|the end of|ākhiri]] [[سُورَةِ|Sūrat|sūrati]] [[الْحَشْرِ|Al-Ḥashr|l-ḥashr]]
 
-> 📖 *Verses inserted from canonical reference — Sūrat al-Ḥashr 59:22–24*
+> 📖 *Verses inserted from canonical reference 〜 Sūrat al-Ḥashr 59:22–24*
 
 [[هُوَ|He is|huwa]] [[اللَّهُ|Allah|llāhu]] [[الَّذِي|the One|lladhī]] [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[هُوَ|Him|huwa]] [[عَالِمُ|Knower of|ʿālimu]] [[الْغَيْبِ|the unseen|l-ghaybi]] [[وَالشَّهَادَةِ|and the witnessed|wa-sh-shahādah]] [[هُوَ|He is|huwa]] [[الرَّحْمَٰنُ|the Most Gracious|r-raḥmānu]] [[الرَّحِيمُ|the Most Merciful|r-raḥīm]]
 
@@ -608,7 +608,7 @@ Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three time
 
 ---
 
-*🔗 Verify — [Tirmidhī 2922](https://sunnah.com/tirmidhi:2922) · [Q. 59:22–24](https://quran.com/59/22-24)*
+*🔗 Verify 〜 [Tirmidhī 2922](https://sunnah.com/tirmidhi:2922) · [Q. 59:22–24](https://quran.com/59/22-24)*
 ```
 
 **Common Qurʾānic references to know:**
@@ -626,7 +626,7 @@ Narrated Maʿqil ibn Yasār: that the Prophet ﷺ said: "Whoever says three time
 | "Sūrat al-Fātiḥah" | Q. 1:1–7 |
 | "Last verse of Al-Tawbah" | Q. 9:128–129 |
 
-### Pattern H3 — Multi-Duʿā Ḥadīth
+### Pattern H3 〜 Multi-Duʿā Ḥadīth
 
 Use for: Ḥadīths containing multiple distinct recitations (e.g., post-ṣalāh sequence). One meta-card, one English narration, one Arabic dropdown, multiple numbered word-by-word parts.
 
@@ -640,7 +640,7 @@ grade: sahih
 verify: https://sunnah.com/muslim:1410
 ::
 
-# Post-Ṣalāh Sequence — Abū Hurayrah's Narration
+# Post-Ṣalāh Sequence 〜 Abū Hurayrah's Narration
 
 ## 📜 The Hadith
 
@@ -651,32 +651,32 @@ verify: https://sunnah.com/muslim:1410
 [sanad + matn]
 </details>
 
-## 🔤 Part 1 — Subḥān Allāh × 33
+## 🔤 Part 1 〜 Subḥān Allāh × 33
 
 > Recite immediately after the closing salām.
 
 [[سُبْحَانَ|glory be to|subḥāna]] [[اللَّهِ|Allah|llāhi]]
 
-## 🔤 Part 2 — Al-Ḥamdu Lillāh × 33
+## 🔤 Part 2 〜 Al-Ḥamdu Lillāh × 33
 
 [[الْحَمْدُ|all praise|al-ḥamdu]] [[لِلَّهِ|is for Allah|lillāhi]]
 
-## 🔤 Part 3 — Allāhu Akbar × 34
+## 🔤 Part 3 〜 Allāhu Akbar × 34
 
 [[اللَّهُ|Allah|Allāhu]] [[أَكْبَرُ|is greater|akbar]]
 
-## 🔤 Part 4 — Closing Tahlīl × 1
+## 🔤 Part 4 〜 Closing Tahlīl × 1
 
 [[لَا|no|lā]] [[إِلَٰهَ|deity|ilāha]] [[إِلَّا|except|illā]] [[اللَّهُ|Allah|llāhu]] [[وَحْدَهُ|alone|waḥdahu]] [[لَا|no|lā]] [[شَرِيكَ|partner|sharīka]] [[لَهُ|for Him|lahu]] ...
 
 ---
 
-*🔗 Verify — [Muslim 1410](https://sunnah.com/muslim:1410)*
+*🔗 Verify 〜 [Muslim 1410](https://sunnah.com/muslim:1410)*
 ```
 
 Sort parts in recitation order, not in the order they appear in the ḥadīth text.
 
-### Pattern W1 — Scholarly Wird (Manifest)
+### Pattern W1 〜 Scholarly Wird (Manifest)
 
 Use for: Long compilations from a single mashāyikh (Rātib al-Ḥaddād, Wird al-Laṭīf, Dalāʾil al-Khayrāt). The wird page is a table of contents linking to atomic files. Each linked file is independently authored with its own meta-card citing the original ḥadīth/Qurʾān source.
 
@@ -690,35 +690,35 @@ grade: unknown
 verify: 
 ::
 
-# Rātib al-Ḥaddād — Sequence Manifest
+# Rātib al-Ḥaddād 〜 Sequence Manifest
 
 > Compiled by Imām al-Ḥaddād of Hadhramawt. Recited daily after Maghrib (or before sleep). Each component below links to its atomic file with the original source citation; recite top-to-bottom for the full ratib.
 
 ## 📿 The Sequence
 
-1. **Fātiḥah** — [Sūrat al-Fātiḥah](?file=quran/fatihah.md)
-2. **Āyat al-Kursī** — [Q. 2:255](?file=quran/ayat-al-kursi.md)
-3. **End of Al-Baqarah** — [Q. 2:285–286](?file=quran/baqarah-end.md)
-4. **Refuge** — [Aʿūdhu bi-kalimāti-llāh × 3](?file=duas/refuge-perfect-words.md)
-5. **Bismillāh shield** — [Bismi-llāhi-lladhī × 3](?file=duas/bismillah-shield.md)
-6. **Trust** — [Ḥasbiya-llāh × 7](?file=duas/hasbiyallah.md)
-7. **Tasbīḥ** — [Subḥān Allāh × 3](?file=dhikr/tasbih.md)
-8. **Taḥmīd** — [Al-Ḥamdu Lillāh × 3](?file=dhikr/tahmid.md)
-9. **Takbīr** — [Allāhu Akbar × 3](?file=dhikr/takbir.md)
-10. **Closing Tahlīl** — [Lā ilāha illā Allāh × 100](?file=dhikr/tahlil-closing.md)
+1. **Fātiḥah** 〜 [Sūrat al-Fātiḥah](?file=quran/fatihah.md)
+2. **Āyat al-Kursī** 〜 [Q. 2:255](?file=quran/ayat-al-kursi.md)
+3. **End of Al-Baqarah** 〜 [Q. 2:285–286](?file=quran/baqarah-end.md)
+4. **Refuge** 〜 [Aʿūdhu bi-kalimāti-llāh × 3](?file=duas/refuge-perfect-words.md)
+5. **Bismillāh shield** 〜 [Bismi-llāhi-lladhī × 3](?file=duas/bismillah-shield.md)
+6. **Trust** 〜 [Ḥasbiya-llāh × 7](?file=duas/hasbiyallah.md)
+7. **Tasbīḥ** 〜 [Subḥān Allāh × 3](?file=dhikr/tasbih.md)
+8. **Taḥmīd** 〜 [Al-Ḥamdu Lillāh × 3](?file=dhikr/tahmid.md)
+9. **Takbīr** 〜 [Allāhu Akbar × 3](?file=dhikr/takbir.md)
+10. **Closing Tahlīl** 〜 [Lā ilāha illā Allāh × 100](?file=dhikr/tahlil-closing.md)
 
 ## 📖 About This Compilation
 
-Compiled by Imām al-Ḥaddād (d. 1132 AH) in Tarīm, Hadhramawt. Each component draws from authentic ḥadīth or Qurʾānic source — see linked atomic files for individual gradings.
+Compiled by Imām al-Ḥaddād (d. 1132 AH) in Tarīm, Hadhramawt. Each component draws from authentic ḥadīth or Qurʾānic source 〜 see linked atomic files for individual gradings.
 
 ---
 
 *This manifest is a sequencing aid. Each atomic file is independently verifiable.*
 ```
 
-Why this pattern is powerful: each atomic dhikr is authored ONCE and reused across multiple wirds — update the Fātiḥah file once and it updates in Rātib al-Ḥaddād, Wird al-Laṭīf, Ḥiṣn al-Muslim simultaneously. Smaller files load faster on mobile, and users can study individual components OR the whole sequence.
+Why this pattern is powerful: each atomic dhikr is authored ONCE and reused across multiple wirds 〜 update the Fātiḥah file once and it updates in Rātib al-Ḥaddād, Wird al-Laṭīf, Ḥiṣn al-Muslim simultaneously. Smaller files load faster on mobile, and users can study individual components OR the whole sequence.
 
-### Pattern W2 — Scholarly Wird (Inline)
+### Pattern W2 〜 Scholarly Wird (Inline)
 
 Use for: Shorter wirds (≤8 components) where you want everything on one page.
 
@@ -732,30 +732,30 @@ grade: unknown
 verify:
 ::
 
-# Morning Sequence — al-Nawawī's Compilation
+# Morning Sequence 〜 al-Nawawī's Compilation
 
 > A short morning sequence from Imām al-Nawawī's *Al-Adhkār*.
 
 <details open>
-<summary>1. Aʿūdhu bi-kalimāti-llāh — × 3</summary>
+<summary>1. Aʿūdhu bi-kalimāti-llāh 〜 × 3</summary>
 
 [[أَعُوذُ|I seek refuge|aʿūdhu]] [[بِكَلِمَاتِ|with the words|bi-kalimāti]] [[اللَّهِ|of Allah|llāhi]] [[التَّامَّاتِ|the perfect|t-tāmmāti]] [[مِنْ|from|min]] [[شَرِّ|the evil|sharri]] [[مَا|of what|mā]] [[خَلَقَ|He created|khalaq]]
 
-📜 **Source:** Muslim 2708 — Khawla bint Ḥakīm
+📜 **Source:** Muslim 2708 〜 Khawla bint Ḥakīm
 
 </details>
 
 <details>
-<summary>2. Bismillāhi-lladhī lā yaḍurru — × 3</summary>
+<summary>2. Bismillāhi-lladhī lā yaḍurru 〜 × 3</summary>
 
 [word stacks]
 
-📜 **Source:** Abū Dāwūd 5088 — ʿUthmān ibn ʿAffān
+📜 **Source:** Abū Dāwūd 5088 〜 ʿUthmān ibn ʿAffān
 
 </details>
 
 <details>
-<summary>3. Ḥasbiya-llāh — × 7</summary>
+<summary>3. Ḥasbiya-llāh 〜 × 7</summary>
 
 [word stacks]
 
@@ -766,21 +766,21 @@ verify:
 
 Use `<details open>` on the first item so the reader sees where to start.
 
-### Pattern F1 — Folk Compilation
+### Pattern F1 〜 Folk Compilation
 
 Use for: Practices from kitab kuning, Ḥaḍramī midwifery, Malay/Indonesian folk wisdom.
 
 Same structure as W2 (inline drawers) but with critical additions:
 
-- **Honest meta-card** — `grade: unknown`, `collection: Kitab kuning compilation` or `Ḥaḍramī Yemeni tradition`
-- **Preserved original-language instructions** (italic + em-dash translation): `**Instruction:** *Setiap lepas sholat sambil memegang pusar baca do'a ini.* — After every prayer, while gently touching the navel, recite this duʿā.`
+- **Honest meta-card** 〜 `grade: unknown`, `collection: Kitab kuning compilation` or `Ḥaḍramī Yemeni tradition`
+- **Preserved original-language instructions** (italic + em-dash translation): `**Instruction:** *Setiap lepas sholat sambil memegang pusar baca do'a ini.* 〜 After every prayer, while gently touching the navel, recite this duʿā.`
 - **Contestation flags where needed:**
   > ⚠️ **Note on authenticity:** The phrase "Yā Ḥannā waladat Maryam..." is a folk supplication popular in Yemeni traditions but is not from authentic ḥadīth. Direct address to deceased persons for assistance is contested by reputable scholars; the safer practice is to address all petitions to Allah alone, omitting this line.
-- **Clear ritual sectioning** — folk compilations often have detailed ritual steps (when, how, count, posture) — use `## Section N · [Title]` headers
+- **Clear ritual sectioning** 〜 folk compilations often have detailed ritual steps (when, how, count, posture) 〜 use `## Section N · [Title]` headers
 
 See the project's `content/01-dua/06-shifa/dua-hamil.md` for a fully-worked example.
 
-### Pattern C1 — Compendium of Compendiums
+### Pattern C1 〜 Compendium of Compendiums
 
 Use for: Modern collections drawing from dozens of sources (Ḥiṣn al-Muslim, al-Adhkār chapters). Always use the manifest pattern (W1) because it scales.
 
@@ -794,30 +794,30 @@ grade: unknown
 verify:
 ::
 
-# Ḥiṣn al-Muslim — Morning Adhkār Sequence
+# Ḥiṣn al-Muslim 〜 Morning Adhkār Sequence
 
 > The morning fortress as compiled by Sh. al-Qaḥṭānī. Each piece below links to its standalone file with full meta-card citing the original ḥadīth source.
 
 ## 🌅 Morning Sequence
 
-1. **Āyat al-Kursī** — [Q. 2:255](?file=quran/ayat-al-kursi.md)
-2. **The three Quls** — [Ikhlāṣ, Falaq, Nās](?file=quran/three-quls.md)
-3. **Aṣbaḥnā wa aṣbaḥa-l-mulku** — [Muslim 2723](?file=duas/asbahna.md)
-4. **Sayyid al-Istighfār** — [Bukhārī 6306](?file=duas/sayyid-istighfar.md)
-5. **Subḥān Allāh wa biḥamdihi × 100** — [Muslim 2691](?file=dhikr/subhanallah-bihamdihi.md)
+1. **Āyat al-Kursī** 〜 [Q. 2:255](?file=quran/ayat-al-kursi.md)
+2. **The three Quls** 〜 [Ikhlāṣ, Falaq, Nās](?file=quran/three-quls.md)
+3. **Aṣbaḥnā wa aṣbaḥa-l-mulku** 〜 [Muslim 2723](?file=duas/asbahna.md)
+4. **Sayyid al-Istighfār** 〜 [Bukhārī 6306](?file=duas/sayyid-istighfar.md)
+5. **Subḥān Allāh wa biḥamdihi × 100** 〜 [Muslim 2691](?file=dhikr/subhanallah-bihamdihi.md)
 
 [continue for full sequence]
 
 ## 📖 About This Compilation
 
-Ḥiṣn al-Muslim is a modern compilation (late 20th century) by Sh. Saʿīd al-Qaḥṭānī. It is **not itself a ḥadīth collection** — it is a curated index drawing from authentic ḥadīth collections. Each entry above links to its underlying source. Use individual file gradings to assess authenticity.
+Ḥiṣn al-Muslim is a modern compilation (late 20th century) by Sh. Saʿīd al-Qaḥṭānī. It is **not itself a ḥadīth collection** 〜 it is a curated index drawing from authentic ḥadīth collections. Each entry above links to its underlying source. Use individual file gradings to assess authenticity.
 ```
 
 ---
 
 ## 🧩 Collections & embedded cards
 
-A **collection** is just a card whose body is a list of embeds. There is no separate viewer: `render.html` expands `[label](?file=path/to/card.md "embed")` into a collapsed `<details>` drawer holding the whole atomic card (word-stacks, orb badge, grade pill, "Open standalone ↗" link). Embeds are one level deep — links inside an embedded card stay plain links. The Sunnah Card Builder (`web/preview.html`) has an **🧩 Embed another card** snippet for it.
+A **collection** is just a card whose body is a list of embeds. There is no separate viewer: `render.html` expands `[label](?file=path/to/card.md "embed")` into a collapsed `<details>` drawer holding the whole atomic card (word-stacks, orb badge, grade pill, "Open standalone ↗" link). Embeds are one level deep 〜 links inside an embedded card stay plain links. The Sunnah Card Builder (`web/preview.html`) has an **🧩 Embed another card** snippet for it.
 
 ### Authored sequences
 
@@ -827,19 +827,19 @@ Write a normal card and add the `"embed"` title to each link:
 1. [Allāhumma Antas-Salām](?file=content/02-salah/03-after/1_istigfar_peace.md "embed")
 ```
 
-Mark timing/optionality in prose around the embed (`*(optional)*`, `*(Fajr & Maghrib only)*`). An item not yet authored should stay plain text — a link to a missing file renders a visible error drawer in that slot.
+Mark timing/optionality in prose around the embed (`*(optional)*`, `*(Fajr & Maghrib only)*`). An item not yet authored should stay plain text 〜 a link to a missing file renders a visible error drawer in that slot.
 
 ### The plan (Action view)
 
-Action view is a loadout: each part of the day is a **slot** (`fajr.after`, `dhuhr.between`, `presleep.main` …) holding an ordered list of cards, sets and notes. **You curate the default in `web/default-plan.js`** — slot ids, wildcards (`*.after` applies to every fard prayer) and entry forms are documented at the top of that file. Readers can override any slot in the app; their edits live in `localStorage` (`som-plan-v1`, per slot, copy-on-write) and a slot they never touched keeps following your file. The model is `web/plan.js`, the UI is `web/plan-ui.js`.
+Action view is a loadout: each part of the day is a **slot** (`fajr.after`, `dhuhr.between`, `presleep.main` …) holding an ordered list of cards, sets and notes. **You curate the default in `web/default-plan.js`** 〜 slot ids, wildcards (`*.after` applies to every fard prayer) and entry forms are documented at the top of that file. Readers can override any slot in the app; their edits live in `localStorage` (`som-plan-v1`, per slot, copy-on-write) and a slot they never touched keeps following your file. The model is `web/plan.js`, the UI is `web/plan-ui.js`.
 
-`web/render.html?slot=<slot id>` reads a slot in order as a card of embeds, the first one open — the same code path as `?collection=<set id>` for the shipped sets in `PRESET_COLLECTIONS`. The `time` tags in `nav-data.js` no longer decide what Action view shows; they only feed the picker's "Suggested" tab.
+`web/render.html?slot=<slot id>` reads a slot in order as a card of embeds, the first one open 〜 the same code path as `?collection=<set id>` for the shipped sets in `PRESET_COLLECTIONS`. The `time` tags in `nav-data.js` no longer decide what Action view shows; they only feed the picker's "Suggested" tab.
 
 ### The moon tooltip (Hijri date and daily tidbits)
 
 Tapping the moon on the Action view horizon opens a tooltip: the Hijri date, the phase, a one-line tidbit for the day, and a collapsible month calendar. **Everything you write by hand lives in `web/hijri-data.js`**: `SOM_HIJRI_NOTES` (a note per `'month-day'`, with a `ref`), `SOM_HIJRI_MONTH_NOTES` (a fallback line per month) and `SOM_HIJRI_MONTH_STARTS` (a correction when your authority announces a different first day than the computed one). The Islamic day turns at Maghrib, so a note about a night is keyed to the day that opens that evening.
 
-Month starts are computed in `web/hijri.js` from the moon, using the Nusantara (MABIMS) criterion — at sunset on the 29th the crescent must be at least 3 degrees up and 6.4 degrees from the sun. This is a calculation, not a sighting.
+Month starts are computed in `web/hijri.js` from the moon, using the Nusantara (MABIMS) criterion 〜 at sunset on the 29th the crescent must be at least 3 degrees up and 6.4 degrees from the sun. This is a calculation, not a sighting.
 
 ### Testing
 
@@ -894,7 +894,7 @@ To type with your own keyboard, switch the toggle to **ع Typing Arabic** (or pr
 
 ## 🎵 Tashkeel & Tajwīd Standards
 
-For Qurʾānic verses, use the canonical Ḥafṣ ʿan ʿĀṣim reading (most widely used globally). For ḥadīth Arabic, the same fuṣḥā standards apply — verify against canonical sunnah.com text.
+For Qurʾānic verses, use the canonical Ḥafṣ ʿan ʿĀṣim reading (most widely used globally). For ḥadīth Arabic, the same fuṣḥā standards apply 〜 verify against canonical sunnah.com text.
 
 **Required tashkeel marks:**
 
@@ -913,9 +913,9 @@ For Qurʾānic verses, use the canonical Ḥafṣ ʿan ʿĀṣim reading (most w
 
 **Special tashkeel cases:**
 
-- **Hamzat al-waṣl (ا)** — the initial alif that elides in connection. Arabic: render as regular ا. Transliteration: reflect the elision — `wa-jʿalhu` not `wa-ijʿalhu`.
-- **Solar letters assimilation** — when الـ precedes a solar letter (t, th, d, dh, r, z, s, sh, ṣ, ḍ, ṭ, ẓ, l, n), the lām assimilates. Arabic: shaddah on the next letter. Transliteration: show assimilation — `aṣ-ṣirāṭ` not `al-ṣirāṭ`.
-- **Tāʾ marbūṭah (ة)** — pronounced as *t* when bound, silent when paused. Transliteration: `raḥmah` standalone, `raḥmati-llāh` in construct.
+- **Hamzat al-waṣl (ا)** 〜 the initial alif that elides in connection. Arabic: render as regular ا. Transliteration: reflect the elision 〜 `wa-jʿalhu` not `wa-ijʿalhu`.
+- **Solar letters assimilation** 〜 when الـ precedes a solar letter (t, th, d, dh, r, z, s, sh, ṣ, ḍ, ṭ, ẓ, l, n), the lām assimilates. Arabic: shaddah on the next letter. Transliteration: show assimilation 〜 `aṣ-ṣirāṭ` not `al-ṣirāṭ`.
+- **Tāʾ marbūṭah (ة)** 〜 pronounced as *t* when bound, silent when paused. Transliteration: `raḥmah` standalone, `raḥmati-llāh` in construct.
 
 ---
 
@@ -941,7 +941,7 @@ Academic Arabic-to-Latin, consistent across the archive.
 | ش (shīn) | sh | s |
 | غ (ghayn) | gh | g |
 
-Prefix particles use hyphen: `wa-`, `bi-`, `li-`, `fa-`, `ka-`, `al-`. Proper nouns capitalized: Allāh, Muḥammad, Maryam, ʿĪsā, Bukhārī, Tirmidhī. No italics in the transliteration field — the rendering engine handles styling.
+Prefix particles use hyphen: `wa-`, `bi-`, `li-`, `fa-`, `ka-`, `al-`. Proper nouns capitalized: Allāh, Muḥammad, Maryam, ʿĪsā, Bukhārī, Tirmidhī. No italics in the transliteration field 〜 the rendering engine handles styling.
 
 ---
 
@@ -949,27 +949,27 @@ Prefix particles use hyphen: `wa-`, `bi-`, `li-`, `fa-`, `ka-`, `al-`. Proper no
 
 When something needs caveating, use one of these standardized flag formats:
 
-**Flag 1 — Weak but traditionally accepted**
+**Flag 1 〜 Weak but traditionally accepted**
 ```
 > ⚠️ **On the grading:** This ḥadīth is graded Ḍaʿīf by [authority], but has been widely transmitted in the adhkār tradition by scholars including [names], under the *tasāhul* principle applied to virtues of recitation (*faḍāʾil al-aʿmāl*). Use with awareness of its grading.
 ```
 
-**Flag 2 — Folk supplication without authentic chain**
+**Flag 2 〜 Folk supplication without authentic chain**
 ```
 > ⚠️ **Note on authenticity:** This supplication is widely practiced in [region/tradition] but does not have an authentic chain to the Prophet ﷺ. It is preserved here for documentation; reciters should be aware it is folk transmission rather than prophetic sunnah.
 ```
 
-**Flag 3 — Theologically contested practice**
+**Flag 3 〜 Theologically contested practice**
 ```
 > ⚠️ **Scholarly debate:** The practice of [X] is contested among scholars. [School A] holds [position]; [school B] holds [position]. The reader should consult their own teacher. A safer alternative recognized by all schools is to [alternative practice].
 ```
 
-**Flag 4 — Reconstructed Arabic from oral/written transmission**
+**Flag 4 〜 Reconstructed Arabic from oral/written transmission**
 ```
 > 📝 **Note on the Arabic:** The Arabic text below has been reconstructed from [source]; tashkeel has been added per standard fuṣḥā conventions. Variations may exist in other transmissions.
 ```
 
-**Flag 5 — Source attribution pending**
+**Flag 5 〜 Source attribution pending**
 ```
 > 🔍 **Source pending verification:** This duʿā has been preserved as widely transmitted but its original prophetic source has not yet been definitively traced. Documented here as a placeholder pending scholarly research.
 ```
@@ -980,16 +980,16 @@ Use these flags openly and without shame. Honesty is the strength of this archiv
 
 ## 🎭 Stylistic Conventions
 
-Project authoring conventions — not enforced by the renderer, but how existing content is styled. Following them keeps the archive visually unified.
+Project authoring conventions 〜 not enforced by the renderer, but how existing content is styled. Following them keeps the archive visually unified.
 
-**The Operational Cue Bold** — in hadith narration sections, **bold** the exact instruction line that introduces the duʿā:
+**The Operational Cue Bold** 〜 in hadith narration sections, **bold** the exact instruction line that introduces the duʿā:
 ```
 Abū Hurayra reported: **The Messenger of Allah ﷺ used to say after every prayer:** *[the duʿā below]*
 
 > *"There is no deity except Allah alone..."*
 ```
 
-**Italicized blockquote for translations** — wrap the English translation of the duʿā in a blockquote (`>`), italicized.
+**Italicized blockquote for translations** 〜 wrap the English translation of the duʿā in a blockquote (`>`), italicized.
 
 **Standard section skeleton** most cards follow:
 ```
@@ -1003,20 +1003,20 @@ Abū Hurayra reported: **The Messenger of Allah ﷺ used to say after every pray
 [Word-stacked sanad + matn]
 </details>
 
-## 🔤 Evoke This — Word by Word
+## 🔤 Evoke This 〜 Word by Word
 [Word-stacked clauses]
 
-*🔗 Verify on sunnah.com — [Citation](URL)*
+*🔗 Verify on sunnah.com 〜 [Citation](URL)*
 ```
 The section emojis are conventions: 📜 for the hadith, 🔤 for word-by-word, 📚 for the Arabic drawer.
 
-**Newer card layout (being rolled out, first used in `content/01-dua/01-forgiveness/forgiveness-adam.md`)** — the title carries the identity, so the opening context/translation paragraph sits directly under the `# H1` with no heading of its own. The word-stack section is named by what the card *is*, one plain word: `## 📜✨ Du'a` for a duʿāʾ, `## 📜✨ Sunnah` for anything that is not a duʿāʾ (a practice, a dhikr, a sunnah action). An optional `## {{ Hikmah | @hikmah }}` section follows — only the benefit or wisdom the text itself states. The Dalīl drawer (summary `📜🔎 What is the {{ Dalīl | … }}? `) comes last: Qurʾān embed, Tafsīr, then each Ḥadīth block (chain, matn, verify line last), with labels written `**Qurʾān ✦ …**`, `**Tafsīr ✦ …**`, `**Ḥadīth ✦ …**` and `---` between the groups. Sub-labels inside Du'a (`### 🔃Variation: …`, `### Part 1`) use `###` and show in the TOC. The full, current rules are in the "Decisions / SOP" section of `DRAFT_PROMPT.md`; the model cards are `content/01-dua/02-asking-allah/rabbana-atina-fid-dunya.md` and `content/01-dua/02-asking-allah/o-allah-set-right-for-me-my-religion.md`. The floating TOC reads: title (back to top) / `Du'a` (or `Sunnah`) / Hikmah if present / Dalīl. The Hikmah always sits between Du'a and Dalīl, and its box carries a soft gold gleam (pulsing glow plus a light sweep) added by the page; write only `## {{ Hikmah | @hikmah }}` and its text. Older cards still use `📜 The Hadith` / `🔤 Word-by-Word` until they are migrated.
+**Newer card layout (being rolled out, first used in `content/01-dua/01-forgiveness/forgiveness-adam.md`)** 〜 the title carries the identity, so the opening context/translation paragraph sits directly under the `# H1` with no heading of its own. The word-stack section is named by what the card *is*, one plain word: `## 📜✨ Du'a` for a duʿāʾ, `## 📜✨ Sunnah` for anything that is not a duʿāʾ (a practice, a dhikr, a sunnah action). An optional `## {{ Hikmah | @hikmah }}` section follows 〜 only the benefit or wisdom the text itself states. The Dalīl drawer (summary `📜🔎 What is the {{ Dalīl | … }}? `) comes last: Qurʾān embed, Tafsīr, then each Ḥadīth block (chain, matn, verify line last), with labels written `**Qurʾān ✦ …**`, `**Tafsīr ✦ …**`, `**Ḥadīth ✦ …**` and `---` between the groups. Sub-labels inside Du'a (`### 🔃Variation: …`, `### Part 1`) use `###` and show in the TOC. The full, current rules are in the "Decisions / SOP" section of `DRAFT_PROMPT.md`; the model cards are `content/01-dua/02-asking-allah/rabbana-atina-fid-dunya.md` and `content/01-dua/02-asking-allah/o-allah-set-right-for-me-my-religion.md`. The floating TOC reads: title (back to top) / `Du'a` (or `Sunnah`) / Hikmah if present / Dalīl. The Hikmah always sits between Du'a and Dalīl, and its box carries a soft gold gleam (pulsing glow plus a light sweep) added by the page; write only `## {{ Hikmah | @hikmah }}` and its text. Older cards still use `📜 The Hadith` / `🔤 Word-by-Word` until they are migrated.
 
-**The verify line at bottom** — always italicize, always include the canonical sunnah.com or quran.com URL: `*🔗 Verify on sunnah.com — [Bukhārī 6306](https://sunnah.com/bukhari:6306)*`
+**The verify line at bottom** 〜 always italicize, always include the canonical sunnah.com or quran.com URL: `*🔗 Verify on sunnah.com 〜 [Bukhārī 6306](https://sunnah.com/bukhari:6306)*`
 
 **Honorifics:** `ﷺ` after the Prophet's name (not "(saw)" or "PBUH") · `(raḍiyallāhu ʿanhu)` after male Companions · `(raḍiyallāhu ʿanhā)` after female Companions · `(ʿalayhi-s-salām)` after other Prophets · `(raḥimahu-llāh)` after deceased scholars.
 
-**Diacritics in English text** — when writing Arabic names in English prose, use academic transliteration (`ā ī ū` not `aa ee oo`; `ḥ ṣ ṭ ḍ ẓ` not plain `h s t d z`; `ʿ`/`ʾ` not apostrophe `'`). See [Transliteration Standards](#-transliteration-standards) above for the full table.
+**Diacritics in English text** 〜 when writing Arabic names in English prose, use academic transliteration (`ā ī ū` not `aa ee oo`; `ḥ ṣ ṭ ḍ ẓ` not plain `h s t d z`; `ʿ`/`ʾ` not apostrophe `'`). See [Transliteration Standards](#-transliteration-standards) above for the full table.
 
 ---
 
@@ -1024,7 +1024,7 @@ The section emojis are conventions: 📜 for the hadith, 🔤 for word-by-word, 
 
 Advanced patterns for archivists who have mastered the basics.
 
-**Pattern X1 — Counted Recitation Tracker.** For dhikr requiring counts, add a printable counter inside a drawer:
+**Pattern X1 〜 Counted Recitation Tracker.** For dhikr requiring counts, add a printable counter inside a drawer:
 ```
 <details>
 <summary>🔢 Printable Counter (× 33)</summary>
@@ -1037,7 +1037,7 @@ Advanced patterns for archivists who have mastered the basics.
 </details>
 ```
 
-**Pattern X2 — Linguistic Deep-Dive Drawer.** Beneath a Qurʾānically-resonant word, attach a root-analysis drawer:
+**Pattern X2 〜 Linguistic Deep-Dive Drawer.** Beneath a Qurʾānically-resonant word, attach a root-analysis drawer:
 ```
 [[رَحْمَة|mercy|raḥmah]]
 
@@ -1045,17 +1045,17 @@ Advanced patterns for archivists who have mastered the basics.
 <summary>🔬 Linguistic note: the root ر-ح-م</summary>
 
 The root **ر-ح-م (r-ḥ-m)** appears **339 times** in the Qurʾān across forms:
-- *raḥmah* — mercy (compassion in action)
-- *raḥīm* — Most Merciful (continuous attribute)
-- *raḥmān* — Most Gracious (the divine name)
-- *raḥim* — womb (the original locus of mercy)
+- *raḥmah* 〜 mercy (compassion in action)
+- *raḥīm* 〜 Most Merciful (continuous attribute)
+- *raḥmān* 〜 Most Gracious (the divine name)
+- *raḥim* 〜 womb (the original locus of mercy)
 
-The Prophet ﷺ said the word *raḥim* (womb) was derived from one of Allah's names *al-Raḥmān* — Bukhārī 5988.
+The Prophet ﷺ said the word *raḥim* (womb) was derived from one of Allah's names *al-Raḥmān* 〜 Bukhārī 5988.
 
 </details>
 ```
 
-**Pattern X3 — Audio Recitation Embed.** Embed a YouTube or audio file for verbal learners:
+**Pattern X3 〜 Audio Recitation Embed.** Embed a YouTube or audio file for verbal learners:
 ```
 <details>
 <summary>🎧 Listen to recitation</summary>
@@ -1067,7 +1067,7 @@ Reciter: Sh. Mishary Rashid Alafasy
 </details>
 ```
 
-**Pattern X4 — Cross-Reference Network.** At the bottom of any page, add related practices to build a knowledge web:
+**Pattern X4 〜 Cross-Reference Network.** At the bottom of any page, add related practices to build a knowledge web:
 ```
 ## 🌐 Related Practices
 
@@ -1077,7 +1077,7 @@ Reciter: Sh. Mishary Rashid Alafasy
 - **Companion verse:** [Q. 39:53](?file=quran/zumar-53.md)
 ```
 
-**Pattern X5 — Comparative Narration.** Display two ḥadīth narrations side-by-side:
+**Pattern X5 〜 Comparative Narration.** Display two ḥadīth narrations side-by-side:
 ```
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
 
@@ -1094,15 +1094,15 @@ Reciter: Sh. Mishary Rashid Alafasy
 </div>
 ```
 
-**Pattern X6 — Sequential Numbered Recitations.** For sequences of 10+ separate items, number each with descriptive prefixes so the TOC becomes a navigable checklist:
+**Pattern X6 〜 Sequential Numbered Recitations.** For sequences of 10+ separate items, number each with descriptive prefixes so the TOC becomes a navigable checklist:
 ```
-## 🔤 #1 — Refuge in the Perfect Words
+## 🔤 #1 〜 Refuge in the Perfect Words
 [word stacks]
 
-## 🔤 #2 — Bismillāh Shield
+## 🔤 #2 〜 Bismillāh Shield
 [word stacks]
 
-## 🔤 #3 — Ḥasbiya-llāh × 7
+## 🔤 #3 〜 Ḥasbiya-llāh × 7
 [word stacks]
 ```
 
@@ -1112,7 +1112,7 @@ Reciter: Sh. Mishary Rashid Alafasy
 
 The project has many legacy `.html` files from the early LLM-generated era. These need manual migration to the markdown format.
 
-**Why migration is manual:** spiritual — word-by-word translation IS the tafakkur exercise; quality — LLM word-stacks have predictable failure modes that human verification catches; foundational — every file you author becomes the foundation for someone else's ṣalāh.
+**Why migration is manual:** spiritual 〜 word-by-word translation IS the tafakkur exercise; quality 〜 LLM word-stacks have predictable failure modes that human verification catches; foundational 〜 every file you author becomes the foundation for someone else's ṣalāh.
 
 **Step-by-step process:**
 
@@ -1122,7 +1122,7 @@ The project has many legacy `.html` files from the early LLM-generated era. Thes
 4. **Create the new `.md` file.** Start with the `::meta` block and `# Title`. Save. Open in `web/render.html?file=your-file.md` to confirm the meta-card renders correctly.
 5. **Add `## 📜 The Hadith` section.** Paste the verified English narration as a plain paragraph.
 6. **Add `<details>` drawer with original Arabic.** Paste the voweled Arabic sanad + matn, including compiler notes if any.
-7. **Author `## 🔤 Word-by-Word`** clause by clause: type Arabic with full tashkeel, add English gloss per word, add transliteration with diacritics. Save and view — visually verify — then move to next clause.
+7. **Author `## 🔤 Word-by-Word`** clause by clause: type Arabic with full tashkeel, add English gloss per word, add transliteration with diacritics. Save and view 〜 visually verify 〜 then move to next clause.
 8. **Cross-check.** Read the rendered page top to bottom. Does the narrative flow? Are clauses chunked naturally? Does the meta-card grade match the source? Try all 4 reading modes.
 9. **Update `web/nav-data.js`.** Replace the legacy entry with the new markdown path: `{ label: "...", path: "web/render.html?file=duas/your-new-file.md" }`.
 10. **Move the legacy file to `/legacy/`.** Keep for ~30 days in case you need to recover something, then delete.
@@ -1147,7 +1147,7 @@ Pacing recommendation: 1–2 files per session. This is contemplative work, not 
 
 ## 🤖 Role of the LLM Scaffolding Prompt
 
-The project keeps its system prompt in [`DRAFT_PROMPT.md`](DRAFT_PROMPT.md) (repo root): the finalised layout, the rules and a skeleton, for generating scaffolded drafts with an LLM — **never final output**. It also covers sources that are only a transliteration (no Arabic): see its §8.
+The project keeps its system prompt in [`DRAFT_PROMPT.md`](DRAFT_PROMPT.md) (in `docs/`): the finalised layout, the rules and a skeleton, for generating scaffolded drafts with an LLM 〜 **never final output**. It also covers sources that are only a transliteration (no Arabic): see its §8.
 
 **✅ Use for scaffolding when:** you've already verified the source manually, you want to skip the mechanical extraction of meta-card fields from a sunnah.com paste, or you want a rough word-stack draft to refine (not accept as-is).
 
@@ -1172,7 +1172,7 @@ Run through this list before committing any new `.md` file.
 - [ ] Collection name uses canonical transliteration (Bukhārī not Bukhari)
 
 **Title**
-- [ ] Exactly one `# H1` — descriptive operational name (not "Hadith #1234")
+- [ ] Exactly one `# H1` 〜 descriptive operational name (not "Hadith #1234")
 - [ ] No `### Subtitle` under H1 (the meta-card carries identity)
 - [ ] At least one `## H2` section (otherwise the TOC won't show)
 
@@ -1190,7 +1190,7 @@ Run through this list before committing any new `.md` file.
 - [ ] Compiler note included if present in source
 
 **Word-by-word section**
-- [ ] `## 🔤 Word-by-Word` heading (or `## 🔤 Part N — ...` for multi-duʿā)
+- [ ] `## 🔤 Word-by-Word` heading (or `## 🔤 Part N 〜 ...` for multi-duʿā)
 - [ ] Every `[[...]]` has 2 or 3 pipe-separated parts (no orphans)
 - [ ] Arabic field fully voweled
 - [ ] English glosses lowercase except proper nouns
@@ -1199,7 +1199,7 @@ Run through this list before committing any new `.md` file.
 - [ ] If referencing Qurʾān → verses inserted inline with `> 📖 *Note*` marker
 
 **Source & verify**
-- [ ] Bottom line: `*🔗 Verify on [source] — [Citation]: [URL]*`
+- [ ] Bottom line: `*🔗 Verify on [source] 〜 [Citation]: [URL]*`
 - [ ] URL works when clicked
 
 **Forbidden patterns**
@@ -1210,12 +1210,12 @@ Run through this list before committing any new `.md` file.
 - [ ] No dressed-up folk material posing as authentic ḥadīth
 
 **Honesty checks**
-- [ ] If content is weak — graded honestly with optional adhkār-tradition note
-- [ ] If content is folk — clearly flagged as folk, not as hadith
-- [ ] If content has contested elements — debate presented fairly with safer alternative
-- [ ] If source is unverified — explicitly marked pending
+- [ ] If content is weak 〜 graded honestly with optional adhkār-tradition note
+- [ ] If content is folk 〜 clearly flagged as folk, not as hadith
+- [ ] If content has contested elements 〜 debate presented fairly with safer alternative
+- [ ] If source is unverified 〜 explicitly marked pending
 
-**Render test** — open `web/render.html?file=your-new-file.md` and confirm:
+**Render test** 〜 open `web/render.html?file=your-new-file.md` and confirm:
 - [ ] Meta-card displays with correct grade badge color
 - [ ] TOC appears with all `##` sections
 - [ ] All 4 reading modes work
@@ -1235,9 +1235,9 @@ If all pass → commit. May Allah accept the work.
 
 ## 🌿 Final Word for Contributors
 
-You are not just authoring a document. You are participating in a 1400-year chain of preservation that began with the Companions writing on date palm fronds and animal scapulae. Every word you transcribe carefully, every grade you flag honestly, every fabrication you refuse to propagate — these are acts of trust (amānah) in the trust the Prophet ﷺ left to his ummah.
+You are not just authoring a document. You are participating in a 1400-year chain of preservation that began with the Companions writing on date palm fronds and animal scapulae. Every word you transcribe carefully, every grade you flag honestly, every fabrication you refuse to propagate 〜 these are acts of trust (amānah) in the trust the Prophet ﷺ left to his ummah.
 
-The Prophet ﷺ said: *"Convey from me, even if it is one verse."* — Bukhārī 3461.
+The Prophet ﷺ said: *"Convey from me, even if it is one verse."* 〜 Bukhārī 3461.
 
 Convey honestly. Convey carefully. Convey with foundation.
 

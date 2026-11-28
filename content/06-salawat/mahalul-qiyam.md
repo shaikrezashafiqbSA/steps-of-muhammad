@@ -312,9 +312,9 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 [[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَيْهِ | upon him | ʿalayhi ]] [[ وَسَلَّمْ | and grant peace | wa-sallam ]]
 
-*A'h'mada'th' 'th'ura wa aalih* — Arabic not yet confirmed
+*A'h'mada'th' 'th'ura wa aalih* 〜 Arabic not yet confirmed
 
-*Wasohaaba Massanaa 'S'ha'k* — Arabic not yet confirmed
+*Wasohaaba Massanaa 'S'ha'k* 〜 Arabic not yet confirmed
 
 [[ صَلَّى | may … bless | ṣallā ]] [[ اللَّهُ | Allah | llāhu ]] [[ عَلَىٰ | upon | ʿalā ]] [[ مُحَمَّدْ | Muḥammad | Muḥammad ]]
 
@@ -346,7 +346,7 @@ Maḥallul Qiyām is the part of a mawlid recital that is recited standing. This
 
 - **Classification note:** Graded Sahih, as supplied with the text.
 
-*🔗 Verify on sunnah.com — [Ṣaḥīḥ al-Bukhārī 6360](https://sunnah.com/bukhari:6360)*
+*🔗 Verify on sunnah.com 〜 [Ṣaḥīḥ al-Bukhārī 6360](https://sunnah.com/bukhari:6360)*
 
 </details>
 

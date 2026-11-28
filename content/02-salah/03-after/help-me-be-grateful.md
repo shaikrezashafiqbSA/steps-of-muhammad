@@ -27,7 +27,7 @@ The Messenger of Allah (ﷺ) took hold of my hand and said, "O Muʿādh! By Alla
 [[وَحُسْنِ|and the excellence of|wa-ḥusni]] [[عِبَادَتِكَ|Your worship.|ʿibādatika]]
 
 <details>
-<summary>📜🔎 What is the {{ Dalīl | دَلِيل — the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
+<summary>📜🔎 What is the {{ Dalīl | دَلِيل 〜 the textual evidence (Qurʾān or ḥadīth) a ruling or practice rests on }}? </summary>
 
 **Ḥadīth ✦ Riyāḍ aṣ-Ṣāliḥīn 1422**
 
@@ -45,6 +45,6 @@ The Messenger of Allah (ﷺ) took hold of my hand and said, "O Muʿādh! By Alla
 
 [[رَوَاهُ|Narrated it|rawāhu]] [[أَبُو|Abū|abū]] [[دَاوُدَ|Dāwūd|dāwūda]] [[بِإِسْنَادٍ|with a chain|bi-isnādin]] [[صَحِيحٍ|authentic.|ṣaḥīḥin]]
 
-*🔗 Verify on sunnah.com — [Riyad as-Salihin 1422](https://sunnah.com/riyadussalihin:1422)*
+*🔗 Verify on sunnah.com 〜 [Riyad as-Salihin 1422](https://sunnah.com/riyadussalihin:1422)*
 
 </details>

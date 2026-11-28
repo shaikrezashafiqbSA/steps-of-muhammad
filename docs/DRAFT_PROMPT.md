@@ -1,4 +1,4 @@
-# 🤖 Draft Prompt — Source → Card
+# 🤖 Draft Prompt 〜 Source → Card
 
 The instruction for an LLM that turns a raw ḥadīth, duʿāʾ, Qurʾānic verse or practice into a **first draft** of a card. It describes the finalised layout, modelled on `content/03-adhkar-sabah-masa/3_hasbiyallahu_7.md`.
 
@@ -35,7 +35,7 @@ You are an expert Islamic text and Dhikr formatting assistant. Convert raw Hadit
 ```
 ::meta … ::
 # Title
-Intro paragraph(s) — no heading
+Intro paragraph(s) 〜 no heading
 ## 📜✨ Du'a                                 (or ## 📜✨ Sunnah)
 ## {{ Hikmah | @hikmah }}                  (optional)
 <details> 📜🔎 What is the Dalīl? </details>
@@ -55,8 +55,8 @@ Always begin with a `::meta` block in exactly this layout. **No blank lines insi
 ::meta
 narrator: <Narrator in formal transliteration, e.g. ʿUthmān ibn ʿAffān (raḍiyallāhu ʿanhu)>
 collection: <e.g. Riyāḍ aṣ-Ṣāliḥīn / Sunan Ibn Mājah / Jāmiʿ at-Tirmidhī / Qur'an>
-book: <Book Number · Book Title — or Sūrah (n) · Juzʾ n for the Qur'an>
-hadith: <Hadith number — or Āyah n for the Qur'an>
+book: <Book Number · Book Title 〜 or Sūrah (n) · Juzʾ n for the Qur'an>
+hadith: <Hadith number 〜 or Āyah n for the Qur'an>
 grade: <sahih / hasan / daif / Quranic Scripture>
 grade-comment: <optional, e.g. Ḥasan Ṣaḥīḥ (at-Tirmidhī)>
 left-orb: <Collection + number, e.g. Riyāḍ aṣ-Ṣāliḥīn 1457>
@@ -75,7 +75,7 @@ right-orb-compact: <۞۞۞ for sahih and Qur'an · ۞۞ for hasan · ۞ for daif
 ## 3. TITLE AND INTRO
 
 ```
-# <Concise, descriptive title> — <the stated outcome, optional>
+# <Concise, descriptive title> 〜 <the stated outcome, optional>
 ```
 
 Directly under the title, with **no heading of its own**, write one to three short paragraphs:
@@ -135,13 +135,13 @@ Then include **only the blocks the material supports**, each opened by a bold la
    `**Qurʾān ✦ Sūrat <Name> <surah>:<ayah>**`, then the embed. Use `<surah>/<ayah>`, or a range `<surah>/<a>-<b>` (e.g. `9/128-129`):
    `<iframe src="https://quranwbw.com/<surah>/<ayah>" width="100%" height="500px" title="QuranWBW Embed" style="border:none;"></iframe>`
 2. **Tafsīr or commentary**, only if supplied:
-   `**Tafsīr ✦ <Scholar>**` (the card may add `ؒ` and `, on <ref>` where the source gives them), then the quote verbatim as a blockquote `> "…"` or as the supplied paragraphs, with the narrator named when the source names one. If you were given only the *name* of a work, write `*Pointer only: the wording is not verified — a place to consult, not a quotation.*` and add nothing else. Never paraphrase it.
+   `**Tafsīr ✦ <Scholar>**` (the card may add `ؒ` and `, on <ref>` where the source gives them), then the quote verbatim as a blockquote `> "…"` or as the supplied paragraphs, with the narrator named when the source names one. If you were given only the *name* of a work, write `*Pointer only: the wording is not verified 〜 a place to consult, not a quotation.*` and add nothing else. Never paraphrase it.
 3. **Ḥadīth source(s)**, one block each, in this order inside the block:
    - `**Ḥadīth ✦ <Collection> <number>**`
    - `**The Chain of Narrators (الإِسْنَاد)**` then stacks (only if the chain was supplied)
    - `**The Text of the Hadith (المَتْن)**` then stacks (the full Arabic text)
    - if supplied, `**Scholarly Documentation & Chain Reality**` then short bullets (where the text is recorded, the classification note, the grader and grade), only as supplied
-   - last of all, the verify line `*🔗 Verify on sunnah.com — [<Reference>](<URL>)*` (the link text is the reference only)
+   - last of all, the verify line `*🔗 Verify on sunnah.com 〜 [<Reference>](<URL>)*` (the link text is the reference only)
    Apply the one-orthographic-word-per-bracket rule to the Isnād and Matn. Honorific formulas (صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ, رَضِيَ اللَّهُ عَنْهُ) split into their component words; compound names (عَبْدُ اللَّهِ, أَبُو مُعَاوِيَةَ) split, each component glossed.
 
 **Separators:** a line `---` goes before the first ḥadīth block when a Qurʾān or Tafsīr block precedes it, and between ḥadīth blocks. A Qurʾān block that has a verify line (quran.com) puts it at the end of the block as well.
@@ -172,7 +172,7 @@ Use this when the material is a Latin transliteration typed from a recital (for 
 2. **Three levels of confidence.**
    - **Clear:** the sounds resolve to real Arabic words. Write the Arabic and the glosses normally.
    - **Medium:** one letter or word was settled by the rhyme or by a familiar phrase. Write the Arabic, and list the line in a DRAFT NOTE together with what was typed.
-   - **Unresolved:** the sounds do not form real Arabic. Write **no Arabic**. Give the typed transliteration unchanged as one italic line followed by ` — Arabic not yet confirmed`, for example `*Fahazaa rulyum ni ghaarrad* — Arabic not yet confirmed`. List it in a DRAFT NOTE.
+   - **Unresolved:** the sounds do not form real Arabic. Write **no Arabic**. Give the typed transliteration unchanged as one italic line followed by ` 〜 Arabic not yet confirmed`, for example `*Fahazaa rulyum ni ghaarrad* 〜 Arabic not yet confirmed`. List it in a DRAFT NOTE.
 3. **Do not substitute a text you recognise.** If the lines resemble a known work, do not name the work or the author, and do not fill gaps from memory. At most, mention the resemblance in a DRAFT NOTE as something to check.
 4. **Keep it as recited.** End rhyme words in a sukūn as recited (أَحْمَدْ), keep pausal forms (نَبِيْ سَلَامْ), and keep a typed vowel even where grammar would differ (say so in a DRAFT NOTE).
 5. **Repeats: write every one out in full.** Readers go through the card in one pass and will not scroll back, so never replace a repeated line with "as above", a refrain label or a marker. A block the source types twice with no mark is written twice. Where the source marks a block "2X" or "×2", put `[[ x 2 ]]` at the nearest block exactly as typed, and add a DRAFT NOTE that the reading is uncertain.
@@ -204,9 +204,9 @@ right-orb: …
 right-orb-compact: ۞۞۞
 ::
 
-# <Title> — <stated outcome, optional>
+# <Title> 〜 <stated outcome, optional>
 
-<Intro: who, when, how — with the **bold operational cue**.>
+<Intro: who, when, how 〜 with the **bold operational cue**.>
 > *"<English translation of the recited words>"*
 
 ## 📜✨ Du'a
@@ -251,7 +251,7 @@ right-orb-compact: ۞۞۞
 - **<Collection>:** Recorded in … (No. …).
 - **Classification note:** …
 
-*🔗 Verify on sunnah.com — [<Reference>](<URL>)*
+*🔗 Verify on sunnah.com 〜 [<Reference>](<URL>)*
 
 </details>
 ```
@@ -295,7 +295,7 @@ Rules settled while migrating `content/**` to the Du'a/Sunnah layout. Apply them
 
 - Labels use `✦`: `**Qurʾān ✦ Sūrat X n:n**`, `**Tafsīr ✦ Scholar**`, `**Ḥadīth ✦ Collection n**`.
 - Order: Qurʾān (with the QuranWBW embed), then Tafsīr, then a `---` line, then each Ḥadīth block, with `---` between ḥadīth blocks.
-- A ḥadīth block runs: label, chain, matn, scholarly documentation if any, and the verify line `*🔗 Verify on sunnah.com — [Reference](URL)*` last. A Qurʾān block with a quran.com verify line also ends with it.
+- A ḥadīth block runs: label, chain, matn, scholarly documentation if any, and the verify line `*🔗 Verify on sunnah.com 〜 [Reference](URL)*` last. A Qurʾān block with a quran.com verify line also ends with it.
 - An existing "Divine Wisdom" drawer marked *Source: Commentary* moves into the Dalīl as a Tafsīr block, text unchanged. Anything marked *Source: Textual* ("This reading follows from the wording of the text itself") is AI-written: delete it wherever it appears.
 - Embedded cards (`"embed"` links) inside a Dalīl keep their link as written.
 - Chain and matn labels are plain bold: `**The Chain of Narrators (الإِسْنَاد)**`, `**The Text of the Hadith (المَتْن)**`.
